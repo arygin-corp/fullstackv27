@@ -1,0 +1,11 @@
+{{- if and .Values.enabled .Values.chaos.enabled }}
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata: {name: notification-app-worker-kill}
+spec:
+  action: pod-kill
+  mode: one
+  selector:
+    labelSelectors: {app: notification-app, component: worker}
+  duration: "30s"
+{{- end }}

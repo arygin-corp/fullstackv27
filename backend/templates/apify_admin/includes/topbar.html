@@ -1,0 +1,70 @@
+<header class="hp-header-full" aria-label="Application header">
+ <div class="row w-100 g-0 align-items-center">
+  <div class="col-auto d-xl-none"><button class="btn btn-text hp-mobile-sidebar-button" type="button" aria-label="Open navigation" data-bs-toggle="offcanvas" data-bs-target="#apifyMobileNav"><i class="ri-menu-line fs-4"></i></button></div>
+  <div class="col hp-header-start-text"><div class="hp-header-start-text-item"><h1 class="h4 mb-0">{{ page_title|default:'Apify Platform' }}</h1>{% if page_subtitle %}<p class="mb-0 hp-caption hp-text-color-black-60">{{ page_subtitle }}</p>{% endif %}</div></div>
+  <div class="col-12 col-md-5 col-xl-4 px-md-16 order-3 order-md-2">
+   <form class="hp-header-search active position-relative" method="get" action="#" role="search">
+    <label class="visually-hidden" for="apify-global-search">Search Apify</label>
+    <div class="input-group"><span class="input-group-text bg-white"><i class="ri-search-line"></i></span><input id="apify-global-search" name="q" class="form-control" type="search" value="{{ request.GET.q|default:'' }}" placeholder="Search APIs, products, applications" autocomplete="off"></div>
+   </form>
+  </div>
+  <div class="col-auto ms-auto order-2 order-md-3 d-flex align-items-center gap-2">
+   <form method="post" action="#" class="d-none d-lg-block">{% csrf_token %}
+    <label class="visually-hidden" for="environment-switcher">Environment</label>
+    <select id="environment-switcher" name="environment" class="form-select" onchange="this.form.submit()">
+        <option value="sandbox" {% if current_environment == 'sandbox' %}selected{% endif %}>Sandbox</option>
+        <option value="test" {% if current_environment == 'test' %}selected{% endif %}>Test</option>
+        <option value="production" {% if current_environment == 'production' %}selected{% endif %}>Production</option>
+    </select>
+</form>
+   <div class="dropdown">
+    <button class="btn btn-text position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
+        <i class="ri-notification-3-line fs-4"></i>
+        {% if unread_notification_count %}
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ unread_notification_count }}
+            <span class="visually-hidden">unread notifications</span>
+        </span>
+        {% endif %}
+    </button>
+    <div class="dropdown-menu dropdown-menu-end hp-notification-menu p-0">
+        <div class="p-16 border-bottom d-flex justify-content-between">
+            <strong>Notifications</strong>
+            <a href="#">View all</a>
+        </div>
+        <div class="p-16">
+            {% for notification in header_notifications %}
+            <a class="d-block text-decoration-none mb-12" href="{{ notification.url|default:'#' }}">
+                <strong>{{ notification.title }}</strong>
+                <small class="d-block hp-text-color-black-60">{{ notification.created_at|timesince }} ago</small>
+            </a>
+            {% empty %}
+            <p class="mb-0 hp-text-color-black-60">No new notifications.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+   <div class="dropdown hp-header-profile-menu">
+    <button class="btn btn-text d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="avatar-item bg-primary-4 text-primary-1 rounded-circle d-inline-flex align-items-center justify-content-center me-8" style="width:36px;height:36px">{{ request.user.get_username|slice:':1'|upper }}</span>
+        <span class="d-none d-lg-inline">{{ request.user.get_short_name|default:request.user.get_username }}</span>
+        <i class="ri-arrow-down-s-line ms-4"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+            <a class="dropdown-item" href="#">Profile</a>
+        </li>
+        <li><a class="dropdown-item" href="#">Change password</a>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li>
+            <form method="post" action="#">{% csrf_token %}
+                <button class="dropdown-item" type="submit">Sign out</button>
+            </form>
+        </li>
+    </ul>
+</div>
+  </div>
+ </div>
+</header>

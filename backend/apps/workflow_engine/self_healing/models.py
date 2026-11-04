@@ -1,0 +1,4 @@
+from django.db import models
+from ..models import TimeStampedModel
+class HealingPolicy(TimeStampedModel):name=models.CharField(max_length=180);signal_type=models.CharField(max_length=100);conditions=models.JSONField(default=dict);actions=models.JSONField(default=list);max_attempts=models.PositiveIntegerField(default=3);cooldown_seconds=models.PositiveIntegerField(default=300);enabled=models.BooleanField(default=False);approval_required=models.BooleanField(default=True)
+class HealingRun(TimeStampedModel):policy=models.ForeignKey(HealingPolicy,related_name='runs',on_delete=models.PROTECT);signal=models.JSONField(default=dict);status=models.CharField(max_length=30,default='pending');actions_taken=models.JSONField(default=list);result=models.JSONField(default=dict);error=models.TextField(blank=True)

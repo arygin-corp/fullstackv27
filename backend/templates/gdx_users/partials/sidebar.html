@@ -1,0 +1,550 @@
+{% load static %} {% block sidebar %}
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+  <div data-simplebar class="h-100">
+    <div id="sidebar-menu">
+      <ul class="metismenu list-unstyled" id="side-menu">
+        </li>
+        <li class="menu-title" key="t-dashboards">Dashboards</li>
+        <li>
+          <a href="{% url 'home' %}" class="waves-effect">
+            <i class="mdi mdi-view-dashboard-outline"></i>
+            <span class="badge rounded-pill bg-info float-end"></span>
+            <span key="t-dashboards">Dashboards</span>
+          </a>
+        </li>
+
+        <li class="menu-title" key="t-integrations">Integrations</li>
+
+        <li>
+          <a href="javascript: void(0);" class="waves-effect">
+            <i class="mdi mdi-apps" style="position: relative; top: 2px; font-size: 16px"></i>
+            <span class="badge rounded-pill bg-success float-end"></span>
+            <span key="t-apps">Apps</span>
+          </a>
+        </li>
+
+        <li class="menu-title" key="t-marketplace">Marketplace</li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-store"></i>
+            <span key="t-marketplace">Marketplace</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-domains">Domains</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-domains">Domains</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-domain">Create Domain</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-subdomains-menu">Subdomains Level 1</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-subdomains">Subdomains Level 1</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-subdomain">Create Subdomain Level 1</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-subdomains-level-3-menu">Subdomains Level 2</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-subdomains-l3">Subdomains Level 2</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-subdomain-l3">Create Subdomain Level 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-products">Products</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-products">Products</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-product">Create Product</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-sample-data">Sample Data</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-sample-data">Sample Data</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-sample-data">Create Sample Data</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-classification">Classifications</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-classifications">Classifications</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-classification">Create Classification</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-attributes">Attributes</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-attributes">Attributes</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-attribute">Create Attribute</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-badges">Badge</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-badges">Badges</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-badge">Create Badge</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-keywords">Keywords</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-keywords">Keywords</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-keyword">Create Keyword</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-datatypes">Datatypes</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-datatypes">Datatypes</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-datatype">Create Datatype</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-platforms">Platforms</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-platforms">Platforms</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-platform">Create Platform</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-1ts-domains">1TS Domains</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-1ts-domains">1TS Domains</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-1ts-domain">Create 1TS Domain</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-fulfillment-groups">Fulfillment Groups</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-fulfillment-groups">Fulfillment Groups</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-fulfillment-group">Create Fulfillment Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-stewards">Data Stewards</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-stewards">Data Stewards</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-steward">Create Data Steward</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-contacts">Contacts</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-contacts">Contacts</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-contact">Create Contact</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-catalogs">Catalogs</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-catalogs">Catalogs</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-catalog">Create Catalog</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-resources">Resources</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-resources">Resources</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-resource">Create Resource</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-organizations">Organizations</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-organizations">Organizations</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-organization">Create Organization</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-companies">Companies</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);" key="t-companies">Companies</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);" key="t-create-company">Create Company</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-store"></i>
+            <span key="t-marketplace">Marketplace</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);" key="t-domains">Domains</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-subdomains-level-2">Subdomains Level 1</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-subdomains-level-3">Subdomains Level 2</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-products">Products</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-sample-data">Sample Data</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-classification">Classifications</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-attributes">Attributes</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-badges">Badge</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-keywords">Keywords</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-datatypes">Datatypes</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-platforms">Platforms</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-1ts-domains">1TS Domains</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-fulfillment-groups">Fulfillment Groups</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-stewards">Data Stewards</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-contacts">Contacts</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-catalogs">Catalogs</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-resources">Resources</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-organizations">Organizations</a>
+            </li>
+
+            <li>
+              <a href="javascript: void(0);" key="t-companies">Companies</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-request">Orders</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-archive-in"></i>
+            <span key="t-teams">Request</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);" key="t-request">View Requests</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);" key="t-task">View Tasks</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-teams">Teams</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="mdi mdi-account-group"></i>
+            <span key="t-teams">Teams</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="true">
+            <li>
+              <a href="javascript: void(0);" key="t-teams">Teams</a>
+            </li>
+              <li>
+              <a href="javascript: void(0);" key="t-create-team">Create Team</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-changelog">Changelog</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-archive-in"></i>
+            <span key="t-changelog">Changelog</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);"  key="t-manage-categories">Categories</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-manage-create-category">Create Category</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-release-notes">Release Notes</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-create-release-note">Create Release Note</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-pages">Pages</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-copy-alt"></i>
+            <span key="t-pages">Pages</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Leadership</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Disclaimer</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Terms of Use</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Org Chart</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Roadmap</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Hackathon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-global-settings">Global Settings</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="mdi mdi-email"></i>
+            <span key="t-email">Email</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Settings</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Templates</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Schedule</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bxs-buoy"></i>
+            <span key="t-utilities">Utilities</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);"  key="t-maintenance-mode">Maintenance Mode</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-coming-soon">Coming Soon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bxs-cog"></i>
+            <span key="t-settings">Settings</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Settings</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Header</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);"  key="t-products">Manage Footer</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-title" key="t-help-center">Support Center</li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-support"></i>
+            <span key="t-help-desk">Help Desk</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="#"span key="t-support-hub">Support Hub</span></a></li>
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-domain-section">Articles</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);"  key="t-manage-categories">Categories</a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);"  key="t-create-articles">Articls</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript: void(0);" class="has-arrow" key="t-documentation">Documentation</a>
+              <ul class="sub-menu" aria-expanded="true">
+                <li>
+                  <a href="javascript: void(0);"  key="t-manage-documents">Documents</a>
+                </li>
+                 <li>
+                  <a href="javascript: void(0);"  key="t-manage-faqs">FAQs</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <div style="position: relative; top: 32px;">
+          <li class="menu-title" key="t-guide" style="color: #7252d3 !important; font-size:14px !important;">Guide
+            <span>
+              <h5 style="color: #fff !important; font-size: 10px !important; text-transform: none !important;"> Everything you need to know about GDX Admin Portal </h5>
+            </span>
+          </li>
+
+          <li>
+            <a href="#" class="waves-effect">
+              <i class="mdi mdi-file-cabinet"></i>
+              <span key="t-resource" style="font-size: 12px">Resources</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="waves-effect">
+              <i class="mdi mdi-file-cabinet"></i>
+              <span key="t-documentation" style="font-size: 12px">Documentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript: void(0);"  class="waves-effect">
+              <i class="bx bx-code-alt"></i>
+              <span class="badge rounded-pill bg-primary float-end" style="font-size: 8px">v1.0.0</span>
+              <span key="t-changelog" style="font-size: 12px">Changelog</span>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <!-- Sidebar -->
+  </div>
+</div>
+<!-- Left Sidebar End -->
+{% endblock %}

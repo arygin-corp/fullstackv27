@@ -1,0 +1,14 @@
+{% extends 'gdx_admin/base.html' %}
+{% block title %}
+{% block workflow_title %}Workflow Engine
+{% endblock %} | GDX{% endblock %}
+{% block content %}
+
+{% block workflow_content %}
+{% endblock %}
+
+{% include 'gdx_admin/apps/workflow/partials/_vikki_drawer.html' %}
+{% include 'gdx_admin/apps/workflow/partials/_confirmation_modal.html' %}
+{% include 'gdx_admin/apps/workflow/partials/_danger_modal.html' %}
+
+{% endblock %}

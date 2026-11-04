@@ -1,0 +1,47 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "pay_type"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "rmthyr"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "rtcond_agg"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-aggregate",
+      "dbname": "svc_history_lexus_agg_trn_ext",
+      "elementname": "nsh_lex_agg_trn",
+      "column_name": "rthours_agg"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-lex-service-hist-aggregate%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

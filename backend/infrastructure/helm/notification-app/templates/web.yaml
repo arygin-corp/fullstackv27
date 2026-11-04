@@ -1,0 +1,31 @@
+{{- if .Values.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: notification-app-web}
+spec:
+  replicas: {{ .Values.web.replicas }}
+  selector: {matchLabels: {app: notification-app, component: web}}
+  template:
+    metadata: {labels: {app: notification-app, component: web}}
+    spec:
+      serviceAccountName: notification-app
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: web
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["gunicorn","config.wsgi:application","--bind","0.0.0.0:8000","--timeout","60"]
+          envFrom: [{secretRef: {name: notification-app-secrets}}, {configMapRef: {name: notification-app-config}}]
+          ports: [{containerPort: 8000}]
+          startupProbe: {httpGet: {path: /health/startup/, port: 8000}, failureThreshold: 30, periodSeconds: 5}
+          readinessProbe: {httpGet: {path: /health/ready/, port: 8000}, periodSeconds: 10}
+          livenessProbe: {httpGet: {path: /health/live/, port: 8000}, periodSeconds: 20}
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: notification-app}
+spec:
+  selector: {app: notification-app, component: web}
+  ports: [{port: {{ .Values.service.port }}, targetPort: 8000}]
+{{- end }}

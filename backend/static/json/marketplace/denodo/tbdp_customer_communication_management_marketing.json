@@ -1,0 +1,83 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "email_address_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "email_address_id"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "email_address_source"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "phone_number_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "phone_number_id"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "phone_number_source"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "postal_address_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "postal_address_id"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "postal_address_source"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-marketing",
+      "dbname": "cust_communication_management_trn_ext",
+      "elementname": "leo_cust_billing_source",
+      "column_name": "tbdp_delete_flag"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-communication-management-marketing%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

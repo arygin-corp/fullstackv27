@@ -1,0 +1,27 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS Resource Configuration{% endblock %}
+{% block content %}
+{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS Resource Configuration" hero_description="Select an AWS resource type and configure its environment-specific properties." hero_metric_label="Environment" hero_metric=environment.get_environment_display %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Resource Configuration" page_heading="AWS resource" page_description="Choose the AWS resource type and configure runtime properties." %}
+
+<div class="row g-4">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h5 mb-0"><i class="ti ti-cloud-cog me-2 text-primary"></i>Resource configuration</h3>
+      </div>
+      <form method="post">
+        <div class="card-body">
+          {% csrf_token %}
+          {% include "third_party_apis/aws/partials/_aws_form_fields.html" with form=form %}
+        </div>
+        {% include "third_party_apis/aws/partials/_aws_form_actions.html" with environment=environment submit_label="Save Resource" %}
+      </form>
+    </div>
+  </div>
+
+  <div class="col-12">
+    {% include "third_party_apis/aws/partials/_aws_form_help.html" %}
+  </div>
+</div>
+{% endblock %}

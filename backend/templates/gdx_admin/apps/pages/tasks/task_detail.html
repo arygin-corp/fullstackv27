@@ -1,0 +1,1 @@
+{% extends "gdx_admin/base.html" %}{% block title %}Task{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/tasks/includes/hero.html" %}<h2>{{ task.page.title }}</h2><form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Submit decision</button></form>{% endblock %}

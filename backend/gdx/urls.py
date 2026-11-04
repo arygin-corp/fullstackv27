@@ -1,0 +1,105 @@
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.urls import path, include, reverse_lazy
+from django.conf import settings
+from django.conf.urls.static import static
+# from gdx import views
+from .views import MyPasswordSetView, MyPasswordChangeView
+from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
+from apps.notifications.monitoring.views import alerts_view, health_view, live_view, ready_view, startup_view, metrics_view
+from . import views
+from .forms import GDXPasswordResetForm, GDXSetPasswordForm
+
+urlpatterns = [
+    path('marketplace/', include("apps.marketplace.urls")),
+    # AUTH - GDX USERS
+    path('account/', include('allauth.urls')),
+    path('account/login/', TemplateView.as_view(template_name="account/login.html"), name='login'),
+    path('account/signup/', TemplateView.as_view(template_name="account/signup.html"), name='signup'),
+    path('account/logout/', TemplateView.as_view(template_name="account/logout-success.html"), name='logout'),
+    path('account/session/timeout', TemplateView.as_view(template_name="account/lock-screen.html"), name='lockscreen'),
+    path('accounts/password/change/', login_required(MyPasswordChangeView.as_view()), name="account_change_password"),
+    path('accounts/password/set/', login_required(MyPasswordSetView.as_view()), name="account_set_password"),
+    path('microsoft_authentication/', include('microsoft_authentication.urls')),
+    path("login/", views.GDXLoginView.as_view(), name="login"),
+    path("logout/", auth_views.LogoutView.as_view(template_name="gdx_admin/auth/logged_out.html"), name="logout"),
+    path("register/", views.register, name="register"),
+    path("lock-screen/", views.lock_screen, name="lock_screen"),
+    path("password-reset/", auth_views.PasswordResetView.as_view(template_name="gdx_admin/auth/password_reset_form.html", email_template_name="gdx_admin/auth/password_reset_email.html", subject_template_name="gdx_admin/auth/password_reset_subject.txt", form_class=GDXPasswordResetForm, success_url=reverse_lazy("gdx_admin:password_reset_done")), name="password_reset"),
+    path("password-reset/done/", auth_views.PasswordResetDoneView.as_view(template_name="gdx_admin/auth/password_reset_done.html"), name="password_reset_done"),
+    path("reset/<uidb64>/<token>/", auth_views.PasswordResetConfirmView.as_view(template_name="gdx_admin/auth/password_reset_confirm.html", form_class=GDXSetPasswordForm, success_url=reverse_lazy("gdx_admin:password_reset_complete")), name="password_reset_confirm"),
+    path("reset/complete/", auth_views.PasswordResetCompleteView.as_view(template_name="gdx_admin/auth/password_reset_complete.html"), name="password_reset_complete"),
+
+    # GDX CONTENT USERS
+
+    # GLOBAL API URLS
+    path('api/', include('apps.api.urls')),
+    path("api/tdsp/", include("apps.external_apis.urls")),
+    path("api/changelog/", include("apps.changelog.urls")),
+    path("api/intake/", include("apps.intake.urls", namespace="intake")),
+    path("api/marketplace/", include("apps.marketplace.admin_urls")),
+    path("api/pages/", include("apps.pages.api_urls")),
+    path("api/people/", include("apps.people.urls")),
+    path("api/forms/", include("apps.forms.urls")),
+    path("api/workflow/",include(("apps.workflow_engine.urls", "workflow_api"), namespace="workflow_api",)),
+    path("api/orders/", include("apps.orders.urls")),
+    path("api/v1/", include("apps.notifications.api_v1.urls")),
+    path("api/healthz/", health_view, name="healthz"),
+    path("api/health/live/", live_view, name="health_live"),
+    path("api/health/ready/", ready_view, name="health_ready"),
+    path("api/health/startup/", startup_view, name="health_startup"),
+    path("api/monitoring/metrics/", metrics_view, name="metrics"),
+    path("api/monitoring/alerts/", alerts_view, name="alerts"),
+    path("api/ai/chat/", include("apps.chat.urls")),
+    path("api/ai/evaluation/", include("evaluation_api.urls")),
+    # path("api/notifications/", include("apps.notifications.urls")),
+    path("api/product-checkout/", include("apps.product_checkout.urls")),
+    path("api/integrations/", include(("apps.third_party_apis.api_urls", "third_party_api"), namespace="third_party_api")),
+    path("api/marketplace/product/", include(( "apps.third_party_apis.modules.checkout.urls", "data_marketplace_checkout",), namespace="data_marketplace_checkout")),
+
+
+    # ADMIN
+    path('admin/', admin.site.urls),
+
+    # SUPER ADMINISTRATORS - GDX ADMIN
+    path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
+    path("sa/changelog/", include("apps.changelog.admin_urls")),
+    path("sa/intake/", include("apps.intake.admin_urls", namespace="intake")),
+    path("sa/orders/", include("apps.orders.urls")),
+    path('sa/teams/', include("apps.teams.urls")),
+    path('sa/notifications/', include('apps.notifications.urls', namespace='notifications')),
+    path("sa/people/", include("apps.people.urls")),
+    path("sa/marketplace/", include("apps.marketplace.admin_urls")),
+    path("sa/workflow/", include(("apps.workflow_engine.urls_v2", "workflow"), namespace="workflow",)),
+    path("sa/workflow/", include(("apps.workflow_engine.template_urls", "workflow_templates"), namespace="workflow_templates",)),
+    path("sa/pages/", include("apps.pages.urls")),
+    path("sa/modules/", include("apps.third_party_apis.page_urls"),),
+    path("sa/modules/", include(("apps.third_party_apis.page_urls", "third_party_api_pages"), namespace="third_party_api_pages"),),
+    path("sa/integrations/", include(("apps.third_party_apis.operations_urls", "third_party_api_ops"), namespace="third_party_api_ops"),),
+    path("sa/modules/aws/", include(("apps.third_party_apis.modules.aws.urls", "third_party_api_aws"), namespace="third_party_api_aws"),),
+
+    # PAGES
+    path('', views.HomeView.as_view(), name='home'),
+    path('ai/', include("apps.suggestedAI.urls")),
+
+
+    # APIFY CONSOLE
+    path("sa/apify/v1/", include("apps.apify.apify_api.urls", namespace="apify_api",),),
+    path("sa/apify/sandbox/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
+    path("sa/apify/test/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
+    path("sa/apify/prod/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
+
+    # THIRD PARTY
+    path('select2/', include('django_select2.urls')),
+    path('ckeditor/', include('django_ckeditor_5.urls')),
+]
+
+# ✅ MEDIA ONLY in DEBUG
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Admin Branding
+admin.site.site_header = "GDX"
+admin.site.site_title = "Dashboard"
+admin.site.index_title = "Dashboard"

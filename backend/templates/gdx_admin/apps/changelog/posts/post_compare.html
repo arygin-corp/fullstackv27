@@ -1,0 +1,37 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Compare Releases{% endblock %}
+{% block content %} 
+<div class="container-fluid px-3 px-lg-4 py-4">
+    {% include "gdx_admin/apps/changelog//posts/includes/_post_hero.html" with hero_title="Compare Releases" hero_description="Compare release metadata and structured content sections A through J." hero_metric_label="Available releases" hero_metric=available_posts|length hero_metric_help="Ready for comparison" hero_icon="ti ti-arrows-diff" %}
+    {% include "gdx_admin/apps/changelog//posts/partials/_compare_selector.html" %}
+    {% if comparison %} 
+    <div class="alert alert-info">
+		<i class="ti ti-info-circle me-2"></i>
+		<strong>{{ comparison.before.version }}</strong> compared with <strong>{{ comparison.after.version }}</strong>: {{ comparison.change_count }} changed field{{ comparison.change_count|pluralize }}.
+	</div>
+    {% for change in comparison.summary_changes %}
+    {% include "gdx_admin/apps/changelog/posts/partials/_compare_change.html" with change=change context_label="Release metadata" %}
+    {% endfor %}
+    {% for section in comparison.section_changes %} 
+    
+    <div class="card mb-3">
+		<div class="card-header">
+			<h2 class="h5 mb-0">Section {{ section.section }}</h2>
+		</div>
+		<div class="card-body">
+            {% for change in section.changes %}
+            {% include "gdx_admin/apps/changelog/posts/partials/_compare_change.html" with change=change context_label="Section change" %}
+            {% endfor %}
+        </div>
+	</div>
+    {% empty %} 
+    <div class="alert alert-success">
+		<i class="ti ti-circle-check me-2"></i>The selected releases have no detected section differences.
+	</div>
+    {% endfor %}
+    {% endif %} 
+    <a class="btn btn-light border" href="{% url 'changelog:dashboard' %}">
+		<i class="ti ti-arrow-left me-1"></i>Back to analytics 
+    </a>
+</div>
+{% endblock %}

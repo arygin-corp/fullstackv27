@@ -1,0 +1,1967 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "auction_avg_msrp_prc_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "auction_avg_wholesale_prc_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "auction_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "body_style"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "grade_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "raw_grade"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "raw_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "raw_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "ircm_trn",
+      "elementname": "blackbook_auction_sales",
+      "column_name": "wholesale_first_val_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "business_ccyymm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "dlr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "ltrk_obj_fleet"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "ltrk_obj_non_fleet"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "pcar_obj_fleet"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "pcar_obj_non_fleet"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "sls_sub_ser_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "dlr_sls_obj_trn",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "acctg_series_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "business_ccyymm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "dist_non_retl_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "rgn_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "sales_obj_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "sls_ser_grp_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "sls_sub_ser_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "rgn_sls_obj_trn",
+      "column_name": "whlsale_obj"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "accy_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "business_ccyymm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_a_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_d_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_e_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_f1_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_f2_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_f_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_g_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_h_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_j_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_k_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_l_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_m_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_n_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_other_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_p_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_r_cbu_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_r_cnt_curr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_r_cnt_prior"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_r_cnt_tot"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_r_dom_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_t_cbu_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_t_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_t_dom_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_u_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_w_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_x_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_y_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "catg_z_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "confirm_unshipped"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "db2_row_chg_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dist_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dlcr_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dlr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dlr_typ"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dom_impt_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dscr_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dssl_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "dummy_srl_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "exp_only_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "expnd_dist_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "ext_clr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "fleet_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "fst_clndr_day_mnth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "int_clr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "int_clr_fab_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "lst_clndr_day_mnth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "mdl_bdy_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "mdl_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "mdl_yr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "next_mnth_tvo"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "orig_port_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "plnt_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "port_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "pre_released"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "rgn_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "rtl_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "rvsl_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "sale_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "sls_cls_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "sls_sub_ser_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "srl_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "tm_lease_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "trfr_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "trto_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "unit_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "tms_dly_sls_dtl_trn",
+      "column_name": "whsl_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "accy_array"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "activity_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "area"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "business_mm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "business_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "curr_alloc_num"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "ext_clr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "fleet_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "holdback_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "int_clr_fab_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "internal_trade_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "mdl_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "mdl_yr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "num_factory_accy"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "num_pio_accy"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "price_phase_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "serial_check_dig"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "srl_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "trade_from_area"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "trade_from_dlr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "trade_to_dlr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_dealer_trade_trn",
+      "column_name": "trans_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "accy_array"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "activity_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "area"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "business_mm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "business_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "demo_warr_ext"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "dlr_on_file"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "dlr_sold_by"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "ext_clr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "fleet_acct_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "fleet_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "holdback"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "int_clr_fab_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "mdl_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "mdl_yr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "num_factory_accy"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "num_pio_accy"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "orig_retail_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "prev_reversal"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "price_phase_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "rdr_compl_offset"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "sales_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "serial_check_dig"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "slsprsn_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "slsprsn_uid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "srl_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "trans_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vehicle_sales_trn",
+      "elementname": "vehicle_retail_reversal_trn",
+      "column_name": "trans_sub_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "acquisition_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "acquisition_method"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "certification_bill_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "certification_bill_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "certification_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "driving_wheels"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "excessive_body_damage_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "exterior_color"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "fio_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "frame_unique_body_damage_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "fuel_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "interior_color"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "location_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "miles_at_retail"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "model_attribute_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "odometer_reading"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "ppo_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "region_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "retail_date_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "retail_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "retail_status_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "sales_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "salesman_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "sold_by_dealer_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "used_car_detail_fact_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_car_detail_fact",
+      "column_name": "wheels"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "accessory_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "account_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "activity_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_glass_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_keys_manuals_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_missing_parts_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_replace_parts_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_sheet_paint_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_tire_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "actual_upholestry_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "additional_expenses_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "additional_transport_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "admin_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "auction_arrival_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "auction_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "auction_location_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "auction_ready_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "auction_sale_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "bill_of_lading_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "block_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "capital_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "check_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "check_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "check_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "conditional_approval_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "depreciation_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "display_sale_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "dmv_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "dw_load_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "end_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "error_log_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_glass_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_keys_manuals_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_missing_parts_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_replace_part_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_sheet_paint_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_tire_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "estmtd_upholestry_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "exterior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "fleet_account_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "four_five_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "from_city_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "from_state_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "generated_key"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "gross_sales_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "in_service_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "inspection_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "interior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "last_update_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "license_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "license_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "license_state_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "mileage"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "mileage_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "miscellaneous_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "model_phase_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "net_repurchase_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "net_sales_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "non_return_allowed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "non_return_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "odometer_reading_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "order_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "order_port_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "order_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "out_service_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "previous_update_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "previous_update_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "program_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "purchase_order_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "purchasing_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "rdr_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "rebate_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reconditioning_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reference_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_count"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_date_1"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_date_2"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_date_3"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_reason_code_1"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_reason_code_2"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "reject_reason_code_3"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "repurchase_allowed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "repurchase_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "sales_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "sales_fee_income_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "serial_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "ship_to_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "ship_to_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "source_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "source_delete_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "source_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "source_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "start_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "status_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "stock_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "subsidiary_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "suggest_retail_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "time_in_service"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "title_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "total_expenses_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "total_invoice_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "transfer_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "transport_assistance_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "transport_fee_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "transport_mileage"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "vds_prefix_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "vendor_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+      "dbname": "vlc_ing",
+      "elementname": "used_remarket_veh",
+      "column_name": "vin"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-sales-used-car-aggregated-actuals%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

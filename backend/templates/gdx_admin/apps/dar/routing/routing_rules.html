@@ -1,0 +1,15 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Routing Rules | DAR Administration{% endblock %}
+{% block content %} 
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+    {% if page_obj %}
+    {% include "gdx_admin/apps/dar/routing/includes/_routing_hero.html" with hero_title="Routing Rules" hero_description="Ordered fulfillment and control routing for DAR requests." hero_metric_label="Configured rules" hero_metric=page_obj.paginator.count hero_metric_help="Available routing definitions" hero_icon="ti ti-route" %}
+    {% else %}
+    {% include "gdx_admin/apps/dar/routing/includes/_routing_hero.html" with hero_title="Routing Rules" hero_description="Ordered fulfillment and control routing for DAR requests." hero_metric_label="Configured rules" hero_metric=routing_rules|length hero_metric_help="Available routing definitions" hero_icon="ti ti-route" %}
+    {% endif %}
+    {% include "gdx_admin/apps/dar/routing/includes/_routing_header.html" with page_heading="Routing-rule directory" page_description="Review routing dimensions and their execution priority." show_simulator=True %}{% include "gdx_admin/apps/dar/routing/partials/_routing_scope.html" %}
+    {% include "gdx_admin/apps/dar/routing/partials/_routing_table.html" %}
+    {% include "gdx_admin/apps/dar/routing/partials/_routing_pagination.html" %}
+</div>
+{% endblock %}

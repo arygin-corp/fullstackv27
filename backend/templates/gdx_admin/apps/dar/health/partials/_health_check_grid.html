@@ -1,0 +1,17 @@
+<section class="mb-4">
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+    <div><h2 class="h4 mb-1">Health check results</h2><p class="text-muted mb-0">Each card represents one check supplied by the backend.</p></div>
+    <span class="badge bg-light text-dark border">{{ checks|length }} check{{ checks|length|pluralize }}</span>
+  </div>
+  {% if checks %}
+    <div class="row g-3">
+      {% for check in checks %}
+        <div class="col-12 col-xl-6">
+          {% include "gdx_admin/apps/dar/health/partials/_health_check_card.html" with check=check %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% include "gdx_admin/apps/dar/health/partials/_health_empty_state.html" %}
+  {% endif %}
+</section>

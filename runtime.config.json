@@ -1,0 +1,12 @@
+{
+  "djangoProject": "gdx",
+  "environments": ["local", "dev", "demo", "qa", "stage", "prod"],
+  "primaryRuntime": "asgi",
+  "asgiApplication": "gdx.asgi:application",
+  "wsgiApplication": "gdx.wsgi:application",
+  "frontendApiPrefix": "/api",
+  "artifacts": {
+    "backend": "release/backend",
+    "frontend": "release/frontend"
+  }
+}

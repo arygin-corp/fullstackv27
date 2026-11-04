@@ -1,0 +1,77 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "c.job_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "first_name,last_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "home_shift_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "is_variable_workforce"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "line_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "psh.shift_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "shift_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "shop_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "tm_name"
+    },
+    {
+      "userrolename": "tbdp-namc-tmmi",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmmi_tm_job_versatility",
+      "column_name": "workday_id"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-namc-tmmi%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

@@ -1,0 +1,1241 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+{% load web_tags %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <!-- Select2 CSS -->
+    <link href="{% static 'gdx_theme/libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- CKEditor CSS -->
+    <link href="{% static 'css/ckeditor.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/select2.tag.css' %}" rel="stylesheet" type="text/css" />
+    <style>
+        .form-floating{position:relative;margin-bottom:1rem}
+        .form-floating>.form-control,.form-floating>.form-select{height:calc(3.5rem + 2px);line-height:1.25;padding:1rem .75rem}
+        .form-floating>label{position:absolute;top:0;left:0;height:100%;padding:1rem .75rem;pointer-events:none;border:1px solid transparent;transform-origin:0 0;transition:opacity .1s ease-in-out,transform .1s ease-in-out;color:#6b7280;font-size:1rem;font-weight:400;line-height:1.5;margin:0}
+        .form-floating>.form-control:focus~label,.form-floating>.form-control:not(:placeholder-shown)~label,.form-floating>.form-select~label{opacity:.65;transform:scale(.85) translateY(-.5rem) translateX(.15rem);background-color:#fff;padding:.25rem .5rem;height:auto;top:.6rem;left:0;font-size:.75rem;color:#374151;font-weight:500}
+        label[for="id_status"]{opacity:1;transform:scale(.85) translateY(-.5rem) translateX(.15rem);background-color:#fff;padding:.25rem .5rem;height:auto;top:2.2rem;left:0;font-size:.75rem;color:#374151;font-weight:500;z-index:3}
+        .form-floating .select2-container--default .select2-selection--single .select2-selection__rendered{line-height:1.25;padding-left:0;padding-right:1.5rem;margin-top:10px;color:#374151}
+        .form-floating .select2-container--default .select2-selection--single{height:calc(3.5rem + 2px);border:1px solid #ced4da;border-radius:.375rem;padding:1rem .75rem .625rem;display:flex;align-items:center}
+        .form-floating .select2-container--default .select2-selection--single .select2-selection__arrow{height:calc(3.5rem + 2px);right:.75rem;top:50%;transform:translateY(-50%)}
+        .form-floating .select2-dropdown{border:1px solid #ced4da;border-radius:.375rem;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)}
+        .form-floating .select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#0d6efd;color:#fff}
+        .form-floating .select2-container--default.select2-container--focus .select2-selection--single{border-color:#86b7fe;box-shadow:0 0 0 .25rem rgba(13,110,253,.25)}
+        .form-floating>.form-control:focus,.form-floating>.form-select:focus{border-color:#86b7fe;box-shadow:0 0 0 .25rem rgba(13,110,253,.25)}
+        .form-floating>.form-control.is-invalid,.form-floating>.form-select.is-invalid,.form-floating .select2-container--default .select2-selection--single.is-invalid{border-color:#dc2626}
+        .form-floating>.form-control.is-invalid:focus,.form-floating>.form-select.is-invalid:focus,.form-floating .select2-container--default .select2-selection--single.is-invalid:focus{border-color:#dc2626;box-shadow:0 0 0 .25rem rgba(220,38,38,.25)}
+        .form-floating>.form-control.is-invalid~label,.form-floating>.form-select.is-invalid~label,.form-floating .select2-container.is-invalid~label{color:#dc2626}
+        .required-indicator{color:#dc2626;font-size:.875em}
+        .form-control:disabled,.form-select:disabled{background-color:#f8f9fa;opacity:.6;cursor:not-allowed;pointer-events:none;box-shadow:none!important;border-color:#ced4da!important;transition:none!important}
+        .form-control:disabled:focus,.form-select:disabled:focus{box-shadow:none!important;border-color:#ced4da!important;outline:none!important}
+        .select2-container--disabled .select2-selection--single,.select2-container--disabled .select2-selection--multiple{background-color:#f8f9fa!important;opacity:.6;cursor:not-allowed!important;pointer-events:none;box-shadow:none!important;border-color:#ced4da!important}
+        .select2-container--disabled.select2-container--focus .select2-selection--single,.select2-container--disabled.select2-container--focus .select2-selection--multiple{box-shadow:none!important;border-color:#ced4da!important;outline:none!important}
+        .form-control:disabled:hover,.form-select:disabled:hover{border-color:#ced4da!important;background-color:#f8f9fa!important}
+        .form-floating>label{pointer-events:none}
+        .form-floating>.form-control:disabled~label,.form-floating>.form-select:disabled~label{color:#6c757d!important;opacity:.8}
+        .form-check-input:disabled{pointer-events:none;opacity:.5}
+        .form-check-input:disabled:focus{box-shadow:none!important;outline:none!important}
+        .form-floating>.form-control:disabled,.form-floating>.form-select:disabled,.form-floating .select2-container--disabled .select2-selection--single{background-color:#f8f9fa;opacity:1;cursor:not-allowed}
+        .form-floating>.form-control[readonly]{background-color:#f8f9fa;opacity:1;cursor:not-allowed}
+        .ckeditor-field{margin-bottom:1.5rem}
+        .ckeditor-field .form-label{font-weight:600;color:#374151;margin-bottom:.5rem;display:block;font-size:.875rem}
+        .ckeditor-field .ck-editor{margin-top:0}
+        .ckeditor-field.ck-disabled{opacity:.6;cursor:not-allowed}
+        .ckeditor-field .ck-editor.ck-disabled .ck-editor__editable{background-color:#f8f9fa!important}
+        .regular-field{margin-bottom:1.5rem}
+        .regular-field .form-label{font-weight:600;color:#374151;margin-bottom:.5rem;display:block;font-size:.875rem}
+        .regular-field .form-control{border-radius:.375rem;padding:.75rem;font-size:1rem;height:auto}
+        .form-check-input{width:1.2em;height:1.2em;margin-top:.2em}
+        .form-check-label{font-weight:600;color:#374151;margin-left:.5rem}
+        .data-review-board-section{display:none}
+        .image-form-item{border:1px solid #e2e8f0;padding:1.5rem;border-radius:.5rem;background-color:#f9fafb;margin-bottom:1rem}
+        .image-preview-container{display:flex;flex-wrap:wrap;gap:15px;margin-top:10px}
+        .image-preview-item{width:120px;height:120px;border:1px solid #ddd;border-radius:8px;overflow:hidden;position:relative;background:#f8f9fa}
+        .image-preview-item img{width:100%;height:150px;object-fit:cover}
+        .image-preview-item .remove-img{position:absolute;top:2px;right:2px;background:rgba(255,0,0,.7);color:white;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer}
+        .empty-form{display:none}
+        .row>div[class*="col-"]{margin-bottom:1rem}
+        .field-disabled{background-color:#f8f9fa!important;cursor:not-allowed!important;opacity:.6}
+        .sample-data-section {background-color: #f8f9fa;padding: 1.5rem;border-radius: 0.5rem;border: 1px solid #e9ecef;}
+        .sample-data-row {align-items: center;}
+        .sample-data-row .form-control[readonly] {background-color: #e9ecef;border: 0px solid #ced4da;font-weight: 600;width: 100%;position: relative;right: 4px;}
+        .sample-data-row .form-select {background-color: #fff;}
+        #add-sample-data-btn:disabled {opacity: 0.6;cursor: not-allowed;}
+        .section-title {color: #495057;font-weight: 600;border-bottom: 2px solid #dee2e6;padding-bottom: 0.5rem;}
+        .sample-data-row .form-control, .sample-data-row .form-select {background-color: #fff;}
+        .glossary-id-input {font-size: 0.9rem;}
+        .clear-line-btn {color: #f46a6a; padding: 0.25rem 0.5rem;font-size: 1.3rem;position: relative;right: 20px;}
+        .clear-line-btn:hover {color: #dc3545;}
+        #add-sample-data-btn:disabled {opacity: 0.6;cursor: not-allowed;}
+        .section-title {color: #495057;font-weight: 600;border-bottom: 2px solid #dee2e6;padding-bottom: 0.5rem;}
+        #clear-all-sample-data-btn {transition: all 0.3s ease;}
+        #clear-all-sample-data-btn:hover {background-color: #dc3545;color: white;}
+        @media (max-width: 768px) {.sample-data-row .col-md-1,.sample-data-row .col-md-3,.sample-data-row .col-md-2 {margin-bottom: 0.5rem;}
+            .clear-line-btn {width: 100%;margin-top: 0.5rem;}
+        }
+        .source-toggle-container {display: flex;align-items: center;margin-bottom: -8px;gap: 10px;}
+        .source-switch {position: relative;display: inline-block;width: 88px;height: 30px;}
+        .source-switch input { opacity: 0; width: 0; height: 0;}
+        .source-slider {position: absolute;cursor: pointer;top: 0; left: 0; right: 0; bottom: 0;background-color: #34c38f; /* Success - Collibra */transition: .4s;border-radius: 30px;}
+        .source-slider:before {position: absolute;content: "";height: 22px; width: 22px;left: 6px; bottom: 4px;background-color: white;transition: .4s;border-radius: 50%;z-index: 2;}
+        input:checked + .source-slider {background-color: #f46a6a; /* Danger - Axon */}
+        input:checked + .source-slider:before {transform: translateX(70px);}
+        .source-slider:after {content: 'Collibra';color: white;font-size: 11px;font-weight: bold;position: absolute;top: 50%;right: 12px;transform: translateY(-50%);}
+        input:checked + .source-slider:before {left: -10px;}
+        input:checked + .source-slider:after {content: 'Axon';left: 12px;right: auto;}
+        .id-column-axon { display: none; } /* Hidden by default */
+        .center-content {display: flex;justify-content: center;align-items: center;text-align: center;}
+        .sort-display {text-align: center !important;font-weight: 600 !important;}
+        .clear-line-btn {display: flex;align-items: center;justify-content: center;padding: 0.25rem 0.5rem;min-width: 32px;height: 32px;transition: all 0.2s ease;}
+        .clear-line-btn:hover {transform: scale(1.05);}
+        #sample-data-container {min-height: 100px;padding: 5px;border-radius: 4px;}
+        .sample-data-row {transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;}
+        .tall-select2 .select2-selection--single {height: 36px !important;line-height: 38px !important;}
+        .collibra-id-input {width: 90% !important;}
+        .axon-id-input {width: 90% !important;}
+        .select2-container--default .select2-selection--single .select2-selection__rendered {line-height: 36px !important;}
+    </style>
+{% endblock %}
+
+{% block contents %}
+<div class="container-fluid mx-auto px-4 py-8" style="margin-bottom: 10px;">
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <form method="post" enctype="multipart/form-data" style="padding: 40px 40px;">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ image_formset.media }}
+
+            <!-- Image Upload Section -->
+            <label class="block text-gray-700 text-sm font-bold mb-2" style="font-size: 14px;">
+                Product Images <small class="text-muted">(Max 5)</small>
+            </label>
+            {{ image_formset.management_form }}
+            <div id="image-formset-container">
+                {% for iform in image_formset %}
+                    <div class="image-form-row">
+                        {{ iform.id }}
+                        <div class="row align-items-center">
+                            <div class="col-md-6 image-preview-container">
+                                {% if iform.instance.image %}
+                                    <img src="{{ iform.instance.image.url }}" class="img-thumbnail img-preview">
+                                {% else %}
+                                    <img src="{% static 'images/placeholder.png' %}" class="img-thumbnail img-preview">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-2">
+                                {{ iform.image }}
+                            </div>
+                            <div class="col-md-3">
+                                {{ iform.alt_text }}
+                            </div>
+                            {% if iform.instance.pk %}
+                                <div class="col-md-1 text-danger">
+                                    {{ iform.DELETE }} <small>Remove</small>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div style="margin: 24px 0px;">
+                <button type="button" class="btn btn-primary mt-2" id="add-image-btn">
+                    <i class="bx bx-plus"></i> Add Image
+                </button>
+            </div>
+
+            <hr class="my-6">
+
+            <div class="row">
+                {% for field in form %}
+                    {% if field.name == 'sample_data' %}
+                        <!-- Skip sample_data field - will be handled separately -->
+                    {% elif field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
+                        {# CKEditor fields WITHOUT floating labels #}
+                        <div class="col-12">
+                            <div class="ckeditor-field">
+                                <label for="{{ field.id_for_label }}" class="form-label">
+                                    {{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}
+                                </label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ field.errors.0 }}
+                                    </div>
+                                {% endif %}
+                                {% if field.help_text %}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% elif field.name == 'data_review_required' or field.name == 'is_active' %}
+                        {# Boolean/checkbox fields - styled like screenshot #}
+                        <div class="col-md-6">
+                            <div class="field-wrapper">
+                                <label class="form-label">
+                                    {{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}
+                                </label>
+                                <div class="form-check">
+                                    <input type="checkbox"
+                                        class="form-check-input{% if field.errors %} is-invalid{% endif %}"
+                                        id="{{ field.id_for_label }}"
+                                        name="{{ field.name }}"
+                                        value="true"
+                                        {% if field.value %}checked{% endif %}>
+                                    <label class="form-check-label" for="{{ field.id_for_label }}" id="{{ field.name }}-status-label">
+                                        {% if field.name == 'is_active' %}
+                                            {% if field.value %}Active{% else %}Inactive{% endif %}
+                                        {% else %}
+                                            {{ field.label }}
+                                        {% endif %}
+                                    </label>
+                                    {% if field.errors %}
+                                        <div class="invalid-feedback">
+                                            {{ field.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                    {% if field.help_text %}
+                                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% elif field.name == 'slug' or field.name == 'sku' or field.name == 'price' %}
+                        {# Your existing disabled floating fields #}
+                        <div class="{% if field.name == 'slug' %}col-12{% else %}col-md-6{% endif %}">
+                            <div class="form-floating mb-3">
+                                {% if field.name == 'price' %}
+                                    <input type="number"
+                                        step="0.01"
+                                        min="0"
+                                        class="form-control field-disabled{% if field.errors %} is-invalid{% endif %}"
+                                        id="{{ field.id_for_label }}"
+                                        name="{{ field.name }}"
+                                        value="{{ field.value|default:'0.00' }}"
+                                        placeholder="Price"
+                                        readonly
+                                        disabled>
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                {% else %}
+                                    <input type="{{ field.field.widget.input_type }}"
+                                        class="form-control field-disabled{% if field.errors %} is-invalid{% endif %}"
+                                        id="{{ field.id_for_label }}"
+                                        name="{{ field.name }}"
+                                        value="{{ field.value|default:'' }}"
+                                        placeholder="{{ field.label }}"
+                                        readonly
+                                        disabled>
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                {% endif %}
+
+                                {% if field.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ field.errors.0 }}
+                                    </div>
+                                {% endif %}
+                                {% if field.help_text %}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        {# Other floating fields #}
+                        <div class="{% if field.name == 'status' or field.name == 'category' or field.name == 'priority' or field.name == 'classification' %}col-md-6{% else %}col-12{% endif %}">
+                            <div class="form-floating mb-3">
+                                {% if field.field.widget.input_type == 'select' or field.name == 'status' %}
+                                    <select class="form-select{% if field.errors %} is-invalid{% endif %}"
+                                            id="{{ field.id_for_label }}"
+                                            name="{{ field.name }}">
+                                        <option value="">-- Select {{ field.label }} --</option>
+                                        {% for choice in field.field.choices %}
+                                            <option value="{{ choice.0 }}"{% if field.value == choice.0 %} selected{% endif %}>
+                                                {{ choice.1 }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                {% elif field.field.widget.input_type == 'textarea' %}
+                                    <textarea class="form-control{% if field.errors %} is-invalid{% endif %}"
+                                            id="{{ field.id_for_label }}"
+                                            name="{{ field.name }}"
+                                            rows="4"
+                                            placeholder="Enter {{ field.label|lower }}">{{ field.value|default:'' }}</textarea>
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                {% else %}
+                                    <input type="{{ field.field.widget.input_type }}"
+                                        class="form-control{% if field.errors %} is-invalid{% endif %}"
+                                        id="{{ field.id_for_label }}"
+                                        name="{{ field.name }}"
+                                        value="{{ field.value|default:'' }}"
+                                        placeholder="Enter {{ field.label|lower }}">
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                {% endif %}
+
+                                {% if field.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ field.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <!-- Sample Data Section - Smart Sort Order Management -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="sample-data-section" style="margin-bottom: 2rem;">
+                        <div class="section-title mb-3 d-flex justify-content-between align-items-center mb-6" style="padding-bottom: 22px !important;">
+                            <h5 class="mb-0 col-8">Sample Data</h5>
+                            <div class="source-toggle-container class-2">
+                                <label class="source-switch">
+                                    <input type="checkbox" id="global-data-source-toggle">
+                                    <span class="source-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Safe rendering of sample_data field -->
+                            {% if form.sample_data %}
+                                {{ form.sample_data.as_hidden }}
+                            {% else %}
+                                <input type="hidden" name="sample_data_manual" id="id_sample_data_manual" value="">
+                            {% endif %}
+                            
+                            <!-- Header Row -->
+                            <div class="row mb-2 header-row">
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Sort</label>
+                                </div>
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Source</label>
+                                </div>
+                                <div class="col-md-3 header-collibra-column">
+                                    <label class="form-label fw-bold">Source ID</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">Field Name</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">Field Value</label>
+                                </div>
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Actions</label>
+                                </div>
+                            </div>
+
+                            <!-- Sample Data Fields Container -->
+                            <div id="sample-data-container">
+                                <!-- Initial field will be added by JavaScript -->
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="mt-3">
+                                <button type="button" class="btn btn-primary btn-sm" id="add-sample-data-btn">
+                                    <i class="bx bx-plus"></i> Add More Sample Data
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="clear-all-sample-data-btn">
+                                    <i class="bx bx-trash"></i> Clear All
+                                </button>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-6">
+                <div>
+                    <button type="submit" class="btn btn-soft-success waves-effect waves-light">Update Product</button>
+                    <a href="{% url 'marketplace:detail' product.pk %}" class="btn btn-soft-secondary waves-effect waves-light">Cancel</a>
+                </div>
+                <div>
+                    <a href="{% url 'marketplace:delete' product.pk %}" class="btn btn-danger waves-effect waves-light">Delete</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Template hidden in a JS variable to avoid cluttering HTML -->
+<script type="text/template" id="image-form-template">
+    <div class="image-form-row new-image-form">
+        <div class="row align-items-center">
+            <div class="col-md-2 image-preview-container">
+                <img src="{% static 'images/placeholder.png' %}" class="img-thumbnail img-preview">
+            </div>
+            <div class="col-md-4">
+                <input type="file" name="productimage_set-__prefix__-image" class="form-control image-input" accept="image/*" id="id_productimage_set-__prefix__-image">
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="productimage_set-__prefix__-alt_text" class="form-control" placeholder="Alt text" id="id_productimage_set-__prefix__-alt_text">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-link text-danger remove-form-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</script>
+{% endblock %}
+
+{% block extra_javascript %}
+    {{ block.super }}
+    <script src="{% static 'gdx_theme/libs/select2/dist/js/select2.min.js' %}"></script>
+    <!-- CKEditor Script -->
+    <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static '/js/ckeditor.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            // $('.collibra-id-input, .axon-id-input').attr('readonly', true).css({
+            //     'background-color': '#e9ecef',
+            //     'pointer-events': 'none'
+            // });
+            // === CORE FUNCTIONALITY: SELECT2, CKEditor, Classification Logic ===
+            // 1. Initialize Select2 on all select elements with floating label support
+            $('select').not('.select2-hidden-accessible').each(function() {
+                var $select = $(this);
+                var $floatingContainer = $select.closest('.form-floating');
+
+                $select.select2({
+                    placeholder: '-- Select an option --',
+                    allowClear: true,
+                    width: '100%',
+                    dropdownParent: $floatingContainer.length ? $floatingContainer : $(document.body),
+                    templateResult: function(state) {
+                        if (!state.id) {
+                            return state.text;
+                        }
+                        return $('<span>').text(state.text);
+                    },
+                    templateSelection: function(state) {
+                        if (!state.id) {
+                            return state.text;
+                        }
+                        return $('<span>').text(state.text);
+                    }
+                });
+
+                // Handle floating label state for Select2
+                $select.on('select2:select select2:clear', function(e) {
+                    var $label = $floatingContainer.find('label');
+                    if ($select.val() || $select.find('option:selected').val()) {
+                        $floatingContainer.addClass('select2-has-value');
+                        $label.css({
+                            'opacity': '0.65',
+                            'transform': 'scale(0.85) translateY(-0.5rem) translateX(0.15rem)',
+                            'background-color': '#fff',
+                            'padding': '0.25rem 0.5rem',
+                            'height': 'auto',
+                            'top': '0.6rem',
+                            'left': '0rem',
+                            'font-size': '0.75rem',
+                            'color': '#374151',
+                            'font-weight': '500',
+                            'z-index': '3'
+                        });
+                    } else {
+                        $floatingContainer.removeClass('select2-has-value');
+                        $label.css({
+                            'opacity': '',
+                            'transform': '',
+                            'background-color': '',
+                            'padding': '',
+                            'height': '',
+                            'top': '',
+                            'left': '',
+                            'font-size': '',
+                            'color': '',
+                            'font-weight': '',
+                            'z-index': ''
+                        });
+                    }
+                });
+
+                // Set initial state
+                if ($select.val()) {
+                    $select.trigger('select2:select');
+                }
+            });
+
+            // 2. Classification field logic for intended_use field only
+            const classificationField = $('#id_classification');
+            const defaultText = "Not required for products with a data classification of Public or Protected";
+
+            function toggleIntendedUse() {
+                const selectedText = classificationField.find('option:selected').text().toLowerCase().trim();
+                const selectedVal = classificationField.val() ? classificationField.val().toString().toLowerCase() : "";
+
+                const isExcluded = selectedText.includes('public') ||
+                                   selectedText.includes('protected') ||
+                                   selectedVal === 'public' ||
+                                   selectedVal === 'protected' ||
+                                   selectedText === 'public' ||
+                                   selectedText === 'protected';
+
+                // Handle ONLY intended use field as requested
+                const intendedUseField = $('#id_intended_use');
+                const intendedUseEditor = intendedUseField.parent().find('.ck-editor__editable').get(0);
+
+                if (isExcluded) {
+                    // Disable intended use field and set default text
+                    if (intendedUseEditor && intendedUseEditor.ckeditorInstance) {
+                        intendedUseEditor.ckeditorInstance.setData(`<p>${defaultText}</p>`);
+                        intendedUseEditor.ckeditorInstance.setReadOnly(true);
+                        $(intendedUseEditor).css('background-color', '#eff2f7').css('opacity', '1');
+                    } else {
+                        intendedUseField.val(defaultText).prop('readonly', true);
+                    }
+                    intendedUseField.closest('.ckeditor-field').addClass('ck-disabled');
+                } else {
+                    // Enable intended use field and clear default text
+                    if (intendedUseEditor && intendedUseEditor.ckeditorInstance) {
+                        const currentContent = intendedUseEditor.ckeditorInstance.getData();
+                        const shouldClear = currentContent.includes("Not required for products");
+
+                        if (shouldClear) {
+                            intendedUseEditor.ckeditorInstance.setData('');
+                        }
+                        intendedUseEditor.ckeditorInstance.setReadOnly(false);
+                        $(intendedUseEditor).css('background-color', '#fff').css('opacity', '1');
+                    } else {
+                        const currentContent = intendedUseField.val();
+                        const shouldClear = currentContent.includes("Not required for products");
+
+                        if (shouldClear) {
+                            intendedUseField.val('');
+                        }
+                        intendedUseField.prop('readonly', false);
+                    }
+                    intendedUseField.closest('.ckeditor-field').removeClass('ck-disabled');
+                }
+            }
+
+            // Enhanced event handling for classification
+            classificationField.on('change select2:select', function() {
+                toggleIntendedUse();
+            });
+
+            classificationField.on('select2:clear', function() {
+                toggleIntendedUse();
+            });
+
+            // Multiple timeouts to ensure it runs after Select2 initialization
+            setTimeout(function() {
+                toggleIntendedUse();
+            }, 500);
+
+            setTimeout(function() {
+                toggleIntendedUse();
+            }, 1500);
+
+            setTimeout(function() {
+                toggleIntendedUse();
+            }, 3000);
+
+            // 3. Data Review Board Logic
+            const drRequired = $('#id_data_review_required');
+            const drStatus = $('#id_data_review_status');
+            const drTeam = $('#id_data_review_team');
+            const drTeamId = "{{ data_review_board_team_id }}";
+
+            function toggleDRLogic() {
+                const drRequired = $('#id_data_review_required');
+                const drStatus = $('#id_data_review_status');
+                const drTeam = $('#id_data_review_team');
+                
+                // Select the wrapper div based on the column layout in your edit.html
+                const drTeamContainer = drTeam.closest('.col-12, .col-md-6'); 
+                const drStatusLabel = $('label[for="id_data_review_status"]');
+                
+                const DR_BOARD_ID = "13";
+                const DR_BOARD_NAME = "Data Review Board Team";
+
+                if (drRequired.is(':checked')) {
+                    // --- REQUIRED: ON ---
+                    drTeamContainer.show(); // Show the team field
+                    drStatusLabel.text('Data Review Board Status');
+
+                    // Allow changes to set logic values
+                    drStatus.prop('disabled', false);
+                    drTeam.prop('disabled', false);
+
+                    drStatus.val('pending').trigger('change');
+
+                    // Logic to ensure "Data Review Board Team (13)" is selected
+                    if (drTeam.find(`option[value="${DR_BOARD_ID}"]`).length === 0) {
+                        const newOption = new Option(DR_BOARD_NAME, DR_BOARD_ID, true, true);
+                        drTeam.append(newOption).trigger('change');
+                    } else {
+                        drTeam.val(DR_BOARD_ID).trigger('change');
+                    }
+
+                    // Lock fields back
+                    drStatus.prop('disabled', true);
+                    drTeam.prop('disabled', true);
+
+                } else {
+                    // --- REQUIRED: OFF ---
+                    drTeamContainer.hide(); // Hide the team field completely
+                    drStatusLabel.text('Note Required'); // Update status label
+
+                    // Set status value to not_required
+                    drStatus.prop('disabled', false);
+                    drStatus.val('not_required').trigger('change');
+                    drStatus.prop('disabled', true);
+
+                    // Clear team value
+                    drTeam.val('').trigger('change');
+                }
+
+                // Refresh Select2 visual state for the disabled/enabled status
+                if (drStatus.data('select2')) drStatus.trigger('change.select2');
+                if (drTeam.data('select2')) drTeam.trigger('change.select2');
+            }
+
+            // Initialization
+            $(document).ready(function() {
+                toggleDRLogic(); // Run once on load
+                $('#id_data_review_required').on('change', toggleDRLogic); // Run on change
+            });
+
+            // Run once on load to set initial state based on database value
+            toggleDRLogic(); 
+            
+            drRequired.on('change', toggleDRLogic);
+            // Run whenever the checkbox changes
+            $('#id_data_review_required').on('change', toggleDRLogic);
+
+            // 4. Image form logic
+            const maxImages = 5;
+            const imageContainer = $('#image-formset-container');
+            const imageAddButton = $('#add-image-btn');
+            const totalImageForms = $('#id_productimage_set-TOTAL_FORMS');
+            const imageTemplate = $('#image-form-template').html();
+
+            function updateImageButtonVisibility() {
+                const currentCount = $('.image-form-row').length;
+                if (currentCount >= maxImages) imageAddButton.hide();
+                else imageAddButton.show();
+            }
+
+            imageAddButton.click(function() {
+                const formIdx = parseInt(totalImageForms.val());
+                const newFormHtml = imageTemplate.replace(/__prefix__/g, formIdx);
+                imageContainer.append(newFormHtml);
+                totalImageForms.val(formIdx + 1);
+                imageContainer.find('.new-image-form').last().find('.image-input').click();
+                updateImageButtonVisibility();
+            });
+
+            $(document).on('change', '.image-input, input[type="file"]', function(e) {
+                const file = e.target.files[0];
+                const preview = $(this).closest('.image-form-row').find('.img-preview');
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        preview.attr('src', event.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            $(document).on('click', '.remove-form-btn', function() {
+                $(this).closest('.image-form-row').remove();
+                updateImageButtonVisibility();
+            });
+
+            updateImageButtonVisibility();
+
+            // 5. Active field dynamic label
+            function updateActiveLabel() {
+                const checkbox = $('#id_is_active');
+                const label = $('#is_active-status-label');
+                if (checkbox.length && label.length) {
+                    label.text(checkbox.is(':checked') ? 'Active' : 'Inactive');
+                }
+            }
+
+            updateActiveLabel();
+            $(document).on('change', '#id_is_active', updateActiveLabel);
+
+            // === SAMPLE DATA MANAGEMENT WITH SMART SORT ORDER ===
+            
+            let sampleDataCount = 0;
+            const maxSampleData = 10;
+            const sortOrder = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+            
+            // Sort order management system
+            let availableSortLetters = [];
+            let usedSortLetters = [];
+
+            // Function to get the next available sort letter
+            function getNextSortLetter() {
+                console.log('Getting next sort letter. Available:', availableSortLetters, 'Used:', usedSortLetters);
+                
+                // First, try to reuse an available letter
+                if (availableSortLetters.length > 0) {
+                    const letter = availableSortLetters.sort()[0];
+                    availableSortLetters = availableSortLetters.filter(l => l !== letter);
+                    usedSortLetters.push(letter);
+                    console.log('Reusing letter:', letter);
+                    return letter;
+                }
+                
+                // If no available letters, use the next one in sequence
+                if (usedSortLetters.length === 0) {
+                    usedSortLetters.push('A');
+                    console.log('First letter: A');
+                    return 'A';
+                }
+                
+                // Get the last used letter and find the next one
+                const sortedUsed = [...usedSortLetters].sort();
+                const lastLetter = sortedUsed[sortedUsed.length - 1];
+                const nextIndex = sortOrder.indexOf(lastLetter) + 1;
+                
+                if (nextIndex < sortOrder.length) {
+                    const nextLetter = sortOrder[nextIndex];
+                    usedSortLetters.push(nextLetter);
+                    console.log('Next letter in sequence:', nextLetter);
+                    return nextLetter;
+                }
+                
+                console.log('Fallback to A');
+                return 'A';
+            }
+
+            // Function to release a sort letter when row is removed
+            function releaseSortLetter(letter) {
+                if (letter && sortOrder.includes(letter)) {
+                    availableSortLetters.push(letter);
+                    usedSortLetters = usedSortLetters.filter(l => l !== letter);
+                    availableSortLetters = [...new Set(availableSortLetters)];
+                    console.log('Released letter:', letter);
+                }
+            }
+
+            // Function to reorganize sort letters after removal
+            function reorganizeSortLetters() {
+                console.log('Reorganizing sort letters...');
+                
+                const currentRows = $('.sample-data-row');
+                const currentLetters = [];
+                
+                // Collect current sort letters
+                currentRows.each(function() {
+                    const letter = $(this).find('.sort-letter').val();
+                    if (letter) currentLetters.push(letter);
+                });
+                
+                console.log('Current letters before reorganize:', currentLetters);
+                
+                // Sort letters alphabetically
+                currentLetters.sort();
+                
+                // Reassign letters in order
+                currentRows.each(function(index) {
+                    const newLetter = sortOrder[index];
+                    const oldLetter = $(this).find('.sort-letter').val();
+                    
+                    if (oldLetter !== newLetter) {
+                        $(this).find('.sort-letter').val(newLetter);
+                        $(this).find('.sort-display').val(newLetter);
+                        $(this).attr('data-sort-letter', newLetter);
+                        console.log(`Changed row ${index} from ${oldLetter} to ${newLetter}`);
+                    }
+                });
+                
+                // Update tracking arrays
+                usedSortLetters = [...currentLetters];
+                availableSortLetters = availableSortLetters.filter(l => !usedSortLetters.includes(l));
+                
+                console.log('After reorganize - Available:', availableSortLetters, 'Used:', usedSortLetters);
+            }
+
+            // Function to sync data with the hidden sample_data field
+            function syncSampleDataToForm() {
+                const sampleDataEntries = [];
+                
+                $('.sample-data-row').each(function() {
+                    const index = $(this).data('index');
+                    const collibraId = $(this).find(`input[name="collibra_id_${index + 1}"]`).val();
+                    const fieldNameId = $(this).find(`select[name="field_name_${index + 1}"]`).val();
+                    const fieldValueId = $(this).find(`select[name="field_value_${index + 1}"]`).val();
+                    
+                    if (collibraId || fieldNameId || fieldValueId) {
+                        sampleDataEntries.push({
+                            collibra_id: collibraId,
+                            field_name_id: fieldNameId,
+                            field_value_id: fieldValueId
+                        });
+                    }
+                });
+                
+                if ($('#id_sample_data').length) {
+                    $('#id_sample_data').val(JSON.stringify(sampleDataEntries));
+                } else if ($('#id_sample_data_manual').length) {
+                    $('#id_sample_data_manual').val(JSON.stringify(sampleDataEntries));
+                }
+            }
+
+            // Create sample data field with smart sort letter
+            function createSampleDataField() {
+                const sortLetter = getNextSortLetter();
+                const index = $('.sample-data-row').length;
+                
+                return `
+                    <div class="sample-data-row row mb-3" data-index="${index}" data-sort-letter="${sortLetter}">
+                        <div class="col-md-1 center-content">
+                            <input type="text" class="form-control fw-bold text-center sort-display" value="${sortLetter}" readonly disabled style="background-color: #f8f9fa; cursor: not-allowed; opacity: 0.6;">
+                            <input type="hidden" class="sort-letter" value="${sortLetter}">
+                        </div>
+                        <div class="col-md-1 center-content">
+                            <div class="source-toggle-container">
+                                <label class="source-switch">
+                                    <input type="checkbox" class="line-source-toggle" data-index="${index}">
+                                    <span class="source-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                         <div class="col-md-3 col-collibra-${index}">
+                            <input type="text" name="collibra_id_${index + 1}" 
+                                class="form-control collibra-id-input" 
+                                placeholder="Collibra ID" 
+                                tabindex="-1">
+                        </div>
+                        <div class="col-md-3 col-axon-${index}" style="display:none;">
+                            <input type="text" name="axon_id_${index + 1}" 
+                                class="form-control axon-id-input" 
+                                placeholder="Axon ID" 
+                                tabindex="-1">
+                        </div>
+                        <div class="col-md-3 tall-select2">
+                            <select name="field_name_${index + 1}" class="form-select field-name-select" data-index="${index + 1}"></select>
+                        </div>
+                        <div class="col-md-3 tall-select2">
+                            <select name="field_value_${index + 1}" class="form-select field-value-select"></select>
+                        </div>
+                        <div class="col-md-1 center-content">
+                            <a type="button" class="clear-line-btn">
+                                <i class="bx bx-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Clear sample data line with sort letter management
+            function clearSampleDataLine(lineElement) {
+                console.log('Clearing row with sort letter:', lineElement.find('.sort-letter').val());
+                
+                const sortLetter = lineElement.find('.sort-letter').val();
+                if (sortLetter) {
+                    releaseSortLetter(sortLetter);
+                }
+                
+                lineElement.fadeOut(200, function() {
+                    $(this).remove();
+                    sampleDataCount--;
+                    
+                    if (sampleDataCount < maxSampleData) {
+                        $('#add-sample-data-btn').show();
+                    }
+                    
+                    reorganizeSortLetters();
+                    syncSampleDataToForm();
+                    
+                    console.log('Row removed. Available letters:', availableSortLetters);
+                    console.log('Used letters:', usedSortLetters);
+                });
+            }
+
+            // Add sample data field
+            function addSampleDataField() {
+                if (sampleDataCount < maxSampleData) {
+                    // 1. Create and append the new row first
+                    const newFieldHtml = createSampleDataField();
+                    $('#sample-data-container').append(newFieldHtml);
+                    
+                    const newRow = $('#sample-data-container').children().last();
+                    const index = $('.sample-data-row').length - 1;
+                    const sortLetter = newRow.find('.sort-letter').val();
+
+                    // 2. Adjust styling
+                    document.querySelectorAll('.sample-data-row.row').forEach(r => r.style.setProperty('--bs-gutter-x', '4px'));
+                    newRow.attr('data-index', index);
+                    
+                    // 3. Define the select elements AFTER they are added to the DOM
+                    const glossaryIdInput = newRow.find('.collibra-id-input');
+                    const fieldNameSelect = newRow.find('.field-name-select');
+                    const fieldValueSelect = newRow.find('.field-value-select');
+                    const lineToggle = newRow.find('.line-source-toggle');
+                    
+                    lineToggle.attr('data-index', index);
+                    
+                    // 4. Handle Global Toggle State
+                    const globalIsAxon = $('#global-data-source-toggle').is(':checked');
+                    lineToggle.prop('checked', globalIsAxon);
+                    if (globalIsAxon) {
+                        newRow.find(`.col-collibra-${index}`).hide();
+                        newRow.find(`.col-axon-${index}`).show();
+                    }
+                    
+                    // 5. Initialize Select2
+                    fieldNameSelect.select2({
+                        placeholder: '-- Select Field Name --',
+                        allowClear: true,
+                        width: '100%'
+                    });
+                    
+                    fieldValueSelect.select2({
+                        placeholder: '-- Select Field Value --',
+                        allowClear: true,
+                        width: '100%'
+                    });
+                    
+                    // 6. Load Initial Data Independently
+                    loadFieldNames(fieldNameSelect);
+                    loadFieldValues(fieldValueSelect);
+                    
+                    // 7. Define Event Handlers
+                    // Add change events
+                    fieldNameSelect.on('change', function() {
+                        const selectedFieldNameId = $(this).val();
+                        const row = $(this).closest('.sample-data-row'); // Find the specific row container
+                        const correspondingFieldValueSelect = row.find('.field-value-select');
+                        
+                        // 1. Get the IDs from the selected option's data attributes
+                        const selectedOption = $(this).find('option:selected');
+                        const collibraId = selectedOption.attr('data-collibra-id') || selectedOption.data('collibra-id');
+                        const axonId = selectedOption.attr('data-axon-id') || selectedOption.data('axon-id');
+                        
+                        // 2. Impute (Fill) the IDs into the respective input boxes in this row
+                        if (collibraId !== undefined) {
+                            row.find('.collibra-id-input').val(collibraId);
+                        }
+                        if (axonId !== undefined) {
+                            row.find('.axon-id-input').val(axonId);
+                        }
+                        
+                        // 3. Reload values for this specific row (preserving existing selection if valid)
+                        const currentFieldValue = correspondingFieldValueSelect.val();
+                        loadFieldValues(correspondingFieldValueSelect, selectedFieldNameId, currentFieldValue);
+                        
+                        // 4. Update the hidden form field with new row data
+                        syncSampleDataToForm();
+                    });
+                    
+                    glossaryIdInput.on('input', syncSampleDataToForm);
+                    fieldValueSelect.on('change', syncSampleDataToForm);
+                    
+                    newRow.find('.clear-line-btn').on('click', function() {
+                        clearSampleDataLine($(this).closest('.sample-data-row'));
+                    });
+                    
+                    sampleDataCount++;
+                    
+                    if (sampleDataCount >= maxSampleData) {
+                        $('#add-sample-data-btn').hide();
+                    }
+                }
+            }
+
+            // Clear all sample data
+            function clearAllSampleData() {
+                $('#sample-data-container').empty();
+                sampleDataCount = 0;
+                availableSortLetters = [];
+                usedSortLetters = [];
+                $('#add-sample-data-btn').show();
+                addSampleDataField();
+                syncSampleDataToForm();
+            }
+
+            // 1. Global toggle handler (at the top of the Sample Data section)
+            $('#global-data-source-toggle').on('change', function() {
+                const isAxon = $(this).is(':checked');
+                
+                // Switch Header Titles
+                if (isAxon) {
+                    $('.header-collibra-column').hide();
+                    $('.header-axon-column').show();
+                } else {
+                    $('.header-axon-column').hide();
+                    $('.header-collibra-column').show();
+                }
+
+                // Switch all existing rows to match Global
+                $('.sample-data-row').each(function() {
+                    const row = $(this);
+                    const index = row.data('index');
+                    const lineToggle = row.find('.line-source-toggle');
+                    
+                    lineToggle.prop('checked', isAxon);
+                    
+                    if (isAxon) {
+                        row.find(`.col-collibra-${index}`).hide();
+                        row.find(`.col-axon-${index}`).show();
+                    } else {
+                        row.find(`.col-axon-${index}`).hide();
+                        row.find(`.col-collibra-${index}`).show();
+                    }
+                });
+            });
+
+            // 2. Individual line toggle handler (inside addSampleDataField or as a delegated event)
+            $(document).on('change', '.line-source-toggle', function() {
+                const row = $(this).closest('.sample-data-row');
+                const index = row.data('index');
+                const isAxon = $(this).is(':checked');
+                
+                if (isAxon) {
+                    row.find(`.col-collibra-${index}`).hide();
+                    row.find(`.col-axon-${index}`).show();
+                } else {
+                    row.find(`.col-axon-${index}`).hide();
+                    row.find(`.col-collibra-${index}`).show();
+                }
+            });
+
+            // Event handlers
+            $('#add-sample-data-btn').on('click', addSampleDataField);
+            $('#clear-all-sample-data-btn').on('click', clearAllSampleData);
+
+            // Initialize with first field
+            addSampleDataField();
+            // Enhanced reorganize function that maintains proper order
+            function reorganizeSortLetters() {                
+                const currentRows = $('.sample-data-row');
+                
+                // Reassign sort letters in the new order
+                currentRows.each(function(index) {
+                    const newLetter = sortOrder[index];
+                    const oldLetter = $(this).find('.sort-letter').val();
+                    
+                    if (oldLetter !== newLetter) {
+                        $(this).find('.sort-letter').val(newLetter);
+                        $(this).find('.sort-display').val(newLetter);
+                        $(this).attr('data-sort-letter', newLetter);
+                        console.log(`Updated row ${index}: ${oldLetter} → ${newLetter}`);
+                    }
+                });
+                
+                // Update the tracking arrays
+                usedSortLetters = [];
+                availableSortLetters = [];
+                
+                currentRows.each(function() {
+                    const letter = $(this).find('.sort-letter').val();
+                    if (letter) usedSortLetters.push(letter);
+                });
+                
+                // Find available letters
+                sortOrder.forEach(letter => {
+                    if (!usedSortLetters.includes(letter)) {
+                        availableSortLetters.push(letter);
+                    }
+                });
+                
+                console.log('Used:', usedSortLetters);
+            }
+
+            // Also reinitialize after clearing rows
+            function clearSampleDataLine(lineElement) {
+                console.log('Clearing row with sort letter:', lineElement.find('.sort-letter').val());
+                
+                const sortLetter = lineElement.find('.sort-letter').val();
+                if (sortLetter) {
+                    releaseSortLetter(sortLetter);
+                }
+                
+                lineElement.fadeOut(200, function() {
+                    $(this).remove();
+                    sampleDataCount--;
+                    
+                    if (sampleDataCount < maxSampleData) {
+                        $('#add-sample-data-btn').show();
+                    }
+                    
+                    reorganizeSortLetters();
+                    syncSampleDataToForm();
+                });
+            }
+        });
+
+        // === TRASH BUTTON HANDLER (IMMEDIATE REMOVAL) ===
+        $(document).off('click.clearline').on('click.clearline', '.clear-line-btn', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const row = $(this).closest('.sample-data-row');
+            console.log('Removing row:', row.data('index'));
+            
+            // Remove immediately without confirmation
+            row.fadeOut(200, function() {
+                $(this).remove();
+                sampleDataCount--;
+                
+                if (sampleDataCount < maxSampleData) {
+                    $('#add-sample-data-btn').show();
+                }
+                
+                reorganizeSortLetters();
+                syncSampleDataToForm();
+            });
+        });
+
+        // === API FUNCTIONS ===
+        function loadFieldNames(selectElement) {
+            $.ajax({
+                url: '/marketplace/api/field-names/',
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    const currentValue = selectElement.val();
+                    selectElement.empty().append(new Option('-- Select Field Name --', ''));
+                    
+                    if (data && data.length > 0) {
+                        data.forEach(function(fieldName) {
+                            if (fieldName.id && fieldName.name) {
+                                const option = new Option(fieldName.name, fieldName.id);
+                                // Store IDs in attributes so they persist during Select2 refreshes
+                                option.setAttribute('data-collibra-id', fieldName.collibra_id || '');
+                                option.setAttribute('data-axon-id', fieldName.axon_id || '');
+                                selectElement.append(option);
+                            }
+                        });
+                    }
+                    if (currentValue) selectElement.val(currentValue);
+                    selectElement.trigger('change.select2');
+                }
+            });
+        }
+
+        function loadFieldValues(selectElement, fieldNameId = null, preserveValue = null) {
+            let url = '/marketplace/api/field-values/';
+            if (fieldNameId) {
+                url += '?field_name=' + fieldNameId;
+            }
+            
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    const currentVal = preserveValue || selectElement.val();
+                    selectElement.empty().append(new Option('-- Select Field Value --', ''));
+                    
+                    let valueStillExists = false;
+                    if (data && data.length > 0) {
+                        data.forEach(function(fieldValue) {
+                            if (fieldValue.id && fieldValue.value) {
+                                selectElement.append(new Option(fieldValue.value, fieldValue.id));
+                                if (String(fieldValue.id) === String(currentVal)) {
+                                    valueStillExists = true;
+                                }
+                            }
+                        });
+                    }
+                    
+                    if (valueStillExists) {
+                        selectElement.val(currentVal);
+                    }
+                    selectElement.trigger('change.select2');
+                }
+            });
+        }
+
+        function getFieldNameDetail(fieldNameId, callback) {
+            console.log('Getting field name detail for ID:', fieldNameId);
+            
+            $.ajax({
+                url: `/marketplace/api/field-name/${fieldNameId}/`,
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    console.log('Field name detail response:', data);
+                    if (callback) callback(data);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to get field name detail:', error);
+                    if (callback) callback(null);
+                }
+            });
+        }
+
+        // === DOCUMENT READY FINALIZATIONS ===
+        /* Inside your <script> block in edit.html */
+        function toggleIntendedUseLogic() {
+            const classificationField = $('#id_classification');
+            const classificationText = classificationField.find('option:selected').text().trim();
+            const textarea = document.querySelector('#id_intended_use');
+            const editor = textarea ? textarea.ckeditorInstance : null;
+
+            // Use logic: Disable for Public/Protected, Enable/Clear for others
+            const shouldDisable = (classificationText === "Public" || classificationText === "Protected");
+
+            if (editor) {
+                if (shouldDisable) {
+                    // 1. Lock the editor
+                    editor.enableReadOnlyMode('classification-lock');
+                    
+                    // Visual feedback
+                    const container = textarea.nextElementSibling;
+                    if (container) {
+                        container.style.opacity = '0.6';
+                        container.style.pointerEvents = 'none';
+                    }
+                } else {
+                    // 2. Unlock the editor
+                    editor.disableReadOnlyMode('classification-lock');
+                    
+                    // 3. REMOVE default text if it's NOT Public/Protected
+                    editor.setData('');
+                    
+                    // Reset visual state
+                    const container = textarea.nextElementSibling;
+                    if (container) {
+                        container.style.opacity = '1';
+                        container.style.pointerEvents = 'auto';
+                    }
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            // Initial load: Set state based on Django variable
+            // We wrap it in a timeout because CKEditor initializes dynamically
+            console.log('Document ready, checking classification...');
+            setTimeout(function() {
+                toggleIntendedUse();
+            }, 2000);
+
+            // Dynamic change: Watch for user selection
+            $('#id_classification').on('change', function() {
+                toggleIntendedUseLogic();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingSelects = document.querySelectorAll('.form-floating select');
+            floatingSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    if (this.value) {
+                        this.classList.add('has-value');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('has-value');
+                        this.classList.remove('is-valid');
+                    }
+                });
+
+                if (select.value) {
+                    select.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+    </script>
+{% endblock %}

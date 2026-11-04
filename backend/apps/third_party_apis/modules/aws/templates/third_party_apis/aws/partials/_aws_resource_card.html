@@ -1,0 +1,10 @@
+<article class="card h-100">
+  <div class="card-body">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-3">
+      <span class="avatar bg-primary-subtle text-primary rounded-circle"><i class="ti ti-cloud-cog"></i></span>
+      {% include "third_party_apis/aws/partials/_aws_resource_status_badge.html" with resource=resource only %}
+    </div>
+    <h3 class="h6 mb-1"><a href="{% url 'third_party_api_aws:resource_detail' resource.pk %}">{{ resource.name }}</a></h3>
+    <p class="text-muted small mb-0">{{ resource.resource_type.service.name }} / {{ resource.resource_type.name }}</p>
+  </div>
+</article>
