@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "assigneesFromCodeOwners": true,
+  "branchPrefix": "feature/",
+  "enabledManagers": [
+    "terraform", "terragrunt"
+  ],
+  "prBodyColumns": [
+    "Blueprint Release",
+    "Update",
+    "Change"    
+  ],
+  "prBodyDefinitions": {
+    "Blueprint Release": "[{{{newValue}}}](https://{{{depName}}}/releases/tag/{{{newValue}}})"
+  },
+  "prBodyNotes": [
+    "{{#if isMajor}}:warning: This includes a major/breaking Blueprint change. Check release notes for details :warning:{{/if}}"
+  ],
+  "prBodyTemplate": "{{{notes}}}{{{header}}}{{{table}}}{{{warnings}}}{{{configDescription}}}{{{controls}}}{{{footer}}}",
+  "prFooter": "For assistance with this PR, contact Chofer Blueprints on Chofer Care channel on Teams",
+  "prHeader": "Chofer Blueprints Update",
+  "printConfig": true,
+  "reviewersFromCodeOwners": true,
+  "semanticCommits": "disabled",
+  "separateMajorMinor": false
+}

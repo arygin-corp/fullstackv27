@@ -1,0 +1,35 @@
+// subdomains-one.component.scss & subdomains-two.component.scss
+.card-title {
+    margin-bottom: 0.75rem !important;
+    font-size: 14px !important;
+}
+
+.card-text {
+  font-size: 14px !important;
+  height: 43.5px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2.2;
+  -webkit-box-orient: vertical;
+}
+
+.card-body {
+    min-height: 140px !important;
+    padding: 0.5rem;
+}
+
+.align-right {
+    float: right;
+}
+
+.btn-primary {
+    color: #04fdff !important;
+    border-color: #222 !important;
+    background-color: #222 !important;
+}
+
+.btn-primary:hover {
+    color: #04fdff !important;
+    border-color: #222 !important;
+    background-color: #222 !important;
+}

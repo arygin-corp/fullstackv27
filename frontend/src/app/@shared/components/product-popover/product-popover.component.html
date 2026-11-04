@@ -1,0 +1,23 @@
+<div class="overlay" *ngIf="showPopA">
+    <div class="popover-custom">
+        <div class="content">
+        {{ message.length > 110 ? message.substring(0, 110) : message }}
+        <a class="text-primary2" href="javascript:void(0)" 
+            *ngIf="message.length > 111" 
+            (click)="ShowModalPopup('A')" 
+            [ngClass]="showModalPopA?'text-primary-daek':'text-primary2'">......&nbsp;&nbsp;Read More
+        </a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" *ngIf="showModalPopA">
+    <p class="text-center" style="font-size: 14px;margin-bottom:0px">The Defintiton of</p>
+    <p class="text-center" style="font-size: 22px;">
+        <strong>{{ name}}</strong>
+    </p>
+    <hr style="border: 0.5px solid #fff;">
+    <p class="text-center">{{ message }}</p>
+</div>
+    
+<a class="close-popup" href="javascript:void(0)" *ngIf="showModalPopA" (click)="HideModalPopup('A')"></a>

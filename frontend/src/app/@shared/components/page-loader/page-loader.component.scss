@@ -1,0 +1,155 @@
+.site-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Transparent background - no background-color set */
+  background: transparent;
+  padding: 20px;
+  position: relative;  /* Ensure proper stacking */
+  z-index: 1000;    
+}
+
+#loader-canvas {
+  display: block;
+  width: 96px;
+  height: 96px;
+  /* Ensure canvas itself is transparent */
+  background: transparent;
+}
+
+#loader-canvas {
+  display: block;
+  width: 96px;
+  height: 96px;
+  background: transparent;
+}
+
+#loader-text {
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px; /* Reduced font size for smaller loader */
+  font-weight: bold;
+  color: #1EECB2;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(30, 236, 178, 0.5);
+  min-height: 16px;
+  background: transparent;
+}
+
+
+
+/*
+ * Animation module with all animation code
+ */
+.anim-text-flow,
+.anim-text-flow-hover:hover {
+  /*
+   * Animation variables
+   */
+  $animationSteps: 20;
+  $animationDuration: 50;
+  $animationElement: span;
+  $animationElementsCount: 100;
+  $delayBetweenLetters: 0.2;
+
+  /*
+   * Elements settings
+   */
+  #{$animationElement} {
+    animation-name: anim-text-flow-keys;
+    animation-duration: #{$animationDuration}s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+
+  /*
+   * Keyframe loop
+   */
+  @keyframes anim-text-flow-keys {
+    @for $i from 0 through $animationSteps {
+      #{percentage($i * (1 / $animationSteps))} {
+        color: hsla(random(365), 60, 60, 1);
+      }
+    }
+  }
+
+  /*
+   * Element animation delay loop
+   */
+  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+
+  @for $i from 1 through $animationElementsCount {
+    #{$animationElement}:nth-of-type(#{$i}) {
+      animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
+    }
+  }
+}
+
+////////////////////////////
+// ANIMATED VIKKI
+///////////////////////////
+html {
+  background: #fff;
+  margin: 0 4rem;
+}
+
+.header {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 6rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600; 
+}
+
+.scrolling-words-box {
+  height: 3rem;
+  margin: auto;
+  overflow: hidden;
+  
+  ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 4s infinite;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 3rem;
+      list-style: none; 
+    }
+  }
+}
+
+// Variables
+$item-count: 5;
+
+@keyframes scrollUp {
+  @for $i from 1 through ($item-count - 1) {
+    #{($i * 25) - 10%}, #{$i * 25%} {
+      transform: translateY((-100% / $item-count) * $i);
+    }
+  }
+}

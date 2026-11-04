@@ -1,0 +1,21 @@
+site_name: SPA with Angular - Reference Architecture Blueprint - Information
+site_description: "Detailed information about the blueprint, including specs, a well architected score, and more"
+docs_dir: _docs
+
+nav:
+  - Specs:  index.md
+  - Test Cases: test-cases.md
+  - Well Architected Score:
+    - Summary: scorecard/summary.md
+    - Score Explanation: scorecard/references/score-explanation.md
+    - Pillars:
+      - Cost Optimization: scorecard/pillars/cost-optimization.md
+      - Operational Excellence: scorecard/pillars/operational-excellence.md
+      - Performance Efficiency: scorecard/pillars/performance-efficiency.md
+      - Reliability: scorecard/pillars/reliability.md
+      - Security: scorecard/pillars/security.md
+      - Security Accreditation: scorecard/pillars/security-accreditation.md
+      - Sustainability: scorecard/pillars/sustainability.md
+
+plugins:
+  - techdocs-core

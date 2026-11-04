@@ -1,0 +1,32 @@
+{
+    "/api": {
+        "target": "http://localhost:8000",
+        "secure":false,
+        "changeOrigin":true
+    },
+    "/media": {
+        "target": "http://localhost:8000",
+        "secure": false
+    },
+    "/static": {
+        "target": "http://localhost:8000",
+        "secure": false
+    },
+    "/api/now/table/sc_request?sysparm_fields=number&sysparm_limit=50&sysparm_query=requested_for.u_ad_object_id%51e5289e-8e24-40f4-a11f-cb908914f585%5Eopened_by%3D00e741ae1bae0c5029207550cd4bcbec": {
+        "target": "https://tmnatest.service-now.com",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/api": ""
+        }
+    },
+    "/api/sn_sc": {
+        "target": "https://tmnatest.service-now.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": { 
+            "^/api/sn_sc": "/api/sn_sc" }
+    }
+}

@@ -1,0 +1,82 @@
+<div class="roadmap-header">
+  <h4 class="title">Roadmap</h4>
+  <p class="subtitle">A high-level strategic plan outlining vision, priorities and milestones.</p>
+
+  <div class="fiscal-selection">
+    <label class="form-label">Fiscal start</label>
+    <div class="d-flex align-items-center gap-2">
+      <select class="form-select w-auto" [(ngModel)]="selectedFiscalYear" (ngModelChange)="onFiscalYearChange($event)">
+        <option *ngFor="let y of fiscalYears" [ngValue]="y">April 1, {{ y }} - March 31, {{ y + 1 }}</option>
+      </select>
+      <!-- <div class="text-muted">Selected: April 1, {{ selectedFiscalYear }}</div> -->
+    </div>
+  </div>
+</div>
+<!-- rest of the timeline markup remains unchanged -->
+
+<div class="roadmap-root">
+  <div class="timeline-wrap" *ngIf="currentYear$ | async as year">
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <ng-container *ngFor="let month of getAllMonths(); let i = index; trackBy: trackByMonth">
+        <div class="timeline-item" [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0" >
+          <div class="card month-card">
+            <div class="card-body">
+              <div class="month-meta">
+                <div class="month-name">{{ getMonthDateDisplay(month) }}</div>
+                <div class="month-index">M{{ month.monthIndex + 1 }}</div>
+              </div>
+
+              <div class="event">
+                <div class="event-title" *ngIf="month.event; else noEventBlock">
+                  {{ month.event.title }}
+                </div>
+                <ng-template #noEventBlock>
+                  <div class="no-event">No planned event</div>
+                </ng-template>
+                <div class="event-desc" *ngIf="month.event?.description">{{ month.event.description }}</div>
+              </div>
+
+              <div class="actions">
+                <button class="btn btn-sm btn-edit" (click)="onEditEvent(month)">Edit</button>
+              </div>
+            </div>
+            <div class="timeline-node" aria-hidden="true">
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="editingMonth = null"></button>
+        </div>
+        <div class="modal-body" *ngIf="editingMonth">
+          <div class="mb-3">
+            <label class="form-label">Month</label>
+            <input class="form-control" [value]="getMonthDateDisplay(editingMonth)" readonly />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input class="form-control" [(ngModel)]="editingEvent.title" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="4" [(ngModel)]="editingEvent.description"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="editingMonth = null">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="saveEvent()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

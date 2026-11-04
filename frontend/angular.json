@@ -1,0 +1,372 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "gdx": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": ["minimatch"],
+            "outputPath": "dist/edmp-gdx-client-app/browser",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/version.json",
+              {
+                "glob": "**/*",
+                "input": "node_modules/photoswipe/dist",
+                "output": "assets/vendor/photoswipe"
+              },
+              {
+                "glob": "{webfonts/**/*,css/all.min.css}",
+                "input": "node_modules/@fortawesome/fontawesome-free",
+                "output": "assets/vendor/fontawesome"
+              },
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/angular2-multiselect-dropdown/themes/default.theme.css",
+              "src/styles.scss",
+              "src/google-translate-hide.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/mammoth/mammoth.browser.min.js"
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
+          },
+          "configurations": {
+            "local": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
+            },
+            "demo": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "25mb",
+                  "maximumError": "50mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.demo.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              }
+            },
+            "dev": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "25mb",
+                  "maximumError": "50mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              }
+            },
+            "qa": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "25mb",
+                  "maximumError": "50mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              }
+            },
+            "stage": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "25mb",
+                  "maximumError": "50mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stage.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              }
+            },
+            "prod": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "25mb",
+                  "maximumError": "50mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              }
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "local"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "gdx:build:prod",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "development": {
+              "browserTarget": "gdx:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "dev": {
+              "browserTarget": "gdx:build:dev",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "local": {
+              "browserTarget": "gdx:build:local",
+              "proxyConfig": "src/proxy.conf.json"
+            }
+          },
+          "defaultConfiguration": "local"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gdx:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": []
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/gdx/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "prod": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "prod"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "local": {
+              "browserTarget": "gdx:build:local",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "demo": {
+              "browserTarget": "gdx:build:demo",
+              "serverTarget": "gdx:server:demo"
+            },
+            "dev": {
+              "browserTarget": "gdx:build:dev",
+              "serverTarget": "gdx:server:dev"
+            },
+            "qa": {
+              "browserTarget": "gdx:build:qa",
+              "serverTarget": "gdx:server:qa"
+            },
+            "stage": {
+              "browserTarget": "gdx:build:stage",
+              "serverTarget": "gdx:server:stage"
+            },
+            "prod": {
+              "browserTarget": "gdx:build:prod",
+              "serverTarget": "gdx:server:prod"
+            }
+          },
+          "defaultConfiguration": "local"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "prod": {
+              "browserTarget": "gdx:build:prod",
+              "serverTarget": "gdx:server:prod"
+            },
+            "development": {
+              "browserTarget": "gdx:build:development",
+              "serverTarget": "gdx:server:development"
+            }
+          },
+          "defaultConfiguration": "prod"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "gdx",
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@angular-eslint/schematics"
+  }
+}

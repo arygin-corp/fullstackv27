@@ -1,0 +1,55 @@
+.widget-title {
+    padding: 0;
+    margin-bottom: 2.2rem;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-transform: inherit;
+    line-height: 1;
+    color: #fff;
+}
+
+.footer .widget-title {
+    border-bottom: none;
+}
+
+.footer-middle .widget-body {
+    padding: 8px 0 0;
+    color: #999;
+}
+
+ul {
+    padding: 0px;
+}
+
+ul .widget-body {
+    padding: 0px;
+}
+
+ul .widget-body li  {
+    list-style: none;
+}
+
+ul .widget-body li a {
+    position: relative;
+    color: #999;
+    left: 50px;
+    line-height: 1.2;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #999;
+    font-size: 14px;
+}
+
+a:hover {
+    color: #04fdff;
+}
+
+ul li  {
+    list-style: none;
+    height: 34px;
+}

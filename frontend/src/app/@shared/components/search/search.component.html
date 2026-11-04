@@ -1,0 +1,102 @@
+<div class="search__body">
+    <form [formGroup]="form" class="search__form" style="background-color: #fff;border-radius: 5px; border: 2px #bfbfbf;">
+        <input
+            class="search__input"
+            name="search"
+            [placeholder]="'Search over 500 Data Products.....'" 
+            aria-label="Site search"
+            type="text"
+            autocomplete="off"
+            formControlName="query"
+            (keydown.escape)="escape.next()"
+            (focus)="openSuggestion()"
+            onfocus="this.value=''" 
+            #input>
+        <button class="search__button search__button--type--submit" type="submit">
+            <app-icon name="search-20" size="20"></app-icon>
+        </button>
+        <button
+            *ngIf="location === 'mobile-header'"
+            class="search__button search__button--type--close"
+            type="button"
+            (click)="closeButtonClick.next()">
+            <app-icon name="cross-20" size="20"></app-icon>
+        </button>
+        <div class="search__border"></div>
+    </form>
+
+    <div class="search__suggestions suggestions suggestions--location--{{ location }} did_you_mean_header">
+        <div class="col-12 no-gutters">
+            <div class="col-12 did_you_mean" *ngIf="didYouMean" style="padding: 12px 20px; background: #f8f9fa; border-bottom: 1px solid #e1e9f1;">
+                <p style="margin-bottom: 0; font-size: 14px; font-weight: 400; color: #3d464d;">
+                    Did you mean: 
+                    <span (click)="applySuggestion(didYouMean)" style="color: #007bff; cursor: pointer; text-decoration: underline; font-weight: 700;">
+                        {{ didYouMean }}
+                    </span>?
+                </p>
+            </div>
+            <div class="col-12">
+                <ul *ngIf="suggestedProducts.length > 0" class="suggestions__list" style="padding: 12px 0px;">
+                    <li *ngFor="let product of suggestedProducts; trackBy: trackByProductId" class="suggestions__item">
+                        <div class="suggestions__item-image product-image">
+                            <div class="product-image__body">
+                                <img class="product-image__img" [src]="product.images && product.images.length ? product.images[0] : 'assets/images/product-placeholder.png'" alt="">
+                            </div> 
+                        </div>
+
+                        <div class="suggestions__item-info">
+                            <a [routerLink]="root.product(product)" class="suggestions__item-name" (click)="closeSuggestion()">
+                                <span [innerHTML]="product.name | highlight:form.value.query"></span>
+                            </a>
+                            <div class="suggestions__item-meta">
+                                <span>
+                                    <span style="font-weight: 600;">SKU: </span> {{ product.sku }}
+                                </span>
+                                <span>
+                                    <span style="font-weight: 600;">Datatype: </span>{{ product.datatype }}
+                                </span>
+                                <span>
+                                    <span style="font-weight: 600;">Data Steward: </span>{{ product.data_steward }}
+                                </span>
+                                <span>
+                                    <span style="font-weight: 600;">Point of Contact: </span>{{ product.poc_name }}
+                                </span>
+                            </div>
+                            <div class="suggestions__item-meta" style="margin-top: 6px;">
+                                <span>{{ product.short_desc }}</span>
+                            </div>
+                        </div>
+
+                        <div *ngIf="location === 'header'" class="suggestions__item-actions">
+                            <!-- <button
+                                type="button"
+                                title="View Details"
+                                class="btn btn-primary btn-sm btn-svg-icon"
+                                [routerLink]="['/marketplace/product', product.slug || product.sku]"
+                                (click)="closeSuggestion(); closeButtonClick.emit()" 
+                                style="width: 100%; padding: 0px 22px;">
+                                View Details
+                            </button> -->
+                            <button
+                                type="button"
+                                title="View Details"
+                                class="btn btn-primary btn-sm btn-svg-icon"
+                                [routerLink]="root.product(product)"
+                                (click)="closeSuggestion()"
+                                style="width: 100%; padding: 0px 22px;">
+                                View Details
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <div *ngIf="totalPages > 1" class="suggestions__pagination">
+                    <app-pagination 
+                        [total]="totalPages" 
+                        [current]="currentPage" 
+                        (pageChange)="onPageChange($event)">
+                    </app-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

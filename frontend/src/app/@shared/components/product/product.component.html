@@ -1,0 +1,792 @@
+<div class="product product--layout--{{ layout }}" *ngIf="product">
+	<!-- ========================================================= -->
+	<!-- Product Name                                              -->
+	<!-- ========================================================= -->
+	<h5 class="product__name">
+		{{ product.name }}
+		<span *ngIf="product.dataSharingAgreement === 'active'">
+			<p class="badge badge-sensitive badge-outlined">Data Sharing Agreement Active</p>
+		</span>
+	</h5>
+	<!-- ========================================================= -->
+	<!-- Product Metadata                                          -->
+	<!-- ========================================================= -->
+	<div class="row" style="margin: 0px;">
+		<ul class="product__meta col-lg-6" style="margin-bottom: 12px;">
+			<!-- <div class="product__rating" style="margin-right: 24px;">
+				<div class="product__rating-stars">
+					<app-rating [value]="product.rating"></app-rating>
+				</div>
+				<div class="product__rating-legend">
+					<a href="" appClick>{{ product.reviews }} Reviews</a>
+					<span>/</span>
+					<a href="" appClick> Write A Review </a>
+				</div>
+			</div> -->
+			<li class="product__meta-platformType"> Datatype: 
+                <span class="text-secondary">
+					<strong>{{ product.datatype }}</strong>
+				</span>
+			</li>
+			<li> SKU: 
+                <strong class="text-secondary">{{ product.sku }}</strong>
+			</li>
+			<li> Organization: 
+                <strong class="text-danger">{{ product.org_abbrev }}</strong>
+			</li>
+		</ul>
+		<div class="product__meta col-lg-6">
+            <!-- Privacy Badges -->
+            <span *ngIf="product?.pi?.toLowerCase() === 'yes'">
+                <p class="badge badge-pi badge-outlined">
+                    PI
+                </p>
+            </span>
+
+            <span *ngIf="product?.sensitive_pi?.toLowerCase() === 'yes'">
+                <p class="badge badge-sensitive-pi badge-outlined">
+                    SPI
+                </p>
+            </span>
+
+            <span *ngIf="!product.badges">
+                <p class="badge badge-sensitive badge-outlined">
+                    Sensitive
+                </p>
+            </span>
+
+
+            <!-- Classification Badges -->
+            <span *ngIf="product.classification === 'Public'">
+                <p
+                    class="
+                        badge
+                        badge-classification
+                        badge-public
+                        badge-outlined
+                    "
+                >
+                    Public
+                </p>
+            </span>
+
+            <span *ngIf="product.classification === 'Protected'">
+                <p
+                    class="
+                        badge
+                        badge-classification
+                        badge-protected
+                        badge-outlined
+                    "
+                >
+                    Protected
+                </p>
+            </span>
+
+            <span *ngIf="product.classification === 'Confidential'">
+                <p
+                    class="
+                        badge
+                        badge-classification
+                        badge-confidential
+                        badge-outlined
+                    "
+                >
+                    Confidential
+                </p>
+            </span>
+
+            <span *ngIf="product.classification === 'Highly Confidential'">
+                <p
+                    class="
+                        badge
+                        badge-classification
+                        badge-highly-confidential
+                        badge-outlined
+                    "
+                >
+                    Highly Confidential
+                </p>
+            </span>
+
+            <span *ngIf="product.classification === 'Legally Privileged'">
+                <p
+                    class="
+                        badge
+                        badge-classification
+                        badge-legally-privileged
+                        badge-outlined
+                    "
+                >
+                    Legally Privileged
+                </p>
+            </span>
+
+
+            <!-- Data Type Badges -->
+            <span *ngIf="product.datatype === 'Dashboards'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-dashboard
+                        badge-outlined
+                    "
+                >
+                    Dashboards
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Reports'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-report
+                        badge-outlined
+                    "
+                >
+                    Reports
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Data Science'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-data-science
+                        badge-outlined
+                    "
+                >
+                    Data Science
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Datasets'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-dataset
+                        badge-outlined
+                    "
+                >
+                    Datasets
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Webservices (APIs)'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-api
+                        badge-outlined
+                    "
+                >
+                    APIs
+                </p>
+            </span>
+
+</div>
+	<!-- ========================================================= -->
+	<!-- Main Product Content                                      -->
+	<!-- ========================================================= -->
+	<div class="product__content">
+		<!-- ===================================================== -->
+		<!-- Product Gallery                                       -->
+		<!-- ===================================================== -->
+		<div class="product__gallery">
+			<app-product-gallery [productLayout]="layout" [images]="product.images"></app-product-gallery>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Product Information                                   -->
+		<!-- ===================================================== -->
+		<div class="product__info">
+			<!-- Wishlist / Compare -->
+			<div class="product__wishlist-compare">
+				<button type="button" class="
+                        btn
+                        btn-sm
+                        btn-light
+                        btn-svg-icon
+                    " data-toggle="tooltip" data-placement="right" title="Wishlist" appClick (click)="addToWishlist()" [ngClass]="{
+                        'btn-loading':
+                            addingToWishlist
+                    }">
+					<app-icon name="wishlist-16" size="16"></app-icon>
+				</button>
+				<button type="button" class="
+                        btn
+                        btn-sm
+                        btn-light
+                        btn-svg-icon
+                    " data-toggle="tooltip" data-placement="right" title="Compare" appClick (click)="addToCompare()" [ngClass]="{
+                        'btn-loading':
+                            addingToCompare
+                    }">
+					<app-icon name="compare-16" size="16"></app-icon>
+				</button>
+			</div>
+			<!-- Description -->
+            <div class="product__description" [innerHTML]="product.brief_desc"></div>
+            
+			<!-- Existing product features -->
+			<ul class="product__features">
+				<li> Speed: 750 RPM </li>
+				<li> Power Source: Cordless-Electric </li>
+				<li> Battery Cell Type: Lithium </li>
+				<li> Voltage: 20 Volts </li>
+				<li> Battery Capacity: 2 Ah </li>
+			</ul>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Product Sidebar                                       -->
+		<!-- ===================================================== -->
+		<div class="product__sidebar">
+			<!-- Existing hidden pricing -->
+			<div class="product__prices collapse">
+				<ng-container *ngIf="product.compareAtPrice">
+					<span class="product__new-price">
+						{{ product.price
+                                | currencyFormat
+                        }}
+					</span>
+					{{ ' ' }}
+					<span class="product__old-price">
+						{{ product.compareAtPrice
+                                | currencyFormat
+                        }}
+					</span>
+				</ng-container>
+				<ng-container *ngIf="!product.compareAtPrice">
+					{{ product.price
+                            | currencyFormat
+                    }}
+				</ng-container>
+			</div>
+			<!-- ================================================= -->
+			<!-- Product Options                                   -->
+			<!-- ================================================= -->
+			<form class="product__options">
+				<!-- ============================================= -->
+				<!-- Product Contacts                              -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                        row
+                    ">
+					<h6> Product Contacts </h6>
+					<div class="col-lg-12">
+						<!-- Data Steward -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="product.data_steward">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Data Steward: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .data_steward
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Contact -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="product.poc_name">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Contact: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .poc_name
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Business Contact -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="
+                                product.business_contact
+                            ">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Business Contact: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .business_contact
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Business SME -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="
+                                product.business_sme
+                            ">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Business SME: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .business_sme
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================= -->
+				<!-- Product Actions                               -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                    ">
+					<div class="product__actions">
+						<!-- Request Access -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--addtocart
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-primary
+                                    btn-lg
+                                    btn-block
+                                " [ngClass]="{
+                                    'btn-loading':
+                                        addingToCart
+                                }" appClick (click)="openRequestForm()"> Request Access </button>
+						</div>
+						<!-- Wishlist -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--wishlist
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-secondary
+                                    btn-svg-icon
+                                    btn-lg
+                                " data-toggle="tooltip" title="Wishlist" [ngClass]="{
+                                    'btn-loading':
+                                        addingToWishlist
+                                }" appClick (click)="addToWishlist()">
+								<app-icon name="wishlist-16" size="16"></app-icon>
+							</button>
+						</div>
+						<!-- Compare -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--compare
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-secondary
+                                    btn-svg-icon
+                                    btn-lg
+                                " data-toggle="tooltip" title="Compare" [ngClass]="{
+                                    'btn-loading':
+                                        addingToCompare
+                                }" appClick (click)="addToCompare()">
+								<app-icon name="compare-16" size="16"></app-icon>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================= -->
+				<!-- Keywords                                      -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                    " *ngIf="
+                        product?.keywords?.length
+                    ">
+					<label class="product__option-label"> Keywords </label>
+					<div class="
+                            product__tags
+                            tags
+                        ">
+						<ul class="tags__list">
+							<li class="keywords" *ngFor="
+                                    let kw
+                                        of product.keywords
+                                ">
+								<a style="
+                                        background-color:
+                                            #dfe2e5
+                                            !important;
+                                    ">
+									{{ kw?.name ||
+                                        kw?.slug ||
+                                        kw
+                                    }}
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- ========================================================= -->
+	<!-- Related / Similar Products                                -->
+	<!-- ========================================================= -->
+	<section *ngIf="hasAssociatedProducts" class="product-associations" aria-labelledby="
+            product-associations-title
+        ">
+		<!-- ===================================================== -->
+		<!-- Header                                                -->
+		<!-- ===================================================== -->
+		<div class="
+                product-associations__header
+            ">
+			<div>
+				<h3 id="
+                        product-associations-title
+                    " class="
+                        product-associations__title
+                    "> Related or Similar Products </h3>
+				<p class="
+                        product-associations__description
+                    "> Select any related or similar products you would like to add to your cart. </p>
+			</div>
+			<!-- Selection Actions -->
+			<div class="product-associations__selection-actions" role="group" aria-label="Associated product selection actions">
+				<button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableRelatedProducts || allRelatedProductsSelected" (click)="selectAllRelatedProducts()"> Select All Related </button>
+				<button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableSimilarProducts || allSimilarProductsSelected" (click)="selectAllSimilarProducts()"> Select All Similar </button>
+				<button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableAssociatedProducts || allAssociatedProductsSelected" (click)="selectAllAssociatedProducts()"> Select All </button>
+				<button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || selectedAssociationCount === 0" (click)="clearAssociatedProductSelection()"> Clear All </button>
+			</div>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Associated Product Cards                              -->
+		<!-- ===================================================== -->
+		<div id="product-associations-list" class="
+                product-associations__list
+            ">
+			<article *ngFor="
+                    let association
+                        of displayedAssociatedProducts;
+                    trackBy: trackAssociationById
+                " class="
+                    product-association
+                " [class.product-association--selected]="
+                    isAssociationSelected(
+                        association
+                    )
+                " [class.product-association--in-cart]="
+                    isAssociatedProductInCart(
+                        association
+                    )
+                ">
+				<div class="
+                        product-association__content
+                    ">
+					<!-- ========================================= -->
+					<!-- Checkbox + Association Badges            -->
+					<!-- ========================================= -->
+					<div class="
+                            product-association__badge-row
+                        ">
+						<!--
+                            Individual checkbox.
+
+                            IMPORTANT:
+                            The checkbox is the FIRST item
+                            in this flex row, so it appears
+                            before Related / Similar.
+                        -->
+						<input #associationCheckbox type="checkbox" class="
+                                product-association__checkbox
+                            " [id]="
+                                'product-association-' +
+                                association.id
+                            " [attr.aria-label]="
+                                getAssociationCheckboxLabel(
+                                    association
+                                )
+                            " [checked]="
+                                isAssociationSelected(
+                                    association
+                                )
+                            " [disabled]="
+                                addingAssociatedProducts ||
+                                isAssociatedProductInCart(
+                                    association
+                                )
+                            " (change)="
+                                toggleAssociation(
+                                    association,
+                                    associationCheckbox.checked
+                                )
+                            ">
+						<!-- Association Type -->
+						<span class="
+                                association-badge
+                            " [ngClass]="
+                                getAssociationBadgeClass(
+                                    association
+                                )
+                            ">
+							{{ getAssociationBadgeLabel(
+                                    association
+                                )
+                            }}
+						</span>
+						<!-- Already in Cart -->
+						<span *ngIf="
+                                isAssociatedProductInCart(
+                                    association
+                                )
+                            " class="
+                                association-badge
+                                association-badge--in-cart
+                            "> Already in Cart </span>
+					</div>
+					<!-- ========================================= -->
+					<!-- Product Image                             -->
+					<!-- ========================================= -->
+					<a class="
+                            product-association__image
+                        " [routerLink]="[
+                            '/marketplace/product',
+                            association
+                                .associated_product
+                                .slug
+                        ]">
+						<img [src]="
+                                association
+                                    .associated_product
+                                    .images?.length
+                                    ?
+                                    association
+                                        .associated_product
+                                        .images[0]
+                                    :
+                                    'assets/images/product_images/default-product.png'
+                            " [alt]="
+                                association
+                                    .associated_product
+                                    .name
+                            ">
+					</a>
+					<!-- ========================================= -->
+					<!-- Product Name                              -->
+					<!-- ========================================= -->
+					<div class="
+                            product-association__name
+                        ">
+						{{ association
+                                .associated_product
+                                .name
+                        }}
+					</div>
+					<!-- ========================================= -->
+					<!-- View Details                              -->
+					<!-- ========================================= -->
+					<a class="
+                            product-association__details
+                            btn
+                            btn-sm
+                            btn-primary
+                            product-card__addtocart
+                        " [routerLink]="[
+                            '/marketplace/product',
+                            association
+                                .associated_product
+                                .slug
+                        ]"> View Details </a>
+				</div>
+			</article>
+		</div>
+		<!-- ===================================================== -->
+		<!-- View More / Show Less                                 -->
+		<!-- ===================================================== -->
+		<div *ngIf="
+                hasMoreAssociatedProducts
+            " class="
+                product-associations__view-more
+            ">
+			<button type="button" class="
+                    btn
+                    btn-link
+                " [attr.aria-expanded]="
+                    showAllAssociatedProducts
+                " aria-controls="
+                    product-associations-list
+                " (click)="
+                    toggleAssociatedProductsView()
+                ">
+				<ng-container *ngIf="
+                        !showAllAssociatedProducts
+                    "> View More <span aria-hidden="true"> ({{ hiddenAssociatedProductCount
+                        }}) </span>
+				</ng-container>
+				<ng-container *ngIf="
+                        showAllAssociatedProducts
+                    "> Show Less </ng-container>
+			</button>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Selection Summary                                     -->
+		<!-- ===================================================== -->
+		<div class="
+                product-associations__summary
+            ">
+			<!-- Selected Count -->
+			<div class="
+                    product-associations__selected-count
+                " aria-live="polite">
+				<ng-container *ngIf="
+                        selectedAssociationCount > 0;
+                        else noAssociatedProductsSelected
+                    ">
+					{{ selectedAssociationCount }}
+					{{ selectedAssociationCount === 1
+                            ? 'product selected'
+                            : 'products selected'
+                    }}
+				</ng-container>
+				<ng-template #noAssociatedProductsSelected> No related or similar products selected </ng-template>
+			</div>
+			<!-- ================================================= -->
+			<!-- Cart Actions                                      -->
+			<!-- ================================================= -->
+			<div class="
+                    product-associations__cart-actions
+                ">
+				<!-- Add Selected -->
+				<button type="button" class="
+                        btn
+                        btn-secondary
+                        product-associations__add-selected
+                    " [disabled]="
+                        addingAssociatedProducts ||
+                        selectedAssociationCount === 0
+                    " (click)="
+                        addSelectedAssociatedProducts()
+                    ">
+					<ng-container *ngIf="
+                            !addingAssociatedProducts;
+                            else addingSelectedProducts
+                        "> Add Selected to Cart </ng-container>
+					<ng-template #addingSelectedProducts> Adding... </ng-template>
+				</button>
+				<!-- Add All -->
+				<button type="button" class="
+                        btn
+                        btn-primary
+                        product-associations__add-all
+                    " [disabled]="
+                        addingAssociatedProducts ||
+                        selectableAssociatedProducts.length === 0
+                    " (click)="
+                        addAllAssociatedProducts()
+                    ">
+					<ng-container *ngIf="
+                            !addingAssociatedProducts;
+                            else addingAllProducts
+                        "> Add All to Cart </ng-container>
+					<ng-template #addingAllProducts> Adding... </ng-template>
+				</button>
+			</div>
+		</div>
+	</section>
+
+    <app-product-associations
+        *ngIf="product"
+        [product]="product"
+        [maxProducts]="15"
+        [initialProductsToShow]="5">
+    </app-product-associations>
+
+    <app-product-end-to-end-solution
+        [solution]="endToEndSolution"
+        [cartProductIds]="cartProductIds"
+        [addingProducts]="addingSolutionProducts"
+        [initialDisplayLimit]="6"
+        (addSelected)="addSelectedSolutionProducts($event)"
+        (addCompleteSolution)="addCompleteSolutionProducts($event)"
+        (quickView)="openSolutionProductQuickView($event)">
+    </app-product-end-to-end-solution>
+</div>
+<!--
+<app-chat
+    [currentProductId]="product.id"
+    [currentProductName]="product.name"
+    pageContext="product"
+></app-chat>
+-->

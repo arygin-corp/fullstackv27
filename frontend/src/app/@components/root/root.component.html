@@ -1,0 +1,28 @@
+<app-loading-bar></app-loading-bar>
+<app-quickview></app-quickview>
+
+<app-mobile-menu></app-mobile-menu>
+
+<app-header-dropcart *ngIf="dropcartType === 'offcanvas'" type="offcanvas"></app-header-dropcart>
+<app-header-dropproduct *ngIf="dropcartType === 'offcanvas'" type="offcanvas"></app-header-dropproduct>
+<app-header-request-access [product]="product" *ngIf="dropcartType === 'offcanvas'" type="offcanvas"></app-header-request-access>
+
+<div class="site">
+    <header class="site__header d-lg-none">
+        <app-mobile-header stickyMode="pullToShow"></app-mobile-header>
+    </header>
+
+    <header *ngIf="headerLayout" class="site__header d-lg-block d-none">
+        <app-header [layout]="headerLayout"></app-header>
+    </header>
+
+    <div class="site__body">
+        <router-outlet></router-outlet>
+    </div>
+
+    <footer class="site__footer">
+        <app-footer></app-footer>
+    </footer>
+</div>
+
+<!-- <app-chat></app-chat> -->

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12" *ngFor="let policy of jsonPolicies" (deferLoad)="policy.show = true">
+        <div class="card col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12" style="padding: 14px; border: 0px; float: left;">
+            <div style="padding: 12px; border-radius: 4px;">
+                <img src="{{policy.imageUrl}}" style="width: 100%;" style="width: 100%; max-width: 175px;">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: 14px; font-weight:bold; margin-bottom: 4px;">{{policy.heading}}</h5>
+                <p class="customDocBadge">{{policy.classification}}</p>
+                <p class="card-text" style="font-size:12px;">
+                    <span>
+                        <span><strong>URL: </strong>{{policy.format}}</span><br>
+                    </span>
+                </p>
+                <span>
+                    <a href="{{policy.linkUrl}}" target="_blank" class="btn btn-dark btn-sm align-right" style="margin-right: 12px; margin-right: 12px; width: 100%; max-width: 110px;">View</a>
+                </span><br>
+            </div>
+        </div>
+    </div>
+</div>
+

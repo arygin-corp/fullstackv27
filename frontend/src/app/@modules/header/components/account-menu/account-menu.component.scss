@@ -1,0 +1,25 @@
+.account-menu {
+    position: relative !important;
+    width: 480px;
+    z-index:999999 !important;
+}
+
+.account-menu__user-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+.account-menu__user-job-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+
+.account-menu__user-email {
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+}
+
+

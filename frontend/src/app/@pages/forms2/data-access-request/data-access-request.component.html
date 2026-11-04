@@ -1,0 +1,155 @@
+<div class="row">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h4 class="display-4 text-center" style="font-size: 28px; font-weight: 700;"> Data Access Request</h4>
+
+      <h6 class="mt-2" style="font-size: 14px; font-weight: 400;">
+        The Data Access Request form service enables authorized users and applications to obtain secure access to approved databases,<br>
+        schemas, tables, and other related data resources. All requests are reviewed according to data governance, privacy, security,<br>
+        and stewardship requirements to ensure appropriate use of enterprise data.
+      </h6>
+    </div>
+  </div>
+</div>
+
+<section class="layout" *ngIf="!loading && schema; else state">
+
+  <aside class="validation-menu" aria-label="Required information">
+    <h2>Required information</h2>
+    <span class="badge">{{ remainingFields.length }} remaining</span>
+    <button type="button" *ngFor="let item of requiredFields; trackBy: trackRequiredField"
+      [class.complete]="item.valid" [class.incomplete]="!item.valid" (click)="focusField(item.control)"
+      (keydown)="handleRequiredFieldKeydown($event, item.control)">
+      <span aria-hidden="true">{{ item.valid ? '✓' : 'x' }}</span> {{ item.label }}
+    </button>
+  </aside>
+
+  <main>
+    <div class="success" *ngIf="success" role="status">{{ success }}</div>
+    <div class="error-banner" *ngIf="fatal" role="alert">{{ fatal }}</div>
+
+    <form *ngIf="!success" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <ng-container *ngFor="let section of schema.sections">
+        <fieldset class="section">
+          <legend *ngIf="section.title">{{ section.title }}</legend>
+          <p *ngIf="section.description">{{ section.description }}</p>
+          <ng-container *ngFor="let field of section.section_fields; trackBy: track">
+            <ng-container *ngTemplateOutlet="fieldTemplate; context: {$implicit: field}"></ng-container>
+          </ng-container>
+        </fieldset>
+      </ng-container>
+
+      <fieldset class="section" *ngIf="schema.unsectioned_fields?.length">
+        <ng-container *ngFor="let field of schema.unsectioned_fields; trackBy: track">
+          <ng-container *ngTemplateOutlet="fieldTemplate; context: {$implicit: field}"></ng-container>
+        </ng-container>
+      </fieldset>
+      
+      <button class="submit" type="submit" [disabled]="submitting || form.invalid" [attr.aria-busy]="submitting">
+        {{ submitting ? 'Submitting...' : 'Submit request' }}
+      </button>
+    </form>
+  </main>
+</section>
+
+<ng-template #fieldTemplate let-field>
+  <div class="field" *ngIf="visible(field) && field.field_type === 'static_text'">
+    <h3>{{ field.label }}</h3>
+    <p>{{ field.default_value }}</p>
+  </div>
+
+  <div class="field" *ngIf="visible(field) && ['text','email','integer','decimal','date','datetime','user_lookup'].includes(field.field_type)">
+    <label [for]="field.key">{{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </label>
+    <input [id]="field.key" [type]="inputType(field)" [formControlName]="field.key" [attr.aria-invalid]="error(field) ? 'true' : 'false'" [attr.aria-describedby]="describedBy(field)">
+    <small *ngIf="field.help_text" [id]="helpId(field)">{{ field.help_text }}</small>
+    <div class="invalid" *ngIf="error(field)" [id]="errorId(field)" role="alert">{{ error(field) }}</div>
+  </div>
+
+  <div class="field" *ngIf="visible(field) && field.field_type === 'textarea'">
+    <label [for]="field.key">{{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </label>
+    <textarea [id]="field.key" [formControlName]="field.key" rows="5" [attr.aria-describedby]="describedBy(field)"></textarea>
+    <small *ngIf="field.help_text" [id]="helpId(field)">{{ field.help_text }}</small>
+    <div class="invalid" *ngIf="error(field)" [id]="errorId(field)" role="alert">{{ error(field) }}</div>
+  </div>
+
+  <div class="field" *ngIf="visible(field) && field.field_type === 'select'">
+    <label [for]="field.key">{{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </label>
+    <select [id]="field.key" [formControlName]="field.key">
+      <option [ngValue]="null">Select an option</option>
+      <option *ngFor="let option of field.options || []" [value]="option.value">{{ option.label }}</option>
+    </select>
+    <div class="invalid" *ngIf="error(field)" role="alert">{{ error(field) }}</div>
+  </div>
+
+  <div class="field" *ngIf="visible(field) && field.field_type === 'multiselect'">
+    <label [for]="field.key">{{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </label>
+    <select [id]="field.key" [formControlName]="field.key" multiple>
+      <option *ngFor="let option of field.options || []" [value]="option.value">{{ option.label }}</option>
+    </select>
+    <div class="invalid" *ngIf="error(field)" role="alert">{{ error(field) }}</div>
+  </div>
+
+  <fieldset class="field choices" *ngIf="visible(field) && field.field_type === 'radio'">
+    <legend>{{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </legend>
+    <label *ngFor="let option of field.options || []">
+      <input type="radio" [formControlName]="field.key" [value]="option.value"> {{ option.label }}</label>
+    <div class="invalid" *ngIf="error(field)" role="alert">{{ error(field) }}</div>
+  </fieldset>
+
+  <div class="field checkbox" *ngIf="visible(field) && field.field_type === 'checkbox'">
+    <div class="dar-terms-card">
+      <div class="dar-terms-header">
+        <h3>Terms of Use Agreement</h3>
+        <p>Please read and accept the Terms of Use, and specifically acknowledge that:</p>
+      </div>
+
+     <div class="dar-terms-content">
+      <ul class="terms-list">
+        <li>I am authorized to use this data solely to perform my job duties.</li>
+        <li>I shall not disclose it to any person or entity unless approved in advance.</li>
+        <li>I shall protect and will not share my access credentials with anyone.</li>
+        <li>I will not use the data for unauthorized, fraudulent, or malicious purposes, or in a manner that could damage, disable, overburden, or impair TMNA systems.</li>
+        <li>I understand that this data should only be used for the use case for which it has been approved. Any use beyond this specific use case requires additional approval.
+        </li>
+        <li>I have read and will comply with all TMNA and Data Enablement &amp; Global Compliance policies pertaining to data.
+          <br />
+          <a href="https://dataenablement.toyota.com/" target="_blank" rel="noopener noreferrer">Visit the Data Enablement Microsite</a>
+        </li>
+      </ul>
+    </div>
+      <!-- <div class="dar-terms-acknowledgement">
+        <label class="acknowledgement-checkbox">
+          <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+          <span>I acknowledge that I have read, understood, and agree to comply with the Terms of Use listed above.</span>
+        </label>
+      </div> -->
+    </div>
+    <div class="terms" *ngIf="isTermsField(field)">
+      <strong>Terms of use</strong>
+      <p>Use approved data only for the authorized business purpose and protect access credentials and sensitive information.</p>
+    </div>
+    <label>
+      <input [id]="field.key" type="checkbox" [formControlName]="field.key"> {{ field.label }} 
+      <span *ngIf="required(field)">*</span>
+    </label>
+    <div class="invalid" *ngIf="error(field)" role="alert">{{ error(field) }}</div>
+  </div>
+</ng-template>
+
+<ng-template #state>
+  <!-- <div class="state">{{ fatal || 'Loading form...' }}</div> -->
+  <div *ngIf="isLoading" class="text-center py-4">
+    <app-page-loader></app-page-loader>
+  </div>
+</ng-template>

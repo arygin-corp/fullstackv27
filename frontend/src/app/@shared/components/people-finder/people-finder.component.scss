@@ -1,0 +1,144 @@
+.pf-wrapper {
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.pf-label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.pf-item.pf-input {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: text;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.pf-text {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 6px 10px;
+  background: transparent;
+  color: #333;
+}
+
+.pf-arrow {
+  margin-left: 8px;
+  color: #777;
+  font-size: 14px;
+}
+
+.pf-clear {
+  background: red;
+  border: none;
+  border-radius: 50px;
+  font-size: 10px;
+  margin-right: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.pf-dropdown {
+  margin-top: 8px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.pf-header {
+  padding: 12px;
+  border-bottom: 1px solid #efefef;
+  font-size: 15px;
+  background: #fafafa;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.pf-list {
+  max-height: 360px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pf-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f2f2f2;
+  transition: background 120ms ease;
+}
+
+.pf-item:last-child {
+  border-bottom: none;
+}
+
+.pf-item-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pf-name {
+  font-size: 16px;
+  line-height: 1;
+  color: #222;
+  font-weight: 400;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-item-sub {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.2;
+}
+
+.pf-company {
+  flex: 0 0 auto;
+  margin-left: 16px;
+  padding-left: 16px;
+  color: #7a7a7a;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.highlighted {
+  background: #f4f8fb;
+}
+
+.pf-notfound {
+  padding: 16px;
+  color: #777;
+  text-align: center;
+}
+
+.pf-loading {
+  padding: 14px;
+  text-align: center;
+  color: #666;
+}
+
+.pf-hidden {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

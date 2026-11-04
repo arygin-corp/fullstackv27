@@ -1,0 +1,28 @@
+<div class="account-menu">
+    <div class="account-menu__divider"></div>
+    <a routerLink="/marketplace/user/dashboard" class="account-menu__user" (click)="closeMenu.emit()" style="text-decoration: none;">
+        <div class="account-menu__user-avatar">
+            <img *ngIf="photo; else noImageFound" [src]="photo" style="width: 150%;max-width: 64px;">
+            <ng-template #noImageFound>
+                <ngx-avatar size="50" bgColor="#222" fgColor="#04fdff" name="{{profile?.givenName}} {{profile?.surname}}"></ngx-avatar>
+            </ng-template>
+        </div>
+
+        <div class="account-menu__user-info" style="margin-left: 20px;">
+            <div class="account-menu__user-name">{{profile?.givenName}} {{profile?.surname}}</div>
+            <div class="account-menu__user-job-title"><small style="font-size: 12px;">{{profile?.jobTitle}}</small></div>
+            <div class="account-menu__user-email"><small>{{profile?.mail}}</small></div>
+        </div>
+    </a>
+    <div class="account-menu__divider"></div>
+    <ul class="account-menu__links">
+        <li><a routerLink="/marketplace/user/profile" (click)="closeMenu.emit()">My Profile</a></li>
+        <li><a routerLink="/marketplace/user/orders" (click)="closeMenu.emit()">Order History</a></li>
+        <!--<li><a routerLink="/marketplace/user/addresses" (click)="closeMenu.emit()">Addresses</a></li>
+        <li><a routerLink="/marketplace/user/password" (click)="closeMenu.emit()">Password</a></li>-->
+    </ul>
+    <div class="account-menu__divider"></div>
+    <ul class="account-menu__links">
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+</div>

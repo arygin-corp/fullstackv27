@@ -1,0 +1,20 @@
+p:after {
+  display:"block";
+  content:"";
+  animation-name:load;
+  animation-duration:3s;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+}
+
+@keyframes load {
+  0%{content:"."}
+  16%{content:".."}
+  32%{content:"..."}
+  64%{content:"...."}
+  80%{content:"....."}
+}
+
+.dars {
+  margin-bottom: 8px;
+}

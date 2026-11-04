@@ -1,0 +1,50 @@
+.jumbotron {
+    background-color: #ededed;
+}
+
+.account-nav {
+    border: 0px solid #f0f0f0;
+    border-radius: 0px;
+}
+
+.account-nav__item--active a {
+    color: #3d464d;
+    font-weight: 500;
+    border-color: #222;
+}
+
+.header_logo img {
+    width: 100%;
+    height: auto;
+}
+  
+/* Header Item Css */
+.navbar-brand {
+    width: 100% !important;
+    max-width: 340px !important;
+}
+
+.main-navbar {
+    background-color: #e5e5e5;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin-bottom: -20px;
+}
+
+.navbar-brand img {
+    width: 200px;
+    height: auto;
+}
+
+.navbar-nav li a {
+    font-size: 14px;
+    color: #7a7a7a;
+    padding: 0px 20px !important;
+    transition: 0.4s;
+}
+
+.navbar-nav li a:hover {
+    color: #383838;
+}

@@ -1,0 +1,254 @@
+<div class="product-tabs" [ngClass]="{'product-tabs--layout--sidebar': withSidebar}">
+    <div class="product-tabs__list">
+        <a href="#tab-resourceurl" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'resource'}"
+           (click)="$event.preventDefault(); tab = 'resource'">Resources</a>
+
+        <a href="#tab-tables" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'tables'}"
+           (click)="$event.preventDefault(); tab = 'tables'">Tables & Columns</a>
+
+        <a href="#tab-description" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'description'}"
+           (click)="$event.preventDefault(); tab = 'description'">Description</a>
+
+        <!-- <a href="#tab-sample" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'sample'}"
+           (click)="$event.preventDefault(); tab = 'sample'">Sample Data</a>-->
+
+
+        <a href="#tab-included" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'included'}"
+           (click)="$event.preventDefault(); tab = 'included'">What's Included</a>
+
+        <a href="#tab-intended" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'intended'}"
+           (click)="$event.preventDefault(); tab = 'intended'">Intended Use</a>
+
+        <!-- <a href="#tab-reviews" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'reviews'}"
+           (click)="$event.preventDefault(); tab = 'reviews'">Reviews</a> -->
+
+        <!-- <a href="#tab-documentation" class="product-tabs__item"
+           [ngClass]="{'product-tabs__item--active': tab === 'documentation'}"
+           (click)="$event.preventDefault(); tab = 'documentation'">Documentation</a> -->
+    </div>
+    <div class="product-tabs__content">
+        <div class="product-tabs__pane" id="tab-description" [ngClass]="{'product-tabs__pane--active': tab === 'description'}">
+            <div class="typography">
+                <h3>Brief Description</h3>
+                <p style="font-size: 18px;">{{product.brief_desc}}</p>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-resource" [ngClass]="{'product-tabs__pane--active': tab === 'resource'}">
+            <div class="typography">
+                <h3>Resources</h3>
+                <p style="font-size: 18px;"><strong>{{product.catalog}}: </strong><span><a class="product-tab-links" href="{{product.resource_url}}">{{product.name}}</a></span></p>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-sample" [ngClass]="{'product-tabs__pane--active': tab === 'sample'}">
+            <!-- Wrapped in col-lg-12 for full width -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="spec">
+                        <div class="spec__section">
+                            <h3 class="typography">Sample Data
+                                <div class="spec__disclaimer text-danger mt-3" style="font-size: 16px; font-weight: normal; line-height: 1.5;">
+                                    <strong>Note: </strong> The results displayed below are a representative sample intended to demonstrate the <strong>data schema</strong>, 
+                                    <strong>formatting</strong>, and <strong>available field types</strong>. These values are illustrative and do not reflect live production 
+                                    data. Upon approval, you will receive access to the complete, updated dataset, api, or data science models as described in the technical documentation.
+                                </div>
+                            </h3>
+                            <!-- Header Row with 5/7 split -->
+                            <div class="row py-2" style="border-bottom: 1px solid #ebebeb;">
+                                <div class="col-lg-5" style="color:#3d464d; font-size: 18px;"><strong>Sample Field Names</strong></div>
+                                <div class="col-lg-7" style="color:#3d464d; font-size: 18px;"><strong>Sample Field Values</strong></div>
+                            </div>
+                            <div class="row py-2" *ngFor="let item of sampleData" style="border-bottom: 1px solid #ebebeb;">
+                                <div class="col-lg-5" 
+                                    style="font-size: 18px;" 
+                                    [style.cursor]="item.axonid ? 'pointer' : 'default'"
+                                    [ngClass]="item.axonid ? (item.showPop ? 'text-danger' : 'text-primary') : 'text-dark'" 
+                                    (click)="item.axonid ? ShowPopover(item.sort) : null">
+                                    {{ item.name }}
+                                </div>
+                                
+                                <app-product-popover 
+                                    [message]="item.popupText" 
+                                    [name]="item.popupName" 
+                                    *ngIf="item.showPop">
+                                </app-product-popover>
+                                
+                                <a class="close-popover" 
+                                href="javascript:void(0)" 
+                                *ngIf="item.showPop" 
+                                (click)="HidePopover(item.sort)">
+                                </a>
+                                
+                                <div class="col-lg-7" style="font-size: 18px;">
+                                    {{ item.value }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-tables" [ngClass]="{'product-tabs__pane--active': tab === 'tables'}">
+            <!-- Wrapped in col-lg-12 for full width -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="spec">
+                        <div class="spec__section">
+                            <h3 class="typography">Database Scehma</h3>
+                            <div class="spec__disclaimer text-danger mt-3" style="font-size: 16px; font-weight: normal; line-height: 1.5;">
+                                <strong>Note: </strong> Listed below is the <strong>authoritative technical schema</strong> for this data product. These entries represent the actual <strong>Table Names</strong> and <strong>Column Headers</strong> you will interact with in the production environment. This metadata is provided to facilitate technical mapping, ETL planning, and query development. Please ensure your applications or scripts utilize these exact identifiers to maintain compatibility once access is granted.
+                            </div>
+                            <!-- Header Row with 5/7 split -->
+                            <div class="row py-2" style="border-bottom: 1px solid #ebebeb;">
+                                <div class="col-lg-5" style="color:#3d464d; font-size: 18px;"><strong>Table Name</strong></div>
+                                <div class="col-lg-7" style="color:#3d464d; font-size: 18px;"><strong>Column Name</strong></div>
+                            </div>
+                            <!-- Data Rows with 5/7 split -->
+                            <div class="row py-2" *ngFor="let item of product.sample_data" style="border-bottom: 1px solid #ebebeb;">
+                                <div class="col-lg-5" style="font-size: 18px;">{{ item.name }}</div>
+                                <div class="col-lg-7" style="font-size: 18px;">{{ item.value }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-reviews" [ngClass]="{'product-tabs__pane--active': tab === 'reviews'}">
+            <div class="reviews-view">
+                <!-- Wrap reviews row in col-lg-12 as requested -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row mb-4">
+                            <div class="col-lg-5 mb-4">
+                                <div class="ratings-wrapper">
+                                    <div class="avg-rating-container">
+                                        <h4 class="avg-mark font-weight-bolder ls-50">0.0</h4>
+                                        <div class="avg-rating">
+                                            <p class="text-dark mb-1">Average Rating</p>
+                                            <div class="ratings-container">
+                                                <app-rating></app-rating>&nbsp;&nbsp;/&nbsp;&nbsp;
+                                                <a href="#" class="rating-reviews">(0)Reviews</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ratings-value d-flex align-items-center text-dark ls-25"> 
+                                        <span class="text-dark font-weight-bold">0%</span>&nbsp;Recommended
+                                        <span class="count">&nbsp;(0 of 0)</span> 
+                                    </div>
+                                    <div class="ratings-list">
+                                        <!-- Star distribution bars -->
+                                        <div class="ratings-container" *ngFor="let i of [5,4,3,2,1]">
+                                            <div class="ratings-full-value avg-rating2"> 
+                                                <app-rating></app-rating>
+                                            </div>
+                                            <div class="progress-bar progress-bar-sm"> 
+                                                <span style="width: 0%;"></span> 
+                                            </div>
+                                            <div class="progress-value">
+                                                <mark>0%</mark>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 mb-4">
+                                <div class="review-form-wrapper">
+                                    <h3 class="title tab-pane-title font-weight-bold mb-1">Submit Your Product Review</h3>
+                                    <p class="mb-3">Your email address will not be published. Required fields are marked *</p>
+                                    <form action="#" method="POST" class="review-form">
+                                        <div class="rating-form mb-3">
+                                            <label for="rating">Overall Rating: </label>
+                                            <span class="rating-stars ml-2">
+                                                <app-rating></app-rating>
+                                            </span>
+                                        </div>
+                                        <textarea cols="30" rows="6" placeholder="Write Your Review Here..." class="form-control mb-3" id="review"></textarea>
+                                        <button type="submit" class="btn btn-dark">Submit Review</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-view__list">
+                    <h5 class="typography">Customer Reviews</h5>
+                    <div class="reviews-list">
+                        <ol class="reviews-list__content">
+                            <li *ngFor="let review of reviews" class="reviews-list__item">
+                                <div class="review">
+                                    <div class="review__avatar">
+                                        <img [src]="review.avatar" alt="">
+                                    </div>
+                                    <div class="review__content">
+                                        <div class="review__author">{{ review.author }}</div>
+                                        <div class="review__rating">
+                                            <app-rating [value]="review.rating"></app-rating>
+                                        </div>
+                                        <div class="review__text">{{ review.text }}</div>
+                                        <div class="review__date">{{ review.date }}</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="reviews-list__pagination">
+                            <app-pagination [current]="1" [siblings]="2" [total]="12"></app-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-documentation" [ngClass]="{'product-tabs__pane--active': tab === 'documentation'}">
+            <div class="spec">
+                <div  class="spec__section">
+                    <h3 class="typography">Documentation</h3>
+                    <div class="spec__row">
+                        <p>This the documentation section</p>
+                    </div>
+                </div>
+                <div class="spec__disclaimer">
+                   Information provided is based on the latest available data at the time of publication.
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-included" [ngClass]="{'product-tabs__pane--active': tab === 'included'}">
+            <div class="spec">
+                <div  class="spec__section">
+                    <h3 class="typography">What's Included</h3>
+                    <div class="spec__row">
+                        <p>This the documentation section</p>
+                    </div>
+                </div>
+                <div class="spec__disclaimer">
+                   <strong>Disclaimer: </strong>The information listed under "What's Included" describes the types of data that may be available through this product. Data availability, completeness, and applicability may vary based on the source data and the specific record or request.
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs__pane" id="tab-intended" [ngClass]="{'product-tabs__pane--active': tab === 'intended'}">
+            <div class="spec">
+                <div  class="spec__section">
+                    <h3 class="typography">Intended Use</h3>
+                    <div class="spec__row">
+                        <p>This the documentation section</p>
+                    </div>
+                </div>
+                <div class="spec__disclaimer">
+                   <strong>Disclaimer: </strong>"Intended Use" describes the purposes for which this product and its data are designed to be used. It does not grant authorization for uses outside applicable company policies, data access requirements, or other governing requirements.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+/* #region Popover Style */
+
+.overlay {
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    left: 50px;
+    bottom: 25px;
+    border: 2px solid black;
+    border-radius: 6px;
+    z-index: 4;
+  }
+  
+  .popover-custom {
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    background: #fff;
+    border-radius: 6px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .close-popover {
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  
+  /* #endregion */
+  
+  /* #region Popup */
+  
+  .popup {
+    position: fixed;
+    max-width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,.9);
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: left;
+    color: black;
+    background: #fff;
+    z-index: 100;
+  }
+  
+  .close-popup {
+    background: rgb(23 22 22 / 27%);
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* #endregion */
+
+  .text-primary2 {
+    color: #04fdff!important
+  }
+
+ a:hover {
+    color: #03cacc!important
+  }
+
+
+  

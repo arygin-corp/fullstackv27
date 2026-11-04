@@ -1,0 +1,63 @@
+:host {
+    display: block;
+}
+
+// .nav-panel {
+//     background: #fff;
+//     box-shadow: 0 0px rgb(0 0 0 / 4%), inset 0 -1px rgb(0 0 0 / 0%) !important;
+// }
+
+.nav-panel {
+    background-color:rgba(0, 0, 0, 0.005);
+}
+
+.header-middle .icon-box-icon {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 3rem;
+}
+.header-middle .icon-box-icon, .header-middle .icon-box-title, .header-middle p {
+    transition: color 0.3s;
+}
+.icon-box-side .icon-box-icon {
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+}
+.header-middle .icon-box-icon {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 3rem;
+}
+.header-middle .icon-box-icon, .header-middle .icon-box-title, .header-middle p {
+    transition: color 0.3s;
+    color: #fff;
+}
+
+.indicator__button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: #fff !important;
+    fill: #fff !important;
+}
+
+.user-fullname {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.0428em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.user-email {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: -0.0428em;
+    line-height: 1;
+    color: #fff;
+}
+

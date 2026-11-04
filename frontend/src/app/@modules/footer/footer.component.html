@@ -1,0 +1,104 @@
+<div class="site-footer">
+    <div class="container-fluid">
+        <div class="footer-top">
+            <div class="request-data" style="padding: 1rem 0rem">
+			    <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <a routerLink="/category" class="logo-footer">
+                            <img src="{{ footer.footerImage }}" alt="logo-footer" style="width:100%; max-width:600px;">
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+						<div class="d-flex d-flex justify-content-center">
+							<div style="padding: 12px 0px;">
+								<h4 class="widget-title" style="font-size: 22px; text-align: center; margin-bottom: 0px;">{{ footer.footerMessageHeader }}</h4>
+								<p style="font-size: 14px; color: #fff; text-align: center; margin-bottom: 0px;">{{ footer.footerMessageSubTitle }}</p>
+							</div>
+						</div>
+
+                        <form class="d-flex justify-content-center">
+							<a routerLink="form/data-access-request" class="btn btn-primary btn-rounded btn-sm ml-2 dark-button" type="submit">Data Access Request</a>
+						</form>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+        <div class="footer-middle">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 description">
+					<div class="widget widget-info">
+						<h1 class="widget-title">{{ footer.header }}</h1>
+						<div class="widget-body">
+							<p>{{ footer.description }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<app-footer-links header="News & Updates" [links]="[
+						{label: 'Org Chart', url: 'pages/organization-chart'},
+						{label: 'Team', url: 'pages/team'},
+						{label: 'Newsroom', url: 'newsroom'},
+						{label: 'Product Roadmap', url: 'pages/roadmap'},
+						{label: 'Global Hackathon', url: 'pages/hackathon'}]">
+					</app-footer-links>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<app-footer-links header="Quick Links" [links]="[
+						{label: 'Disclaimer', url: 'site/disclaimer'},
+						{label: 'Term of Use', url: 'site/terms-use'},
+						{label: 'Data Access Request', url: 'form/data-access-request'},
+						{label: 'Metadata Management', url: 'https://tmna.collibra.com'},
+						{label: 'View Product Request', url: 'pages/product-intake'}]">
+					</app-footer-links>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<app-footer-links header="Help & Support" [links]="[
+						{label: 'Changelog', url: '/site/changelog'},
+						{label: 'Resource Library', url: '/resources'},
+						{label: 'Track Request', url: 'm/arketplace/order/track-request'},
+						{label: 'FAQ', url: '/site/faq'},
+						{label: 'Report An Issue', url: 'https://tmna.service-now.com/1ts/?id=1ts_cat_item&sys_id=bb6ff2551ba4081000802f876e4bcb65'}]">
+					</app-footer-links>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<app-footer-links header="Documentation" [links]="[
+						{label: 'Data Domains', url: 'docs/protected/domains'},
+						{label: 'Data Access Guide', url: 'docs/protected/access-guide'},
+						{label: 'Data Access Process Flow', url: 'docs/protected/process-flow'},
+						{label: 'Product Sourcing Flow', url: 'docs/protected/dm-flow'},
+						{label: 'EIG API Developer FAQ', url: 'https://developer.eig.toyota.com/faq?session=true'}]">
+					</app-footer-links>
+				</div>
+				<!-- <div class="col-lg-2 col-md-6">
+					<app-footer-links header="External Links" [links]="[
+						{label: 'Metadata Management', url: 'https://tmna.collibra.com'},
+						{label: 'Data Enablement', url: 'https://dataenablement.toyota.com'},
+						{label: 'Data Access Process Flow', url: 'docs/protected/process-flow'},
+						{label: 'Product Sourcing Flow', url: 'docs/protected/dm-flow'},
+						{label: 'EIG API Developer FAQ', url: 'https://developer.eig.toyota.com/faq?session=true'}]">
+					</app-footer-links>
+				</div> -->
+			</div>
+			<app-totop></app-totop>
+		</div>
+
+        <div class="footer-bottom">
+			<div class="footer-left">
+				<img src="assets/images/toyota/OneTech.svg" width="56" class="me-2">
+				<!-- <img src="assets/images/toyota/1ToyotaService.svg" width="56" class="me-2"> -->
+				<img src="assets/images/toyota/FullToyota.svg" width="56" class="me-2">
+				<small>{{ footer.powered }}</small>
+			</div>
+
+			<div class="footer-center">
+				<small>©{{ currentYear }} {{ footer.copyright }}</small>
+			</div>
+
+			<div class="footer-right">
+				<small>Version: {{ currentApplicationVersion }}</small>
+			</div>
+		</div>
+    </div>
+    <app-totop></app-totop>
+</div>

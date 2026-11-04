@@ -1,0 +1,23 @@
+<div class="site-header">
+    <app-header-topbar></app-header-topbar>
+
+    <div *ngIf="layout === 'classic'" class="site-header__middle container-fluid">
+        <div class="site-header__logo">
+            <a routerLink="/">
+                <img src="assets/images/brand/logo.svg" alt="logo" class="header-logo"/>
+            </a>
+        </div>
+        <div class="site-header__phone" style="margin-left: 12px; margin-right: 12px;">
+            <button type="button" class="btn btn-primary btn-sm" (click)="offcanvasNewProduct.open()">Add New Product</button>
+        </div>
+
+        <div class="site-header__search">
+            <app-search location="header"></app-search>
+        </div>
+        
+        <div class="site-header__nav-panel">
+            <app-header-nav></app-header-nav>
+        </div>
+    </div>
+</div>
+<app-header-menu></app-header-menu>

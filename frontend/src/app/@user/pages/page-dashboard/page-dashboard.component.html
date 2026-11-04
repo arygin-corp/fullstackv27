@@ -1,0 +1,138 @@
+<div class="dashboard">
+    <div class="col-lg-12 d-flex align-items-stretch">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="fw-semibold mb-0 fs-5" style="position: relative;top: 8px; font-size:32px !important;font-weight: 600;">Welcome back, {{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }}!
+                        <span>
+                            <p style="font-size: 20px; font-weight: 400;">Here's what's happening in your account.</p>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard__profile card profile-card">
+        <div class="card-body profile-card__body">
+            <div class="profile-card__avatar2">
+                <img *ngIf="photo; else noImageFound" [src]="photo" alt="{{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }}" style="width: 100%;max-width: 118px; border-radius: 100px;"/>
+                <ng-template #noImageFound>
+                    <ngx-avatar size="118" bgColor="#222" fgColor="#04fdff" name="{{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }} "></ngx-avatar>
+                </ng-template>
+            </div>
+            <div class="profile-card__name" style="font-weight: 700;">{{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }}</div>
+            <div class="profile-card__name">{{ appSvc?.userData?.jobTitle }}</div>
+            <div class="profile-card__email">{{ appSvc?.userData?.mail }}</div>
+            <div class="profile-card__edit">
+                <a routerLink="../profile" class="btn btn-secondary btn-sm">View Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard__address card address-card address-card--featured">
+        <div class="address-card__badge" *ngIf="address.default" style="background-color: #222; color: #04fdff">Default Address</div>
+        <div class="address-card__body">
+            <div class="address-card__name" style="font-size: 24px;font-weight: 700;">
+                <span *ngIf="
+                    appSvc?.userData?.companyName === 'TMN' || 
+                    appSvc?.userData?.companyName === 'TMS' || 
+                    appSvc?.userData?.companyName === 'TCN' || 
+                    appSvc?.userData?.companyName === 'TCC' || 
+                    appSvc?.userData?.companyName === 'TKY' || 
+                    appSvc?.userData?.companyName === 'TIN' || 
+                    appSvc?.userData?.companyName === 'TNA' || 
+                    appSvc?.userData?.companyName === 'TTX' || 
+                    appSvc?.userData?.companyName === 'GTS' || 
+                    appSvc?.userData?.companyName === 'TBC' || 
+                    appSvc?.userData?.companyName === 'TMP' || 
+                    appSvc?.userData?.companyName === 'TWV' || 
+                    appSvc?.userData?.companyName === 'TAL' || 
+                    appSvc?.userData?.companyName === 'TLS' || 
+                    appSvc?.userData?.companyName === 'BTR' || 
+                    appSvc?.userData?.companyName === 'Toyota Canada Inc.' || 
+                    appSvc?.userData?.companyName === 'TCA' || 
+                    appSvc?.userData?.companyName === 'BJN' || 
+                    appSvc?.userData?.companyName === 'TRD' || 
+                    appSvc?.userData?.companyName === 'TDM' || 
+                    appSvc?.userData?.companyName === 'TSM' || 
+                    appSvc?.userData?.companyName === 'TIS' || 
+                    appSvc?.userData?.companyName === 'TDP' || 
+                    appSvc?.userData?.companyName === 'CPT' || 
+                    appSvc?.userData?.companyName === 'CAL' || 
+                    appSvc?.userData?.companyName === 'TFB' || 
+                    appSvc?.userData?.companyName === 'TPR' || 
+                    appSvc?.userData?.companyName === 'AIR' || 
+                    appSvc?.userData?.companyName === 'BSL' || 
+                    appSvc?.userData?.companyName === 'TMMK' || 
+                    appSvc?.userData?.companyName === 'TMNA' || 
+                    appSvc?.userData?.companyName === 'TOYOTA MOTOR EUROPE NV/SA' || 
+                    appSvc?.userData?.companyName === 'TMC'">
+                    <span><img src="assets/images/toyota/FullToyota-dark.svg" width="160" style="margin-bottom: 8px;"></span><br>
+                </span>
+                <span *ngIf="
+                    appSvc?.userData?.companyName === 'TCC' || 
+                    appSvc?.userData?.companyName === 'TIS' || 
+                    appSvc?.userData?.companyName === 'TFB' || 
+                    appSvc?.userData?.companyName === 'TFS' || 
+                    appSvc?.userData?.companyName === 'TSM' || 
+                    appSvc?.userData?.companyName === 'TPR'">
+                    <span><img src="assets/images/toyota/ToyotaFinancial.svg" width="160" style="margin-bottom: 8px;"></span><br>
+                </span>
+                <span *ngIf="appSvc?.userData?.companyName === 'Toyota Connected'">
+                    <span><img src="assets/images/toyota/ToyotaConnected-dark.svg" width="160" style="margin-bottom: 8px;"></span><br>
+                </span>
+                <span *ngIf="appSvc?.userData?.companyName === 'WP'">
+                    <span><img src="assets/images/toyota/WovenPlanet.svg" width="160" style="margin-bottom: 8px;"></span>
+                </span>
+                <span *ngIf="appSvc?.userData?.companyName === 'MTMUS'">
+                    <span><img src="assets/images/badges/brands/toyota.svg" width="160" style="margin-bottom: 8px;"></span>
+                </span>
+                <span *ngIf="appSvc?.userData?.companyName === 'MTMUS'">
+                    <span><img src="assets/images/badges/brands/toyota.svg" width="160" style="margin-bottom: 8px;"></span>
+                </span>
+            </div>
+            <div class="address-card__row">
+                {{ appSvc?.userData?.streetAddress }}<br>
+                {{ appSvc?.userData?.city }}, {{ appSvc?.userData?.state }} {{ appSvc?.userData?.postalCode }}<br>
+                {{ appSvc?.userData?.country }}<br>
+            </div>
+            <div class="address-card__row">
+                <div class="address-card__row-title">Phone Number</div>
+                <div class="address-card__row-content">{{ appSvc?.userData?.businessPhones }}</div>
+            </div>
+            <div class="address-card__row">
+                <div class="address-card__row-title">Email Address</div>
+                <div class="address-card__row-content">{{ appSvc?.userData?.mail }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard__orders card">
+        <div class="card-header">
+            <h5>Recent Orders</h5>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-table">
+            <div class="table-responsive-sm">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td><a href="">#{{ order.id }}</a></td>
+                        <td>{{ order.date }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.total|currencyFormat }} for {{ order.quantity }} item(s)</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

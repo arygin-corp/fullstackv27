@@ -1,0 +1,36 @@
+<app-page-header 
+  [breadcrumbs]="[
+    {label: 'Domains', url: '/'}, 
+    {label: parentDomain?.name, url: '/' + parentDomain?.slug}
+  ]">
+</app-page-header>
+
+<div *ngIf="isLoading" class="text-center py-4">
+  <div class="spinner-border text-primary" role="status"></div>
+  <p>Loading Subdomains...</p>
+</div>
+
+<div *ngIf="!isLoading && !subdomains.length" class="text-center py-4 text-muted">
+  No subdomains found for this category.
+</div>
+
+
+<div class="row p-2" *ngIf="!isLoading && subdomains.length">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 float-left mb-4" *ngFor="let subdomain of subdomains">
+    <div class="card domain-cards mb-2">
+      <a [routerLink]="resolveNavigation(subdomain)">
+        <img
+          class="card-img-top ie-image"
+          [src]="subdomain.image"
+          [alt]="subdomain.name + ' Domain'"/>
+      </a>
+      <div class="card-body">
+        <h6 class="card-title d-block">{{subdomain.name}}</h6>
+        <p class="card-text d-block font-weight-light">{{subdomain.desc}}</p>
+        <a
+          [routerLink]="resolveNavigation(subdomain)"
+          class="btn btn-primary btn-sm align-right">View All</a>
+      </div>
+    </div>
+  </div>
+</div>

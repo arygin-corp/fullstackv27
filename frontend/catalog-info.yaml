@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ace-aws-blueprint-spa-angular
+  description:  SPA with Angular - Reference Architecture Blueprint - Information
+  annotations:
+    github.com/project-slug: Toyota-Motor-North-America/ace-aws-blueprint-spa-angular
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: Reference Architecture Blueprint
+  lifecycle: production
+  owner: Toyota-Motor-North-America/ACE

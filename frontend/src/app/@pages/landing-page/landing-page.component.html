@@ -1,0 +1,604 @@
+<div class="gdxp-root" [class.scrolled]="isScrolled">
+  <!-- Exclusive Navigation -->
+  <header class="gdxp-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="brand">
+        <span class="text-teal">
+          <img src="../../../assets/images/md/logo2.svg" style="width: 100%; max-width: 150px;">
+        </span>
+      </div>
+      <nav class="d-none d-xl-flex">
+        <a *ngFor="let item of navItems" (click)="scrollTo(item.id)" [class.active]="activeSection === item.id">{{ item.label }}</a>
+      </nav>
+      <button class="btn-launch">Launch Platform<i class="bx bx-right-arrow-alt"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. The Hero: High-Precision First Impression -->
+    <section id="overview" class="nx-hero-v2">
+      <div class="container text-center">
+        <!-- Sophisticated Badge -->
+        <div class="nx-badge-wrapper" data-aos="fade-up">
+          <div class="nx-pill">
+            <span class="nx-pill-dot"></span>
+            Global Data Xchange Platform
+          </div>
+        </div>
+
+        <!-- Massive Typography -->
+        <h1 class="nx-main-display" data-aos="fade-up" data-aos-delay="100">
+          Global Data <br>
+          <span class="nx-gradient-text">Xchange Platform.</span>
+        </h1>
+
+        <!-- Precision Lead Text -->
+        <p class="nx-hero-lead" data-aos="fade-up" data-aos-delay="200">
+          The Single Source of Truth for Toyota's enterprise data products. <br>
+          A unified bridge for global data orchestration.
+        </p>
+
+        <!-- Refined CTAs -->
+        <div class="nx-hero-actions" data-aos="fade-up" data-aos-delay="300">
+          <button class="btn-nx-filled" (click)="scrollTo('features')">
+            Explore Features <i class="bx bx-right-arrow-alt"></i>
+          </button>
+          <button class="btn-nx-ghost" (click)="scrollTo('mission')">
+            The Mission
+          </button>
+        </div>
+      </div>
+
+      <!-- High-Precision Decorative Elements -->
+      <div class="nx-grid-overlay"></div>
+      <div class="nx-glow-sphere cyan-glow"></div>
+      <div class="nx-glow-sphere teal-glow"></div>
+      <div class="nx-scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container" style="padding: 140px;">
+        <h2 class="text-center text-teal">Mission Statement</h2>
+        <p class="text-center text-teal" style="font-size: 14px">To ignite Toyota's data-driven future—where every API, dashboard, model, and dataset becomes a seamless gateway to innovation. We are building the nervous system of a learning organization, where data flows freely across boundaries, wisdom accumulates at scale, and every decision moves us closer to mobility for all.</p>
+      </div>
+    </section>
+    
+    <!-- 2. Problem/Solution Bridge: The Transformation Layer -->
+    <section id="mission" class="nx-bridge nx-bg-teal">
+      <div class="container overflow-hidden">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="nx-accent-pill-light mb-4">The Challenge</div>
+            <h2 class="nx-bridge-display text-white">
+              Siloed Data is <br> 
+              <span class="nx-text-cyan">Stranded Discovery.</span>
+            </h2>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="nx-bridge-content">
+              <p class="nx-text-bridge text-white">
+                GDXP transforms isolated APIs, dashboards, data models, and datasets into well-groomed, market-ready products.
+              </p>
+              <p class="nx-text-bridge-sub text-white opacity-75">
+                What once lived in silos—difficult to find, understand, and trust—becomes a curated catalog of governed assets, accelerating data discovery and reducing time-to-data across Toyota.
+              </p>
+              
+              <!-- Rapid Feature Indicator -->
+              <div class="nx-asset-tags mt-5">
+                <span class="nx-tag-outline">Dashboards</span>
+                <span class="nx-tag-outline">APIs</span>
+                <span class="nx-tag-outline">Data Science Models</span>
+                <span class="nx-tag-outline">Datasets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Subtle Backend Decoration -->
+      <div class="nx-bridge-ornament"></div>
+    </section>
+
+    <!-- 3. Feature Bento Grid -->
+    <section id="features" class="section-padding bg-grey">
+      <div class="container">
+        <h2 class="h1 mb-5">Built for Precision.</h2>
+        <div class="bento-grid">
+          <div class="bento-card bg-dark bento-wide">
+            <i class="mdi mdi-brain text-light"></i>
+            <div>
+              <h3 class="text-light">SuggestedAI Engine</h3>
+              <p class="text-light">Enterprise hybrid intelligence that maps natural language requests to enterprise data ensuring high-precision discovery even with complex or ambiguous queries.</p>
+            </div>
+          </div>
+          <div class="bento-card bg-ink text-white">
+            <i class="bx bx-check-shield text-dark"></i>
+            <h3 class="text-dark">Secure Ingestion</h3>
+            <p class="text-dark">Automated PII masking and classification from our Intake protocol.</p>
+          </div>
+          <div class="bento-card bg-ink text-white">
+            <i class="fa-solid fa-list-check text-dark"></i>
+            <h3 class="text-dark">Order Engine</h3>
+            <p class="text-dark">Streamlined provisioning and access through the Orders module.</p>
+          </div>
+          <div class="bento-card bg-teal bento-wide">
+            <div class="d-flex align-items-center gap-4">
+               <i class="mdi mdi-view-dashboard-outline display-4 text-light"></i>
+               <div>
+                 <h3 class="text-light">Asset Catalog</h3>
+                 <p class="mb-0 text-light">A unified enterprise taxonomy providing structured lineage and metadata governance across Organizations, Companies, and distributed Resources to ensure a single source of truth</p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Intelligence Deep-Dive: AI MATRIX -->
+    <section id="discovery" class="nx-matrix-section nx-bg-ink text-white" style="padding: 50px;">
+      <div class="nx-matrix-overlay"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          
+          <!-- Narrative -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <h6 class="nx-tag text-cyan">AI MATRIX</h6>
+            <h1 class="nx-display-md fw-black mb-4" style="font-size: 42px">The Discovery <br> <span class="text-cyan">Neural Link.</span></h1>
+            <p class="nx-text-large opacity-75 mb-5">
+              Developing autonomous cross-domain relationships via GDXP’s proprietary vector embedding models. Our engine maps global intent to high-precision data nodes through a persistent, self-evolving neural fabric.
+            </p>
+            
+            <div class="nx-feature-brief d-flex gap-4">
+              <div class="nx-brief-item">
+                <span class="text-cyan fw-bold">0.4s</span>
+                <p class="small text-white opacity-50">Inference Speed</p>
+              </div>
+              <div class="nx-brief-item">
+                <span class="text-cyan fw-bold">PGVector</span>
+                <p class="small text-white opacity-50">Embedding Core</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Logic Visualization Space -->
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="nx-neural-node-container">
+              <!-- Placeholder for your matrix-viz or additional SVG animations -->
+              <div class="matrix-viz-glow"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ROI Dashboard -->
+    <section id="analytics" class="nx-section nx-bg-white border-bottom">
+      <div class="container">
+        <div class="row text-center g-5">
+          <div class="col-md-3" *ngFor="let s of stats">
+            <div class="nx-stat-container" data-aos="fade-up">
+              <!-- Fixed: Changed s.val to s.current and added s.suffix -->
+              <div class="nx-stat-val text-dark">
+                <h1 style="font-size: 98px;">{{ s.current }}{{ s.suffix }}</h1>
+              </div>
+              <div class="nx-stat-label text-graphite">
+                <h6>{{ s.label }}</h6>
+              </div>
+              <div class="nx-stat-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Workflow: The Data Access Protocol -->
+    <section id="workflow" class="nx-protocol-section nx-bg-ink text-white">
+      <div class="container overflow-hidden">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h6 class="nx-tag text-cyan">WORKFLOW AUTOMATION</h6>
+          <h2 class="nx-display-md fw-black">Data Access Protocol.</h2>
+        </div>
+
+        <div class="nx-protocol-grid">
+          <!-- Step 01: Search -->
+          <div class="nx-protocol-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="nx-step-header">
+              <div class="nx-step-num">01</div>
+              <div class="nx-step-connector"></div>
+            </div>
+            <div class="nx-step-body">
+              <h4 class="fw-black text-cyan">Search for Products</h4>
+              <p class="text-white opacity-50">Discover high-precision datasets across Toyota domains using AI-powered semantic search.</p>
+            </div>
+          </div>
+
+          <!-- Step 02: Request -->
+          <div class="nx-protocol-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="nx-step-header">
+              <div class="nx-step-num">02</div>
+              <div class="nx-step-connector"></div>
+            </div>
+            <div class="nx-step-body">
+              <h4 class="fw-black text-white">Request Access</h4>
+              <p class="text-white opacity-50">Initiate automated access protocols and view classification levels (Public to SPI).</p>
+            </div>
+          </div>
+
+          <!-- Step 03: Cart -->
+          <div class="nx-protocol-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="nx-step-header">
+              <div class="nx-step-num">03</div>
+              <div class="nx-step-connector"></div>
+            </div>
+            <div class="nx-step-body">
+              <h4 class="fw-black text-white">Add to Cart</h4>
+              <p class="text-white opacity-50">Aggregate multiple requests into a singular batch for unified BU approval and tracking.</p>
+            </div>
+          </div>
+
+          <!-- Step 04: Checkout -->
+          <div class="nx-protocol-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="nx-step-header">
+              <div class="nx-step-num nx-last-node">04</div>
+            </div>
+            <div class="nx-step-body">
+              <h4 class="fw-black text-white">Checkout</h4>
+              <p class="text-white opacity-50">Finalize fulfillment. Velocity Fulfillment triggers for automated delivery via ServiceNow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Governance: The Trust Layer -->
+    <section id="governance" class="nx-section nx-bg-alabaster">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          
+          <!-- Narrative Column -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <h6 class="nx-tag text-teal">SECURITY & COMPLIANCE</h6>
+            <h2 class="nx-h1">Enterprise-Grade <br> <span class="text-teal">Governance.</span></h2>
+            <p class="nx-text-large text-graphite mt-4">
+              GDXP isn't just a marketplace; it's a fortified ecosystem. Every transaction and data request is mapped against Toyota’s global compliance standards, ensuring innovation never compromises security.
+            </p>
+
+            <!-- The DRB Highlight -->
+            <div class="nx-drb-alert bg-teal mt-5">
+              <div class="nx-drb-header d-flex align-items-center gap-3">
+                <div class="nx-indicator-dot pulse-cyan"></div>
+                <h4 class="fw-black mb-0 text-light">Data Review Board (DRB)</h4>
+              </div>
+              <div class="nx-drb-body mt-3 ps-4 border-start-cyan">
+                <p class="text-light">Highly-sensitivity products are subject to <strong>"DRB (Data Review Board) Approvals"</strong>. This cross-functional council ensures that data usage aligns with both privacy laws and corporate ethical standards.</p>
+                <span class="badge nx-badge-outline-white text-light">Mandatory for PII Assets</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compliance Grid -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="row g-4">
+              <!-- Compliance Item 1 -->
+              <div class="col-md-6">
+                <div class="nx-gov-card shadow-sm h-100">
+                  <i class="bx bx-shield-alt-2 text-teal fs-1"></i>
+                  <h5 class="fw-black mt-3">Universal IAM</h5>
+                  <p class="small text-graphite opacity-75">Full integration with Azure AD and Toyota’s internal IAM for seamless RBAC (Role Based Access Control).</p>
+                </div>
+              </div>
+              <!-- Compliance Item 2 -->
+              <div class="col-md-6">
+                <div class="nx-gov-card shadow-sm h-100">
+                  <i class="bx bx-file-find text-teal fs-1"></i>
+                  <h5 class="fw-black mt-3">Auto-Compliance</h5>
+                  <p class="small text-graphite opacity-75">Automated CCPA, GDPR, and APPI tagging across every dataset in the marketplace.</p>
+                </div>
+              </div>
+              <!-- Compliance Item 3 -->
+              <div class="col-md-6">
+                <div class="nx-gov-card shadow-sm h-100">
+                  <i class="bx bx-lock-open-alt text-teal fs-1"></i>
+                  <h5 class="fw-black mt-3">Encryption</h5>
+                  <p class="small text-graphite opacity-75">AES-256 bit encryption at rest and TLS 1.3 in transit for every data stream fulfilled.</p>
+                </div>
+              </div>
+              <!-- Compliance Item 4 -->
+              <div class="col-md-6">
+                <div class="nx-gov-card shadow-sm h-100">
+                  <i class="bx bx-history text-teal fs-1"></i>
+                  <h5 class="fw-black mt-3">Audit Transparency</h5>
+                  <p class="small text-graphite opacity-75">Immutable logs of every access request, approval, and data egress point.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. GDXP Data Marketplace: The Shopping Revolution -->
+    <section id="inventory" class="nx-section nx-bg-white" style="padding: 140px 140px 0;">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          
+          <!-- High-Precision Graphics Column (fade-right) -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="nx-product-showcase">
+              <!-- Main Product Card -->
+              <div class="nx-card-floating main-card nx-bg-ink text-white">
+                <div class="d-flex justify-content-between mb-4">
+                  <span class="badge nx-bg-cyan text-ink fw-bold">AI SUGGESTED</span>
+                  <span class="text-white-50">#SN-TOY-2024</span>
+                </div>
+                <h4 class="fw-black mb-1">Vehicle Telemetry Pro</h4>
+                <p class="text-cyan small mb-3">Matching your Profile: 98%</p>
+                <p class="opacity-50 small">Premium Dataset • Global Real-time Stream</p>
+                <div class="nx-price-row mt-4 d-flex justify-content-between align-items-center">
+                  <div class="stars text-cyan">★★★★★</div>
+                  <button class="nx-add-btn"><i class="bx bx-cart-add"></i> Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- ServiceNow / Tracking Floating Card -->
+              <div class="nx-card-floating sub-card nx-bg-grey border-teal">
+                <p class="mb-2 fw-bold text-teal small uppercase-space">ServiceNow Status</p>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="status-pulse"></div>
+                  <div class="tracking-info">
+                    <div class="fw-black text-ink">REQ-901244</div>
+                    <div class="small text-graphite">Stage: Cloud Provisioning</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Column (fade-left) -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <h6 class="nx-tag text-teal">THE SHOPPING REVOLUTION</h6>
+            <h2 class="nx-h1">Consuming Data <br> as a Product.</h2>
+            <p class="nx-text-large text-graphite mt-4">
+              Stop requesting access. Start <strong>shopping</strong> for intelligence. GDXP turns technical siloes into a curated consumer marketplace.
+            </p>
+            
+            <ul class="nx-feature-stack mt-5">
+              <li>
+                <div class="nx-icon-sm nx-bg-teal"><i class="mdi mdi-auto-fix"></i></div>
+                <div class="nx-f-content">
+                  <h5>AI Recommendations & Profiles</h5>
+                  <p>Personalized discovery engine that suggests datasets based on your Business Unit and profile enhancements.</p>
+                </div>
+              </li>
+              <li>
+                <div class="nx-icon-sm nx-bg-teal"><i class="bx bx-layer"></i></div>
+                <div class="nx-f-content">
+                  <h5>Multi-Checkout Batching</h5>
+                  <p>Bundle Datasets, Platforms, and Organizations into a single checkout session for unified provisioning.</p>
+                </div>
+              </li>
+              <li>
+                <div class="nx-icon-sm nx-bg-teal"><i class="mdi mdi-sync"></i></div>
+                <div class="nx-f-content">
+                  <h5>One Toyota Service Integration</h5>
+                  <p>Powered by **ServiceNow**. Automated ticket generation, real-time order history, and lifecycle tracking.</p>
+                </div>
+              </li>
+            </ul>
+
+            <button class="btn-nx-outline-dark mt-4" (click)="scrollTo('workflow')">View Logic Flow</button>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- 13. Provisioning: The Prime Delivery Logic -->
+    <section id="provisioning" class="nx-section nx-bg-white" style="padding: 140px 140px 0">
+      <div class="container">
+        <div class="row align-items-center g-5 flex-row-reverse">
+          
+          <!-- Graphics Column: Delivery Velocity (fade-left) -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="nx-velocity-viz">
+              <!-- Prime Delivery Node -->
+              <div class="nx-delivery-card prime nx-bg-white shadow-sm">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="nx-icon-circle nx-bg-cyan"><i class="bx bxs-zap text-ink"></i></div>
+                  <div>
+                    <h5 class="fw-black mb-0">Prime Delivery</h5>
+                    <span class="text-teal small fw-bold">PUBLIC & PROTECTED</span>
+                  </div>
+                </div>
+                <div class="nx-arrival-time">
+                  <span class="display-4 fw-black text-ink">24h</span>
+                  <span class="small text-graphite opacity-50">SLA ARRIVAL</span>
+                </div>
+                <div class="nx-progress-bar mt-3">
+                  <div class="fill nx-bg-cyan" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <!-- Governance Gating Node -->
+              <div class="nx-delivery-card gating nx-bg-ink text-white">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="nx-icon-circle nx-bg-teal"><i class="bx bx-shield-quarter text-white"></i></div>
+                  <div>
+                    <h5 class="fw-black mb-0">Governance Gate</h5>
+                    <span class="text-cyan small fw-bold">SPI & CONFIDENTIAL</span>
+                  </div>
+                </div>
+                <p class="small opacity-50">Compliance verification required via Toyota Data Stewards.</p>
+                <div class="nx-status-line">
+                  <span class="dot pulse-teal"></span> Manual Approval Sequence Active
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Column (fade-right) -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <h6 class="nx-tag text-teal">DATA FULFILLMENT</h6>
+            <h2 class="nx-h1">Speed Meets <br> <span class="text-teal">Governance.</span></h2>
+            <p class="nx-text-large text-graphite mt-4">
+              GDXP redefines data delivery velocity. We provide <strong>automated fulfillment</strong> for standard assets while maintaining rigorous safety for sensitive intelligence.
+            </p>
+            
+            <div class="nx-provision-logic mt-5">
+              <div class="logic-item border-start-teal ps-4 mb-4">
+                <h4 class="fw-black text-ink">Prime Delivery Flow</h4>
+                <p class="text-graphite">Public and Protected products are bypass-enabled. Gain complete access to the data stream within **24 hours** of request.</p>
+              </div>
+              
+              <div class="logic-item border-start-graphite ps-4">
+                <h4 class="fw-black text-ink">Governance-First Access</h4>
+                <p class="text-graphite">Higher Data Classifications (SPI/Confidential) trigger automated steward workflows. Safety takes time, ensuring every node is compliant.</p>
+              </div>
+            </div>
+
+            <button class="btn-nx-filled mt-4" (click)="scrollTo('analytics')">View Provisioning Stats</button>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Provisioning: The Fulfillment Engine -->
+    <section id="provisioning" class="nx-section nx-bg-white">
+      <div class="container">
+        <!-- Removed flex-row-reverse to place Text on the Right -->
+        <div class="row align-items-center g-5">
+          
+          <!-- Graphics Column: Delivery Velocity (Now on Left - fade-right) -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="nx-velocity-viz">
+              <!-- Velocity Fulfillment Node -->
+              <div class="nx-delivery-card velocity nx-bg-grey shadow-sm" style="position: relative; top: 24px; left: 65px;">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="nx-icon-circle nx-bg-cyan"><i class="bx bxs-bolt-circle text-ink"></i></div>
+                  <div>
+                    <h5 class="fw-black mb-0">Velocity Fulfillment</h5>
+                    <span class="text-teal small fw-bold">PUBLIC & PROTECTED</span>
+                  </div>
+                </div>
+                <div class="nx-arrival-time">
+                  <span class="display-4 fw-black text-ink">24<span class="fs-2">h</span></span>
+                  <span class="small text-graphite opacity-50 italic ms-2">Auto-Provisioned</span>
+                </div>
+                <div class="nx-progress-bar mt-3">
+                  <div class="fill nx-bg-cyan" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <!-- Compliance Path Node -->
+              <div class="nx-delivery-card compliance nx-bg-ink text-white" style="position: relative; top: 0px; left: -65px;">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="nx-icon-circle nx-bg-teal"><i class="bx bx-shield-quarter text-white"></i></div>
+                  <div>
+                    <h5 class="fw-black mb-0">Compliance Path</h5>
+                    <span class="text-cyan small fw-bold">PI, SPI, CONFIDENTIAL, & LEGAL</span>
+                  </div>
+                </div>
+                <p class="small opacity-50">Requires Data Steward validation and automated risk assessment.</p>
+                <div class="nx-status-line">
+                  <span class="dot pulse-teal"></span> Governance Stream Active
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Column (Now on Right - fade-left) -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <h6 class="nx-tag text-teal">DATA FULFILLMENT</h6>
+            <h2 class="nx-h1">Intelligence <br> <span class="text-teal">Delivered.</span></h2>
+            <p class="nx-text-large text-graphite mt-4">
+              GDXP optimizes the path between discovery and consumption. We provide <strong>automated provisioning</strong> for enterprise assets while maintaining rigorous safety for sensitive data.
+            </p>
+            
+            <div class="nx-provision-logic mt-5">
+              <div class="logic-item border-start-teal ps-4 mb-4">
+                <h4 class="fw-black text-ink">Velocity Fulfillment Flow</h4>
+                <p class="text-graphite">Assets with Public or Protected classifications bypass manual reviews. Gain API or Stream access within **24 hours** of execution.</p>
+              </div>
+              
+              <div class="logic-item border-start-graphite ps-4">
+                <h4 class="fw-black text-ink">Standard Compliance Path</h4>
+                <p class="text-graphite">Higher Data Classifications (SPI/Confidential) trigger automated steward workflows. Secure delivery is prioritized over raw speed.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Integrations: The Enterprise Ecosystem -->
+    <section id="integrations" class="nx-integrations-ticker nx-bg-grey">
+      <div class="container text-center mb-5">
+        <h6 class="nx-tag text-teal" data-aos="fade-up">ECOSYSTEM</h6>
+        <h2 class="nx-display-sm fw-black" data-aos="fade-up" data-aos-delay="100">Seamlessly Connected.</h2>
+      </div>
+
+      <!-- The Unified Logo Strip (Infinite Loop) -->
+      <div class="nx-ticker-wrap">
+        <div class="nx-ticker">
+          <!-- Group 1 -->
+          <div class="nx-ticker-item"><img src="assets/images/landing/aws.svg" style="width: 100%; max-width: 64px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/informatica.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/collibra.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/denodo.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/1ts.svg" style="width: 100%; max-width: 200px"></div>
+          
+          <!-- Group 2 (Duplicate for Seamless Loop) -->
+          <div class="nx-ticker-item"><img src="assets/images/landing/aws.svg" style="width: 100%; max-width: 64px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/informatica.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/collibra.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/denodo.svg" style="width: 100%; max-width: 150px"></div>
+          <div class="nx-ticker-item"><img src="assets/images/landing/1ts.svg" style="width: 100%; max-width: 200px"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FAQ Stack -->
+    <section id="faqs" class="nx-faq-section section-padding bg-white">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center">
+          <div class="col-lg-7">
+            <h6 class="nx-tag text-teal">RESOURCES</h6>
+            <h2 class="fw-black ink-black">Common Questions</h2>
+            <p class="nx-lead-sm mt-3">Everything you need to know about the next-generation data marketplace.</p>
+          </div>
+        </div>
+
+        <div class="nx-faq-accordion">
+          <div *ngFor="let f of faqs" class="nx-faq-row" [class.active]="f.open" (click)="f.open = !f.open">
+            <div class="nx-faq-q">
+              <span class="q-text">{{ f.q }}</span>
+              <div class="nx-faq-icon">
+                <i class="mdi" [ngClass]="f.open ? 'mdi-minus' : 'mdi-plus'"></i>
+              </div>
+            </div>
+            
+            <!-- Collapsible Answer -->
+            <div class="nx-faq-a" [style.max-height]="f.open ? '200px' : '0'">
+              <div class="a-content">
+                <p>{{ f.a }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gdxp-footer">
+    <div class="container d-flex justify-content-between border-top pt-5">
+      <div class="brand">TOYOTA <span class="text-teal">GDXP</span></div>
+      <div class="copy text-muted">Internal Use Only &copy; 2024 Toyota Digital Transformation</div>
+    </div>
+  </footer>
+</div>

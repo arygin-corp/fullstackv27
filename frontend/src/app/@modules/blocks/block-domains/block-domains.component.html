@@ -1,0 +1,33 @@
+<!-- .block-categories -->
+<div class="block block--highlighted block-categories block-categories--layout--{{ layout }}">
+    <div class="container">
+        <app-block-header [header]="header"></app-block-header>
+
+        <div class="block-categories__list">
+            <div *ngFor="let domain of domains" class="block-categories__item category-card category-card--layout--{{ layout }}">
+                <div class="category-card__body">
+                    <div class="category-card__image">
+                        <a [routerLink]="root.domain(domain)"><img [src]="domain.image" alt=""></a>
+                    </div>
+                    <div class="category-card__content">
+                        <div class="category-card__name">
+                            <a [routerLink]="root.domain(domain)">{{ domain.name }}</a>
+                        </div>
+                        <ul class="category-card__links">
+                            <li *ngFor="let domain of domain.children?.slice(0, 5)">
+                                <a [routerLink]="root.domain(domain)">{{ domain.name }}</a>
+                            </li>
+                        </ul>
+                        <div class="category-card__all">
+                            <a [routerLink]="root.domain(domain)">Show All</a>
+                        </div>
+                        <div class="category-card__products">
+                            {{ domain.items }} Products
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- .block-categories / end -->

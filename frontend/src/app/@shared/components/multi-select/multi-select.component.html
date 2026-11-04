@@ -1,0 +1,12 @@
+<div class="col-lg-12 mr-auto ml-auto dropdown-container">
+    <angular2-multiselect 
+      [data]="itemList" 
+      [(ngModel)]="selectedItems" 
+      [settings]="settings" 
+      (onSelect)="onItemSelect($event)"
+      (onDeSelect)="OnItemDeSelect($event)" 
+      (onSelectAll)="onSelectAll($event)" 
+      (onDeSelectAll)="onDeSelectAll($event)" 
+      (onAddFilterNewItem)="onAddItem($event)">
+    </angular2-multiselect>
+</div>

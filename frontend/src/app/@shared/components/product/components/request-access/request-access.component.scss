@@ -1,0 +1,36 @@
+.dropcart--style--offcanvas .dropcart__body {
+    max-width: calc(1200px) !important;
+}
+
+.left {
+    float: left !important;
+}
+
+.require {
+    font-size: 12px !important;
+}
+
+ul.requirements {
+    padding-left: 0px !important;
+}
+
+.scrollable-div {
+    width: 975px !important;
+    height: 100% !important;
+    max-height: 750px !important;
+    overflow: auto !important; /* Adds scrollbars when needed */
+    border: 0px solid #ccc !important;
+    padding: 0px !important;
+}
+
+.form-check-input {
+    position: relative !important;
+}
+
+.btn:disabled {
+    background-color: #cccccc !important;
+    border-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+}

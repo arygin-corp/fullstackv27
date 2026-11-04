@@ -1,0 +1,477 @@
+<div class="product product--layout--{{ layout }}" *ngIf="product">
+	<!-- ========================================================= -->
+	<!-- Product Name                                              -->
+	<!-- ========================================================= -->
+	<h5 class="product__name">
+		{{ product.name }}
+		<span *ngIf="product.dataSharingAgreement === 'active'">
+			<p class="badge badge-sensitive badge-outlined">Data Sharing Agreement Active</p>
+		</span>
+	</h5>
+	<!-- ========================================================= -->
+	<!-- Product Metadata                                          -->
+	<!-- ========================================================= -->
+	<div class="row" style="margin: 0px;">
+		<ul class="product__meta col-lg-6" style="margin-bottom: 12px;">
+			<div class="product__rating" style="margin-right: 24px;">
+				<div class="product__rating-stars">
+					<app-rating [value]="product.rating"></app-rating>
+				</div>
+				<div class="product__rating-legend">
+					<a href="" appClick>{{ product.reviews }} Reviews</a>
+					<span>/</span>
+					<a href="" appClick> Write A Review </a>
+				</div>
+			</div>
+			<li class="product__meta-platformType"> Datatype: 
+                <span class="text-secondary">
+					<strong>{{ product.datatype }}</strong>
+				</span>
+			</li>
+			<li> SKU: <strong class="text-secondary">{{ product.sku }}</strong>
+			</li>
+			<li> Organization: <strong class="text-danger">{{ product.org_abbrev }}</strong>
+			</li>
+		</ul>
+		<div class="product__meta col-lg-6">
+            <!-- Privacy Badges -->
+            <span *ngIf="product?.pi?.toLowerCase() === 'yes'">
+                <p class="badge badge-pi badge-outlined">PI</p>
+            </span>
+
+            <span *ngIf="product?.sensitive_pi?.toLowerCase() === 'yes'">
+                <p class="badge badge-sensitive-pi badge-outlined">SPI</p>
+            </span>
+
+            <span *ngIf="!product.badges">
+                <p class="badge badge-sensitive badge-outlined">Sensitive</p>
+            </span>
+
+
+            <!-- Classification Badges -->
+            <span *ngIf="product.classification === 'Public'">
+                <p class="badge badge-classification badge-public badge-outlined">Public</p>
+            </span>
+
+            <span *ngIf="product.classification === 'Protected'">
+                <p class="badge badge-classification badge-protected badge-outlined">Protected</p>
+            </span>
+
+            <span *ngIf="product.classification === 'Confidential'">
+                <p class="badge badge-classification badge-confidential badge-outlined">Confidential</p>
+            </span>
+
+            <span *ngIf="product.classification === 'Highly Confidential'">
+                <p class="badge badge-classification badge-highly-confidential badge-outlined">Highly Confidential</p>
+            </span>
+
+            <span *ngIf="product.classification === 'Legally Privileged'">
+                <p class="badge badge-classification badge-legally-privileged badge-outlined">Legally Privileged</p>
+            </span>
+
+
+            <!-- Data Type Badges -->
+            <span *ngIf="product.datatype === 'Dashboards'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-dashboard
+                        badge-outlined
+                    "
+                >
+                    Dashboards
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Reports'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-report
+                        badge-outlined
+                    "
+                >
+                    Reports
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Data Science'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-data-science
+                        badge-outlined
+                    "
+                >
+                    Data Science
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Datasets'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-dataset
+                        badge-outlined
+                    "
+                >
+                    Datasets
+                </p>
+            </span>
+
+            <span *ngIf="product.datatype === 'Webservices (APIs)'">
+                <p
+                    class="
+                        badge
+                        badge-datatype
+                        badge-api
+                        badge-outlined
+                    "
+                >
+                    APIs
+                </p>
+            </span>
+
+</div>
+	<!-- ========================================================= -->
+	<!-- Main Product Content                                      -->
+	<!-- ========================================================= -->
+	<div class="product__content">
+		<!-- ===================================================== -->
+		<!-- Product Gallery                                       -->
+		<!-- ===================================================== -->
+		<div class="product__gallery">
+			<app-product-gallery [productLayout]="layout" [images]="galleryImages"></app-product-gallery>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Product Information                                   -->
+		<!-- ===================================================== -->
+		<div class="product__info">
+			<!-- Wishlist / Compare -->
+			<div class="product__wishlist-compare">
+				<button type="button" class="
+                        btn
+                        btn-sm
+                        btn-light
+                        btn-svg-icon
+                    " data-toggle="tooltip" data-placement="right" title="Wishlist" appClick (click)="addToWishlist()" [ngClass]="{
+                        'btn-loading':
+                            addingToWishlist
+                    }">
+					<app-icon name="wishlist-16" size="16"></app-icon>
+				</button>
+				<button type="button" class="
+                        btn
+                        btn-sm
+                        btn-light
+                        btn-svg-icon
+                    " data-toggle="tooltip" data-placement="right" title="Compare" appClick (click)="addToCompare()" [ngClass]="{
+                        'btn-loading':
+                            addingToCompare
+                    }">
+					<app-icon name="compare-16" size="16"></app-icon>
+				</button>
+			</div>
+			<!-- Description -->
+            <div class="product__description">
+                <h6>Description</h6>
+                <div [innerHTML]="product.brief_desc"></div>
+            </div>
+			<!-- Existing product features -->
+			<ul class="product__features">
+				<li> Speed: 750 RPM </li>
+				<li> Power Source: Cordless-Electric </li>
+				<li> Battery Cell Type: Lithium </li>
+				<li> Voltage: 20 Volts </li>
+				<li> Battery Capacity: 2 Ah </li>
+			</ul>
+		</div>
+		<!-- ===================================================== -->
+		<!-- Product Sidebar                                       -->
+		<!-- ===================================================== -->
+		<div class="product__sidebar">
+			<!-- Existing hidden pricing -->
+			<div class="product__prices collapse">
+				<ng-container *ngIf="product.compareAtPrice">
+					<span class="product__new-price">
+						{{ product.price
+                                | currencyFormat
+                        }}
+					</span>
+					{{ ' ' }}
+					<span class="product__old-price">
+						{{ product.compareAtPrice
+                                | currencyFormat
+                        }}
+					</span>
+				</ng-container>
+				<ng-container *ngIf="!product.compareAtPrice">
+					{{ product.price
+                            | currencyFormat
+                    }}
+				</ng-container>
+			</div>
+			<!-- ================================================= -->
+			<!-- Product Options                                   -->
+			<!-- ================================================= -->
+			<form class="product__options">
+				<!-- ============================================= -->
+				<!-- Product Contacts                              -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                        row
+                    ">
+					<h6> Product Contacts </h6>
+					<div class="col-lg-12">
+						<!-- Data Steward -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="product.data_steward">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Data Steward: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .data_steward
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Contact -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="product.poc_name">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Contact: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .poc_name
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Business Contact -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="
+                                product.business_contact
+                            ">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Business Contact: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .business_contact
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+						<!-- Business SME -->
+						<div class="
+                                col-lg-5
+                                col-md-5
+                                col-sm-5
+                                col-5
+                            " style="
+                                float: left;
+                                padding: 0px;
+                            " *ngIf="
+                                product.business_sme
+                            ">
+							<label class="
+                                    product__option-label
+                                " style="
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                "> Business SME: </label>
+							<br>
+							<p>
+								<span style="
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                    ">
+									{{ product
+                                            .business_sme
+                                            .name
+                                    }}
+								</span>
+								<br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================= -->
+				<!-- Product Actions                               -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                    ">
+					<div class="product__actions">
+						<!-- Request Access -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--addtocart
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-primary
+                                    btn-lg
+                                    btn-block
+                                " [ngClass]="{
+                                    'btn-loading':
+                                        addingToCart
+                                }" appClick (click)="openRequestForm()"> Request Access </button>
+						</div>
+						<!-- Wishlist -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--wishlist
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-secondary
+                                    btn-svg-icon
+                                    btn-lg
+                                " data-toggle="tooltip" title="Wishlist" [ngClass]="{
+                                    'btn-loading':
+                                        addingToWishlist
+                                }" appClick (click)="addToWishlist()">
+								<app-icon name="wishlist-16" size="16"></app-icon>
+							</button>
+						</div>
+						<!-- Compare -->
+						<div class="
+                                product__actions-item
+                                product__actions-item--compare
+                            ">
+							<button type="button" class="
+                                    btn
+                                    btn-secondary
+                                    btn-svg-icon
+                                    btn-lg
+                                " data-toggle="tooltip" title="Compare" [ngClass]="{
+                                    'btn-loading':
+                                        addingToCompare
+                                }" appClick (click)="addToCompare()">
+								<app-icon name="compare-16" size="16"></app-icon>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================= -->
+				<!-- Keywords                                      -->
+				<!-- ============================================= -->
+				<div class="
+                        form-group
+                        product__option
+                    " *ngIf="
+                        product?.keywords?.length
+                    ">
+					<label class="product__option-label"> Keywords </label>
+					<div class="
+                            product__tags
+                            tags
+                        ">
+						<ul class="tags__list">
+							<li class="keywords" *ngFor="
+                                    let kw
+                                        of product.keywords
+                                ">
+								<a style="
+                                        background-color:
+                                            #dfe2e5
+                                            !important;
+                                    ">
+									{{ kw?.name ||
+                                        kw?.slug ||
+                                        kw
+                                    }}
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+    <!-- <app-product-associations
+        *ngIf="product"
+        [product]="product"
+        [maxProducts]="15"
+        [initialProductsToShow]="5">
+    </app-product-associations>
+
+    <app-product-end-to-end-solution
+        *ngIf="product?.end_to_end_solution"
+        [solution]="product.end_to_end_solution"
+        [cartProductIds]="cartProductIds"
+        [addingProducts]="addingSolutionProducts"
+        [initialDisplayLimit]="4"
+        (addSelected)="addSelectedSolutionProducts($event)"
+        (addCompleteSolution)="addCompleteSolutionProducts($event)">
+    </app-product-end-to-end-solution> -->
+</div>
+<!--
+<app-chat
+    [currentProductId]="product.id"
+    [currentProductName]="product.name"
+    pageContext="product"
+></app-chat>
+-->

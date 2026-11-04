@@ -1,0 +1,113 @@
+.dropcart--style--offcanvas .dropcart__body {
+    max-width: calc(800px) !important;
+}
+
+.left {
+    float: left !important;
+}
+
+.editor-tag {
+  cursor: text;
+  font-size: 16px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  background: white;
+  border: 1px #cccccc solid;
+
+  & .tag-item {
+    line-height: 20px;
+    border-radius: 14px;
+    height: 20px;
+    font-size: 14px;
+    display: inline-block;
+    background: greenyellow;
+    padding-left: 5px;
+
+    .remove-tag {
+      padding-right: 5px;
+      cursor: pointer;
+    }
+  }
+
+  & .tag-item:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  & input {
+    margin: 0;
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-label {
+  padding-left: 6px;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {
+  top: 8px !important;
+  padding-left: -1px !important;
+}
+
+.ng-select .ng-value {
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin: 2px;
+}
+
+.ng-select .ng-value-icon {
+  color: white;
+  margin-left: 5px;
+}
+
+.ng-select {
+  height: 66px !important;
+}
+
+.ng-select.ng-select-multiple .ng-value {
+  background-color: #007bff;
+  color: white;
+  border-radius: 15px;
+  padding: 4px 10px;
+  margin: 2px;
+  font-size: 0.875rem;
+}
+
+.ng-select.ng-select-multiple .ng-value-icon {
+  color: #363636;
+  margin-left: 8px;
+}
+
+.ng-select.ng-select-multiple .ng-value-icon {
+  margin-left: -8px !important;
+}
+
+#ng-dropdown-panel2 {
+  display: none !important;
+}
+
+.ng-select .ng-select-container .ng-value-container {
+  padding-left: 0px !important;
+}
+
+.ng-select .ng-arrow-wrapper {
+  display: none;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
+  padding-top: 0px !important;
+}
+
+.ng-placeholder {
+  font-size: 15px;
+}
+
+.ng-select.ng-select-focused .ng-placeholder {
+  display: none !important;
+}
+
+

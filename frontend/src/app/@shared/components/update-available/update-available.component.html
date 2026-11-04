@@ -1,0 +1,18 @@
+<div class="update-overlay" *ngIf="updateInfo">
+  <div class="update-modal">
+    <div class="update-icon">
+      <img src="assets/images/brand/logo-light.svg" width="64" height="64" alt="Update Available">
+    </div>
+
+    <div class="update-title">Update Available</div>
+
+    <div class="update-message tablet desktop">
+      A new version of the app is ready.
+      Update now to enjoy the latest experience.
+    </div>
+
+    <div class="update-build">Version {{ updateInfo?.newVersion }}</div>
+
+    <button class="update-btn" (click)="updateNow()">Update Now</button>
+  </div>
+</div>

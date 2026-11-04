@@ -1,0 +1,40 @@
+<!-- Updated cart template: normalized product metadata and checkout rules -->
+<app-header-request-access [product]="product" *ngIf="dropcartType === 'offcanvas'" type="offcanvas"></app-header-request-access>
+<app-header-request-access [product]="selectedItem?.product" *ngIf="dropcartType === 'offcanvas'" type="offcanvas"></app-header-request-access>
+<app-page-header [header]="'Cart'" [breadcrumbs]="[{label: 'Domains', url: root.home()}, {label: 'Cart', url: ''}]"></app-page-header>
+
+<div class="block block-empty" *ngIf="!allItems.length"><div class="container"><div class="block-empty__body"><div class="block-empty__message">Your shopping cart is empty!</div><div class="block-empty__actions"><a [routerLink]="root.shop()" class="btn btn-primary btn-sm">Continue</a></div></div></div></div>
+
+<div class="cart block" *ngIf="allItems.length"><div class="container-fluid">
+<ul class="nav nav-tabs mb-4">
+<li class="nav-item"><a class="nav-link" [class.active]="activeTab === 'all'" (click)="activeTab = 'all'">All ({{ allItems.length }})</a></li>
+<li class="nav-item"><a class="nav-link" [class.active]="activeTab === 'products'" (click)="activeTab = 'products'">Products ({{ productItems.length }})</a></li>
+<li class="nav-item"><a class="nav-link" [class.active]="activeTab === 'dar'" (click)="activeTab = 'dar'">Data Access Request (DAR) ({{ darRequests.length }})</a></li>
+</ul>
+
+<div *ngIf="hasMixedCart" class="alert alert-warning mb-4"><strong>Products and Data Access Requests cannot be checked out together.</strong> Remove one cart type to continue.</div>
+<div *ngIf="hasMultipleDar && !hasProducts" class="alert alert-warning mb-4"><strong>Only one Data Access Request can be checked out at a time.</strong></div>
+
+<div *ngIf="activeTab === 'all'">
+<h5>All</h5><table class="cart__table cart-table"><thead><tr><th>Image</th><th>Title</th><th>Data Steward / Requestor</th><th>Domain</th><th>Datatype / Platform</th><th>Classification / Env</th><th>Total</th><th>Actions</th></tr></thead><tbody>
+<tr *ngFor="let item of allItems">
+<td><ng-container *ngIf="item.type === 'product'; else darImg"><img width="80" [src]="getProductImage(item.cartItem.product)" alt=""></ng-container><ng-template #darImg><img src="assets/images/product_images/data-access-request.jpg" width="80" alt="DAR"></ng-template></td>
+<td><ng-container *ngIf="item.type === 'product'; else dt">{{ item.cartItem.product.name }}</ng-container><ng-template #dt>{{ item.dar?.v_dar_platform || 'Data Access Request' }}</ng-template><div *ngIf="getItemFormStatus(item) as status" class="cart-form-status mt-2" [class.cart-form-status--complete]="status.complete"><strong>{{ status.complete ? 'All required information completed' : 'Forms need attention' }}</strong><div *ngIf="status.completedForms.length">Completed: {{ status.completedForms.join(', ') }}</div><div *ngIf="status.incompleteForms.length">Still required: {{ status.incompleteForms.join(', ') }}</div></div></td>
+<td>{{ item.type === 'product' ? getProductDataSteward(item.cartItem.product) : (item.dar?.requesting_id === 'Me' ? 'Myself' : (item.dar?.requestorName || item.dar?.v_dar_objectid_reqfor || '—')) }}</td>
+<td><ng-container *ngIf="item.type === 'product'">{{ getProductDomain(item.cartItem.product) }}</ng-container><span *ngIf="item.type === 'dar'">—</span></td>
+<td>{{ item.type === 'product' ? getProductDatatype(item.cartItem.product) : (item.dar?.v_dar_platform || '—') }}</td>
+<td>{{ item.type === 'product' ? getProductClassification(item.cartItem.product) : (item.dar?.v_dar_environment || '—') }}</td>
+<td>{{ item.type === 'product' ? (item.cartItem.product.price * item.quantity | currencyFormat) : '$0.00' }}</td>
+<td><button type="button" class="btn btn-sm btn-outline-primary" (click)="item.type === 'product' ? editItem(item.cartItem) : editDar(item.dar)">{{ getItemFormStatus(item).complete ? 'Review' : 'Complete' }}</button> <button type="button" class="btn btn-light btn-sm" (click)="item.type === 'product' ? remove(item.cartItem) : removeDar(item.dar)">×</button></td>
+</tr></tbody></table></div>
+
+<div *ngIf="activeTab === 'products'">
+<h5>Products</h5><table class="cart__table cart-table"><thead><tr><th>Image</th><th>Product</th><th>Data Steward</th><th>Domain</th><th>Datatype</th><th>Classification</th><th>Total</th><th>Actions</th></tr></thead><tbody>
+<tr *ngFor="let item of productItems"><td><img width="80" [src]="getProductImage(item.cartItem.product)" alt=""></td><td>{{ item.cartItem.product.name }}<div *ngIf="getProductFormStatus(item) as status" class="cart-form-status mt-2"><strong>{{ status.complete ? 'All required information completed' : 'Forms need attention' }}</strong><div *ngIf="status.completedForms.length">Completed: {{ status.completedForms.join(', ') }}</div><div *ngIf="status.incompleteForms.length">Still required: {{ status.incompleteForms.join(', ') }}</div></div></td><td>{{ getProductDataSteward(item.cartItem.product) }}</td><td>{{ getProductDomain(item.cartItem.product) }}</td><td>{{ getProductDatatype(item.cartItem.product) }}</td><td>{{ getProductClassification(item.cartItem.product) }}</td><td>{{ item.cartItem.product.price * item.quantity | currencyFormat }}</td><td><button type="button" class="btn btn-sm btn-outline-primary" (click)="editItem(item.cartItem)">{{ getProductFormStatus(item).complete ? 'Review' : 'Complete' }}</button> <button type="button" class="btn btn-light btn-sm" (click)="remove(item.cartItem)">×</button></td></tr>
+</tbody></table></div>
+
+<div *ngIf="activeTab === 'dar'"><h5>Data Access Request (DAR)</h5><table class="cart__table cart-table"><thead><tr><th>Image</th><th>Platform</th><th>Domain</th><th>Requested For</th><th>Environment</th><th>Access Type</th><th>Total</th><th>Actions</th></tr></thead><tbody><tr *ngFor="let req of darRequests"><td><img src="assets/images/product_images/data-access-request.jpg" width="80" alt="DAR"></td><td>{{ req.dar?.v_dar_platform || '—' }}<div *ngIf="getDarFormStatus(req.dar) as status" class="cart-form-status mt-2"><strong>{{ status.complete ? 'DAR completed' : 'DAR needs attention' }}</strong><div *ngIf="status.incompleteForms.length">Still required: {{ status.incompleteForms.join(', ') }}</div></div></td><td>{{ req.dar?.v_dar_dataDomainSelect || '—' }}</td><td>{{ req.dar?.requesting_id === 'Me' ? 'Myself' : (req.dar?.requestorName || req.dar?.v_dar_objectid_reqfor || '—') }}</td><td>{{ req.dar?.v_dar_environment || '—' }}</td><td>{{ req.dar?.v_dat_data_access_type || '—' }}</td><td>$0.00</td><td><button type="button" class="btn btn-sm btn-outline-primary" (click)="editDar(req.dar)">{{ getDarFormStatus(req.dar).complete ? 'Review' : 'Complete' }}</button> <button type="button" class="btn btn-light btn-sm" (click)="removeDar(req.dar)">×</button></td></tr></tbody></table></div>
+
+<div class="row justify-content-end"><div class="cart__actions mt-4"><div class="cart__buttons"><a routerLink="/" class="btn btn-light">Continue Shopping</a><button type="button" class="btn btn-primary cart__update-button" (click)="update()" [ngClass]="{'btn-loading': updating}" [disabled]="!needUpdate()">Update Cart</button></div></div></div>
+<div class="row justify-content-end pt-5"><div class="col-12 col-md-7 col-lg-6 col-xl-5"><div *ngIf="!canCheckout && checkoutMessage" class="checkout-requirements mb-3"><strong>Checkout is not available yet</strong><div>{{ checkoutMessage }}</div></div><a *ngIf="canCheckoutProducts" class="btn btn-primary btn-xl btn-block cart__checkout-button" routerLink="./checkout">Proceed to checkout<span *ngIf="productItems.length > 1"> ({{ productItems.length }} Products)</span></a><a *ngIf="canCheckoutDar" class="btn btn-primary btn-xl btn-block cart__checkout-button" routerLink="./checkout">Proceed to checkout</a></div></div>
+</div></div>

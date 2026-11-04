@@ -1,0 +1,883 @@
+/* --- External Icon Library Imports --- */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://cdn.jsdelivr.net/npm/dripicons@2.0.0/webfont/dripicons.css');
+
+
+/* Exact Hex Palette */
+$ink: #071013; $cyan: #04FDFF; $graphite: #363636; $teal: #005051; $grey: #DFE0E2; $white: #ffffff;
+
+/* Color Palette Sync */
+$ink: #071013;      // Ink Black
+$cyan: #04FDFF;     // Cyan Glow
+$graphite: #363636; // Graphite
+$teal: #005051;     // Dark Teal
+$grey: #DFE0E2;     // Alabaster Grey
+$white: #ffffff;
+
+.nx-hero-v2 {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $grey; // Primary light theme base
+  overflow: hidden;
+  padding: 120px 0;
+
+  .container { position: relative; z-index: 10; }
+
+  // 1. The Pill Badge
+  .nx-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba($white, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($teal, 0.1);
+    padding: 8px 16px;
+    border-radius: 100px;
+    color: $teal;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 15px rgba($teal, 0.05);
+
+    .nx-pill-dot {
+      width: 6px; height: 6px;
+      background: $cyan;
+      border-radius: 50%;
+      margin-right: 10px;
+      box-shadow: 0 0 10px $cyan;
+    }
+  }
+
+  // 2. High-Precision Typography
+  .nx-main-display {
+    font-size: clamp(4rem, 10vw, 7.5rem); // Fluid typography
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    color: $ink;
+    margin-bottom: 2rem;
+    
+    .nx-gradient-text {
+      color: $teal;
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .nx-hero-lead {
+    font-size: 1.25rem;
+    color: $graphite;
+    max-width: 650px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  // 3. Buttons (Nexagent Style)
+  .nx-hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    .btn-nx-filled {
+      background: $teal;
+      color: $white;
+      border: none;
+      padding: 1.25rem 3rem;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      &:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba($teal, 0.2); }
+    }
+
+    .btn-nx-ghost {
+      background: rgba($white, 0.5);
+      color: $ink;
+      border: 1px solid rgba($ink, 0.1);
+      padding: 1.25rem 3rem;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      &:hover { background: $white; border-color: $teal; color: $teal; }
+    }
+  }
+
+  // 4. Background Decorations (The Glow)
+  .nx-grid-overlay {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba($teal, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .nx-glow-sphere {
+    position: absolute;
+    filter: blur(150px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+
+    &.cyan-glow { width: 400px; height: 400px; background: rgba($cyan, 0.15); top: -100px; right: -50px; }
+    &.teal-glow { width: 500px; height: 500px; background: rgba($teal, 0.08); bottom: -150px; left: -100px; }
+  }
+
+  // 5. Scroll Indicator
+  .nx-scroll-indicator {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    .mouse {
+      width: 24px; height: 40px;
+      border: 2px solid rgba($ink, 0.1);
+      border-radius: 20px;
+      position: relative;
+      &::after {
+        content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+        width: 4px; height: 8px; background: $teal; border-radius: 2px;
+        animation: scrollPulse 2s infinite;
+      }
+    }
+  }
+}
+
+@keyframes scrollPulse {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 15px); opacity: 0; }
+}
+
+.gdxp-root {
+  background: $white; color: $ink; font-family: 'Inter', sans-serif;
+  
+  .gdxp-header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 2.5rem 0; transition: .4s;
+    .container { background: rgba($white, 0.7); backdrop-filter: blur(20px); border-radius: 100px; padding: 12px 40px; border: 1px solid rgba($ink, 0.05); }
+    .brand { font-weight: 900; letter-spacing: 2px; } .text-teal { color: $teal; }
+    nav a { 
+      margin: 0 1rem; color: rgba($ink, 0.5); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; cursor: pointer;
+      &:hover, &.active { color: $teal; }
+    }
+  }
+  &.scrolled .gdxp-header { padding: 1rem 0; .container { background: $white; box-shadow: 0 10px 40px rgba(0,0,0,0.05); } }
+
+  .section-hero {
+    min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;
+    .display-title { font-size: 6rem; font-weight: 900; line-height: 0.9; letter-spacing: -3px; margin: 2rem 0; }
+    .lead-text { max-width: 600px; margin: 0 auto 3rem; font-size: 1.25rem; color: $graphite; }
+    .hero-glow { position: absolute; right: -5%; top: 10%; width: 500px; height: 500px; background: $cyan; filter: blur(200px); opacity: 0.2; z-index: -1; }
+    .pill-badge { background: $grey; color: $teal; padding: 10px 24px; border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; }
+  }
+
+  .bento-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    .bento-card {
+      padding: 3rem; border-radius: 40px; transition: .4s; border: 1px solid rgba($ink, 0.03); background: $white;
+      i { font-size: 3rem; margin-bottom: 2rem; display: block; }
+      h3 { font-weight: 900; }
+      &.bento-lg { grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; }
+      &.bento-wide { grid-column: span 2; }
+      &:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba($ink, 0.05); }
+    }
+  }
+
+  .workflow-grid {
+    display: flex; gap: 3rem; margin-top: 5rem;
+    .wf-step { 
+      flex: 1; position: relative;
+      .num { font-size: 4rem; font-weight: 900; color: rgba($cyan, 0.15); margin-bottom: -1rem; }
+      h5 { font-weight: 800; border-top: 2px solid $teal; padding-top: 1.5rem; }
+      .line { position: absolute; top: 110px; left: 30px; width: 100%; height: 1px; background: rgba($white, 0.1); }
+    }
+  }
+
+  .stat-val { font-size: 4rem; font-weight: 900; color: $teal; }
+  .stat-label { font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: $graphite; opacity: 0.5; }
+
+  .section-bridge { padding: 120px 0; }
+  .section-padding { padding: 140px 0; }
+  .bg-teal { background: $teal !important; } .bg-ink { background: $ink; } .bg-grey { background: $grey; }
+  .text-cyan { color: $cyan; } .text-teal { color: $teal; }
+  .h1 { font-size: 4rem; font-weight: 900; letter-spacing: -2px; }
+  .tag { font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 1rem; }
+
+  .btn-nx-primary { background: $teal; color: $white; padding: 1.5rem 4rem; border-radius: 15px; border: none; font-weight: 900; }
+  .btn-nx-outline { background: transparent; color: $ink; border: 1px solid rgba($ink, 0.2); padding: 1.5rem 4rem; border-radius: 15px; font-weight: 900; margin-left:1rem; }
+  .btn-launch { background: $white; border: 1px solid rgba($ink, 0.1); padding: 12px 30px; border-radius: 50px; font-weight: 700; }
+  
+  .faq-accordion {
+    max-width: 800px; margin: 0 auto;
+    .faq-row { background: $grey; margin-bottom: 1rem; border-radius: 20px; padding: 1.5rem 2.5rem; cursor: pointer; .faq-q { font-weight: 800; display: flex; justify-content: space-between; } }
+  }
+}
+
+
+.nx-bridge {
+  position: relative;
+  padding: 160px 0;
+  background-color: $teal; // Using the Dark Teal from your palette
+  overflow: hidden;
+
+  .nx-accent-pill-light {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid rgba($cyan, 0.3);
+    border-radius: 50px;
+    color: $cyan;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .nx-bridge-display {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    
+    .nx-text-cyan {
+      color: $cyan; // Cyan Glow accent
+    }
+  }
+
+  .nx-text-bridge {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    
+    strong {
+      color: $cyan;
+      font-weight: 900;
+    }
+  }
+
+  .nx-text-bridge-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 500px;
+  }
+
+  // Asset Tags
+  .nx-asset-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .nx-tag-outline {
+      padding: 8px 20px;
+      border: 1px solid rgba($white, 0.15);
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $white;
+      background: rgba($white, 0.05);
+      transition: all 0.3s ease;
+      &:hover {
+        border-color: $cyan;
+        color: $cyan;
+        background: rgba($cyan, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // High-Precision Decorative Backdrop
+  .nx-bridge-ornament {
+    position: absolute;
+    top: -10%; right: -5%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba($cyan, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.nx-product-showcase {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nx-card-floating {
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 40px 100px rgba($ink, 0.1);
+    position: absolute;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &.main-card {
+      width: 380px;
+      z-index: 2;
+      border: 1px solid rgba($white, 0.1);
+      &:hover { transform: scale(1.05); }
+    }
+
+    &.sub-card {
+      width: 250px;
+      bottom: 40px;
+      right: 20px;
+      z-index: 3;
+      border: 1px solid rgba($ink, 0.05);
+      .dot { width: 40px; height: 10px; border-radius: 5px; }
+      .nx-bg-placeholder { background: rgba($ink, 0.1); }
+    }
+  }
+
+  // Visual "Ghost" Behind Cards
+  &::before {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    background: $cyan;
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 1;
+  }
+}
+
+.nx-feature-list {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+    
+    .icon-box {
+      flex-shrink: 0;
+      width: 60px; height: 60px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      color: $cyan;
+      font-size: 1.5rem;
+    }
+
+    h5 { font-weight: 900; color: $ink; margin-bottom: 8px; }
+    p { font-size: 0.95rem; color: $graphite; line-height: 1.6; }
+  }
+}
+
+.nx-add-btn {
+  background: $cyan;
+  color: $ink;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex; align-items: center; gap: 8px;
+  &:hover { box-shadow: 0 0 20px $cyan; }
+}
+
+.btn-nx-outline-dark {
+  background: transparent;
+  color: $ink;
+  border: 2px solid $ink;
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  font-weight: 900;
+  transition: all 0.3s;
+  &:hover { background: $ink; color: $white; }
+}
+
+.nx-bg-cyan { background-color: $cyan; }
+.nx-bg-ink { background-color: $ink; }
+.nx-bg-teal { background-color: $teal; }
+.text-ink { color: $ink; }
+.text-cyan { color: $cyan; }
+
+
+
+
+
+
+
+
+.nx-section { padding: 140px 0; }
+.nx-bg-white { background: $white; } .nx-bg-ink { background: $ink; } .nx-bg-grey { background: $white; } .nx-bg-cyan { background: $cyan; } .nx-bg-teal { background: $teal; }
+
+.nx-product-showcase {
+  position: relative; height: 450px;
+  
+  .nx-card-floating {
+    position: absolute; border-radius: 30px; padding: 2.5rem; transition: 0.5s ease;
+    box-shadow: 0 30px 60px rgba($ink, 0.12);
+    
+    &.main-card { width: 100%; top: 0; left: 0; z-index: 2; border: 1px solid rgba($white, 0.1); }
+    &.sub-card { 
+      width: 280px; bottom: -20px; right: -30px; z-index: 3; 
+      border: 1px solid rgba($teal, 0.1);
+      .status-pulse { 
+        width: 10px; height: 10px; background: $teal; border-radius: 50%;
+        animation: pulseTeal 2s infinite;
+      }
+    }
+  }
+}
+
+.nx-feature-stack {
+  list-style: none; padding: 0;
+  li {
+    display: flex; gap: 1.5rem; margin-bottom: 2rem;
+    .nx-icon-sm { 
+      width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      color: $white; font-size: 1.25rem; flex-shrink: 0;
+    }
+    .nx-f-content {
+      h5 { font-weight: 800; margin-bottom: 0.25rem; color: $ink; }
+      p { font-size: 0.9rem; color: $graphite; margin: 0; }
+    }
+  }
+}
+
+.nx-add-btn {
+  background: $cyan; color: $ink; border: none; padding: 10px 20px; border-radius: 50px; font-weight: 800; font-size: 0.8rem;
+  &:hover { transform: scale(1.05); }
+}
+
+.uppercase-space { text-transform: uppercase; letter-spacing: 2px; font-size: 0.65rem; }
+
+@keyframes pulseTeal {
+  0% { box-shadow: 0 0 0 0 rgba($teal, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba($teal, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($teal, 0); }
+}
+
+// Typography Controls
+.fw-black { font-weight: 900; }
+.nx-h1 { font-size: 4rem; font-weight: 900; letter-spacing: -2px; line-height: 1; }
+.nx-tag { font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.7rem; margin-bottom: 1rem; display: block; }
+
+
+
+
+.nx-bg-grey { background-color: $grey; }
+.text-teal { color: $teal; }
+.border-start-teal { border-left: 4px solid $teal; }
+.border-start-graphite { border-left: 4px solid $graphite; }
+
+.nx-velocity-viz {
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .nx-delivery-card {
+    width: 380px;
+    padding: 2.5rem;
+    border-radius: 30px;
+    position: relative;
+    transition: 0.4s ease;
+
+    &.prime {
+      z-index: 3;
+      transform: translateX(-40px);
+      box-shadow: 0 40px 80px rgba($ink, 0.08);
+    }
+
+    &.gating {
+      z-index: 2;
+      transform: translate(60px, -30px);
+      box-shadow: 0 20px 40px rgba($ink, 0.2);
+    }
+
+    .nx-icon-circle {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .nx-status-line {
+      margin-top: 1.5rem; font-size: 0.75rem; font-weight: 700; color: $cyan;
+      display: flex; align-items: center; gap: 8px;
+      .pulse-teal { width: 8px; height: 8px; background: $teal; border-radius: 50%; animation: pulseTeal 2s infinite; }
+    }
+  }
+
+  .nx-progress-bar {
+    height: 6px; background: rgba($ink, 0.05); border-radius: 10px; overflow: hidden;
+    .fill { height: 100%; transition: width 1.5s ease; }
+  }
+}
+
+// Global button update to match provided palette
+.btn-nx-filled {
+  background: $teal; color: $white; border: none; padding: 1.25rem 3rem; border-radius: 14px;
+  font-weight: 800; font-size: 1rem; transition: all 0.3s ease;
+  &:hover { background: $ink; transform: translateY(-3px); }
+}
+
+@keyframes pulseTeal {
+  0% { box-shadow: 0 0 0 0 rgba($teal, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba($teal, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($teal, 0); }
+}
+
+
+
+
+
+
+.nx-integrations-ticker {
+  padding: 100px 0;
+  overflow: hidden;
+  background-color: $grey;
+
+  .nx-tag {
+    font-weight: 800; letter-spacing: 4px; font-size: 0.75rem; display: block; margin-bottom: 1rem;
+  }
+
+  .nx-display-sm {
+    font-size: 3rem; color: $ink; letter-spacing: -1.5px;
+  }
+
+  // Ticker Logic
+  .nx-ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+    
+    // Gradient Fades for the edges
+    &:before, &:after {
+      content: ""; height: 100%; width: 15%; position: absolute; z-index: 2; top: 0; pointer-events: none;
+    }
+    &:before { left: 0; background: linear-gradient(to right, $grey, transparent); }
+    &:after { right: 0; background: linear-gradient(to left, $grey, transparent); }
+  }
+
+  .nx-ticker {
+    display: flex;
+    width: fit-content;
+    animation: tickerLoop 30s linear infinite;
+    
+    .nx-ticker-item {
+      flex-shrink: 0;
+      padding: 50px 0px;
+      width: 320px;
+      height: 80px;
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      span {
+        font-weight: 900;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        color: $graphite;
+        opacity: 0.7;
+      }
+
+      &.nx-high-contrast {
+        background: $ink;
+        span { color: $white; opacity: 1; }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+@keyframes tickerLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// Global typography reset for section
+.fw-black { font-weight: 900; }
+
+
+
+
+
+
+
+
+
+nx-faq-section {
+  .nx-tag { letter-spacing: 3px; font-weight: 800; font-size: 0.75rem; color: $teal; }
+  .fw-black { font-weight: 900; }
+}
+
+.nx-faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .nx-faq-row {
+    margin-bottom: 1rem;
+    background: $white;
+    border: 1px solid rgba($ink, 0.05);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+
+    .nx-faq-q {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .q-text { font-weight: 800; color: $ink; font-size: 1.1rem; }
+      
+      .nx-faq-icon {
+        width: 32px; height: 32px;
+        background: $grey;
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        transition: 0.3s;
+        color: $graphite;
+      }
+    }
+
+    .nx-faq-a {
+      transition: max-height 0.4s ease;
+      .a-content {
+        padding: 0 2rem 2rem;
+        p { color: $graphite; margin: 0; line-height: 1.6; opacity: 0.8; }
+      }
+    }
+
+    // Active State
+    &.active {
+      border-color: $cyan;
+      box-shadow: 0 20px 40px rgba($ink, 0.05);
+      .nx-faq-icon { background: $cyan; color: $ink; }
+      .q-text { color: $teal; }
+    }
+    
+    &:hover:not(.active) {
+      transform: translateY(-5px);
+      border-color: rgba($teal, 0.2);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.nx-protocol-section {
+  padding: 120px 0;
+  position: relative;
+
+  .nx-display-md { font-size: 3.5rem; letter-spacing: -2px; }
+  .nx-tag { letter-spacing: 4px; font-weight: 800; font-size: 0.75rem; margin-bottom: 1rem; display: block; }
+
+  .nx-protocol-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    gap: 30px;
+
+    @media (max-width: 991px) { flex-direction: column; }
+  }
+
+  .nx-protocol-step {
+    flex: 1;
+    position: relative;
+
+    .nx-step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .nx-step-num {
+        width: 60px; height: 60px;
+        background: transparent;
+        border: 2px solid $teal;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 1.2rem;
+        color: $white;
+        z-index: 2;
+        transition: all 0.5s ease;
+      }
+
+      .nx-step-connector {
+        flex-grow: 1;
+        height: 2px;
+        background: linear-gradient(90deg, $teal, transparent);
+        margin-left: 0;
+        z-index: 1;
+
+        @media (max-width: 991px) { display: none; }
+      }
+    }
+
+    .nx-step-body {
+      padding-right: 20px;
+      h4 { margin-bottom: 15px; font-size: 1.25rem; transition: color 0.4s ease; }
+      p { line-height: 1.6; font-size: 0.95rem; }
+    }
+
+    // Hover & Active States
+    &:hover {
+      .nx-step-num {
+        background: $cyan;
+        border-color: $cyan;
+        color: $ink;
+        box-shadow: 0 0 20px rgba($cyan, 0.4);
+      }
+      h4 { color: $cyan !important; }
+    }
+  }
+}
+
+// OS Animation custom durations for a "Filling" pipe effect
+[data-aos="fade-right"] {
+  &.aos-animate {
+    .nx-step-connector {
+      animation: fillPipe 1s forwards;
+      animation-delay: inherit;
+    }
+  }
+}
+
+@keyframes fillPipe {
+  from { width: 0; opacity: 0; }
+  to { width: 100%; opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Palette Integration */
+$ink: #071013; $cyan: #04FDFF; $graphite: #363636; $teal: #005051; $alabaster: #DFE0E2; $white: #ffffff;
+
+
+.nx-section { padding: 120px 0; }
+.nx-bg-alabaster { background-color: $alabaster; }
+
+.nx-h1 { font-size: 3.5rem; font-weight: 900; color: $ink; letter-spacing: -2px; }
+.nx-tag { font-weight: 800; letter-spacing: 4px; font-size: 0.75rem; display: block; margin-bottom: 1rem; }
+
+.nx-drb-alert {
+  background: rgba($white, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba($ink, 0.05);
+
+  .nx-indicator-dot {
+    width: 12px; height: 12px;
+    background: $cyan;
+    border-radius: 50%;
+    &.pulse-cyan { box-shadow: 0 0 0 rgba($cyan, 0.4); animation: pulse 2s infinite; }
+  }
+
+  .border-start-cyan { border-left: 3px solid $cyan; }
+}
+
+.nx-gov-card {
+  background: $white;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: rgba($cyan, 0.3);
+    box-shadow: 0 20px 40px rgba($ink, 0.05) !important;
+  }
+}
+
+.nx-badge-outline-teal {
+  border: 1px solid #fff;
+  color: $teal;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.nx-badge-outline-white {
+  border: 1px solid $teal;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba($cyan, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba($cyan, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($cyan, 0); }
+}
+
+
+
+
+
+
+
+
+
+/* Palette Integration */
+$cyan: #04FDFF; $graphite: #363636; $teal: #005051; $white: #ffffff;
+
+.nx-stat-container {
+  padding: 20px;
+  position: relative;
+  
+  .nx-stat-val {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nx-stat-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+  }
+
+  .nx-stat-bar {
+    width: 30px;
+    height: 4px;
+    background: $teal;
+    margin: 1.5rem auto 0;
+    transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &:hover .nx-stat-bar {
+    width: 60px;
+    background: $cyan;
+    box-shadow: 0 0 10px rgba($cyan, 0.5);
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12" *ngFor="let media of jsonMedia" (deferLoad)="media.show = true">
+        <div class="card col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12" style="padding: 14px; border: 0px; float: left;">
+            <div style="padding: 12px; border-radius: 4px;">
+                <video id="{{media.slug}}" class="video-js vjs-default-skin" width="100%" height="auto" controls preload="none"
+                    poster='{{media.imageUrl}}'
+                    data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                    <source src="{{media.mp4Url}}" type='video/mp4' />
+                    <source src="{{media.webmUrl}}" type='video/webm' />
+                </video>
+            </div>
+            <div class="card-body">
+                <span><img src="{{media.icon}}" class="mb-2" style="width: 100%; max-width: 40px;"></span>
+                <h5 class="card-title" style="font-size: 14px; font-weight:bold; margin-bottom: 4px;">{{media.heading}}</h5>
+                <p class="card-text" style="font-size:12px;">
+                    <span>
+                        <span><strong>Size: </strong>{{media.size}}</span><br>
+                        <span><strong>File Format: </strong>{{media.format}}</span><br>
+                        <span><strong>Date: </strong>{{media.date}}</span>
+                    </span>
+                </p>            
+                <span>
+                    <!-- <a href="" class="btn btn-dark btn-sm align-right" style="margin-right: 12px; margin-right: 12px; width: 100%; max-width: 110px;">View</a> -->
+                    <a href="" download="{{media.downloadUrl}}" class="btn btn-primary btn-sm align-right" download>Download</a>
+                </span><br>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,263 @@
+.modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ai-glow {
+    color: #cc0000; // crimson accent
+    text-shadow: 0 0 8px rgba(204, 0, 0, 0.3);
+}
+
+.bg-soft-grid {
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#dee2e6 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+// .suggestion-card {
+//     transition: all 0.3s ease;
+//     border-left: 4px solid transparent !important;
+    
+//     // 1. RE-ESTABLISH TEXT ISOLATION
+//     // This stops the 'ai-grade-a' class on the parent from turning all children green.
+//     &.ai-grade-a-plus, &.ai-grade-a, &.ai-grade-a-minus,
+//     &.ai-grade-b-plus, &.ai-grade-b, &.ai-grade-b-minus,
+//     &.ai-grade-c-plus, &.ai-grade-c, &.ai-grade-c-minus,
+//     &.ai-grade-d-plus, &.ai-grade-d, &.ai-grade-d-minus,
+//     &.ai-grade-f-plus, &.ai-grade-f, &.ai-grade-f-minus {
+//         color: initial !important; 
+//     }
+
+//     &:hover {
+//         transform: translateY(-5px);
+//         box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        
+//         // 2. DYNAMIC BORDER COLORS (Only on Hover)
+//         &.ai-grade-a-plus, &.ai-grade-a, &.ai-grade-a-minus { border-left-color: #34c38f !important; }
+//         &.ai-grade-b-plus, &.ai-grade-b, &.ai-grade-b-minus { border-left-color: #50a5f1 !important; }
+//         &.ai-grade-c-plus, &.ai-grade-c, &.ai-grade-c-minus { border-left-color: #f1b44c !important; }
+//         &.ai-grade-d-plus, &.ai-grade-d, &.ai-grade-d-minus { border-left-color: #f1734f !important; }
+//         &.ai-grade-f-plus, &.ai-grade-f, &.ai-grade-f-minus { border-left-color: #f46a6a !important; }
+//     }
+// }
+
+.score-badge {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+.info-row {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+        font-weight: 700;
+        color: #495057;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .value {
+        color: #6c757d;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.6rem;
+}
+
+.fw-500 { font-weight: 500; }
+
+.text-primary-btn {
+    color: #04fdff !important;
+}
+
+/* A Tier - Emerald Green Base (#34c38f) */
+.ai-grade-a-plus  { color: #34c38f; font-weight: bold; } // Deep Forest
+.ai-grade-a       { color: #58d2a6; }                   // Your Base
+.ai-grade-a-minus { color: #80ddbb; }                   // Soft Mint
+
+/* B Tier - Blue Base (#50a5f1) */
+.ai-grade-b-plus  { color: #50a5f1; font-weight: bold; } // Deep Royal
+.ai-grade-b       { color: #7fbdf5; }                   // Your Base
+.ai-grade-b-minus { color: #aed5f9; }                   // Sky Blue
+
+/* C Tier - Golden Base (#f1b44c) */
+.ai-grade-c-plus  { color: #f1b44c; font-weight: bold; } // Burnt Orange
+.ai-grade-c       { color: #f3be64; }                   // Your Base
+.ai-grade-c-minus { color: #f7d293; }                   // Soft Sand
+
+/* D Tier - Coral Base (#f1734f) */
+.ai-grade-d-plus  { color: #f1734f; }                   // Brick Red
+.ai-grade-d       { color: #f38667; }                   // Your Base
+.ai-grade-d-minus { color: #f7ac96; }                   // Soft Peach
+
+/* F Tier - Red Base (#f46a6a) */
+.ai-grade-f-plus  { color: #f46a6a; }                   // Blood Red
+.ai-grade-f       { color: #f03b3b; font-style: italic; } // Your Base
+.ai-grade-f-minus { color: #ee2323; text-decoration: underline; } // Faded Red
+
+
+/* Tooltip Styling */
+.reason-tooltip {
+    position: relative;
+    display: inline-block;
+
+    .tooltip-text {
+        visibility: hidden;
+        width: 600px;
+        background-color: #212529;
+        color: #fff;
+        text-align: left;
+        border-radius: 8px;
+        padding: 15px;
+        position: absolute;
+        z-index: 1060;
+        
+        /* Positioning to the LEFT */
+        top: 50%;
+        right: 110%; /* Moves it 10% past the left edge of the button */
+        transform: translateY(-50%); /* Centers it vertically relative to button */
+        
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+        box-shadow: -5px 8px 24px rgba(0,0,0,0.2);
+        font-size: 0.85rem;
+
+        /* Tooltip Arrow pointing RIGHT */
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%; /* Arrow on the right side of the tooltip box */
+            margin-top: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent #212529;
+        }
+        
+        strong {
+            color: #04fdff; 
+        }
+    }
+
+    &:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.custom-data-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    background: #f1f3f5; // Neutral default
+    color: #495057;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: all 0.2s ease;
+
+    i {
+        font-size: 12px;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    }
+}
+
+/* Specific Badge Variants */
+.badge-certified {
+    background: rgba(52, 195, 143, 0.1);
+    color: #34c38f;
+    border-color: #34c38f;
+}
+
+.badge-confidential {
+    background: rgba(244, 106, 106, 0.1);
+    color: #f46a6a;
+    border-color: #f46a6a;
+}
+
+.badge-trending {
+    background: rgba(80, 165, 241, 0.1);
+    color: #50a5f1;
+    border-color: #50a5f1;
+}
+
+/* Parent container must be relative so 'absolute' children stay inside it */
+.position-relative {
+    position: relative !important;
+}
+
+/* Verified Master Card Layout */
+.verified-master-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e0e0e0 !important;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.005);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+
+    .bg-success-soft {
+        background-color: rgba(52, 195, 143, 0.15);
+    }
+
+    .family-mono {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+
+    .italic-text {
+        font-style: italic;
+        color: #495057;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Verified Tag (Sticker Style) */
+.verified-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;
+    
+    img {
+        height: 60px;
+        width: auto;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+    }
+}
+
+.border-success {
+    border-color: #34c38f !important;
+}
+
+.modal-xl {
+    max-width: 1140px;
+}

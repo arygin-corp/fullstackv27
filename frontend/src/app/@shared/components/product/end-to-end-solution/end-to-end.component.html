@@ -1,0 +1,99 @@
+<section *ngIf="canDisplaySolution" class="e2e-solution">
+    <div class="e2e-solution__header">
+        <div>
+            <div class="e2e-solution__eyebrow">
+                End-to-End Solution · {{ solutionProducts.length }}
+                {{ solutionProducts.length === 1 ? 'Product' : 'Products' }}
+            </div>
+
+            <h2 class="e2e-solution__title">
+                {{ solution?.name }}
+            </h2>
+
+            <p
+                *ngIf="solution?.description"
+                class="e2e-solution__description">
+                {{ solution?.description }}
+            </p>
+        </div>
+
+        <div
+            *ngIf="hasSelectableProducts"
+            class="e2e-solution__controls">
+            <button
+                type="button"
+                class="btn btn-link"
+                [disabled]="addingProducts || allProductsSelected"
+                (click)="selectAllProducts()">
+                Select All
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-link"
+                [disabled]="addingProducts || selectedProductCount === 0"
+                (click)="clearSelection()">
+                Clear
+            </button>
+        </div>
+    </div>
+
+    <div class="e2e-product-grid">
+        <div *ngFor="let entry of solution?.products" class="e2e-product-card" (click)="openQuickView(entry.product)">
+            <div class="e2e-product-card__image-wrap">
+                <img *ngIf="entry.product.images?.length" [src]="entry.product.images?.[0]" [alt]="entry.product.name" class="e2e-product-card__image" loading="lazy">
+            </div>
+
+            <div class="e2e-product-card__content">
+                <div class="e2e-product-card__top">
+                    <span *ngIf="entry.product.datatype" class="e2e-product-card__datatype">{{ entry.product.datatype }}</span>
+
+                    <span *ngIf="entry.product.classification" class="e2e-product-card__classification">{{ entry.product.classification }}</span>
+                </div>
+
+                <h3 class="e2e-product-card__title">{{ entry.product.name }}</h3>
+
+                <div *ngIf="entry.product.sku" class="e2e-product-card__sku">SKU: {{ entry.product.sku }}</div>
+
+                <p class="e2e-product-card__description">
+                    {{ entry.product.short_desc || entry.reason || 'No description available.'}}
+                </p>
+
+                <div class="e2e-product-card__meta">
+                    <span *ngIf="entry.product.domain">{{ entry.product.domain }}</span>
+
+                    <span class="e2e-product-card__view">Quick view</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="hasMoreProducts" class="e2e-solution__view-more">
+        <button
+            type="button"
+            class="btn btn-link"
+            (click)="toggleProductsView()">
+            {{
+                showAllProducts
+                    ? 'View Less'
+                    : 'View ' + hiddenProductCount + ' More'
+            }}
+        </button>
+    </div>
+
+    <div *ngIf="hasSelectableProducts" class="e2e-solution__footer">
+         <div>
+            <strong>{{ solutionProducts.length }}</strong> Selected
+        </div>
+
+        <div class="e2e-solution__footer-actions">
+            <button
+                type="button"
+                class="btn btn-outline-secondary"
+                [disabled]="addingProducts"
+                (click)="addAllSolutionProducts()">
+                {{ addingProducts ? 'Adding Complete Suite...' : 'Add Complete Suite to Cart' }}
+            </button>
+        </div>
+    </div>
+</section>

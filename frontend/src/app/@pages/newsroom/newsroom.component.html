@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="blog-grid">
+    <div class="blog-card" *ngFor="let post of filtered">
+      <div class="image">
+        <img [src]="post.image" [alt]="post.title">
+      </div>
+
+      <div class="content">
+        <h6>
+          <a [routerLink]="['post', post.category, post.slug]">
+            {{ post.title }}
+          </a>
+        </h6>
+        <p>{{ post.summary }}</p>
+
+        <div class="meta">
+          <img [src]="post.authorImage" class="avatar">
+          <span><strong><small>{{ post.author }}</small></strong></span>
+          <span><small>{{ post.date }}</small></span>
+        </div>
+
+        <span class="category">{{ post.category }}</span>
+      </div>
+    </div>
+  </div>
+</div>

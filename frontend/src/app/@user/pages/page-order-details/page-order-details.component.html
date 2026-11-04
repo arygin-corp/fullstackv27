@@ -1,0 +1,156 @@
+<div class="order-header">
+    <div class="order-header__actions">
+        <a routerLink="marketplace/user/orders" class="btn btn-xs btn-secondary">Back to list</a>
+    </div>
+    <h5 class="order-header__title">Order #: {{ order.id }}</h5>
+    <div class="order-header__subtitle" style="padding: 12px 0px;">
+        Was placed on <mark class="order-header__date">{{ order.date }}</mark>
+        and is currently <mark class="order-header__status">{{ order.status }}</mark>.
+    </div>
+
+    <div class="card-divider"></div>
+
+    <div class="container-fluid" style="padding: 0px;">
+        <div class="card-table">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <table>
+                    <tbody class="card-table__body card-table__body--merge-rows">
+                        <tr class="col-12" *ngFor="let item of order.items">
+                            <td>{{ item.name }} × {{ item.quantity }}</td>
+                            <td class="col-12" style="padding-bottom: 24px; border-bottom: 2px solid #e5e5e5; padding: 10px 0px;">
+                                <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between" style="margin-bottom: 12px; padding: 0px 20px 0px 0px;">
+                                        <strong class="text-start">{{ item.name }} <br>
+                                            <span>
+                                                <small class="text-start" style="font-size: 12px; font-weight: 400;"><strong>Classification: </strong>Protected</small><br>
+                                            </span>
+                                            <small class="d-block d-sm-none" style="font-size: 12px; font-weight: 400;"><strong>Data Steward: </strong>Omar Casas<br>
+                                                <span>
+                                                    <small class="" style="font-size: 12px; font-weight: 400;"><strong>Contact: </strong>Hali Crutchfield</small>
+                                                </span>
+                                            </small>
+                                        </strong>
+    
+                                        <small class="text-end d-none d-sm-block d-sm-none d-md-block" style="font-size: 12px; font-weight: 400;"><strong>Data Steward: </strong>Omar Casas<br>
+                                            <span>
+                                                <small class="text-end" style="font-size: 12px; font-weight: 400;"><strong>Contact: </strong>Hali Crutchfield</small>
+                                            </span>
+                                        </small>
+                                    </div>
+    
+                                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left;">
+                                        <img src="assets/images/product_images/adas_vehicle_info.jpg" style="width: 100%; padding: 8px 0px;">
+                                    </div>
+    
+                                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
+                                        <p class="product-delivery text-primary">
+                                            <strong style="font-weight: 600; font-size: 20px;">Pending Approval Date</strong>
+                                            <br>
+                                            <span class="text-dark" style="font-weight: 400; font-size: 16px;">Approval Due By</span>
+                                        </p>
+                                        <p class="delivery-day text-primary">Friday</p> 
+                                        <p class="delivery-date text-primary" style="float: left;">12</p>
+                                        <p class="delivery-month text-primary" style="float: left;">01</p>
+                                        <br>
+                                        <p class="delivery-year text-primary" style="float: left;">2024</p>
+                                    </div>
+    
+                                    <div class="col-xl-3 col-lg-8 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 0px;">
+                                        <p class="order-status">Order Status</p>
+                                        <div class="progress mb-3" style="position: relative; top: 2px;">
+                                            <ng-container>
+                                                <ng-container>
+                                                    <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-success" style="width: 33.33%; border: 1px solid;"></div>
+                                                    <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-blue" style="width: 33.33%; border: 1px solid;"></div>
+                                                    <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-grey" style="width: 33.33%; border: 1px solid;"></div>
+                                                </ng-container>
+                                            </ng-container>
+                                        </div>
+                                        <p class="order-status-notification" style="font-size: 14px;">
+                                            <ng-container>
+                                                <ng-container>
+                                                    Your request is <span class="text-primary font-weight-bold">Pending</span> with <span class="text-info font-weight-bold">Omar Casas</span>
+                                                </ng-container>
+                                            </ng-container>
+                                        </p>
+                                    </div>
+    
+                                    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
+                                        <ng-container>
+                                            <p class="text-center" style="margin: 0px; padding-top: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 8px;font-size:14px;">
+                                                <strong>Quick Actions</strong>
+                                            </p>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-success btn-action-approve align-middle">Approve</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-danger btn-action-deny align-middle">Deny</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-history-teams align-middle">Microsoft Teams</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-history-outlook align-middle">Microsoft Outlook</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-action-upload align-middle">Upload Attachment</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a type="button" href="" class="btn btn-sm btn-dark btn-action-review align-middle">Write A Review</a>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="row mt-3 no-gutters mx-n2">
+    <div class="col-sm-6 col-12 px-2">
+        <div class="card address-card address-card--featured">
+            <div class="address-card__body">
+                <div class="address-card__badge address-card__badge--muted">Shipping Address</div>
+                <div class="address-card__name">{{ order.shippingAddress.firstName + ' ' + order.shippingAddress.lastName}}</div>
+                <div class="address-card__row">
+                    {{ order.shippingAddress.country }}<br>
+                    {{ order.shippingAddress.postcode }}, {{ order.shippingAddress.city }}<br>
+                    {{ order.shippingAddress.address }}
+                </div>
+                <div class="address-card__row">
+                    <div class="address-card__row-title">Phone Number</div>
+                    <div class="address-card__row-content">{{ order.shippingAddress.phone }}</div>
+                </div>
+                <div class="address-card__row">
+                    <div class="address-card__row-title">Email Address</div>
+                    <div class="address-card__row-content">{{ order.shippingAddress.email }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-12 px-2 mt-sm-0 mt-3">
+        <div class="card address-card address-card--featured">
+            <div class="address-card__body">
+                <div class="address-card__badge address-card__badge--muted">Billing Address</div>
+                <div class="address-card__name">{{ order.billingAddress.firstName + ' ' + order.billingAddress.lastName}}</div>
+                <div class="address-card__row">
+                    {{ order.billingAddress.country }}<br>
+                    {{ order.billingAddress.postcode }}, {{ order.billingAddress.city }}<br>
+                    {{ order.billingAddress.address }}
+                </div>
+                <div class="address-card__row">
+                    <div class="address-card__row-title">Phone Number</div>
+                    <div class="address-card__row-content">{{ order.billingAddress.phone }}</div>
+                </div>
+                <div class="address-card__row">
+                    <div class="address-card__row-title">Email Address</div>
+                    <div class="address-card__row-content">{{ order.billingAddress.email }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

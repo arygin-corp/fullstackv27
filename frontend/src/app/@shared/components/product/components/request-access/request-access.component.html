@@ -1,0 +1,1691 @@
+<!-- .dropcart -->
+<div [class]="{ dropcart: true, 'dropcart--style--dropdown': type === 'dropdown', 'dropcart--style--offcanvas': type === 'offcanvas',
+    'dropcart--open': state.isOpen$|async}" class="disable-scroll">
+    <div *ngIf="type === 'offcanvas'" class="dropcart__backdrop" (click)="close()"></div>
+    <div class="dropcart__body">
+        <div *ngIf="type === 'offcanvas'" class="dropcart__header">
+            <div class="dropcart__title">Hi, {{appSvc?.userData?.givenName}}!<br>
+                <span><small style="font-size: 14px; font-weight: 400;">You are requesting access to "<strong>{{product?.name}}</strong>".</small></span>
+            </div>
+            <button class="dropcart__close" type="button" (click)="close()">
+                <app-icon name="cross-12" size="12"></app-icon>
+            </button>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="addToCart()">
+            <div class="container-fluid">   
+                <div class="col-lg-2 left sticky-requirements">
+                    <p class="mt-3"><strong>Requirements</strong></p>
+                    <ul class="requirements">
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('requesting_id')?.value === 'User'" [hidden]="form.get('requesting_id')?.value === 'User'">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">For Myself</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" [hidden]="form.get('requesting_id')?.value === 'User'">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">For Myself</strong>
+                            </p>
+
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_objectid_reqfor')?.value !== undefined" [hidden]="form.get('requesting_id')?.value === 'Me'">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">For Someone Else</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_objectid_reqfor')?.value" [hidden]="form.get('requesting_id')?.value === 'Me'">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">For Someone Else</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_platform')?.value !== undefined" [hidden]="form.get('v_dar_platform')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Platform</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_platform')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Platform</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_dataDomainSelect')?.value !== undefined" [hidden]="form.get('v_dar_dataDomainSelect')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Data Domain</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_dataDomainSelect')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Data Domain</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_userType')?.value !== undefined" [hidden]="form.get('v_dar_userType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">User Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_userType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">User Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_accessType')?.value !== undefined" [hidden]="form.get('v_dar_accessType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">User/App Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_accessType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">User/App Access</strong>
+                            </p>
+                        </li>
+                        <li class="row" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dat_api_name')?.value !== undefined" [hidden]="form.get('v_dat_api_name')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">API Name</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dat_api_name')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">API Name</strong>
+                            </p>
+                        </li>
+                        <!-- <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_systemAccess')?.value !== undefined" [hidden]="form.get('v_dar_systemAccess')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">System Access</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_dar_systemAccess')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">System Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_mainframeAccess')?.value !== undefined" [hidden]="form.get('v_dar_mainframeAccess')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Mainframe Access</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_mainframeAccess')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Mainframe Access</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Warehouse/Mart</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Warehouse/Mart</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Gateway Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Gateway Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Oracle Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Oracle Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Database/Schema</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Database/Schema</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Table Name(s)</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Table Name(s)</strong>
+                            </p>
+                        </li>-->
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_environment')?.value !== undefined" [hidden]="form.get('v_dar_environment')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Environment</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_environment')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Environment</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dat_data_access_type')?.value !== undefined" [hidden]="form.get('v_dat_data_access_type')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Access</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dat_data_access_type')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Access</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_DataReqDescription')?.value !== undefined" [hidden]="form.get('v_dar_DataReqDescription')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Request Description</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_DataReqDescription')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Request Description</strong>
+                        </p>
+                        </li>
+
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_businessJustification')?.value !== undefined" [hidden]="form.get('v_dar_businessJustification')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Intended Use</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_businessJustification')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Intended Use</strong>
+                        </p>
+                        </li>
+
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_emd_PI_access')?.value !== undefined" [hidden]="form.get('v_emd_PI_access')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Sensitive PI</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_emd_PI_access')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Sensitive PI</strong>
+                        </p>
+                        </li>
+
+                        <div *ngIf="form.get('v_emd_PI_access')?.value === 'Yes'">
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('edm_PI_personal_details')?.value !== undefined" [hidden]="form.get('edm_PI_personal_details')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('edm_PI_personal_details')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_emd_specify_PII_needs')?.value !== undefined" [hidden]="form.get('v_emd_specify_PII_needs')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Explanation</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_emd_specify_PII_needs')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Explanation</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_edm_type_of_work')?.value !== undefined" [hidden]="form.get('v_edm_type_of_work')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Type of Work</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_edm_type_of_work')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Type of Work</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_edm_3rd_party_vendor')?.value !== undefined" [hidden]="form.get('v_edm_3rd_party_vendor')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">3rd Party Vendor</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_edm_3rd_party_vendor')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">3rd Party Vendor</strong>
+                            </p>
+                        </li>
+                        </div>
+                
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('chk_dar_terms_message')?.value !== undefined" [hidden]="form.get('chk_dar_terms_message')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Terms of Use</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('chk_dar_terms_message')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Terms of Use</strong>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            
+            
+                <div class="col-lg-10 left scrollable-div">
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_product_name" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Product Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="radar_productname" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">RADAR Product Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_dm_version" ngModel="Version {{currentApplicationVersion}}" [attr.disabled]="true">
+                            <label for="floatingInput">Application Build Version</label>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" formControlName="v_dar_createdby_fullname" [attr.disabled]="true">
+                            <label for="floatingInput">Request Created By</label>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_createdby_fullname" ngModel="{{appSvc?.userData?.id}}" [attr.disabled]="true">
+                            <label for="floatingInput">Request Created By</label>
+                        </div>
+                    </div>  -->
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_objectid_createdby" ngModel="{{appSvc?.userData?.id}}" [attr.disabled]="true">
+                            <label for="floatingInput">Request Created By ObjectID</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select name="requestingID" id="requestingID" class="form-control" formControlName="requesting_id">
+                                <option value="Me" [selected]="isSelected">For me</option>
+                                <option value="User">For someone else</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Who are you requesting data access for?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'User'">
+                        <div class="form-floating mt-3">
+                            <app-people-finder></app-people-finder>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="companyName" ngModel="{{appSvc?.userData?.companyName}}" [attr.disabled]="true">
+                            <label for="floatingInput">Company Name</label>
+                        </div>
+                    </div>
+                     <!--COMPANY NAME USED TO TRIGGER LOGIC-->
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value === 'AIR' || 
+                            form.get('companyName').value === 'BJN' || 
+                            form.get('companyName').value === 'BSL' || 
+                            form.get('companyName').value === 'BTR' || 
+                            form.get('companyName').value === 'CPT' || 
+                            form.get('companyName').value === 'GTS' || 
+                            form.get('companyName').value === 'MSO' || 
+                            form.get('companyName').value === 'R&D' || 
+                            form.get('companyName').value === 'SIA' || 
+                            form.get('companyName').value === 'TAL' || 
+                            form.get('companyName').value === 'TBC' || 
+                            form.get('companyName').value === 'TCA' || 
+                            form.get('companyName').value === 'TDP' || 
+                            form.get('companyName').value === 'TCN' || 
+                            form.get('companyName').value === 'TIN' || 
+                            form.get('companyName').value === 'TKY' || 
+                            form.get('companyName').value === 'TLS' || 
+                            form.get('companyName').value === 'TMA' || 
+                            form.get('companyName').value === 'TME' || 
+                            form.get('companyName').value === 'TMM' || 
+                            form.get('companyName').value === 'TMN' || 
+                            form.get('companyName').value === 'TMP' || 
+                            form.get('companyName').value === 'TMN' || 
+                            form.get('companyName').value === 'TMS' || 
+                            form.get('companyName').value === 'TNA' || 
+                            form.get('companyName').value === 'TTC' || 
+                            form.get('companyName').value === 'TTX' || 
+                            form.get('companyName').value === 'TWV'">
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Motor North America" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'TCC' || 
+                            form.get('companyName').value == 'TIS' || 
+                            form.get('companyName').value == 'TFB' || 
+                            form.get('companyName').value == 'TFS' || 
+                            form.get('companyName').value == 'TSM' || 
+                            form.get('companyName').value == 'TPR'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Financial Services" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'MTM'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Mazda Manufacturing" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'Woven Planet'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Woven Planet" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'Toyota Connected'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Connected" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'TMC'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Motors Corporation" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('companyName').value === 'AIR' || 
+                        form.get('companyName').value === 'BJN' || 
+                        form.get('companyName').value === 'BSL' || 
+                        form.get('companyName').value === 'BTR' || 
+                        form.get('companyName').value === 'CPT' || 
+                        form.get('companyName').value === 'GTS' || 
+                        form.get('companyName').value === 'MSO' || 
+                        form.get('companyName').value === 'R&D' || 
+                        form.get('companyName').value === 'SIA' || 
+                        form.get('companyName').value === 'TAL' || 
+                        form.get('companyName').value === 'TBC' || 
+                        form.get('companyName').value === 'TCA' || 
+                        form.get('companyName').value === 'TDP' || 
+                        form.get('companyName').value === 'TCN' || 
+                        form.get('companyName').value === 'TIN' || 
+                        form.get('companyName').value === 'TKY' || 
+                        form.get('companyName').value === 'TLS' || 
+                        form.get('companyName').value === 'TMA' || 
+                        form.get('companyName').value === 'TME' || 
+                        form.get('companyName').value === 'TMM' || 
+                        form.get('companyName').value === 'TMN' || 
+                        form.get('companyName').value === 'TMP' || 
+                        form.get('companyName').value === 'TMN' || 
+                        form.get('companyName').value === 'TMS' || 
+                        form.get('companyName').value === 'TNA' || 
+                        form.get('companyName').value === 'TTC' || 
+                        form.get('companyName').value === 'TTX' || 
+                        form.get('companyName').value === 'TWV'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_userType" ngModel="TMNAUsers" [attr.disabled]="true">
+                            <label for="floatingInput">User Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('companyName').value == 'TCC' || 
+                        form.get('companyName').value == 'TIS' || 
+                        form.get('companyName').value == 'TFB' || 
+                        form.get('companyName').value == 'TFS' || 
+                        form.get('companyName').value == 'TSM' || 
+                        form.get('companyName').value == 'TPR'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_userType" ngModel="TMNAAffiliates" [attr.disabled]="true">
+                            <label for="floatingInput">User Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_accessType" ngModel="User Access" [attr.disabled]="true">
+                            <label for="floatingInput">Access Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_dataDomainSelect" ngModel="{{product?.one_ts_domain}}" [attr.disabled]="true">
+                                <option value="Customer">Customer</option>
+                                <option value="Dealer Identity">Dealer Identity</option>
+                                <option value="Dealership">Dealership</option>
+                                <option value="Data Governance">Data Governance</option>
+                                <option value="Digital Assets">Digital Assets</option>
+                                <option value="Finance">Enterprise Corporate Application</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Identity Access Management">Identity Access Management</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Manufacturing Parts">Parts</option>
+                                <option value="Product Quality">Quality</option>
+                                <option value="Research and Development">Research and Development</option>
+                                <option value="Service History">Service History</option>
+                                <option value="Telematics">Telematics</option>
+                                <option value="Vehicles">Vehicles</option>
+                                <option value="Warranty">Warranty</option>
+                              </select>
+                            <label for="floatingInput">Data Domains</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_custom_control_group" ngModel="{{product?.control_group}}" [attr.disabled]="true">
+                            <label for="floatingInput">Control Group</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_platform" ngModel="{{product?.platform}}" [attr.disabled]="true">
+                                <option value="">Choose One</option>
+                                <option value="API (EIG Application Support)">API (EIG Application Support)</option>
+                                <option value="TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)">TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="floatingInput">Platform</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'Other'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_OtherType" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">If other, please specify</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dat_api_name" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">API Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_post_database_schema" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Database/Schema</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_post_table_names" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Table Name(s)</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_custom_routing_rule_identifier" ngModel="{{product?.route_identifier}}" [attr.disabled]="true">
+                            <label for="floatingInput">Route Identifier</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_tbdp_is_this_request_fort_irm_pricing" ngModel="No" [attr.disabled]="true">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput">Is this request for TBDP IRM-Pricing data access?</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_environment" ngModel="{{product?.environment}}" [attr.disabled]="true">
+                                <option value="QA">QA</option>
+                                <option value="Dev">Development</option>
+                                <option value="Prod" selected>Production</option>
+                                <option value="All">All</option>
+                            </select>
+                            <label for="floatingInput">Environment</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dat_data_access_type" ngModel="{{product?.data_access_type}}" [attr.disabled]="true">
+                                <option value="read">Read</option>
+                                <option value="modify">Modify</option>
+                                <option value="insert">Insert</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                                <option value="na">Not Applicable</option>
+                            </select>
+                            <label for="floatingInput">Data Access Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_databaseName" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Database Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_ad_group" ngModel="" [attr.disabled]="true">
+                            <label for="floatingInput">AD Group</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control classification" formControlName="v_dar_accessReqClassification" ngModel="{{product?.classification}}" [attr.disabled]="true">
+                                <option value="Public" selected="selected">Public</option>
+                                <option value="Protected" selected="selected">Protected</option>
+                                <option value="Confidential">Confidential</option>
+                                <option value="Highly Confidential">Highly Confidential</option>
+                                <option value="Personal Information">Personal Information</option>
+                                <option value="Legal/Privileged">Legal/ Privileged Information</option>
+                              </select>
+                            <label for="floatingInput">Access Request Classification</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <textarea type="text" class="form-control" formControlName="v_dar_DataReqDescription" ngModel="{{product?.name}}" rows="24" minlength="12" maxlength="400" style="height: 200px;" [attr.disabled]="true"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Data Request Description</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Public' || 
+                        form.get('v_dar_accessReqClassification').value == 'Protected'"
+                        hidden="
+                            form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                            form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                            form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                            form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <textarea autofocus class="form-control" formControlName="v_dar_businessJustification" ngModel="Intended Use is not required for products with a Data Classification of Public or Protected" rows="24" minlength="6" maxlength="200" style="height: 200px;" [attr.disabled]="true"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Intended Use</label>
+                        </div>
+                        <small class="text-danger">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</small>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                        form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <textarea autofocus class="form-control" formControlName="v_dar_businessJustification" ngModel="" rows="24" minlength="6" maxlength="200" style="height: 200px;"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Intended Use</label>
+                        </div>
+                        <small class="text-danger">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</small>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Public' || 
+                        form.get('v_dar_accessReqClassification').value == 'Protected' || 
+                        form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                        form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_emd_PI_access" ngModel="">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting for any Sensitive Personal Information (Sensitive PI) data?</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="edm_PI_personal_details">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Do you need access to any personal details like customer name, address, place of birth, etc?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.edm_PI_personal_details == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <textarea class="form-control" formControlName="v_emd_specify_PII_needs" rows="4" minlength="12" maxlength="400" style="height: 200px;"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Please specify in detail the business use case why you need access to Sensitive PI?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_edm_type_of_work">
+                                <option value="Development">Development</option>
+                                <option value="Analysis">Analysis</option>
+                                <option value="Research">Research</option>
+                                <option value="Extract">Extract</option>
+                                <option value="Other">Other</option>
+                                <option value="All">All</option>
+                            </select>
+                            <label for="floatingInput">Type of Work</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_edm_3rd_party_vendor">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Is the data going to be shared with 3rd Party Vendor.</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-lg-12" id="terms" style="margin-top: 12px;">
+                        <p style="font-size: 16px; font-weight: bold;">Please read and accept the Terms of Use, and specifically acknowledge that: </p>
+                        <p>a. I am authorized to use this data solely to perform my job duties.</p>
+                        <p>b. I shall not disclose it to any person or entity unless approved in advance.</p>
+                        <p>c. I shall protect and will not share my access credentials with anyone.</p>
+                        <p>d. I will not use the data for unauthorized, fraudulent or malicious purposes, or in a manner that could damage, disable, overburden or impair TMNA systems.</p>
+                        <p>e. I understand that this data should only be used for the use case for which it has been approved.  Any use beyond this specific use case requires an additional corresponding approval.</p>
+                        <p>f. I have read and will comply with all TMNA and Data Enablement & Global Compliance policies pertaining to data. 
+                            <a href="https://dataenablement.toyota.com/" target="_blank">https://dataenablement.toyota.com/</a> 
+                        </p>
+                    </div>
+                    <div class="col-lg-12 form-group">
+                        <div class="form-check mt-3" style="position: relative; left: 4px;">
+                            <input type="checkbox" class="form-check-input" formControlName="chk_dar_terms_message">
+                            <label for="floatingInput"><span class="text-danger">* </span>I have read and accepted the Terms of Use</label>
+                        </div>
+                    </div>
+                    <div class="dropcart__buttons">
+                        <!-- <a class="btn btn-secondary" (click)="resetForm()" (click)="close()">Cancel</a>
+                        <a class="btn btn-primary" [routerLink]="root.checkout()" (click)="closeMenu.emit()">Submit Product</a> -->
+                        <!-- <button class="btn btn-secondary" (click)="resetForm()" (click)="close()">Cancel</button> -->
+                        <button class="btn btn-secondary" type="button" (click)="close()">Cancel</button>
+                        <!-- <button class="btn btn-primary" 
+                            [ngClass]="{'btn-disabled': isLoading, 'btn-success': !isLoading, 'disabled': isProcessing}"
+                            (click)="addToCart()"
+                            (click)="closeMenu.emit()">{{ button }}</button> -->
+
+                        <button type="button" class="btn btn-primary"
+                            [ngClass]="{'btn-loading': addingToCart}"
+                            appClick (click)="addToCart()"
+                            [disabled]="form.invalid">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- .dropcart / end -->
+
+<!-- .dropcart -->
+<div [class]="{ dropcart: true, 'dropcart--style--dropdown': type === 'dropdown', 'dropcart--style--offcanvas': type === 'offcanvas',
+    'dropcart--open': state.isOpen$|async}" class="disable-scroll" *ngIf="savedFormData && savedProduct">
+    <div *ngIf="type === 'offcanvas'" class="dropcart__backdrop" (click)="close()"></div>
+    <div class="dropcart__body">
+        <div *ngIf="type === 'offcanvas'" class="dropcart__header">
+            <div class="dropcart__title">Hi, {{appSvc?.userData?.givenName}}!<br>
+                <span><small style="font-size: 14px; font-weight: 400;">You are requesting access to "<strong>{{ savedProduct.name }}</strong>".</small></span>
+            </div>
+            <button class="dropcart__close" type="button" (click)="close()">
+                <app-icon name="cross-12" size="12"></app-icon>
+            </button>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="addToCart()">
+            <div class="container-fluid">   
+                <div class="col-lg-2 left sticky-requirements">
+                    <p class="mt-3"><strong>Requirements</strong></p>
+                    <ul class="requirements">
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('requesting_id')?.value === 'User'" [hidden]="form.get('requesting_id')?.value === 'User'">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">For Myself</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" [hidden]="form.get('requesting_id')?.value === 'User'">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">For Myself</strong>
+                            </p>
+
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_objectid_reqfor')?.value !== undefined" [hidden]="form.get('requesting_id')?.value === 'Me'">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">For Someone Else</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_objectid_reqfor')?.value" [hidden]="form.get('requesting_id')?.value === 'Me'">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">For Someone Else</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_platform')?.value !== undefined" [hidden]="form.get('v_dar_platform')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Platform</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_platform')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Platform</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_dataDomainSelect')?.value !== undefined" [hidden]="form.get('v_dar_dataDomainSelect')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Data Domain</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_dataDomainSelect')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Data Domain</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_userType')?.value !== undefined" [hidden]="form.get('v_dar_userType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">User Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_userType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">User Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_accessType')?.value !== undefined" [hidden]="form.get('v_dar_accessType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">User/App Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_accessType')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">User/App Access</strong>
+                            </p>
+                        </li>
+                        <li class="row" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dat_api_name')?.value !== undefined" [hidden]="form.get('v_dat_api_name')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">API Name</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dat_api_name')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">API Name</strong>
+                            </p>
+                        </li>
+                        <!-- <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_systemAccess')?.value !== undefined" [hidden]="form.get('v_dar_systemAccess')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">System Access</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_dar_systemAccess')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">System Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_mainframeAccess')?.value !== undefined" [hidden]="form.get('v_dar_mainframeAccess')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Mainframe Access</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_mainframeAccess')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Mainframe Access</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Warehouse/Mart</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Warehouse/Mart</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Gateway Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Gateway Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Oracle Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Oracle Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Database/Schema</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Database/Schema</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation">
+                                <span class="mr-6">
+                                <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Table Name(s)</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Table Name(s)</strong>
+                            </p>
+                        </li>-->
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dar_environment')?.value !== undefined" [hidden]="form.get('v_dar_environment')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Environment</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_environment')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Environment</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_dat_data_access_type')?.value !== undefined" [hidden]="form.get('v_dat_data_access_type')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Access</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dat_data_access_type')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Data Access</strong>
+                        </p>
+                        </li>
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_DataReqDescription')?.value !== undefined" [hidden]="form.get('v_dar_DataReqDescription')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Request Description</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_DataReqDescription')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Request Description</strong>
+                        </p>
+                        </li>
+
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation" 
+                            *ngIf="form.get('v_dar_businessJustification')?.value !== undefined" [hidden]="form.get('v_dar_businessJustification')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Intended Use</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_dar_businessJustification')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Intended Use</strong>
+                        </p>
+                        </li>
+
+                        <li class="row">
+                        <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('v_emd_PI_access')?.value !== undefined" [hidden]="form.get('v_emd_PI_access')?.value">
+                            <span class="mr-6">
+                            <i class="ri-prohibited-line text-danger icon-validation"></i>
+                            </span>
+                            <strong class="require">Sensitive PI</strong>
+                        </p>
+                        <p class="text-success validation-margi text-validation" *ngIf="form.get('v_emd_PI_access')?.value">
+                            <span class="mr-6">
+                            <i class="ri-check-fill text-success icon-validation"></i>
+                            </span>
+                            <strong class="require">Sensitive PI</strong>
+                        </p>
+                        </li>
+
+                        <div *ngIf="form.get('v_emd_PI_access')?.value === 'Yes'">
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('edm_PI_personal_details')?.value !== undefined" [hidden]="form.get('edm_PI_personal_details')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Access</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('edm_PI_personal_details')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Access</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_emd_specify_PII_needs')?.value !== undefined" [hidden]="form.get('v_emd_specify_PII_needs')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Explanation</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_emd_specify_PII_needs')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">PII Explanation</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_edm_type_of_work')?.value !== undefined" [hidden]="form.get('v_edm_type_of_work')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Type of Work</strong>
+                            </p>
+                            <p class="text-success validation-margin text-validation" *ngIf="form.get('v_edm_type_of_work')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Type of Work</strong>
+                            </p>
+                        </li>
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                                *ngIf="form.get('v_edm_3rd_party_vendor')?.value !== undefined" [hidden]="form.get('v_edm_3rd_party_vendor')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">3rd Party Vendor</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('v_edm_3rd_party_vendor')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">3rd Party Vendor</strong>
+                            </p>
+                        </li>
+                        </div>
+                
+                        <li class="row">
+                            <p class="text-danger validation-margin text-validation"
+                            *ngIf="form.get('chk_dar_terms_message')?.value !== undefined" [hidden]="form.get('chk_dar_terms_message')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-prohibited-line text-danger icon-validation"></i>
+                                </span>
+                                <strong class="require">Terms of Use</strong>
+                            </p>
+                            <p class="text-success validation-margi text-validation" *ngIf="form.get('chk_dar_terms_message')?.value">
+                                <span class="mr-6">
+                                    <i class="ri-check-fill text-success icon-validation"></i>
+                                </span>
+                                <strong class="require">Terms of Use</strong>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            
+            
+                <div class="col-lg-10 left scrollable-div">
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_product_name" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Product Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="radar_productname" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">RADAR Product Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_dm_version" ngModel="Version {{currentApplicationVersion}}" [attr.disabled]="true">
+                            <label for="floatingInput">Application Build Version</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_createdby_fullname" ngModel="{{appSvc?.userData?.givenName}} {{appSvc?.userData?.surname}}" [attr.disabled]="true">
+                            <label for="floatingInput">Request Created By</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_objectid_createdby" ngModel="{{appSvc?.userData?.id}}" [attr.disabled]="true">
+                            <label for="floatingInput">Request Created By ObjectID</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select name="requestingID" id="requestingID" class="form-control" formControlName="requesting_id">
+                                <option value="Me" [selected]="isSelected">For me</option>
+                                <option value="User">For someone else</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Who are you requesting data access for?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'User'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_objectid_reqfor" ngModel="{{appSvc?.userData?.id}}" [attr.disabled]="true">
+                            <label for="floatingInput">ObjectID of the person needing access</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'User'">
+                        <div class="form-floating mt-3">
+                            <app-people-finder></app-people-finder>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="companyName" ngModel="{{appSvc?.userData?.companyName}}" [attr.disabled]="true">
+                            <label for="floatingInput">Company Name</label>
+                        </div>
+                    </div>
+                     <!--COMPANY NAME USED TO TRIGGER LOGIC-->
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value === 'AIR' || 
+                            form.get('companyName').value === 'BJN' || 
+                            form.get('companyName').value === 'BSL' || 
+                            form.get('companyName').value === 'BTR' || 
+                            form.get('companyName').value === 'CPT' || 
+                            form.get('companyName').value === 'GTS' || 
+                            form.get('companyName').value === 'MSO' || 
+                            form.get('companyName').value === 'R&D' || 
+                            form.get('companyName').value === 'SIA' || 
+                            form.get('companyName').value === 'TAL' || 
+                            form.get('companyName').value === 'TBC' || 
+                            form.get('companyName').value === 'TCA' || 
+                            form.get('companyName').value === 'TDP' || 
+                            form.get('companyName').value === 'TCN' || 
+                            form.get('companyName').value === 'TIN' || 
+                            form.get('companyName').value === 'TKY' || 
+                            form.get('companyName').value === 'TLS' || 
+                            form.get('companyName').value === 'TMA' || 
+                            form.get('companyName').value === 'TME' || 
+                            form.get('companyName').value === 'TMM' || 
+                            form.get('companyName').value === 'TMN' || 
+                            form.get('companyName').value === 'TMP' || 
+                            form.get('companyName').value === 'TMN' || 
+                            form.get('companyName').value === 'TMS' || 
+                            form.get('companyName').value === 'TNA' || 
+                            form.get('companyName').value === 'TTC' || 
+                            form.get('companyName').value === 'TTX' || 
+                            form.get('companyName').value === 'TWV'">
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Motor North America" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'TCC' || 
+                            form.get('companyName').value == 'TIS' || 
+                            form.get('companyName').value == 'TFB' || 
+                            form.get('companyName').value == 'TFS' || 
+                            form.get('companyName').value == 'TSM' || 
+                            form.get('companyName').value == 'TPR'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Financial Services" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'MTM'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Mazda Manufacturing" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'Woven Planet'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Woven Planet" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'Toyota Connected'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Connected" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+
+                        <div class="form-floating mt-3" id="organizationName" style="margin-top: 12px;" *ngIf="
+                            form.get('companyName').value == 'TMC'" >
+                            <input type="text" class="form-control" formControlName="v_dar_organization" ngModel="Toyota Motors Corporation" [attr.disabled]="true">
+                            <label for="Organization Name">Organization Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('companyName').value === 'AIR' || 
+                        form.get('companyName').value === 'BJN' || 
+                        form.get('companyName').value === 'BSL' || 
+                        form.get('companyName').value === 'BTR' || 
+                        form.get('companyName').value === 'CPT' || 
+                        form.get('companyName').value === 'GTS' || 
+                        form.get('companyName').value === 'MSO' || 
+                        form.get('companyName').value === 'R&D' || 
+                        form.get('companyName').value === 'SIA' || 
+                        form.get('companyName').value === 'TAL' || 
+                        form.get('companyName').value === 'TBC' || 
+                        form.get('companyName').value === 'TCA' || 
+                        form.get('companyName').value === 'TDP' || 
+                        form.get('companyName').value === 'TCN' || 
+                        form.get('companyName').value === 'TIN' || 
+                        form.get('companyName').value === 'TKY' || 
+                        form.get('companyName').value === 'TLS' || 
+                        form.get('companyName').value === 'TMA' || 
+                        form.get('companyName').value === 'TME' || 
+                        form.get('companyName').value === 'TMM' || 
+                        form.get('companyName').value === 'TMN' || 
+                        form.get('companyName').value === 'TMP' || 
+                        form.get('companyName').value === 'TMN' || 
+                        form.get('companyName').value === 'TMS' || 
+                        form.get('companyName').value === 'TNA' || 
+                        form.get('companyName').value === 'TTC' || 
+                        form.get('companyName').value === 'TTX' || 
+                        form.get('companyName').value === 'TWV'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_userType" ngModel="TMNAUsers" [attr.disabled]="true">
+                            <label for="floatingInput">User Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('companyName').value == 'TCC' || 
+                        form.get('companyName').value == 'TIS' || 
+                        form.get('companyName').value == 'TFB' || 
+                        form.get('companyName').value == 'TFS' || 
+                        form.get('companyName').value == 'TSM' || 
+                        form.get('companyName').value == 'TPR'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_userType" ngModel="TMNAAffiliates" [attr.disabled]="true">
+                            <label for="floatingInput">User Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_accessType" ngModel="User Access" [attr.disabled]="true">
+                            <label for="floatingInput">Access Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_dataDomainSelect" ngModel="{{product?.one_ts_domain}}" [attr.disabled]="true">
+                                <option value="Customer">Customer</option>
+                                <option value="Dealer Identity">Dealer Identity</option>
+                                <option value="Dealership">Dealership</option>
+                                <option value="Data Governance">Data Governance</option>
+                                <option value="Digital Assets">Digital Assets</option>
+                                <option value="Finance">Enterprise Corporate Application</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Identity Access Management">Identity Access Management</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Manufacturing Parts">Parts</option>
+                                <option value="Product Quality">Quality</option>
+                                <option value="Research and Development">Research and Development</option>
+                                <option value="Service History">Service History</option>
+                                <option value="Telematics">Telematics</option>
+                                <option value="Vehicles">Vehicles</option>
+                                <option value="Warranty">Warranty</option>
+                              </select>
+                            <label for="floatingInput">Data Domains</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_custom_control_group" ngModel="{{product?.control_group}}" [attr.disabled]="true">
+                            <label for="floatingInput">Control Group</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_platform" ngModel="{{product?.platform}}" [attr.disabled]="true">
+                                <option value="">Choose One</option>
+                                <option value="API (EIG Application Support)">API (EIG Application Support)</option>
+                                <option value="TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)">TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="floatingInput">Platform</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'Other'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_OtherType" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">If other, please specify</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dat_api_name" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">API Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_post_database_schema" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Database/Schema</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_post_table_names" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Table Name(s)</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_custom_routing_rule_identifier" ngModel="{{product?.route_identifier}}" [attr.disabled]="true">
+                            <label for="floatingInput">Route Identifier</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_tbdp_is_this_request_fort_irm_pricing" ngModel="No" [attr.disabled]="true">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput">Is this request for TBDP IRM-Pricing data access?</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dar_environment" ngModel="{{product?.environment}}" [attr.disabled]="true">
+                                <option value="QA">QA</option>
+                                <option value="Dev">Development</option>
+                                <option value="Prod" selected>Production</option>
+                                <option value="All">All</option>
+                            </select>
+                            <label for="floatingInput">Environment</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_dat_data_access_type" ngModel="{{product?.data_access_type}}" [attr.disabled]="true">
+                                <option value="read">Read</option>
+                                <option value="modify">Modify</option>
+                                <option value="insert">Insert</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                                <option value="na">Not Applicable</option>
+                            </select>
+                            <label for="floatingInput">Data Access Type</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_databaseName" ngModel="{{product?.name}}" [attr.disabled]="true">
+                            <label for="floatingInput">Database Name</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <input class="form-control" formControlName="v_dar_ad_group" ngModel="" [attr.disabled]="true">
+                            <label for="floatingInput">AD Group</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <select class="form-control classification" formControlName="v_dar_accessReqClassification" ngModel="{{product?.classification}}" [attr.disabled]="true">
+                                <option value="Public" selected="selected">Public</option>
+                                <option value="Protected" selected="selected">Protected</option>
+                                <option value="Confidential">Confidential</option>
+                                <option value="Highly Confidential">Highly Confidential</option>
+                                <option value="Personal Information">Personal Information</option>
+                                <option value="Legal/Privileged">Legal/ Privileged Information</option>
+                              </select>
+                            <label for="floatingInput">Access Request Classification</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-floating mt-3">
+                            <textarea type="text" class="form-control" formControlName="v_dar_DataReqDescription" ngModel="{{product?.name}}" rows="24" minlength="12" maxlength="400" style="height: 200px;" [attr.disabled]="true"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Data Request Description</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Public' || 
+                        form.get('v_dar_accessReqClassification').value == 'Protected'"
+                        hidden="
+                            form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                            form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                            form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                            form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <textarea autofocus class="form-control" formControlName="v_dar_businessJustification" ngModel="Intended Use is not required for products with a Data Classification of Public or Protected" rows="24" minlength="6" maxlength="200" style="height: 200px;" [attr.disabled]="true"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Intended Use</label>
+                        </div>
+                        <small class="text-danger">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</small>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                        form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <textarea autofocus class="form-control" formControlName="v_dar_businessJustification" ngModel="" rows="24" minlength="6" maxlength="200" style="height: 200px;"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Intended Use</label>
+                        </div>
+                        <small class="text-danger">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</small>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.get('v_dar_accessReqClassification').value == 'Public' || 
+                        form.get('v_dar_accessReqClassification').value == 'Protected' || 
+                        form.get('v_dar_accessReqClassification').value == 'Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
+                        form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
+                        form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_emd_PI_access" ngModel="">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting for any Sensitive Personal Information (Sensitive PI) data?</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="edm_PI_personal_details">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Do you need access to any personal details like customer name, address, place of birth, etc?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.edm_PI_personal_details == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <textarea class="form-control" formControlName="v_emd_specify_PII_needs" rows="4" minlength="12" maxlength="400" style="height: 200px;"></textarea>
+                            <label for="floatingInput"><span class="text-danger">* </span>Please specify in detail the business use case why you need access to Sensitive PI?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_edm_type_of_work">
+                                <option value="Development">Development</option>
+                                <option value="Analysis">Analysis</option>
+                                <option value="Research">Research</option>
+                                <option value="Extract">Extract</option>
+                                <option value="Other">Other</option>
+                                <option value="All">All</option>
+                            </select>
+                            <label for="floatingInput">Type of Work</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="
+                        form.value.v_emd_PI_access == 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="v_edm_3rd_party_vendor">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Is the data going to be shared with 3rd Party Vendor.</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-lg-12" id="terms" style="margin-top: 12px;">
+                        <p style="font-size: 16px; font-weight: bold;">Please read and accept the Terms of Use, and specifically acknowledge that: </p>
+                        <p>a. I am authorized to use this data solely to perform my job duties.</p>
+                        <p>b. I shall not disclose it to any person or entity unless approved in advance.</p>
+                        <p>c. I shall protect and will not share my access credentials with anyone.</p>
+                        <p>d. I will not use the data for unauthorized, fraudulent or malicious purposes, or in a manner that could damage, disable, overburden or impair TMNA systems.</p>
+                        <p>e. I understand that this data should only be used for the use case for which it has been approved.  Any use beyond this specific use case requires an additional corresponding approval.</p>
+                        <p>f. I have read and will comply with all TMNA and Data Enablement & Global Compliance policies pertaining to data. 
+                            <a href="https://dataenablement.toyota.com/" target="_blank">https://dataenablement.toyota.com/</a> 
+                        </p>
+                    </div>
+                    <div class="col-lg-12 form-group">
+                        <div class="form-check mt-3" style="position: relative; left: 4px;">
+                            <input type="checkbox" class="form-check-input" formControlName="chk_dar_terms_message">
+                            <label for="floatingInput"><span class="text-danger">* </span>I have read and accepted the Terms of Use</label>
+                        </div>
+                    </div>
+                    <div class="dropcart__buttons">
+                        <button class="btn btn-danger" type="button" (click)="close()">Cancel</button>
+
+                        <!-- <button type="button" class="btn btn-primary"
+                            [ngClass]="{'btn-loading': addingToCart}"
+                            appClick (click)="addToCart()"
+                            [disabled]="form.invalid">Add to cart</button>
+
+                        <button type="button" class="btn btn-secondary"
+                            [ngClass]="{'btn-loading': updatingRequest}"
+                            appClick (click)="updateRequest()"
+                            [disabled]="form.invalid">Update Request</button> -->
+
+                        <button *ngIf="!isProductInCart" 
+                            type="button" 
+                            class="btn btn-primary"
+                            [ngClass]="{'btn-loading': addingToCart}"
+                            appClick (click)="addToCart()"
+                            [disabled]="form.invalid">Add to cart</button>
+
+                        <!-- Show 'Update Request' only if the product name IS already in the cart -->
+                        <button *ngIf="isProductInCart" 
+                            type="button" 
+                            class="btn btn-secondary"
+                            [ngClass]="{'btn-loading': updatingRequest}"
+                            appClick (click)="updateRequest()"
+                            [disabled]="form.invalid">Update Request</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- .dropcart / end -->

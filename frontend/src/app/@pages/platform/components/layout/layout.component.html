@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12 d-flex" style="padding: 0px;">
+                <div class="account-nav flex-grow-1">
+                    <nav class="navbar main-navbar navbar-expand-lg">
+                        <div class="nav-container">
+                            <a href="#" class="nav-logo" style="font-size: 20px; font-weight: bold;">
+                                <span style="font-size: 20px; font-size: 400; margin-right: 24px;">Platform</span>
+                            </a>
+                            <ul class="nav-menu">
+                                <li *ngFor="let link of links" class="nav-item" routerLinkActive="account-nav__item--active" [routerLinkActiveOptions]="{exact: true}">
+                                    <a [routerLink]="link.url">{{ link.label }}</a>
+                                </li>
+                            </ul>
+                            <button class="mobile-menu-toggle">☰</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 col-lg-12 mt-4 mt-lg-0">
+    <router-outlet></router-outlet>
+</div>

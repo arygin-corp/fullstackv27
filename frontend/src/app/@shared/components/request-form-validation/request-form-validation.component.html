@@ -1,0 +1,260 @@
+<div class="col-lg-12 col-md-12 d-none d-lg-block">
+  <div class="validation-panel">
+    <h6 class="validation-title">
+      <strong>Required Information</strong>
+    </h6>
+    
+    <div class="validation-items">
+    <!-- User/Requested For -->
+      <div class="validation-item" *ngIf="form.get('requesting_id').value === 'Me' && !form.get(v_dar_objectid_reqfor).value">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">For Me</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('v_dar_objectid_reqfor').value">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">For User</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('requesting_id').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">For Someone Else</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('requesting_id').value === 'User' && ">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">For Someone Else</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('v_dar_objectid_reqfor').value">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">For Someone Else</span>
+      </div>
+      <!-- Platform Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_platform').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Platform</span>
+      </div>
+      <div class="validation-item" *ngIf="isPlatformValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Platform</span>
+      </div>
+
+      <!-- Data Domain Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_dataDomainSelect').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Data Domain</span>
+      </div>
+      <div class="validation-item" *ngIf="isDataDomainValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Data Domain</span>
+      </div>
+
+      <!-- Workday ID Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_workdayID').value.length === 0">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Workday ID</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('v_dar_workdayID').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Workday ID</span>
+      </div>
+
+      <!-- User Access Type Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_userType').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">User Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isUserAccessValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">User Access</span>
+      </div>
+
+      <!-- Individual/App Access Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_accessType').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Individual/App Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isAccessTypeValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Individual/App Access</span>
+      </div>
+
+      <!-- System Access Validation -->
+      <div class="validation-item" *ngIf="isSystemAccessRequired() && form.get('v_dar_mf_what_system').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">System Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isSystemAccessRequired() && form.get('v_dar_mf_what_system').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">System Access</span>
+      </div>
+
+      <!-- Mainframe Access Validation -->
+      <div class="validation-item" *ngIf="isMainframeAccessRequired() && form.get('v_dar_mainframe_access_type').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Mainframe Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isMainframeAccessRequired() && form.get('v_dar_mainframe_access_type').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Mainframe Access</span>
+      </div>
+
+      <!-- Other Platform Validation -->
+      <div class="validation-item" *ngIf="isOtherPlatformRequired() && form.get('v_dar_OtherType').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Other</span>
+      </div>
+      <div class="validation-item" *ngIf="isOtherPlatformRequired() && form.get('v_dar_OtherType').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Other</span>
+      </div>
+
+      <!-- Gateway Other Validation -->
+      <div class="validation-item" *ngIf="isGatewayOtherRequired() && form.get('v_dar_gateway_if_other').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Other</span>
+      </div>
+      <div class="validation-item" *ngIf="isGatewayOtherRequired() && form.get('v_dar_gateway_if_other').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Other</span>
+      </div>
+
+      <!-- Oracle Other Validation -->
+      <div class="validation-item" *ngIf="isOracleOtherRequired() && form.get('v_dar_oracle_other').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Other</span>
+      </div>
+      <div class="validation-item" *ngIf="isOracleOtherRequired() && form.get('v_dar_oracle_other').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Other</span>
+      </div>
+
+      <!-- API Name Validation -->
+      <div class="validation-item" *ngIf="isApiNameRequired() && form.get('v_dat_api_name').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">API Name</span>
+      </div>
+      <div class="validation-item" *ngIf="isApiNameRequired() && form.get('v_dat_api_name').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">API Name</span>
+      </div>
+
+      <!-- Data Warehouse Validation -->
+      <div class="validation-item" *ngIf="isDataWarehouseRequired() && form.get('v_dar_select_a_data_warehouse_mart').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Data Warehouse/Mart</span>
+      </div>
+      <div class="validation-item" *ngIf="isDataWarehouseRequired() && form.get('v_dar_select_a_data_warehouse_mart').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Data Warehouse/Mart</span>
+      </div>
+
+      <!-- Gateway Access Validation -->
+      <div class="validation-item" *ngIf="isGatewayAccessRequired() && form.get('v_dar_analytics_platform').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Gateway Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isGatewayAccessRequired() && form.get('v_dar_analytics_platform').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Gateway Access</span>
+      </div>
+
+      <!-- Oracle Access Validation -->
+      <div class="validation-item" *ngIf="isOracleAccessRequired() && form.get('v_dar_select_an_oracle_access_type').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Oracle Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isOracleAccessRequired() && form.get('v_dar_select_an_oracle_access_type').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Oracle Access</span>
+      </div>
+
+      <!-- Database/Schema Validation -->
+      <div class="validation-item" *ngIf="isDatabaseSchemaRequired() && form.get('v_dar_post_database_schema').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Database/Schema</span>
+      </div>
+      <div class="validation-item" *ngIf="isDatabaseSchemaRequired() && form.get('v_dar_post_database_schema').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Database/Schema</span>
+      </div>
+
+      <!-- Gateway Database Schema Validation -->
+      <div class="validation-item" *ngIf="isGatewayDatabaseRequired() && form.get('v_dar_gateway_database_schema').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Database/Schema</span>
+      </div>
+      <div class="validation-item" *ngIf="isGatewayDatabaseRequired() && form.get('v_dar_gateway_database_schema').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Database/Schema</span>
+      </div>
+
+      <!-- Table Names Validation -->
+      <div class="validation-item" *ngIf="isTableNamesRequired() && form.get('v_dar_post_table_names').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Table Name(s)</span>
+      </div>
+      <div class="validation-item" *ngIf="isTableNamesRequired() && form.get('v_dar_post_table_names').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Table Name(s)</span>
+      </div>
+
+      <!-- Environment Validation -->
+      <div class="validation-item" *ngIf="isEnvironmentRequired() && form.get('v_dar_environment').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Environment</span>
+      </div>
+      <div class="validation-item" *ngIf="isEnvironmentRequired() && isEnvironmentValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Environment</span>
+      </div>
+
+      <!-- Data Access Validation -->
+      <div class="validation-item" *ngIf="isDataAccessRequired() && !isDataAccessValid()">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Data Access</span>
+      </div>
+      <div class="validation-item" *ngIf="isDataAccessRequired() && isDataAccessValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Data Access</span>
+      </div>
+
+      <!-- Request Description Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_DataReqDescription').value.length < 10">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Request Description</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('v_dar_DataReqDescription').value.length > 9">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Request Description</span>
+      </div>
+
+      <!-- Intended Use Validation -->
+      <div class="validation-item" *ngIf="form.get('v_dar_businessJustification').value.length < 10">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Intended Use</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('v_dar_businessJustification').value.length > 9">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Intended Use</span>
+      </div>
+
+      <!-- PII Validation -->
+      <div class="validation-item" *ngIf="form.get('v_emd_PI_access').value === ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">PII</span>
+      </div>
+      <div class="validation-item" *ngIf="isPIIValid()">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">PII</span>
+      </div>
+
+      <!-- Terms of Use Validation -->
+      <div class="validation-item" *ngIf="form.get('chk_dar_terms_message').value == ''">
+        <i class="ri-prohibited-line text-danger validation-icon"></i>
+        <span class="validation-text text-danger">Terms of Use</span>
+      </div>
+      <div class="validation-item" *ngIf="form.get('chk_dar_terms_message').value != ''">
+        <i class="ri-check-fill text-success validation-icon"></i>
+        <span class="validation-text text-success">Terms of Use</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!-- src/app/@pages/domains/subdomains/subdomains-two/subdomains-two.component.html -->
+<app-page-header 
+  [breadcrumbs]="[
+    {label: 'Domains', url: '/'}, 
+    {label: level1Domain?.name, url: '/' + currentType},
+    {label: parentDomain?.name, url: '/' + currentType + '/' + currentSubtype}
+  ]">
+</app-page-header>
+
+<div *ngIf="isLoading" class="text-center py-4">
+  <div class="spinner-border text-primary" role="status"></div>
+  <p>Loading subdomains...</p>
+</div>
+
+<!-- Message if no Level 3 data is found -->
+<div *ngIf="!isLoading && !subdomains.length" class="text-center py-5">
+  <h5 class="text-muted">No nested domains found under "{{parentDomain?.name}}".</h5>
+  <p><a routerLink="/domain">Return to Domains</a></p>
+</div>
+
+<!-- Grid Layout -->
+<div class="row p-2" *ngIf="!isLoading && subdomains.length">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 float-left mb-4" *ngFor="let item of subdomains">
+    <div class="card domain-cards mb-2">
+      <a [routerLink]="resolveNavigation(item)">
+        <img
+          class="card-img-top ie-image"
+          [src]="item.image || 'assets/images/placeholder.jpg'"
+          [alt]="item.name"/>
+      </a>
+      <div class="card-body">
+        <h6 class="card-title d-block">{{item.name}}</h6>
+        <p class="card-text d-block font-weight-light">{{getDescription(item)}}</p>
+        <a [routerLink]="resolveNavigation(item)" class="btn btn-primary btn-sm align-right">View All</a>
+      </div>
+    </div>
+  </div>
+</div>

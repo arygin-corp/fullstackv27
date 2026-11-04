@@ -1,0 +1,31 @@
+.totop__button {
+    pointer-events: auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 19.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    color: #363636;
+    background: #04fdff;
+    fill: currentColor;
+    flex-shrink: 0;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.totop__button:hover {
+    color: #04fdff;
+    background: #363636;
+}
+
+.totop__end {
+    float: right;
+}
+
+.pushup {
+    position: relative;
+    bottom: -5px;
+}

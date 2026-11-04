@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~ngx-toastr/toastr';
+@import '~ngx-red-zoom/styles/base.scss';
+@import 'scss/style';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.ie {
+ display: none;
+}
+
+* {
+    font-family: Poppins,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (min-width:641px)  { 
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    .toyota-pc {
+        zoom: 80%;
+    }
+}
+@media (min-width:961px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .toyota-pc {
+        zoom: 80%;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.page-header__container {
+    margin-bottom: -10px !important;
+}
+
+.product-tabs__content {
+    padding: 40px 90px;
+}
+
+.ng-select .ng-select-container {
+    border-radius: 0px;
+    border: 0px solid #ccc;
+}
+
+.ng-select .ng-select-container .ng-value-container {
+    padding-left: 10px !important;
+}
+.ng-input input[type=text] {
+    padding-left: 0px !important; //change it base on your desired output
+}
+
+.btn-primary {
+    color: #000 !important;
+    border-color: #04fdff;
+    background-color: #04fdff !important;
+}
+
+.btn-primary:hover {
+    color: #fff !important;
+    border-color: #00696b !important;
+    background-color: #00696b !important;
+}
+
+#google_translate_element {
+    color: transparent;
+    position: absolute;
+    z-index: 1000;
+    right: 4px;
+    top: 10px;
+}
+
+#google_translate_element a {
+    display: none;
+}
+  
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+.skiptranslate .goog-te-gadget {
+    color: #222;
+}
+
+.goog-logo-link {
+    display:none !important;
+} 
+    
+.goog-te-gadget{
+    color: transparent !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important; 
+    position: static !important; 
+}
+    
+.goog-te-banner-frame{
+    display:none !important
+ }
+
+.suggestions--location--header .suggestions__item-meta {
+    color: #222;
+}
+.suggestions__item-meta {
+    margin-top: 1px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
+}
+
+.product-tabs__item--active, .product-tabs__item--active:hover {
+    border-bottom-color: #222;
+}
+
+.search--location--header .search__suggestions {
+    left: -232px !important;
+    width: calc(100% + 418px) !important;
+}
+
+.search--location--header .search__input {
+    color: #363636 !important;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+app-root {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}

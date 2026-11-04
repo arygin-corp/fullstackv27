@@ -1,0 +1,20 @@
+<app-page-header [breadcrumbs]="[{label: 'Domains', url: '/'}]"></app-page-header>
+
+<div *ngIf="isLoading" class="text-center py-4">
+  <app-page-loader></app-page-loader>
+</div>
+
+<div class="row p-2" *ngIf="!isLoading">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mb-4" *ngFor="let domain of domainData">
+    <div class="card domain-cards mb-2">
+      <a [routerLink]="resolveNavigation(domain)">
+        <img class="card-img-top ie-image" [src]="domain.image" [alt]="domain.name"/>
+      </a>
+      <div class="card-body">
+        <h6 class="card-title d-block">{{domain.name}}</h6>
+        <p class="card-text d-block font-weight-light">{{domain.desc}}</p>
+        <a [routerLink]="resolveNavigation(domain)" class="btn btn-primary btn-sm align-right">View All</a>
+      </div>
+    </div>
+  </div>
+</div>

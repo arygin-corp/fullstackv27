@@ -1,0 +1,101 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron-sticky">
+    <div class="container">
+      <h1 class="display-4 text-center" style="font-size: 28px; font-weight: 700;">Changelog</h1>
+      <p class="lead text-center" style="font-size: 14px; font-weight: 300; margin-top: 12px;">
+        Explore the latest updates, enhancements, bug fixes, and new features delivered in each release. <br>
+        Use this changelog to stay informed about product improvements and upcoming capabilities.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="page-container">
+  <div *ngIf="loading" class="alert alert-success">Loading changelog...</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div class="changelog-layout" style="position: relative; top: -40px;">
+    <!-- LEFT NAV -->
+    <aside class="version-nav" style="margin-top: 30px; position: sticky;top: 148px;">
+      <div> 
+        <input type="text" class="form-control" placeholder="Search version..." style="border-radius: 20px; margin-bottom: 10px;"/>
+        <h4>Releases</h4>
+      </div>
+      <ul>
+        <li *ngFor="let release of changelogs">
+          <button type="button" class="version-link" (click)="scrollToRelease(release.id)">Version {{ release.version }}</button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- CENTER CONTENT -->
+    <div class="changelog-content" style="position: relative; top: 18px;">
+      <div id="changelogs">
+        <div id="items">
+          <div class="item" *ngFor="let release of changelogs" [id]="'release-' + release.id">
+            <div class="timeline has-next" style="margin-top: 30px;">
+              <div>
+                <div class="meta">
+                  <div class="version" style="font-size: 16px !important; font-weight: bold;">Version {{ release.version }}</div>
+                  <div class="release-date" style="font-size: 14px !important;">{{ release.release_date | date:'MMMM d, y' }}</div>
+                </div>
+
+                <div class="connector">
+                  <div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content" style="margin-top: 30px;">
+              <h3 style="font-size: 22px !important; font-weight: bold;">Yahoo!🎉 {{ release.title }}</h3>
+              <p>{{ release.description }}</p>
+
+              <div *ngFor="let section of release.sections" class="feature-section">
+                <div class="feature feature-padding" style="margin-top: 12px;">
+                  <div
+                    class="tag"
+                    [ngClass]="{
+                      'new': section.category === 'New',
+                      'updates': section.category === 'Updates',
+                      'feature': section.category === 'Feature',
+                      'enhancements': section.category === 'Enhancements',
+                      'fixes': section.category === 'Fixes',
+                      'issues': section.category === 'Issues',
+                      'remove': section.category === 'Remove'
+                    }" style="font-size: 14px;">
+                    {{ section.category }}
+                  </div>
+
+                  <h5 style="line-height: 32px; font-weight: bold;">{{ section.subtitle }}</h5>
+                </div>
+
+                <div class="section-content" [innerHTML]="section.content"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar" style="margin-top: -4px;position: sticky;top: 108px;">
+        <form id="subscribe" style="width: 480px;">
+            <div class="row">
+                <h2 class="text-center" style="font-size: 24px; font-weight: 800;">Stay Up To Date!</h2>
+                <div class="text-center">Want to be the first to hear about changes?</div>
+                <!-- <input type="text" id="email" name="email" placeholder="Email...">
+                <button class="button" type="button" id="submit">Subscribe</button> -->
+                <h3 class="text-center mt-4 mb-4"><strong>Email Subscriptions Coming Soon</strong></h3>
+                <aside class="sidebar" style="margin-top: 18px;">
+                    <div class="release-summary text-center">
+                        <h2 style="font-weight: bold;">Releases Includes:</h2>
+                        <p>🚀 New Features</p>
+                        <p>⚡ Enhancements</p>
+                        <p>🐞 Bug Fixes</p>
+                        <p>⚠️ Known Issues</p>
+                        <p>🔧 Technical Updates</p>
+                    </div>
+                </aside>
+            </div>
+        </form>
+    </aside>
+</div>

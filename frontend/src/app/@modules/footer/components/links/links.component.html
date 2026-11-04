@@ -1,0 +1,59 @@
+<div class="widget ml-lg-4">
+    <h4 class="widget-title">{{ header }}</h4>
+    <ul class="widget-body">
+        <li *ngFor="let link of links">
+            <!-- <a *ngIf="
+                link.label == 'Leadership' || 
+                link.label == 'Newsroom' || 
+                link.label == 'Product Roadmap' || 
+                link.label == 'Feature Request' ||
+                link.label == 'Org Chart' ||
+                link.label == 'Global Hackathon' || 
+                link.label == 'Disclaimer' || 
+                link.label == 'Term of Use' || 
+                link.label == 'Data Access Request' ||
+                link.label == 'View Product Request' || 
+                link.label == 'FAQ' || 
+                link.label == 'Resource Library' || 
+                link.label == 'Changelog' || 
+                link.label == 'Data Domains' || 
+                link.label == 'Data Access Guide' || 
+                link.label == 'Data Access Process Flow' || 
+                link.label == 'Product Sourcing Flow'" [routerLink]="link.url" class="footer-links__link" external="false">{{ link.label }}
+            </a>
+            <a *ngIf="
+                link.label == 'Unified Data Catalog (TMC)' || 
+                link.label == 'Report An Issue' || 
+                link.label == 'Metadata Management' || 
+                link.label == 'EIG API Developer FAQ'" [href]="link.url" class="footer-links__link" target="_blank" external="true">{{ link.label }}
+            </a> -->
+
+            <a *ngIf="
+                link.label == 'Team' || 
+                link.label == 'Newsroom' || 
+                link.label == 'Track Request' || 
+                link.label == 'Product Roadmap' || 
+                link.label == 'Feature Request' ||
+                link.label == 'Org Chart' ||
+                link.label == 'Global Hackathon' || 
+                link.label == 'Disclaimer' || 
+                link.label == 'Term of Use' || 
+                link.label == 'Data Access Request' ||
+                link.label == 'View Product Request' || 
+                link.label == 'FAQ' || 
+                link.label == 'Resource Library' || 
+                link.label == 'Changelog' || 
+                link.label == 'Data Domains' || 
+                link.label == 'Data Access Guide' || 
+                link.label == 'Data Access Process Flow' || 
+                link.label == 'Product Sourcing Flow'" [routerLink]="link.url" class="footer-links__link" external="false">{{ link.label }}
+            </a>
+            <a *ngIf="
+                link.label == 'Data Enablement' || 
+                link.label == 'Report An Issue' || 
+                link.label == 'Metadata Management' || 
+                link.label == 'EIG API Developer FAQ'" [href]="link.url" class="footer-links__link" target="_blank" external="true">{{ link.label }}
+            </a>
+        </li>
+    </ul>
+</div>

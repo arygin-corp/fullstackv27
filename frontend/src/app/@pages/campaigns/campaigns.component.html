@@ -1,0 +1,104 @@
+<!-- ✅ PROMO / BREAK -->
+<app-block-banner></app-block-banner>
+
+<!-- ✅ STICKY PROMO BAR -->
+<!-- <div style="background:#ffcc00; text-align:center; padding:8px; font-weight:600;">
+  🔥 Get 30% OFF New Domains - Limited Time!
+</div> -->
+
+<!-- ✅ HERO SECTION (STRONG BANNER + CTA) -->
+<!-- <div class="row">
+  <div class="jumbotron jumbotron-fluid text-white py-5"
+     style="
+       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+       url('https://images.unsplash.com/photo-1551281044-8d8c3b3ea1f4');
+       background-size: cover;
+       background-position: center;">
+    <div class="container text-center">
+      <h1 style="font-size: 36px; font-weight: 700;">
+        Discover Premium Data Products
+      </h1>
+
+      <p style="font-size: 16px; font-weight: 300; max-width:700px; margin:auto;">
+        Access high-quality datasets for AI, machine learning, financial analytics, and business intelligence — all in one place.
+      </p>
+
+      <div class="container text-center my-4">
+        <input type="text"
+          placeholder="Search datasets (e.g., marketing, AI, finance)..."
+          class="form-control d-inline-block"
+          style="max-width:400px;">
+        <button class="btn btn-light ml-2">Search</button>
+      </div>
+
+      <div class="mt-3">
+        <button class="btn btn-light btn-lg mr-2">Browse Datasets</button>
+        <button class="btn btn-outline-light btn-lg">Explore Categories</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- ✅ SLIDESHOW -->
+<app-block-slideshow [slides]="slides"></app-block-slideshow>
+
+<!-- ✅ 🔥 POPULAR DOMAINS -->
+<app-block-domains
+  header="📊 Featured Data Categories"
+  layout="classic"
+  [domains]="(popularDomains$ | async) || []">
+</app-block-domains>
+
+<!-- ✅ 📊 MOST REQUESTED (MOVED UP FOR CONVERSIONS) -->
+<app-block-products
+  header="📊 Most Requested"
+  layout="large-first"
+  [products]="(bestsellers$ | async) || []">
+</app-block-products>
+
+<!-- ✅ ✨ NEW ARRIVALS -->
+<app-block-products-carousel
+  header="✨ New Arrivals"
+  layout="horizontal"
+  [rows]="2"
+  [loading]="latestProducts.loading"
+  [products]="latestProducts.products"
+  [groups]="latestProducts.groups"
+  (groupChange)="groupChange(latestProducts, $event)">
+</app-block-products-carousel>
+
+<!-- ✅ ⭐ FEATURED PRODUCTS -->
+<app-block-products-carousel
+  header="⭐ Featured Products"
+  layout="grid-4"
+  [loading]="featuredProducts.loading"
+  [products]="featuredProducts.products"
+  [groups]="featuredProducts.groups"
+  (groupChange)="groupChange(featuredProducts, $event)">
+</app-block-products-carousel>
+
+<!-- ✅ ⚡ URGENCY SECTION -->
+<!-- <div class="container my-5 text-center">
+  <h3 style="font-weight: 700;">⚡ Limited-Time Offers</h3>
+  <p style="color:#666;">
+    Don't miss out on exclusive deals available for a limited time.
+  </p>
+</div> -->
+
+<!-- ✅ PRODUCT COLUMNS -->
+<app-block-product-columns>
+  <app-block-product-columns-item
+    header="⭐ Top Rated Products"
+    [products]="(columnTopRated$ | async) || []">
+  </app-block-product-columns-item>
+
+  <app-block-product-columns-item
+    header="💰 Special Offers"
+    [products]="(columnSpecialOffers$ | async) || []">
+  </app-block-product-columns-item>
+
+  <app-block-product-columns-item
+    header="🔥 Bestsellers"
+    [products]="(columnBestsellers$ | async) || []">
+  </app-block-product-columns-item>
+</app-block-product-columns>

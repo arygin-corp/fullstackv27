@@ -1,0 +1,49 @@
+<div class="col-lg-12">
+    <div class="pf-wrapper form-floating mt-3" [formGroup]="myGroup" (keydown)="onKeydown($event)" (click)="$event.stopPropagation()" style="height: 64px;">
+        <div class="pf-item pf-input" (click)="openDropdown()">
+            <input #inputEl
+            type="text"
+            class="pf-text"
+            [placeholder]="selectedUser ? selectedUser.displayName : 'Who are you requesting access for?'"
+            (input)="onInput($any($event.target).value)"
+            (focus)="openDropdown()"
+            [readonly]="false" style="position: relative; top: 10px; left: -10px;"/>
+            <button class="pf-clear" *ngIf="selectedUser" (click)="clearSelection(); $event.stopPropagation()">Clear</button>
+            <span class="pf-arrow">▾</span>
+        </div>
+
+        <label class="pf-label" style="position: relative; top: -74px;">ObjectID of the person needing access</label>
+
+        <div class="pf-dropdown" *ngIf="dropdownOpen" style="position: relative; top: -61px; z-index: 1000;">
+            <div class="pf-header">
+                <small class="muted">Loaded {{users.length}} of {{allUsers.length}}</small>
+            </div>
+
+            <div class="pf-list" (scroll)="onContainerScroll($event)">
+                <div *ngIf="!loading && users.length === 0" class="pf-notfound">This person is not in the GAC Tenant.</div>
+                
+                <div *ngFor="let u of users; let i = index; trackBy: trackById"
+                    class="pf-item"
+                    (click)="selectUser(u); $event.stopPropagation()"
+                    [class.highlighted]="i === highlightedIndex">
+                <div class="pf-item-main">
+                    <div class="pf-name" style="margin-top: 4px">
+                        <b>Employee Name:</b> {{u.givenName}} {{u.surname}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Company: </b>{{u.companyName}}
+                    </div>
+                    <div class="pf-name" style="padding-top: 2px; padding-bottom: 2px">
+                        <b>Department:</b> {{u.department}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mail:</b> {{u.userPrincipalName}}
+                    </div>
+                </div>
+
+                <div *ngIf="loading" class="pf-loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="form-floating mt-3">
+        <input type="text" class="form-control" formControlName="v_dar_objectid_reqfor" value="{{ myGroup.get('v_dar_objectid_reqfor').value }}" [attr.disabled]="true">
+        <label for="floatingInput">ObjectID of the person needing access</label>
+    </div>
+</div>

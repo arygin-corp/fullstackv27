@@ -1,0 +1,59 @@
+.site-header {
+    position: relative;
+    z-index: 100;
+    background: transparent;
+    color: inherit;
+    border-bottom: 0px solid #ebebeb;
+}
+
+.site-header__middle {
+    display: flex;
+    align-items: center;
+    height: 104px;
+    border-top: 0px solid #222;
+    padding-top: 2.7rem;
+    padding-bottom: 2.7rem;
+    color: #fff;
+    background: #222;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.header-logo {
+    width: 100%;
+}
+
+.switcher {
+    position: relative;
+    top: 8px;
+}
+
+.btn-primary {
+    color: #000 !important;
+    border-color: #04fdff !important;
+    background-color: #04fdff !important;
+}
+
+.btn-primary:hover {
+    color: #fff !important;
+    border-color: #00696b !important;
+    background-color: #00696b !important;
+}
+
+.user-fullname {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.0428em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.user-email {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: -0.0428em;
+    line-height: 1;
+    color: #fff;
+}

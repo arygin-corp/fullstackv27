@@ -1,0 +1,260 @@
+<!-- .dropcart -->
+<div [ngClass]="{
+    'dropcart': true,
+    'dropcart--style--dropdown': type === 'dropdown',
+    'dropcart--style--offcanvas': type === 'offcanvas',
+    'dropcart--open': (state.isOpen$ | async)
+}">
+    <div *ngIf="type === 'offcanvas'" class="dropcart__backdrop" (click)="close()"></div>
+    <div class="dropcart__body" style="overflow: scroll;">
+        <div *ngIf="type === 'offcanvas'" class="dropcart__header">
+            <div class="dropcart__title">Add New Product</div>
+            <button class="dropcart__close" type="button" (click)="close()">
+                <app-icon name="cross-12" size="12"></app-icon>
+            </button>
+        </div>
+
+        <form *ngIf="!isShow" [formGroup]="addNewProductForm" (ngSubmit)="onSubmit()">
+            <div class="container-fluid">
+                <div class="col-lg-12">
+                    <div class="form-floating mt-3">
+                        <select class="form-control" formControlName="requestingAdd">
+                            <option value="">Select An Option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <label>Are you requesting to add a new product into Global Data Marketplace?</label>
+                    </div>
+                </div>
+                <br>
+
+                <!-- If No -->
+                <div *ngIf="addNewProductForm.get('requestingAdd')?.value === 'No'">
+                    <p>Please use the <strong>Data Marketplace</strong> search engine to search for a wide variety of data products that are currently available and request access to them using our simple 2-click checkout process.<br><br>
+                        If you cannot find what you are looking for, please raise a request using the <a routerLink="form/data-access-request" style="color: #0D6EFD; font-weight: bold;" (click)="close()">Data Access Request</a>.</p>
+                </div>
+
+                <!-- If Yes -->
+                <div *ngIf="addNewProductForm.get('requestingAdd')?.value === 'Yes'">
+                    <!-- Requester Info -->
+                    <div class="form-floating mt-3 collapse">
+                        <input type="text" class="form-control" formControlName="requesterName" [value]="appSvc?.userData?.givenName + ' ' + appSvc?.userData?.surname">
+                        <label>Requestor's Full Name</label>
+                    </div>
+
+                    <div class="form-floating mt-3 collapse">
+                        <input type="text" class="form-control" formControlName="requesterID" [value]="appSvc?.userData?.id">
+                        <label>Requestor's Object ID</label>
+                    </div>
+
+                    <div class="form-floating mt-3 collapse">
+                        <input type="text" class="form-control" formControlName="requesterMail" [value]="appSvc?.userData?.mail">
+                        <label>Requestor's Email</label>
+                    </div>
+
+                    <!-- Product Name -->
+                    <div class="form-floating">
+                        <input type="text" class="form-control" formControlName="productName" placeholder="Product Name">
+                        <label>What is the name of your product? <span style="color:red">*</span></label>
+                        <div *ngIf="addNewProductForm.get('productName')?.invalid && addNewProductForm.get('productName')?.touched" class="text-danger mt-1 ps-3">
+                            Product name is required.
+                        </div>
+                    </div>
+
+                    <!-- Product Domain -->
+                    <div class="form-floating mt-3">
+                        <select class="form-control" formControlName="productDomain">
+                            <option value="">Select A Data Domain</option>
+                            <option value="Customer">Customer</option>
+                            <option value="Digital Assets">Digital Assets</option>
+                            <option value="Distributor/Region/Dealer">Distributor/Region/Dealer</option>
+                            <option value="Facilities">Facilities</option>
+                            <option value="Finance Management and Accounting">Finance Management and Accounting</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Identity and Access Management">Identity and Access Management</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Manufacturing Parts">Manufacturing Parts</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Quality">Quality</option>
+                            <option value="Research and Development">Research and Development</option>
+                            <option value="Service History">Service History</option>
+                            <option value="Service Parts and Accessories">Service Parts and Accessories</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Survey">Survey</option>
+                            <option value="Telematics">Telematics</option>
+                            <option value="Vehicle">Vehicle</option>
+                            <option value="Warranty">Warranty</option>
+                        </select>
+                        <label>What is the domain this product is associated with? <span style="color:red">*</span></label>
+                        <div *ngIf="addNewProductForm.get('productDomain')?.invalid && addNewProductForm.get('productDomain')?.touched" class="text-danger mt-1 ps-3">
+                            Product domain is required.
+                        </div>
+                    </div>
+
+                    <!-- Product Type -->
+                    <div class="form-floating mt-3">
+                        <select class="form-control" formControlName="productType">
+                            <option value="">Select A Product Type</option>
+                            <option value="Dashboard">Dashboard</option>
+                            <option value="Data Science Model">Data Science Model</option>
+                            <option value="Dataset">Dataset</option>
+                            <option value="Webservice (API)">API</option>
+                        </select>
+                        <label>Type of the Data Product <span style="color:red">*</span></label>
+                        <div *ngIf="addNewProductForm.get('productType')?.invalid && addNewProductForm.get('productType')?.touched" class="text-danger mt-1 ps-3">
+                            Product type is required.
+                        </div>
+                    </div>
+
+                    <!-- Product URL (conditionally shown) -->
+                    <div class="form-group mt-3" [ngClass]="{'collapse': !typeIsDashboardOrAPI}">
+                        <div class="form-floating">
+                            <input class="form-control" formControlName="productURL" placeholder="Enter URL">
+                            <label>Please provide the URL of your report or dashboard <span style="color:red">*</span></label>
+                            <div *ngIf="addNewProductForm.get('productURL')?.invalid && addNewProductForm.get('productURL')?.touched" class="text-danger mt-1 ps-3">
+                            Product URL for Dashboards and APIs is required with a minimum of 16 characters.
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Tags -->
+                    <div class="form-floating mt-3">
+                        <ng-select id="ng-dropdown-panel2 "
+                            class="form-control"
+                            formControlName="productTagsControl" 
+                            [items]="availableTags"
+                            bindLabel="name"
+                            bindValue="id"
+                            [multiple]="true"
+                            [closeOnSelect]="false"
+                            placeholder="Product Tags"
+                            [addTag]="true"
+                            [clearable]="true"
+                            [clearSearchOnAdd]="true"
+                            (add)="onTagAdd($event)">
+                        </ng-select>
+                        <label>Hashtags or labels used to associate the product? <span style="color:red">*</span></label>              
+                        <div *ngIf="addNewProductForm.get('productTagsControl')?.invalid && addNewProductForm.get('productTagsControl')?.touched" class="text-danger mt-1 ps-3">
+                            At least one product tag is required.
+                        </div>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="form-floating mt-3">
+                        <textarea class="form-control" formControlName="productDesc" placeholder="Write a brief description of your product" rows="5" min="16" style="height: 200px;"></textarea>
+                        <label>Description of the Product <span style="color:red">*</span></label>
+                        <div *ngIf="addNewProductForm.get('productDesc')?.invalid && addNewProductForm.get('productDesc')?.touched" class="text-danger mt-1 ps-3">
+                            Product Description is required with a minimum of 16 characters is required.
+                        </div>
+                    </div>
+
+                    <!-- Product PII -->
+                    <div class="form-group mt-3">
+                        <label>Does this data product contain any Sensitive PI (Sensitive Personal Information) or Regulatory Information?
+                            <span style="color:red">*</span>
+                        </label>
+                        <div class="form-floating">
+                            <div class="form-check">
+                            <input class="form-check-input" id="chkProductPIYes" value="true" type="radio" formControlName="productPII">
+                            <label class="form-check-label" for="chkProductPIYes">
+                                <small class="text-muted">Yes</small>
+                            </label>
+                            </div>
+
+                            <div class="form-check">
+                            <input class="form-check-input" id="chkProductPINo" value="false" type="radio" formControlName="productPII">
+                            <label class="form-check-label" for="chkProductPINo">
+                                <small class="text-muted">No</small>
+                            </label>
+                            </div>
+                        </div>
+                        <div *ngIf="addNewProductForm.get('productPII')?.invalid && addNewProductForm.get('productPII')?.touched" class="text-danger mt-1 ps-3">
+                            PII Information is required for new product.
+                        </div>
+                    </div>
+
+                    <!-- PII Explanation -->
+                    <div *ngIf="addNewProductForm.get('productPII')?.value === 'true'" class="form-floating mt-3">
+                        <textarea class="form-control" id="txtExplainPII" placeholder="Enter Your Answer" formControlName="piiExplanation" minlength="12" style="height: 150px;"></textarea>
+                        <label for="txtExplainPII">
+                            Explain more about the Sensitive PI/Regulatory content in the product <span style="color:red">*</span>
+                        </label>
+                        <div *ngIf="addNewProductForm.get('piiExplanation')?.invalid && addNewProductForm.get('piiExplanation')?.touched" class="text-danger mt-1 ps-3">
+                            Explanation is required and must have a minimum of 12 characters.
+                        </div>
+                    </div>
+
+                    <!-- Product Stakeholder -->                    
+                    <div class="form-floating mt-3">
+                        <app-people-finder></app-people-finder>
+                        <p><small class="text-muted font-italic control-label ps-3">Search and select the Stakeholder or SME or point of contact for the product</small></p>
+                    </div>
+
+                    <!-- Product Fulfillment Group -->
+                    <div class="form-floating mt-3">
+                        <input type="text" class="form-control" id="txtFulfillmentGroup" placeholder="Enter Your Answer" formControlName="fulfillmentGroup" minlength="10" >
+                        <label for="txtFulfillmentGroup">Fulfillment Group <span style="color:red">*</span></label>
+                        <div *ngIf="addNewProductForm.get('fulfillmentGroup')?.invalid && addNewProductForm.get('fulfillmentGroup')?.touched" class="text-danger mt-1 ps-3">
+                            Fulfillment Group is required and must have a minimum of 10 characters.
+                        </div>
+                    </div>
+                    <p for="txtFulfillmentGroup">
+                        <small class="text-muted font-italic ps-3">i.e. the name of the team which would handle the access provisioning process for this product.</small><br>
+                        <small class="text-muted font-italic ps-3">If you do not know about this, please type 'I don't know'</small>
+                    </p>
+
+                    <form [formGroup]="sampleForm">
+                        <div formArrayName="samples">
+                            <div class="row gx-1 gy-1 mt-3" *ngFor="let group of samples.controls; let i = index" [formGroupName]="i" [attr.id]="'sample-' + i">
+                                <!-- Sample Field -->
+                                <div class="col-5">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Enter Your Answer" formControlName="field"></textarea>
+                                        <label>Sample Field {{ i + 1 }} <span style="color:red">*</span></label>
+                                        <div *ngIf="group.get('field')?.invalid && group.get('field')?.touched" class="text-danger ps-3">
+                                            Sample Field {{ i + 1 }} is required.
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <small class="text-muted font-italic ps-3">e.g. Make, Model, Dealer Cost</small>
+                                    </p>
+                                </div>
+
+                                <!-- Sample Value -->
+                                <div class="col-5">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Enter Your Answer" formControlName="value"></textarea>
+                                        <label>Sample Value {{ i + 1 }} <span style="color:red">*</span></label>
+                                        <div *ngIf="group.get('value')?.invalid && group.get('value')?.touched" class="text-danger ps-3">
+                                            Sample Value {{ i + 1 }} is required.
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <small class="text-muted font-italic ps-3">e.g. TOYOTA, CAMRY, $19000</small>
+                                    </p>
+                                </div>
+
+                                <!-- Remove Button -->
+                                <div class="col-2 d-flex justify-content-center align-items-center" *ngIf="i > 0">
+                                    <button type="button" class="btn btn-danger rounded-circle d-flex justify-content-center align-items-center p-0" (click)="removeSample(i)" style="width: 30px; height: 30px; font-size: 0.75rem;">&times;
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Button -->
+                        <button type="button" class="btn btn-primary mt-3" (click)="addSample()" [disabled]="samples.length >= 10">
+                            Add More Sample Data
+                        </button>
+                    </form>
+                    <!-- Submit Buttons -->
+                    <div class="dropcart__buttons mt-4">
+                        <button type="button" class="btn btn-secondary" (click)="resetForm(); close()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit Product</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- .dropcart / end -->

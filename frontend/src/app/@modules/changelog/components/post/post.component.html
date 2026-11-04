@@ -1,0 +1,36 @@
+<div class="block post post--layout--{{ layout }}">
+    <div class="post__header post-header post-header--layout--{{ layout }}">
+        <div class="post-header__categories justify-content-center">
+            <a routerLink="../" class="text-center">Latest Updates</a>
+        </div>
+        <div class="post-header__meta justify-content-center">
+            <div class="post-header__meta-item"><strong>By: Data Marketplace Team</strong></div>
+            <div class="post-header__meta-item"><strong>November 30, 2018</strong></div>
+        </div>
+        <h4 class="post-header__title text-center">Morbi Interdum Velit Quis Magna Placerat Lobortis Eget</h4>
+        <div class="post-header__meta justify-content-center">
+            <div class="post__tags tags">
+                <div class="tags__list">
+                    <a>Updates</a>
+                    <a>Power Tool</a>
+                    <a>Wrench</a>
+                    <a>Electrodes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post__content typography text-center" [ngClass]="{'typography--expanded': layout === 'full'}">
+            <p>
+                Vestibulum sagittis justo sit amet nisl semper, et pulvinar elit maximus. Morbi interdum velit quis magna placerat lobortis
+                eget pharetra magna. Nulla tristique sollicitudin turpis, eget maximus risus faucibus non. Nulla vestibulum ipsum risus,
+                vitae maximus nunc bibendum quis.
+            </p>
+            <p>
+                raesent eu consequat nibh. Quisque <i>ullamcorper</i>, augue eu fringilla sodales, leo metus volutpat risus, at suscipit ipsum
+                diam eget sem. Maecenas dictum elit in enim molestie, <a href="">vel sollicitudin erat ultricies</a>. Sed risus tellus, molestie finibus
+                dui quis, suscipit consequat ex.
+            </p>
+            <hr>
+        </div>
+    </div>
+</div>

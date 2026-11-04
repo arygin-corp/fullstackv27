@@ -1,0 +1,98 @@
+/* Validation Panel Styles */
+.validation-panel {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.validation-title {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: #495057;
+  font-weight: 600;
+}
+
+.validation-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.validation-icon {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.validation-text {
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .validation-panel {
+    padding: 1rem;
+  }
+  
+  .validation-items {
+    gap: 0.375rem 0.75rem;
+  }
+  
+  .validation-item {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Animation for validation state changes */
+.validation-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.validation-item:hover {
+  transform: translateY(-1px);
+}
+
+/* Success and danger text enhancements */
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* Icon enhancements */
+.ri-check-fill,
+.ri-prohibited-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Collapse/expand animations */
+.collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.remove {
+  display: none !important;
+}
+
+/* Print styles */
+@media print {
+  .validation-panel {
+    background-color: white !important;
+    border: 1px solid #000 !important;
+  }
+}

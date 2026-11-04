@@ -1,0 +1,264 @@
+<!-- ========================================================= -->
+<!-- Related / Similar Products                                -->
+<!-- ========================================================= -->
+<section *ngIf="hasAssociatedProducts" class="product-associations" aria-labelledby="
+        product-associations-title
+    ">
+    <!-- ===================================================== -->
+    <!-- Header                                                -->
+    <!-- ===================================================== -->
+    <div class="
+            product-associations__header
+        ">
+        <div>
+            <h3 id="
+                    product-associations-title
+                " class="
+                    product-associations__title
+                "> Related or Similar Products </h3>
+            <p class="
+                    product-associations__description
+                ">Explore related and similar products and add the ones you need to your cart. </p>
+        </div>
+        <!-- Selection Actions -->
+        <div class="product-associations__selection-actions" role="group" aria-label="Associated product selection actions">
+            <button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableRelatedProducts || allRelatedProductsSelected" (click)="selectAllRelatedProducts()"> Select All Related </button>
+            <button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableSimilarProducts || allSimilarProductsSelected" (click)="selectAllSimilarProducts()"> Select All Similar </button>
+            <button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || !hasSelectableAssociatedProducts || allAssociatedProductsSelected" (click)="selectAllAssociatedProducts()"> Select All </button>
+            <button type="button" class="btn btn-link btn-sm" [disabled]="addingAssociatedProducts || selectedAssociationCount === 0" (click)="clearAssociatedProductSelection()"> Clear All </button>
+        </div>
+    </div>
+    <!-- ===================================================== -->
+    <!-- Associated Product Cards                              -->
+    <!-- ===================================================== -->
+    <div id="product-associations-list" class="
+            product-associations__list
+        ">
+        <article *ngFor="
+                let association
+                    of displayedAssociatedProducts;
+                trackBy: trackAssociationById
+            " class="
+                product-association
+            " [class.product-association--selected]="
+                isAssociationSelected(
+                    association
+                )
+            " [class.product-association--in-cart]="
+                isAssociatedProductInCart(
+                    association
+                )
+            ">
+            <div class="
+                    product-association__content
+                ">
+                <!-- ========================================= -->
+                <!-- Checkbox + Association Badges            -->
+                <!-- ========================================= -->
+                <div class="
+                        product-association__badge-row
+                    ">
+                    <!--
+                        Individual checkbox.
+
+                        IMPORTANT:
+                        The checkbox is the FIRST item
+                        in this flex row, so it appears
+                        before Related / Similar.
+                    -->
+                    <input #associationCheckbox type="checkbox" class="
+                            product-association__checkbox
+                        " [id]="
+                            'product-association-' +
+                            association.id
+                        " [attr.aria-label]="
+                            getAssociationCheckboxLabel(
+                                association
+                            )
+                        " [checked]="
+                            isAssociationSelected(
+                                association
+                            )
+                        " [disabled]="
+                            addingAssociatedProducts ||
+                            isAssociatedProductInCart(
+                                association
+                            )
+                        " (change)="
+                            toggleAssociation(
+                                association,
+                                associationCheckbox.checked
+                            )
+                        ">
+                    <!-- Association Type -->
+                    <span class="
+                            association-badge
+                        " [ngClass]="
+                            getAssociationBadgeClass(
+                                association
+                            )
+                        ">
+                        {{ getAssociationBadgeLabel(
+                                association
+                            )
+                        }}
+                    </span>
+                    <!-- Already in Cart -->
+                    <span *ngIf="
+                            isAssociatedProductInCart(
+                                association
+                            )
+                        " class="
+                            association-badge
+                            association-badge--in-cart
+                        "> Already in Cart </span>
+                </div>
+                <!-- ========================================= -->
+                <!-- Product Image                             -->
+                <!-- ========================================= -->
+                <a class="
+                        product-association__image
+                    " [routerLink]="[
+                        '/marketplace/product',
+                        association
+                            .associated_product
+                            .slug
+                    ]">
+                    <img [src]="
+                            association
+                                .associated_product
+                                .images?.length
+                                ?
+                                association
+                                    .associated_product
+                                    .images[0]
+                                :
+                                'assets/images/product_images/default-product.png'
+                        " [alt]="
+                            association
+                                .associated_product
+                                .name
+                        ">
+                </a>
+                <!-- ========================================= -->
+                <!-- Product Name                              -->
+                <!-- ========================================= -->
+                <div class="
+                        product-association__name
+                    ">
+                    {{ association
+                            .associated_product
+                            .name
+                    }}
+                </div>
+                <!-- ========================================= -->
+                <!-- View Details                              -->
+                <!-- ========================================= -->
+                <a class="
+                        product-association__details
+                        btn
+                        btn-sm
+                        btn-primary
+                        product-card__addtocart
+                    " [routerLink]="[
+                        '/marketplace/product',
+                        association
+                            .associated_product
+                            .slug
+                    ]"> View Details </a>
+            </div>
+        </article>
+    </div>
+    <!-- ===================================================== -->
+    <!-- View More / Show Less                                 -->
+    <!-- ===================================================== -->
+    <div *ngIf="
+            hasMoreAssociatedProducts
+        " class="
+            product-associations__view-more
+        ">
+        <button type="button" class="
+                btn
+                btn-link
+            " [attr.aria-expanded]="
+                showAllAssociatedProducts
+            " aria-controls="
+                product-associations-list
+            " (click)="
+                toggleAssociatedProductsView()
+            ">
+            <ng-container *ngIf="
+                    !showAllAssociatedProducts
+                "> View More <span aria-hidden="true"> ({{ hiddenAssociatedProductCount
+                    }}) </span>
+            </ng-container>
+            <ng-container *ngIf="
+                    showAllAssociatedProducts
+                "> Show Less </ng-container>
+        </button>
+    </div>
+    <!-- ===================================================== -->
+    <!-- Selection Summary                                     -->
+    <!-- ===================================================== -->
+    <div class="
+            product-associations__summary
+        ">
+        <!-- Selected Count -->
+        <div class="
+                product-associations__selected-count
+            " aria-live="polite">
+            <ng-container *ngIf="
+                    selectedAssociationCount > 0;
+                    else noAssociatedProductsSelected
+                ">
+                {{ selectedAssociationCount }}
+                {{ selectedAssociationCount === 1
+                        ? 'product selected'
+                        : 'products selected'
+                }}
+            </ng-container>
+            <ng-template #noAssociatedProductsSelected> No related or similar products selected </ng-template>
+        </div>
+        <!-- ================================================= -->
+        <!-- Cart Actions                                      -->
+        <!-- ================================================= -->
+        <div class="
+                product-associations__cart-actions
+            ">
+            <!-- Add Selected -->
+            <button type="button" class="
+                    btn
+                    btn-secondary
+                    product-associations__add-selected
+                " [disabled]="
+                    addingAssociatedProducts ||
+                    selectedAssociationCount === 0
+                " (click)="
+                    addSelectedAssociatedProducts()
+                ">
+                <ng-container *ngIf="
+                        !addingAssociatedProducts;
+                        else addingSelectedProducts
+                    "> Add Selected to Cart </ng-container>
+                <ng-template #addingSelectedProducts> Adding... </ng-template>
+            </button>
+            <!-- Add All -->
+            <button type="button" class="
+                    btn
+                    btn-primary
+                    product-associations__add-all
+                " [disabled]="
+                    addingAssociatedProducts ||
+                    selectableAssociatedProducts.length === 0
+                " (click)="
+                    addAllAssociatedProducts()
+                ">
+                <ng-container *ngIf="
+                        !addingAssociatedProducts;
+                        else addingAllProducts
+                    "> Add All to Cart </ng-container>
+                <ng-template #addingAllProducts> Adding... </ng-template>
+            </button>
+        </div>
+    </div>
+</section>

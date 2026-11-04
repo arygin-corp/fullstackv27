@@ -1,0 +1,76 @@
+<app-block-map></app-block-map>
+
+<app-page-header [header]="'Contact Us'" [breadcrumbs]="[
+    {label: 'Home',       url: '../../'},
+    {label: 'Contact Us', url: ''}
+]"></app-page-header>
+
+<div class="block">
+    <div class="container-fluid">
+        <div class="card mb-0">
+            <div class="card-body contact-us">
+                <div class="contact-us__container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pb-4 pb-lg-0">
+                            <h4 class="contact-us__header card-title">Our Address</h4>
+
+                            <div class="contact-us__address">
+                                <p>
+                                    <strong>Address:</strong><br>
+                                    {{ toyota.address.line1 }}<br>
+                                    {{ toyota.address.city }}, {{ toyota.address.state }} {{ toyota.address.zip }}<br>
+                                    {{ toyota.address.country }}<br><br>
+                                    <strong>Emails:</strong><br>
+                                    <a href="mailto:{{ toyota.team.email }}?cc=secondemail@example.com&subject=Inquiry From Data Marketplace Web App">Data Marketplace Team</a><br>
+                                    <a href="mailto:{{ toyota.team.contentEmail }}?cc=secondemail@example.com&subject=Inquiry From Data Marketplace Web App">Data Marketplace Content</a><br>
+                                    <a href="mailto:{{ toyota.team.techEmail }}?cc=secondemail@example.com&subject=Inquiry From Data Marketplace Web App">Data Marketplace Tech</a><br>
+                                </p>
+
+                                <p>
+                                    <strong>Opening Hours</strong><br>
+                                    <strong>{{ toyota.operationDays.mon }} - {{ toyota.operationDays.fri }}:</strong> {{ toyota.operationHours.open }}<br>
+                                    <strong>{{ toyota.operationDays.sat }}:</strong> {{ toyota.operationHours.close }}<br>
+                                    <strong>{{ toyota.operationDays.sun }}:</strong> {{ toyota.operationHours.close }}
+                                </p>
+
+                                <p>
+
+                                    <strong>Holiday Schedule</strong><br>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit suscipit mi, non
+                                    tempor nulla finibus eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <h4 class="contact-us__header card-title">Leave us a Message</h4>
+
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="form-name">Your Name</label>
+                                        <input type="text" id="form-name" class="form-control" placeholder="Your Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="form-email">Email</label>
+                                        <input type="email" id="form-email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-subject">Subject</label>
+                                    <input type="text" id="form-subject" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">Message</label>
+                                    <textarea id="form-message" class="form-control" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

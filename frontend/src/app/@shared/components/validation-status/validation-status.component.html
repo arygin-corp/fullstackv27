@@ -1,0 +1,14 @@
+<div class="text-center">
+    <p class="text-danger validation-margin text-validation" *ngIf="value !== undefined && !value">
+    <span class="mr-6">
+        <i class="ri-prohibited-line text-danger icon-validation"></i>
+    </span>
+    <strong>{{ label }}</strong>
+    </p>
+    <p class="text-success validation-margin text-validation mr-6" *ngIf="value">
+        <span class="mr-4">
+            <i class="ri-check-fill text-success icon-validation"></i>
+        </span>
+        <strong>{{ label }}</strong>
+    </p>
+</div>

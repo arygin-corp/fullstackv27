@@ -1,0 +1,40 @@
+<div class="nav-panel" [ngClass]="{'nav-panel--sticky': stickyMode}" #element>
+    <div class="nav-panel__container container-fluid">
+        <div class="nav-panel__row">
+            <div class="nav-panel__indicators">
+                <app-indicator
+                    *ngIf="search"
+                    icon="search-20"
+                    iconWhenOpen="cross-20"
+                    trigger="click"
+                    (stateChanges)="$event === true ? search.inputElement.focus() : ''"
+                    #searchIndicator="appIndicator">
+                    <app-search location="indicator" (escape)="searchIndicator.close()" #search="search"></app-search>
+                </app-indicator>
+
+                <app-language-switcher style="margin: 0px 4px;"></app-language-switcher>
+                
+                <app-indicator link="./account" icon="person-20" trigger="click" #accountIndicator="appIndicator">
+                    <app-account-menu (closeMenu)="accountIndicator.close(true)"></app-account-menu>
+                </app-indicator>
+
+                <app-indicator [link]="root.compare()" icon="balance-scale" [counter]="(compare.count$|async) || 0"></app-indicator>
+                
+                <app-indicator [link]="root.favorites()" icon="heart-20" [counter]="(favorites.count$|async) || 0"></app-indicator>
+
+                <app-indicator
+                    [link]="root.cart()"
+                    icon="cart-20"
+                    trigger="click"
+                    [counter]="(cart.quantity$|async) || 0"
+                    (buttonClick)="onCartClick()"
+                    #cartIndicator="appIndicator">
+                    <app-header-dropcart
+                        *ngIf="dropcartType == 'dropdown'"
+                        (closeMenu)="cartIndicator.close(true)">
+                    </app-header-dropcart>
+                </app-indicator>
+            </div>
+        </div>
+    </div>
+</div>

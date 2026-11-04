@@ -1,0 +1,16 @@
+<div id="google_translate_element" class="collapse"></div>
+
+<!-- Added 'notranslate' class to the container -->
+<div class="custom-dropdown dropdown notranslate" style="margin: 0px 2px;">
+    <div class="dropdown-selected" (click)="toggleDropdown()">
+        <img [src]="selectedLanguage.flag" [alt]="selectedLanguage.name" class="flag-icon">
+        <span class="language-name">{{ selectedLanguage.name }}</span>
+    </div>
+    
+    <div class="dropdown-list dropdown-content" *ngIf="isDropdownOpen" (click)="toggleDropdown()">
+        <div class="dropdown-item" *ngFor="let lang of languages" (click)="selectLanguage(lang)">
+            <img [src]="lang.flag" [alt]="lang.name" class="flag-icon">
+            <span class="language-name">{{ lang.name }}</span>
+        </div>
+    </div>
+</div>

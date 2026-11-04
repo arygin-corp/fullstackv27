@@ -1,0 +1,39 @@
+.site-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Transparent background - no background-color set */
+  background: #363636;
+  padding: 1px;
+  position: relative;  /* Ensure proper stacking */
+  z-index: 1000;  
+  border-radius: 10px;  
+}
+
+#loader-canvas {
+  display: block;
+  width: 32px;
+  height: 32px;
+  /* Ensure canvas itself is transparent */
+  background: transparent;
+}
+
+#loader-canvas {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+}
+
+#loader-text {
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px; /* Reduced font size for smaller loader */
+  font-weight: bold;
+  color: #1EECB2;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(30, 236, 178, 0.5);
+  min-height: 16px;
+  background: transparent;
+}

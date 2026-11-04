@@ -1,0 +1,67 @@
+const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
+
+// STAGE DEVELOPMENT ENVIRONMENT
+export const environment = {
+  version: '26.27.10',
+  timestamp: '10/27/2026, 143920 CT',
+  engineer: 'Giovanni Austin',
+  buildId: 'stage-build-3',
+  production: true,
+  hotjar: '1935085',
+  environmentName: 'Stage',
+  isIE,
+  /* Django Web API registration. - This is normally a separate Entra application registration.*/
+  chatApiClientId: 'b7be26fb-0007-4e34-9f39-088aa7bc74b0',
+  chatApiScope: 'api://b7be26fb-0007-4e34-9f39-088aa7bc74b0/access_as_user',
+  /* These paths match the exact outgoing calls from AiChatService.*/
+  vikkiApiBase:'/api/ai',
+  chatApiUrl: '/api/ai/chat/',
+  chatContextApiUrl: '/api/ai/chat/context/',
+  chatFeedbackApiUrl:'/api/ai/chat/feedback/',
+  clientId: "a154f762-b87a-403f-92d5-ecd7243e89eb",
+  authority: "https://login.microsoftonline.com/014106b1-ea3a-48aa-88f8-58cbb5ddee11",
+  redirectUri: "https://stage.data.toyota.com",
+  postLogoutRedirectUri: "https://stage.data.toyota.com",
+  validateAuthority: false,
+  navigateToLoginRequestUrl: true,
+  cacheLocation: "sessionStorage",
+  versionCheckURL: "http://stage.data.toyota.com/version.json",
+  apiUrl: 'https://localhost:8000/api', // For Engine B
+  gdx: {
+    baseURL: "https://api-stage.data.toyota.com/",
+    axon: "https://api-stage.data.toyota.com/view/endpoint/axon/get-token",
+    axonFacets: "https://api-stage.data.toyota.com/view/endpoint/axon/axon-facet-search",
+    axonGlossary: "https://api-stage.data.toyota.com/view/endpoint/axon/axon-glossary",
+    denodo: "https://api-stage.data.toyota.com/view/endpoint/denodo/get-token2",
+    denodoTables: "https://api-stage.data.toyota.com/view/endpoint/denodo/table/view",
+    collibra: "https://api-stage.data.toyota.com/view/endpoint/",
+    collibraFacets: "https://api-stage.data.toyota.com/view/endpoint/",
+    collibraGlossary: "https://api-stage.data.toyota.com/view/endpoint/",
+    users: "https://api-stage.data.toyota.com/view/endpoint/users",
+    addToCart: "https://api-stage.data.toyota.com/onets/api/orders/add-to-cart",
+    submitCart: "https://api-stage.data.toyota.com/onets/api/orders/cart/submit",
+    fileUpload: "https://api-stage.data.toyota.com/onets/api/cart/file/upload",
+    pods: "https://api-stage.data.toyota.com/tpsp//api/pods/drowponlist",
+    products: "https://api-stage.data.toyota.com/view/endpoint/product",
+    request: "https://api-stage.data.toyota.com/view/endpoint/requests",
+    requestSave: "https://api-stage.data.toyota.com/view/endpoint/requests/save",
+    requestFindAndSave: "https://api-stage.data.toyota.com/view/endpoint/requests/findAndSave",
+    requestEvent: "https://api-stage.data.toyota.com/view/endpoint/requests/event",
+    requestProduct: "https://api-stage.data.toyota.com/view/endpoint/requests/product",
+    form: "https://api-stage.data.toyota.com/view/endpoint/forms",
+    // submittedCartLogs: "https://api-stage.data.toyota.com/view/endpoint/cart/logs/audit",
+    // submittedOrderLogs: "https://api-stage.data.toyota.com/veiw/endpoint/order/logs/audit/",
+  },
+  useMockServiceNow: false,
+  serviceNow: {
+    auth: "RE1QIFN1YiBQcm9kOiE5PHdEbmhfZ3ZeYWJNQG1MIzY2QE0qaVVQQ0pvKDRrI1A/NGVFXXE=",
+    baseURL: "https://tmnatest.service-now.com/api",
+    addToCart: "https://tmnatest.service-now.com/api/sn_sc/servicecatalog/items/9a51d2dd1b03c490d96b11b92a4bcb99/add_to_cart",
+    orderNow: "https://tmnatest.service-now.com/api/sn_sc/servicecatalog/items/9a51d2dd1b03c490d96b11b92a4bcb99/order_now",
+    submitOrder: "https://tmnatest.service-now.com/api/sn_sc/servicecatalog/cart/submit_dar_order",
+    upload: "https://tmnatest.service-now.com/api/now/attachment/upload",
+  },
+  microsoft: {
+    graphAPI: "https://graph.microsoft.com/v1.0/me?$select=id,accountEnabled,displayName,givenName,surname,jobTitle,userPrincipalName,mail,businessPhones,officeLocation,employeeId,department,companyName,streetAddress,city,state,postalCode,country,extension_f9db8ce126544afb895293c1adb4b749_extensionAttribute3",
+  }
+};

@@ -1,0 +1,91 @@
+:root {
+    --color-violet: 0, 20, 255;
+    --color-orange: 255, 120, 0;
+    --color-black: 10, 10, 10;
+    --color-white: 255, 255, 255;
+    --rotation-duration: 6s;
+    --dynamic-border-radius: 55%;
+}
+
+.scale-1 {
+  scale: .66;
+  transform: rotate(240deg);
+}
+.scale-2 {
+  scale: .53;
+  transform: rotate(80deg);
+}
+.scale-3 {
+  scale: .16;
+  transform: rotate(30deg);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // background-color: rgb(var(--color-black));
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Formato esfera + sombra */
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: var(--dynamic-border-radius);  /* Usando o border-radius dinâmico */
+    box-shadow: 0 0 20px 10px rgba(var(--color-orange), 0.05);
+    animation: rotateShape var(--rotation-duration) infinite ease-in-out;
+}
+
+/* Primeira esfera rotacionando com luz laranja */
+.circle-1 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 67%, rgba(var(--color-orange), 1) 73%, rgba(var(--color-orange), 1) 100%);
+}
+
+/* Segunda esfera rotacionando com luz violeta */
+.circle-2 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 67%, rgba(var(--color-violet), 1) 75%, rgba(var(--color-violet), 1) 100%);
+    animation: rotateShape var(--rotation-duration) infinite reverse ease-in-out;
+}
+
+/* Terceira esfera com luz branca */
+.circle-3 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 70%, rgba(var(--color-white), 1) 73%, rgba(var(--color-white), 1) 100%);
+}
+
+/* Animação de rotação */
+@keyframes rotateShape {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        border-radius: var(--dynamic-border-radius);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.05);
+        border-radius: 45% 55% 50% 50%;  /* Deformação adicional durante a animação */
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        border-radius: var(--dynamic-border-radius);  /* Retorna ao valor dinâmico */
+    }
+}
+
+.gradient-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(var(--color-orange), 1),
+        rgba(var(--color-violet), 1),
+        rgba(var(--color-white), 1),
+        rgba(var(--color-orange), 1)
+    );
+    animation: spin 10s infinite;
+    transform-origin: center;
+}

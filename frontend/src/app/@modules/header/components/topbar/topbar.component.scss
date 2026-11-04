@@ -1,0 +1,25 @@
+.topbar {
+    background: #191919 !important;
+    height: 50px;
+}
+
+.welcome-msg {
+    margin: 0;
+    padding: 1.1rem 0;
+    color: #dedede !important;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    letter-spacing: -0.0125em;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+a.link {
+    color: #dedede !important;
+    transition: color 0.3s;
+}
+
+a.link:hover {
+    color: #04fdff !important;
+}

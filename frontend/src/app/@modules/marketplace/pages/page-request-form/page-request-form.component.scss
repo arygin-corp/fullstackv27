@@ -1,0 +1,43 @@
+.mr-6 {
+    margin-right: 6px;
+}
+
+.left {
+    float: left;
+}
+
+.mt-6 {
+    margin-top: 30px;
+}
+
+.requirements {
+    list-style: none;
+    position: relative;
+    right: 36px;
+}
+
+.text-validation {
+    font-size: 12px; 
+    float: left;
+}
+
+.icon-validation {
+    margin-left: 4px; 
+    font-weight: bold; 
+    font-size: 16px;
+}
+.request-pointer {
+    font-size: 14px; 
+    text-decoration: underline;
+    font-weight: bold; 
+    color:#FF4D4D;
+    cursor: pointer;
+}
+
+.request-pointer:hover {
+    font-size: 14px; 
+    text-decoration: underline;
+    font-weight: bold; 
+    color:#cc3333;
+    cursor: pointer;
+}

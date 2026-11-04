@@ -1,0 +1,4 @@
+<app-zoom-scale>
+    <router-outlet *ngIf="!isCallbackOrIframe() && appSvc?.userData"></router-outlet>
+    <app-update-available></app-update-available>
+</app-zoom-scale>

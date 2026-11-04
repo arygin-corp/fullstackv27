@@ -1,0 +1,160 @@
+<app-page-header [header]="'Checkout'" [breadcrumbs]="[
+    {label: 'Domains',          url: root.home()},
+    {label: 'Cart', url: root.cart()},
+    {label: 'Checkout',      url: ''}
+]"></app-page-header>
+
+<div class="checkout block">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- User Login Warning -->
+            <div class="col-12 mb-3" *ngIf="!appSvc?.userData">
+                <app-alert type="primary" size="lg">Returning customer? <a [routerLink]="root.login()">Click here to login</a></app-alert>
+            </div>
+
+            <div class="col-12">
+                <div class="pipeline-status my-3 p-3 border rounded bg-light" *ngIf="isSubmitting">
+                    <div class="d-flex align-items-center mb-2" style="position: relative; top: 6px;">
+                        <div class="spinner-border spinner-border-sm text-secondary me-2" *ngIf="submissionStatus === 'fulfilling'"></div>
+                        <p style="position: relative; top: 9px; font-size: 18px;" *ngIf="submissionStatus === 'fulfilling'"><strong>Submitting Your Request</strong></p>
+                        <div class="spinner-border spinner-border-sm text-secondary me-2" *ngIf="submissionStatus === 'success'"></div>
+                        <p style="position: relative; top: 9px; font-size: 18px;" *ngIf="submissionStatus === 'success'"><strong>Successfully Submitted</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Column: Billing Details (Auto-filled from AppService) -->
+            <div class="col-12 col-xl-4 col-lg-6 ">
+                <div class="card mb-lg-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Employee Details</h3>
+                        <div class="container-fluid">
+                            <div class="row g-2">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.givenName" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <label>Last Name</label>
+                                <input type="text" class="form-control" [ngModel]="appSvc?.userData?.surname" disabled>
+                                </div>
+                                 <div class="col-12">
+                                    <label>Organization / Company Name</label>
+                                    <input type="text" class="form-control" 
+                                        [ngModel]="(appSvc?.userData?.companyName === 'TMNA' || appSvc?.userData?.companyName === 'TMN') ? 'Toyota Motor North America' : appSvc?.userData?.companyName" 
+                                        disabled>
+                                </div>
+                                <div class="col-12">
+                                    <label>Addreess</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.streetAddress" disabled>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.city" disabled>
+                                </div>
+                                <div class="col-xl-2 col-lg-6 col-md-2 col-sm-12">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.state" disabled>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
+                                    <label>Zip Code</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.postalCode" disabled>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.country" disabled>
+                                </div>
+                                <div class="col-xl-12 col-lg-8 ">
+                                    <label>Email Address</label>
+                                    <input type="text" class="form-control" [ngModel]="appSvc?.userData?.mail" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="col-12 col-xl-8 col-lg-6 mt-4 mt-lg-0">
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Your Order Summary</h3>
+
+                        <ng-container *ngIf="cart.state$ | async as state">
+                            
+                            <!-- PRODUCTS TABLE: Hidden if 0 items -->
+                            <table class="checkout__totals" *ngIf="state.items.length > 0" [class.dars]="state.items.length > 0 && state.darRequests.length > 0">
+                                <thead class="checkout__totals-header">
+                                    <tr>
+                                        <th>Data Products</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="checkout__totals-products">
+                                    <tr *ngFor="let item of state.items">
+                                        <td>{{ item.product.name }}</td>
+                                        <td>{{ 0 | currencyFormat }}</td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- DAR TABLE: Shows Data Access Requests -->
+                            <table class="checkout__totals" *ngIf="state.darRequests.length > 0">
+                                <thead class="checkout__totals-header">
+                                    <tr>
+                                        <th>DAR Requests</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="checkout__totals-products">
+                                    <tr *ngFor="let dar of state.darRequests">
+                                        <td>
+                                            <strong>Data Access Request</strong>
+                                            <div class="text-muted small" *ngIf="dar.v_dar_platform">
+                                                Platform: {{ dar.v_dar_platform }}
+                                            </div>
+                                            <div class="text-muted small" *ngIf="dar.v_dar_dataDomainSelect">
+                                                Domain: {{ dar.v_dar_dataDomainSelect }}
+                                            </div>
+                                        </td>
+                                        <td>{{ 0 | currencyFormat }}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="checkout__totals-footer">
+                                    <tr>
+                                        <th>Total Charge</th>
+                                        <td>{{ 0 | currencyFormat }}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </ng-container>
+
+                        <div class="payment-methods mt-4">
+                            <ul class="payment-methods__list">
+                                <li class="payment-methods__item payment-methods__item--active">
+                                    <label class="payment-methods__item-header">
+                                        <span class="payment-methods__item-title">Standard Entitlement Delivery</span>
+                                    </label>
+                                    <div class="payment-methods__item-container">
+                                        <div class="payment-methods__item-description text-muted">
+                                            Fulfillment is processed via Data Fullfilment Teams. This request is currently free of charge.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button type="button" 
+                            class="btn btn-primary btn-xl btn-block" 
+                            [ngClass]="{'btn-loading': isSubmitting}"
+                            [disabled]="isSubmitting"
+                            (click)="executeCheckout()">
+                            Submit Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

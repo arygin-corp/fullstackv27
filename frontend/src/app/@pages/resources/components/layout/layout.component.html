@@ -1,0 +1,30 @@
+<div class="block jumbotron jumbotron-fluid" style="margin-bottom: 16px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12 d-flex">
+                <div class="account-nav flex-grow-1">
+                    <nav class="navbar main-navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <div class="navbar-brand">
+                                <a href="#">
+                                    <img src="assets/images/badges/brands/marketplace-resources.svg" style="width: 100%; max-width:300px;" alt="Resource Library Logo"/>
+                                </a>
+                            </div>
+            
+                            <ul class="navbar-nav">
+                                <li *ngFor="let link of links" class="nav-item" routerLinkActive="account-nav__item--active" [routerLinkActiveOptions]="{exact: true}">
+                                    <a [routerLink]="link.url">{{ link.label }}</a>
+                                </li>
+                            </ul>
+                      </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-tab-layout></app-tab-layout>
+<!-- <div class="col-12 col-lg-12 mt-4 mt-lg-0">
+    <router-outlet></router-outlet>
+</div> -->

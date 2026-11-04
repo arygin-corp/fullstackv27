@@ -1,0 +1,19 @@
+<div class="widget-categories widget-categories--location--{{ location }} widget">
+    <h4 class="widget__title">Domains</h4>
+    <ul class="widget-categories__list" appCollapse>
+        <li *ngFor="let domain of domains" class="widget-categories__item" appCollapseItem="widget-categories__item--open" #collapse="appCollapseItem">
+            <div class="widget-categories__row">
+                <a [routerLink]="root.domain(domain)">
+                    <app-icon class="widget-categories__arrow" name="arrow-rounded-right-6x9" size="6x9"></app-icon>
+                    {{ domain.name }}
+                </a>
+                <button *ngIf="domain.children?.length" class="widget-categories__expander" type="button" (click)="collapse.toggle()"></button>
+            </div>
+            <div *ngIf="domain.children?.length" class="widget-categories__subs" appCollapseContent>
+                <ul>
+                    <li *ngFor="let sub of domain.children"><a [routerLink]="root.domain(sub)">{{ sub.name }}</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

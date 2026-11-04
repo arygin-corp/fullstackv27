@@ -1,0 +1,14 @@
+<div class="jumbotron jumbotron-fluid"  *ngIf="page">
+  <div class="container">
+    <h1 class="display-4 text-center" style="font-size: 28px; font-weight: 700;">{{ page.title }}</h1>
+    <p class="lead text-center" style="font-size: 18px; font-weight: 300;">
+      This application is intended solely for authorized users within the organization. Information contained within the application may be confidential<br>
+      or proprietary and must be handled in accordance with company policies and applicable data protection requirements.</p>
+  </div>
+</div>
+
+<div class="container" *ngIf="page">
+  <ng-container *ngFor="let block of page.blocks">
+    <div [innerHTML]="block.content"></div>
+  </ng-container>
+</div>
