@@ -13,7 +13,6 @@ from .models import (
     EndToEndSolutionProduct,
     Product,
     ProductAssociation,
-    SampleData,
     SubDomain_1,
     SubDomain_2,
 )
@@ -294,44 +293,6 @@ class ContactSerializer(
     email = serializers.EmailField()
 
 
-class SampleDataSerializer(
-    serializers.ModelSerializer
-):
-    field_name_1 = serializers.StringRelatedField()
-    field_value_1 = serializers.StringRelatedField()
-
-    field_name_2 = serializers.StringRelatedField()
-    field_value_2 = serializers.StringRelatedField()
-
-    field_name_3 = serializers.StringRelatedField()
-    field_value_3 = serializers.StringRelatedField()
-
-    field_name_4 = serializers.StringRelatedField()
-    field_value_4 = serializers.StringRelatedField()
-
-    field_name_5 = serializers.StringRelatedField()
-    field_value_5 = serializers.StringRelatedField()
-
-    field_name_6 = serializers.StringRelatedField()
-    field_value_6 = serializers.StringRelatedField()
-
-    field_name_7 = serializers.StringRelatedField()
-    field_value_7 = serializers.StringRelatedField()
-
-    field_name_8 = serializers.StringRelatedField()
-    field_value_8 = serializers.StringRelatedField()
-
-    field_name_9 = serializers.StringRelatedField()
-    field_value_9 = serializers.StringRelatedField()
-
-    field_name_10 = serializers.StringRelatedField()
-    field_value_10 = serializers.StringRelatedField()
-
-    class Meta:
-        model = SampleData
-        fields = "__all__"
-
-
 # =============================================================
 # Lightweight Nested Product
 # =============================================================
@@ -586,11 +547,6 @@ class ProductSerializer(
         source="keyword",
     )
 
-    sample_data = SampleDataSerializer(
-        many=True,
-        read_only=True,
-    )
-
     class Meta:
         model = Product
 
@@ -639,7 +595,6 @@ class ProductSerializer(
             "business_sme",
             "badges",
             "keywords",
-            "sample_data",
             "images",
             "domain_slug",
             "subdomain_2_slug",

@@ -26,7 +26,7 @@
 		<!-- Apple Touch Icon -->
 		<link href="{% static 'gdx_admin/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" sizes="180x180" />
 		<!-- Theme Script js -->
-		<script src="{% static 'gdx_admin/theme/js/theme-script.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/theme-script.js' %}?v=light-only"></script>
 		<!-- Bootstrap CSS -->
 		<link href="{% static 'gdx_admin/theme/css/bootstrap.min.css' %}" rel="stylesheet" />
 		<!-- Tabler Icon CSS -->
@@ -50,12 +50,12 @@
 		<link href="{% static 'gdx_admin/theme/css/style.css' %}" rel="stylesheet" /> 
 		<link href="{% static 'gdx_admin/theme/css/notifications.css' %}" rel="stylesheet" /> 
 		<link href="{% static 'gdx_admin/theme/css/operations.css' %}" rel="stylesheet" /> 
-		<link href="{% static 'gdx_admin/theme/css/custom.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/custom.css' %}?v=responsive" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/builder.css' %}" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/workflow.css' %}" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/workflow2.css' %}" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/template_designer_layout.css' %}" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.9" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}" rel="stylesheet">
 		{% block extra_css %}
 		{% endblock %}
@@ -75,7 +75,10 @@
 			<div class="page-wrapper">
 				{% include 'gdx_admin/partials/messages.html' %}
 				<!-- Start Content -->
-				<div class="content">{% block content %}{% endblock %}</div>
+				<div class="content">
+					{% block page_header %}{% include "gdx_admin/partials/page_hero.html" %}{% endblock %}
+					{% block content %}{% endblock %}
+				</div>
 				<!-- End Content -->
 				<!-- Start Footer --> {% include 'gdx_admin/partials/footer.html' %}
 				<!-- End Footer -->
@@ -104,7 +107,6 @@
 		<script src="{% static 'gdx_admin/theme/js/workflow2.js' %}"></script>
 		<script src="{% static 'gdx_admin/theme/js/template_designer.js' %}"></script>
 		<script src="{% static 'gdx_admin/theme/js/template_designer_layout.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/catalog.js' %}"></script>
 		<script src="{% static 'gdx_admin/theme/js/integration_test.js' %}"></script>
 		<!-- Custom JS -->
 		<script src="{% static 'gdx_admin/theme/js/script.js' %}"></script> {% block extra_js %}{% endblock %}

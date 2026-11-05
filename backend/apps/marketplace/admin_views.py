@@ -106,7 +106,6 @@ class ProductFormMixin(AdminAccessMixin):
             self.object=form.save(commit=False)
             if not self.object.pk: self.object.created_by=self.request.user
             self.object.updated_by=self.request.user; self.object.save(); form.save_m2m()
-            if hasattr(form,"save_sample_data"): form.save_sample_data(self.object)
             fs.instance=self.object; fs.save()
         messages.success(self.request,"Product saved successfully."); return redirect(self.success_url)
 

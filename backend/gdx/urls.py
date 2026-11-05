@@ -23,6 +23,8 @@ urlpatterns = [
     path('accounts/password/set/', login_required(MyPasswordSetView.as_view()), name="account_set_password"),
     path('microsoft_authentication/', include('microsoft_authentication.urls')),
     path("login/", views.GDXLoginView.as_view(), name="login"),
+    path("not-authorized/", views.not_authorized, name="not_authorized"),
+    path("header/environment/", views.set_header_environment, name="set_header_environment"),
     path("logout/", auth_views.LogoutView.as_view(template_name="gdx_admin/auth/logged_out.html"), name="logout"),
     path("register/", views.register, name="register"),
     path("lock-screen/", views.lock_screen, name="lock_screen"),
@@ -37,11 +39,12 @@ urlpatterns = [
     path('api/', include('apps.api.urls')),
     path("api/tdsp/", include("apps.external_apis.urls")),
     path("api/changelog/", include("apps.changelog.urls")),
-    path("api/intake/", include("apps.intake.urls", namespace="intake")),
+    path("api/new/product/intake/", include("apps.third_party_apis.modules.product_intake.urls", namespace="intake")),
     path("api/marketplace/", include("apps.marketplace.admin_urls")),
     path("api/pages/", include("apps.pages.api_urls")),
     path("api/people/", include("apps.people.urls")),
     path("api/forms/", include("apps.forms.urls")),
+    path("api/integrations/data-access-request/", include("apps.third_party_apis.modules.data_access_request.urls", namespace="data_access_request")),
     path("api/workflow/",include(("apps.workflow_engine.urls", "workflow_api"), namespace="workflow_api",)),
     path("api/orders/", include("apps.orders.urls")),
     path("api/v1/", include("apps.notifications.api_v1.urls")),
@@ -51,12 +54,14 @@ urlpatterns = [
     path("api/health/startup/", startup_view, name="health_startup"),
     path("api/monitoring/metrics/", metrics_view, name="metrics"),
     path("api/monitoring/alerts/", alerts_view, name="alerts"),
-    path("api/ai/chat/", include("apps.chat.urls")),
+    path("api/ai/chat/", include("apps.third_party_apis.modules.vikki.chat.urls")),
     path("api/ai/evaluation/", include("evaluation_api.urls")),
     # path("api/notifications/", include("apps.notifications.urls")),
     path("api/product-checkout/", include("apps.product_checkout.urls")),
     path("api/integrations/", include(("apps.third_party_apis.api_urls", "third_party_api"), namespace="third_party_api")),
-    path("api/marketplace/product/", include(( "apps.third_party_apis.modules.checkout.urls", "data_marketplace_checkout",), namespace="data_marketplace_checkout")),
+    path("api/integrations/people-finder/", include(("apps.third_party_apis.modules.people_finder.urls", "people"), namespace="people_finder_directory")),
+    path("api/integrations/tbdp-pods/", include("apps.third_party_apis.modules.tbdp_pods.urls", namespace="tbdp_pods")),
+    path("api/marketplace/", include(( "apps.third_party_apis.modules.checkout.urls", "data_marketplace_checkout",), namespace="data_marketplace_checkout")),
 
 
     # ADMIN
@@ -64,8 +69,9 @@ urlpatterns = [
 
     # SUPER ADMINISTRATORS - GDX ADMIN
     path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
+    path("sa/checkout/", include("apps.third_party_apis.modules.checkout.page_urls", namespace="checkout_pages")),
     path("sa/changelog/", include("apps.changelog.admin_urls")),
-    path("sa/intake/", include("apps.intake.admin_urls", namespace="intake")),
+    path("sa/intake/", include("apps.third_party_apis.modules.product_intake.admin_urls", namespace="intake")),
     path("sa/orders/", include("apps.orders.urls")),
     path('sa/teams/', include("apps.teams.urls")),
     path('sa/notifications/', include('apps.notifications.urls', namespace='notifications')),
@@ -85,10 +91,12 @@ urlpatterns = [
 
 
     # APIFY CONSOLE
-    path("sa/apify/v1/", include("apps.apify.apify_api.urls", namespace="apify_api",),),
-    path("sa/apify/sandbox/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
-    path("sa/apify/test/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
-    path("sa/apify/prod/", include("apps.apify.apify_api.admin_urls", namespace="apify_admin",),),
+    path("sa/apify/v1/", include("apps.third_party_apis.modules.apify_platforms.apify_api.urls", namespace="apify_api",),),
+    path("sa/apify/sandbox/", include("apps.third_party_apis.modules.apify_platforms.apify_api.admin_urls", namespace="apify_admin",),),
+    path("sa/apify/test/", views.apify_environment_redirect, {"environment": "test"}),
+    path("sa/apify/test/<path:rest>", views.apify_environment_redirect, {"environment": "test"}),
+    path("sa/apify/prod/", views.apify_environment_redirect, {"environment": "prod"}),
+    path("sa/apify/prod/<path:rest>", views.apify_environment_redirect, {"environment": "prod"}),
 
     # THIRD PARTY
     path('select2/', include('django_select2.urls')),

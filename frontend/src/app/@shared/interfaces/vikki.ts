@@ -25,6 +25,21 @@ export interface VikkiSuggestion {
 }
 
 
+export interface VikkiAction {
+  title: string;
+  prompt?: string;
+  url?: string;
+}
+
+
+export interface VikkiPageContext {
+  route: string;
+  page: string;
+  productId?: number;
+  productName?: string;
+}
+
+
 export interface VikkiMessage {
   id: string;
   sender: 'user' | 'ai';
@@ -33,6 +48,11 @@ export interface VikkiMessage {
   sources?: ProductReference[];
   citations?: CitationReference[];
   suggestions?: VikkiSuggestion[];
+  actions?: VikkiAction[];
+  guidance?: string;
+  cached?: boolean;
+  correcting?: boolean;
+  correction?: string;
   feedback?: 'positive' | 'negative';
 }
 
@@ -66,6 +86,9 @@ export interface VikkiChatResponse {
   suggestions?: VikkiSuggestion[];
   recommendations?: VikkiRecommendationResponse[];
   citations?: VikkiCitationResponse[];
+  actions?: VikkiAction[];
+  guidance?: string;
+  cached?: boolean;
   latency_ms?: number;
 }
 

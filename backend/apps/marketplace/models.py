@@ -448,91 +448,6 @@ class FulfillmentTeam(models.Model):
         verbose_name = "Fulfillment Group"
 
 
-class FieldName(models.Model):
-    name = models.CharField('Field Name', max_length=50, null=True)
-    axon_id = models.CharField('Axon ID', max_length=100, blank=True, null=True)
-    collibra_id = models.CharField('Glossary ID', max_length=100, blank=True, null=True)
-    is_active = models.BooleanField('Active', default=False)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_field_author_create')
-    created_at = models.DateField(auto_now_add=True)
-    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=True, related_name='sample_data_field_author_update')
-    updated_at = models.DateField(auto_now=True)
-    readonly_fields = ('created_by', 'created_at', 'updated_by', 'updated_at')
-
-    class Meta:
-        ordering = ['name']
-        verbose_name = "Field Name"
-
-    def __str__(self):
-        return self.name
-
-
-class FieldValue(models.Model):
-    field_name = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='values')
-    value = models.CharField('Field Value', max_length=50, null=True)
-    is_active = models.BooleanField('Active', default=False)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_value_author_create')
-    created_at = models.DateField(auto_now_add=True)
-    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=True, related_name='sample_data_value_author_update')
-    updated_at = models.DateField(auto_now=True)
-    readonly_fields = ('created_by', 'created_at', 'updated_by', 'updated_at')
-
-    def __str__(self):
-        return (self.value or "")
-
-    class Meta:
-        ordering = ['value']
-        verbose_name = "Field Value"
-
-
-class SampleData(models.Model):
-    glossary_id_1 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_1 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname')
-    field_value_1 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue')
-    glossary_id_2 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_2 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_2')
-    field_value_2 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_2')
-    glossary_id_3 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_3 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_3')
-    field_value_3 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_3')
-    glossary_id_4 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_4 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_4')
-    field_value_4 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_4')
-    glossary_id_5 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_5 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_5')
-    field_value_5 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_5')
-    glossary_id_6 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_6 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_6')
-    field_value_6 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_6')
-    glossary_id_7 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_7 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_7')
-    field_value_7 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_7')
-    glossary_id_8 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_8 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_8')
-    field_value_8 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_8')
-    glossary_id_9 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_9 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_9')
-    field_value_9 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_9')
-    glossary_id_10 = models.CharField('Glossary ID', max_length=400, blank=True, null=True)
-    field_name_10 = models.ForeignKey(FieldName, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldname_10')
-    field_value_10 = models.ForeignKey(FieldValue, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_fieldvalue_10')
-    is_active = models.BooleanField('Active', default=False)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='sample_data_author_create')
-    created_at = models.DateField(auto_now_add=True)
-    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=True, related_name='sample_data_author_update')
-    updated_at = models.DateField(auto_now=True)
-
-    class Meta:
-        ordering = ['id']
-        verbose_name = "Sample Data"
-        verbose_name_plural = "Sample Data"
-
-    def __str__(self):
-        # Handle potential None values for field_name and field_value
-        field_name_str = self.field_name_1.name if self.field_name_1 else "N/A"
-        field_value_str = self.field_value_1.value if self.field_value_1 else "N/A"
-        return f"{field_name_str} | {field_value_str}"
-
 class ProductQuerySet(models.QuerySet):
     """Shared publication rules for every public marketplace surface."""
 
@@ -572,7 +487,6 @@ class Product(models.Model):
     fulfillment_group = models.ForeignKey(FulfillmentTeam, on_delete=models.SET_NULL, blank=True, null=True, verbose_name=' Fulfillment Group')
     pi = models.CharField(verbose_name='Personal Information (PI)', choices=PI, blank=True, null=True, max_length=50)
     sensitive_pi = models.CharField(verbose_name='Sensitive Personal Information (SPI)', choices=SENSITIVE_PI, blank=True, null=True, max_length=50)
-    sample_data = models.ManyToManyField(SampleData, blank=True)
     usertype = models.CharField(verbose_name='User Access Type', default='TMNA User', max_length=50)
     access_type = models.CharField(verbose_name='Product Access Type', default='User Access', max_length=50)
     environment = models.CharField(verbose_name='Environment', default='Prod', max_length=50)

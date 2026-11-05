@@ -1,9 +1,5 @@
 {% extends "gdx_admin/base.html" %}
-{% block title %}Notifications | NotifyOps{% endblock %}
+{% block title %}Notifications{% endblock %}
 {% block content %}
-<div class="container-fluid px-3 px-lg-4 py-4">
-  {% include "gdx_admin/apps/notifications/settings/includes/_hero.html" %}
-  {% include "gdx_admin/apps/notifications/settings/includes/_header.html" %}
-  {% include "gdx_admin/apps/notifications/settings/partials/_notification_list_content.html" %}
-</div>
+{% include "gdx_admin/apps/notifications/settings/partials/_notification_list_content.html" %}
 {% endblock %}

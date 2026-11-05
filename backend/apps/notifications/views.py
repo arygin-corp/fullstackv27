@@ -385,51 +385,56 @@ def audit_ledger(request):
     )
 
 
+def _inbox(request, unread_only=False):
+    notifications = Notification.objects.filter(recipient=request.user, is_deleted=False)
+    status = "unread" if unread_only else (request.GET.get("status") or "")
+    if status == "unread":
+        notifications = notifications.filter(read=False)
+    elif status == "read":
+        notifications = notifications.filter(read=True)
+    kind = (request.GET.get("type") or "").strip()
+    if kind:
+        notifications = notifications.filter(notification_type=kind)
+    query = (request.GET.get("q") or "").strip()
+    if query:
+        notifications = notifications.filter(Q(title__icontains=query) | Q(body__icontains=query))
+    return notifications.prefetch_related("deliveries").order_by("-created_at")
+
+
+def _list_page(request, unread_only=False):
+    inbox = Notification.objects.filter(recipient=request.user, is_deleted=False)
+    page_obj = Paginator(_inbox(request, unread_only), 25).get_page(request.GET.get("page"))
+    for item in page_obj.object_list:
+        by_channel = {delivery.channel: delivery for delivery in item.deliveries.all()}
+        item.in_app_delivery = by_channel.get(DeliveryChannel.IN_APP)
+        item.email_delivery = by_channel.get(DeliveryChannel.EMAIL)
+    unread = inbox.filter(read=False).count()
+    return {
+        "notifications": page_obj.object_list,
+        "page_obj": page_obj,
+        "active_nav": "notifications",
+        "notification_types": NotificationType.choices,
+        "staff_page_kicker": "NOTIFICATIONS",
+        "staff_page_title": "Notifications",
+        "staff_page_description": "In-app and email notices for your account. Approvals, alerts, and other messages land here.",
+        "staff_page_icon": "▦",
+        "staff_page_metric_label": "Your inbox",
+        "staff_page_metric_value": str(unread),
+        "staff_page_metric_caption": "unread notifications",
+        "staff_page_heading": "Your notifications",
+        "staff_page_heading_text": "Filter by approval to see what is waiting on you.",
+        "staff_page_mark_read": True,
+    }
+
+
 @login_required
 def notification_list(request):
-    notifications = (
-        Notification.objects
-        .filter(recipient=request.user)
-        .order_by("-created_at")
-    )
-
-    page_obj = Paginator(
-        notifications,
-        25,
-    ).get_page(request.GET.get("page"))
-
-    return render(
-        request,
-        "gdx_admin/apps/notifications/settings/notification_list.html",
-        {
-            "notifications": page_obj.object_list,
-            "page_obj": page_obj,
-            "active_nav": "notifications",
-            "notification_types": NotificationType.choices,
-        },
-    )
+    return render(request, "gdx_admin/apps/notifications/settings/notification_list.html", _list_page(request))
 
 
 @login_required
 def unread_notifications(request):
-    notifications = (
-        Notification.objects
-        .filter(
-            recipient=request.user,
-            read=False,
-            deleted_at__isnull=True,
-        )
-        .order_by("-created_at")
-    )
-
-    return render(
-        request,
-        "gdx_admin/apps/notifications/settings/notification_list.html",
-        {
-            "notifications": notifications,
-            "active_nav": "notifications",
-        },
-    )
+    return render(request, "gdx_admin/apps/notifications/settings/notification_list.html", _list_page(request, unread_only=True))
 
 
 @login_required
@@ -452,7 +457,10 @@ def mark_all_read(request):
         "All notifications marked read.",
     )
 
-    return redirect("notifications:list")
+    next_url = request.POST.get("next") or ""
+    if not next_url.startswith("/") or next_url.startswith("//"):
+        next_url = ""
+    return redirect(next_url or "notifications:list")
 
 
 @login_required
@@ -484,7 +492,38 @@ def toggle_read(request, notification_id):
 class NotificationPreferenceForm(forms.ModelForm):
     class Meta:
         model = NotificationPreference
-        fields = "__all__"
+        exclude = ("user",)
+        labels = {
+            "in_app_enabled": "In-app",
+            "email_enabled": "Email",
+            "teams_enabled": "Teams",
+            "mobile_push_enabled": "Mobile push",
+            "approval_enabled": "Approvals",
+            "assignment_enabled": "Assignments",
+            "comment_enabled": "Comments",
+            "governance_enabled": "Governance",
+            "system_enabled": "System",
+            "security_enabled": "Security",
+            "digest_frequency": "Frequency",
+            "digest_hour": "Delivery hour",
+        }
+        widgets = {
+            "digest_frequency": forms.Select(attrs={"class": "form-select", "id": "digest-frequency"}),
+            "digest_hour": forms.NumberInput(attrs={"class": "form-control", "id": "digest-hour", "min": 0, "max": 23}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            if isinstance(field, forms.BooleanField):
+                field.widget.attrs["class"] = "form-check-input"
+                field.widget.attrs["role"] = "switch"
+
+    def clean(self):
+        cleaned = super().clean()
+        if not cleaned.get("email_enabled"):
+            cleaned["digest_frequency"] = "off"
+        return cleaned
 
 
 @login_required
@@ -518,6 +557,15 @@ def preferences(request):
         {
             "preference_form": form,
             "active_nav": "settings",
+            "staff_page_kicker": "NOTIFICATIONS",
+            "staff_page_title": "Notification preferences",
+            "staff_page_description": "Choose which channels reach you, which categories you want, and when an email digest is sent.",
+            "staff_page_icon": "▦",
+            "staff_page_metric_label": "Digest",
+            "staff_page_metric_value": preference.get_digest_frequency_display(),
+            "staff_page_metric_caption": "email schedule" if preference.email_enabled else "email is off",
+            "staff_page_heading": "Delivery preferences",
+            "staff_page_heading_text": "In-app notices stay in your inbox. A digest is emailed only when Email is enabled.",
         },
     )
 

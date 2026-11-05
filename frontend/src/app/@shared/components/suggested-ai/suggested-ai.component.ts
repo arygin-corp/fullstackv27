@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CartService } from 'src/app/@shared/services/cart.service';
 import { RootService } from 'src/app/@shared/services/root.service';
 import { OffcanvasCartService } from 'src/app/@shared/services/offcanvas-cart.service';
@@ -14,8 +14,11 @@ export class SuggestedAiComponent implements OnInit {
   @Input() isLoading: boolean = false;
   @Input() isAiThinking: boolean = false;
   @Input() dataRequestDescription: string = '';
+  @Input() businessJustification: string = '';
+  @Output() closeModal = new EventEmitter<void>();
   
   visible: boolean = false;
+  inputGrading: any = {};
 
   constructor(
     private router: Router,
@@ -106,8 +109,13 @@ export class SuggestedAiComponent implements OnInit {
     document.body.classList.add('modal-open');
   }
 
+  openResults() {
+    this.open();
+  }
+
   close() {
     this.visible = false;
+    this.closeModal.emit();
     document.body.classList.remove('modal-open');
   }
 }

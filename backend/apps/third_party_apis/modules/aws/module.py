@@ -145,6 +145,11 @@ class Module(ThirdPartyApiModule):
         },
     }
 
+    def render_operation_page(self, request, page_key):
+        from .page_views import render_aws_page
+
+        return render_aws_page(request, page_key)
+
     @property
     def urlpatterns(self):
         # Lazy import avoids loading Django URL/view modules

@@ -5,10 +5,9 @@ class Registry:
     def get(self,k): return self.items[k]
     def all(self): return tuple(self.items.values())
     def autodiscover(self):
-        if not self.done:
-            p=importlib.import_module("apps.third_party_apis.modules")
-            for x in pkgutil.iter_modules(p.__path__):
-                if x.ispkg: importlib.import_module(f"apps.third_party_apis.modules.{x.name}.module")
-            self.done=True
+        p=importlib.import_module("apps.third_party_apis.modules")
+        for x in pkgutil.iter_modules(p.__path__):
+            if x.ispkg: importlib.import_module(f"apps.third_party_apis.modules.{x.name}.module")
+        self.done=True
         return self.all()
 registry=Registry()

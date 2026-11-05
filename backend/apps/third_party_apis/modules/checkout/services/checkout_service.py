@@ -3,6 +3,7 @@ from django.utils import timezone
 from ..choices import CartKind, CartStatus, CheckoutItemStatus, CheckoutStatus
 from ..models import Cart, Checkout, CheckoutExternalItem, CheckoutItem
 from .cart_validation import validate_cart_item
+from .form_builder import load_definition
 from .exceptions import EmptyCartError, IncompleteCartError, MixedCartError, ProductValidationError, TermsRequiredError
 from .identity import resolve_creator, resolve_requested_for
 from .one_ts_client import OneTSClient
@@ -24,7 +25,7 @@ def prepare_checkout(*, request, cart_id, idempotency_key, terms_accepted, reque
         creator = resolve_creator(request); requested = resolve_requested_for(request, cart, requested_for)
         checkout = Checkout.objects.create(source_cart=cart, creator=request.user, creator_object_id=creator["object_id"], requested_for_object_id=requested["object_id"], submitted_by_email=creator["email"], status=CheckoutStatus.VALIDATING, idempotency_key=idempotency_key)
         for item in items:
-            validation = validate_cart_item(item.product, item.request_form_values)
+            validation = validate_cart_item(item.product, item.request_form_values, definition=load_definition())
             if not validation.is_complete: raise ProductValidationError("One or more products are invalid.")
             product_snapshot = snapshot_product(item.product)
             variables = build_variables(item.product, validation.normalized_form_values, creator, requested, True)

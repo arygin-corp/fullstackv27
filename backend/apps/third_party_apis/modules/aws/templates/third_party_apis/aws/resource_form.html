@@ -1,27 +1,53 @@
 {% extends "gdx_admin/base.html" %}
 {% block title %}AWS Resource Configuration{% endblock %}
 {% block content %}
+{% include "third_party_apis/aws/partials/_aws_layout_styles.html" %}
 {% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS Resource Configuration" hero_description="Select an AWS resource type and configure its environment-specific properties." hero_metric_label="Environment" hero_metric=environment.get_environment_display %}
-{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Resource Configuration" page_heading="AWS resource" page_description="Choose the AWS resource type and configure runtime properties." %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Resource Configuration" page_heading="AWS resource" page_description="Choose the AWS resource type and configure runtime properties." selected_environment=environment.environment %}
 
-<div class="row g-4">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="h5 mb-0"><i class="ti ti-cloud-cog me-2 text-primary"></i>Resource configuration</h3>
-      </div>
-      <form method="post">
-        <div class="card-body">
-          {% csrf_token %}
-          {% include "third_party_apis/aws/partials/_aws_form_fields.html" with form=form %}
-        </div>
-        {% include "third_party_apis/aws/partials/_aws_form_actions.html" with environment=environment submit_label="Save Resource" %}
-      </form>
+<div class="aws-split">
+  <form class="card" method="post">
+    <div class="card-header">
+      <h3 class="h5 mb-0"><i class="ti ti-cloud-cog me-2 text-primary"></i>Resource configuration</h3>
     </div>
-  </div>
-
-  <div class="col-12">
+    <div class="card-body">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="aws-field-grid">
+        <div class="aws-field--wide">
+          <label class="form-label fw-semibold" for="{{ form.resource_type.id_for_label }}">{{ form.resource_type.label }}<span class="text-danger">*</span></label>
+          {{ form.resource_type }}
+          {% for error in form.resource_type.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+        </div>
+        <div>
+          <label class="form-label fw-semibold" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          {{ form.name }}
+          {% for error in form.name.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+        </div>
+        <div>
+          <label class="form-label fw-semibold" for="{{ form.region.id_for_label }}">{{ form.region.label }}</label>
+          {{ form.region }}
+          {% for error in form.region.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+        </div>
+        <div class="aws-field--wide">
+          <div class="form-check form-switch">
+            {{ form.enabled }}
+            <label class="form-check-label" for="{{ form.enabled.id_for_label }}">Enabled</label>
+          </div>
+        </div>
+        <div class="aws-field--wide">
+          <label class="form-label fw-semibold" for="{{ form.settings_json.id_for_label }}">{{ form.settings_json.label }}</label>
+          {{ form.settings_json }}
+          {% if form.settings_json.help_text %}<div class="form-text">{{ form.settings_json.help_text }}</div>{% endif %}
+          {% for error in form.settings_json.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+        </div>
+      </div>
+    </div>
+    {% include "third_party_apis/aws/partials/_aws_form_actions.html" with environment=environment submit_label="Save Resource" %}
+  </form>
+  <aside>
     {% include "third_party_apis/aws/partials/_aws_form_help.html" %}
-  </div>
+    <p class="mt-3 mb-0"><a href="{% url 'third_party_api_aws:resource_list' environment.environment %}">Browse services that can connect</a></p>
+  </aside>
 </div>
 {% endblock %}

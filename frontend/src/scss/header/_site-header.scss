@@ -65,6 +65,27 @@
 }
 
 
+@media (max-width: 991px) {
+    .site-header__middle {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 0;
+    }
+    .site-header__logo {
+        width: auto;
+        margin-inline-end: 0;
+    }
+    .site-header__search,
+    .site-header__nav-panel {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+    .site-header__phone {
+        margin-inline-start: 0;
+    }
+}
+
 @media (min-width: breakpoint(lg-start)) and (max-width: breakpoint(lg-end)) {
     .site-header__logo {
         width: 210px;

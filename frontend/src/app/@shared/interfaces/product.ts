@@ -3,8 +3,6 @@ import { Organization } from './organization';
 import { Category } from './category';
 import { CustomFields } from './custom-fields';
 import { Keyword } from './keyword';
-import { SampleData } from './sample-data';
-
 export interface ProductFeature {
     name: string;
     value: string;
@@ -122,5 +120,4 @@ export interface Product {
     is_active: boolean;
     verified: boolean;
     customFields: CustomFields;
-    sample_data: SampleData[];
 }

@@ -1,0 +1,24 @@
+<ul class="dropdown-menu dropdown-menu-end">
+	<li class="px-16 py-12">
+		<div class="fw-semibold">{{ request.user.first_name }} {{ request.user.last_name }}</div>
+		<div class="small hp-text-color-black-60">{{ request.user.profile.job_title|default:"Job title not set" }}</div>
+	</li>
+	<li><hr class="dropdown-divider"></li>
+	<li><a class="dropdown-item" href="{% url 'apify_admin:settings' %}">Settings</a></li>
+	<li>
+		<form method="post" action="{% url 'apify_admin:logout' %}">
+			{% csrf_token %}
+			<button class="dropdown-item" type="submit">Log out</button>
+		</form>
+	</li>
+	<li><hr class="dropdown-divider"></li>
+	<li class="px-16 py-12">
+		<p class="small mb-0 hp-text-color-black-60">
+			{% if request.user.last_login %}
+				Signed in {{ request.user.last_login|date:"M j, Y, g:i A" }}
+			{% else %}
+				Sign-in time is not recorded.
+			{% endif %}
+		</p>
+	</li>
+</ul>

@@ -6,8 +6,21 @@ class Module(ThirdPartyApiModule):
  description='People Finder';
  default_source_name='Microsoft Graph';
  icon_path='images/brands/modules/microsoft.png';
- url_prefix='people_finder'+"/";
+ url_prefix='people-finder/';
+ frontend_path='search/gac/user/';
+ frontend_method='GET';
+ frontend_authentication='Django authentication';
+ upstream_provider='Microsoft Graph';
  tags=('People Finder',)
+ endpoints=(
+  {
+   "name": "Search users",
+   "route_name": "people_finder_directory:tenant_user_lookup",
+   "method": "GET",
+   "authentication": "Django authentication",
+   "parameters": ("q", "page_size"),
+  },
+ )
  presentation = {
   "card": {
    "fields": (
@@ -56,4 +69,6 @@ class Module(ThirdPartyApiModule):
    ),
   },
  }
+ def public_endpoint(self):
+  return "/api/integrations/people-finder/search/gac/user/"
 registry.register(Module())

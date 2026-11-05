@@ -1211,7 +1211,6 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 "badge",
                 "keyword",
                 "attribute",
-                "sample_data",
                 "images",
 
                 # Product Associations

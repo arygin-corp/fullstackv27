@@ -4,7 +4,8 @@ import { Product } from '../../../../../@shared/interfaces/product';
 import { CartService } from '../../../../../@shared/services/cart.service';
 import { RootService } from '../../../../../@shared/services/root.service';
 import { AppService } from '../../../../../../app/@shared/services/app.service';
-import { CartItem } from '../../../../../@shared/interfaces/cart-item'; 
+import { CartItem } from '../../../../../@shared/interfaces/cart-item';
+import { PodOptions, PodsService } from '../../../../../@shared/services/pods.service'; 
 import { OffcanvasRequestService } from '../../../../services/offcanvas-request.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MsalService } from '@azure/msal-angular';
@@ -47,6 +48,7 @@ export class RequestAccessComponent implements OnChanges {
     isChecked : boolean;
     productType: Array<any> = [];
     dataDomainsList: Array<any> = [];
+    podsOptions: PodOptions[] = [];
 
     constructor(
         public state: OffcanvasRequestService,
@@ -55,6 +57,7 @@ export class RequestAccessComponent implements OnChanges {
         public fb: FormBuilder,
         private http: HttpClient,
         private authService: MsalService,
+        private podsService: PodsService,
         public appSvc: AppService
     ) {
         this.productType = [
@@ -96,7 +99,6 @@ export class RequestAccessComponent implements OnChanges {
         this.savedProduct = this.loadProduct();
         this.form = this.fb.group({
             v_dar_product_name: [''],
-            radar_productname: [''],
             v_dar_dm_version: [''],
             v_dar_createdby_fullname: `${this.appSvc?.userData?.givenName} ${this.appSvc?.userData?.surname}`,
             v_dar_objectid_createdby: [''],
@@ -152,7 +154,14 @@ export class RequestAccessComponent implements OnChanges {
             v_emd_PI_access: ['', Validators.required],
             v_emd_specify_PII_needs: [''],
             v_dar_DataReqDescription: ['', Validators.required],
+            v_dar_service_account: [''],
+            requesting_tdsp_processing: ['No'],
+            appropriateTDSPPod: [''],
         })
+        this.podsService.getPodsOptions().subscribe({
+            next: (options) => this.podsOptions = options || [],
+            error: () => this.podsOptions = [],
+        });
 
         const storedItem = sessionStorage.getItem('cartItems');
         if (storedItem) {
@@ -164,6 +173,7 @@ export class RequestAccessComponent implements OnChanges {
 
         this.savedFormData = this.loadFormData();
         this.savedProduct = this.loadProduct();
+        this.fillAdGroup();
 
     }
 
@@ -173,6 +183,15 @@ export class RequestAccessComponent implements OnChanges {
             // This fills all matching fields in your form automatically
             this.form.patchValue(this.itemToEdit.formData);
         }
+        this.fillAdGroup();
+    }
+
+    fillAdGroup() {
+        const control = this.form?.get('v_dar_ad_group');
+        if (!control || control.value) {
+            return;
+        }
+        control.setValue(this.product?.ad_group || '');
     }
 
     getProfile() {

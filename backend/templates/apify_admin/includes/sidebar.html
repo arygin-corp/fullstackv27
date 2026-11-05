@@ -1,4 +1,71 @@
 {% load static %}
+<style>
+.hp-header-logo a {
+  display: flex;
+  align-items: center;
+}
+.hp-logo-apify {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+body.collapsed-active .hp-sidebar {
+  width: 80px;
+  max-width: 80px;
+  overflow: visible;
+}
+body.collapsed-active .hp-sidebar .hp-sidebar-header-menu > .row {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center;
+  width: 80px;
+  margin: 12px 0 0 !important;
+}
+body.collapsed-active .hp-sidebar .hp-header-logo,
+body.collapsed-active .hp-sidebar .hp-sidebar-collapse-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.collapsed-active .hp-sidebar-visible.hp-logo-apify {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+body.collapsed-active .hp-sidebar .hp-sidebar-header-menu > ul > li > ul li a {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  justify-content: center !important;
+}
+body.collapsed-active .hp-sidebar-footer a {
+  justify-content: center;
+}
+body.collapsed-active .hp-sidebar-footer .me-12 {
+  margin-right: 0 !important;
+}
+.hp-sidebar-account .dropdown-menu {
+  min-width: 240px;
+}
+body.collapsed-active .hp-sidebar-account .dropdown-menu {
+  left: 72px !important;
+  right: auto !important;
+  bottom: 8px !important;
+}
+body.collapsed-active .hp-sidebar .menu-title {
+  overflow: visible;
+  text-overflow: clip;
+  letter-spacing: 0.04em;
+}
+</style>
 <aside class="hp-sidebar" aria-label="Primary navigation">
 	<div class="hp-sidebar-container">
 		<div class="hp-sidebar-header-menu">
@@ -6,21 +73,10 @@
 				<div class="col">
 					<div class="hp-header-logo d-flex align-items-center">
 						<a href="{% url 'apify_admin:dashboard' %}" class="position-relative">
-							<div class="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center" style="width: 18px; height: 18px; top: -5px;">
-								<svg class="hp-fill-color-dark-0" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M0.709473 0L1.67247 10.8L5.99397 12L10.3267 10.7985L11.2912 0H0.710223H0.709473ZM9.19497 3.5325H4.12647L4.24722 4.88925H9.07497L8.71122 8.95575L5.99397 9.70875L3.28047 8.95575L3.09522 6.87525H4.42497L4.51947 7.93275L5.99472 8.33025L5.99772 8.3295L7.47372 7.93125L7.62672 6.21375H3.03597L2.67897 2.208H9.31422L9.19572 3.5325H9.19497Z" fill="#2D3436" />
-								</svg>
-							</div>
-							<img class="hp-logo hp-sidebar-visible hp-dark-none" src="{% static 'apify_admin/theme/img/logo/logo-small.svg' %}" alt="logo">
-							<img class="hp-logo hp-sidebar-visible hp-dark-block" src="{% static 'apify_admin/theme/img/logo/logo-small-dark.svg' %}" alt="logo">
-							<img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="{% static 'apify_admin/theme/img/logo/logo.svg' %}" alt="logo">
-							<img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="{% static 'apify_admin/theme/img/logo/logo-dark.svg' %}" alt="logo">
-							<img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="{% static 'apify_admin/theme/img/logo/logo-rtl.svg' %}" alt="logo">
-							<img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="{% static 'apify_admin/theme/img/logo/logo-rtl-dark.svg' %}" alt="logo">
+							<img class="hp-logo hp-logo-apify hp-sidebar-visible" src="{% static 'images/brands/modules/apify.png' %}?v=icon-light" alt="Apify">
+							<img class="hp-logo hp-logo-apify hp-sidebar-hidden" src="{% static 'apify_admin/theme/img/logo/logo.png' %}" alt="Apify">
 						</a>
-						<a href="https://hypeople-studio.gitbook.io/yoda/change-log" target="_blank" class="d-flex">
-							<span class="hp-sidebar-hidden hp-caption fw-normal hp-text-color-primary-1">v.3.2</span>
-						</a>
+						<span class="hp-sidebar-hidden hp-caption fw-normal hp-text-color-primary-1 ms-8">{{ app_version_short }}</span>
 					</div>
 					<!-- <a class="hp-header-logo d-flex align-items-center text-decoration-none" href="{% url 'apify_admin:dashboard' %}" aria-label="Apify Admin home"><span class="hp-logo d-inline-flex align-items-center justify-content-center fw-bold hp-text-color-black-100">APIFY</span></a> -->
 				</div>
@@ -45,7 +101,7 @@
 					</ul>
 				</li>
 				<li>
-					<div class="menu-title">API management</div>
+					<div class="menu-title"><span class="hp-sidebar-hidden">API management</span><span class="hp-sidebar-visible">APIM</span></div>
 					<ul class="p-0">
 						<li>
 							<a class="{% if active_nav == 'apis' %}active{% endif %}" href="{% url 'apify_admin:api_catalog' %}">
@@ -74,7 +130,7 @@
 					</ul>
 				</li>
 				<li>
-					<div class="menu-title">Consumers</div>
+					<div class="menu-title"><span class="hp-sidebar-hidden">Consumers</span><span class="hp-sidebar-visible">Users</span></div>
 					<ul class="p-0">
 						<li>
 							<a class="{% if active_nav == 'applications' %}active{% endif %}" href="{% url 'apify_admin:applications' %}">
@@ -111,7 +167,7 @@
 					</ul>
 				</li>
 				<li>
-					<div class="menu-title">Operations</div>
+					<div class="menu-title"><span class="hp-sidebar-hidden">Operations</span><span class="hp-sidebar-visible">OPS</span></div>
 					<ul class="p-0">
 						<li>
 							<a class="{% if active_nav == 'analytics' %}active{% endif %}" href="{% url 'apify_admin:analytics' %}">
@@ -134,13 +190,12 @@
 			</ul>
 		</div>
 		<div class="hp-sidebar-footer pt-16">
-			<a class="d-flex align-items-center text-decoration-none" href="#">
-				<span class="avatar-item bg-primary-4 text-primary-1 rounded-circle d-inline-flex align-items-center justify-content-center me-12" style="width:40px;height:40px">{{ request.user.get_username|slice:':1'|upper }}</span>
-				<span class="hp-sidebar-hidden">
-					<strong>{{ request.user.get_full_name|default:request.user.get_username }}</strong>
-					<small class="d-block hp-text-color-black-60">View profile</small>
-				</span>
-			</a>
+			<div class="dropdown dropup hp-sidebar-account">
+				<button class="btn btn-text d-flex align-items-center p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
+					<span class="avatar-item bg-primary-4 text-primary-1 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:40px;height:40px">{{ request.user.get_username|slice:':1'|upper }}</span>
+				</button>
+				{% include 'apify_admin/includes/account_menu.html' %}
+			</div>
 		</div>
 	</div>
 </aside>

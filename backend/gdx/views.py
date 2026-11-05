@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, get_user_model, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.storage import default_storage
 from django.db import DatabaseError, transaction
 from django.http import JsonResponse
@@ -18,6 +19,7 @@ from django.urls import reverse, reverse_lazy
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 
 from .forms import (
     GDXAuthenticationForm,
@@ -155,6 +157,21 @@ class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
 # Local Django authentication
 # ---------------------------------------------------------------------------
 
+def not_authorized(request):
+    user = request.user
+    pending_verification = False
+    if getattr(user, "is_authenticated", False) and getattr(user, "is_staff", False) and not getattr(user, "is_superuser", False):
+        try:
+            pending_verification = not user.profile.is_verified
+        except ObjectDoesNotExist:
+            pending_verification = True
+    return render(
+        request,
+        "gdx_admin/auth/not_authorized.html",
+        {"pending_verification": pending_verification},
+    )
+
+
 class GDXLoginView(LoginView):
     template_name = "gdx_admin/auth/login.html"
     authentication_form = GDXAuthenticationForm
@@ -291,3 +308,26 @@ def custom_ckeditor5_upload(request):
         )
 
     return JsonResponse({"url": file_url})
+
+
+def apify_environment_redirect(request, environment, rest=""):
+    """Sandbox, test, and prod share one catalog. The environment is stored on the session."""
+    request.session["apify_environment"] = environment
+    path = "/sa/apify/sandbox/" + rest
+    if request.META.get("QUERY_STRING"):
+        path = f"{path}?{request.META['QUERY_STRING']}"
+    return redirect(path)
+
+
+@require_POST
+@login_required
+def set_header_environment(request):
+    from gdx.context_processors import HEADER_ENVIRONMENTS
+
+    selected = request.POST.get("environment", "")
+    if selected in dict(HEADER_ENVIRONMENTS):
+        request.session["gdx_environment"] = selected
+    next_url = request.POST.get("next") or "/"
+    if not url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}):
+        next_url = "/"
+    return redirect(next_url)

@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Subject, from, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { PeopleService } from '../../../@shared/services/people.service';
@@ -22,6 +22,7 @@ export class PeopleFinderComponent implements OnInit, OnDestroy {
   bufferSize = 50;
   loading = false;
 
+  @Input() control: AbstractControl;
   selectedUser: any = null;
   dropdownOpen = false;
   highlightedIndex = -1;
@@ -81,12 +82,15 @@ export class PeopleFinderComponent implements OnInit, OnDestroy {
   clearSelection() {
     this.selectedUser = null;
     this.myGroup.get('v_dar_objectid_reqfor').setValue(null);
+    this.control?.setValue(null);
     this.openDropdown();
   }
 
   selectUser(u: any) {
     this.selectedUser = u;
-    this.myGroup.get('v_dar_objectid_reqfor').setValue(u?.id || null);
+    const userId = u?.id || null;
+    this.myGroup.get('v_dar_objectid_reqfor').setValue(userId);
+    this.control?.setValue(userId);
     this.closeDropdown();
   }
 

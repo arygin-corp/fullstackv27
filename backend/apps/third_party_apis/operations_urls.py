@@ -77,4 +77,39 @@ urlpatterns = [
         views.documentation_index,
         name="documentation_index",
     ),
+
+    # ---------------------------------------------------------
+    # Per-module pages, generated for every registered module
+    # ---------------------------------------------------------
+
+    path(
+        "<slug:module_key>/dashboard/",
+        views.module_dashboard,
+        name="module_dashboard",
+    ),
+    path(
+        "<slug:module_key>/analytics/",
+        views.module_analytics,
+        name="module_analytics",
+    ),
+    path(
+        "<slug:module_key>/health/",
+        views.module_health,
+        name="module_health",
+    ),
+    path(
+        "<slug:module_key>/audit/",
+        views.module_audit,
+        name="module_audit",
+    ),
+    path(
+        "<slug:module_key>/activity/",
+        views.module_activity,
+        name="module_activity",
+    ),
+    path(
+        "<slug:module_key>/report/",
+        views.module_report,
+        name="module_report",
+    ),
 ]

@@ -500,3 +500,17 @@ class CompanyHoliday(AuditModel):
 
     def __str__(self):
         return self.name
+
+
+class DarFormDocument(models.Model):
+    """Saved Data Access Request builder document. Key ``dar`` is the live form."""
+
+    key = models.CharField(max_length=64, unique=True, default="dar")
+    document = models.JSONField(default=dict, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "forms_dar_form_document"
+
+    def __str__(self):
+        return self.key

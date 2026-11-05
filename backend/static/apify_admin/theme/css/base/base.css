@@ -1,11 +1,11 @@
 ::-moz-selection {
   background: #ebfafa;
-  color: #0010f7;
+  color: #e50000;
 }
 
 ::selection {
   background: #ebfafa;
-  color: #0010f7;
+  color: #e50000;
 }
 
 body {
@@ -342,8 +342,8 @@ ul {
 
 /* Shadow */
 .hp-primary-shadow {
-  -webkit-box-shadow: 0px 0px 25px rgba(0, 16, 247, 0.7);
-          box-shadow: 0px 0px 25px rgba(0, 16, 247, 0.7);
+  -webkit-box-shadow: 0px 0px 25px rgba(229, 0, 0, 0.7);
+          box-shadow: 0px 0px 25px rgba(229, 0, 0, 0.7);
 }
 
 .hp-elevatior {
@@ -367,7 +367,7 @@ ul {
 
 /* Credit Card */
 .hp-credit-card[type=primary] {
-  background: #0010f7;
+  background: #e50000;
 }
 .hp-credit-card[type=danger] {
   background: #ff0022;

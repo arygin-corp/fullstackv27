@@ -150,9 +150,7 @@
 
             <div class="row">
                 {% for field in form %}
-                    {% if field.name == 'sample_data' %}
-                        <!-- Skip sample_data field - will be handled separately -->
-                    {% elif field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
+                    {% if field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
                         {# CKEditor fields WITHOUT floating labels #}
                         <div class="col-12">
                             <div class="ckeditor-field">
@@ -282,69 +280,6 @@
                         </div>
                     {% endif %}
                 {% endfor %}
-            </div>
-
-            <!-- Sample Data Section - Smart Sort Order Management -->
-            <div class="col-12">
-                <div class="row">
-                    <div class="sample-data-section" style="margin-bottom: 2rem;">
-                        <div class="section-title mb-3 d-flex justify-content-between align-items-center mb-6" style="padding-bottom: 22px !important;">
-                            <h5 class="mb-0 col-8">Sample Data</h5>
-                            <div class="source-toggle-container class-2">
-                                <label class="source-switch">
-                                    <input type="checkbox" id="global-data-source-toggle">
-                                    <span class="source-slider"></span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Safe rendering of sample_data field -->
-                            {% if form.sample_data %}
-                                {{ form.sample_data.as_hidden }}
-                            {% else %}
-                                <input type="hidden" name="sample_data_manual" id="id_sample_data_manual" value="">
-                            {% endif %}
-                            
-                            <!-- Header Row -->
-                            <div class="row mb-2 header-row">
-                                <div class="col-md-1 center-content">
-                                    <label class="form-label fw-bold">Sort</label>
-                                </div>
-                                <div class="col-md-1 center-content">
-                                    <label class="form-label fw-bold">Source</label>
-                                </div>
-                                <div class="col-md-3 header-collibra-column">
-                                    <label class="form-label fw-bold">Source ID</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label fw-bold">Field Name</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label fw-bold">Field Value</label>
-                                </div>
-                                <div class="col-md-1 center-content">
-                                    <label class="form-label fw-bold">Actions</label>
-                                </div>
-                            </div>
-
-                            <!-- Sample Data Fields Container -->
-                            <div id="sample-data-container">
-                                <!-- Initial field will be added by JavaScript -->
-                            </div>
-
-                            <!-- Buttons -->
-                            <div class="mt-3">
-                                <button type="button" class="btn btn-primary btn-sm" id="add-sample-data-btn">
-                                    <i class="bx bx-plus"></i> Add More Sample Data
-                                </button>
-                                <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="clear-all-sample-data-btn">
-                                    <i class="bx bx-trash"></i> Clear All
-                                </button>
-                            </div>
-                        </div>
-                    </div>       
-                </div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-6">
@@ -1004,8 +939,6 @@
             $('#add-sample-data-btn').on('click', addSampleDataField);
             $('#clear-all-sample-data-btn').on('click', clearAllSampleData);
 
-            // Initialize with first field
-            addSampleDataField();
             // Enhanced reorganize function that maintains proper order
             function reorganizeSortLetters() {                
                 const currentRows = $('.sample-data-row');

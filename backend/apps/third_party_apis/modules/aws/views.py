@@ -4,10 +4,15 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
-from .choices import AwsEnvironment
+from .choices import AwsEnvironment, AwsResourceType
 from .forms import AwsEnvironmentConfigForm, AwsResourceConfigForm
-from .models import AwsResourceConfig
-from .selectors import ensure_environment_configs, environment_config, environment_resources
+from .selectors import (
+    connectable_services,
+    ensure_environment_configs,
+    environment_config,
+    parity_matrix,
+    resource_groups,
+)
 
 
 def _valid_environment(value):
@@ -23,7 +28,6 @@ def index(request):
     selected = request.GET.get("environment") or AwsEnvironment.DEV
     _valid_environment(selected)
     current = environment_config(selected)
-    resources = environment_resources(selected)
 
     return render(
         request,
@@ -32,7 +36,7 @@ def index(request):
             "environments": environments,
             "selected_environment": selected,
             "current_environment": current,
-            "resources": resources,
+            "groups": resource_groups(selected),
         },
     )
 
@@ -63,6 +67,10 @@ def resource_create(request, environment):
     environment = _valid_environment(environment)
     current = environment_config(environment)
 
+    requested_type = request.GET.get("resource_type", "")
+    if requested_type not in AwsResourceType.values:
+        requested_type = ""
+
     if request.method == "POST":
         form = AwsResourceConfigForm(request.POST)
         if form.is_valid():
@@ -72,12 +80,36 @@ def resource_create(request, environment):
             messages.success(request, "AWS resource configuration created.")
             return redirect("third_party_api_aws:resource_detail", pk=resource.pk)
     else:
-        form = AwsResourceConfigForm(initial={"region": current.region})
+        initial = {"region": current.region}
+        if requested_type:
+            initial["resource_type"] = requested_type
+        form = AwsResourceConfigForm(initial=initial)
 
     return render(
         request,
         "third_party_apis/aws/resource_form.html",
-        {"form": form, "environment": current, "resource": None},
+        {
+            "form": form,
+            "environment": current,
+            "resource": None,
+            "selected_type": requested_type,
+        },
+    )
+
+
+@staff_member_required
+def resource_list(request, environment):
+    environment = _valid_environment(environment)
+    current = environment_config(environment)
+    return render(
+        request,
+        "third_party_apis/aws/resource_list.html",
+        {
+            "environments": ensure_environment_configs(),
+            "environment": current,
+            "selected_environment": environment,
+            "service_groups": connectable_services(current),
+        },
     )
 
 
@@ -104,25 +136,11 @@ def resource_detail(request, pk):
 @staff_member_required
 def parity(request):
     environments = ensure_environment_configs()
-    matrix = []
-    resource_types = sorted({r.resource_type for r in AwsResourceConfig.objects.all()})
-    for resource_type in resource_types:
-        matrix.append(
-            {
-                "resource_type": resource_type,
-                "environments": {
-                    env.environment: AwsResourceConfig.objects.filter(
-                        environment=env,
-                        resource_type=resource_type,
-                        enabled=True,
-                    ).exists()
-                    for env in environments
-                },
-            }
-        )
-
     return render(
         request,
         "third_party_apis/aws/parity.html",
-        {"environments": environments, "matrix": matrix},
+        {
+            "environments": environments,
+            "matrix": parity_matrix(environments),
+        },
     )

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Master Pages Enterprise Manual</title><link href="assets/css/styles.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="top"><div class="logo">MP</div><div class="brand"><strong>Master Pages Enterprise Manual</strong><small>Comprehensive user, reviewer, administrator, and operations guide</small></div><div class="actions"><button class="btn" id="theme">Dark mode</button><button class="btn" onclick="print()">Print</button></div></header><div class="layout"><aside aria-label="Manual navigation"><input class="search" id="search" placeholder="Search chapters"/><nav aria-label="Table of contents" class="toc"><a href="pages/introduction.html">1. Introduction</a><a href="pages/architecture.html">2. Application Architecture</a><a href="pages/getting-started.html">3. Getting Started</a><a href="pages/dashboard.html">4. Dashboard and Navigation</a><a href="pages/page-management.html">5. Page Management</a><a href="pages/version-management.html">6. Version Management</a><a href="pages/content-authoring.html">7. Content Authoring</a><a href="pages/workflow.html">8. Workflow Management</a><a href="pages/approvals.html">9. Approval Framework</a><a href="pages/content-manager.html">10. Content Manager Guide</a><a href="pages/web-publisher.html">11. Web Publisher Guide</a><a href="pages/product-owner.html">12. Product Owner Guide</a><a href="pages/legal-reviewer.html">13. Legal Reviewer Guide</a><a href="pages/security-reviewer.html">14. Data Security Reviewer Guide</a><a href="pages/drb-reviewer.html">15. Data Review Board Guide</a><a href="pages/administrator.html">16. Administrator Guide</a><a href="pages/super-admin.html">17. Super Administrator Guide</a><a href="pages/notifications.html">18. Notifications</a><a href="pages/media.html">19. Media Management</a><a href="pages/search.html">20. Search, Inventory, and Ownership</a><a href="pages/audit.html">21. Audit and Compliance</a><a href="pages/retention.html">22. Archive, Deletion, Restore, and Retention</a><a href="pages/scheduling.html">23. Scheduled Publication</a><a href="pages/analytics-health.html">24. Analytics and Health</a><a href="pages/api.html">25. API Reference</a><a href="pages/configuration.html">26. Installation and Enterprise Configuration</a><a href="pages/troubleshooting.html">27. Troubleshooting</a><a href="pages/faq.html">28. Frequently Asked Questions</a><a href="pages/appendices.html">29. Appendices and Reference</a></nav></aside><main id="main-content" tabindex="-1">
+<section class="home-hero">
+<div class="home-hero-copy">
+<span class="eyebrow">Master Pages learning center</span>
+<h1>Learn the application. Complete real tasks. Work independently.</h1>
+<p>Follow a guided onboarding path or jump directly to a task, role guide, answer, or troubleshooting runbook.</p>
+<div class="hero-actions">
+<a class="btn primary large" href="pages/self-service-start.html">Start onboarding</a>
+<a class="btn large inverse" href="pages/task-playbooks.html">Complete a task</a>
+</div>
+<div aria-label="Manual summary" class="home-stats">
+<div><strong>156</strong><span>FAQ answers</span></div>
+<div><strong>10</strong><span>Task playbooks</span></div>
+<div><strong>9</strong><span>Role guides</span></div>
+<div><strong>41</strong><span>HTML pages</span></div>
+</div>
+</div>
+<aside aria-label="Recommended starting point" class="start-panel">
+<span class="panel-label">Recommended first step</span>
+<h2>New to Master Pages?</h2>
+<p>Start with orientation, learn each screen, practice creating a page, and finish with the knowledge check.</p>
+<ol class="mini-path">
+<li><span>1</span>Orientation and access</li>
+<li><span>2</span>Safe application tour</li>
+<li><span>3</span>Create and preview</li>
+<li><span>4</span>Submit and review</li>
+<li><span>5</span>Publish and recover</li>
+</ol>
+<a class="btn primary full" href="pages/training-plan.html">Open five-day plan</a>
+</aside>
+</section>
+<section class="home-section onboarding-flow">
+<div class="section-heading"><div><span class="eyebrow">Guided onboarding</span><h2>Your path to independent work</h2><p>Complete the journey in order. Progress is saved in this browser.</p></div><button class="btn" id="resetOnboarding" type="button">Reset progress</button></div>
+<div aria-label="Onboarding progress" class="onboarding-progress"><div class="progress-track"><span id="onboardingProgress"></span></div><p aria-live="polite" id="onboardingProgressText" role="status">0 of 5 stages complete</p></div>
+<div class="journey-grid">
+<article class="journey-card" data-stage="orientation"><div class="journey-number">01</div><div><span class="stage-tag">Learn</span><h3>Understand the application</h3><p>Learn the purpose, terminology, navigation, screens, and user groups before changing data.</p><div class="card-actions"><a class="btn" href="pages/self-service-start.html">Start here</a><a class="text-link" href="pages/screen-guide.html">Screen guide</a></div><label class="stage-check"><input data-onboarding-check="orientation" type="checkbox"/> Mark stage complete</label></div></article>
+<article class="journey-card" data-stage="create"><div class="journey-number">02</div><div><span class="stage-tag">Practice</span><h3>Create and preview a page</h3><p>Use the field-by-field creation guide, structured content rules, examples, and validation checklist.</p><div class="card-actions"><a class="btn" href="pages/page-management.html">Creation guide</a><a class="text-link" href="pages/examples.html">View examples</a></div><label class="stage-check"><input data-onboarding-check="create" type="checkbox"/> Mark stage complete</label></div></article>
+<article class="journey-card" data-stage="workflow"><div class="journey-number">03</div><div><span class="stage-tag">Workflow</span><h3>Submit and review</h3><p>Learn eligible statuses, generated tasks, review decisions, comments, and status outcomes.</p><div class="card-actions"><a class="btn" href="pages/workflow.html">Workflow guide</a><a class="text-link" href="pages/approvals.html">Approval guide</a></div><label class="stage-check"><input data-onboarding-check="workflow" type="checkbox"/> Mark stage complete</label></div></article>
+<article class="journey-card" data-stage="role"><div class="journey-number">04</div><div><span class="stage-tag">Your role</span><h3>Learn role responsibilities</h3><p>Choose the role guide that matches assigned group membership, approval criteria, and escalation path.</p><div class="card-actions"><a class="btn" href="#role-guides">Choose role</a><a class="text-link" href="pages/faq.html">Role FAQ</a></div><label class="stage-check"><input data-onboarding-check="role" type="checkbox"/> Mark stage complete</label></div></article>
+<article class="journey-card" data-stage="certify"><div class="journey-number">05</div><div><span class="stage-tag">Validate</span><h3>Complete readiness checks</h3><p>Practice exception handling, finish the knowledge check, and confirm the local escalation directory.</p><div class="card-actions"><a class="btn" href="pages/knowledge-check.html">Knowledge check</a><a class="text-link" href="pages/exception-runbooks.html">Runbooks</a></div><label class="stage-check"><input data-onboarding-check="certify" type="checkbox"/> Mark stage complete</label></div></article>
+</div>
+</section>
+<section class="home-section quick-actions">
+<div class="section-heading"><div><span class="eyebrow">Daily work</span><h2>What do you need to do?</h2><p>Go directly to an end-to-end procedure.</p></div><a class="text-link" href="pages/task-playbooks.html">View all playbooks</a></div>
+<div class="action-grid">
+<a class="action-card" href="pages/page-management.html"><span class="action-icon">＋</span><strong>Create a page</strong><small>Metadata, version 1, content, and preview</small></a>
+<a class="action-card" href="pages/page-management.html"><span class="action-icon">✎</span><strong>Update content</strong><small>Create a new working version safely</small></a>
+<a class="action-card" href="pages/workflow.html"><span class="action-icon">→</span><strong>Submit for review</strong><small>Validate status, flags, and tasks</small></a>
+<a class="action-card" href="pages/approvals.html"><span class="action-icon">✓</span><strong>Complete a review</strong><small>Decision guidance and comments</small></a>
+<a class="action-card" href="pages/content-manager.html"><span class="action-icon">↑</span><strong>Publish content</strong><small>Readiness and post-publish checks</small></a>
+<a class="action-card" href="pages/version-management.html"><span class="action-icon">↶</span><strong>Compare or rollback</strong><small>Understand and recover versions</small></a>
+<a class="action-card" href="pages/media.html"><span class="action-icon">▧</span><strong>Upload media</strong><small>File types, size, alt text, and scanning</small></a>
+<a class="action-card" href="pages/retention.html"><span class="action-icon">♻</span><strong>Restore a page</strong><small>Deletion state and purge deadline</small></a>
+</div>
+</section>
+<section class="home-section" id="role-guides">
+<div class="section-heading"><div><span class="eyebrow">Role-based guidance</span><h2>Choose your user group</h2><p>Open responsibilities, procedures, approval criteria, checklists, and escalations for the assigned role.</p></div></div>
+<div class="role-grid">
+<a class="role-card" href="pages/content-manager.html"><span class="role-code">CM</span><div><strong>Content Manager</strong><small>Create, submit, review, and publish</small></div></a>
+<a class="role-card" href="pages/web-publisher.html"><span class="role-code">WP</span><div><strong>Web Publisher</strong><small>Publication support and validation</small></div></a>
+<a class="role-card" href="pages/product-owner.html"><span class="role-code">PO</span><div><strong>Product Owner</strong><small>Business accuracy and ownership</small></div></a>
+<a class="role-card" href="pages/legal-reviewer.html"><span class="role-code">LR</span><div><strong>Legal Reviewer</strong><small>Legal review decisions</small></div></a>
+<a class="role-card" href="pages/security-reviewer.html"><span class="role-code">SR</span><div><strong>Security Reviewer</strong><small>Security review and escalation</small></div></a>
+<a class="role-card" href="pages/drb-reviewer.html"><span class="role-code">DRB</span><div><strong>DRB Reviewer</strong><small>Governance-scoped pages</small></div></a>
+<a class="role-card" href="pages/administrator.html"><span class="role-code">AD</span><div><strong>Administrator</strong><small>Visibility and operations</small></div></a>
+<a class="role-card" href="pages/super-admin.html"><span class="role-code">SA</span><div><strong>Super Administrator</strong><small>Elevated intervention</small></div></a>
+</div>
+</section>
+<section class="home-section support-strip">
+<div><span class="eyebrow">Need help?</span><h2>Find answers before escalating</h2><p>Search the comprehensive FAQ, follow an exception runbook, or use the sample escalation matrix.</p></div>
+<div class="support-actions"><a class="btn primary" href="pages/faq.html">Search 156 FAQs</a><a class="btn" href="pages/exception-runbooks.html">Troubleshoot</a><a class="btn" href="pages/ownership-escalation.html">Contacts</a></div>
+</section>
+<footer>Master Pages self-service onboarding and operations manual · Version 8</footer>
+</main></div><script src="assets/js/app.js"></script></body></html>

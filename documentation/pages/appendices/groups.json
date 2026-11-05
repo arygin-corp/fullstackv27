@@ -1,0 +1,38 @@
+[
+  {
+    "group": "Content Manager Group",
+    "documented_behavior": "Creates versions, submits versions, completes content reviews, and publishes approved versions."
+  },
+  {
+    "group": "Web Publishers Group",
+    "documented_behavior": "Can view non-deleted pages. The reviewed service layer does not assign this group the publish operation."
+  },
+  {
+    "group": "Product Team/Owner Group",
+    "documented_behavior": "Can see owned pages and, when enabled on the page, working versions for those pages."
+  },
+  {
+    "group": "Legal Group",
+    "documented_behavior": "Completes tasks assigned to the Legal Group."
+  },
+  {
+    "group": "Data Security Group",
+    "documented_behavior": "Completes tasks assigned to the Data Security Group."
+  },
+  {
+    "group": "Data Review Board Group",
+    "documented_behavior": "Can see non-deleted pages marked as requiring DRB review."
+  },
+  {
+    "group": "Administrator Group",
+    "documented_behavior": "Can see all page states through the application visibility rule."
+  },
+  {
+    "group": "Super Administrator Group",
+    "documented_behavior": "Can see all page states; Django superusers also satisfy group checks."
+  },
+  {
+    "group": "VIP Group",
+    "documented_behavior": "Defined in the model constants; no specific visibility or workflow behavior appears in the reviewed files."
+  }
+]

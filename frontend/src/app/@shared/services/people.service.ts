@@ -2,6 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { FormBuilder, FormControl } from '@angular/forms';
 
@@ -60,8 +61,12 @@ export class PeopleService {
     }
 
     getUsers(search = ''): Observable<User[]> {
-        const url = `${environment.gdx.users}${encodeURIComponent(search)}`;
-        return this.http.get<UserDto>(url).pipe(map(dto => dto.value || []));
+        const query = (search || '').trim();
+        if (query.length < 3) {
+            return of([]);
+        }
+        const url = `${environment.apiUrl}/api/integrations/people-finder/search/gac/user/?q=${encodeURIComponent(query)}`;
+        return this.http.get<{ results: User[] }>(url).pipe(map(dto => dto.results || []));
     }
 
     onFocus() {

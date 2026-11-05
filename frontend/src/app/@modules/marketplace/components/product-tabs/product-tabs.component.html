@@ -12,11 +12,6 @@
            [ngClass]="{'product-tabs__item--active': tab === 'description'}"
            (click)="$event.preventDefault(); tab = 'description'">Description</a>
 
-        <!-- <a href="#tab-sample" class="product-tabs__item"
-           [ngClass]="{'product-tabs__item--active': tab === 'sample'}"
-           (click)="$event.preventDefault(); tab = 'sample'">Sample Data</a>-->
-
-
         <a href="#tab-included" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'included'}"
            (click)="$event.preventDefault(); tab = 'included'">What's Included</a>
@@ -48,55 +43,6 @@
             </div>
         </div>
 
-        <div class="product-tabs__pane" id="tab-sample" [ngClass]="{'product-tabs__pane--active': tab === 'sample'}">
-            <!-- Wrapped in col-lg-12 for full width -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="spec">
-                        <div class="spec__section">
-                            <h3 class="typography">Sample Data
-                                <div class="spec__disclaimer text-danger mt-3" style="font-size: 16px; font-weight: normal; line-height: 1.5;">
-                                    <strong>Note: </strong> The results displayed below are a representative sample intended to demonstrate the <strong>data schema</strong>, 
-                                    <strong>formatting</strong>, and <strong>available field types</strong>. These values are illustrative and do not reflect live production 
-                                    data. Upon approval, you will receive access to the complete, updated dataset, api, or data science models as described in the technical documentation.
-                                </div>
-                            </h3>
-                            <!-- Header Row with 5/7 split -->
-                            <div class="row py-2" style="border-bottom: 1px solid #ebebeb;">
-                                <div class="col-lg-5" style="color:#3d464d; font-size: 18px;"><strong>Sample Field Names</strong></div>
-                                <div class="col-lg-7" style="color:#3d464d; font-size: 18px;"><strong>Sample Field Values</strong></div>
-                            </div>
-                            <div class="row py-2" *ngFor="let item of sampleData" style="border-bottom: 1px solid #ebebeb;">
-                                <div class="col-lg-5" 
-                                    style="font-size: 18px;" 
-                                    [style.cursor]="item.axonid ? 'pointer' : 'default'"
-                                    [ngClass]="item.axonid ? (item.showPop ? 'text-danger' : 'text-primary') : 'text-dark'" 
-                                    (click)="item.axonid ? ShowPopover(item.sort) : null">
-                                    {{ item.name }}
-                                </div>
-                                
-                                <app-product-popover 
-                                    [message]="item.popupText" 
-                                    [name]="item.popupName" 
-                                    *ngIf="item.showPop">
-                                </app-product-popover>
-                                
-                                <a class="close-popover" 
-                                href="javascript:void(0)" 
-                                *ngIf="item.showPop" 
-                                (click)="HidePopover(item.sort)">
-                                </a>
-                                
-                                <div class="col-lg-7" style="font-size: 18px;">
-                                    {{ item.value }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="product-tabs__pane" id="tab-tables" [ngClass]="{'product-tabs__pane--active': tab === 'tables'}">
             <!-- Wrapped in col-lg-12 for full width -->
             <div class="row">
@@ -111,11 +57,6 @@
                             <div class="row py-2" style="border-bottom: 1px solid #ebebeb;">
                                 <div class="col-lg-5" style="color:#3d464d; font-size: 18px;"><strong>Table Name</strong></div>
                                 <div class="col-lg-7" style="color:#3d464d; font-size: 18px;"><strong>Column Name</strong></div>
-                            </div>
-                            <!-- Data Rows with 5/7 split -->
-                            <div class="row py-2" *ngFor="let item of product.sample_data" style="border-bottom: 1px solid #ebebeb;">
-                                <div class="col-lg-5" style="font-size: 18px;">{{ item.name }}</div>
-                                <div class="col-lg-7" style="font-size: 18px;">{{ item.value }}</div>
                             </div>
                         </div>
                     </div>

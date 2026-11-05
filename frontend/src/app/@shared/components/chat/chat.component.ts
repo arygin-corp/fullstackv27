@@ -7,10 +7,13 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { AiChatService } from '../../services/ai-chat.service';
 import {
   ProductReference,
+  VikkiAction,
   VikkiMessage,
   VikkiSuggestion
 } from '../../interfaces/vikki';
@@ -27,6 +30,7 @@ interface Command {
 })
 export class ChatComponent implements OnInit, OnDestroy {
   @Input() currentProductId?: number;
+  @Input() currentProductName?: string;
   @Input() conversationId?: number;
   @ViewChild('messageViewport') messageViewport?: ElementRef<HTMLDivElement>;
   @ViewChild('chatInput') chatInput?: ElementRef<HTMLTextAreaElement>;
@@ -34,6 +38,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   isChatOpen = false;
   isProcessing = false;
   isThinking = false;
+  thinkingLabel = 'Searching your knowledge';
   errorMessage: string | null = null;
   isPaletteVisible = false;
   sourcePanelOpen = false;
@@ -56,15 +61,23 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   private readonly subscriptions = new Subscription();
 
-  constructor(private readonly aiChatService: AiChatService) {}
+  constructor(
+    private readonly aiChatService: AiChatService,
+    private readonly router: Router
+  ) {}
 
   ngOnInit(): void {
     this.sessionId = this.getOrCreateSessionId();
     this.messages = this.aiChatService.loadHistory();
+    this.conversationId = this.conversationId ?? this.aiChatService.loadConversationId();
+    this.suggestions = this.pageSuggestions();
+    this.refreshSuggestions();
     this.subscriptions.add(
-      this.aiChatService.getContext().subscribe({
-        next: response => this.suggestions = response.suggestions || [],
-        error: () => this.suggestions = this.defaultSuggestions()
+      this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+        if (!this.messages.length) {
+          this.suggestions = this.pageSuggestions();
+          this.refreshSuggestions();
+        }
       })
     );
   }
@@ -109,6 +122,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.errorMessage = null;
     this.isProcessing = true;
     this.isThinking = true;
+    this.thinkingLabel = 'Searching your knowledge';
     this.scrollToBottom();
 
     try {
@@ -132,12 +146,21 @@ export class ChatComponent implements OnInit, OnDestroy {
         citations => {
           aiMessage.citations = citations;
           this.messages = [...this.messages];
+        },
+        this.pageContext(),
+        status => {
+          this.thinkingLabel = status;
+          this.messages = [...this.messages];
         }
       );
 
       this.conversationId = response.conversation_id ?? this.conversationId;
+      this.aiChatService.saveConversationId(this.conversationId);
+      aiMessage.cached = Boolean(response.cached);
+      aiMessage.actions = response.actions || [];
+      aiMessage.guidance = response.guidance || '';
       aiMessage.suggestions = response.suggestions || [];
-      this.suggestions = response.suggestions || this.suggestions;
+      this.suggestions = aiMessage.actions?.length ? [] : (response.suggestions || this.suggestions);
       this.aiChatService.saveHistory(this.messages);
     } catch {
       aiMessage.text = 'Unable to reach VIKKI. Please verify your Data Marketplace session and try again.';
@@ -203,26 +226,92 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   submitFeedback(message: VikkiMessage, type: 'positive' | 'negative'): void {
-    const index = this.messages.indexOf(message);
-    const previous = index > 0 ? this.messages[index - 1] : undefined;
-    const correction = type === 'negative'
-      ? window.prompt('What would have been a better answer?') || ''
-      : '';
+    if (type === 'negative') {
+      message.correcting = true;
+      message.correction = message.correction || '';
+      return;
+    }
+    this.recordFeedback(message, type, '');
+  }
 
-    this.subscriptions.add(
-      this.aiChatService.submitFeedback({
-        sessionId: this.sessionId,
-        conversationId: this.conversationId,
-        type,
-        lastQuery: previous?.text || '',
-        lastAnswer: message.text,
-        userCorrection: correction,
-        productId: this.currentProductId
-      }).subscribe({
-        next: () => message.feedback = type,
-        error: () => this.errorMessage = 'Feedback could not be recorded.'
-      })
-    );
+  saveCorrection(message: VikkiMessage): void {
+    const correction = (message.correction || '').trim();
+    if (!correction) {
+      return;
+    }
+    this.recordFeedback(message, 'negative', correction);
+  }
+
+  cancelCorrection(message: VikkiMessage): void {
+    message.correcting = false;
+  }
+
+  suggestionIcon(title: string): string {
+    const label = (title || '').toLowerCase();
+    if (label.includes('access')) return 'fas fa-key';
+    if (label.includes('file') || label.includes('source')) return 'fas fa-file-alt';
+    if (label.includes('compar')) return 'fas fa-columns';
+    if (label.includes('governance')) return 'fas fa-balance-scale';
+    if (label.includes('lineage')) return 'fas fa-project-diagram';
+    if (label.includes('open')) return 'fas fa-external-link-alt';
+    if (label.includes('domain') || label.includes('find') || label.includes('product')) return 'fas fa-search';
+    return 'fas fa-comment';
+  }
+
+  runAction(action: VikkiAction): void {
+    if (action.url) {
+      this.navigate(action.url);
+      return;
+    }
+    if (action.prompt) {
+      this.quickAsk(action.prompt);
+    }
+  }
+
+  answerBlocks(text: string): Array<{ kind: 'text' | 'list'; text?: string; items?: string[] }> {
+    const blocks: Array<{ kind: 'text' | 'list'; text?: string; items?: string[] }> = [];
+    let items: string[] = [];
+    const flush = () => {
+      if (items.length) {
+        blocks.push({ kind: 'list', items });
+        items = [];
+      }
+    };
+    for (const line of (text || '').split('\n')) {
+      const trimmed = line.trim();
+      if (!trimmed) {
+        flush();
+        continue;
+      }
+      const item = trimmed.match(/^(?:[-*]|\d+\.)\s+(.*)$/);
+      if (item) {
+        items.push(item[1]);
+      } else {
+        flush();
+        blocks.push({ kind: 'text', text: trimmed });
+      }
+    }
+    flush();
+    return blocks;
+  }
+
+  sourceParts(text: string): Array<{ text: string; source?: number }> {
+    const parts: Array<{ text: string; source?: number }> = [];
+    const pattern = /\[Source (\d+)\]/g;
+    let cursor = 0;
+    let match = pattern.exec(text);
+    while (match) {
+      if (match.index > cursor) {
+        parts.push({ text: text.slice(cursor, match.index) });
+      }
+      parts.push({ text: match[1], source: Number(match[1]) });
+      cursor = match.index + match[0].length;
+      match = pattern.exec(text);
+    }
+    if (cursor < text.length) {
+      parts.push({ text: text.slice(cursor) });
+    }
+    return parts.length ? parts : [{ text }];
   }
 
   trackMessage(_: number, message: VikkiMessage): string {
@@ -266,6 +355,76 @@ export class ChatComponent implements OnInit, OnDestroy {
     const value = `vikki-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     localStorage.setItem('chatSessionId', value);
     return value;
+  }
+
+  private recordFeedback(message: VikkiMessage, type: 'positive' | 'negative', correction: string): void {
+    const index = this.messages.indexOf(message);
+    const previous = index > 0 ? this.messages[index - 1] : undefined;
+    this.subscriptions.add(
+      this.aiChatService.submitFeedback({
+        sessionId: this.sessionId,
+        conversationId: this.conversationId,
+        type,
+        lastQuery: previous?.text || '',
+        lastAnswer: message.text,
+        userCorrection: correction,
+        productId: this.currentProductId
+      }).subscribe({
+        next: () => {
+          message.feedback = type;
+          message.correcting = false;
+        },
+        error: () => this.errorMessage = 'Feedback could not be recorded.'
+      })
+    );
+  }
+
+  private refreshSuggestions(): void {
+    this.subscriptions.add(
+      this.aiChatService.getContext(this.pageContext()).subscribe({
+        next: response => {
+          if (!this.messages.length) {
+            this.suggestions = response.suggestions?.length ? response.suggestions : this.pageSuggestions();
+          }
+        },
+        error: () => {
+          if (!this.messages.length) {
+            this.suggestions = this.pageSuggestions();
+          }
+        }
+      })
+    );
+  }
+
+  private pageContext() {
+    const route = this.router.url || '/';
+    const productName = this.currentProductName || this.productNameFromRoute(route);
+    return {
+      route,
+      page: route.split('?')[0].split('/').filter(Boolean).slice(-1)[0] || 'home',
+      productId: this.currentProductId,
+      productName,
+    };
+  }
+
+  private productNameFromRoute(route: string): string {
+    const match = route.match(/product\/([^/?#]+)/);
+    if (!match || match[1] === 'request') {
+      return '';
+    }
+    return decodeURIComponent(match[1]).replace(/[-_]+/g, ' ');
+  }
+
+  private pageSuggestions(): VikkiSuggestion[] {
+    const page = this.pageContext();
+    if (page.productName) {
+      return [
+        { title: 'Explain this product', prompt: `Explain the Data Marketplace product ${page.productName} and its intended use.` },
+        { title: 'Check access', prompt: `What would I need before requesting access to ${page.productName}?` },
+        { title: 'What files do you have on this?', prompt: `What indexed knowledge do you have about ${page.productName}?` },
+      ];
+    }
+    return this.defaultSuggestions();
   }
 
   private defaultSuggestions(): VikkiSuggestion[] {

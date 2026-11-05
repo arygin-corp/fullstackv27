@@ -1,2 +1,68 @@
-<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4"><div><h3 class="mb-1">Notifications</h3><p class="text-muted mb-0">Review, filter, and manage your notifications.</p></div><form method="post" action="{% url 'notifications:mark_all_read' as u %}{{ u|default:'#' }}">{% csrf_token %}<button class="btn btn-outline-primary"><i class="isax isax-tick-circle me-1"></i>Mark All Read</button></form></div>
-<div class="card"><div class="card-body border-bottom"><form class="row g-2" method="get"><div class="col-lg-6"><input class="form-control" name="q" placeholder="Search title or body" value="{{ request.GET.q }}"></div><div class="col-lg-2"><select class="form-select" name="type"><option value="">All types</option>{% for value,label in notification_types %}<option value="{{ value }}" {% if request.GET.type == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></div><div class="col-lg-2"><select class="form-select" name="status"><option value="">Any status</option><option value="unread">Unread</option><option value="read">Read</option></select></div><div class="col-lg-2 d-grid"><button class="btn btn-primary">Filter</button></div></form></div><div class="list-group list-group-flush">{% for n in notifications %}<div class="list-group-item py-3 {% if not n.read %}bg-light{% endif %}"><div class="d-flex align-items-start gap-3"><span class="avatar avatar-sm rounded-circle bg-primary-transparent text-primary d-inline-flex align-items-center justify-content-center">{{ n.notification_type|slice:':1'|upper }}</span><div class="flex-grow-1"><div class="d-flex flex-wrap justify-content-between gap-2"><h6 class="mb-1">{{ n.title }}</h6><small class="text-muted">{{ n.created_at|date:'M j, Y g:i A' }}</small></div><p class="mb-1">{{ n.body|truncatechars:180 }}</p><small class="text-muted">{{ n.get_notification_type_display }} · {{ n.source }}</small></div><div class="d-flex gap-2">{% if n.url %}<a class="btn btn-sm btn-outline-primary" href="{{ n.url }}">Open</a>{% endif %}<form method="post" action="{% url 'notifications:toggle_read' n.pk as u %}{{ u|default:'#' }}">{% csrf_token %}<button class="btn btn-sm btn-light">{% if n.read %}Unread{% else %}Read{% endif %}</button></form></div></div></div>{% empty %}<div class="text-center text-muted py-5">No notifications match your filters.</div>{% endfor %}</div><div class="card-footer">{% include 'gdx_admin/partials/pagination.html' %}</div></div>
+<div class="card">
+    <div class="card-body border-bottom">
+        <form class="row g-2" method="get">
+            <div class="col-lg-6">
+                <label class="form-label" for="notification-search">Search</label>
+                <input class="form-control" id="notification-search" name="q" placeholder="Search title or body" value="{{ request.GET.q }}">
+            </div>
+            <div class="col-lg-2">
+                <label class="form-label" for="notification-type">Type</label>
+                <select class="form-select" id="notification-type" name="type">
+                    <option value="">All types</option>
+                    {% for value, label in notification_types %}
+                    <option value="{{ value }}" {% if request.GET.type == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <label class="form-label" for="notification-status">Status</label>
+                <select class="form-select" id="notification-status" name="status">
+                    <option value="">Any status</option>
+                    <option value="unread" {% if request.GET.status == "unread" %}selected{% endif %}>Unread</option>
+                    <option value="read" {% if request.GET.status == "read" %}selected{% endif %}>Read</option>
+                </select>
+            </div>
+            <div class="col-lg-2 d-grid">
+                <label class="form-label d-none d-lg-block">&nbsp;</label>
+                <button class="btn btn-primary" type="submit">Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="list-group list-group-flush">
+        {% for n in notifications %}
+        <article class="list-group-item py-3 {% if not n.read %}bg-light{% endif %}">
+            <div class="d-flex align-items-start gap-3">
+                <span class="avatar avatar-sm rounded-circle bg-primary-transparent text-primary d-inline-flex align-items-center justify-content-center">{{ n.notification_type|slice:":1"|upper }}</span>
+                <div class="flex-grow-1">
+                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                        <h6 class="mb-1">{{ n.title }}</h6>
+                        <small class="text-muted">{{ n.created_at|date:"M j, Y g:i A" }}</small>
+                    </div>
+                    {% if n.body %}<p class="mb-2">{{ n.body|truncatechars:180 }}</p>{% endif %}
+                    <div class="d-flex flex-wrap gap-2 mb-2">
+                        <span class="badge bg-light text-dark border">{{ n.get_notification_type_display }}</span>
+                        <span class="badge bg-light text-dark border">{{ n.source }}</span>
+                        <span class="badge {% if n.in_app_delivery %}bg-primary-transparent text-primary{% else %}bg-light text-muted border{% endif %}">
+                            In-app · {% if n.in_app_delivery %}{{ n.in_app_delivery.get_status_display }}{% else %}Not sent{% endif %}
+                        </span>
+                        <span class="badge {% if n.email_delivery %}bg-info-transparent text-info{% else %}bg-light text-muted border{% endif %}">
+                            Email · {% if n.email_delivery %}{{ n.email_delivery.get_status_display }}{% else %}Not sent{% endif %}
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    {% if n.url %}<a class="btn btn-sm btn-outline-primary" href="{{ n.url }}">Open</a>{% endif %}
+                    <form method="post" action="{% url 'notifications:toggle_read' n.pk %}">
+                        {% csrf_token %}
+                        <button class="btn btn-sm btn-light" type="submit">{% if n.read %}Unread{% else %}Read{% endif %}</button>
+                    </form>
+                </div>
+            </div>
+        </article>
+        {% empty %}
+        <div class="text-center text-muted py-5">No notifications match your filters.</div>
+        {% endfor %}
+    </div>
+    <div class="card-footer">{% include "gdx_admin/partials/pagination.html" %}</div>
+</div>

@@ -44,6 +44,42 @@ a:hover {
     padding: 40px 90px;
 }
 
+@media (max-width: 768px) {
+    .product-tabs__content {
+        padding: 16px;
+    }
+    .icon-label span,
+    .ask-ai-button .button-text,
+    .suggestion-strip .chip-label,
+    .correction-box .chip-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    .icon-label,
+    .suggestion-strip button,
+    .correction-box button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    img,
+    video,
+    canvas,
+    svg {
+        max-width: 100%;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
 .ng-select .ng-select-container {
     border-radius: 0px;
     border: 0px solid #ccc;

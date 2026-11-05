@@ -1,4 +1,5 @@
 {% extends "gdx_admin/base.html" %}{% load changelog_extras %}
+{% block page_header %}{% endblock %}
 {% block title %}{{ category.name }} | Changelog Category{% endblock %}
 {% block content %}<div class="container-fluid px-3 px-lg-4 py-4">
   {% include "gdx_admin/apps/changelog/categories/includes/_category_hero.html" with hero_title=category.name hero_description="Review category identity, publication status, and sanitized descriptive content." hero_metric_label="Status" hero_metric=category.is_active|yesno:"Active,Inactive" hero_metric_help=category.slug hero_icon="ti ti-category" %}
