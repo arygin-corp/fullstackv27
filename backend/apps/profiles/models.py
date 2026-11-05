@@ -34,8 +34,53 @@ def user_avatar_upload_path(instance, filename):
         return os.path.join('marketplace', 'unknown_user', 'avatar', filename)
 
 
+ACCESS_SUPERADMIN = "superadmin"
+ACCESS_ADMIN = "admin"
+ACCESS_MODERATOR = "moderator"
+ACCESS_SUPPORT = "support"
+ACCESS_ENGINEER = "engineer"
+ACCESS_DEDICATED_MANAGER = "dedicated_manager"
+ACCESS_STAFF = "staff"
+ACCESS_USER = "user"
+ACCESS_CHOICES = (
+    (ACCESS_SUPERADMIN, "SuperAdmin"),
+    (ACCESS_ADMIN, "Admin"),
+    (ACCESS_MODERATOR, "Moderator"),
+    (ACCESS_SUPPORT, "Support"),
+    (ACCESS_ENGINEER, "Engineer"),
+    (ACCESS_DEDICATED_MANAGER, "Dedicated-Manager"),
+    (ACCESS_USER, "User"),
+)
+PROFILE_ACCESS_TYPES = {
+    ACCESS_MODERATOR,
+    ACCESS_SUPPORT,
+    ACCESS_ENGINEER,
+    ACCESS_DEDICATED_MANAGER,
+}
+
+
+def access_type_for(user):
+    """SuperAdmin follows the superuser flag. The other roles are stored on the profile."""
+    from django.core.exceptions import ObjectDoesNotExist
+
+    try:
+        stored = user.profile.access_type
+    except ObjectDoesNotExist:
+        stored = ACCESS_USER
+    if getattr(user, "is_superuser", False) or stored == ACCESS_SUPERADMIN:
+        return ACCESS_SUPERADMIN
+    if stored == ACCESS_STAFF:
+        return ACCESS_USER
+    if stored in PROFILE_ACCESS_TYPES:
+        return stored
+    if getattr(user, "is_staff", False) or stored == ACCESS_ADMIN:
+        return ACCESS_ADMIN
+    return ACCESS_USER
+
+
 class Profile(models.Model):
     is_verified = models.BooleanField(default=False, help_text="Checked by Superadmin to allow login.")
+    access_type = models.CharField(max_length=20, choices=ACCESS_CHOICES, default=ACCESS_USER)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     team = models.IntegerField('Team', blank=True)
     image = models.ImageField('Profile Image', upload_to=user_avatar_upload_path, max_length=150, default='default.gif', blank=True)

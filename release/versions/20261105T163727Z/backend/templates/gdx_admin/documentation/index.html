@@ -1,0 +1,34 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18.4">
+{% endblock %}
+
+{% block content %}
+<main class="module-page">
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="DOCUMENTATION" hero_title="Documentation" hero_description="Documentation sites published from the GitHub repository." hero_metric_label="Sites" hero_metric_value=sites|length hero_metric_caption="Ready to open" hero_icon="▤" %}
+    <section class="module-portfolio-grid">
+        {% for site in sites %}
+        <article class="module-portfolio-card">
+            <div>
+                <span class="module-portfolio-card__source">{{ site.kind }}</span>
+                <h3>{{ site.title }}</h3>
+                <p>{{ site.description }}</p>
+            </div>
+            <div class="module-portfolio-card__footer">
+                <span>{{ site.detail }}</span>
+                <a href="{% url 'documentation_asset' site.slug 'index.html' %}" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+        </article>
+        {% empty %}
+        <p>No documentation sites are available in the repository.</p>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
+
+{% block page_header %}{% endblock %}

@@ -94,14 +94,27 @@
 				</a>
 			</li>
 
-			<!-- Settings -->
-			<li>
+			<!-- Deployment -->
+			<li class="{% if request.resolver_match.app_name == 'deployment' %}active{% endif %}">
 				<a
-					href="#"
+					href="{% url 'deployment:dashboard' %}"
+					data-bs-placement="right"
+					data-bs-title="Deployment"
+					data-bs-toggle="tooltip"
+					aria-label="Deployment"
+				>
+					<i class="sidebar-icon isax isax-send-2" aria-hidden="true"></i>
+				</a>
+			</li>
+
+			<!-- Settings -->
+			<li class="{% if request.resolver_match.url_name == 'platform_settings' %}active{% endif %}">
+				<a
+					href="{% url 'platform_settings' %}"
 					data-bs-placement="right"
 					data-bs-title="Settings"
 					data-bs-toggle="tooltip"
-					aria-label="Settings" role="button">
+					aria-label="Settings">
 					<i
 						class="sidebar-icon isax isax-setting-25"
 						aria-hidden="true"
@@ -110,13 +123,13 @@
 			</li>
 
 			<!-- Documentation -->
-			<li>
+			<li class="{% if request.resolver_match.url_name == 'documentation_sites' %}active{% endif %}">
 				<a
-					href="#"
+					href="{% url 'documentation_sites' %}"
 					data-bs-placement="right"
 					data-bs-title="Documentation"
 					data-bs-toggle="tooltip"
-					aria-label="Documentation" role="button">
+					aria-label="Documentation">
 					<i
 						class="sidebar-icon isax isax-document-normal4"
 						aria-hidden="true"
@@ -208,6 +221,8 @@
                             <li><a href="{% url 'third_party_api_pages:integration_catalog' %}" class="{% if request.resolver_match.app_name == 'third_party_api_pages' and request.resolver_match.url_name == 'integration_catalog' %}active{% endif %}">Integration Catalog</a></li>
                             <li><a href="{% url 'checkout_pages:checkout_form_builder' %}" class="{% if request.resolver_match.app_name == 'checkout_pages' %}active{% endif %}">Checkout Form Builder</a></li>
                             <li><a href="/sa/dar/form-builder/" class="{% if request.resolver_match.url_name == 'dar-form-builder' %}active{% endif %}">DAR Form Builder</a></li>
+                            <li><a href="{% url 'third_party_api_pages:vikki_learning' %}" class="{% if request.resolver_match.url_name == 'vikki_learning' %}active{% endif %}">Vikki Learning</a></li>
+                            <li><a href="{% url 'documentation_sites' %}" class="{% if request.resolver_match.url_name == 'documentation_sites' %}active{% endif %}">Documentation Sites</a></li>
                             <li><a href="{% url 'third_party_api_ops:analytics' %}" class="{% if request.resolver_match.app_name == 'third_party_api_ops' and request.resolver_match.url_name == 'analytics' %}active{% endif %}">Analytics</a></li>
                             <li><a href="{% url 'third_party_api_ops:reports' %}" class="{% if request.resolver_match.app_name == 'third_party_api_ops' and request.resolver_match.url_name == 'reports' %}active{% endif %}">Reports</a></li>
                             <li><a href="{% url 'third_party_api_pages:integration_test_dashboard' %}" class="{% if request.resolver_match.app_name == 'third_party_api_pages' and request.resolver_match.url_name == 'integration_test_dashboard' %}active{% endif %}">Integration Readiness</a></li>
@@ -217,6 +232,78 @@
                             <li><a href="{% url 'third_party_api_ops:health' %}" class="{% if request.resolver_match.app_name == 'third_party_api_ops' and request.resolver_match.url_name == 'health' %}active{% endif %}">System Health</a></li>
                             <li><a href="{% url 'third_party_api_ops:dependencies' %}" class="{% if request.resolver_match.app_name == 'third_party_api_ops' and request.resolver_match.url_name == 'dependencies' %}active{% endif %}">Dependencies</a></li>
                             <li><a href="{% url 'third_party_api_ops:documentation_index' %}" class="{% if request.resolver_match.app_name == 'third_party_api_ops' and request.resolver_match.url_name == 'documentation_index' %}active{% endif %}">Documentation</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if request.resolver_match.app_name == 'apify_admin' %}active{% endif %}">
+                        <a href="#" class="submenu-toggle {% if request.resolver_match.app_name == 'apify_admin' %}subdrop{% endif %}" role="button" aria-expanded="{% if request.resolver_match.app_name == 'apify_admin' %}true{% else %}false{% endif %}">
+                            <i class="sidebar-icon isax isax-code-1" aria-hidden="true"></i>
+                            <span>Apify</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul {% if request.resolver_match.app_name == 'apify_admin' %}style="display: block;"{% endif %}>
+                            <li><a href="{% url 'apify_admin:dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' and request.resolver_match.app_name == 'apify_admin' %}active{% endif %}">Dashboard</a></li>
+                            <li><a href="{% url 'apify_admin:api_catalog' %}" class="{% if request.resolver_match.url_name == 'api_catalog' %}active{% endif %}">APIs</a></li>
+                            <li><a href="{% url 'apify_admin:products' %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a></li>
+                            <li><a href="{% url 'apify_admin:policies' %}" class="{% if request.resolver_match.url_name == 'policies' %}active{% endif %}">Policies</a></li>
+                            <li><a href="{% url 'apify_admin:applications' %}" class="{% if request.resolver_match.url_name == 'applications' %}active{% endif %}">Applications</a></li>
+                            <li><a href="{% url 'apify_admin:credentials' %}" class="{% if request.resolver_match.url_name == 'credentials' %}active{% endif %}">Credentials</a></li>
+                            <li><a href="{% url 'apify_admin:access_requests' %}" class="{% if request.resolver_match.url_name == 'access_requests' %}active{% endif %}">Access Requests</a></li>
+                            <li><a href="{% url 'apify_admin:subscriptions' %}" class="{% if request.resolver_match.url_name == 'subscriptions' %}active{% endif %}">Subscriptions</a></li>
+                            <li><a href="{% url 'apify_admin:analytics' %}" class="{% if request.resolver_match.url_name == 'analytics' and request.resolver_match.app_name == 'apify_admin' %}active{% endif %}">Analytics</a></li>
+                            <li><a href="{% url 'apify_admin:audit' %}" class="{% if request.resolver_match.url_name == 'audit' and request.resolver_match.app_name == 'apify_admin' %}active{% endif %}">Audit</a></li>
+                            <li><a href="{% url 'apify_admin:settings' %}" class="{% if request.resolver_match.url_name == 'settings' and request.resolver_match.app_name == 'apify_admin' %}active{% endif %}">Settings</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if request.resolver_match.app_name == 'pages_admin' %}active{% endif %}">
+                        <a href="#" class="submenu-toggle {% if request.resolver_match.app_name == 'pages_admin' %}subdrop{% endif %}" role="button" aria-expanded="{% if request.resolver_match.app_name == 'pages_admin' %}true{% else %}false{% endif %}">
+                            <i class="sidebar-icon isax isax-document" aria-hidden="true"></i>
+                            <span>Pages</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul {% if request.resolver_match.app_name == 'pages_admin' %}style="display: block;"{% endif %}>
+                            <li><a href="{% url 'pages_admin:dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' and request.resolver_match.app_name == 'pages_admin' %}active{% endif %}">Dashboard</a></li>
+                            <li><a href="{% url 'pages_admin:page-list' %}" class="{% if request.resolver_match.url_name == 'page-list' %}active{% endif %}">Pages</a></li>
+                            <li><a href="{% url 'pages_admin:page-type-list' %}" class="{% if request.resolver_match.url_name == 'page-type-list' %}active{% endif %}">Page Types</a></li>
+                            <li><a href="{% url 'pages_admin:workflow' %}" class="{% if request.resolver_match.url_name == 'workflow' %}active{% endif %}">Workflow</a></li>
+                            <li><a href="{% url 'pages_admin:audit' %}" class="{% if request.resolver_match.url_name == 'audit' and request.resolver_match.app_name == 'pages_admin' %}active{% endif %}">Audit</a></li>
+                            <li><a href="{% url 'pages_admin:notifications' %}" class="{% if request.resolver_match.url_name == 'notifications' and request.resolver_match.app_name == 'pages_admin' %}active{% endif %}">Notifications</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if request.resolver_match.app_name == 'teams' %}active{% endif %}">
+                        <a href="#" class="submenu-toggle {% if request.resolver_match.app_name == 'teams' %}subdrop{% endif %}" role="button" aria-expanded="{% if request.resolver_match.app_name == 'teams' %}true{% else %}false{% endif %}">
+                            <i class="sidebar-icon isax isax-people" aria-hidden="true"></i>
+                            <span>Teams</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul {% if request.resolver_match.app_name == 'teams' %}style="display: block;"{% endif %}>
+                            <li><a href="{% url 'teams:list' %}" class="{% if request.resolver_match.url_name == 'list' and request.resolver_match.app_name == 'teams' %}active{% endif %}">Teams</a></li>
+                            <li><a href="{% url 'teams:create' %}" class="{% if request.resolver_match.url_name == 'create' and request.resolver_match.app_name == 'teams' %}active{% endif %}">New Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if request.resolver_match.app_name == 'third_party_api_aws' %}active{% endif %}">
+                        <a href="#" class="submenu-toggle {% if request.resolver_match.app_name == 'third_party_api_aws' %}subdrop{% endif %}" role="button" aria-expanded="{% if request.resolver_match.app_name == 'third_party_api_aws' %}true{% else %}false{% endif %}">
+                            <i class="sidebar-icon isax isax-cloud" aria-hidden="true"></i>
+                            <span>AWS</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul {% if request.resolver_match.app_name == 'third_party_api_aws' %}style="display: block;"{% endif %}>
+                            <li><a href="{% url 'third_party_api_aws:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Catalog</a></li>
+                            <li><a href="{% url 'third_party_api_aws:parity' %}" class="{% if request.resolver_match.url_name == 'parity' %}active{% endif %}">Environment Parity</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if request.resolver_match.app_name == 'deployment' %}active{% endif %}">
+                        <a href="#" class="submenu-toggle {% if request.resolver_match.app_name == 'deployment' %}subdrop{% endif %}" role="button" aria-expanded="{% if request.resolver_match.app_name == 'deployment' %}true{% else %}false{% endif %}">
+                            <i class="sidebar-icon isax isax-send-2" aria-hidden="true"></i>
+                            <span>Deployment</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul {% if request.resolver_match.app_name == 'deployment' %}style="display: block;"{% endif %}>
+                            <li><a href="{% url 'deployment:dashboard' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'dashboard' %}active{% endif %}">Dashboard</a></li>
+                            <li><a href="{% url 'deployment:analytics' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'analytics' %}active{% endif %}">Analytics</a></li>
+                            <li><a href="{% url 'deployment:activity' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'activity' %}active{% endif %}">Activity</a></li>
+                            <li><a href="{% url 'deployment:releases' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'releases' %}active{% endif %}">Releases</a></li>
+                            <li><a href="{% url 'deployment:rollback' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'rollback' %}active{% endif %}">Rollback</a></li>
+                            <li><a href="{% url 'deployment:health' %}" class="{% if request.resolver_match.app_name == 'deployment' and request.resolver_match.url_name == 'health' %}active{% endif %}">Health</a></li>
                         </ul>
                     </li>
                     <!-- =================================================

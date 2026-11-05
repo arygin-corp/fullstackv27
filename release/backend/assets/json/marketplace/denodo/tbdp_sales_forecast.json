@@ -1,0 +1,3323 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "actual_nenkai_seg_vol_annual",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "actual_nenkai_seg_vol_annual",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "actual_nenkai_seg_vol_annual",
+      "column_name": "sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "actual_nenkai_seg_vol_annual",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "actual_nenkai_seg_vol_annual",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fap_nenkai_seg_vol_annual",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fap_nenkai_seg_vol_annual",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fap_nenkai_seg_vol_annual",
+      "column_name": "sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fap_nenkai_seg_vol_annual",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fap_nenkai_seg_vol_annual",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "baseline_share_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "cash_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "cftp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_cftp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_inctv_ratio_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_major_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_minor_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_msrp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "comp_pnvs_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "cross_impact_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "fin_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "gas_price_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "intercept_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag1_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag2_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lag3_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "lease_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "minor_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "minor_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth10_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth11_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth12_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth4_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth5_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth6_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth7_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth8_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "mnth9_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "msrp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "neg_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pm_create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pnvs_own_comp_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pnvs_ratio_comp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pnvs_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pos_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "pvns_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "res_cap_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "selldown_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "thrust_month_indicator_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "years_since_major_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "fcst_coeffs_by_series",
+      "column_name": "years_since_major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "cftp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "fleet_sales_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "historical_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "incentives"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "max_dealer_stk_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "nonfleet_sales_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "pace"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "sales_targets"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "seasonal_factor"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "giheatmap_data",
+      "column_name": "total_dealer_stock_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "cash_elas"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "fin_elas"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "lease_elas"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_agg",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "apr_inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "apr_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "cash_inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "cash_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "lease_inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "lease_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "total_inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_elasticity_regional",
+      "column_name": "total_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "apr_comp_incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "apr_daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "apr_incentive_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "apr_msrp_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "apr_sales_share"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "car_truck"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_all_comp_incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_all_daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_all_incentive_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_all_msrp_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_all_sales_share"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_comp_incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_incentive_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_msrp_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cash_sales_share"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "cftp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "comp_life_cycle_position"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "comp_major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "comp_major_change_plus_1"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "contest_month_flg"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "gas_price"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "gas_price_chg_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "in_market_stage"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "japan_tsunami"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "lease_comp_incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "lease_daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "lease_incentive_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "lease_msrp_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "lease_sales_share"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "life_cycle_position"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "minor_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "segment_volume"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "incentive_mrm_input",
+      "column_name": "thrust_month_flg"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_inctv_elasticity",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "calendar_mth"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "factor_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_atable_sales_fcst_by_mnth",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "seg_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_indstry_seg_fcst_by_mnth",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "factor_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_mtbp_sales_fcst_by_mnth",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "calendar_mnth"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "seg_qty_by_mnth"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_seg_fcst_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "intg_tmna_volume_by_mnth",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "dealer_stock_scr"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "fuel"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "msrp_rigidity_scr"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "pace_vs_target_sales_targets_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "pace_vs_target_scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "pace_vs_target_scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "pace_vs_target_scr"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "pm_create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "raw_make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "raw_region_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "recent_incentives_scr"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "sales_geog_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "irm_pm_gi_heatmap",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "base_msrp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "car_truck"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "cftp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_life_cycle_position"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_major_change_plus_1"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_msrp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "comp_years_since_major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "daily_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "gas_price"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "gas_price_chg_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "in_market_stage"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "incentive"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "incentive_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "japan_tsunami"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "life_cycle_position"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "minor_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "months_in_market"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "msrp_comp_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "sales_share"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "mrm_msrp_input",
+      "column_name": "years_since_major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "assumption_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "destination_country"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "distributor_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "file_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "industry_retail_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "industry_segment_share_of_tlv"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "latest_flag"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "pricing_segmentation_category"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "raw_make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "raw_pricing_segmentation_category"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "raw_segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "table_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "tms_retail_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "tms_segment_share_of_tlv"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "nenk_tms_us_a_tbl_seg_fcst_and_actl",
+      "column_name": "worksheet_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "bus_yr"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "my_historical_sales"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "my_seasonal_factor"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "my_sum_fleet_sales_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "my_sum_nonfleet_sales_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "stg_gi_heatmap_agg",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_year",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_year",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_msrp_elasticity",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_msrp_elasticity",
+      "column_name": "elasticity_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_msrp_elasticity",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_msrp_elasticity",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "bdgt_pnvs_amt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "trend_toyota_us_inctv_fin_bdgt_fcst",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "baseline_share_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "cash_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "cash_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "cftp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_cftp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_inctv_ratio_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_major_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_minor_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_msrp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "comp_pnvs_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "cross_impact_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "fin_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "fin_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "gas_price_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "intercept_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag1_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag2_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lag3_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lease_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "lease_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "minor_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "minor_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth10_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth11_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth12_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth4_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth5_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth6_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth7_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth8_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "mnth9_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "msrp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "neg_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pm_create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pnvs_own_comp_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pnvs_ratio_comp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pnvs_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pos_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "pvns_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "raw_region_code"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "raw_series_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "res_cap_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "selldown_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "thrust_month_indicator_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "total_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "years_since_major_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_pm_coeff",
+      "column_name": "years_since_major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_curr_pgm_yr",
+      "column_name": "program_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "calendarmonth_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "createtimestamp_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "effectivedate_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "eianationalgasprice_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "eianationalpricedate_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "sourcefilenm_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_incentive_elasticity",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "baseline_share_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "cash_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "cash_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "cftp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_cash_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_cftp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_inctv_ratio_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_major_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_minor_change_index_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_msrp_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "comp_pnvs_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "cross_impact_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "fin_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "fin_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "fin_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "gas_price_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "intercept_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag1_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag2_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lag3_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lease_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lease_inc_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "lease_pct_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "minor_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "minor_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth10_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth11_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth12_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth1_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth2_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth3_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth4_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth5_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth6_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth7_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth8_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "mnth9_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "msrp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "neg_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "pnvs_own_comp_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "pnvs_ratio_comp_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "pnvs_ratio_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "pos_spec_event_ind_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "pvns_hist_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "res_cap_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "selldown_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "thrust_month_indicator_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "total_elas_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "years_since_major_change_coeff"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_sales_fcst_coeff_by_series",
+      "column_name": "years_since_major_change_ref"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "seg_qty"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_tmna_segment_vol_by_mnth",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "avg_eia_national_gas_price"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "cftp"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "model_year_sales_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "pin_seg_share_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "pin_to_tms_us_domestic_inctv_ratio"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "pnvs_competitor_fcst"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "seg_non_fleet_pct"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "veh_model_change_ctgry_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "years_since_major_change"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_trend_data",
+      "column_name": "years_since_minor_change"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-sales-forecast%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

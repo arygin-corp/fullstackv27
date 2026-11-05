@@ -1,0 +1,2519 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "is_actv_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "msg_expiry_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "msg_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "msg_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "announcement_detail",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "attrib_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "attrib_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "attrib_typ_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "attrib_val_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "is_editable_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "attribute_master",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "comments_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "config_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "config_key_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "config_key_val_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "is_editable_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "configuration_properties",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "ctgry_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "evnt_ctgry_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "evnt_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_quantity_category",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "stat_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_status",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "evnt_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "evnt_typ_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "event_type",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "bus_enty_abbrv_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "is_actv_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "namc_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "namc_master",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "boxes_scn_arrive_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "boxes_scn_insp_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "boxes_scn_pilot_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "dock_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "kanban_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "order_arrvl_scn_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "order_insp_scn_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "order_pilot_scn_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "per_box_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "rqst_boxes_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "src_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_scan_detail",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "eci_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "eci_revision_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "order_ship_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "per_full_box_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "per_prtl_box_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "pln_boxes_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "rqst_full_boxes_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "rqst_prtl_boxes_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "shpg_carr_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "shpg_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "trailer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_shipping_detail",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "stat_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_status",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "actn_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "actn_typ_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_action",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "actn_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "field_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "new_val_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "prev_val_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "transact_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "order_transaction_history",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "cmplt_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "doc_cmplt_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "doc_due_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "doc_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "doc_stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "doc_typ_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "doc_stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "doc_stat_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_status",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "doc_typ_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "doc_typ_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "due_date_rule_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "quality_document_type",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "role_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "role_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "sm_role_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "role",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "role_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "sm_role_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "siteminder_role",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "boxes_scn_arrive_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "ord_arrvl_scn_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "ord_create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "ord_dlv_due_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "ord_promise_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "part_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "rqst_boxes_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "sum_rec_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "sup_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "tot_ord_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "month_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "sup_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_due_ord_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_due_ord_ontime_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_ncnfrmc_part_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_ppir_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_receive_ord_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "tot_receive_part_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "supplier_performance_summary",
+      "column_name": "year_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "child_sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "parent_sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "sup_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_cci_suppliers",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "evnt_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "msg_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "msg_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "order_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_sap_orders",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "cntct_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "email_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "first_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "guid"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "is_actv_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "last_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "spcl_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "ttl_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "tproms_user",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "ctgry_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "ctgry_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "ctgry_seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_category",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "ctgry_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "doc_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "doc_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "doc_seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "doc_ttl_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "file_data_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "file_size_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "file_typ_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "training_material",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "assign_qpc_to_trial_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "cmplt_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "crryovr_parts_ord_allw_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "dock_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "evnt_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "evnt_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "evnt_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "evnt_typ_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "logistics_prvd_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "main_route_nm_ovrd_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "order_arrvl_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "order_nbr_series_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "packg_need"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "parts_src_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "proj_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "psms_from_routing_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "psms_to_routing_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_address_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_city_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_country_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_loc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_schdl_trk_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "shpmt_state_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "stores_addr_nm_ovrd_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "sub_route_nm_ovrd_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_event_detail",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "cmplt_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "dlv_due_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "evnt_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "file_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "kanban_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "lineside_addr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "manifest_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "namc_comment"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "order_receiver_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "part_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "plant_1_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "plant_2_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "plant_3_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "po_trck_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "promise_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "psms_to_routing_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "revision_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "stat_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "store_addr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "sup_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "sup_pckp_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "supp_comment"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "tot_order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_detail",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "file_data_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "file_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "file_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "file_size_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "file_typ_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_file_data",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "evnt_ctgry_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "is_arch_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "is_arch_flg_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "order_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "order_qty_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_quantity",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "order_pfx"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "order_seq_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "order_seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "project_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "seq_year"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "trial_order_sequence",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "mapping_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "role_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "usr_spcl_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-trialparts",
+      "dbname": "parts_indirectparts_trialparts_trn_ext",
+      "elementname": "user_role_mapping",
+      "column_name": "usr_spcl_cntct_nbr"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-parts-indirectparts-trialparts%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

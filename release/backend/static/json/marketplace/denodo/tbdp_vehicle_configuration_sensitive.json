@@ -1,0 +1,2615 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_parameter",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_parameter",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_parameter",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_aip_parameter",
+      "column_name": "model_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "alloc_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "alloc_vehicle_combined_attributes"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "alloc_weight"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "calendar_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_aspiration"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_aspiration_abbrv"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_body_style"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_body_style_abbrv"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_cylinder"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_cylinder_abbrv"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_drive_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_engine"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_fuel_type_abbrv"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_grade_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_no_of_door"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_other_attr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_transmission_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_transmission_type_abbrv"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "irm_vehicle_combined_attributes"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "map_grade_tbl_irm_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "map_grade_tbl_irm_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "parsed_raw_trim_level"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_aspiration"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_body_style"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_cylinder"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_displacement"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_doors"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_drive_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_model"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_sales_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_transmission_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_trim_level"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "raw_vehicle"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intg_pin_explorer_alloc",
+      "column_name": "sales_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "accessory_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "accessory_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "katashiki_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "product_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "toms_series_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_quantity",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "accessory_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "accessory_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "katashiki_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "katashiki_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "product_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_fio_ppo_vol",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "d_japan_model_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "d_katashiki"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "d_plant_location_abbreviation"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "d_region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "dim_getsudo_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "dim_order_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "dim_plant"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "dim_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "fio_option_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "model_yr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "option_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "transaction_type_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_getsudoppr_vol",
+      "column_name": "veh_quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "accessory_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "country_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "dio"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "dio_purchase_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "export_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "fsa_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ila_fob_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ila_labor_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "labor"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "package_content_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "parent_accessory_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "pd_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ppo"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ppo_fob"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ppo_fob_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "ppo_labor_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "sales_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "vehicle_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppo_gp",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "accessory_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "avg_ppo_perc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "forecast_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "getsudo"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "ppr_quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_ppr_quantity",
+      "column_name": "vehicle_forecast_quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "katashiki_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "toms_series_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppo_actual",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "getsudo_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "katashiki_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "toms_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "activity_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "actual_buyoff_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "actual_lineoff_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "altered_by_change_request_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "arrival_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "authorization_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "bos_order_cycle_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "build_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "business_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "buyoff_shift_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "cbu_procon_order_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "change_request_change_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "change_request_system_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "cif_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "company_car_discount_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "company_car_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "conn_serv_headunit_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "control_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "current_eta_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "cust_order_match_eligible_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "customer_request_order_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "customer_request_source_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "damage_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_advertising_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_delvry_allwnce_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_holdback_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_base_whlsl_fin_res_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_credit_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_delivery_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_delvry_allwnce_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_holdback_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_fio_whlsl_fin_res_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_holdback_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_draft_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_draft_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_fcast_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_ppo_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_ppo_holdback_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_price"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_stock_end_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dealer_stock_start_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "delivery_allowance_program_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "delivery_pseudo_adjustment_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "delivery_pseudo_adjustment_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "departure_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dest_processing_handling_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_base_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_credit_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_fio_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_inland_freight_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_invoice_fcast_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_invoice_release_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_ppo_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_price"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "distributor_sale_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dynamic_commute_dest"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dynamic_map_route"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "dynamic_poi"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ed_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_arrival_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_build_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_build_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_build_week_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_dealer_delivery_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_departure_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "estimated_fqa_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "eta_actual_tranship_port_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "eta_plan_tranship_port_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "etd_actual_initial_port_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "etd_plan_initial_port_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "excise_tax_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "expanded_fast_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "expanded_fio_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "expanded_ppo_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "export_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "exterior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fio_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fio_list_raw"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fio_option_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "first_assigned_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "first_assigned_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fleet_incentive_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fleet_program_credit_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fob_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "fqa_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "gas_guzzler_tax_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "gasoline_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "generated_key"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "getsudo_changed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "getsudo_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "hybrid_voice_recognition"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "imeid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "insurance_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "interior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_segment_category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "irm_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "last_allocation_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "last_allocation_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "last_allocation_pool_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "locked_in_spread_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "meid_imeid_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "model_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "month_minus_1_sell_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "month_minus_2_sell_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "navigation_traffic_probe"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ocean_air_freight_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "on_hold_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "option_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_confirmed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "order_type_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_expanded_fio_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_exterior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_fio_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_interior_color_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_order_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_order_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_order_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_ship_to_port_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_ship_to_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "original_spec_200"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "phase_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "port_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "port_of_entry_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "port_stock_end_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "port_stock_start_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "posted_order_type_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ppo_list_raw"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ppr_cycle_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "preproduction_serial_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "price_protection_discount_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "price_protection_type_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "priority_build_from_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "priority_build_to_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "priority_delivery_from_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "priority_delivery_to_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "production_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "program_adjustment_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "remote_service_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "reserve_vehicle_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_city_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_phone_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_prefix"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_state_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_street_address"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_customer_zip_plus"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_fleet_account_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_rdr_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_rdr_sequence_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_reversal_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_sales_miles"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_sales_person_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_sales_person_uid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_sales_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_tradein_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_type_of_sale_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "retail_velocity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "royalty_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "scion_hold_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "sell_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "serial_number_check_digit"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ship_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ship_to_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ship_to_port_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "ship_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "sold_to_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "son"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "spec_200"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "special_order_donor_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "status_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "status_subcode"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "stop_sale_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "suggested_base_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "suggested_fio_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "suggested_ppo_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "suggested_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "team_member_lease_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "telematics_hardware_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "telematics_meid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tmex_dealer_association_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tms_base_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tms_fio_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tms_purchase_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "total_duty_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "transaction_type_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "trn_create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "tva_port_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "urn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vds_prefix_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vehicle_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vehicle_health_information"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vehicle_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vehicle_type_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "whlsl_financial_reserve_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "wholesale_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "wholesale_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "wholesale_region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vehicle_ppr_forecast",
+      "column_name": "wifi_capability"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "series_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_wholesales_vol",
+      "column_name": "transaction_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "bom_ver_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "cost_act"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "cost_std"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "ctry"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "fam"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "kat"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "mdl_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "optn_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "part_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "part_src"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "pc_spec"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "unit_cost_act"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "unit_cost_std"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "uom"
+    },
+    {
+      "userrolename": "tbdp-vehicle-configuration-sensitive",
+      "dbname": "usmca_ing",
+      "elementname": "ch_flatbom_nonvehicle",
+      "column_name": "view_type"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-configuration-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

@@ -1,0 +1,2921 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_acct_assign_cat_knttp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_base_uom_lmein"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_block_del_ind_loekz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_cash_disc_days_1_zbd1t"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_cash_disc_days_2_zbd2t"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_cash_disc_pct_1_zbd1p"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_cash_disc_pct_2_zbd2p"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_change_rqst_zmdgcr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_cond_rec_no_knumv"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_confirm_control_key_bstae"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_conver_to_base_uom_den_umren"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_conver_to_base_uom_num_umrez"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_create_dt_aedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_creation_dt_creationdate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_creation_tm_creationtime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_curr_cd_waers"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_delvry_complete_ind_elikz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_dlvry_addr_no_adrn2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_doc_dt_bedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_effctv_itm_value_effwr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_exchg_rt_wkurs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_exped_1st_no_days_mahn1"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_exped_2nd_no_days_mahn2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_exped_3rd_no_days_mahn3"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_goods_rcpt_based_invc_verify_ind_webre"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_goods_rcpt_ind_wepos"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_goods_rcpt_nonval_weunb"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_gross_weight_brgew"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_inter_comcrl_t_1"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_inter_comcrl_t_2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_invc_receipt_ind_repos"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_itm_affects_commits_xoblr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_itm_is_statistical_stapo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_kanban_ind_kanba"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_last_updt_dt_lastchangedatetime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_legacy_part_no_zmatn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ln_create_date_aedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ln_curr_cd_waers"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ln_no_ebelp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ln_rfq_status_statu"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_lot_size_qty_zzlot_size"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_matl_ldgr_act_matl_lvl_mlmaa"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_matl_type_mtart"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_maximo_wo_line_no_zzwoitemnum"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_maximo_wo_no_zzworkorder"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_min_remain_shelf_life_mhdrz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_mrp_area_berid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_net_price_netpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_net_weight_ntgew"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_no_ebeln"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_ack_no_labnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_ackn_reqrd_ind_kzabs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_itm_gross_amt_brtwr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_itm_ttl_amt_netwr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_price_uom_bprme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_price_uom_to_ordr_uom_den_bpumn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_price_uom_to_ordr_uom_num_bpumz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_qty_menge"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_ordr_uom_meins"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_overdelvry_tolerance_uebto"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_paid_open_zpaid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_pay_terms_key_zterm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_phys_stck_trnsfr_spec_stck_ind_umsok"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_pir_no_infnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_planned_delvry_days_plifz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_price_printout_prsdr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_price_valid_until_prdat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_proc_status_procstat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_profit_cntr_ko_prctr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_purch_proced_kalsm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_quote_deadline_angdt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_rebate_basis_1_bonba"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_record_create_user_ernam"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_reject_ind_abskz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_reqmt_priority_prio_req"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_reqmt_urgency_prio_urg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_requestor_contact_no_zzaftel"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_returns_itm_retpo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_rfq_id_anfnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_rfq_itm_no_anfps"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_rfq_status_statu"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_rqmt_track_no_bednr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_sales_tx_id_ctry_stceg_l"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_sap_company_cd_bukrs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_settle_reserve_itm_no_arsps"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_settle_reserve_no_arsnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_storage_loc_lgort"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_supp_rtn_deliv_type_lfret"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_supplier_matl_no_idnlf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_tax_cd_mwskz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_tax_jdx_txjcd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_tax_rtn_cntry_lands"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_type_bsart"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_underdelvry_tolerance_untto"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_uniqueid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_unlimit_overdelvry_allow_uebtk"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_updt_info_rec_ind_spinf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_valuation_cat_bwtty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_valuation_type_bwtar"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_vendor_no_lifnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_weight_uom_gewei"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "po_your_ref_ihrez"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_condn_rec_no_knumv"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_create_dt_aedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_curr_cd_waers"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_dlvry_addr_no_adrn2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_doc_date_bedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_exchg_rt_wkurs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_followon_doc_cat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_followon_doc_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_last_updt_dt_lastchangedatetime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_line_no_ebelp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_ordr_itm_gross_amt_brtwr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_proc_status_procstat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_purch_proced_kalsm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_quote_deadline_angdt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_quote_no_ebeln"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_record_create_user_ernam"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_submit_dt_ihran"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_type_bsart"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "q_vendor_no_lifnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_base_uom_lmein"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_closing_dt_bwbdt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_create_dt_aedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_den_conv_base_uom_umren"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_dlvry_addr_no_adrn2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_dt_bedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_followon_doc_cat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_followon_doc_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_item_short_txt_txz01"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_lastchangedatetime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_line_no_ebelp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_matl_group_matkl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_matl_no_matnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_mfr_id_mfrnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_mfr_part_no_mfrpn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_no_ebeln"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_num_conv_base_uom_umrez"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_ordr_uom_meins"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_pr_line_no_bnfpo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_pr_no_banfn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_proc_status_procstat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_pur_group_ekgrp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_quote_bind_period_bnddt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_quote_deadline_angdt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_record_create_user_ernam"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_sap_company_cd_bukrs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_sap_plant_cd_werks"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_type_bsart"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_uniqueid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_updt_info_rec_ind_spinf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_vndr_matl_no_ematn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "rfq_detail_lifecycle",
+      "column_name": "rfq_your_ref_ihrez"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "assigned_storage_bin_lgpla"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "fxd_bin_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "gi_zone_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "gr_zone_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "in_house_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "inhouse_item_cost_verpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "item_cost_verpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "matl_no_matnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "min_lot_size_bstmi"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "mrp_area_berid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "mrp_type_dismm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "new_aval_qty_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "new_item_cost_verpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "new_zone_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "physical_storage_bin_lgpla"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "plant_werks"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "reorder_point_minbe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "repaired_item_cost_verpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "rounding_val_po_qty_bstrf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "rpr_zone_stck_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "rprd_aval_qty_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "sap_order_uom_meims"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_inventory_bal",
+      "column_name": "val_unrstr_use_stock_labst"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "addl_mfr_part_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "audit_create_date_mara"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "audit_create_date_marc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "auto_po_allow_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "backflush_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "batch_mgmt_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "batch_mgmt_req_ind_mara"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "batch_mgmt_req_ind_marc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "create_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "ext_mat_grp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "last_upd_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "last_upd_time"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "last_upd_userid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "loading_group"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "mat_plan_lot_sizing_proc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "mfr_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "mfr_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "mfr_part_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "mrp_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "neg_stock_allowed_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "purch_grp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "purch_val_key"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_abc_cycle_count_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_del_ind_mara"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_del_ind_marc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_issue_stor_loc_dflt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_lang_key"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_long_text"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_mat_grp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_mat_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_mat_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_matl_upr_case"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_mrp_abc_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_order_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_plant_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_plant_mat_status"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_plant_mat_status_from_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_stor_loc_dflt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "sap_unspsc_val"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "storage_condition"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "valuation_cat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_gs_material_master",
+      "column_name": "warp_required"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "aut_source"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "avail_from_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "avail_until_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "cntry_issuance_cert_orig"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "conf_control_key"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "curr_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eina_create_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eina_create_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eina_pir_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eina_sap_block_del_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eine_create_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eine_create_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eine_pir_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "eine_sap_block_del_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "last_updt_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "lead_time_days"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "min_order_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "net_price"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "overdelivery_tolerance"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "plant_specific_material_status"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "price_valid_until"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "purch_grp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "purch_info_rec_eff_price"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "purch_org"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_base_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_good_rcpt_inv_verify_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_mat_grp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_mat_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_order_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_plant_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_reject_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "sap_valuation_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "state_region"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "std_po_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "supplier_item_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "tax_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "underdelivery_tolerance"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "vendor_name_name1"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "general_stores_mfg_indirect_procurement_ing_ext",
+      "elementname": "sap_purchase_info_record_pir",
+      "column_name": "vendor_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "alter_uom_stock_altme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "available_qty_quan"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "base_uom_unit"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "batch_charg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "batchid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "block_ind_cur_inv_skzsi"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "category_doc_related_stock_doccat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "certificate_num_zeugn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "country_origin_coo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "dummy_function_length_dummy_field"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "goods_receipt_time_dt_wdatu"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "guid_stock_item"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "handling_unit_huident"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "handling_unit_moved_ind_flgmove"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "improve_storage_bin_outcon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "insp_id_type_insptyp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "internal_no_trans_unit_tu_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "logical_pos_handling_unit_logpos"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "no_sales_order_or_project_stock_docno"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "owner"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "owner_role_partner"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "parent_guid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "partner_party_dispose_entitled_role"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "party_dispose_entitled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "product_matid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "quality_object_id_inspid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "quants_stock_removal_read_quants"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "resource_rsrc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "restricted_use_stock_batch_brestr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "sales_item_sales_ord_stock_itmno"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "sales_order_or_project_stock_doccat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "sap_client_mandt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "shelf_life_exp_dt_vfdat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "stock_seperation_stock_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "stock_type_cat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "stock_usage"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "storage_bin_lgpla"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "storage_type_lgtyp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_available_quantity_scwm_aqua",
+      "column_name": "warehouse_no_lgnum"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "allocated_stock_quantity_fsh_salloc_qty_s"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_cons_stock_cwm_kspem"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_cons_stock_kspem"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_cwm_speme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_prev_period_cwm_vmspe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_prev_period_vmspe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_returns_cwm_retme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_returns_prev_period_cwm_vmret"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_returns_prev_period_vmret"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blk_stock_returns_retme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "blocked_stock_speme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "cons_stock_quality_insp_cwm_kinsm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "cons_stock_quality_insp_kinsm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "country_origin_matl_herkl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "created_on_ersda"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "curr_posting_period_lfmon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "export_ind_deactivated_exver"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "fiscal_yr_curr_physical_inv_ind_mdjin"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "fiscal_yr_lfgja"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "flag_matl_lvorm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "inv_correction_factor_bskrf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "last_posted_count_dt_dlinl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "maintenance_status_pstat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "mardh_rec_val_mdrue"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "material_no_matnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "md_product_storage_loc__dummy_stl_incl_eew_ps"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_blk_ind_sperr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_blk_stock_kzils"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_blk_stock_prev_period_kzvls"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_curr_yr_kzill"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_prev_period_kzvll"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_quality_curr_yr_kzilq"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_quality_prev_period_kzvlq"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_restr_use_stock_kzile"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "physical_inv_ind_restr_use_stock_prev_period_kzvle"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "picking_area_wm_lwmkb"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "plant_werks"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "pref_ind_deactivated_exppg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "profit_center_prctl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "reorder_pt_storage_loc_lminb"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "replenishment_dec_storage_loc_mrp_lbstf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "restricted_use_cons_insp_keinm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "restricted_use_cons_stock_cwm_keinm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "restricted_use_stock_prev_period_cwm_vmein"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "sap_client_mandt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "spl_proc_storage_loc_lsobs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_quality_insp_cwm_insme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_quality_insp_insme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_quality_insp_prev_period_cwm_vmins"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_quality_insp_prev_period_vmins"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_restricted_prev_period_vmein"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_transfer_cwm_umlme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_transfer_prev_period_cwm_vmuml"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_transfer_prev_period_vmuml"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_transfer_umlme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_val_in_stock_transfer_vkuml"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "stock_val_sales_price_vklab"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "storage_bin_lgpbe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "storage_loc_lgort"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "storage_loc_mrp_ind_diskz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "total_restricted_batches_einme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "total_stock_restricted_batches_cwm_einme"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "unrestricted_use_cons_stock_cwm_klabs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "unrestricted_use_cons_stock_klabs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "val_unrestrict_use_stock_labst"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "val_unrestrict_use_stock_prev_period_vmlab"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "val_unrestricted_use_stock_cwm_labst"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_mard",
+      "column_name": "val_unrestricted_use_stock_prev_period_cwm_vmlab"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "availbility_grp_avlgrp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "logical_system_logsys"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "sap_client_mandt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "sap_plant"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "storage_location_stge_loc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_material_storage_loc_scwm_tmapstloc",
+      "column_name": "warehouse_no_lgnum"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "assembly_scrap_pct_ausss"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "chg_req_zzcr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "comment_zzcomment"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "consump_storage_cap_uom_scm_coninp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "consumption_matl_dt_vrbdt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "correction_factor_ind_kzkfk"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "cost_center_deliver_zzkostl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "cost_factor_stockholding_scm_scost_prcnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "curr_key_zzwaers"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "date_zzdate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "def_storage_loc_ext_proc_lgfsb"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "del_ind_loekz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "deliver_to_person_zzperson"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "deliver_to_phone_zzphone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "est_unit_cost_zzpreis"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "fixed_lot_size_bstfe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "forecast_prof_propr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "goods_issue_costs_scm_ndcostwa"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "goods_issue_processing_time_scm_giprt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "goods_receipt_processing_time_scm_grprt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "goods_receving_costs_scm_ndcostwe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "hc_consump_uom_gds_issue_scm_conhap_out"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "hc_consump_uom_gr_scm_conhap"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "init_order_po_req_zzpo_req"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "int_key_prod_scm_matlocid_guid16"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "int_num_loc_prod_scm_matlocid_guid22"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "issue_storage_loc_lgpro"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "last_change_dt_aedat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "lot_size_indep_costs_losfx"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "lot_size_proc_disls"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "machine_manufacturer_zzmfg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "machine_model_zzmodel"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "machine_name_zzname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "machine_serial_num_zzserial"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "maintanence_status_pstat"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "matl_mrp_profile_dispr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "matl_no_matnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "matl_rel_apo_ind_apokz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "max_lot_size_bstma"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "max_stock_lvl_mabst"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "max_stock_lvl_virtual_child_locs_scm_maxstock_v"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "min_lot_size_bstmi"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "model_proj_num_zzpspnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "monthly_usage_zzusage"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_area_berid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_area_plant_werks"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_ctrl_dispo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_grp_disgr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_rel_dep_req_ahdis"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mrp_type_dismm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "mult_ref_matl_consump_vrbfk"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "name_chg_obj_aenam"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "period_prof_safety_time_shpro"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_cal_periodic_lot_size_scm_tstrid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_cycle_lfrhy"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_delivery_time_days_plifz"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_delivery_time_mrp_area_plifzx"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_grp_scm_rrp_sel_group"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_pkg_prod_scm_package_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "plan_time_fence_fxhor"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "pp_plan_procedure_scm_rrp_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "ppc_heuristics_scm_heur_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "ppc_plan_calender_mrppp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "proc_costs_prod_scm_proc_cost"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "qty_zzmenge"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "range_coverage_prof_rwpro"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "ref_matl_consump_vrbmt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "ref_mrp_area_consump_vrbdb"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "reorder_days_supply_wd_scm_reord_dur"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "reorder_point_minbe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "reorder_pt_virtual_child_loc_scm_reord_v"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "repair_safety_stock_scm_repsafty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "repair_safety_stock_virtual_child_loc_scm_repsafty_v"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "requestor_phone_zzrqstphone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "requestor_zzafnam"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "reset_forecast_model_auto_autru"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "rounding_profile_rdprf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "rounding_val_po_qty_bstrf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_stock_eisbe"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_stock_parent_loc_scm_ppsaftystk"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_stock_parent_virtual_child_loc_scm_ppsaftystk_v"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_stock_virtual_child_loc_scm_safty_v"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_time_ind_shflg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "safety_time_shzet"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "sap_client_mandt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "scm_thruput_time"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "service_lvl_lgrad"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "shop_zzshop"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "spl_proc_type_sobsl"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "storage_cost_pct_code_lagpr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "sugg_supplier_zzlifnr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "takt_time_takzt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "target_days_supply_wd_scm_target_dur"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "tax_code_zztax"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "third_party_order_proc_scm_tpop"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "time_of_change_aezeit"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "tot_cost_zzrlwrt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "uom_hc_goods_issue_scm_hunit_out"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "uom_hc_goods_receipt_scm_hunit"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "uom_lot_size_scm_lsuom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "uom_size_scm_iunit"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "user_code_charge_zzkostl_usr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-indirect-procurement",
+      "dbname": "mfg_indirect_procurement_trn_ext",
+      "elementname": "sap_mrp_area_for_material_mdma",
+      "column_name": "warp_req_zzwarp_req"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-manufacturing-indirect-procurement%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

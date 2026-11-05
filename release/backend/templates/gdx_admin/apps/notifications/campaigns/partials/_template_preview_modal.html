@@ -1,0 +1,29 @@
+<div class="modal fade" id="templatePreviewModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div>
+					<h2 class="h5 mb-1">Notification preview</h2>
+					<p class="small text-muted mb-0">Review the current rendered output.</p>
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body bg-light p-4">
+				<div class="d-flex justify-content-between mb-3">
+					<div class="btn-group btn-group-sm">
+						<button type="button" class="btn btn-outline-secondary active" data-modal-preview-width="100%">Desktop</button>
+						<button type="button" class="btn btn-outline-secondary" data-modal-preview-width="720px">Tablet</button>
+						<button type="button" class="btn btn-outline-secondary" data-modal-preview-width="390px">Mobile</button>
+					</div>
+					<button class="btn btn-sm btn-outline-primary" type="button" data-refresh-preview>Refresh</button>
+				</div>
+				<div class="preview-stage rounded-3 p-4">
+					<div id="templatePreview" class="designer-preview bg-white border rounded-3 p-4 mx-auto"></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-light border" type="button" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

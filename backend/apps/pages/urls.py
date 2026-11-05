@@ -5,6 +5,7 @@ urlpatterns=[
  path("",views.dashboard,name="dashboard"),
  path("pages/",views.page_list,name="page-list"),
  path("pages/new/",views.page_create,name="page-create"),
+ path("pages/<slug:slug>/delete/",views.page_delete,name="page-delete"),
  path("pages/<slug:slug>/",views.page_detail,name="page-detail"),
  path("page-types/",views.page_type_list,name="page-type-list"),
  path("page-types/new/",views.page_type_create,name="page-type-create"),

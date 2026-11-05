@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="card-header"><h3 class="h5 mb-0"><i class="ti ti-world me-2 text-info"></i>Environment configurations</h3></div>
+  <div class="card-body p-0"><div class="table-responsive"><table class="table table-hover align-middle mb-0">
+    <thead><tr><th>Environment</th><th>Expected</th><th>Enabled</th><th>Account</th><th>Region</th><th>Identifier</th><th>Health</th><th>Last Check</th></tr></thead>
+    <tbody>{% for config in resource.environment_configurations.all %}<tr><td>{{ config.get_environment_display }}</td><td>{{ config.required|yesno:"Required,Optional" }}</td><td>{{ config.enabled|yesno:"Enabled,Disabled" }}</td><td>{{ config.aws_account }}</td><td>{{ config.region }}</td><td>{{ config.resource_identifier }}</td><td>{{ config.get_health_status_display }}</td><td>{{ config.last_health_check|default:"Never" }}</td></tr>{% empty %}<tr><td colspan="8" class="text-center text-muted py-4">No environments configured.</td></tr>{% endfor %}</tbody>
+  </table></div></div>
+</div>

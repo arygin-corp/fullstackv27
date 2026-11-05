@@ -1,0 +1,3 @@
+from django.db import models
+from ..models import TimeStampedModel,WorkflowInstance
+class RouteOption(TimeStampedModel):instance=models.ForeignKey(WorkflowInstance,related_name='route_options',on_delete=models.CASCADE);name=models.CharField(max_length=120);strategy=models.CharField(max_length=40);path=models.JSONField(default=list);estimated_duration=models.DecimalField(max_digits=14,decimal_places=3,null=True);estimated_cost=models.DecimalField(max_digits=14,decimal_places=2,null=True);risk_score=models.DecimalField(max_digits=6,decimal_places=2,null=True);selected=models.BooleanField(default=False)

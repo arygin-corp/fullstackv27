@@ -1,0 +1,57 @@
+{
+  "package": "edmp-aws-infra-live-master-v10",
+  "frontend": true,
+  "django_backend": true,
+  "accounts": {
+    "nonprod": "963334842848",
+    "prod": "471550468381"
+  },
+  "regions": {
+    "nonprod": "us-west-2",
+    "prod": "us-east-1"
+  },
+  "prod_oidc_enabled": false,
+  "components": [
+    "frontend-s3",
+    "frontend-deployment-iam",
+    "ecr",
+    "ecs-cluster",
+    "alb",
+    "target-group",
+    "security-groups",
+    "db-subnet-group",
+    "redis-subnet-group",
+    "rds",
+    "redis",
+    "secrets-manager",
+    "application-s3",
+    "ecs-web",
+    "ecs-worker",
+    "ecs-beat",
+    "ecs-migration",
+    "route53",
+    "cloudwatch-logs"
+  ],
+  "angularPromotion": {
+    "poc": [
+      "demo",
+      "dev",
+      "qa",
+      "stage",
+      "prod"
+    ],
+    "engineering": [
+      "dev",
+      "qa",
+      "stage",
+      "prod"
+    ]
+  },
+  "angularEnvironments": [
+    "demo",
+    "dev",
+    "qa",
+    "stage",
+    "prod"
+  ]
+}

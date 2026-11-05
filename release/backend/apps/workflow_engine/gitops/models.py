@@ -1,0 +1,5 @@
+from django.db import models
+from ..models import TimeStampedModel
+class GitRepository(TimeStampedModel):name=models.CharField(max_length=180);provider=models.CharField(max_length=40);repository=models.CharField(max_length=255);default_branch=models.CharField(max_length=100,default='main');secret_reference=models.CharField(max_length=255,blank=True);enabled=models.BooleanField(default=False)
+class DeploymentManifest(TimeStampedModel):repository=models.ForeignKey(GitRepository,related_name='manifests',on_delete=models.CASCADE);path=models.CharField(max_length=255);revision=models.CharField(max_length=80);environment=models.CharField(max_length=40);manifest=models.JSONField(default=dict);status=models.CharField(max_length=30,default='pending');validation=models.JSONField(default=dict)
+class DriftReport(TimeStampedModel):manifest=models.ForeignKey(DeploymentManifest,related_name='drift_reports',on_delete=models.CASCADE);expected=models.JSONField(default=dict);actual=models.JSONField(default=dict);differences=models.JSONField(default=list);status=models.CharField(max_length=30,default='open')

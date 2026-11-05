@@ -320,3 +320,147 @@
 /*#sidebar-two .changelog-sidebar-menu > a.subdrop .menu-arrow {*/
 /*  color: #7c3aed !important;*/
 /*}*/
+
+/* Keep module pages in the same content width as every other admin page. */
+.page-wrapper .content .module-page,
+.page-wrapper .content .module-master-dashboard {
+  max-width: none;
+  margin: 0;
+  padding: 0 0 28px;
+}
+
+/* Page headers share the module dashboard banner. */
+.page-wrapper .content > .module-hero,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 {
+  position: relative;
+  border: 0;
+  border-radius: 10px;
+  min-height: 220px;
+  background-image: linear-gradient(110deg, #7137ff 0%, #8a26ff 52%, #c000ff 100%);
+  box-shadow: 0 13px 0 -6px rgba(111, 68, 255, 0.12), 0 13px 28px rgba(77, 38, 157, 0.13);
+  overflow: hidden;
+}
+.page-wrapper .content .flex-fill:has(> .card.bg-primary-gradient-200) {
+  margin-bottom: 22px;
+}
+.page-wrapper .content .flex-fill:has(> .card.bg-primary-gradient-200) > .position-absolute {
+  display: none;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -140px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 66%);
+  pointer-events: none;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+  padding: 40px 46px;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .badge {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14) !important;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .avatar {
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.13) !important;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 h1,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 p {
+  max-width: 760px;
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end h1,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end h2,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end .display-5 {
+  margin: 6px 0;
+  color: #fff;
+  font-size: 2.7rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end p,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end small {
+  color: rgba(255, 255, 255, 0.87);
+}
+@media (max-width: 700px) {
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .card-body {
+    padding: 28px 24px;
+  }
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 h1,
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 h2 {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 16px 12px;
+  }
+  .module-hero,
+  .module-dashboard-heading-row,
+  .integration-toolbar,
+  .card-header,
+  .page-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .content .table,
+  .content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .content img,
+  .content svg,
+  .content canvas,
+  .content video,
+  .form-control,
+  .form-select,
+  textarea,
+  select {
+    max-width: 100%;
+  }
+  .content .btn:has(i),
+  .content a.btn:has(i),
+  .module-dashboard-actions button:has(i),
+  .integration-toolbar button:has(i) {
+    font-size: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .content .btn:has(i) i,
+  .content .btn:has(i) svg,
+  .content a.btn:has(i) i,
+  .module-dashboard-actions button:has(i) i,
+  .integration-toolbar button:has(i) i {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .header .input-icon-end {
+    display: none;
+  }
+}

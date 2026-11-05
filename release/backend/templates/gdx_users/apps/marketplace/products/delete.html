@@ -1,0 +1,25 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block title %}Delete Product - {{ product.name }}{% endblock %}
+
+{% block contents %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6 text-red-700">Delete Product: {{ product.name }}</h1>
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <p class="mb-4 text-lg">Are you sure you want to delete the product "<strong>{{ object.name }}</strong>"?</p>
+        <p class="mb-6 text-red-600">This action cannot be undone.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="flex items-center space-x-4">
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Confirm Delete
+                </button>
+                <a href="{% url 'marketplace:detail' object.pk %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+
+{% block contents %}
+<h1>Create Product</h1>
+<form method="post" enctype="multipart/form-data"> {# IMPORTANT: Add enctype for file uploads #}
+  {% csrf_token %}
+  {{ form.media }} {# For CKEditor and Select2 media #}
+
+  {# Product Images Formset #}
+  <div class="card mt-4">
+      <div class="card-header">
+          <h4 class="card-title">Product Images</h4>
+      </div>
+      <div class="card-body">
+          {{ image_formset.management_form }} {# Management form is crucial for formsets #}
+          <div id="image-formset-container">
+              {% for form in image_formset %}
+                  <div class="image-formset-row mb-3 p-3 border rounded">
+                      {{ form.id }} {# Hidden ID field for existing forms #}
+                      <p>Image {{ forloop.counter }}</p>
+                      {% for hidden in form.hidden_fields %}
+                          {{ hidden }}
+                      {% endfor %}
+                      {% for field in form.visible_fields %}
+                          <div class="mb-3">
+                              {{ field.label_tag }}
+                              {{ field }}
+                              {% if field.name == 'image' %}
+                                  {# CORRECTED: Conditionally render the src attribute #}
+                                  <img class="img-thumbnail mt-2 image-preview"
+                                       src="{% if form.instance.image %}{{ form.instance.image.url }}{% else %}#{% endif %}"
+                                       alt="Image Preview"
+                                       style="max-width: 150px; max-height: 150px; {% if not form.instance.image %}display: none;{% endif %}">
+                              {% endif %}
+                              {% if field.help_text %}
+                                  <div class="form-text">{{ field.help_text }}</div>
+                              {% endif %}
+                              {% for error in field.errors %}
+                                  <div class="text-danger">{{ error }}</div>
+                              {% endfor %}
+                          </div>
+                      {% endfor %}
+                      {% if form.instance.pk %} {# Show delete checkbox only for existing images #}
+                          <div class="form-check">
+                              {{ form.DELETE }}
+                              <label class="form-check-label" for="{{ form.DELETE.id_for_label }}">Delete Image</label>
+                          </div>
+                      {% endif %}
+                  </div>
+              {% endfor %}
+          </div>
+          <button type="button" class="btn btn-secondary mt-3" id="add-image-form">Add Another Image</button>
+      </div>
+  </div>
+  
+  {# Product Form Fields #}
+  <div class="card">
+      <div class="card-header">
+          <h4 class="card-title">Product Details</h4>
+      </div>
+      <div class="card-body">
+          {{ form.as_p }}
+      </div>
+  </div>
+
+  <button class="btn btn-primary mt-4">Submit</button>
+</form>
+
+{% endblock %}
+
+{% block extra_javascript %}
+{{ block.super }} {# Include parent's extra_javascript, which contains DataTables init #}
+
+<script>
+    $(document).ready(function() {
+        // Function to handle image preview
+        function setupImagePreview(formRow) {
+            formRow.find('input[type="file"]').on('change', function() {
+                var input = this;
+                var preview = $(this).siblings('.image-preview'); // Get the preview img next to the input
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.attr('src', e.target.result);
+                        preview.show(); // Show the image preview
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    preview.hide(); // Hide if no file is selected
+                    preview.attr('src', ''); // Clear the src
+                }
+            });
+        }
+
+        // Setup preview for initial forms
+        $('.image-formset-row').each(function() {
+            setupImagePreview($(this));
+
+            // If an image already exists (for edit view), ensure the preview is shown
+            // The src is now handled directly in the template, but this ensures visibility
+            if ($(this).find('.image-preview').attr('src') && $(this).find('.image-preview').attr('src') !== '#') {
+                $(this).find('.image-preview').show();
+            }
+        });
+
+        // JavaScript for dynamically adding new image forms
+        $('#add-image-form').click(function() {
+            var formCount = parseInt($('#id_{{ image_formset.prefix }}-TOTAL_FORMS').val());
+            var newForm = $('.image-formset-row').last().clone(true);
+            
+            // Clear values and update IDs/names for new form
+            newForm.find(':input').each(function() {
+                var name = $(this).attr('name').replace(/-\d+-/, '-' + formCount + '-');
+                var id = 'id_' + name;
+                $(this).attr({'name': name, 'id': id}).val('');
+                if ($(this).is('select')) {
+                    $(this).prop('selectedIndex', 0); // Reset select to first option
+                }
+                if ($(this).is(':checkbox')) {
+                    $(this).prop('checked', false); // Uncheck checkboxes
+                }
+            });
+
+            // Update label for new form
+            newForm.find('p').text('Image ' + (formCount + 1));
+
+            // Remove delete checkbox for new forms (it's only for existing ones)
+            newForm.find('.form-check').remove();
+
+            // Clear the image preview for the new form and hide it
+            newForm.find('.image-preview').attr('src', '#').hide(); // Set src to # and hide it
+
+            $('#image-formset-container').append(newForm);
+            $('#id_{{ image_formset.prefix }}-TOTAL_FORMS').val(formCount + 1);
+
+            // Setup preview for the newly added form
+            setupImagePreview(newForm);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block contents %}
+<h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Team</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.media }}
+  {{ form.as_p }}
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>
+{% endblock %}

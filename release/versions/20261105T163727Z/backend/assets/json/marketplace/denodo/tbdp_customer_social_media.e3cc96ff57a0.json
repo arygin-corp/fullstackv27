@@ -1,0 +1,893 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "active_channels",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "active_channels",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "active_channels",
+      "column_name": "sub_channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "access_granted_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "evp"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "evp_dept"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "gvp"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "gvp_dept"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "request_id"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "role"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "user_0"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "user_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_social_user",
+      "column_name": "year_month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "email_id"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "first_name"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "last_name"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "login_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "protegrityencrypted"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "prtn_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "site"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "c360_user_login_details",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "competitior_brands"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "gender"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_mention_summary",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_sov_timeline",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_sov_timeline",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_sov_timeline",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "cb_sov_timeline",
+      "column_name": "timeline_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "competitor_brands",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "competitor_brands",
+      "column_name": "competitior_brands"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "competitor_brands",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "competitor_brands",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "competitior_brands"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "lexus_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_brand_overview_mentions",
+      "column_name": "toyota_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "gender"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "mention_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_mention_summary",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sentiment",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sentiment",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sentiment",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sentiment",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sentiment",
+      "column_name": "unique_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "competitor_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "interaction_created_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "lexus_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_sov_vehicles",
+      "column_name": "toyota_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_themes",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_themes",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_themes",
+      "column_name": "theme"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_themes",
+      "column_name": "unique_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "hashtags"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "interaction_created_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "interaction_epoch_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "number_of_followers"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "record_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "sub_channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "social_visual_tag_cloud",
+      "column_name": "themes"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "sov_vehicles",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "sov_vehicles",
+      "column_name": "brand_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "sov_vehicles",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "sov_vehicles",
+      "column_name": "toyota_lexus_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "alerting_tag"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "author_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "avatar"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "competitior_brands"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "interaction_created_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "interaction_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "mention"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "number_of_followers"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "c360_cust_social_media_ing_ext",
+      "elementname": "top_social_influencer",
+      "column_name": "salience_sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "meltwater_kafka_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "meltwater_kafka_data",
+      "column_name": "day"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "meltwater_kafka_data",
+      "column_name": "kafka_timestamp"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "meltwater_kafka_data",
+      "column_name": "raw_data"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "meltwater_kafka_data",
+      "column_name": "year_month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "load_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "cust_social_media_trn_ext",
+      "elementname": "social_meltwater_trn_data",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "concern_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "concern_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "dealer_region"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_concerns_summary",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "dealer_region"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "defect"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "lexus_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "sentiment"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "sentiment_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_dealer_sentiment_summary",
+      "column_name": "toyota_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "channel"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "concern_count"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "concern_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "defect"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "lexus_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "social_product_concerns_summary",
+      "column_name": "toyota_series"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "alerting_tag"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "author_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "avatar"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "brand_group"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "competitior_brands"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "interaction_created_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "interaction_date"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "interaction_type"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "mention"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "number_of_followers"
+    },
+    {
+      "userrolename": "tbdp-customer-social-media",
+      "dbname": "socialpipeline_ing",
+      "elementname": "top_social_influencer_vw",
+      "column_name": "salience_sentiment"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-social-media%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

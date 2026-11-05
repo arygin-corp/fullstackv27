@@ -52,6 +52,13 @@ class VerifiedStaffAccessTests(SimpleTestCase):
         response = self._response(_User(staff=True, verified=False), "/not-authorized/")
         self.assertEqual(response.status_code, 200)
 
-    def test_superuser_and_non_staff_are_not_sent_to_the_page(self):
+    def test_unverified_user_is_redirected(self):
+        response = self._response(_User(staff=False, verified=False))
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, "/not-authorized/")
+
+    def test_verified_user_continues(self):
+        self.assertEqual(self._response(_User(staff=False, verified=True)).status_code, 200)
+
+    def test_superuser_is_not_sent_to_the_page(self):
         self.assertEqual(self._response(_User(staff=True, superuser=True, verified=False)).status_code, 200)
-        self.assertEqual(self._response(_User(staff=False, verified=False)).status_code, 200)

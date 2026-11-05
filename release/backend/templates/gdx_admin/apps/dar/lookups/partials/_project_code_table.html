@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    <div><h3 class="h5 mb-1"><i class="ti ti-code-dots me-2 text-primary"></i>Project-code directory</h3><p class="text-muted mb-0">Project and area code lookup values.</p></div>
+    <span class="badge bg-light text-dark border">{% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ project_codes|length }}{% endif %} codes</span>
+  </div>
+  <div class="card-body p-0">
+    {% if project_codes %}
+      <div class="table-responsive"><table class="table table-hover align-middle mb-0">
+        <thead><tr><th>Project code</th><th>Name</th></tr></thead>
+        <tbody>{% for item in project_codes %}<tr>
+          <td><div class="d-flex align-items-center gap-2"><span class="avatar avatar-sm bg-purple-subtle text-purple rounded-circle flex-shrink-0"><i class="ti ti-code"></i></span><code class="fw-semibold text-break">{{ item.project_code }}</code></div></td>
+          <td><strong class="text-break">{{ item.name }}</strong></td>
+        </tr>{% endfor %}</tbody>
+      </table></div>
+    {% else %}
+      {% include "gdx_admin/apps/dar/lookups/partials/_lookup_empty_state.html" with empty_title="No project codes" empty_text="The project-code lookup did not return any records." empty_icon="ti ti-code-off" %}
+    {% endif %}
+  </div>
+</div>

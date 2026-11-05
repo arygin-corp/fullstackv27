@@ -21,14 +21,13 @@ EXEMPT_PREFIXES = (
     "/api/",
     "/admin/login",
     "/admin/logout",
+    "/maintenance",
 )
 
 
 def user_is_verified_staff(user):
-    """Staff may continue only after a superuser verifies their profile."""
-    if not getattr(user, "is_authenticated", False):
-        return True
-    if getattr(user, "is_superuser", False) or not getattr(user, "is_staff", False):
+    """Signed-in users may continue only after a super admin verifies their profile."""
+    if not getattr(user, "is_authenticated", False) or getattr(user, "is_superuser", False):
         return True
     try:
         profile = user.profile

@@ -2,8 +2,8 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
 
 // STAGE DEVELOPMENT ENVIRONMENT
 export const environment = {
-  version: '26.27.10',
-  timestamp: '10/27/2026, 143920 CT',
+  version: '26.11.05',
+  timestamp: '11/05/2026, 103829 CT',
   engineer: 'Giovanni Austin',
   buildId: 'stage-build-3',
   production: true,

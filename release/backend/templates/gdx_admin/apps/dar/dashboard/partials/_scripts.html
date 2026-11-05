@@ -1,0 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+{{ status_chart|default:list|json_script:"dar-status-data" }}
+{{ submissions_by_day|default:list|json_script:"dar-volume-data" }}
+{{ sla_trend|default:list|json_script:"dar-sla-data" }}
+{{ lifecycle_funnel|default:list|json_script:"dar-funnel-data" }}
+<script src="{% static 'dar/dashboard/js/dashboard.js' %}"></script>

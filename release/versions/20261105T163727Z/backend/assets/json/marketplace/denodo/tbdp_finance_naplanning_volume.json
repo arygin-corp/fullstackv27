@@ -1,0 +1,1931 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "account_category"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "account_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "ap_invoice_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "ap_invoice_amount_value_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "ap_invoice_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "ap_invoice_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "company_code_lv0"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "cost_center_lv5"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "delivery_due_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "delivery_indicator"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "division_lv1"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "invoiced_quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "line_lv2"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_amount_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_item_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_item_material_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_line_item_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "po_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "project"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "remaining_po_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "remaining_po_amount_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "requestor"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "section_lv3"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "subsection_lv4"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "commit_spend",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "account_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "amount"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "ariba_po_requisitioner"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "clearing_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "clearing_document"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "document_no"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "expense_report_employee"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "expense_report_no"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_0_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_0_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_10_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_11_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_12_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_13_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_14_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_15_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_16_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_1_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_2_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_3_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_4_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_5_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_6_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_7_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_8_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gl_tree_lvl_9_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "gs_po_requisitioner"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "item_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "item_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "journal_line"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "journal_line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "model_info"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "noun_modifier"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "posting_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "posting_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "project"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "shop"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "te_line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "transaction_details"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "transaction_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "vendor"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "voucher"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "drill_thru_plants",
+      "column_name": "wbs"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "account_attribute"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "account_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "cc_atribute"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "division_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "fiscal_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_0_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_0_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_10_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_11_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_12_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_13_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_14_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_15_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_16_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_1_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_2_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_3_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_4_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_5_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_6_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_7_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_8_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_9_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "line"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_bud"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_fcst"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_py_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_var_ava"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_var_avb"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "mth_var_avf"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "plan_category"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "section_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "sub_section_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "total_company_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_bud"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_fcst"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_py_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_var_ava"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_var_avb"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "product_cost_sum_rpt",
+      "column_name": "ytd_var_avf"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "account_category"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "account_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "ap_invoice_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "ap_invoice_amount_value_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "ap_invoice_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "ap_invoice_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "company_code_lv0"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "cost_center_lv5"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "delivery_due_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "delivery_indicator"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "division_lv1"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "invoiced_quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "line_lv2"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_amount_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_item_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_item_material_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_line_item_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "po_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "project"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "remaining_po_amount_in_local_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "remaining_po_amount_in_object_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "requestor"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "section_lv3"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "subsection_lv4"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_commited_spend",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "account_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "amount"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "ariba_po_requisitioner"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "clearing_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "clearing_document"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "document_no"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "expense_report_employee"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "expense_report_no"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_0_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_0_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_10_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_11_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_12_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_13_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_14_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_15_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_16_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_1_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_2_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_3_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_4_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_5_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_6_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_7_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_8_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gl_tree_lvl_9_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "global_amount"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "global_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "gs_po_requisitioner"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "item_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "item_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "journal_line"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "journal_line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "model_info"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "noun_modifier"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "posting_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "posting_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "project"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "shop"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "te_line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "transaction_details"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "transaction_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "vendor"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "voucher"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_drill_thru_plants",
+      "column_name": "wbs"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "account"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "account_attribute"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "account_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "cc_atribute"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "division_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "fiscal_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_0_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_0_id"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_10_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_11_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_12_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_13_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_14_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_15_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_16_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_1_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_2_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_3_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_4_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_5_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_6_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_7_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_8_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "gl_tree_lvl_9_descr"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "global_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "global_mth_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "global_mth_bud"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "global_mth_fcst"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "line"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "line_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_bud"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_fcst"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_py_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_var_ava"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_var_avb"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "mth_var_avf"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "plan_category"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "section_description"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "sub_section_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "total_company_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_bud"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_fcst"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_py_act"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_var_ava"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_var_avb"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "dcm_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_product_cost_sum_rpt",
+      "column_name": "ytd_var_avf"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "account_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "account_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "cost_center_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "document_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "document_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "fiscal_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "gl_account_transaction_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "posting_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "profit_center_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "purchase_order_item_text"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "purchase_order_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "transaction_amount"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "vendor_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "fi_fixed_cost_doc_items",
+      "column_name": "wbs_element_project_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "account_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "account_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "cost_center_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "document_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "document_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "fiscal_period"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "gl_account_transaction_type"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "posting_date"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "profit_center_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "purchase_order_item_text"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "purchase_order_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "transaction_amount"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "vendor_number"
+    },
+    {
+      "userrolename": "tbdp-finance-naplanning-volume",
+      "dbname": "fcd_finance_naplanning_volume_ing_ext",
+      "elementname": "sap_fixed_cost_doc_items_tbdp",
+      "column_name": "wbs_element_project_code"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-finance-naplanning-volume%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

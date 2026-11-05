@@ -1,0 +1,47 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <div>
+      <h3 class="h5 mb-1"><i class="ti ti-adjustments-horizontal me-2 text-primary"></i>Filter audit events</h3>
+      <p class="text-muted mb-0">Narrow the history by release, actor, record type, action, date, or request path.</p>
+    </div>
+    {% if request.GET %}<span class="badge bg-primary-subtle text-primary">Filters applied</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <form method="get">
+      <div class="row g-3">
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="version">Release version</label>
+          <div class="input-group"><span class="input-group-text"><i class="ti ti-tag"></i></span><input class="form-control" id="version" name="version" value="{{ request.GET.version }}" placeholder="Example: 27.1.8"></div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="user">User</label>
+          <div class="input-group"><span class="input-group-text"><i class="ti ti-user"></i></span><input class="form-control" id="user" name="user" value="{{ request.GET.user }}" placeholder="Username or email"></div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="model">Record type</label>
+          <select class="form-select" id="model" name="model"><option value="">All record types</option>{% for value, label in model_choices %}<option value="{{ value }}" {% if request.GET.model == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="action">Action</label>
+          <select class="form-select" id="action" name="action"><option value="">All actions</option>{% for value, label in actions %}<option value="{{ value }}" {% if request.GET.action == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="start-date">Start date</label>
+          <input class="form-control" type="date" id="start-date" name="start_date" value="{{ request.GET.start_date }}">
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <label class="form-label" for="end-date">End date</label>
+          <input class="form-control" type="date" id="end-date" name="end_date" value="{{ request.GET.end_date }}">
+        </div>
+        <div class="col-md-8 col-xl-4">
+          <label class="form-label" for="q">Object, user, or request path</label>
+          <div class="input-group"><span class="input-group-text"><i class="ti ti-search"></i></span><input class="form-control" id="q" name="q" value="{{ request.GET.q }}" placeholder="Search audit history"></div>
+        </div>
+        <div class="col-md-4 col-xl-2 d-flex align-items-end gap-2">
+          <button class="btn btn-primary flex-fill" type="submit"><i class="ti ti-filter me-1"></i>Filter</button>
+          <a class="btn btn-light border" href="{% url 'changelog:audit-list' %}" aria-label="Clear filters"><i class="ti ti-x"></i></a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

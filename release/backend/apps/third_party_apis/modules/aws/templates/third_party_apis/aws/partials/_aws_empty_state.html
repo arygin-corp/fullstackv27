@@ -1,0 +1,8 @@
+<div class="text-center py-5 card">
+  <div class="card-body">
+    <span class="avatar avatar-xxl rounded-circle bg-primary-subtle text-primary"><i class="ti ti-cloud-off fs-1"></i></span>
+    <h3 class="h5 mt-3 mb-1">No AWS resources found</h3>
+    <p class="text-muted mb-3">Add an AWS resource for the selected environment.</p>
+    {% if selected_environment %}<a class="btn btn-primary" href="{% url 'third_party_api_aws:resource_create' selected_environment %}"><i class="ti ti-plus me-1"></i>Add AWS Resource</a>{% endif %}
+  </div>
+</div>

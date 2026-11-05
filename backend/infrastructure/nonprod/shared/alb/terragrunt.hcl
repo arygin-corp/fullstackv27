@@ -1,0 +1,5 @@
+include "root"{path=find_in_parent_folders()}
+locals{account=read_terragrunt_config(find_in_parent_folders("account.hcl"));global=read_terragrunt_config(find_in_parent_folders("global.hcl"))}
+dependency "sg"{config_path="../alb-security-group";mock_outputs={security_group_id="sg-mock"}}
+terraform{source="${get_repo_root()}/modules/alb"}
+inputs={name="edmp-gdxp-admin-alb";subnet_ids=local.account.locals.public_subnet_ids;security_group_ids=[dependency.sg.outputs.security_group_id];certificate_arn=local.account.locals.acm_certificate_arn;waf_web_acl_arn=local.account.locals.waf_web_acl_arn;environment="nonprod";tags={"tmna:app-id"=local.global.locals.app_id,"tmna:app-name"=local.global.locals.app_name,"tmna:created-by-email"=local.global.locals.created_by_email,"tmna:git_url"=local.global.locals.git_url,"tmna:git_revision"=local.global.locals.git_revision,"tmna:blueprint_sources"=local.global.locals.blueprint_sources,"tmna:timestamp"=local.global.locals.timestamp,"tmna:team"=local.global.locals.team,"tmna:data_classification"=local.global.locals.data_classification}}

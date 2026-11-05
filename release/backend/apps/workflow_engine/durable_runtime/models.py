@@ -1,0 +1,7 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..automation.models import FlowExecution
+class ExecutionCheckpoint(TimeStampedModel):execution=models.ForeignKey(FlowExecution,related_name='checkpoints',on_delete=models.CASCADE);sequence=models.PositiveIntegerField();state=models.JSONField(default=dict);completed_nodes=models.JSONField(default=list);pending_nodes=models.JSONField(default=list);checksum=models.CharField(max_length=64)
+class CompensationRecord(TimeStampedModel):execution=models.ForeignKey(FlowExecution,related_name='compensations',on_delete=models.CASCADE);node_id=models.CharField(max_length=100);handler=models.CharField(max_length=180);status=models.CharField(max_length=30,default='pending');input=models.JSONField(default=dict);output=models.JSONField(default=dict);error=models.TextField(blank=True)
+class ExecutionLease(TimeStampedModel):execution=models.OneToOneField(FlowExecution,related_name='lease',on_delete=models.CASCADE);worker_id=models.CharField(max_length=160);expires_at=models.DateTimeField();heartbeat_at=models.DateTimeField();generation=models.PositiveIntegerField(default=1)
+class RuntimeCommand(TimeStampedModel):execution=models.ForeignKey(FlowExecution,related_name='runtime_commands',on_delete=models.CASCADE);command=models.CharField(max_length=40);parameters=models.JSONField(default=dict);status=models.CharField(max_length=30,default='pending')

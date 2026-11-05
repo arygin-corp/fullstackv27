@@ -48,16 +48,11 @@ APP_ENV = os.getenv("APP_ENV", "local").strip().lower()
 # ---------------------------------------------------------------------------
 
 def _local_display_version() -> str:
-    """
-    Local-development display version.
+    """Local display version as YY.MM.DD in America/Chicago."""
+    from zoneinfo import ZoneInfo
 
-    Format:
-        YY.DD.MM
-
-    Example:
-        26.28.10
-    """
-    return datetime.now(timezone.utc).strftime("%y.%d.%m")
+    now = datetime.now(ZoneInfo("America/Chicago"))
+    return now.strftime("%y.%m.%d")
 
 
 if APP_ENV == "local":
@@ -229,7 +224,9 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "gdx.maintenance.MaintenanceModeMiddleware",
     "apps.profiles.middleware.VerifiedStaffAccessMiddleware",
+    "gdx.page_access.PageAccessMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
@@ -256,6 +253,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 # GDXP Admin display version
+                "gdx.context_processors.site_identity",
                 "gdx.context_processors.app_display_version",
                 "gdx.context_processors.header_environment",
                 "gdx.context_processors.header_notifications",
@@ -271,6 +269,7 @@ TEMPLATES = [
 # ---------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
+    "gdx.access.AccessTypePermissionBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 LOGIN_URL = "/microsoft_authentication/login"
@@ -300,7 +299,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # ---------------------------------------------------------------------------
-# Static files and S3-backed media/data
+# Static files. Media uploads stay on this machine in every environment.
 # ---------------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "assets"
@@ -308,43 +307,18 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 AWS_REGION = os.getenv("AWS_REGION", "us-west-2")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "")
-AWS_S3_MEDIA_PREFIX = os.getenv("AWS_S3_MEDIA_PREFIX", "media").strip("/")
 AWS_S3_DATA_PREFIX = os.getenv("AWS_S3_DATA_PREFIX", "data").strip("/")
 
-# Each deployed environment receives a separate S3 bucket from Infra-Live.
-# Local development falls back to filesystem media storage.
-if AWS_STORAGE_BUCKET_NAME:
-    STORAGES = {
-        "default": {
-            "BACKEND": "storages.backends.s3.S3Storage",
-            "OPTIONS": {
-                "bucket_name": AWS_STORAGE_BUCKET_NAME,
-                "region_name": AWS_REGION,
-                "location": AWS_S3_MEDIA_PREFIX,
-                "default_acl": None,
-                "file_overwrite": False,
-                "querystring_auth": True,
-            },
-        },
-        "staticfiles": {
-            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-        },
-    }
-    MEDIA_URL = (
-        f"https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/"
-        f"{AWS_S3_MEDIA_PREFIX}/"
-    )
-else:
-    STORAGES = {
-        "default": {
-            "BACKEND": "django.core.files.storage.FileSystemStorage",
-        },
-        "staticfiles": {
-            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-        },
-    }
-    MEDIA_ROOT = BASE_DIR / "media"
-    MEDIA_URL = "/media/"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Runtime code must use these S3 values instead of BASE_DIR / "data" in AWS.
 DATA_S3_BUCKET = AWS_STORAGE_BUCKET_NAME

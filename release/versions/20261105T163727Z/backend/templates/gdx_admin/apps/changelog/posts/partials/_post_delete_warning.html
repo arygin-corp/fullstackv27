@@ -1,0 +1,16 @@
+<div class="card border-danger">
+	<div class="card-body p-4 p-lg-5 text-center">
+		<span class="avatar avatar-xxl bg-danger-subtle text-danger rounded-circle">
+			<i class="ti ti-trash fs-1"></i>
+		</span>
+		<h2 class="h4 mt-3">Delete release {{ object.version }}?</h2>
+		<p class="text-muted">This permanently removes the release note. This action cannot be undone.</p>
+		<div class="alert alert-warning text-start">
+			<i class="ti ti-alert-triangle me-2"></i>Confirm that publication, audit, and retention requirements permit deletion.
+		</div>
+		<form method="post" class="d-flex flex-column flex-sm-row justify-content-center gap-2">{% csrf_token %} <a class="btn btn-light border" href="{% url 'changelog:post-detail' object.pk %}">Cancel</a>
+			<button class="btn btn-danger" type="submit">
+				<i class="ti ti-trash me-1"></i>Delete release </button>
+		</form>
+	</div>
+</div>

@@ -91,7 +91,10 @@ from .services import create_version,submit,decide,publish,audit
 @login_required
 def dashboard(request): return render(request,"gdx_admin/apps/pages/dashboard/dashboard.html",{"pages":Page.objects.all()[:20],"tasks":WorkflowTask.objects.filter(status="open")[:10]})
 @login_required
-def page_list(request): return render(request,"gdx_admin/apps/pages/page/page_list.html",{"pages":Page.objects.all()})
+def page_list(request):
+    from gdx.removal import purge_due
+    purge_due()
+    return render(request,"gdx_admin/apps/pages/page/page_list.html",{"pages":Page.objects.filter(is_deleted=False)})
 @login_required
 @transaction.atomic
 def page_create(request):
@@ -102,6 +105,23 @@ def page_create(request):
 @login_required
 def page_detail(request,slug):
     page=get_object_or_404(Page,slug=slug);return render(request,"gdx_admin/apps/pages/page/page_detail.html",{"page":page,"version":page.working_version or page.published_version})
+@login_required
+@require_POST
+def page_delete(request, slug):
+    from django.core.exceptions import PermissionDenied
+    from gdx.page_access import granted_actions
+    from gdx.removal import allowed_mode, remove_page
+
+    page = get_object_or_404(Page, slug=slug)
+    mode = allowed_mode(granted_actions(request.user, request.path), request.POST.get("mode"))
+    if mode is None:
+        raise PermissionDenied
+    remove_page(page, mode)
+    if mode == "instant":
+        messages.success(request, "Page removed.")
+    else:
+        messages.success(request, "Page hidden. It will be permanently removed in 7 days.")
+    return redirect("pages_admin:page-list")
 @login_required
 def page_type_list(request): return render(request,"gdx_admin/apps/pages/governance/page_type_list.html",{"page_types":PageType.objects.all()})
 @login_required

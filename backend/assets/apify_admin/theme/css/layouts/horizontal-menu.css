@@ -77,14 +77,14 @@ body.horizontal-active .hp-horizontal-menu.search-active {
 }
 .hp-horizontal-menu > ul > li ul li a:hover, .hp-horizontal-menu > ul > li ul li a:focus {
   background: none;
-  color: #0010f7;
+  color: #e50000;
 }
 .hp-horizontal-menu > ul > li ul li a.dropdown-item.active {
   background: none !important;
 }
 .hp-horizontal-menu > ul > li ul li a.active {
   background: #ffffff;
-  color: #0010f7;
+  color: #e50000;
 }
 .hp-horizontal-menu ul > li {
   position: relative;

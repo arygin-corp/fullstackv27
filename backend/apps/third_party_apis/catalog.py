@@ -9,6 +9,7 @@ from .models import InstalledThirdPartyApi
 from .module_pages import module_page_links
 from .operational_status import ModuleOperationalStatus
 from .registry import registry
+from gdx.removal import hidden_module_keys
 
 
 def integration_catalog():
@@ -27,12 +28,14 @@ def integration_catalog():
         )
     }
 
+    hidden = hidden_module_keys()
     results = [
         _serialize_registered_module(
             module=module,
             row=database_rows.get(module.key),
         )
         for module in registry.all()
+        if module.key not in hidden
     ]
 
     return sorted(

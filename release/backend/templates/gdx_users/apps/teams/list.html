@@ -1,0 +1,156 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+
+{% block contents %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Team List</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'teams:list' %}">Teams</a>
+                        </li>
+                        <li class="active breadcrumb-item" aria-current="page">Team List</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-2 row">
+                        <div class="col-sm-2">
+                            <select class="form-select pageSize mb-2">
+                                <option value="10">Show 10</option>
+                                <option value="20">Show 20</option>
+                                <option value="30">Show 30</option>
+                                <option value="40">Show 40</option>
+                                <option value="50">Show 50</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="form-control search-box me-2 mb-2 d-inline-block" placeholder="Search..." value="">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end">
+                                <a href="{% url 'teams:create' %}" class="btn btn-success btn-rounded waves-effect waves-light addContact-modal mb-2 btn btn-secondary">
+                                    <i class="mdi mdi-plus me-1"></i> Create New Team
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="align-middle table-nowrap table-hover dt-responsive nowrap w-100 dataTable no-footer dtr-inline table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th colspan="1" class="sorting sorting_desc">
+                                        <div class="cursor-pointer select-none">Logo</div>
+                                    </th>
+                                    <th colspan="1" class="sorting sorting_desc">
+                                        <div class="cursor-pointer select-none">Name</div>
+                                    </th>
+                                    <th colspan="1" class="sorting sorting_desc">
+                                        <div class="cursor-pointer select-none">Owner</div>
+                                    </th>
+                                    <th colspan="1" class="sorting sorting_desc">
+                                        <div class="cursor-pointer select-none">Members</div>
+                                    </th>
+                                    <th colspan="1" class="">
+                                        <div class="">Action</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for team in teams %}
+                                <tr>
+                                    <td>
+                                        {% if team.logo %}
+                                        <div>
+                                            <img class="rounded-circle avatar-xs" src="{{ team.logo.url }}" alt="{{ team.name }}">
+                                        </div>
+                                        {% else %}
+                                        <div class="avatar-xs">
+                                            <span class="avatar-title rounded-circle">{{ team.name|first }}</span>
+                                        </div>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <h5 class="font-size-14 mb-1">
+                                            <a class="text-dark" href="">{{ team.name }}</a>
+                                        </h5>
+                                    </td>
+                                    <td>{{ team.owner.username }}</td>
+                                    <td>{{ team.member.username }}</td>
+                                    <td>
+                                        <div class="d-flex gap-3">
+                                            <a class="text-success" href="">
+                                                <i class="mdi mdi-pencil font-size-18" id="edittooltip"></i>
+                                            </a>
+                                            <a class="text-danger" href="">
+                                                <i class="mdi mdi-delete font-size-18" id="deletetooltip"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5">No teams found.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info">Showing {{ teams.start_index|default:0 }} to {{ teams.end_index|default:0 }} of {{ teams.paginator.count }} Results</div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers pagination-rounded">
+                                <ul class="pagination">
+                                    {% if teams.has_previous %}
+                                    <li class="paginate_button page-item previous">
+                                        <a class="page-link" href="?page={{ teams.previous_page_number }}">
+                                            <i class="mdi mdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="paginate_button page-item previous disabled">
+                                        <a class="page-link" href="#">
+                                            <i class="mdi mdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% for i in teams.paginator.page_range %}
+                                        <li class="paginate_button page-item {% if teams.number == i %}active{% endif %}">
+                                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+
+                                    {% if teams.has_next %}
+                                    <li class="paginate_button page-item next">
+                                        <a class="page-link" href="?page={{ teams.next_page_number }}">
+                                            <i class="mdi mdi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="paginate_button page-item next disabled">
+                                        <a class="page-link" href="#">
+                                            <i class="mdi mdi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

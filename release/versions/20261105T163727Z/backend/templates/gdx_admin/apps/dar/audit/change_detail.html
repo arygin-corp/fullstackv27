@@ -1,0 +1,6 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Change Detail | DAR Administration{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4"><div><h1 class="h2 mb-1">Change Detail</h1><p class="text-muted mb-0">Before and after values for an audited change</p></div>{% block page_actions %}{% endblock %}</div>
+<div class="row g-4"><div class="col-lg-6"><h2 class="h5">Before</h2><pre class="json-block rounded p-3">{{ event.before|pprint }}</pre></div><div class="col-lg-6"><h2 class="h5">After</h2><pre class="json-block rounded p-3">{{ event.after|pprint }}</pre></div></div>
+{% endblock %}
