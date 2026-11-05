@@ -1,0 +1,9 @@
+variable "identifier"{type=string}
+variable "db_name"{type=string}
+variable "db_subnet_group_name"{type=string}
+variable "security_group_ids"{type=list(string)}
+variable "secret_arn"{type=string}
+variable "instance_class"{type=string,default="db.t4g.medium"}
+variable "allocated_storage"{type=number,default=100}
+variable "environment"{type=string}
+variable "tags"{type=map(string),default={}}

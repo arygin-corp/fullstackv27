@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+exec gunicorn gdx.wsgi:application \
+  --config gunicorn.conf.py \
+  --bind 0.0.0.0:8000

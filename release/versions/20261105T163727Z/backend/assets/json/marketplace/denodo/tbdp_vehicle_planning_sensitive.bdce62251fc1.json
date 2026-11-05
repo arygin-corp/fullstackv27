@@ -1,0 +1,53 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "tmna_months_in_market"
+    },
+    {
+      "userrolename": "tbdp-vehicle-planning-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_my_launch_stages_sfn_ntl",
+      "column_name": "tmna_my_launch_stages"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-planning-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

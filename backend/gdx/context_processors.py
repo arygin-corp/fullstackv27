@@ -9,6 +9,20 @@ HEADER_ENVIRONMENTS = (
 )
 
 
+def site_identity(request):
+    from gdx.platform_settings import load_settings
+
+    stored = load_settings()
+    return {
+        "organization_name": stored.get("organization_name") or "Toyota Motor North America",
+        "team_owner_name": stored.get("team_owner_name") or "Data Marketplace Team",
+        "app_name": stored.get("app_name") or "GDX Data Marketplace",
+        "footer_text": stored.get("footer_text") or "GDX Data Marketplace | Toyota Motor North America. Design & Develop by Data Marketplace Team",
+        "maintenance_headline": stored.get("maintenance_headline") or "We'll be back.",
+        "maintenance_message": stored.get("maintenance_message") or "The website is down for maintenance. Check back later.",
+    }
+
+
 def header_environment(request):
     allowed = dict(HEADER_ENVIRONMENTS)
     selected = request.session.get("gdx_environment")

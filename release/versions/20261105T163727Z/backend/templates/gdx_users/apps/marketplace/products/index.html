@@ -1,0 +1,183 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+
+{% block extra_javascript %}
+
+    <!-- Make sure jQuery loads first -->
+    <script src="{% static 'gdx_theme/libs/jquery/dist/jquery.min.js' %}" async></script>
+
+    <!-- DataTables core -->
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}" async></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}" async></script>
+    
+    <!-- Responsive extension -->
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}" async></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}" async></script>
+
+    <script>
+        $(document).ready(function() {
+            var productsTable = $('#products-list').DataTable({
+                "processing": true,       // Show processing indicator
+                "serverSide": true,       // Enable server-side processing
+                "ajax": {
+                    "url": "{% url 'marketplace:index' %}", // URL to your Django IndexView
+                    "type": "GET",
+                    "data": function (d) {
+                        // Custom parameters to send to the server
+                        d.q = $('#searchTableList').val();
+                        d.status = $('#idStatus').val();
+                        d.type = $('#idType').val();
+                        // DataTables already sends 'start', 'length', 'draw', etc.
+                    },
+                    "error": function (xhr, error, thrown) {
+                        console.log("DataTables Ajax Error:", xhr.responseText);
+                        alert("DataTables warning: table id=products-list - Ajax error. For more information about this error, please check the console.");
+                    }
+                },
+                "columns": [
+                    { "data": "id", "className": "text-center" },
+                    { "data": "products" },
+                    { "data": "domains", "className": "text-center", "width": "280px" }, 
+                    { "data": "datatypes", "className": "text-center" },
+                    // { "data": "classifications", "className": "text-center" },
+                    { "data": "status", "className": "text-center" },
+                    { "data": "actions", "orderable": false, "searchable": false, "className": "text-center" }
+                ],
+                "pageLength": {{ current_per_page }}, // Set initial page length from Django context
+                "lengthChange": false, // Disable DataTables' default length change dropdown as we have a custom one
+                "searching": false, // Disable DataTables' default search input as we have a custom one
+                "info": true, // Show "Showing X to Y of Z entries"
+                "paging": true, // Enable pagination
+                "responsive": true
+            });
+
+            // Re-draw the table immediately when the custom search input changes
+            $('#searchTableList').on('input', function() {
+                productsTable.ajax.reload();
+            });
+            
+            // Re-draw the table when custom filter dropdowns change
+            $('#idStatus, #idType').on('change', function() {
+                productsTable.ajax.reload();
+            });
+
+            // Handle 'Products per page' change
+            $('#idPerPage').on('change', function() {
+                productsTable.page.len($(this).val()).draw(); // Use DataTables' built-in page.len() for this
+            });
+
+            // Add event listener for the dropdownMenuButton1 to reload the DataTable
+            $('#dropdownMenuButton1').on('click', function() {
+                productsTable.ajax.reload();
+            });
+        });
+
+        // Helper function to get CSRF token (if not already present) - not typically needed for GET AJAX
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+{% endblock %}
+
+{% block contents %} 
+{% if products %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ total_products_count }} Products</h5>
+                    <div class="flex-shrink-0">
+                        <a href="{% url 'marketplace:create' %}" class="btn btn-primary">Add New Product</a>
+                        {# Refresh button now reloads the DataTable via AJAX #}
+                        <a href="javascript:void(0);" class="btn btn-light" onclick="$('#products-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
+                        <!-- <div class="dropdown d-inline-block">
+                            <button type="menu" class="btn btn-success" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-vertical"></i></button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-bottom">
+                <div class="row g-3">
+                    <div class="col-xxl-4 col-lg-4" style="margin-right: 25%;">
+                        <input type="search" class="form-control" id="searchTableList" placeholder="Search for ..." value=""> {# Removed value="{{ request.GET.q }}" as it's handled by AJAX #}
+                    </div>
+                    <div class="col-xxl-2 col-lg-2">
+                        <select class="form-select" id="idStatus" aria-label="Default select example">
+                            <option value="all" selected>Select Status</option> {# Default to all, AJAX will send current filter if any #}
+                            <option value="draft">Draft</option> should use class = "badge-soft-primary me-2 badge bg-secondary"
+                            <option value="approved">Approved</option> should use class = "badge-soft-success me-1 badge bg-secondary"
+                            <option value="pending">Pending</option> should use class = "badge-soft-info me-1 badge bg-secondary"
+                            <option value="archived">Archived</option> should use class = "badge-soft-dark me-1 badge bg-secondary"
+                            <option value="discontinued">Discontinued</option> should use class = "badge-soft-dander me-1 badge bg-secondary"
+                        </select>
+                    </div>
+                    <div class="col-xxl-2 col-lg-2">
+                        <select class="form-select" id="idType" aria-label="Default select example">
+                            <option value="all" selected>Select Datatype</option> {# Default to all, AJAX will send current filter if any #}
+                            {% for datatype in datatypes %}
+                                <option value="{{ datatype.name }}">{{ datatype.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-xxl-1 col-lg-1">
+                        <select class="form-select" id="idPerPage" aria-label="Products per page">
+                            <option value="25" {% if current_per_page == 24 %}selected{% endif %}>25</option>
+                            <option value="50" {% if current_per_page == 25 %}selected{% endif %}>50</option>
+                            <option value="100" {% if current_per_page == 100 %}selected{% endif %}>100</option>
+                            <option value="150" {% if current_per_page == 150 %}selected{% endif %}>150</option>
+                            <option value="200" {% if current_per_page == 200 %}selected{% endif %}>200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle dt-responsive nowrap w-100 table-check" id="products-list">
+                        <thead>
+                            <tr>
+                               <th scope="col" class="text-center">ID</th>
+                                <th scope="col">Products</th>
+                                <th scope="col" class="text-center">Domains</th>
+                                <th scope="col" class="text-center">Datatypes</th>
+                                <!-- <th scope="col" class="text-center">Classifications</th> -->
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {# DataTables will populate this tbody via AJAX #}
+                        </tbody>
+                    </table>
+                </div>
+                {# Removed Django pagination controls, DataTables will generate its own #}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <p>No products available in the marketplace yet.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_content %}  
+
+{% endblock %}

@@ -1,0 +1,3 @@
+from django.contrib import admin
+from .models import Tenant,EnterpriseTeam,TenantMembership,TeamMembership,ApplicationAccessGroup,ApplicationAccessGroupMembership,PlatformOwnership
+for model in [Tenant,EnterpriseTeam,TenantMembership,TeamMembership,ApplicationAccessGroup,ApplicationAccessGroupMembership,PlatformOwnership]: admin.site.register(model)

@@ -1,0 +1,962 @@
+/* DAR Form Builder
+   Full responsive layout and field-library refactor
+*/
+
+:root {
+    --builder-bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface-soft: #fafbfe;
+    --surface-selected: #f8f7ff;
+    --border: #dce3ed;
+    --border-strong: #bcc8d8;
+    --text: #344056;
+    --text-strong: #202a3d;
+    --text-muted: #64748b;
+    --text-light: #91a0ba;
+    --primary: #5145ff;
+    --primary-hover: #4338e8;
+    --primary-soft: #eef0ff;
+    --primary-ring: rgba(81, 69, 255, 0.16);
+    --danger: #d92d50;
+    --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-sm: 0 6px 16px rgba(15, 23, 42, 0.09);
+    --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.10);
+    --header-height: 76px;
+    --library-width: 444px;
+    --properties-width: 340px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--builder-bg);
+    color: var(--text);
+    font-family: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+button, input, textarea, select { font: inherit; }
+button, input, textarea, select { min-width: 0; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid var(--primary-ring);
+    outline-offset: 2px;
+}
+.hidden { display: none !important; }
+
+/* Application shell */
+.app-shell {
+    display: grid;
+    grid-template-columns: var(--library-width) minmax(520px, 1fr) var(--properties-width);
+    grid-template-rows: var(--header-height) calc(100vh - var(--header-height));
+    min-height: 100vh;
+    background: var(--builder-bg);
+}
+
+/* Header */
+.app-shell > header {
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: var(--header-height);
+    padding: 0 26px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.app-shell > header > div { min-width: 0; }
+.app-shell > header h1 {
+    margin: 0;
+    color: var(--text-strong);
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 1.2;
+}
+.app-shell > header p {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+.app-shell > header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* General buttons */
+button {
+    min-height: 38px;
+    padding: 0 15px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease,
+        box-shadow 150ms ease, transform 150ms ease;
+}
+button:hover { background: #f8fafc; border-color: var(--border-strong); }
+button:active { transform: translateY(1px); }
+button.active { color: #fff; background: var(--text-strong); border-color: var(--text-strong); }
+button.primary, .primary { color: #fff; background: var(--primary); border-color: var(--primary); }
+button.primary:hover, .primary:hover { color: #fff; background: var(--primary-hover); border-color: var(--primary-hover); }
+button.danger { color: var(--danger); }
+
+/* Scrollable work areas */
+.library, .properties, .app-shell > main {
+    min-width: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+.library::-webkit-scrollbar, .properties::-webkit-scrollbar, .app-shell > main::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.library::-webkit-scrollbar-thumb, .properties::-webkit-scrollbar-thumb,
+.app-shell > main::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+/* Field library */
+.app-shell > .library {
+    width: auto;
+    min-width: 0;
+    padding: 32px 44px 48px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    overflow-x: hidden;
+}
+.library-header { margin: 0 0 28px; }
+.app-shell > .library .library-header h2,
+.app-shell > .library > h2 {
+    margin: 0 0 7px;
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+.app-shell > .library .library-header p,
+.app-shell > .library > p {
+    margin: 0;
+    color: #62728e;
+    font-size: 12px;
+    line-height: 1.45;
+    padding: 0px 0px 12px 0px;
+}
+
+/* Palette: exact two-column reference layout */
+.app-shell > .library #palette.palette {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 132px;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.app-shell > .library #palette > button.palette-button {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 0px;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+    margin: 0 !important;
+    padding: 23px 22px 21px !important;
+    color: var(--text) !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 24px !important;
+    box-shadow: none !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow: hidden;
+    transform: none;
+}
+.app-shell > .library #palette > button.palette-button:hover {
+    border-color: #9f98ff !important;
+    box-shadow: 0 7px 14px rgba(38, 45, 70, 0.13) !important;
+    transform: translateY(-1px);
+}
+.app-shell > .library #palette > button.palette-button:active { transform: translateY(0); }
+.app-shell > .library #palette > button.palette-button:focus { outline: none; }
+.app-shell > .library #palette > button.palette-button:focus-visible {
+    border-color: #6257ff !important;
+    box-shadow: 0 0 0 2px rgba(98, 87, 255, 0.14), 0 7px 14px rgba(38, 45, 70, 0.12) !important;
+}
+.app-shell > .library #palette .palette-icon {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 34px !important;
+    height: 34px !important;
+    min-height: 34px;
+    color: var(--primary) !important;
+    pointer-events: none;
+}
+.app-shell > .library #palette .palette-icon svg {
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 2.15 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    overflow: visible;
+}
+.app-shell > .library #palette .heading-icon {
+    display: inline-flex;
+    align-items: flex-start;
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+.app-shell > .library #palette .heading-icon sub {
+    position: relative;
+    top: 8px;
+    margin-left: 1px;
+    font-size: 13px;
+    line-height: 1;
+}
+.app-shell > .library #palette .palette-label {
+    display: block !important;
+    width: 100%;
+    color: var(--text) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+}
+
+/* Schema advice card */
+.app-shell > .library .tip {
+    width: 100%;
+    margin: 40px 0 0 !important;
+    padding: 24px 24px !important;
+    color: #292484 !important;
+    background: var(--primary-soft) !important;
+    border: 0 !important;
+    border-radius: 26px !important;
+    box-shadow: none !important;
+}
+.app-shell > .library .tip strong {
+    display: block;
+    margin: 0 0 12px;
+    color: #292484;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.app-shell > .library .tip p {
+    margin: 0 !important;
+    color: #3d32e7 !important;
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+}
+
+/* Main canvas area */
+.app-shell > main { padding: 26px 32px 44px; }
+.canvas-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100%, 920px);
+    margin: 0 auto 14px;
+}
+.canvas-heading span {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+.canvas-heading p { margin: 4px 0 0; color: var(--text-muted); font-size: 13px; }
+.canvas {
+    width: min(100%, 920px);
+    min-height: 600px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid rgba(220, 227, 237, 0.9);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+.form-hero {
+    padding: 30px 34px;
+    color: #fff;
+    background: radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 38%),
+        linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+.form-hero input, .form-hero textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 12px;
+}
+.form-hero input { padding: 12px 14px; font-size: 22px; font-weight: 750; }
+.form-hero textarea { min-height: 82px; margin-top: 12px; padding: 12px 14px; resize: vertical; }
+.form-hero input::placeholder, .form-hero textarea::placeholder { color: rgba(255,255,255,.72); }
+.form-hero input:focus, .form-hero textarea:focus {
+    outline: none;
+    background: rgba(255,255,255,.13);
+    border-color: rgba(255,255,255,.68);
+    box-shadow: 0 0 0 3px rgba(255,255,255,.12);
+}
+.form-fields { padding: 28px; }
+.form-fields > p { margin: 44px 0; color: var(--text-muted); text-align: center; }
+
+/* Field cards */
+.field-card {
+    position: relative;
+    margin: 0 0 14px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease,
+        box-shadow 150ms ease, transform 150ms ease;
+}
+.field-card:last-child { margin-bottom: 0; }
+.field-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+.field-card.selected {
+    background: var(--surface-selected);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-ring);
+}
+.field-card.dragging { opacity: .5; transform: rotate(-.5deg) scale(.99); }
+.field-card label { display: block; margin-bottom: 9px; color: var(--text-strong); font-weight: 700; }
+.field-card small { display: block; margin-top: 8px; color: var(--text-muted); font-size: 12px; }
+.field-card h2 { margin: 0; color: var(--text-strong); font-size: 20px; }
+.field-card input, .field-card textarea, .field-card select,
+.properties input, .properties textarea, .properties select {
+    width: 100%;
+    padding: 11px 12px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.field-card textarea, .properties textarea { min-height: 88px; resize: vertical; }
+.field-card input:focus, .field-card textarea:focus, .field-card select:focus,
+.properties input:focus, .properties textarea:focus, .properties select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-ring);
+}
+.field-card input[type="radio"], .field-card input[type="checkbox"],
+.properties input[type="checkbox"] { width: auto; padding: 0; accent-color: var(--primary); }
+.drag {
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    min-width: 28px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    box-shadow: var(--shadow-xs);
+    cursor: grab;
+    transform: translateY(-50%);
+}
+.drag:active { cursor: grabbing; }
+
+/* Properties */
+.properties {
+    padding: 20px;
+    background: var(--surface-soft);
+    border-left: 1px solid var(--border);
+}
+#properties {
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid rgba(220, 227, 237, .9);
+    border-radius: 20px;
+    box-shadow: var(--shadow-xs);
+}
+.properties h2 { margin: 0 0 15px; color: var(--text-strong); font-size: 18px; }
+.properties p { color: var(--text-muted); }
+.properties label { display: block; margin: 16px 0 7px; color: var(--text); font-weight: 650; }
+.properties label.checkbox-row { display: flex; align-items: center; gap: 9px; }
+.row { display: flex; align-items: center; gap: 8px; }
+.row > * { min-width: 0; flex: 1; }
+.danger { color: var(--danger); }
+
+/* Logic and JSON */
+.logic, .json { width: min(100%, 920px); margin: 0 auto; }
+.logic-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-xs);
+}
+.logic-card select, .logic-card input {
+    min-height: 38px;
+    padding: 8px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+.json pre {
+    margin: 0;
+    padding: 20px;
+    color: #dbe7ff;
+    background: #0f172a;
+    border-radius: 14px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Responsive desktop */
+@media (max-width: 1550px) {
+    :root { --library-width: 360px; --properties-width: 310px; }
+    .app-shell > .library { padding: 28px 26px 40px; }
+    .app-shell > .library #palette.palette { grid-auto-rows: 122px; gap: 12px; }
+    .app-shell > .library #palette > button.palette-button {
+        height: 122px !important;
+        min-height: 122px !important;
+        max-height: 122px !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+    }
+    .app-shell > .library #palette .palette-label { font-size: 15px !important; }
+}
+
+/* Tablet: compact single-column library and overlay properties */
+@media (max-width: 1180px) {
+    :root { --library-width: 235px; --properties-width: 300px; }
+    .app-shell { grid-template-columns: var(--library-width) minmax(0, 1fr); }
+    .app-shell > header { grid-column: 1 / 3; }
+    .properties {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        bottom: 0;
+        z-index: 80;
+        width: var(--properties-width);
+        height: calc(100vh - var(--header-height));
+        box-shadow: -10px 0 28px rgba(15,23,42,.12);
+    }
+    .app-shell > .library { padding: 22px 16px 32px; }
+    .app-shell > .library #palette.palette {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto;
+        gap: 10px;
+    }
+    .app-shell > .library #palette > button.palette-button {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 13px;
+        height: 64px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
+        padding: 14px 16px !important;
+        border-radius: 16px !important;
+    }
+    .app-shell > .library #palette .palette-icon,
+    .app-shell > .library #palette .palette-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+        min-height: 20px;
+    }
+    .app-shell > .library #palette .heading-icon { font-size: 23px; }
+    .app-shell > .library .tip { padding: 20px !important; border-radius: 20px !important; }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    :root { --header-height: auto; }
+    .app-shell { display: flex; flex-direction: column; min-height: 100vh; }
+    .app-shell > header {
+        position: sticky;
+        top: 0;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        height: auto;
+        padding: 12px 14px;
+    }
+    .app-shell > header > div { flex: 1 1 170px; }
+    .app-shell > header p { display: none; }
+    .app-shell > header nav {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .app-shell > header nav::-webkit-scrollbar { display: none; }
+    .app-shell > header nav button { flex: 0 0 auto; }
+    .app-shell > .library {
+        order: 1;
+        width: 100%;
+        padding: 24px 20px 32px;
+        overflow: visible;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+    .app-shell > .library #palette.palette {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-rows: 118px;
+        gap: 12px;
+    }
+    .app-shell > .library #palette > button.palette-button {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        height: 118px !important;
+        min-height: 118px !important;
+        max-height: 118px !important;
+        padding: 17px !important;
+        border-radius: 20px !important;
+    }
+    .app-shell > main { order: 2; width: 100%; padding: 16px; overflow: visible; }
+    .canvas { min-height: 480px; border-radius: 16px; }
+    .form-hero { padding: 20px; }
+    .form-fields { padding: 16px; }
+    .field-card { padding: 16px; }
+    .drag {
+        top: -11px;
+        left: 50%;
+        width: 42px;
+        min-width: 42px;
+        height: 24px;
+        min-height: 24px;
+        transform: translateX(-50%);
+    }
+    .properties {
+        position: static;
+        order: 3;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-shell > .library #palette.palette {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto;
+    }
+    .app-shell > .library #palette > button.palette-button {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        height: 64px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   FIELD LIBRARY
+================================================== */
+
+:root {
+    --library-width: 340px;
+
+    --field-card-height: 142px;
+    --field-card-radius: 24px;
+
+    --field-gap: 14px;
+
+    --field-icon-size: 42px;
+
+    --field-border: #dde4ee;
+
+    --field-text: #344056;
+
+    --field-primary: #5145ff;
+}
+
+/* ==========================================
+   FIELD LIBRARY PANEL
+========================================== */
+
+.library {
+    width: 100%;
+
+    padding: 32px 28px 42px;
+
+    background: #ffffff;
+
+    border-right: 1px solid #dde4ee;
+
+    overflow-y: auto;
+}
+
+.library-header {
+    margin-bottom: 28px;
+}
+
+.library-header h2 {
+    margin: 0 0 8px;
+
+    color: #94a3b8;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+}
+
+.library-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+#palette {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: var(--field-gap);
+
+    width: 100%;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.palette-button {
+    appearance: none !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: space-between !important;
+
+    align-items: flex-start !important;
+
+    width: 100% !important;
+
+    height: var(--field-card-height) !important;
+
+    min-height: var(--field-card-height) !important;
+
+    padding: 18px !important;
+
+    margin: 0 !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid var(--field-border) !important;
+
+    border-radius: var(--field-card-radius) !important;
+
+    text-align: left !important;
+
+    transition:
+        transform .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+
+    overflow: hidden;
+}
+
+.palette-button:hover {
+    border-color: #b3acff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(15,23,42,.08);
+}
+
+.palette-button:focus-visible {
+    outline: none;
+
+    border-color: var(--field-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(81,69,255,.12),
+        0 8px 18px rgba(15,23,42,.08);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.palette-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: var(--field-icon-size);
+
+    height: var(--field-icon-size);
+
+    color: var(--field-primary);
+}
+
+.palette-icon svg {
+    width: var(--field-icon-size);
+
+    height: var(--field-icon-size);
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.heading-icon {
+    color: var(--field-primary);
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.heading-icon sub {
+    font-size: 14px;
+}
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.palette-label {
+    width: 100%;
+
+    color: var(--field-text);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+/* ==========================================
+   SCHEMA CARD
+========================================== */
+
+.tip {
+    margin-top: 34px;
+
+    padding: 26px;
+
+    background: #eef0ff;
+
+    border-radius: 24px;
+}
+
+.tip strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #292484;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.tip p {
+    margin: 0;
+
+    color: #4138e8;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+/* ==========================================
+   LARGE DESKTOP
+========================================== */
+
+@media (min-width: 768px) {
+
+    #palette {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .library {
+        padding: 22px;
+    }
+
+    #palette {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .palette-button {
+        height: 120px !important;
+        min-height: 120px !important;
+    }
+
+    .palette-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .palette-label {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+    #palette {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .palette-button {
+        height: 115px !important;
+
+        min-height: 115px !important;
+
+        padding: 16px !important;
+    }
+
+    .palette-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+/* ==========================================
+   VERY SMALL DEVICES
+========================================== */
+
+@media (max-width: 380px) {
+
+    #palette {
+        grid-template-columns: 1fr !important;
+    }
+
+    .palette-button {
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        gap: 12px;
+
+        height: 68px !important;
+
+        min-height: 68px !important;
+    }
+
+    .palette-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .palette-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}

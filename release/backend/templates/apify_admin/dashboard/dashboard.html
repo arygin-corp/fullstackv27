@@ -1,0 +1,45 @@
+{% extends 'apify_admin/base.html' %}
+{% load static %} 
+{% block title %}Dashboard | Apify Admin{% endblock %} 
+{% block vendor_css %}
+
+<link rel="stylesheet" href="{% static 'apify_admin/css/apex-charts.min.css' %}">
+<link rel="stylesheet" href="{% static 'apify_admin/css/dashboard-analytics.min.css' %}">
+{% endblock %} 
+{% block content %}
+{% include 'apify_admin/partials/page_header.html' %} 
+<div class="row g-24 mb-24">
+    {% for metric in metrics %} 
+    <div class="col-12 col-sm-6 col-xl-3">
+		<div class="card border-0 h-100">
+			<div class="card-body">
+				<div class="d-flex justify-content-between">
+					<span class="hp-text-color-black-60">{{ metric.label }}</span>
+					<i class="{{ metric.icon|default:'ri-bar-chart-line' }}"></i>
+				</div>
+				<strong class="display-6 d-block mt-8">{{ metric.value|default:0 }}</strong>{% if metric.change %} <small class="text-success">{{ metric.change }}</small>{% endif %}
+			</div>
+		</div>
+	</div>{% empty %} <div class="col">
+		<p>No metrics available.</p>
+	</div>{% endfor %} </div>
+<div class="row g-24">
+	<div class="col-12 col-xl-8">
+		<div class="card border-0 h-100">
+			<div class="card-body">
+				<h3 class="h5">API traffic</h3>
+				<div id="traffic-chart" style="min-height:320px"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-xl-4">
+		<div class="card border-0 h-100">
+			<div class="card-body">
+				<h3 class="h5">Pending approvals</h3>{% for item in pending_requests %} <a class="d-flex justify-content-between py-12 border-bottom text-decoration-none" href="{% url 'apify_admin:access-request-detail' item.pk %}">
+					<span>{{ item.application }}</span>
+					<span class="badge bg-warning text-dark">{{ item.get_status_display }}</span>
+				</a>{% empty %} <p class="hp-text-color-black-60">No pending approvals.</p>{% endfor %}
+			</div>
+		</div>
+	</div>
+</div> {% endblock %} {% block vendor_js %} <script src="{% static 'apify_admin/js/apexcharts.min.js' %}"></script>{% endblock %}

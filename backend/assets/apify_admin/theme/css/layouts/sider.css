@@ -160,7 +160,7 @@ body.collapse-btn-none.collapsed-active .hp-sidebar-collapse-button {
   list-style: none;
 }
 .hp-sidebar-container .hp-sidebar-header-menu > ul li .menu-title {
-  color: #0063f7;
+  color: #e50000;
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -442,10 +442,10 @@ body.collapse-btn-none.collapsed-active .hp-sidebar-collapse-button {
   opacity: 0;
 }
 .hp-sidebar-dropdown-container ul li a:hover {
-  color: #0010f7;
+  color: #e50000;
 }
 .hp-sidebar-dropdown-container ul li a.active {
-  color: #0010f7;
+  color: #e50000;
 }
 .hp-sidebar-dropdown-container ul li a.active:before {
   opacity: 1;

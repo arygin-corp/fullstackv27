@@ -1,0 +1,995 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "buddesc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "budname"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "budtype"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "cost_segment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "costcategory"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "costtype"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "domicilecode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "lpcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "report_month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail",
+      "column_name": "total_amt_in_dollars"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "cost_segment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "exp_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "kpw_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "maz_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "mtm_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "report_month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "sbu_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "ser_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "svc_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tal_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tma_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmb_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmc_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmg_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmi_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmk_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmr_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmw_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "lios_parts_directparts_logistics_ing_ext",
+      "elementname": "billing_detail_summary",
+      "column_name": "tmx_total_in_dollars_0"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "costid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "costsegmentdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "costsegmentname"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "costsegmentnum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_cost_category",
+      "column_name": "costsegmenttype"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "addresscity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "addressline1"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "addresspostalcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "addressprovince"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "domicile_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "domicilename"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_domicile",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "expedite_reason_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "reason_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "reason_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "reason_number"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_expedite_reason",
+      "column_name": "sourcetype"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "atsc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "bus_enty_abbrv_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "bus_enty_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "bus_enty_ctgry_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "bus_enty_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "costsegmenteffectivedate"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "destination_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "group_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_lattitude"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_location"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_longitude"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "plant_cd_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "ps_namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "ps_vendor"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "receiving_comp_plant_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "sap_company"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "sap_namc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "sap_plant"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "tms_ams"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "warp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_plant",
+      "column_name": "workday_company"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "arrv_route_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "arrv_rt"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "cycle_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "disp_rt"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "dispatch_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "dispatch_route_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "domicile"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "driver_miles"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "g1_hazmat_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "lp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "no_bscy_days"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "resource_dec_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "route_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "route_miles"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "route_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "route_type"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "timezone"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "total_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "transit_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "dim_routes",
+      "column_name": "window_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "alloccost"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "costcenter"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "costid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "domicilename"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "exp_month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "expedite_reason_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "sourcetype"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistic_cost",
+      "column_name": "vendorcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "actual_amount"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "budget_amount"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "cost_segment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "cost_segment_type"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "fy"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "logistics_cost_items"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_logistics_budget_vs_actuals",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "plant_line"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "plant_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "production_volume"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_production_volume",
+      "column_name": "production_year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "accepted_amount"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "cost_ctr_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "costid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "gl_account_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "invoice_amount"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "report_month"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "fact_sap_cost",
+      "column_name": "wbs_element"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "domicile"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "efficiency_actual"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "efficiency_gap"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "efficiency_target"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "inserted_by"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "m3"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "mileage_actual"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "mileage_gap"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "mileage_target"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "pattern"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "shipping_m3"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "theoretical_mileage"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "trailer_efficiency"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "updated_by"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "perfect_mile_kpi_history",
+      "column_name": "updated_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "line"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "line_component"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "namc"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "prod_qty_per_day"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "scnc_production_numbers_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "updated_by"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-logistics",
+      "dbname": "parts_directparts_logistics_ing_ext",
+      "elementname": "scnc_production_numbers",
+      "column_name": "updated_date"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-parts-directparts-logistics%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

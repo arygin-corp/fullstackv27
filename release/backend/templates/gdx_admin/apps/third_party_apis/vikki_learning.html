@@ -1,0 +1,74 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Vikki learning{% endblock %}
+{% block content %}
+<div class="row g-3">
+    <div class="col-12 col-xl-6">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2 class="h5">Upload a file</h2>
+                <p class="text-muted">PDF, Word, text, Markdown, Excel, CSV, PowerPoint, OpenDocument, JSON, XML, YAML, and SQL.</p>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% if upload_form.non_field_errors %}
+                    <div class="alert alert-danger">{{ upload_form.non_field_errors }}</div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ upload_form.title.id_for_label }}">Title</label>
+                        {{ upload_form.title }}
+                        {{ upload_form.title.errors }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ upload_form.source_file.id_for_label }}">File</label>
+                        {{ upload_form.source_file }}
+                        {{ upload_form.source_file.errors }}
+                    </div>
+                    <button class="btn btn-primary" type="submit">Upload for Vikki</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2 class="h5">Write knowledge</h2>
+                <p class="text-muted">Type a note. Vikki indexes the text the same way it indexes an uploaded file.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {% if text_form.non_field_errors %}
+                    <div class="alert alert-danger">{{ text_form.non_field_errors }}</div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ text_form.title.id_for_label }}">Title</label>
+                        {{ text_form.title }}
+                        {{ text_form.title.errors }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ text_form.body.id_for_label }}">Text</label>
+                        {{ text_form.body }}
+                        {{ text_form.body.errors }}
+                    </div>
+                    <button class="btn btn-primary" type="submit">Save text for Vikki</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card border-0 mt-3">
+    <div class="card-body">
+        <h2 class="h5">Saved for Vikki</h2>
+        <ul class="list-group list-group-flush">
+            {% for document in documents %}
+            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <span>{{ document.title }} <small class="text-muted">{{ document.created_at }}</small></span>
+                <form method="post" action="{% url 'third_party_api_pages:delete_vikki_learning' document.pk %}">
+                    {% csrf_token %}
+                    <button class="btn btn-sm btn-outline-danger" type="submit">Remove</button>
+                </form>
+            </li>
+            {% empty %}
+            <li class="list-group-item px-0 text-muted">Nothing has been added yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

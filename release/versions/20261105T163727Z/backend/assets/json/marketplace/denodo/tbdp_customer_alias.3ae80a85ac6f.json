@@ -1,0 +1,47 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "ds_customer_alias_id"
+    },
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "load_type"
+    },
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-customer-alias",
+      "dbname": "cuds_cust_alias_ing_ext",
+      "elementname": "customer_alias",
+      "column_name": "source_create_dt"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-alias%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

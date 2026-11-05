@@ -1,4 +1,4 @@
-Master Apify Enterprise Help Website v1.1
+Apify Platform Enterprise Help Website v1.1
 
 Standalone static documentation website. Not integrated with Django.
 

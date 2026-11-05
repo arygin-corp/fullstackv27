@@ -1,0 +1,8 @@
+from django.conf import settings
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class DiscoverySource(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);source_type=models.CharField(max_length=80);configuration=models.JSONField(default=dict);secret_reference=models.CharField(max_length=255,blank=True);enabled=models.BooleanField(default=False)
+class DiscoveryProject(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);status=models.CharField(max_length=30,default='draft');scope=models.JSONField(default=dict);privacy_controls=models.JSONField(default=dict);created_by=models.ForeignKey(settings.AUTH_USER_MODEL,null=True,on_delete=models.SET_NULL)
+class ObservedActivity(TimeStampedModel):project=models.ForeignKey(DiscoveryProject,related_name='activities',on_delete=models.CASCADE);case_key=models.CharField(max_length=180,db_index=True);activity=models.CharField(max_length=220);actor_type=models.CharField(max_length=80,blank=True);occurred_at=models.DateTimeField();attributes=models.JSONField(default=dict);source_reference=models.CharField(max_length=255,blank=True)
+class DiscoveredProcess(TimeStampedModel):project=models.ForeignKey(DiscoveryProject,related_name='processes',on_delete=models.CASCADE);name=models.CharField(max_length=180);model=models.JSONField(default=dict);variants=models.JSONField(default=list);confidence=models.DecimalField(max_digits=5,decimal_places=4,null=True);review_status=models.CharField(max_length=30,default='pending')

@@ -1,0 +1,52 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment Analytics{% endblock %}
+{% block page_header %}{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Analytics" hero_description="Counts from recorded builds, grouped by target and environment." hero_metric_label="Builds" hero_metric_value=analytics.counts.total hero_metric_caption="Recorded" hero_icon="▣" %}
+<div class="deploy-grid">
+    <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.counts.succeeded }}</strong></article>
+    <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.counts.failed }}</strong></article>
+    <article class="deploy-metric"><span>Running</span><strong>{{ analytics.counts.running }}</strong></article>
+    <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.counts.total }}</strong></article>
+</div>
+<div class="row g-3">
+    <div class="col-12 col-lg-6">
+        <section class="deploy-panel">
+            <h2>By target</h2>
+            <table class="deploy-table">
+                <thead><tr><th>Target</th><th>Builds</th><th>Share</th></tr></thead>
+                <tbody>
+                {% for item in analytics.targets %}
+                <tr>
+                    <td>{{ item.label }}</td>
+                    <td>{{ item.count }}</td>
+                    <td><div class="deploy-bar"><span style="width:{{ item.share }}%"></span></div></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div class="col-12 col-lg-6">
+        <section class="deploy-panel">
+            <h2>By environment</h2>
+            <table class="deploy-table">
+                <thead><tr><th>Environment</th><th>Builds</th><th>Share</th></tr></thead>
+                <tbody>
+                {% for item in analytics.environments %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.count }}</td>
+                    <td><div class="deploy-bar"><span style="width:{{ item.share }}%"></span></div></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+</main>
+{% endblock %}

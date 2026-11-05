@@ -1,0 +1,11 @@
+{% if check.level == "success" %}
+<span class="badge bg-success-subtle text-success"><i class="ti ti-circle-check me-1"></i>{{ check.status }}</span>
+{% elif check.level == "warning" %}
+<span class="badge bg-warning-subtle text-warning"><i class="ti ti-alert-triangle me-1"></i>{{ check.status }}</span>
+{% elif check.level == "danger" %}
+<span class="badge bg-danger-subtle text-danger"><i class="ti ti-circle-x me-1"></i>{{ check.status }}</span>
+{% elif check.level == "info" %}
+<span class="badge bg-info-subtle text-info"><i class="ti ti-info-circle me-1"></i>{{ check.status }}</span>
+{% else %}
+<span class="badge bg-secondary-subtle text-secondary"><i class="ti ti-circle-dot me-1"></i>{{ check.status }}</span>
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends "changelog/base.html" %}
+{% block title %}Compare Releases{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"><div><h1 class="h2 mb-1">Compare Releases</h1><p class="text-muted mb-0">Compare release metadata and A-J content sections.</p></div><a class="btn btn-outline-secondary" href="{% url 'changelog:dashboard' %}">Analytics</a></div>
+  <form method="get" class="card card-body mb-4">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-5"><label class="form-label" for="before">Earlier release</label><select class="form-select" id="before" name="before" required><option value="">Select a release</option>{% for release in available_posts %}<option value="{{ release.pk }}" {% if request.GET.before == release.pk|stringformat:'s' %}selected{% endif %}>{{ release.version }} · {{ release.release_date|date:"M d, Y" }}</option>{% endfor %}</select></div>
+      <div class="col-md-5"><label class="form-label" for="after">Later release</label><select class="form-select" id="after" name="after" required><option value="">Select a release</option>{% for release in available_posts %}<option value="{{ release.pk }}" {% if request.GET.after == release.pk|stringformat:'s' %}selected{% endif %}>{{ release.version }} · {{ release.release_date|date:"M d, Y" }}</option>{% endfor %}</select></div>
+      <div class="col-md-2"><button class="btn btn-primary w-100" type="submit">Compare</button></div>
+    </div>
+  </form>
+  {% if comparison %}
+  <div class="alert alert-info"><strong>{{ comparison.before.version }}</strong> compared with <strong>{{ comparison.after.version }}</strong>: {{ comparison.change_count }} changed field{{ comparison.change_count|pluralize }}.</div>
+  {% for change in comparison.summary_changes %}
+  <div class="card mb-3"><div class="card-header"><strong>{{ change.field }}</strong></div><div class="card-body"><div class="row g-3"><div class="col-md-6"><div class="text-muted small">Before</div><div class="p-2 bg-danger-subtle rounded">{{ change.before|default:"Empty" }}</div></div><div class="col-md-6"><div class="text-muted small">After</div><div class="p-2 bg-success-subtle rounded">{{ change.after|default:"Empty" }}</div></div></div></div></div>
+  {% endfor %}
+  {% for section in comparison.section_changes %}
+  <div class="card mb-3"><div class="card-header"><h2 class="h5 mb-0">Section {{ section.section }}</h2></div><div class="card-body">
+    {% for change in section.changes %}<h3 class="h6">{{ change.field }}</h3><div class="row g-3 mb-3"><div class="col-md-6"><div class="text-muted small">Before</div><div class="p-2 bg-danger-subtle rounded">{{ change.before|default:"Empty" }}</div></div><div class="col-md-6"><div class="text-muted small">After</div><div class="p-2 bg-success-subtle rounded">{{ change.after|default:"Empty" }}</div></div></div>{% endfor %}
+  </div></div>
+  {% empty %}<div class="alert alert-success">The selected releases have no detected differences.</div>{% endfor %}
+  {% endif %}
+</div>
+{% endblock %}

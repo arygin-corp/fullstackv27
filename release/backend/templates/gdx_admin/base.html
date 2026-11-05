@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta Tags -->
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<title>{% block title %}{{ app_name }}{% endblock %}</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta name="description" content="GDX Admin Portal is a secure, enterprise-grade administration platform for managing GDX applications, users, configurations, and business data through streamlined CRUD operations, governance controls, and scalable workflows.">
+		<meta name="keywords" content="GDX Admin Portal, Enterprise Administration, CRUD Operations, Data Management, Application Management, User Administration, Configuration Management, Business Operations, Data Governance, Enterprise Platform">
+		<meta property="og:title" content="GDX Admin Portal" />
+		<meta property="og:description" content="A centralized enterprise administration platform for managing GDX applications, data, users, and configurations with secure and scalable CRUD operations." />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="GDX Admin Portal" />
+		<meta property="og:title" content="GDX Admin Portal" />
+		<meta property="og:description" content="A centralized enterprise administration platform for managing GDX applications, data, users, and configurations with secure and scalable CRUD operations." />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="GDX Admin Portal" />
+		<meta name="author" content="{{ team_owner_name }}" />
+		<meta name="publisher" content="{{ organization_name }}" />
+		<meta name="organization" content="{{ organization_name }}" />
+		<meta name="copyright" content="{{ organization_name }}" />
+		<!-- Favicon -->
+		<link href="{% static 'gdx_admin/assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
+		<!-- Apple Touch Icon -->
+		<link href="{% static 'gdx_admin/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" sizes="180x180" />
+		<!-- Theme Script js -->
+		<script src="{% static 'gdx_admin/theme/js/theme-script.js' %}?v=light-only"></script>
+		<!-- Bootstrap CSS -->
+		<link href="{% static 'gdx_admin/theme/css/bootstrap.min.css' %}" rel="stylesheet" />
+		<!-- Tabler Icon CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/tabler-icons/tabler-icons.min.css' %}" rel="stylesheet" />
+		<!-- Daterangepikcer CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/daterangepicker/daterangepicker.css' %}" rel="stylesheet" />
+		<!-- Datetimepicker CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/flatpickr/flatpickr.min.css' %}" rel="stylesheet" />
+		<!-- Fontawesome CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/fontawesome/css/fontawesome.min.css' %}" rel="stylesheet" />
+		<link href="{% static 'gdx_admin/theme/plugins/fontawesome/css/all.min.css' %}" rel="stylesheet" />
+		<!-- Tabler Icon CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/tabler-icons/tabler-icons.min.css' %}" rel="stylesheet" />
+		<!-- Simplebar CSS -->
+		<link href="{% static 'gdx_admin/theme/plugins/simplebar/simplebar.min.css' %}" rel="stylesheet" />
+		<!-- Iconsax CSS -->
+		<link href="{% static 'gdx_admin/theme/css/iconsax.css' %}" rel="stylesheet" />
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="{% static 'gdx_admin/theme/plugins/fontawesome/css/all.min.css' %}">
+		<!-- Main CSS -->
+		<link href="{% static 'gdx_admin/theme/css/style.css' %}" rel="stylesheet" /> 
+		<link href="{% static 'gdx_admin/theme/css/notifications.css' %}" rel="stylesheet" /> 
+		<link href="{% static 'gdx_admin/theme/css/operations.css' %}" rel="stylesheet" /> 
+		<link href="{% static 'gdx_admin/theme/css/custom.css' %}?v=responsive" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/builder.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/workflow.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/workflow2.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/template_designer_layout.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.9" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}" rel="stylesheet">
+		{% block extra_css %}
+		{% endblock %}
+	</head>
+	<body>
+		<!-- Begin Wrapper -->
+		<div class="main-wrapper">
+			<!-- Topbar Start --> {% include 'gdx_admin/partials/header.html' %}
+			<!-- Topbar End -->
+			<!-- Sidenav Menu Start --> {% include 'gdx_admin/partials/sidebar.html' %}
+			<!-- Sidenav Menu End -->
+			<!-- Horizontal Menu --> {% include 'gdx_admin/partials/horizontal_menu.html' %}
+			<!-- /Horizontal Menu -->
+			<!-- ========================
+			Start Page Content
+			========================= -->
+			<div class="page-wrapper">
+				{% include 'gdx_admin/partials/messages.html' %}
+				<!-- Start Content -->
+				<div class="content">
+					{% block page_header %}{% include "gdx_admin/partials/page_hero.html" %}{% endblock %}
+					{% block content %}{% endblock %}
+				</div>
+				<!-- End Content -->
+				<!-- Start Footer --> {% include 'gdx_admin/partials/footer.html' %}
+				<!-- End Footer -->
+			</div>
+			<!-- ========================
+			End Page Content
+			========================= -->
+		</div>
+		<!-- End Wrapper -->
+		<!-- Bootstrap Core JS -->
+		<script src="{% static 'gdx_admin/theme/js/bootstrap.bundle.min.js' %}"></script>
+		<!-- Daterangepikcer JS -->
+		<script src="{% static 'gdx_admin/theme/plugins/flatpickr/flatpickr.min.js' %}"></script>
+		<!-- Simplebar JS -->
+		<script src="{% static 'gdx_admin/theme/plugins/simplebar/simplebar.min.js' %}"></script>
+		<!-- Chart JS -->
+		<script src="{% static 'gdx_admin/theme/plugins/apexchart/apexcharts.min.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/plugins/apexchart/chart-data.js' %}"></script>
+		<!-- Chart JS -->
+		<script src="{% static 'gdx_admin/theme/plugins/chartjs/chart.min.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/plugins/chartjs/chart-data.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/notifications.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/operations.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/builder.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/workflow.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/workflow2.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/template_designer.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/template_designer_layout.js' %}"></script>
+		<script src="{% static 'gdx_admin/theme/js/integration_test.js' %}"></script>
+		<!-- Custom JS -->
+		<script src="{% static 'gdx_admin/theme/js/script.js' %}"></script> {% block extra_js %}{% endblock %}
+	</body>
+</html>

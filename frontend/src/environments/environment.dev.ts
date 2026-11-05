@@ -3,8 +3,8 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
 // PRODUCTION DEVELOPMENT ENVIRONMENT
 export const environment = {
   // version: require("../../package.json").version,
-  version: '26.27.10',
-  timestamp: '10/27/2026, 143920 CT',
+  version: '26.11.05',
+  timestamp: '11/05/2026, 103829 CT',
   engineer: 'Giovanni Austin',
   buildId: 'dev-build-1',
   production: true,

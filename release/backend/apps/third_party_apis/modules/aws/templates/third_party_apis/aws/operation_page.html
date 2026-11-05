@@ -1,0 +1,177 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+
+{% block title %}AWS {{ page_label }}{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.8">
+{% endblock %}
+
+{% block content %}
+<main class="module-page">
+    {% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title=page_heading hero_description=page_subheading %}
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_nav.html" %}
+
+    {% if page_key == "dashboard" or page_key == "analytics" %}
+    <section class="row g-3 mb-4">
+        <div class="col-6 col-xl-3"><article class="card h-100"><div class="card-body"><span class="text-muted small">Environments</span><strong class="d-block fs-3">{{ environments|length }}</strong></div></article></div>
+        <div class="col-6 col-xl-3"><article class="card h-100"><div class="card-body"><span class="text-muted small">Configured resources</span><strong class="d-block fs-3">{{ configured_resources }}</strong></div></article></div>
+        <div class="col-6 col-xl-3"><article class="card h-100"><div class="card-body"><span class="text-muted small">Enabled resources</span><strong class="d-block fs-3">{{ enabled_resources }}</strong></div></article></div>
+        <div class="col-6 col-xl-3"><article class="card h-100"><div class="card-body"><span class="text-muted small">Aligned resource types</span><strong class="d-block fs-3">{{ aligned_count }}/{{ resource_type_count }}</strong></div></article></div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "dashboard" or page_key == "health" or page_key == "report" %}
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">Environments</h2></div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Environment</th><th>Account</th><th>Region</th><th>Role</th><th>Resources</th><th>Setup</th></tr></thead>
+                <tbody>
+                    {% for row in health_rows %}
+                    <tr>
+                        <td>{{ row.environment.get_environment_display }}{% if not row.environment.enabled %} <span class="text-muted">disabled</span>{% endif %}</td>
+                        <td>{{ row.environment.account_id|default:"Not set" }}</td>
+                        <td>{{ row.environment.region|default:"Not set" }}</td>
+                        <td>{% if row.role_configured %}Configured{% else %}Not set{% endif %}</td>
+                        <td>{{ row.enabled_resource_count }}/{{ row.resource_count }}</td>
+                        <td>{% if row.issues %}{{ row.issues|join:", " }}{% else %}Ready{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "analytics" %}
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">Resources by type</h2></div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Resource</th><th>Category</th><th>Environments configured</th><th>Environments enabled</th><th>Parity</th></tr></thead>
+                <tbody>
+                    {% for row in analytics_rows %}
+                    <tr>
+                        <td>{{ row.label }}</td>
+                        <td>{{ row.category }}</td>
+                        <td>{{ row.environments_configured }}</td>
+                        <td>{{ row.environments_enabled }}</td>
+                        <td>{% if row.aligned %}Aligned{% else %}Partial{% endif %}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5" class="text-center text-muted py-4">No AWS resources have been configured yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "health" or page_key == "dashboard" %}
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">Service adapters</h2></div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Service</th><th>Health</th><th>Operations</th></tr></thead>
+                <tbody>
+                    {% for adapter in adapters %}
+                    <tr>
+                        <td>{{ adapter.key }}</td>
+                        <td>{{ adapter.status }} — {{ adapter.message }}</td>
+                        <td>{{ adapter.operations|join:", "|default:"None declared" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">Resource types without an adapter</h2></div>
+        <div class="card-body">
+            {% if uncovered %}
+            <ul class="mb-0">
+                {% for item in uncovered %}<li>{{ item.label }} <span class="text-muted">({{ item.category }})</span></li>{% endfor %}
+            </ul>
+            {% else %}
+            <p class="mb-0 text-muted">Every catalog resource type has a registered adapter.</p>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "report" %}
+    <section class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2 class="h5 mb-0">Environment parity</h2>
+            <a href="{% url 'third_party_api_aws:parity' %}">Open parity</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Resource</th>{% for environment in environments %}<th>{{ environment.get_environment_display }}</th>{% endfor %}</tr></thead>
+                <tbody>
+                    {% for row in matrix %}
+                    <tr>
+                        <th>{{ row.label }}</th>
+                        {% for cell in row.cells %}
+                        <td>{% if cell.status == "ok" %}OK{% elif cell.status == "attention" %}!!{% else %}--{% endif %}<span class="d-block small text-muted">{{ cell.explanation }}</span></td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "audit" or page_key == "activity" or page_key == "dashboard" %}
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">{% if page_key == "audit" %}Catalog audit{% else %}Recent catalog activity{% endif %}</h2></div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Updated</th><th>Kind</th><th>Name</th><th>Detail</th><th>State</th></tr></thead>
+                <tbody>
+                    {% for event in changes %}
+                    <tr>
+                        <td>{{ event.updated_at }}</td>
+                        <td>{{ event.kind }}</td>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.detail }}</td>
+                        <td>{% if event.enabled %}Enabled{% else %}Disabled{% endif %}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5" class="text-center text-muted py-4">No catalog changes have been recorded yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "audit" %}
+    <section class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">Integration audit log</h2></div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead><tr><th>Time</th><th>Action</th><th>Result</th><th>Message</th></tr></thead>
+                <tbody>
+                    {% for log in audit_logs %}
+                    <tr>
+                        <td>{{ log.created_at }}</td>
+                        <td>{{ log.action }}</td>
+                        <td>{{ log.result }}</td>
+                        <td>{{ log.message|default:"—" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="4" class="text-center text-muted py-4">No integration audit events have been recorded for AWS.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    <p class="mb-0"><a href="{% url 'third_party_api_aws:index' %}">Open the AWS resource catalog</a></p>
+</main>
+{% endblock %}

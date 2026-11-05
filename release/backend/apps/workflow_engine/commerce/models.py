@@ -1,0 +1,6 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class StoreProduct(TimeStampedModel):product_type=models.CharField(max_length=40);external_key=models.CharField(max_length=180);name=models.CharField(max_length=180);publisher=models.CharField(max_length=180);version=models.CharField(max_length=40);price_model=models.CharField(max_length=40,default='free');price=models.DecimalField(max_digits=12,decimal_places=2,default=0);currency=models.CharField(max_length=3,default='USD');status=models.CharField(max_length=30,default='draft');metadata=models.JSONField(default=dict)
+class StoreEntitlement(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);product=models.ForeignKey(StoreProduct,on_delete=models.PROTECT);status=models.CharField(max_length=30,default='active');starts_at=models.DateTimeField();ends_at=models.DateTimeField(null=True,blank=True);limits=models.JSONField(default=dict)
+class StoreUsage(models.Model):entitlement=models.ForeignKey(StoreEntitlement,related_name='usage',on_delete=models.CASCADE);metric=models.CharField(max_length=100);quantity=models.DecimalField(max_digits=18,decimal_places=4);recorded_at=models.DateTimeField(auto_now_add=True)

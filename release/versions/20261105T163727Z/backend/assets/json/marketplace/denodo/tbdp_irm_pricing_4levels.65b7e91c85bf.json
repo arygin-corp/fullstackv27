@@ -1,0 +1,1295 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "cal_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "dest_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "exfact"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "final_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "intro_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "option_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "raw_plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec200"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_opt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_std"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_std_alpha"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_std_num"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "cal_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "destination_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "final_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "intro_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "option_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "option_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "raw_plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec200"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_opt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_std"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_std_alpha"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_std_num"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "accy_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "accy_name"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "dest_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "discount"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "exfact"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "final_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "fob"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "intro_flg"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "opt_dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "opt_dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "opt_fob"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "opt_msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "raw_plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "ircm_ing",
+      "elementname": "pricing_c_table",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "car_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "dealer_margin_effective_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "dealer_margin_expiry_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "dealer_margin_type"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "fio_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "model_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "ppo_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dealer_allowance",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "brand_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "brand_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dest_process_handling_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dph_dtl_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dph_dtl_exp_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "model_year_no"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "party_role_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "product_group_cd"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "shipping_cls_product_group_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "brand_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "brand_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_year_no"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "product_group_id"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "product_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "cal_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "dest_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "exfact"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "option_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "spec200"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_opt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "spec_std"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_a_table",
+      "column_name": "trn_create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "cal_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "destination_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "option_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "option_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "spec200"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_description"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_opt"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "spec_std"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_b_table",
+      "column_name": "trn_create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "accy_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "accy_name"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "dest_country"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "discount"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "dist_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "exfact"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "fob"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "katashiki_code"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "master_work"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "package_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "production_month"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "raw_plant_abbr"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "rpt_version"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "side_down_flag"
+    },
+    {
+      "userrolename": "tbdp-irm-pricing-4levels",
+      "dbname": "pricing_trn",
+      "elementname": "pricing_c_table",
+      "column_name": "trn_create_ts"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-irm-pricing-4levels%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

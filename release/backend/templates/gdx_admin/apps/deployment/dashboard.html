@@ -1,0 +1,70 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment Dashboard{% endblock %}
+{% block page_header %}{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Dashboard" hero_description="Start a Python build, a frontend build, or both. Configuration stays in Settings." hero_metric_label="Succeeded" hero_metric_value=analytics.succeeded hero_metric_caption="Finished builds" hero_icon="↑" %}
+<div class="deploy-grid">
+    <article class="deploy-metric"><span>Running</span><strong>{{ analytics.running }}</strong></article>
+    <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.succeeded }}</strong></article>
+    <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.failed }}</strong></article>
+    <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.total }}</strong></article>
+</div>
+<section class="deploy-build-layout">
+<section class="deploy-panel">
+    <h2>Start a build</h2>
+    <p>{{ deployment.message }}</p>
+    {% if can_build %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="deploy-field">
+            <label for="build-environment">Environment</label>
+            <select class="form-select" id="build-environment" name="environment">
+                {% for value, label in environments %}
+                <option value="{{ value }}"{% if value == config.default_environment %} selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            <p id="build-bucket" style="margin:8px 0 0;color:#64758b"></p>
+        </div>
+        <div class="deploy-choices">
+            {% if config.python_enabled %}<button class="deploy-choice" type="submit" name="target" value="backend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Backend only</strong><span>Check Django and collect static files.</span></button>{% endif %}
+            {% if config.frontend_enabled %}<button class="deploy-choice" type="submit" name="target" value="frontend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Frontend only</strong><span>Build the Angular application.</span></button>{% endif %}
+            {% if config.combined_enabled %}<button class="deploy-choice" type="submit" name="target" value="all"{% if deployment.state == "running" %} disabled{% endif %}><strong>Both</strong><span>Build Python, then the frontend.</span></button>{% endif %}
+        </div>
+    </form>
+    {% else %}
+    <p>Only a SuperAdmin can start a build.</p>
+    {% endif %}
+</section>
+<aside class="deploy-panel deploy-timeline-col">
+    <h2>Build timeline</h2>
+    {% include "gdx_admin/apps/deployment/_timeline.html" %}
+    {% if not steps %}<p>No build steps yet.</p>{% endif %}
+</aside>
+</section>
+{% if deployment.state == "running" %}<script>setTimeout(function () { window.location.reload(); }, 4000);</script>{% endif %}
+{{ config.frontend_buckets|json_script:"frontend-buckets" }}
+<script>
+(function () {
+    var select = document.getElementById("build-environment");
+    var note = document.getElementById("build-bucket");
+    var data = document.getElementById("frontend-buckets");
+    if (!select || !note || !data) return;
+    var buckets = JSON.parse(data.textContent);
+    function show() {
+        if (select.value === "local") {
+            note.textContent = "Local builds stay on this machine.";
+            return;
+        }
+        note.textContent = buckets[select.value]
+            ? "Angular files upload to " + buckets[select.value] + "."
+            : "Add the S3 bucket for this environment in Deployment settings.";
+    }
+    select.addEventListener("change", show);
+    show();
+})();
+</script>
+</main>
+{% endblock %}

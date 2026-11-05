@@ -1,0 +1,2783 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "bus_enty_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "buyer_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "buyer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "duns_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "inc_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "namc_lgl_entity_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "spclst_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "spclst_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "sup_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "mdw_ing",
+      "elementname": "dim_supplier_contact",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "act_role_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "act_role_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "duns_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "eff_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "expr_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "src_key_tema_party_act_role"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "sup_sid"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_ref_trn",
+      "elementname": "supplier_dim",
+      "column_name": "web_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "ap_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "ap_vendor_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_create_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_curr_ind"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_load_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_status_ind"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_update_by_program_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "dm_update_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "effective_end_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "effective_start_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "hds_party_role_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "set_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "tpna_supplier_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "tpna_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "tpna_vendor_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "parts_vendor_partner_trn_ext",
+      "elementname": "part_vendor_d",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "acctg_system_customer_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "address1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "address2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "brandcd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "customer_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "dealer_classcode"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "district_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "gl_customer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "last_in_chain_dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "last_in_chain_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "last_in_chain_district_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "new_brandcd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "phone"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "regabbr"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "region_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "regname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "regname_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "regno"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "regtype"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "set_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_customer",
+      "column_name": "zipcode"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "ap_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "ap_vendor_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "ap_vndr_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "dm_curr_ind"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "tpna_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "tpna_vendor_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "tpna_vndr_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_ing",
+      "elementname": "acctg_vendor",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "account_class_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "acctg_system_customer_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_addr_1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_addr_2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_addr_3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_addr_4_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_city_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_country_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_county_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_geo_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "bill_to_state_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "customer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "customer_party_role_type_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dealer_classcode"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dealer_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "district_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_create_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_curr_ind"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_load_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_status_ind"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_update_by_program_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "dm_update_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "effective_end_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "effective_start_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "gl_customer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "hds_party_role_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "last_in_chain_dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "last_in_chain_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "last_in_chain_district_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "last_in_chain_napo_dlr_grp_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "napo_dlr_grp_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "napo_dlr_grp_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "new_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "region_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "set_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_addr_1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_addr_2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_addr_3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_addr_4_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_city_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_country_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_county_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_geo_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "pasa_parts_vendor_partner_ing_ext",
+      "elementname": "acctg_customer_d",
+      "column_name": "ship_to_state_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "ractive_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "radate"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rauser_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcntry_of_org"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcomments_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcomments_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_10"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_4"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_5"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_6"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_7"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_8"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rcrrcy_cd_for_namc_cd_9"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rduns_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "ree_cnt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "reff_stop_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_addr_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_addr_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_addr_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_city"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_cntry"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_ct_1stname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_ct_fname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_ct_gndr_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_ct_title_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_email_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_state"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "renv_zip"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rexp_del_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rexp_del_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rexp_qlty_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rexp_qlty_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rfob_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rfrght_terms_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rgst_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rhead_office"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "riso_14000_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_10"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_4"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_5"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_6"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_7"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_8"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rnamc_cd_9"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rno_of_ee_dedicated_tmc"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "roe_del_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "roe_del_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "roe_qlty_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "roe_qlty_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpat_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_addr_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_addr_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_addr_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_city"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_cntry"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_ct_1stname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_ct_fname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_ct_gndr_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_ct_title_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_email_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_state"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rpc_zip"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_addr_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_addr_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_addr_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_city"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_cntry"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_ct_1stname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_ct_fname"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_ct_gndr_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_ct_title_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_email_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_state"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rplant_zip"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_1"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_10"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_11"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_12"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_13"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_14"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_15"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_16"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_17"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_18"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_19"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_20"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_3"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_4"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_5"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_6"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_7"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_8"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproj_cd_9"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproto_del_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproto_del_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproto_qlty_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rproto_qlty_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rref_supp_cd4"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rref_supp_seq_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rshift_cnt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rshipping_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_interface_mthd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_name_2"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_short_name"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsupp_web_addr"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsvc_del_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsvc_del_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsvc_qlty_act_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rsvc_qlty_tgt_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rtmc_ttl_sls"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rtoolg_auth_ltr_sent_cat"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "rudate"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "ruuser_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "cms005a",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "corp_seq_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "grp_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "sup_4_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "sup_corp_grp_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "tmc_ttl_sls_corp_base_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_grp_mstr",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "abm_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "active_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_ct_first_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_ct_gndr_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_ct_last_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_ct_title_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "af_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "app_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "app_tgt_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "apr_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "apr_hist_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "apr_res_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "auto_pct"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "bama_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "biggest_cust_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "business_type_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "corp_seq_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "cost_oa_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_10_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_1_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_2_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_3_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_4_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_5_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_6_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_7_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_8_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_9_cd_abolition_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "crncy_conversion_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_10_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_1_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_2_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_3_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_4_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_5_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_6_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_7_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_8_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "currency_9_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "del_oa_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "dir_supp_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "dsgn_in_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "eff_stop_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "eng_cap_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_ct_first_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_ct_gndr_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_ct_last_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_ct_title_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "exec_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "fob_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "frght_terms_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "fse_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "incorp_dt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "jv_partner_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "maj_pct_women_owned_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "mgt_oa_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "minority_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "minority_type_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "mkt_pct"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "oa_gd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "oe_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "ownership_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "ownership_pct"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "owsh_type_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "patents_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "prod_type_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "prtnsh_agt_duration_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "prtnsh_agt_main_prtn_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "prtnsh_agt_type_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "psm_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rddp_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_ct_first_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_ct_gndr_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_ct_last_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_ct_title_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "rmt_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "sqam_training_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "sup_4_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_corp_short_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_educ_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_interface_mthd_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_mem_assoc_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_mem_assoc_div_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_mem_assoc_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_1_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_2_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_parent_3_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "supp_web_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tax_status_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tech_agt_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "term_cond_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tmc_drw_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tmc_exp_dollars_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tmc_ttl_sls_amt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "tps_supp_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "vv_supp_flg"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_addr_line1_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_addr_line2_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_addr_line3_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_city_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_cntry_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_ct_first_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_ct_gndr_cat_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_ct_last_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_ct_title_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_email_addr_txt"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_ext_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_fax_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_phone_no"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "wrnty_state_nm"
+    },
+    {
+      "userrolename": "tbdp-party-vendor-partner",
+      "dbname": "supplier_trn",
+      "elementname": "ods_purch_corp_mstr",
+      "column_name": "ww_ttl_sls_amt"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-party-vendor-partner%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

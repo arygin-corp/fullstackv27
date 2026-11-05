@@ -1,0 +1,1103 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "battery_ser_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "battery_sup_ocv"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "battery_sup_plant_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "battery_sup_production_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "battery_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "bin_data_value"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "bmis_dwg_soc"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "claim_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "claim_type_cd"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "clarios_dwg_soc"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "clarios_partnum"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "dealer_city_name"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "engine_spec_name"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "engine_spec_short_description"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "engine_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "grade_spec_long_description"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "last_built_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "last_retail_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "mfg_dwg_soc"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "mfg_final_ocv"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "mfg_final_soc"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "mfg_lineoff_timestamp"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "months_in_service"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "opcode"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "part_desc_list"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "part_no_list"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "production_sales_gap_in_days"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "scrap_vehicle"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_battery_temp_f"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_battery_test_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_battery_test_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_dealer_id"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_tool_serial_no"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_tool_used"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "ser_tool_version"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "series_name"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_amp_hour"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_cca"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_charge_time"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_initial_voltage"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_rated_cca"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "service_voltage"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "sold_to_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "veh_condition"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "veh_milage_repair"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "veh_repair_dt"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_lifecycle",
+      "column_name": "voltage_data_item_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "active_flag"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "bar_code_creation_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "bar_code_update_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "barcode_data_descr"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "barcode_data_item_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "barcode_data_value"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "battery_sup_ocv"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "battery_sup_plant_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "battery_sup_production_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "bin_data_item_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "bin_data_value"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "body_num"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "final_ocv"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "final_soc"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "lineoff_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "pilot_vehicle"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "scrap_vehicle"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "serial_creation_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "serial_update_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "vehicle_id"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "voltage_creation_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "voltage_data_item_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "voltage_data_value"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "battery_sup_icsp",
+      "column_name": "voltage_update_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "circle"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "collectionid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "frequencyid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "frequencyname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "high"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "inspection_result"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "locationid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "locationname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "low"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "measurementid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "measurementname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "moduleid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "modulename"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "nominal"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "pointid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "pointname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "pointvalue"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "shopdescription"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "shopid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "shopname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "statuscode"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "triangle"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "vehicledescription"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "vehiclename"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_results",
+      "column_name": "x"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "shopdescription"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "shopid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "shopname"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "vehicledescription"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "vehiclename"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "enclave_quality_diagnostics_ing_ext",
+      "elementname": "tmcs_summary",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "affiliatecode"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "alternator_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "alternator_test_code"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "amp_hour"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_location"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_serial_number"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_temp"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_test_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_tool_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "battery_units"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "batteryidcapturemethod"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "batteryparameterscode"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "batterytesttime"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "cca"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "charge_time"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "chargemodeduration"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "chargetimeaftertopoff"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "chargetimebeforetopoff"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "conductance_test_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "created_by"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "created_dt"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "extendedchargeduration"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "final_battery_test_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "floatchargeduration"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "initial_voltage"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "initialremainingtime"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "location_id"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "pack_configuration_type"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "pack_number_of_batteries"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "partnumber"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "rated_cca"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "recoverymodeduration"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "report_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "report_dt_ym_prtn"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "reserve_capacity_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "service_date"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "starter_decision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "starter_test_code"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "suppliermfglocation"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "tech_id"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "temp_unit"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "test_code"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "timetodecision"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "transmitted_on"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "updated_by"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "updated_dt"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "vehicle_make"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "vehicle_model"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "vehicle_status"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "vin_capture_method"
+    },
+    {
+      "userrolename": "tbdp-quality-diagnostics",
+      "dbname": "quality_diagnostics_trn_ext",
+      "elementname": "battery_monitor_data",
+      "column_name": "voltage"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-quality-diagnostics%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

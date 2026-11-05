@@ -1,0 +1,201 @@
+{% load static %}
+<style>
+.hp-header-logo a {
+  display: flex;
+  align-items: center;
+}
+.hp-logo-apify {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+body.collapsed-active .hp-sidebar {
+  width: 80px;
+  max-width: 80px;
+  overflow: visible;
+}
+body.collapsed-active .hp-sidebar .hp-sidebar-header-menu > .row {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center;
+  width: 80px;
+  margin: 12px 0 0 !important;
+}
+body.collapsed-active .hp-sidebar .hp-header-logo,
+body.collapsed-active .hp-sidebar .hp-sidebar-collapse-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.collapsed-active .hp-sidebar-visible.hp-logo-apify {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+body.collapsed-active .hp-sidebar .hp-sidebar-header-menu > ul > li > ul li a {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  justify-content: center !important;
+}
+body.collapsed-active .hp-sidebar-footer a {
+  justify-content: center;
+}
+body.collapsed-active .hp-sidebar-footer .me-12 {
+  margin-right: 0 !important;
+}
+.hp-sidebar-account .dropdown-menu {
+  min-width: 240px;
+}
+body.collapsed-active .hp-sidebar-account .dropdown-menu {
+  left: 72px !important;
+  right: auto !important;
+  bottom: 8px !important;
+}
+body.collapsed-active .hp-sidebar .menu-title {
+  overflow: visible;
+  text-overflow: clip;
+  letter-spacing: 0.04em;
+}
+</style>
+<aside class="hp-sidebar" aria-label="Primary navigation">
+	<div class="hp-sidebar-container">
+		<div class="hp-sidebar-header-menu">
+			<div class="row align-items-center g-0">
+				<div class="col">
+					<div class="hp-header-logo d-flex align-items-center">
+						<a href="{% url 'apify_admin:dashboard' %}" class="position-relative">
+							<img class="hp-logo hp-logo-apify hp-sidebar-visible" src="{% static 'images/brands/modules/apify.png' %}?v=icon-light" alt="Apify">
+							<img class="hp-logo hp-logo-apify hp-sidebar-hidden" src="{% static 'apify_admin/theme/img/logo/logo.png' %}" alt="Apify">
+						</a>
+						<span class="hp-sidebar-hidden hp-caption fw-normal hp-text-color-primary-1 ms-8">{{ app_version_short }}</span>
+					</div>
+					<!-- <a class="hp-header-logo d-flex align-items-center text-decoration-none" href="{% url 'apify_admin:dashboard' %}" aria-label="Apify Admin home"><span class="hp-logo d-inline-flex align-items-center justify-content-center fw-bold hp-text-color-black-100">APIFY</span></a> -->
+				</div>
+				<div class="col-auto">
+					<button class="btn btn-text hp-sidebar-collapse-button" type="button" aria-label="Collapse sidebar">
+						<i class="ri-menu-fold-line"></i>
+					</button>
+				</div>
+			</div>
+			<ul class="p-0">
+				<li>
+					<div class="menu-title">Platform</div>
+					<ul class="p-0">
+						<li>
+							<a class="{% if active_nav == 'dashboard' %}active{% endif %}" href="{% url 'apify_admin:dashboard' %}">
+								<span>
+									<i class="ri-dashboard-line"></i>
+									<span>Dashboard</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div class="menu-title"><span class="hp-sidebar-hidden">API management</span><span class="hp-sidebar-visible">APIM</span></div>
+					<ul class="p-0">
+						<li>
+							<a class="{% if active_nav == 'apis' %}active{% endif %}" href="{% url 'apify_admin:api_catalog' %}">
+								<span>
+									<i class="ri-code-box-line"></i>
+									<span>API Catalog</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'products' %}active{% endif %}" href="{% url 'apify_admin:products' %}">
+								<span>
+									<i class="ri-stack-line"></i>
+									<span>API Products</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'policies' %}active{% endif %}" href="{% url 'apify_admin:policies' %}">
+								<span>
+									<i class="ri-shield-check-line"></i>
+									<span>Policies</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div class="menu-title"><span class="hp-sidebar-hidden">Consumers</span><span class="hp-sidebar-visible">Users</span></div>
+					<ul class="p-0">
+						<li>
+							<a class="{% if active_nav == 'applications' %}active{% endif %}" href="{% url 'apify_admin:applications' %}">
+								<span>
+									<i class="ri-apps-line"></i>
+									<span>Applications</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'credentials' %}active{% endif %}" href="{% url 'apify_admin:credentials' %}">
+								<span>
+									<i class="ri-key-2-line"></i>
+									<span>Credentials</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'requests' %}active{% endif %}" href="{% url 'apify_admin:access_requests' %}">
+								<span>
+									<i class="ri-file-list-3-line"></i>
+									<span>Access Requests</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'subscriptions' %}active{% endif %}" href="{% url 'apify_admin:subscriptions' %}">
+								<span>
+									<i class="ri-user-follow-line"></i>
+									<span>Subscriptions</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div class="menu-title"><span class="hp-sidebar-hidden">Operations</span><span class="hp-sidebar-visible">OPS</span></div>
+					<ul class="p-0">
+						<li>
+							<a class="{% if active_nav == 'analytics' %}active{% endif %}" href="{% url 'apify_admin:analytics' %}">
+								<span>
+									<i class="ri-line-chart-line"></i>
+									<span>Analytics</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="{% if active_nav == 'audit' %}active{% endif %}" href="{% url 'apify_admin:audit' %}">
+								<span>
+									<i class="ri-history-line"></i>
+									<span>Audit</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="hp-sidebar-footer pt-16">
+			<div class="dropdown dropup hp-sidebar-account">
+				<button class="btn btn-text d-flex align-items-center p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
+					<span class="avatar-item bg-primary-4 text-primary-1 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:40px;height:40px">{{ request.user.get_username|slice:':1'|upper }}</span>
+				</button>
+				{% include 'apify_admin/includes/account_menu.html' %}
+			</div>
+		</div>
+	</div>
+</aside>

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <div><h3 class="h5 mb-1"><i class="ti ti-forms me-2 text-primary"></i>Form directory</h3><p class="text-muted mb-0">Published and draft form definitions.</p></div>
+    <span class="badge bg-light text-dark border">{% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ forms|length }}{% endif %} forms</span>
+  </div>
+  <div class="card-body p-0">
+    {% if forms %}<div class="table-responsive"><table class="table table-hover align-middle mb-0">
+      <thead><tr><th>Name</th><th>Slug</th><th>Version</th><th>State</th><th class="text-end">Actions</th></tr></thead>
+      <tbody>{% for form in forms %}<tr>
+        <td><div class="d-flex align-items-center gap-2 min-w-0"><span class="avatar avatar-sm bg-primary-subtle text-primary rounded-circle flex-shrink-0"><i class="ti ti-form-recognizer"></i></span><div class="min-w-0"><a class="fw-semibold text-break" href="{% url 'dar-admin:form-detail' form.pk %}">{{ form.name }}</a><small class="d-block text-muted">Form definition</small></div></div></td>
+        <td><code class="text-break">{{ form.slug }}</code></td>
+        <td>{{ form.version }}</td>
+        <td>{% include "gdx_admin/apps/dar/forms/partials/_form_state_badge.html" with form=form %}</td>
+        <td><div class="d-flex justify-content-end flex-wrap gap-1"><a class="btn btn-sm btn-outline-primary" href="{% url 'dar-admin:form-detail' form.pk %}"><i class="ti ti-eye me-1"></i>Details</a><a class="btn btn-sm btn-outline-secondary" href="{% url 'dar-admin:form-preview' form.pk %}"><i class="ti ti-device-desktop me-1"></i>Preview</a></div></td>
+      </tr>{% endfor %}</tbody>
+    </table></div>{% else %}{% include "gdx_admin/apps/dar/forms/partials/_form_empty_state.html" %}{% endif %}
+  </div>
+</div>

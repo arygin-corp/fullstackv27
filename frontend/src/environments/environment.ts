@@ -5,10 +5,10 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
 
 // LOCAL ENVIRONMENT W/ ME
 export const environment = {
-  version: '26.27.10',
-  timestamp: '10/27/2026, 143920 CT',
+  version: '26.11.05',
+  timestamp: '11/05/2026, 103829 CT',
   engineer: 'Giovanni Austin',
-  buildId: 'local-build-1',
+  buildId: 'local-build-7',
   production: false,
   hotjar: '1935085',
   environmentName: 'Local',

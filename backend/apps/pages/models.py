@@ -32,8 +32,8 @@ class Page(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
     class Meta: constraints=[models.UniqueConstraint(fields=("slug","locale"),name="pages_slug_locale_unique")]
     def __str__(self): return self.title
-    def soft_delete(self):
-        self.is_deleted=True;self.is_archived=True;self.deleted_at=timezone.now();self.purge_at=self.deleted_at+timedelta(days=30);self.save()
+    def soft_delete(self, *args, **kwargs):
+        self.is_deleted=True;self.is_archived=True;self.deleted_at=timezone.now();self.purge_at=self.deleted_at+timedelta(days=7);self.save()
     def restore(self):
         if not self.is_deleted or not self.purge_at or self.purge_at<=timezone.now(): raise ValidationError("Page cannot be restored.")
         self.is_deleted=False;self.is_archived=False;self.deleted_at=None;self.purge_at=None;self.save()

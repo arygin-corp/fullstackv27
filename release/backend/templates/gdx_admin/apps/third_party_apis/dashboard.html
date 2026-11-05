@@ -1,0 +1,196 @@
+{% extends "gdx_admin/base.html" %}
+{% block page_header %}{% endblock %}
+{% load static %}
+
+{% block title %}Master Module Dashboard{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18.3">
+{% endblock %}
+
+{% block content %}
+<main class="module-page module-master-dashboard">
+
+    <section class="module-hero module-master-hero">
+        <div class="module-hero__content">
+            <span class="module-hero__kicker">MASTER INTEGRATION OPERATIONS</span>
+            <div class="module-hero__title-row">
+                <span class="module-hero__icon" aria-hidden="true">▦</span>
+                <div>
+                    <h1>Master Module Dashboard</h1>
+                    <p>
+                        Monitor inventory, runtime activity, readiness, audit outcomes,
+                        and operational health across all third-party API modules.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="module-hero__metric">
+            <span>Operational view</span>
+            <strong>{{ enabled_count }}/{{ module_count }}</strong>
+            <small>modules currently enabled</small>
+        </div>
+    </section>
+
+    <section class="module-dashboard-heading-row">
+        <div>
+            <p class="module-breadcrumb">Modules &nbsp;»&nbsp; Dashboard</p>
+            <h2>Integration operations command center</h2>
+            <p>One workspace for every registered module and its recorded activity.</p>
+        </div>
+        <div class="module-dashboard-actions">
+            <a class="integration-button" href="{% url 'third_party_api_pages:integration_catalog' %}">Module Catalog</a>
+            <a class="integration-button" href="{% url 'third_party_api_ops:analytics' %}">Analytics</a>
+            <a class="integration-button integration-button--primary" href="{% url 'third_party_api_pages:integration_test_dashboard' %}">Readiness Center</a>
+        </div>
+    </section>
+
+    <section class="dashboard-kpi-grid" aria-label="Executive integration metrics">
+        <article class="dashboard-kpi-card">
+            <div><span>Registered Modules</span><strong>{{ module_count }}</strong><small>All synchronized integrations</small></div>
+            <span class="dashboard-kpi-icon tone-primary" aria-hidden="true">▦</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Enabled Modules</span><strong>{{ enabled_count }}</strong><small>Available for runtime use</small></div>
+            <span class="dashboard-kpi-icon tone-success" aria-hidden="true">✓</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Recorded Requests</span><strong>{{ request_count }}</strong><small>Persisted module request activity</small></div>
+            <span class="dashboard-kpi-icon tone-cyan" aria-hidden="true">⌁</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Request Failures</span><strong>{{ metric_failure_count }}</strong><small>Failures recorded in daily metrics</small></div>
+            <span class="dashboard-kpi-icon tone-danger" aria-hidden="true">!</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Ready</span><strong>{{ ready_count }}</strong><small>Latest readiness result: Ready</small></div>
+            <span class="dashboard-kpi-icon tone-success" aria-hidden="true">✓</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Ready with Warnings</span><strong>{{ readiness_warning_count }}</strong><small>Readiness checks need attention</small></div>
+            <span class="dashboard-kpi-icon tone-warning" aria-hidden="true">△</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Not Ready</span><strong>{{ not_ready_count }}</strong><small>Latest readiness result failed</small></div>
+            <span class="dashboard-kpi-icon tone-danger" aria-hidden="true">!</span>
+        </article>
+        <article class="dashboard-kpi-card">
+            <div><span>Never Tested</span><strong>{{ never_tested_count }}</strong><small>No readiness run recorded</small></div>
+            <span class="dashboard-kpi-icon tone-muted" aria-hidden="true">○</span>
+        </article>
+    </section>
+
+    <section class="dashboard-panel-grid">
+        <article class="dashboard-panel-card">
+            <header>
+                <div><h2>Module Activity</h2><p>Recorded outcomes across every integration.</p></div>
+                <a class="integration-button" href="{% url 'third_party_api_ops:analytics' %}">View Analytics</a>
+            </header>
+            <div class="dashboard-submetric-grid">
+                <div><span>Successful</span><strong>{{ success_count }}</strong><small>Successful outcomes</small></div>
+                <div><span>Failures</span><strong class="tone-text-danger">{{ metric_failure_count }}</strong><small>Failed outcomes</small></div>
+                <div><span>Warnings</span><strong class="tone-text-warning">{{ metric_warning_count }}</strong><small>Warning outcomes</small></div>
+                <div><span>Total Duration</span><strong>{{ total_duration_ms }}</strong><small>Accumulated milliseconds</small></div>
+            </div>
+        </article>
+
+        <article class="dashboard-panel-card">
+            <header>
+                <div><h2>Readiness Health</h2><p>Latest readiness state across the module portfolio.</p></div>
+                <a class="integration-button" href="{% url 'third_party_api_pages:integration_test_dashboard' %}">Open Tests</a>
+            </header>
+            <div class="dashboard-readiness-cards">
+                <div class="ready"><span>Ready</span><strong>{{ ready_count }}</strong></div>
+                <div class="warning"><span>Warnings</span><strong>{{ readiness_warning_count }}</strong></div>
+                <div class="failed"><span>Not Ready</span><strong>{{ not_ready_count }}</strong></div>
+                <div class="muted"><span>Untested</span><strong>{{ never_tested_count }}</strong></div>
+            </div>
+        </article>
+    </section>
+
+    <section class="module-section-heading dashboard-section-heading">
+        <div><h2>Integration Portfolio</h2><p>Operational state and activity for every synchronized integration.</p></div>
+        <a class="integration-button" href="{% url 'third_party_api_pages:integration_catalog' %}">Open Module Catalog</a>
+    </section>
+
+    <section class="dashboard-module-grid">
+        {% for item in module_rows %}
+        <article class="dashboard-module-card">
+            <header>
+                <div>
+                    <span class="dashboard-module-source">{{ item.record.source_name }}</span>
+                    <h3>{{ item.record.name }}</h3>
+                </div>
+                <span class="module-status {% if item.record.enabled %}module-status--success{% else %}module-status--skipped{% endif %}">
+                    {% if item.record.enabled %}Enabled{% else %}Disabled{% endif %}
+                </span>
+            </header>
+
+            <p>{{ item.record.description }}</p>
+
+            <div class="dashboard-module-metrics">
+                <div><span>Requests</span><strong>{{ item.requests }}</strong></div>
+                <div><span>Failures</span><strong>{{ item.failures }}</strong></div>
+                <div><span>Audit</span><strong>{{ item.audit_count }}</strong></div>
+            </div>
+
+            <div class="dashboard-module-health">
+                <span>Readiness</span>
+                {% if item.latest_status == "ready" %}
+                    <strong class="module-status module-status--success">Ready</strong>
+                {% elif item.latest_status == "ready_with_warnings" %}
+                    <strong class="module-status module-status--warning">Warnings</strong>
+                {% elif item.latest_status == "not_ready" %}
+                    <strong class="module-status module-status--failure">Not Ready</strong>
+                {% elif item.latest_status == "incomplete" %}
+                    <strong class="module-status module-status--skipped">Incomplete</strong>
+                {% else %}
+                    <strong class="module-status module-status--skipped">Not Tested</strong>
+                {% endif %}
+            </div>
+
+            <footer>
+                <a href="{% url 'third_party_api_ops:dashboard' %}">Dashboard</a>
+                <a href="{% url 'third_party_api_ops:analytics' %}">Analytics</a>
+                <a href="{% url 'third_party_api_pages:integration_test' item.record.module_key %}">Readiness</a>
+            </footer>
+        </article>
+        {% empty %}
+            <div class="integration-state">No synchronized modules are available.</div>
+        {% endfor %}
+    </section>
+
+    <section class="dashboard-bottom-grid">
+        <article class="dashboard-panel-card dashboard-panel-card--table">
+            <header><div><h2>Recent Module Activity</h2><p>Latest persisted operational activity across all modules.</p></div><a class="integration-button" href="{% url 'third_party_api_ops:audit_list' %}">Audit History</a></header>
+            <div class="module-table-wrap">
+                <table class="module-table">
+                    <thead><tr><th>Time</th><th>Module</th><th>Action</th><th>Result</th><th>Duration</th></tr></thead>
+                    <tbody>
+                    {% for log in recent_events %}
+                        <tr><td>{{ log.created_at|date:"M d, H:i" }}</td><td>{{ log.module.name }}</td><td>{{ log.get_action_display|default:log.action }}</td><td><span class="module-status module-status--{{ log.result|lower }}">{{ log.get_result_display|default:log.result }}</span></td><td>{% if log.duration_ms != None %}{{ log.duration_ms }} ms{% else %}-{% endif %}</td></tr>
+                    {% empty %}
+                        <tr><td colspan="5" class="module-table__empty">No audit activity has been recorded yet.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="dashboard-panel-card">
+            <header><div><h2>Recent Readiness Runs</h2><p>Latest test result for recently tested modules.</p></div></header>
+            <div class="dashboard-readiness-list">
+            {% for test in recent_tests %}
+                <a href="{% url 'third_party_api_pages:integration_test' test.module.module_key %}">
+                    <div><strong>{{ test.module.name }}</strong><span>{{ test.started_at|date:"M d, Y H:i" }}</span></div>
+                    <span class="module-status {% if test.status == 'ready' %}module-status--success{% elif test.status == 'not_ready' %}module-status--failure{% elif test.status == 'ready_with_warnings' %}module-status--warning{% else %}module-status--skipped{% endif %}">{{ test.status|title }}</span>
+                </a>
+            {% empty %}
+                <div class="integration-state">No readiness runs have been recorded.</div>
+            {% endfor %}
+            </div>
+        </article>
+    </section>
+</main>
+{% endblock %}

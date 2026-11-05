@@ -1,0 +1,107 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "applctn_config",
+      "column_name": "appl_nm"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "applctn_config",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "applctn_config",
+      "column_name": "config_nm"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "acct_cd"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "acct_mth"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "acct_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "acct_yr"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "cretd_by"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "cretd_tmstmp"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "fincl_amt_mtd"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "fincl_amt_ytd"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "lst_updt_by"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "lst_updt_tmstmp"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "prty_role_id"
+    },
+    {
+      "userrolename": "tbdp-dealer-metrics",
+      "dbname": "dealership_trn",
+      "elementname": "dlrshp_fincl_acct",
+      "column_name": "tms_div_cd"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-dealer-metrics%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

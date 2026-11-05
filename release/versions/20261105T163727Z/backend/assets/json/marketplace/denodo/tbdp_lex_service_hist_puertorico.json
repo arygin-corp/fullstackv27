@@ -1,0 +1,737 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_delrpt",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_delrpt",
+      "column_name": "rodel_dlrcd"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_delrpt",
+      "column_name": "rodel_rdte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_delrpt",
+      "column_name": "rodel_ronum"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_delrpt",
+      "column_name": "rodel_vin"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "dlr_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "misc_charges"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "misc_cost_sign"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "op_cds"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "op_seq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "rec_seq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "ro_num"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "serv_tech_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "serv_tech_nm"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "srvc_closed"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_ld",
+      "column_name": "std_op_cd"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "dlr_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "extended_price"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "extended_price_sign"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "op_seq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "part_desc"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "part_num"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "parts_quantity"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "parts_quantity_sign"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "parts_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "parts_unit_price"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "rec_seq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "ro_num"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_pd",
+      "column_name": "srvc_closed"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "body_shop"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "dlr_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "ro_num"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "serv_advsr_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "serv_advsr_nm"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_extended_field_extract_rh",
+      "column_name": "srvc_closed"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "crt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "crt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "crt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rauthno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rauthtyp"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rclaimno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rcondno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rdndte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rlbrcd"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rodate"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtcond"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtfluid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rthours"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtlabor"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtprts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtshop"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "rtsub"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "updt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "updt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "updt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshcond",
+      "column_name": "wrnty_num"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "opcode"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "opcomb"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "opdesc"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "ophours"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "opseq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "optechid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "rid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshoper",
+      "column_name": "rodate"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "crt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "crt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "crt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "nlprtno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "prtprice"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "prtqty"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "rid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "rodate"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "updt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "updt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshpart",
+      "column_name": "updt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "crt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "crt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "crt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "no_days_ro_opn"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rasmid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rdndte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rmileage"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rnotes"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "ro_opn_dte"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rodate"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "updt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "updt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "updt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshro",
+      "column_name": "vvin"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "crt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "crt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "crt_uid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "rid"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "rodate"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "subamt"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "subdesc"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "subinv"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "subseq"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "updt_pgm_id"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "updt_ts"
+    },
+    {
+      "userrolename": "tbdp-lex-service-hist-puertorico",
+      "dbname": "svc_history_lexus_pr_trn_ext",
+      "elementname": "ldpr_lshsubl",
+      "column_name": "updt_uid"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-lex-service-hist-puertorico%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

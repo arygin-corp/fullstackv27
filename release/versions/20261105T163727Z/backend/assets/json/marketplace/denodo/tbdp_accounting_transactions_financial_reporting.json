@@ -1,0 +1,2099 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acct_assign_seq_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acct_assign_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acct_assign_value"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acct_determination"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acct_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "acctg_doc_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "alt_inv_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "alt_inv_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "asset_class"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "assign_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "balance_trans_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "balance_trans_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "base_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "billing_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "business_trans_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "clearing_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "clearing_document"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "cntrlg_valuation_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "co_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "co_valuation_qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "company_cd_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "company_cd_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "consol_trdg_prtnr_comp_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "cost_estimate_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ctrlg_dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "cur_proj_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "depr_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "distrib_channel"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "doc_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "doc_item"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "doc_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "doc_status"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "doc_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "edit_bus_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "external_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "external_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "first_stats_acct_assign_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "fiscal_yr"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "funcl_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "fy_period"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "gl_fiscal_yr"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "gl_line_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "gl_posting_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "gl_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "global_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "incomplete_qty_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "inv_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "inv_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "item_category"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "item_short_txt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ledger_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "mat_price_determ_ctrl"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "mvg_avg_price_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "mvg_avg_price_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "object_class"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "object_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "offset_acct_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "offset_acct_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "operating_concern"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "origin_object_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "original_process_cat"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "original_trans_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "partner_profit_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "partner_project_defin"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "partner_wbs_element"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "po_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "po_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "post_comp_retire_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "posting_dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "posting_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "posting_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "posting_period"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "posting_row"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "price_control_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "price_unit_group_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "price_unit_local_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "profit_analysis_obj_relv_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "profit_center_deriv_src_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "profitability_seg_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "project_defin_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ref_doc"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ref_doc_item_grp"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ref_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ref_org_unit"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ref_po_category"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reference_trans"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reversal_ref_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reversal_ref_org"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reversal_ref_trans"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reversed_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "reversing_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "rptg_bus_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sales_ord_item_val_so_stk"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sales_ord_no_val_so_stk"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sales_order_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sales_order_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sales_region"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_acctg_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_asset_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_asset_subno"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_cost_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_cust_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_division"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_mat_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_origin_group"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_plant_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_sales_org"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_valuation_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sap_valuation_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "scrap_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sdm_ver"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "services_rendered_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ship_to_party"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "sold_matl_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "source_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "source_cost_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "source_gl_acct"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "src_doc_logical_system"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "ssl_item_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "std_price_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "std_price_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "tax_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "timestamp_utc"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "tmna_series"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "total_val_stock_qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "toyota_product_model"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "trading_partner_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "trans_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "transaction_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "translation_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "true_reversal_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "valuation_ts"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "valuation_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "vehicle_spec"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "vendor_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "wbs_element_ext"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "wbs_element_int"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail",
+      "column_name": "zero_bal_sub_trans_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "account_type_koart"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acct_assign_seq_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acct_assign_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acct_assign_value"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acct_determination"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acct_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "acctg_doc_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "alt_inv_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "alt_inv_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "asset_class"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "assign_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "balance_trans_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "balance_trans_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "base_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "billing_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "brand_ww103_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "business_trans_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "chart_accounts_ktopl"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "clearing_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "clearing_document"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "cntrlg_valuation_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "co_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "co_valuation_qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "company_cd_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "company_cd_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "company_ww108_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "consol_trdg_prtnr_comp_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "cost_estimate_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ctrlg_dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "cur_proj_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "depr_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "dest_country_ww110_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "distrib_channel"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "doc_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "doc_item"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "doc_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "doc_status"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "doc_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "edit_bus_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "external_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "external_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "first_stats_acct_assign_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "fiscal_yr"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "fiscal_yr_var_periv"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "fleet_ind_ww118_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "fuel_type_ww112_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "funcl_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "fy_period"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "gl_fiscal_yr"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "gl_line_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "gl_posting_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "gl_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "glaccount_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "global_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "global_curr_rkcur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "incomplete_qty_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "inv_val_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "inv_val_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "invoice_ref_rebzg"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "item_category"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "item_short_txt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ledger_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "mat_price_determ_ctrl"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "mfg_type_ww115_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "model_year_ww106_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "mvg_avg_price_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "mvg_avg_price_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "object_class"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "object_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "offset_acct_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "offset_acct_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "operating_concern"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "order_aufnr"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "origin_object_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "original_process_cat"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "original_trans_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "partner_profit_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "partner_project_defin"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "partner_wbs_element"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "pkg_code_ww111_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "po_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "po_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "post_comp_retire_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "posting_dr_cr_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "posting_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "posting_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "posting_period"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "posting_row"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "price_control_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "price_unit_group_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "price_unit_local_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "profit_analysis_obj_relv_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "profit_center_deriv_src_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "profitability_seg_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "project_defin_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ref_doc"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ref_doc_item_grp"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ref_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ref_org_unit"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ref_po_category"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reference_trans"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reversal_ref_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reversal_ref_org"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reversal_ref_trans"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reversed_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "reversing_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "rptg_bus_trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_model_ww101_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_ord_item_val_so_stk"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_ord_no_val_so_stk"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_order_item_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_order_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sales_region"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_acctg_doc_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_asset_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_asset_subno"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_cost_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_cust_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_division"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_mat_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_origin_group"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_plant_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_sales_org"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_valuation_area"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sap_valuation_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "scrap_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sdm_ver"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "services_rendered_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ship_to_party"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "shipment_category_ww114_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "sold_matl_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "source_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "source_cost_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "source_gl_acct"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "spec_sheet_no_ww102_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "src_doc_logical_system"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "ssl_item_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "std_price_grp_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "std_price_lcl_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "tax_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "timestamp_utc"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "tmna_series"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "total_val_stock_qty"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "toyota_product_model"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "trading_partner_company_cd"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "trans_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "trans_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "transaction_cur_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "translation_dt"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "true_reversal_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "valuation_ts"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "valuation_uom"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "vehicle_name_ww116_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "vehicle_spec"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "vendor_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "vin_ww107_pa"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "wbs_element_ext"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "wbs_element_int"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "accounting_transactions_financial_reporting_trn_ext",
+      "elementname": "sap_universal_jrnl_detail_acdoca",
+      "column_name": "zero_bal_sub_trans_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "amt_in_bal_transaction_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "amt_in_compcode_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "amt_in_transaction_cur"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "asset"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "assignment"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "company_code_currency"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "cost_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "cost_center_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "cross_compcode_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "debit_credit"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "doc_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "doc_type_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "document_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "document_header_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "document_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "gl_acct"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "gl_line_item"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "invoice_reference"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "item"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "ledger"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "order"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "period"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "posting_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "posting_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "profit_center"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "reference"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "short_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "sub_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "supplier"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "supplier_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "text"
+    },
+    {
+      "userrolename": "tbdp-accounting-transactions-financial-reporting",
+      "dbname": "taxcredrpt_acctg_tran_finan_reporting_ing_ext",
+      "elementname": "sap_line_item_spend",
+      "column_name": "transaction_currency"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-accounting-transactions-financial-reporting%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

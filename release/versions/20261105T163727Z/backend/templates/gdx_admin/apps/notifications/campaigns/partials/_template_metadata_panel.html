@@ -1,0 +1,22 @@
+<div class="card mb-4">
+	<div class="card-header">
+		<div>
+			<h3 class="h6 mb-1">
+				<i class="ti ti-settings me-2 text-primary"></i>Template settings
+			</h3>
+			<p class="text-muted small mb-0">Identity, ownership, locale, channels, variables, and lifecycle settings.</p>
+		</div>
+	</div>
+	<div class="card-body admin-form-stack">{{ template_form.as_p }}</div>
+</div>
+<div class="card">
+	<div class="card-header">
+		<div>
+			<h3 class="h6 mb-1">
+				<i class="ti ti-versions me-2 text-info"></i>Initial version
+			</h3>
+			<p class="text-muted small mb-0">Version label and channel-specific content.</p>
+		</div>
+	</div>
+	<div class="card-body admin-form-stack">{{ version_form.as_p }}</div>
+</div>

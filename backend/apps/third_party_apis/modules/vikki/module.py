@@ -5,9 +5,9 @@ from apps.third_party_apis.registry import registry
 class Module(ThirdPartyApiModule):
     key = "vikki"
     display_name = "Vikki"
-    description = "GDX Marketplace RAG chat. Answers are generated from knowledge retrieved for the signed-in user."
-    default_source_name = "GDX Marketplace"
-    owner = "GDX Marketplace"
+    description = "GDX Data Marketplace RAG chat. Answers are generated from knowledge retrieved for the signed-in user."
+    default_source_name = "GDX Data Marketplace"
+    owner = "GDX Data Marketplace"
     icon_path = "images/brands/modules/data-marketplace.png"
     frontend_path = "api/ai/chat/"
     frontend_method = "POST"
@@ -15,7 +15,7 @@ class Module(ThirdPartyApiModule):
     upstream_provider = "AI Knowledge"
     upstream_method = "GET"
     upstream_authentication = "Django authentication"
-    tags = ("Vikki", "GDX Marketplace")
+    tags = ("Vikki", "GDX Data Marketplace")
     capabilities = ("RAG chat", "Learns new questions", "Reuses common answers", "Context", "Feedback")
     endpoints = (
         {

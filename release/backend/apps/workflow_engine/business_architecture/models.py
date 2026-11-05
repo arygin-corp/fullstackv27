@@ -1,0 +1,7 @@
+from django.db import models
+from ..models import TimeStampedModel,WorkflowDefinition
+from ..platform_models import Tenant,Policy,Control,RiskAssessment
+class BusinessCapability(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);key=models.SlugField();parent=models.ForeignKey('self',null=True,blank=True,related_name='children',on_delete=models.CASCADE);description=models.TextField(blank=True);maturity=models.CharField(max_length=30,blank=True)
+class BusinessProcess(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);capability=models.ForeignKey(BusinessCapability,related_name='processes',on_delete=models.CASCADE);name=models.CharField(max_length=180);key=models.SlugField();owner_role=models.CharField(max_length=100);criticality=models.CharField(max_length=30);description=models.TextField(blank=True)
+class ProcessImplementation(TimeStampedModel):process=models.ForeignKey(BusinessProcess,related_name='implementations',on_delete=models.CASCADE);workflow=models.ForeignKey(WorkflowDefinition,on_delete=models.PROTECT);status=models.CharField(max_length=30,default='active');coverage=models.DecimalField(max_digits=5,decimal_places=2,default=100)
+class ArchitectureLink(TimeStampedModel):process=models.ForeignKey(BusinessProcess,related_name='architecture_links',on_delete=models.CASCADE);target_type=models.CharField(max_length=80);target_key=models.CharField(max_length=180);relationship=models.CharField(max_length=80);metadata=models.JSONField(default=dict)

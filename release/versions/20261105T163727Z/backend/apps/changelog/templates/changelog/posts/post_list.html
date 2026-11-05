@@ -1,0 +1,30 @@
+{% extends "changelog/base.html" %}
+{% block title %}Release Notes{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+    <h1 class="h2">Release Notes</h1>
+    {% if perms.changelog.add_post %}<a class="btn btn-primary" href="{% url 'changelog:post-create' %}">New Release</a>{% endif %}
+  </div>
+  <form method="get" class="input-group my-3" role="search">
+    <input class="form-control" type="search" name="q" value="{{ request.GET.q }}" placeholder="Search versions and release content" aria-label="Search releases">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+  </form>
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead><tr><th>Version</th><th>Title</th><th>Release date</th><th>Status</th><th>Scheduled</th><th>Actions</th></tr></thead>
+      <tbody>
+      {% for post in posts %}
+        <tr>
+          <td>{{ post.version }}</td><td>{{ post.title }}</td><td>{{ post.release_date|date:"M d, Y H:i" }}</td>
+          <td><span class="badge text-bg-{% if post.status == 'PUBLISHED' %}success{% elif post.status == 'APPROVED' %}primary{% elif post.status == 'REVIEW' %}warning{% elif post.status == 'ARCHIVED' %}dark{% else %}secondary{% endif %}">{{ post.get_status_display }}</span></td>
+          <td>{{ post.publish_at|date:"M d, Y H:i"|default:"-" }}</td>
+          <td><a class="btn btn-sm btn-outline-primary" href="{% url 'changelog:post-detail' post.pk %}">View</a> {% if perms.changelog.change_post %}<a class="btn btn-sm btn-outline-secondary" href="{% url 'changelog:post-update' post.pk %}">Edit</a>{% endif %}</td>
+        </tr>
+      {% empty %}<tr><td colspan="6">No release notes found.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% include "changelog/pagination.html" %}
+</div>
+{% endblock %}

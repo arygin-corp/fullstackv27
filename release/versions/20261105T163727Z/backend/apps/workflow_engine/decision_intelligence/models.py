@@ -1,0 +1,6 @@
+from django.db import models
+from ..models import TimeStampedModel,WorkflowInstance
+from ..platform_models import Tenant
+class DecisionModel(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);key=models.SlugField();version=models.PositiveIntegerField(default=1);model_type=models.CharField(max_length=60);definition=models.JSONField(default=dict);status=models.CharField(max_length=30,default='draft');requires_review=models.BooleanField(default=True)
+class DecisionExecution(TimeStampedModel):model=models.ForeignKey(DecisionModel,related_name='executions',on_delete=models.PROTECT);instance=models.ForeignKey(WorkflowInstance,null=True,blank=True,on_delete=models.SET_NULL);input=models.JSONField(default=dict);output=models.JSONField(default=dict);explanation=models.JSONField(default=dict);confidence=models.DecimalField(max_digits=5,decimal_places=4,null=True);status=models.CharField(max_length=30,default='pending')
+class DecisionFeedback(TimeStampedModel):execution=models.ForeignKey(DecisionExecution,related_name='feedback',on_delete=models.CASCADE);outcome=models.JSONField(default=dict);rating=models.IntegerField(null=True);comments=models.TextField(blank=True)

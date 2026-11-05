@@ -1,6 +1,6 @@
 /* Pricing */
 .hp-pricing-billed-text.active {
-  color: #0010f7 !important;
+  color: #e50000 !important;
 }
 
 .hp-pricing-item {
@@ -16,8 +16,8 @@
   line-height: 1.2;
 }
 .hp-pricing-item-special {
-  background-color: #0010f7;
-  border-color: #0010f7 !important;
+  background-color: #e50000;
+  border-color: #e50000 !important;
 }
 .hp-pricing-item-special .hp-pricing-item-title, .hp-pricing-item-special .hp-pricing-item-price {
   color: #ebfafa;
@@ -32,7 +32,7 @@
   fill: #ebfafa;
 }
 .hp-pricing-item-special button.btn {
-  color: #0010f7 !important;
+  color: #e50000 !important;
   background-color: #ebfafa !important;
 }
 .hp-pricing-item-special button.btn:hover {

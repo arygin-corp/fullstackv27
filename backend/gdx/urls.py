@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path, include, reverse_lazy
+from django.urls import path, include, re_path, reverse_lazy
 from django.conf import settings
-from django.conf.urls.static import static
+from django.views.static import serve
 # from gdx import views
 from .views import MyPasswordSetView, MyPasswordChangeView
 from django.contrib.auth.decorators import login_required
@@ -83,6 +83,11 @@ urlpatterns = [
     path("sa/modules/", include("apps.third_party_apis.page_urls"),),
     path("sa/modules/", include(("apps.third_party_apis.page_urls", "third_party_api_pages"), namespace="third_party_api_pages"),),
     path("sa/integrations/", include(("apps.third_party_apis.operations_urls", "third_party_api_ops"), namespace="third_party_api_ops"),),
+    path("maintenance/", views.maintenance, name="maintenance"),
+    path("sa/settings/", views.platform_settings, name="platform_settings"),
+    path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
+    path("sa/documentation/", views.documentation_hub, name="documentation_sites"),
+    path("sa/documentation/<slug:site>/<path:asset>", views.documentation_asset, name="documentation_asset"),
     path("sa/modules/aws/", include(("apps.third_party_apis.modules.aws.urls", "third_party_api_aws"), namespace="third_party_api_aws"),),
 
     # PAGES
@@ -103,9 +108,9 @@ urlpatterns = [
     path('ckeditor/', include('django_ckeditor_5.urls')),
 ]
 
-# ✅ MEDIA ONLY in DEBUG
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+]
 
 # Admin Branding
 admin.site.site_header = "GDX"

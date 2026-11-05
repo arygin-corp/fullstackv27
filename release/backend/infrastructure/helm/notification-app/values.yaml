@@ -1,0 +1,30 @@
+enabled: false
+image:
+  repository: notification-app
+  tag: phase10
+  pullPolicy: IfNotPresent
+web:
+  replicas: 2
+worker:
+  replicas: 2
+beat:
+  replicas: 1
+resources:
+  requests: {cpu: 100m, memory: 256Mi}
+  limits: {cpu: 1000m, memory: 1Gi}
+service:
+  port: 8000
+ingress:
+  enabled: false
+  host: notifications.example.com
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+keda:
+  enabled: false
+  redisAddress: redis:6379
+  listName: celery
+chaos:
+  enabled: false

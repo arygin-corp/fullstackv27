@@ -1,0 +1,6 @@
+<div class="text-center py-5">
+  <span class="avatar avatar-xxl rounded-circle bg-primary-subtle text-primary"><i class="ti ti-category-off fs-1"></i></span>
+  <h3 class="h5 mt-3 mb-1">No categories found</h3>
+  <p class="text-muted mb-3">Create a category to organize changelog release-note sections.</p>
+  {% if perms.changelog.add_categorie %}<a class="btn btn-primary" href="{% url 'changelog:category-create' %}"><i class="ti ti-plus me-1"></i>Add category</a>{% endif %}
+</div>

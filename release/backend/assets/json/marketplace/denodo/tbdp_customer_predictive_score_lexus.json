@@ -1,0 +1,4043 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "act_ivs_flg"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "active_brand"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "active_offer_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "age_two_yea_inp_ind_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "association_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_assoc_length"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_24_36mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_36_48mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_48_60mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_cust_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_custpay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_custpay_recent_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_mileage_permonth_recent_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_no_days_case_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_no_repairs_after_warranty"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_no_repairs_under_warranty"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_time_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_time_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_time_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_time_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_24_36mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_36_48mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_ro_total_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_sales_osat_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_service_assoc_length"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_service_osat_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_warrpay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_warrpay_recent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "avg_zip3_vehicle_val"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "bnc_uti_idx_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "brand_relation"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "brochure_requested_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "bus_owr_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "campaign_clicked_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "campaign_opened_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "campaign_received_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "chr_giv_sco_sem"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "communication_clicked_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "communication_opened_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "communication_received_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "cpo_vehicle_total_purchase_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "cre_cda_idc_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "crz_vct_pps_mod_rnk"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_handraiser"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_4runner_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_avalon_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_chr_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_chr_scion_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_corolla_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_es_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_gs_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_highlander_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_is_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_cpo_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_cpo_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_new_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_new_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_ls_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_rav4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_rx_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_sienna_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_tacoma_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_compact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_compactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_fullsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_luxurymidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_midsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_midsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_pickup_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_premiummidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_sportscar_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_subcompact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_subcompactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_toyota_van_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_owned_tundra_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_participator"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_vehicle_customer_full_payment_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_vehicle_high_ro_time_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_vehicle_high_service_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "current_vehicle_serviced_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_high_payment_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_language_english_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_language_spanish_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "customer_zipcode"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_lapsed_toyota_care_expiry"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_remain_toyota_care_expiry"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_communication"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_communication_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_communication_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_handraiser"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_first_purchase_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_brochure_request"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_case_closed"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_case_open"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_clicked_campaign"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_communication"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_communication_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_communication_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_handraiser"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_opened_campaign"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_purchase_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "days_since_last_sold_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "dealer_loyalist"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "deceased_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "disc_spend_amt_1"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "disc_spend_amt_2"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "driver_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "dsr_ico_idx_sem_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "dwl_typ_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "edu_inp_ind_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "est_current_mileage"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_brand_migration_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_customer_payment_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_handraiser_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_lead_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_participator_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_service_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ever_warranty_payment_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_big_engine_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_lexus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_luxury_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_sport_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_suv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_toyota_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "first_purchase_vehicle_msrp"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "gnd_inp_ind_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "has_cec"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "has_emd"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "has_nsh"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "has_uss"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "high_ro_time_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "high_service_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "hom_owr_rnt_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "household_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ico_est_hsh_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ita_idx_rnk"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_purchase_vehicle_msrp"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_reported_mileage_recent_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_dealer_markettype"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_dealer_region"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_osat_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_would_recommend"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_sales_would_return"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_service_osat_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_service_would_recommend"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_service_would_return"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_serviced_dealer_markettype"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_serviced_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_serviced_dealer_region"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "last_vehicle_model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "len_of_res_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_age_range"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_brand_of_interest_1"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_brand_of_interest_2"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_brand_of_interest_3"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_current_vehicle_brand"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_gender"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_incomplete_lead_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_max_days_between_leads"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_model_of_interest_1"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "lhr_sweepstakes_1_permission_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "mail_adr_latitude"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "mail_adr_longitude"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_assoc_length"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_cust_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_cust_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_cust_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_cust_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_no_days_case_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_24_36mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_36_48mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_ro_total_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "max_service_assoc_length"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "mrl_stu_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "multiple_case_type_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "multiple_vehicle_type_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "nes_aut_loa_rcy_idx_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "new_vehicle_purchase_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_anypart_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_battery_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_brake_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_brochures_requested"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_active"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_clicked_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_expired"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_nd_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_nt_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_opened_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_received_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_received_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_campaign_received_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_cc_cases"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_cc_types"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_clicked_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_dates_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_dates_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_nd_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_nt_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_opened_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_communication_received_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_cpo_purchase_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_cpro_visit_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_cpro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_firstro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_anypart_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_battery_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_brake_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_mech_part_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_oil_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_tire_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_last_wiper_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_lastro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_days_since_lastro_recent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_directmail_campaign_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_directmail_campaign_received_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_directmail_campaign_received_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_distinct_communication_dates"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_distinct_communication_dates_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_distinct_communication_dates_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgn_emails_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgn_emails_dropped"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgn_emails_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgn_emails_sent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgn_optout"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_campgns"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_direct_mail_campgns"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_dlr_email_campgns"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_campaign_received_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_communication_received_toyota_last30days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_communication_received_toyota_last60days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_email_communication_received_toyota_last90days"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_handraiser"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_leased_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_mech_part_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_new_purchase_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ocpe"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ocpe_direct"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ocpe_email"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ocpe_phone"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_offer_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_offers_active"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_offers_expired"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_oil_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_owned_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_repairs_after_warranty_most_recent_veh"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_repairs_under_warranty_most_recent_veh"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visit_during_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visit_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_24_36mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_36_48mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_48_60mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_post_0_2_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_post_2_4_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_post_4_6_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_ro_visits_post_over6_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_sales_dealer_assoc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_sales_survey"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_service_survey"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_servicing_dealer"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_tc_completed"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_tire_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_used_purchase_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_vehicles_purchased_last_5yr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_web_campaign_received"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_web_campaign_received_lexus"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_web_campaign_received_toyota"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_wiper_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_wpro_visit_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "no_wpro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_cust_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_cust_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_cust_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_cust_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_ro_time_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_ro_time_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_ro_time_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "noros_high_ro_time_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "num_of_adl_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "num_of_chd_100_pct_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ocp_dta_inp_ind_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ocp_inp_ind_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "offer_received_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ope_aut_loa_idx_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ord_clb_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_4runner_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_4wd_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_aqua_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_avalon_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_big_engine_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_black_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_blue_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_brown_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_camry_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_chr_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_chr_scion_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_corolla_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_corolla_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_ct200h_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_es_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_gold_brown_orange_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_gold_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_gray_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_green_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_gs_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_highlander_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_hs250h_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_hybrid_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_is250_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_is350_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_is_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_cpo_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_cpo_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_luv_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_new_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_new_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_lexus_sedan_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_ls_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_luxury_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_orange_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_other_color_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_prius_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_purple_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_rav4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_red_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_rx_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_sienna_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_silver_gray_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_suv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_tacoma_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_compact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_compactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_family_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_fullsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_luxurymidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_midsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_midsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_pickup_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_premiummidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_sport_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_sportscar_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_subcompact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_subcompactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_toyota_van_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_tundra_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_vehicle_my_1970_80_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_vehicle_my_1981_90_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_vehicle_my_1991_00_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_vehicle_my_2001_10_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_vehicle_my_2011_20_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_white_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owned_yellow_vehicle_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year10_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year11_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year12_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year13_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year14_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year15_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year16plus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year1_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year2_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year3_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year5_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year6_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year7_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year8_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "owner_year9_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_4runner_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_avalon_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_chr_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_chr_scion_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_corolla_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_es_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_gs_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_highlander_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_is_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_cpo_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_cpo_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_new_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_new_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_ls_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_rav4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_rx_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_sienna_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_tacoma_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_4wd_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_compact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_compactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_family_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_fullsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_luxurymidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_midsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_midsizesuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_pickup_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_premiummidsize_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_sport_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_sportscar_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_subcompact_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_subcompactsuv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_suv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_toyota_van_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "past_owned_tundra_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pc_opi_sys_typ_1"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pc_opi_sys_typ_2"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pes_of_chd_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_lexus_dealership_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_lexus_dealership_markettype"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_lexus_dealership_region"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_toy_scion_dealership_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_toy_scion_dealership_markettype"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "pma_toy_scion_dealership_region"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_0_3"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_10_12"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_13_15"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_16_18"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_4_6"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "poc_7_9"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_camry_last_2years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_camry_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_is_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_lexus_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_lexus_luv_last_2years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_lexus_luv_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_lexus_sedan_last_2years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_lexus_sedan_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_rav4_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_toyota_last_3years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_4wd_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_big_engine_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_camry_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_corolla_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_cpo_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_hybrid_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_last_2years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_lexus_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_lexus_luv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_lexus_sedan_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_new_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_prius_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_rav4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_suv_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_toyota_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_truck_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "purchased_vehicle_used_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ratio_avg_cust_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_after_ocpe_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_24_36mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_36_48mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "ro_total_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "rvl_bnc_bal_idx_num"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "sales_survey_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "sales_would_recommend_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "sales_would_return_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "service_survey_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "service_would_recommend_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "service_would_return_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "state_residence"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_active_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_completed_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_expired_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_only1_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_only2_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_only3_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_only4_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "tc_only5_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_battery_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_brake_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay_0_6mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay_12_18mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay_18_24mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay_6_12mo"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_cust_pay_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_labor_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_mech_part_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_oil_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_part_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_ro_pay_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_tire_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_vehicle_purchase_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_warranty_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_warranty_pay_post_tc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "total_wiper_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "toyota_care_status"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "trv_crz_vct_flg"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "used_vehicle_total_purchase_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "vct_ppt_own_pps_sem_sco"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_dmn_lsy_idc_dsc_1"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_dmn_lsy_idc_dsc_2"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_mak_1st_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_mak_2nd_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_trk_mcy_rv_owr_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_typ_veh_1_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_typ_veh_2_dsc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_yea_1st_veh_yea"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "veh_yea_2nd_veh_yea"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "customeradt_lexus_profile",
+      "column_name": "warranty_high_payment_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "active_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "any_revenue_5yr_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "any_revenue_5yr_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "click_percent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "customer_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "engagement_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "future_value_5yr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "future_value_growth_5yr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "handraising_tenure"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "model_score_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_cc_cases"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_communication_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_communication_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_communication_opened_nd_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_dlr_campgns"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_lead_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_owned_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_service_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_survey"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_veh_serviced"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_vehicle_owned"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "no_vehicle_purchases"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "open_click_recency"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "open_percent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "recent_lead_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "return_to_purchase_12mo_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "return_to_purchase_12mo_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "return_to_service_12mo_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "return_to_service_12mo_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "rfm_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "service_visit_recency"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "tenure_more_than_1_years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "total_vehicle_service_spend"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value",
+      "column_name": "vehicle_purchase_recency"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "active_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "any_revenue_5yr_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "any_revenue_5yr_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "click_percent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "customer_value"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "engagement_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "filename"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "future_value_5yr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "future_value_growth_5yr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "handraising_tenure"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "model_score_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_cc_cases"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_communication_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_communication_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_communication_opened_nd_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_dlr_campgns"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_lead"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_lead_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_owned_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_service_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_survey"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_veh_serviced"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_vehicle_owned"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "no_vehicle_purchases"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "open_click_recency"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "open_percent"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "recent_lead_hr"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "return_to_purchase_12mo_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "return_to_purchase_12mo_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "return_to_service_12mo_pred"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "return_to_service_12mo_prob"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "rfm_score"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "service_visit_recency"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "tenure_more_than_1_years_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "total_vehicle_service_spend"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score-lexus",
+      "dbname": "cuds_cust_predictivescores_lexus_ing_ext",
+      "elementname": "tmna_lexus_segmentation_future_value_hst",
+      "column_name": "vehicle_purchase_recency"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-predictive-score-lexus%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

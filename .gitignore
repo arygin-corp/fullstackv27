@@ -208,6 +208,7 @@ temp/
 
 data/cache/
 data/tmp/
+backend/data/platform_settings.json
 
 ###############################################################################
 # IDEs
@@ -295,6 +296,8 @@ frontend/coverage/
 ###############################################################################
 
 frontend/.build-state.json
+backend/.build-state.json
+backend/version.json
 frontend/.prerelease-counter.json
 
 ###############################################################################

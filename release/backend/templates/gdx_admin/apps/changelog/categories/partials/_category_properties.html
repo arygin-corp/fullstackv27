@@ -1,0 +1,9 @@
+<div class="card h-100">
+  <div class="card-header"><h3 class="h5 mb-0"><i class="ti ti-list-details me-2 text-primary"></i>Category properties</h3></div>
+  <div class="card-body">
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Name</div><div class="col-sm-8 fw-semibold text-break">{{ category.name }}</div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Slug</div><div class="col-sm-8"><code class="text-break">{{ category.slug }}</code></div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Status</div><div class="col-sm-8">{% include "gdx_admin/apps/changelog/categories/partials/_category_status_badge.html" with category=category %}</div></div>
+    <div class="row g-2 pt-3"><div class="col-sm-4 text-muted">Published</div><div class="col-sm-8 fw-medium">{{ category.published_date|date:"M d, Y H:i T"|default:"Not published" }}</div></div>
+  </div>
+</div>

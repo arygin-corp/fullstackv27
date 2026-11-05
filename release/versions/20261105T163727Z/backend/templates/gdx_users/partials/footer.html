@@ -1,0 +1,23 @@
+{% load static %}
+{% block footer %}
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="logo-sm">
+                    <img src="{% static 'images/brands/onetech.svg' %}" alt="" height="16">
+                    <img src="{% static 'images/brands/toyota.svg' %}" alt="" height="16">
+                </span>
+                <small>©<script>document.write(new Date().getFullYear())</script> {{ footer_text }}</small>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                    <!-- <span class="logo-sm">
+                        <img src="{% static 'images/brands/data-marketplace.svg' %}" alt="" height="16">
+                    </span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

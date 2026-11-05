@@ -1,0 +1,6 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class SearchSource(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);source_type=models.CharField(max_length=80);enabled=models.BooleanField(default=False);configuration=models.JSONField(default=dict)
+class SearchRecord(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);source=models.ForeignKey(SearchSource,null=True,on_delete=models.SET_NULL);record_type=models.CharField(max_length=80,db_index=True);record_id=models.CharField(max_length=160);title=models.CharField(max_length=255);body=models.TextField(blank=True);facets=models.JSONField(default=dict);security_principals=models.JSONField(default=list);embedding_reference=models.CharField(max_length=255,blank=True)
+class SearchQueryLog(models.Model):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);query_hash=models.CharField(max_length=64);filters=models.JSONField(default=dict);result_count=models.PositiveIntegerField(default=0);duration_ms=models.DecimalField(max_digits=12,decimal_places=3,null=True);recorded_at=models.DateTimeField(auto_now_add=True)
