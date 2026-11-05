@@ -1,19 +1,18 @@
-<nav class="module-context-header" aria-label="Module detail administration">
+<nav class="module-context-header" aria-label="Module pages">
   <div class="module-context-header__copy">
-    <div class="module-context-breadcrumb"><a href="{% url 'third_party_api_ops:dashboard' %}">Modules</a><span aria-hidden="true">»</span><span>{{ module.name }}</span><span aria-hidden="true">»</span><span aria-current="page">{{ page_label|default:"Overview" }}</span></div>
-    <h1>{{ page_heading|default:module.name }}</h1>
-    <p>{{ page_subheading|default:module.description }}</p>
+    <div class="module-context-breadcrumb">
+      <a href="{% url 'third_party_api_pages:integration_catalog' %}">Integrations</a>
+      <span aria-hidden="true">»</span>
+      <span>{{ module.name }}</span>
+      <span aria-hidden="true">»</span>
+      <span aria-current="page">{{ page_label }}</span>
+    </div>
+    <h1>{{ page_heading }}</h1>
+    <p>{{ page_subheading }}</p>
   </div>
   <div class="module-context-header__actions module-context-header__menu">
-    <a href="{% url 'third_party_api_ops:module_dashboard' module.module_key %}">Overview</a>
-    <a href="{% url 'third_party_api_ops:module_analytics' module.module_key %}">Analytics</a>
-    <a href="{% url 'third_party_api_ops:module_report' module.module_key %}">Reports</a>
-    <a href="{% url 'third_party_api_ops:module_activity' module.module_key %}">Activity</a>
-    <a href="{% url 'third_party_api_ops:module_audit' module.module_key %}">Audit</a>
-    <a href="{% url 'third_party_api_pages:integration_test' module.module_key %}">Readiness</a>
-    <a href="{% url 'third_party_api_ops:module_configuration' module.module_key %}">Configuration</a>
-    <a href="{% url 'third_party_api_ops:module_health' module.module_key %}">Health</a>
-    <a href="{% url 'third_party_api_ops:module_dependencies' module.module_key %}">Dependencies</a>
-    <a href="{% url 'third_party_api_pages:integration_documentation' module.module_key %}">Documentation</a>
+    {% for page in pages %}
+      <a href="{{ page.url }}"{% if page.key == page_key %} aria-current="page"{% endif %}>{{ page.label }}</a>
+    {% endfor %}
   </div>
 </nav>

@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from . import admin_views, builder_views, render_views
+from .dar_builder_views import dar_form_builder_document, dar_marketplace_choices
 from .views import FormChangeLogViewSet, FormDefinitionViewSet, FormSchemaView, FormStateView, FormSubmitView, SubmissionViewSet, FormPreFlightView
 
 
@@ -38,6 +39,8 @@ urlpatterns = [
     path("forms/definitions/<int:pk>/builder/", builder_views.builder, name="form-builder"),
     path("forms/definitions/<int:pk>/builder/schema/", builder_views.builder_schema, name="form-builder-schema"),
     path("forms/definitions/<int:pk>/builder/publish/", builder_views.builder_publish, name="form-builder-publish"),
+    path("dar-form-builder/document/", dar_form_builder_document, name="dar-form-builder-document"),
+    path("dar-form-builder/marketplace-choices/<slug:source>/", dar_marketplace_choices, name="dar-marketplace-choices"),
     path("<slug:slug>/schema/", FormSchemaView.as_view(), name="form-schema",),
     path("api/forms/<slug:slug>/state/", FormStateView.as_view(), name="form-state"),
     path("api/forms/<slug:slug>/submit/", FormSubmitView.as_view(), name="form-submit"),

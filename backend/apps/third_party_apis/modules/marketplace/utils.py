@@ -34,7 +34,7 @@ def export_active_products_json():
     queryset = Product.objects.published().select_related(
         'domain', 'subdomain_2', 'subdomain_3', 'datatype',
         'classification', 'org'
-    ).prefetch_related('keyword', 'badge', 'images', 'sample_data').order_by('id')
+    ).prefetch_related('keyword', 'badge', 'images').order_by('id')
 
     data = []
     for p in queryset:
@@ -79,17 +79,6 @@ def export_active_products_json():
             # Many-to-Many Fields (Keywords & Badges)
             "keywords": [k.name for k in p.keyword.all()],
             "badges": [b.name for b in p.badge.all()],
-
-            # Complex Sample Data (Joining glossary and values)
-            "sample_data": [
-                {
-                    f"field_{i + 1}": {
-                        "glossary_id": getattr(s, f'glossary_id_{i + 1}', None),
-                        "field_name": getattr(getattr(s, f'field_name_{i + 1}', None), 'name', None),
-                        "field_value": getattr(getattr(s, f'field_value_{i + 1}', None), 'value', None),
-                    } for i in range(10)
-                } for s in p.sample_data.all()
-            ],
 
             # Images
             "images": [img.image.url for img in p.images.all() if img.image],

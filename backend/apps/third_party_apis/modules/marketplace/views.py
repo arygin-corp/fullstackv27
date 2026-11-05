@@ -12,7 +12,7 @@ from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from apps.teams.models import Team
-from .models import Product, Domain, Datatype, Classification, FieldName, FieldValue, ProductAssociation
+from .models import Product, Domain, Datatype, Classification, ProductAssociation
 from .forms import ProductForm, ProductImageFormSet
 from django.db.models import Prefetch
 
@@ -223,7 +223,6 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
             self.object.updated_by = self.request.user
             self.object.save()
             form.save_m2m()
-            form.save_sample_data(self.object)
             image_formset.instance = self.object
             image_formset.save()
 
@@ -342,7 +341,6 @@ class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             self.object.updated_by = self.request.user
             self.object.save()
             form.save_m2m()
-            form.save_sample_data(self.object)
             image_formset.instance = self.object
             image_formset.save()
 
@@ -351,62 +349,6 @@ class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('marketplace:index')
-
-
-def get_field_names(request):
-    try:
-        field_names = FieldName.objects.filter(is_active=True).order_by('name')
-        data = [{
-            'id': fn.id,
-            'name': fn.name,
-            'collibra_id': fn.collibra_id or '',
-            'axon_id': fn.axon_id or ''
-        } for fn in field_names]
-        return JsonResponse(data, safe=False)
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
-
-
-def get_field_name_detail(request, field_name_id):
-    try:
-        field_name = get_object_or_404(FieldName, pk=field_name_id, is_active=True)
-        data = {
-            'id': field_name.id,
-            'name': field_name.name,
-            'collibra_id': field_name.collibra_id or '',
-            'axon_id': field_name.axon_id or ''
-        }
-        return JsonResponse(data)
-    except FieldName.DoesNotExist:
-        return JsonResponse({'error': 'Field name not found'}, status=404)
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
-
-
-def get_field_values(request):
-    try:
-        field_name_id = request.GET.get('field_name')
-        field_values = FieldValue.objects.filter(is_active=True)
-        if field_name_id:
-            field_values = field_values.filter(field_name_id=field_name_id)
-        field_values = field_values.order_by('value')
-        data = [{'id': fv.id, 'value': fv.value} for fv in field_values]
-        return JsonResponse(data, safe=False)
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
-
-def get_field_value_detail(request, field_value_id):
-    try:
-        field_value = get_object_or_404(FieldValue, pk=field_value_id, is_active=True)
-        data = {
-            'id': field_value.id,
-            'value': field_value.value,
-        }
-        return JsonResponse(data)
-    except FieldValue.DoesNotExist:
-        return JsonResponse({'error': 'Field value not found'}, status=404)
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
 
 
 class ProductListAPIView:

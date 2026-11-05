@@ -1,5 +1,7 @@
 // Apply the saved theme settings from local storage
-document.querySelector("html").setAttribute("data-bs-theme", localStorage.getItem('theme') || 'light');
+localStorage.setItem("theme", "light");
+localStorage.setItem("darkMode", "disabled");
+document.querySelector("html").setAttribute("data-bs-theme", "light");
 document.querySelector("html").setAttribute('data-sidebar', localStorage.getItem('sidebarTheme') || 'light');
 document.querySelector("html").setAttribute('data-color', localStorage.getItem('color') || 'primary');
 document.querySelector("html").setAttribute('data-topbar', localStorage.getItem('topbar') || 'white');
@@ -432,8 +434,6 @@ let themesettings = `
     
     document.addEventListener("DOMContentLoaded", function() {
 
-    document.body.insertAdjacentHTML('beforeend', themesettings);
-
     const darkModeToggle = document.getElementById("dark-mode-toggle");
 	const lightModeToggle = document.getElementById("light-mode-toggle");
 
@@ -649,10 +649,10 @@ let themesettings = `
         widthRadios.forEach(radio => radio.addEventListener('change', handleInputChange));
         sidebarBgRadios.forEach(radio => radio.addEventListener('change', handleSidebarBgChange));
         topbarbgRadios.forEach(radio => radio.addEventListener('change', handleTopbarBgChange));
-        resetButton.addEventListener('click', resetThemeAndSidebarThemeAndColorAndBg);
+        resetButton?.addEventListener('click', resetThemeAndSidebarThemeAndColorAndBg);
     
         // Initial setup from localStorage
-        const savedTheme = localStorage.getItem('darkMode') === 'enabled' ? 'dark' : 'light';
+        const savedTheme = "light";
 
         savedSidebarTheme = localStorage.getItem('sidebarTheme');
         savedColor = localStorage.getItem('color');

@@ -2,7 +2,7 @@
 <nav class="d-flex flex-wrap gap-2 mb-4" aria-label="AWS environment selector">
   {% for environment in environments %}
     <a class="btn btn-sm {% if environment.environment == selected_environment %}btn-primary{% else %}btn-outline-secondary{% endif %}"
-       href="?environment={{ environment.environment }}"
+       href="{% if environment_url_name %}{% url environment_url_name environment.environment %}{% else %}?environment={{ environment.environment }}{% endif %}"
        {% if environment.environment == selected_environment %}aria-current="page"{% endif %}>
       {{ environment.get_environment_display }}
     </a>

@@ -76,7 +76,7 @@ body.dark .hp-dark-block.hp-dir-block {
   display: none;
 }
 body.dark a {
-  color: #0063f7;
+  color: #e50000;
 }
 body.dark.app-layout-bg:before {
   background: #141414;
@@ -116,11 +116,11 @@ body.dark .hp-theme-customizer-container-body-item-svg.active {
   border-color: #C2C2C2;
 }
 body.dark ::-moz-selection {
-  background: #0010f7;
+  background: #e50000;
   color: #FFFFFF;
 }
 body.dark ::selection {
-  background: #0010f7;
+  background: #e50000;
   color: #FFFFFF;
 }
 body.dark h1,
@@ -327,7 +327,7 @@ body.dark .hp-sidebar-dropdown-container ul li a {
   color: #C2C2C2;
 }
 body.dark .hp-sidebar-dropdown-container ul li a:before {
-  background: #0010f7;
+  background: #e50000;
 }
 body.dark .hp-sidebar-dropdown-container ul li a:hover {
   color: #FFFFFF;
@@ -479,29 +479,29 @@ body.dark .dropdown-divider {
 body.dark .navbar-light .navbar-brand,
 body.dark .navbar-light .navbar-nav .show > .nav-link,
 body.dark .navbar-light .navbar-nav .nav-link.active {
-  color: #0063f7;
+  color: #e50000;
 }
 body.dark .navbar-light .navbar-nav .nav-link {
   color: #FFFFFF;
 }
 body.dark .page-link {
   background: #141414;
-  color: #0063f7;
+  color: #e50000;
   border-color: #333333;
 }
 body.dark .page-link:hover {
   background: #141414;
-  color: #0063f7;
-  border-color: #0063f7;
+  color: #e50000;
+  border-color: #e50000;
 }
 body.dark .page-item.active .page-link {
   background: #141414;
-  color: #0063f7;
-  border-color: #0063f7;
+  color: #e50000;
+  border-color: #e50000;
 }
 body.dark .page-link:focus {
   background: #141414;
-  color: #0063f7;
+  color: #e50000;
 }
 body.dark .page-item.disabled .page-link {
   background: #1F1F1F;
@@ -509,8 +509,8 @@ body.dark .page-item.disabled .page-link {
   border-color: #1F1F1F;
 }
 body.dark .custom-control.custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
-  background: #0010f7;
-  border-color: #0010f7;
+  background: #e50000;
+  border-color: #e50000;
 }
 body.dark .custom-control.custom-checkbox .custom-control-label:before {
   background: #141414;
@@ -530,7 +530,7 @@ body.dark .input-group-text {
   border-color: #333333;
 }
 body.dark .custom-radio .custom-control-input:checked ~ .custom-control-label:before {
-  border-color: #0010f7;
+  border-color: #e50000;
   background: #141414;
 }
 body.dark .custom-radio .custom-control-label:before {
@@ -569,8 +569,8 @@ body.dark .custom-switch .custom-control-input:disabled ~ .custom-control-label:
   border-color: #474747;
 }
 body.dark .custom-switch .custom-control-input:checked ~ .custom-control-label:before {
-  background: #0010f7;
-  border-color: #0010f7;
+  background: #e50000;
+  border-color: #e50000;
 }
 body.dark .custom-switch .custom-control-label:before {
   background: #474747;
@@ -596,8 +596,8 @@ body.dark .badge {
 }
 body.dark .badge.badge-primary {
   background: #050342;
-  border-color: #0010f7;
-  color: #0010f7;
+  border-color: #e50000;
+  color: #e50000;
 }
 body.dark .badge.badge-secondary {
   background: #290034;
@@ -654,8 +654,8 @@ body.dark .list-group-item {
   border-color: #333333;
 }
 body.dark .list-group-item.active {
-  background: #0010f7;
-  border-color: #0010f7;
+  background: #e50000;
+  border-color: #e50000;
 }
 body.dark .list-group-item.disabled,
 body.dark .list-group-item:disabled {
@@ -802,7 +802,7 @@ body.dark .nav-link {
   color: #FFFFFF;
 }
 body.dark .nav-link:hover, body.dark .nav-link:focus {
-  color: #0063f7;
+  color: #e50000;
 }
 body.dark .nav-link.active {
   color: #FFFFFF;
@@ -895,17 +895,17 @@ body.dark [disabled] .spinner-grow {
   background: #474747;
 }
 body.dark .hp-pricing-item-special button {
-  color: #0010f7 !important;
+  color: #e50000 !important;
 }
 body.dark .hp-pricing-item-special button:hover {
-  background: #0063f7 !important;
+  background: #e50000 !important;
 }
 body.dark .hp-landing-features-slide:before, body.dark .hp-landing-features-slide:after {
   background: -webkit-gradient(linear, left top, right top, from(rgba(31, 31, 31, 0)), to(rgb(31, 31, 31)));
   background: linear-gradient(to right, rgba(31, 31, 31, 0), rgb(31, 31, 31));
 }
 body.dark .hp-profile-menu-body .active {
-  background: #0010f7;
+  background: #e50000;
   color: #FFFFFF !important;
 }
 body.dark .hp-lock-screen .hp-screen-bg {
@@ -920,7 +920,7 @@ body.dark .hp-components-item:hover {
   background: #333333 !important;
 }
 body.dark .hp-components-item:hover .hp-components-item-title {
-  color: #0063f7 !important;
+  color: #e50000 !important;
 }
 body.dark .hp-authentication-page .hp-or-line:before {
   background-color: #333333;

@@ -8,7 +8,10 @@
             </a>
         </div>
         <div class="site-header__phone" style="margin-left: 12px; margin-right: 12px;">
-            <button type="button" class="btn btn-primary btn-sm" (click)="offcanvasNewProduct.open()">Add New Product</button>
+            <button type="button" class="btn btn-primary btn-sm icon-label" (click)="offcanvasNewProduct.open()" aria-label="Add New Product">
+                <i class="fas fa-plus" aria-hidden="true"></i>
+                <span>Add New Product</span>
+            </button>
         </div>
 
         <div class="site-header__search">

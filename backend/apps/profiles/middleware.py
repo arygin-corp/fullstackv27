@@ -1,8 +1,61 @@
 from django.contrib.auth import logout, get_user_model
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
 
 User = get_user_model()
+
+EXEMPT_PREFIXES = (
+    "/not-authorized",
+    "/login",
+    "/logout",
+    "/register",
+    "/lock-screen",
+    "/password-reset",
+    "/reset/",
+    "/microsoft_authentication/",
+    "/account/",
+    "/accounts/",
+    "/static/",
+    "/media/",
+    "/api/",
+    "/admin/login",
+    "/admin/logout",
+)
+
+
+def user_is_verified_staff(user):
+    """Staff may continue only after a superuser verifies their profile."""
+    if not getattr(user, "is_authenticated", False):
+        return True
+    if getattr(user, "is_superuser", False) or not getattr(user, "is_staff", False):
+        return True
+    try:
+        profile = user.profile
+    except ObjectDoesNotExist:
+        return False
+    return bool(getattr(profile, "is_verified", False))
+
+
+def _is_exempt(path):
+    for prefix in EXEMPT_PREFIXES:
+        root = prefix.rstrip("/")
+        if path == root or path.startswith(root + "/"):
+            return True
+    return False
+
+
+class VerifiedStaffAccessMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if _is_exempt(request.path):
+            return self.get_response(request)
+        user = getattr(request, "user", None)
+        if user is not None and not user_is_verified_staff(user):
+            return redirect("not_authorized")
+        return self.get_response(request)
 
 class MicrosoftEmailValidationMiddleware:
     def __init__(self, get_response):

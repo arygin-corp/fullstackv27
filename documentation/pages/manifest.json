@@ -1,0 +1,107 @@
+{
+  "name": "Master Pages Self-Service New Employee Manual",
+  "version": "8.0.0",
+  "entry": "index.html",
+  "offline": true,
+  "dependencies": [],
+  "chapter_count": 29,
+  "chapters": [
+    "pages/introduction.html",
+    "pages/architecture.html",
+    "pages/getting-started.html",
+    "pages/dashboard.html",
+    "pages/page-management.html",
+    "pages/version-management.html",
+    "pages/content-authoring.html",
+    "pages/workflow.html",
+    "pages/approvals.html",
+    "pages/content-manager.html",
+    "pages/web-publisher.html",
+    "pages/product-owner.html",
+    "pages/legal-reviewer.html",
+    "pages/security-reviewer.html",
+    "pages/drb-reviewer.html",
+    "pages/administrator.html",
+    "pages/super-admin.html",
+    "pages/notifications.html",
+    "pages/media.html",
+    "pages/search.html",
+    "pages/audit.html",
+    "pages/retention.html",
+    "pages/scheduling.html",
+    "pages/analytics-health.html",
+    "pages/api.html",
+    "pages/configuration.html",
+    "pages/troubleshooting.html",
+    "pages/faq.html",
+    "pages/appendices.html"
+  ],
+  "supplemental_pages": [
+    "pages/table-of-contents.html",
+    "pages/navigation-map.html"
+  ],
+  "onboarding_pages": [
+    "pages/self-service-start.html",
+    "pages/screen-guide.html",
+    "pages/task-playbooks.html",
+    "pages/decision-trees.html",
+    "pages/examples.html",
+    "pages/exception-runbooks.html",
+    "pages/ownership-escalation.html",
+    "pages/training-plan.html",
+    "pages/knowledge-check.html"
+  ],
+  "faq_question_count": 156,
+  "sample_contacts": "fictional-example-only",
+  "ui_version": "information-architecture-redesign-v7",
+  "features": [
+    "persistent theme",
+    "mobile navigation",
+    "reading progress",
+    "back to top",
+    "FAQ search",
+    "role filters",
+    "persistent checklists"
+  ],
+  "javascript_review": {
+    "accessibility": [
+      "aria-expanded mobile nav",
+      "Escape close",
+      "focus return",
+      "aria-live FAQ results",
+      "aria-pressed controls",
+      "reduced-motion support",
+      "safe focus outlines"
+    ],
+    "performance": [
+      "cached selectors",
+      "debounced filters",
+      "requestAnimationFrame scroll updates",
+      "passive scroll/resize listeners"
+    ],
+    "mobile": [
+      "outside-click close",
+      "body scroll lock",
+      "desktop breakpoint reset",
+      "44px+ controls",
+      "overlay"
+    ]
+  },
+  "design_changes": [
+    "task-oriented home dashboard",
+    "unified visual system",
+    "responsive navigation drawer",
+    "improved cards and tables",
+    "accessible current-page navigation",
+    "mobile optimized controls",
+    "print styles"
+  ],
+  "homepage": "guided-onboarding-dashboard",
+  "onboarding_flow": [
+    "orientation",
+    "create",
+    "workflow",
+    "role",
+    "certify"
+  ]
+}

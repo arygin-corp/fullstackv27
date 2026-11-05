@@ -12,8 +12,10 @@
         search: q("[data-module-search]"),
         source: q("[data-source-filter]"),
         status: q("[data-status-filter]"),
-        sort: q("[data-sort]"),
         count: q("[data-result-count]"),
+        metric: q("[data-catalog-metric]"),
+        pager: q("[data-pager]"),
+        pageSize: q("[data-page-size]"),
         loading: q("[data-loading]"),
         empty: q("[data-empty]"),
         error: q("[data-error]"),
@@ -43,6 +45,9 @@
     let staff = false;
     let editing = null;
     let testing = null;
+    const pageSizes = [8, 16, 24, 36, 48];
+    let page = 1;
+    let pageSize = 8;
     let activeLayout = "grid-4";
 
     try {
@@ -146,6 +151,7 @@
             capabilities,
             environments,
             settings,
+            pages: Array.isArray(module.pages) ? module.pages.filter(page => page && page.url) : [],
             configuration: {
                 status: valueOr(configuration.status, "Unknown"),
             },
@@ -192,6 +198,15 @@
         `;
     }
 
+    function pagesMarkup(meta) {
+        if (!meta.pages.length) return "";
+        return `
+            <nav class="integration-pages" aria-label="${esc(meta.name)} pages">
+                ${meta.pages.map(page => `<a href="${esc(page.url)}">${esc(page.label)}</a>`).join("")}
+            </nav>
+        `;
+    }
+
     function card(module) {
         const meta = moduleMeta(module);
 
@@ -224,6 +239,7 @@
                     <dt>Last Sync</dt>
                     <dd>${esc(meta.lastSync)}</dd>
                 </dl>
+                ${pagesMarkup(meta)}
 
                 <footer class="integration-card__actions">
                     <button type="button" class="integration-button integration-button--primary" data-settings="${esc(meta.moduleKey)}">
@@ -259,16 +275,39 @@
             )
         ));
 
-        filtered.sort((a, b) => (
-            el.sort.value === "name_desc"
-                ? valueOr(b.name, "").localeCompare(valueOr(a.name, ""))
-                : valueOr(a.name, "").localeCompare(valueOr(b.name, ""))
-        ));
+        filtered.sort((a, b) => valueOr(a.name, "").localeCompare(valueOr(b.name, "")));
 
-        el.grid.innerHTML = filtered.map(card).join("");
-        el.count.textContent = `${filtered.length} modules`;
+        const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
+        if (page > pages) page = pages;
+        const start = (page - 1) * pageSize;
+        const visible = filtered.slice(start, start + pageSize);
+        el.grid.innerHTML = visible.map(card).join("");
+        el.count.textContent = filtered.length
+            ? `${start + 1}–${start + visible.length} of ${filtered.length}`
+            : "0 modules";
+        renderPager(pages);
         el.loading.hidden = true;
         el.empty.hidden = Boolean(filtered.length);
+    }
+
+    function renderPager(pages) {
+        if (!el.pager) return;
+        el.pager.hidden = pages < 2;
+        if (pages < 2) {
+            el.pager.innerHTML = "";
+            return;
+        }
+        const numbers = [];
+        for (let number = 1; number <= pages; number += 1) {
+            numbers.push(`
+                <button type="button" data-page="${number}" class="${number === page ? "is-active" : ""}" aria-label="Page ${number}" ${number === page ? "aria-current=\"page\"" : ""}>${number}</button>
+            `);
+        }
+        el.pager.innerHTML = `
+            <button type="button" data-page-prev ${page === 1 ? "disabled" : ""}>Previous</button>
+            ${numbers.join("")}
+            <button type="button" data-page-next ${page === pages ? "disabled" : ""}>Next</button>
+        `;
     }
 
     function settingRows(module) {
@@ -409,6 +448,7 @@
             </div>
             <p class="modal-lead">${esc(meta.description)}</p>
             ${tagsMarkup(meta.tags)}
+            ${pagesMarkup(meta)}
 
             <section class="modal-section">
                 <h3>Module Information</h3>
@@ -675,14 +715,20 @@
         } catch (_error) {
             // Layout still applies for the current page session.
         }
-        const select = root.querySelector("[data-layout-select]");
-        if (select) select.value = selected;
+        root.querySelectorAll("[data-layout-choice]").forEach(button => {
+            const selectedButton = button.dataset.layoutChoice === selected;
+            button.classList.toggle("is-active", selectedButton);
+            button.setAttribute("aria-pressed", selectedButton ? "true" : "false");
+        });
     }
 
     function bindLayoutControls() {
-        const select = root.querySelector("[data-layout-select]");
-        if (select) {
-            select.addEventListener("change", () => applyLayout(select.value));
+        const switcher = root.querySelector("[data-layout-switch]");
+        if (switcher) {
+            switcher.addEventListener("click", event => {
+                const button = event.target.closest("[data-layout-choice]");
+                if (button) applyLayout(button.dataset.layoutChoice);
+            });
         }
         applyLayout(activeLayout);
     }
@@ -712,7 +758,28 @@
     el.editBackdrop?.addEventListener("click", () => closeDrawer(el.edit, el.editBackdrop));
     el.editForm?.addEventListener("submit", saveEdit);
     el.runTest?.addEventListener("click", runTest);
-    [el.search, el.source, el.status, el.sort].forEach(control => control.addEventListener("input", draw));
+    [el.search, el.source, el.status].forEach(control => control.addEventListener("input", () => {
+        page = 1;
+        draw();
+    }));
+    if (el.pageSize) {
+        el.pageSize.value = String(pageSize);
+        el.pageSize.addEventListener("change", () => {
+            const next = Number(el.pageSize.value);
+            pageSize = pageSizes.includes(next) ? next : 8;
+            page = 1;
+            draw();
+        });
+    }
+    el.pager?.addEventListener("click", event => {
+        const button = event.target.closest("button");
+        if (!button || button.disabled) return;
+        if (button.dataset.pagePrev !== undefined) page -= 1;
+        else if (button.dataset.pageNext !== undefined) page += 1;
+        else if (button.dataset.page) page = Number(button.dataset.page);
+        draw();
+        root.scrollIntoView({block: "start"});
+    });
 
     async function load() {
         const response = await fetch(root.dataset.apiUrl, {
@@ -724,6 +791,10 @@
         const payload = await response.json();
         rows = payload.results || [];
         staff = Boolean(payload.is_staff);
+        if (el.metric) {
+            const enabled = rows.filter(module => module.enabled).length;
+            el.metric.textContent = `${enabled}/${rows.length}`;
+        }
 
         el.source.innerHTML = '<option value="all">All Sources</option>';
         [...new Set(rows.map(module => module.source_name).filter(Boolean))]

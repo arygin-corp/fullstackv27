@@ -6,6 +6,7 @@ from django.urls import NoReverseMatch, reverse
 
 from .catalog_management import composite_management_metadata
 from .models import InstalledThirdPartyApi
+from .module_pages import module_page_links
 from .operational_status import ModuleOperationalStatus
 from .registry import registry
 
@@ -174,6 +175,7 @@ def _serialize_registered_module(module, row=None):
 
         # Module-specific UI
         "presentation": _presentation_metadata(module),
+        "pages": module_page_links(module.key),
     }
 
     payload.update(

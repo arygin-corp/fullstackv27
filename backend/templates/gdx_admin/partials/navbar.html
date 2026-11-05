@@ -1,42 +1,45 @@
-{% load static %} <div class="header-user">
+{% load static %}
+<style>
+	.header-user .avatar-initials {
+		width: 38px;
+		height: 38px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: #e8eefc;
+		color: #1f3b8a;
+		font-size: 13px;
+		font-weight: 700;
+	}
+	.header-user .avatar-lg.avatar-initials {
+		width: 48px;
+		height: 48px;
+		font-size: 16px;
+	}
+	.header .header-environment-select {
+		width: 132px;
+		min-height: 38px;
+		padding-right: 2rem;
+		background-color: var(--topbar-search-bg);
+		color: var(--topbar-search-color);
+		border-color: var(--topbar-search-border);
+		font-size: 13px;
+		font-weight: 650;
+	}
+</style>
+<div class="header-user">
 	<div class="nav user-menu nav-list">
 		<div class="me-auto d-flex align-items-center" id="header-search">
-			<!-- Add -->
-			<div class="dropdown me-3">
-				<a class="btn btn-primary bg-gradient btn-xs btn-icon rounded-circle d-flex align-items-center justify-content-center" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
-					<i class="isax isax-add text-white"></i>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-start p-2">
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-invoice.html">
-							<i class="isax isax-document-text-1 me-2"></i>Invoice </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="expenses.html">
-							<i class="isax isax-money-send me-2"></i>Expense </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-credit-notes.html">
-							<i class="isax isax-money-add me-2"></i>Credit Notes </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-debit-notes.html">
-							<i class="isax isax-money-recive me-2"></i>Debit Notes </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-purchases-orders.html">
-							<i class="isax isax-document me-2"></i>Purchase Order </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-quotation.html">
-							<i class="isax isax-document-download me-2"></i>Quotation </a>
-					</li>
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="add-delivery-challan.html">
-							<i class="isax isax-document-forward me-2"></i>Delivery Challan </a>
-					</li>
-				</ul>
-			</div>
+			<form class="header-environment" method="post" action="{% url 'set_header_environment' %}">
+				{% csrf_token %}
+				<input type="hidden" name="next" value="{{ request.get_full_path }}">
+				<label class="visually-hidden" for="header-environment">Environment</label>
+				<select class="form-select header-environment-select" id="header-environment" name="environment" onchange="this.form.submit()">
+					{% for value, label in header_environments %}
+					<option value="{{ value }}" {% if value == header_environment %}selected{% endif %}>{{ label }}</option>
+					{% endfor %}
+				</select>
+			</form>
 		</div>
 		<div class="d-flex align-items-center">
 			<!-- Search -->
@@ -79,185 +82,75 @@
 			<div class="notification_item me-2">
 				<a class="btn btn-menubar position-relative" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="notification_popup">
 					<i class="isax isax-notification-bing5"></i>
-					<span class="position-absolute badge bg-success border border-white"></span>
+					{% if header_notification_unread %}
+					<span class="position-absolute badge bg-success border border-white">{{ header_notification_unread }}</span>
+					{% endif %}
 				</a>
 				<div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg" style="min-height: 300px;">
 					<div class="p-2 border-bottom">
 						<div class="row align-items-center">
 							<div class="col">
-								<h6 class="m-0 fs-16 fw-semibold"> Notifications</h6>
+								<h6 class="m-0 fs-16 fw-semibold">Notifications</h6>
 							</div>
 							<div class="col-auto">
-								<div class="dropdown">
-									<a aria-expanded="false" class="dropdown-toggle drop-arrow-none link-dark" data-bs-offset="0,15" data-bs-toggle="dropdown" href="#">
-										<i class="isax isax-setting-2 fs-16 text-body align-middle"></i>
-									</a>
-									<div class="dropdown-menu dropdown-menu-end">
-										<!-- item-->
-										<a class="dropdown-item" href="javascript:void(0);">
-											<i class="ti ti-bell-check me-1"></i>Mark as Read </a>
-										<!-- item-->
-										<a class="dropdown-item" href="javascript:void(0);">
-											<i class="ti ti-trash me-1"></i>Delete All </a>
-									</div>
-								</div>
+								<form method="post" action="{% url 'notifications:mark_all_read' %}">
+									{% csrf_token %}
+									<input type="hidden" name="next" value="{{ request.get_full_path }}">
+									<button class="btn btn-link link-dark p-0" type="submit" title="Mark as read">
+										<i class="ti ti-bell-check"></i>
+									</button>
+								</form>
 							</div>
 						</div>
 					</div>
-					<!-- Notification Dropdown -->
 					<div class="notification-body position-relative z-2 rounded-0" data-simplebar="">
-						<!-- Item-->
-						<div class="dropdown-item notification-item py-2 text-wrap border-bottom" id="notification-1">
-							<div class="d-flex">
-								<div class="me-2 position-relative flex-shrink-0">
-									<img alt="User Img" class="avatar-md rounded-circle" src="{% static 'assets/img/profiles/avatar-05.jpg' %}" />
-								</div>
-								<div class="flex-grow-1">
-									<p class="mb-0 fw-semibold text-dark">John Smith</p>
-									<p class="mb-1 text-wrap fs-14"> A <span class="fw-semibold">new sale</span> has been recorded. </p>
-									<div class="d-flex justify-content-between align-items-center">
-										<span class="fs-12">
-											<i class="isax isax-clock me-1"></i>4 min ago </span>
-										<div class="notification-action d-flex align-items-center float-end gap-2">
-											<a aria-label="Make as Read" class="notification-read rounded-circle bg-info" data-bs-original-title="Make as Read" data-bs-toggle="tooltip" href="javascript:void(0);" title=""></a>
-											<button class="btn rounded-circle text-danger p-0" data-dismissible="#notification-1">
-												<i class="isax isax-close-circle fs-12"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item-->
-						<div class="dropdown-item notification-item py-2 text-wrap border-bottom" id="notification-2">
+						{% for n in header_notifications %}
+						<a class="dropdown-item notification-item py-2 text-wrap border-bottom" href="{% if n.url %}{{ n.url }}{% else %}{% url 'notifications:list' %}{% endif %}">
 							<div class="d-flex">
 								<div class="flex-shrink-0">
 									<div class="avatar-sm me-2">
-										<span class="avatar-title bg-soft-info text-info fs-18 rounded-circle"> D </span>
+										<span class="avatar-title {% if n.read %}bg-light text-muted{% else %}bg-soft-info text-info{% endif %} fs-18 rounded-circle">{{ n.title|slice:":1"|upper }}</span>
 									</div>
 								</div>
 								<div class="flex-grow-1">
-									<p class="mb-0 fw-semibold text-dark">Donoghue Susan</p>
-									<p class="mb-0 text-wrap fs-14"> Switched to a lower-tier package </p>
-									<div class="d-flex justify-content-between align-items-center">
-										<span class="fs-12">
-											<i class="isax isax-clock me-1"></i>4 min ago </span>
-										<div class="notification-action d-flex align-items-center float-end gap-2">
-											<a aria-label="Make as Read" class="notification-read rounded-circle bg-info" data-bs-original-title="Make as Read" data-bs-toggle="tooltip" href="javascript:void(0);" title=""></a>
-											<button class="btn rounded-circle text-danger p-0" data-dismissible="#notification-2">
-												<i class="isax isax-close-circle fs-12"></i>
-											</button>
-										</div>
-									</div>
+									<p class="mb-0 fw-semibold text-dark">{{ n.title }}</p>
+									{% if n.body %}<p class="mb-0 text-wrap fs-14">{{ n.body|truncatechars:90 }}</p>{% endif %}
+									<span class="fs-12"><i class="isax isax-clock me-1"></i>{{ n.created_at|timesince }} ago</span>
 								</div>
 							</div>
-						</div>
-						<!-- Item-->
-						<div class="dropdown-item notification-item py-2 text-wrap border-bottom" id="notification-3">
-							<div class="d-flex">
-								<div class="me-2 position-relative flex-shrink-0">
-									<img alt="User Img" class="avatar-md rounded-circle" src="{% static 'assets/img/profiles/avatar-03.jpg' %}" />
-								</div>
-								<div class="flex-grow-1">
-									<p class="mb-0 fw-semibold text-dark">Robert Fox </p>
-									<p class="mb-1 text-wrap fs-14"> Completed payment for <span class="fw-semibold">#INV00025</span>
-									</p>
-									<div class="d-flex justify-content-between align-items-center">
-										<span class="fs-12">
-											<i class="isax isax-clock me-1"></i>4 min ago </span>
-										<div class="notification-action d-flex align-items-center float-end gap-2">
-											<a aria-label="Make as Read" class="notification-read rounded-circle bg-info" data-bs-original-title="Make as Read" data-bs-toggle="tooltip" href="javascript:void(0);" title=""></a>
-											<button class="btn rounded-circle text-danger p-0" data-dismissible="#notification-3">
-												<i class="isax isax-close-circle fs-12"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item-->
-						<div class="dropdown-item notification-item py-2 text-wrap border-bottom" id="notification-4">
-							<div class="d-flex">
-								<div class="flex-shrink-0">
-									<div class="avatar-sm me-2">
-										<span class="avatar-title bg-soft-warning text-warning fs-18 rounded-circle">
-											<i class="isax isax-message"></i>
-										</span>
-									</div>
-								</div>
-								<div class="flex-grow-1">
-									<p class="mb-0 text-wrap fs-14">You have received <span class="fw-semibold">20</span> new messages in the conversation </p>
-									<div class="d-flex justify-content-between align-items-center">
-										<span class="fs-12">
-											<i class="isax isax-clock me-1"></i>3 min ago </span>
-										<div class="notification-action d-flex align-items-center float-end gap-2">
-											<a aria-label="Make as Read" class="notification-read rounded-circle bg-info" data-bs-original-title="Make as Read" data-bs-toggle="tooltip" href="javascript:void(0);" title=""></a>
-											<button class="btn rounded-circle text-danger p-0" data-dismissible="#notification-4">
-												<i class="isax isax-close-circle fs-12"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item-->
-						<div class="dropdown-item notification-item py-2 text-wrap border-bottom" id="notification-5">
-							<div class="d-flex">
-								<div class="me-2 position-relative flex-shrink-0">
-									<img alt="User Img" class="avatar-md rounded-circle" src="{% static 'assets/img/profiles/avatar-17.jpg' %}" />
-								</div>
-								<div class="flex-grow-1">
-									<p class="mb-0 fw-semibold text-dark">Charlotte Brown</p>
-									<p class="mb-1 text-wrap fs-14"> New invoice generated <span class="fw-semibold"> #INV00028</span>
-									</p>
-									<div class="mb-1">
-										<a class="badge bg-success p-2 py-1 me-1" href="#">Approve</a>
-										<a class="badge bg-danger p-2 py-1" href="#">Deny</a>
-									</div>
-									<div class="d-flex justify-content-between align-items-center">
-										<span class="fs-12">
-											<i class="isax isax-clock me-1"></i>45 min ago </span>
-										<div class="notification-action d-flex align-items-center float-end gap-2">
-											<a aria-label="Make as Read" class="notification-read rounded-circle bg-info" data-bs-original-title="Make as Read" data-bs-toggle="tooltip" href="javascript:void(0);" title=""></a>
-											<button class="btn rounded-circle text-danger p-0" data-dismissible="#notification-5">
-												<i class="isax isax-close-circle fs-12"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						</a>
+						{% empty %}
+						<div class="dropdown-item py-4 text-center text-muted">No notifications.</div>
+						{% endfor %}
 					</div>
-					<!-- View All-->
 					<div class="p-2 rounded-bottom border-top text-center">
-						<a class="text-center fw-medium fs-14 mb-0" href="notifications.html"> View All </a>
+						<a class="text-center fw-medium fs-14 mb-0" href="{% url 'notifications:list' %}">View All</a>
 					</div>
 				</div>
-			</div>
-			<!-- Light/Dark Mode Button -->
-			<div class="me-2 theme-item">
-				<a class="theme-toggle btn btn-menubar" href="javascript:void(0);" id="dark-mode-toggle">
-					<i class="isax isax-moon"></i>
-				</a>
-				<a class="theme-toggle btn btn-menubar" href="javascript:void(0);" id="light-mode-toggle">
-					<i class="isax isax-sun-1"></i>
-				</a>
 			</div>
 			<!-- User Dropdown -->
 			<div class="dropdown profile-dropdown">
 				<a class="dropdown-toggle d-flex align-items-center" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="javascript:void(0);">
 					<span class="avatar online">
-						<img alt="Img" class="img-fluid rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" />
+						{% if header_user_image %}
+						<img alt="{{ header_user_name }}" class="img-fluid rounded-circle" src="{{ header_user_image }}" />
+						{% else %}
+						<span class="avatar-initials rounded-circle">{{ header_user_initials }}</span>
+						{% endif %}
 					</span>
 				</a>
 				<div class="dropdown-menu p-2">
 					<div class="d-flex align-items-center bg-light rounded-1 p-2 mb-2">
 						<span class="avatar avatar-lg me-2">
-							<img alt="img" class="rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" />
+							{% if header_user_image %}
+							<img alt="{{ header_user_name }}" class="rounded-circle" src="{{ header_user_image }}" />
+							{% else %}
+							<span class="avatar-initials avatar-lg rounded-circle">{{ header_user_initials }}</span>
+							{% endif %}
 						</span>
 						<div>
-							<h6 class="fs-14 fw-medium mb-1">Jafna Cremson</h6>
-							<p class="fs-13">Administrator</p>
+							<h6 class="fs-14 fw-medium mb-1">{{ header_user_name }}</h6>
+							{% if header_user_role %}<p class="fs-13 mb-0">{{ header_user_role }}</p>{% endif %}
 						</div>
 					</div>
 					<!-- Item-->

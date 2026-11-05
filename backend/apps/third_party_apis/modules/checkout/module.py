@@ -6,13 +6,14 @@ class Module(ThirdPartyApiModule):
     key = "data_marketplace_checkout"
     display_name = "Checkout"
     description = (
-        "Multi-product Marketplace checkout with one final 1TS submission."
+        "Renders the marketplace request-access form for a product and submits "
+        "one open cart to 1TS ServiceNow."
     )
 
     default_source_name = "Data Marketplace / 1TS"
     icon_path = "images/brands/modules/data-marketplace.png"
 
-    url_prefix = "data-marketplace-checkout/"
+    url_prefix = ""
     frontend_path = "api/marketplace/cart/checkout/"
     frontend_method = "POST"
     frontend_authentication = "Django authentication"
@@ -50,17 +51,68 @@ class Module(ThirdPartyApiModule):
     tags = (
         "Data Marketplace",
         "Checkout",
+        "Request Form",
         "1TS",
-        "Multi-product",
+    )
+
+    capabilities = (
+        "Product request form",
+        "Cart item request form",
+        "1TS cart submission",
     )
 
     documentation_url = ""
+
+    endpoints = (
+        {
+            "name": "Product request form",
+            "route_name": "data_marketplace_checkout:product_request_form",
+            "method": "GET",
+            "authentication": "Django authentication",
+            "parameters": ("product_id",),
+        },
+        {
+            "name": "Cart item request form",
+            "route_name": "data_marketplace_checkout:cart_item_request_form",
+            "method": "GET",
+            "authentication": "Django authentication",
+            "parameters": ("line_key",),
+        },
+        {
+            "name": "Save cart item request form",
+            "route_name": "data_marketplace_checkout:cart_item_request_form",
+            "method": "PUT",
+            "authentication": "Django authentication",
+            "parameters": ("line_key", "revision", "form_values"),
+        },
+        {
+            "name": "Current cart",
+            "route_name": "data_marketplace_checkout:current_cart",
+            "method": "GET",
+            "authentication": "Django authentication",
+            "parameters": (),
+        },
+        {
+            "name": "Submit checkout",
+            "route_name": "data_marketplace_checkout:checkout",
+            "method": "POST",
+            "authentication": "Django authentication",
+            "parameters": ("cart_id", "idempotency_key", "terms_accepted"),
+        },
+        {
+            "name": "Checkout detail",
+            "route_name": "data_marketplace_checkout:checkout_detail",
+            "method": "GET",
+            "authentication": "Django authentication",
+            "parameters": ("checkout_id",),
+        },
+    )
 
     presentation = {
         "card": {
             "fields": (
                 {
-                    "label": "Checkout API",
+                    "label": "Endpoint",
                     "source": "frontend.endpoint",
                     "format": "code",
                     "hide_if_empty": True,
@@ -78,7 +130,7 @@ class Module(ThirdPartyApiModule):
                     "hide_if_empty": True,
                 },
                 {
-                    "label": "Last Submission",
+                    "label": "Last Sync",
                     "source": "last_success_at",
                     "format": "datetime",
                     "hide_if_empty": True,
@@ -107,6 +159,9 @@ class Module(ThirdPartyApiModule):
             ),
         },
     }
+
+    def public_endpoint(self):
+        return "/api/marketplace/cart/checkout/"
 
     @property
     def urlpatterns(self):

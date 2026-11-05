@@ -1,6 +1,5 @@
 export interface RequestAccess {
     v_dar_product_name: string;
-    radar_productname: string;
     v_dar_dm_version: string;
     v_dar_createdby_fullname: string;
     v_dar_objectid_createdby: string;

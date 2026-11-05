@@ -76,7 +76,7 @@ def deliver_notification(self, notification_id=None):
 @shared_task
 def build_notification_digests():
     built=0
-    for pref in NotificationPreference.objects.exclude(digest_frequency=DigestFrequency.OFF).select_related("user"):
+    for pref in NotificationPreference.objects.exclude(digest_frequency=DigestFrequency.OFF).filter(email_enabled=True).select_related("user"):
         result=build_digest(pref.user,pref.digest_frequency)
         if not result: continue
         digest,items=result

@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from . import admin_views, builder_views, render_views
+from .dar_builder_views import dar_form_builder
 from .views import FormChangeLogViewSet, FormDefinitionViewSet, FormSchemaView, FormStateView, FormSubmitView, SubmissionViewSet
 # from apps.forms.admin_views.routing import RoutingListView, routing_rules
 from .admin_views.rules import rule_detail
@@ -36,6 +37,7 @@ urlpatterns = [
     path("forms/definitions/<int:pk>/preview/", admin_views.form_preview, name="form-preview"),
     path("forms/<slug:slug>/", render_views.render_form, name="render_form", ),
     path("forms/<slug:slug>/success/<int:submission_id>/", render_views.form_success, name="form-success"),
+    path("form-builder/", dar_form_builder, name="dar-form-builder"),
     path("forms/definitions/<int:pk>/builder/", builder_views.builder, name="form-builder"),
     path("forms/definitions/<int:pk>/builder/schema/", builder_views.builder_schema, name="form-builder-schema"),
     path("forms/definitions/<int:pk>/builder/publish/", builder_views.builder_publish, name="form-builder-publish"),

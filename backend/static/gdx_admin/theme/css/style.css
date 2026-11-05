@@ -16691,6 +16691,10 @@ body.layout-mode-rtl .sidebar-footer .trial-item .close-icon {
 /*============================
   44.theme-settings
 ============================*/
+.sidebar-contact,
+.toggle-theme {
+  display: none !important;
+}
 .sidebar-contact {
   position: fixed;
   top: 50%;

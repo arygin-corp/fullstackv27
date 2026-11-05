@@ -3,40 +3,6 @@ export interface Contact {
   email: string;
 }
 
-export interface SampleData {
-  glossary_id_1?: string;
-  field_name_1?: string;
-  field_value_1?: string;
-  glossary_id_2?: string;
-  field_name_2?: string;
-  field_value_2?: string;
-  glossary_id_3?: string;
-  field_name_3?: string;
-  field_value_3?: string;
-  glossary_id_4?: string;
-  field_name_4?: string;
-  field_value_4?: string;
-  glossary_id_5?: string;
-  field_name_5?: string;
-  field_value_5?: string;
-  glossary_id_6?: string;
-  field_name_6?: string;
-  field_value_6?: string;
-  glossary_id_7?: string;
-  field_name_7?: string;
-  field_value_7?: string;
-  glossary_id_8?: string;
-  field_name_8?: string;
-  field_value_8?: string;
-  glossary_id_9?: string;
-  field_name_9?: string;
-  field_value_9?: string;
-  glossary_id_10?: string;
-  field_name_10?: string;
-  field_value_10?: string;
-  is_active?: boolean;
-}
-
 export interface Product {
   id: number;
   name: string;
@@ -81,6 +47,5 @@ export interface Product {
   business_sme: Contact | null;
   badges: string[];
   keywords: string[];
-  sample_data: SampleData[];
   images: string[];
 }

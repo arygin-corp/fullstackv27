@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "introduction",
+    "title": "1. Introduction",
+    "audience": "All users",
+    "summary": "Purpose, scope, audience, and documentation conventions."
+  },
+  {
+    "slug": "architecture",
+    "title": "2. Application Architecture",
+    "audience": "Administrators and operators",
+    "summary": "Core objects and how they relate."
+  },
+  {
+    "slug": "getting-started",
+    "title": "3. Getting Started",
+    "audience": "All users",
+    "summary": "Access, navigation, and first-use checks."
+  },
+  {
+    "slug": "dashboard",
+    "title": "4. Dashboard and Navigation",
+    "audience": "All users",
+    "summary": "Purpose of every routed application area."
+  },
+  {
+    "slug": "page-management",
+    "title": "5. Page Management",
+    "audience": "Content managers and administrators",
+    "summary": "Create, update, preview, and classify pages."
+  },
+  {
+    "slug": "version-management",
+    "title": "6. Version Management",
+    "audience": "Content managers and reviewers",
+    "summary": "Version numbering, comparison, revision, and rollback."
+  },
+  {
+    "slug": "content-authoring",
+    "title": "7. Content Authoring",
+    "audience": "Authors and content managers",
+    "summary": "Supported content model, sanitation, and media."
+  },
+  {
+    "slug": "workflow",
+    "title": "8. Workflow Management",
+    "audience": "Authors, reviewers, and administrators",
+    "summary": "Submission, task generation, routing, and state transitions."
+  },
+  {
+    "slug": "approvals",
+    "title": "9. Approval Framework",
+    "audience": "Reviewers and administrators",
+    "summary": "Decision options, comments, and outcomes."
+  },
+  {
+    "slug": "content-manager",
+    "title": "10. Content Manager Guide",
+    "audience": "Content Manager Group",
+    "summary": "Create and update pages; submit eligible versions; complete assigned content reviews; publish approved versions."
+  },
+  {
+    "slug": "web-publisher",
+    "title": "11. Web Publisher Guide",
+    "audience": "Web Publishers Group",
+    "summary": "Use the broad non-deleted page visibility granted to this group. The supplied publish service itself requires Content Manager Group authority."
+  },
+  {
+    "slug": "product-owner",
+    "title": "12. Product Owner Guide",
+    "audience": "Product Team/Owner Group",
+    "summary": "Review owned pages when visibility is enabled and provide business-owner input when a corresponding task is available."
+  },
+  {
+    "slug": "legal-reviewer",
+    "title": "13. Legal Reviewer Guide",
+    "audience": "Legal Group",
+    "summary": "Complete legal-review tasks assigned to the Legal Group."
+  },
+  {
+    "slug": "security-reviewer",
+    "title": "14. Data Security Reviewer Guide",
+    "audience": "Data Security Group",
+    "summary": "Complete security-review tasks assigned to the Data Security Group."
+  },
+  {
+    "slug": "drb-reviewer",
+    "title": "15. Data Review Board Guide",
+    "audience": "Data Review Board Group",
+    "summary": "View non-deleted pages marked as requiring DRB review through the governance view."
+  },
+  {
+    "slug": "administrator",
+    "title": "16. Administrator Guide",
+    "audience": "Administrator Group",
+    "summary": "Use application-wide page visibility to oversee page inventory and operational views."
+  },
+  {
+    "slug": "super-admin",
+    "title": "17. Super Administrator Guide",
+    "audience": "Super Administrator Group and Django superusers",
+    "summary": "Use broad visibility; Django superusers bypass require_group checks in the supplied permission helper."
+  },
+  {
+    "slug": "notifications",
+    "title": "18. Notifications",
+    "audience": "All users and operators",
+    "summary": "Notification channels, preferences, and delivery status."
+  },
+  {
+    "slug": "media",
+    "title": "19. Media Management",
+    "audience": "Authors and administrators",
+    "summary": "Upload controls, validation, and safe-use requirements."
+  },
+  {
+    "slug": "search",
+    "title": "20. Search, Inventory, and Ownership",
+    "audience": "All users",
+    "summary": "Find pages and review inventory states."
+  },
+  {
+    "slug": "audit",
+    "title": "21. Audit and Compliance",
+    "audience": "Administrators and auditors",
+    "summary": "Immutable event history and review guidance."
+  },
+  {
+    "slug": "retention",
+    "title": "22. Archive, Deletion, Restore, and Retention",
+    "audience": "Content managers and administrators",
+    "summary": "Lifecycle states and the 30-day restore window."
+  },
+  {
+    "slug": "scheduling",
+    "title": "23. Scheduled Publication",
+    "audience": "Content managers and operators",
+    "summary": "Scheduled publish and unpublish processing."
+  },
+  {
+    "slug": "analytics-health",
+    "title": "24. Analytics and Health",
+    "audience": "Administrators and operators",
+    "summary": "Available operational summaries."
+  },
+  {
+    "slug": "api",
+    "title": "25. API Reference",
+    "audience": "Developers and integrators",
+    "summary": "Read-only authenticated page API."
+  },
+  {
+    "slug": "configuration",
+    "title": "26. Installation and Enterprise Configuration",
+    "audience": "Platform administrators",
+    "summary": "Host integration and production dependencies."
+  },
+  {
+    "slug": "troubleshooting",
+    "title": "27. Troubleshooting",
+    "audience": "All users and operators",
+    "summary": "Symptoms, implemented causes, and validation steps."
+  },
+  {
+    "slug": "faq",
+    "title": "28. Frequently Asked Questions",
+    "audience": "All users",
+    "summary": "Concise answers to common questions."
+  },
+  {
+    "slug": "appendices",
+    "title": "29. Appendices and Reference",
+    "audience": "All users",
+    "summary": "Glossary, status reference, and operational templates."
+  }
+]

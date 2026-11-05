@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-const baseUrl = `${environment.backend.baseURLPods}`;
 export interface PodOptions {
   u_primary: string;
+  label?: string;
+  value?: string;
 }
 
 @Injectable({
@@ -17,6 +18,6 @@ export class PodsService {
   constructor(private http: HttpClient) {}
 
   getPodsOptions(): Observable<PodOptions[]> {
-    return this.http.get<PodOptions[]>(`${baseUrl}/tpsp/api/pods/dropdown-list`);
+    return this.http.get<PodOptions[]>(`${environment.apiUrl}/api/integrations/tbdp-pods/dropdown/`);
   }
 }

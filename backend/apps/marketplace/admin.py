@@ -14,8 +14,6 @@ from .models import (
     Datatype,
     Domain,
     EndToEndSolutionProduct,
-    FieldName,
-    FieldValue,
     FulfillmentTeam,
     Keyword,
     OneTSDomain,
@@ -25,7 +23,6 @@ from .models import (
     ProductImage,
     ProductAssociation,
     Review,
-    SampleData,
     SubDomain_1,
     SubDomain_2,
 )
@@ -798,76 +795,6 @@ class FulfillmentTeamAdmin(admin.ModelAdmin):
 
 
 # =============================================================
-# Field Name
-# =============================================================
-
-@admin.register(FieldName)
-class FieldNameAdmin(admin.ModelAdmin):
-
-    list_display = (
-        "name",
-        "axon_id",
-        "collibra_id",
-        "is_active",
-    )
-
-    readonly_fields = (
-        "created_by",
-        "created_at",
-        "updated_by",
-        "updated_at",
-    )
-
-
-# =============================================================
-# Field Value
-# =============================================================
-
-@admin.register(FieldValue)
-class FieldValueAdmin(admin.ModelAdmin):
-
-    list_display = (
-        "value",
-        "is_active",
-    )
-
-    readonly_fields = (
-        "created_by",
-        "created_at",
-        "updated_by",
-        "updated_at",
-    )
-
-
-# =============================================================
-# Sample Data
-# =============================================================
-
-@admin.register(SampleData)
-class SampleDataAdmin(admin.ModelAdmin):
-
-    readonly_fields = (
-        "created_by",
-        "created_at",
-        "updated_by",
-        "updated_at",
-    )
-
-    def get_products(self, obj):
-        products = obj.product_set.all()
-
-        if products.exists():
-            return ", ".join(
-                product.name
-                for product in products
-            )
-
-        return "No Product"
-
-    get_products.short_description = "Connected Products"
-
-
-# =============================================================
 # Product Image Inline
 # =============================================================
 
@@ -994,7 +921,6 @@ class ProductAdmin(admin.ModelAdmin):
         "badge",
         "keyword",
         "attribute",
-        "sample_data",
     )
 
     # ---------------------------------------------------------

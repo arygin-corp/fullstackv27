@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Decision Trees</title><link href="../assets/css/styles.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="top"><div class="logo">MP</div><div class="brand"><strong>Decision Trees</strong><small>Fast choices for creation, submission, review, publication, and restore.</small></div><div class="actions"><a class="btn" href="../index.html">Home</a><button class="btn" id="theme">Dark mode</button><button class="btn" onclick="print()">Print</button></div></header><div class="layout"><aside aria-label="Manual navigation"><input class="search" id="search" placeholder="Search manual"/><nav aria-label="Table of contents" class="toc"><a href="self-service-start.html">Start Here</a><a href="screen-guide.html">Screen Guide</a><a href="task-playbooks.html">Task Playbooks</a><a aria-current="page" class="active" href="decision-trees.html">Decision Trees</a><a href="examples.html">Examples</a><a href="exception-runbooks.html">Exception Runbooks</a><a href="ownership-escalation.html">Ownership &amp; Escalation</a><a href="training-plan.html">Training Plan</a><a href="knowledge-check.html">Knowledge Check</a><a href="introduction.html">1. Introduction</a><a href="architecture.html">2. Application Architecture</a><a href="getting-started.html">3. Getting Started</a><a href="dashboard.html">4. Dashboard and Navigation</a><a href="page-management.html">5. Page Management</a><a href="version-management.html">6. Version Management</a><a href="content-authoring.html">7. Content Authoring</a><a href="workflow.html">8. Workflow Management</a><a href="approvals.html">9. Approval Framework</a><a href="content-manager.html">10. Content Manager Guide</a><a href="web-publisher.html">11. Web Publisher Guide</a><a href="product-owner.html">12. Product Owner Guide</a><a href="legal-reviewer.html">13. Legal Reviewer Guide</a><a href="security-reviewer.html">14. Data Security Reviewer Guide</a><a href="drb-reviewer.html">15. Data Review Board Guide</a><a href="administrator.html">16. Administrator Guide</a><a href="super-admin.html">17. Super Administrator Guide</a><a href="notifications.html">18. Notifications</a><a href="media.html">19. Media Management</a><a href="search.html">20. Search, Inventory, and Ownership</a><a href="audit.html">21. Audit and Compliance</a><a href="retention.html">22. Archive, Deletion, Restore, and Retention</a><a href="scheduling.html">23. Scheduled Publication</a><a href="analytics-health.html">24. Analytics and Health</a><a href="api.html">25. API Reference</a><a href="configuration.html">26. Installation and Enterprise Configuration</a><a href="troubleshooting.html">27. Troubleshooting</a><a href="faq.html">28. Frequently Asked Questions</a><a href="appendices.html">29. Appendices and Reference</a></nav></aside><main id="main-content" tabindex="-1"><section class="hero"><h1>Decision Trees</h1><p>Fast choices for creation, submission, review, publication, and restore.</p></section><section class="chapter"><article class="card"><h3>Should I create a page or edit one?</h3><p></p><div class="decision">Does the slug + locale already exist?
+├─ No → Create a new page and initial version.
+└─ Yes → Open the existing page and use Edit to create a new version.
+
+Never create a duplicate page merely to revise content.</div></article><article class="card"><h3>Can I submit this version?</h3><p></p><div class="decision">Is there a working version?
+├─ No → Create or edit content first.
+└─ Yes → Is status Draft or Revision Requested?
+   ├─ No → Do not submit; inspect current workflow/status.
+   └─ Yes → Preview, confirm review flags, and Submit.</div></article><article class="card"><h3>Which review decision should I use?</h3><p></p><div class="decision">Are required changes needed?
+├─ No → Is the review successful with no material comment?
+│  ├─ Yes → Approved
+│  └─ No → Approved with comments
+└─ Yes → Should the content be corrected and resubmitted?
+   ├─ Yes → Revision requested
+   └─ No → Rejected
+
+If unable to make the review determination → use the approved organizational escalation; Abstained exists but business handling must be locally defined.</div></article><article class="card"><h3>Can I publish?</h3><p></p><div class="decision">Is the intended version Approved?
+├─ No → Do not publish. Complete or correct the workflow.
+└─ Yes → Does the account satisfy Content Manager authority or authorized superuser behavior?
+   ├─ No → Contact an authorized Content Manager or Administrator.
+   └─ Yes → Publish and validate the result.</div></article><article class="card"><h3>Can I restore a deleted page?</h3><p></p><div class="decision">Is the page marked deleted?
+├─ No → Restore does not apply.
+└─ Yes → Is purge_at still in the future?
+   ├─ No → Restore is unavailable in the supplied service. Escalate.
+   └─ Yes → Restore and verify state.</div></article></section><footer>Master Pages self-service onboarding and operations manual</footer></main></div><script src="../assets/js/app.js"></script></body></html>

@@ -79,3 +79,21 @@ class CheckoutExternalItem(models.Model):
     ritm_number = models.CharField(max_length=64, blank=True)
     raw_reference = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class CheckoutFormDefinition(models.Model):
+    """Saved checkout form: fields, show/hide rules, and validators."""
+
+    key = models.CharField(max_length=64, unique=True, default="marketplace")
+    document = models.JSONField(default=dict, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="checkout_form_definitions",
+    )
+
+    class Meta:
+        verbose_name = "Checkout form definition"

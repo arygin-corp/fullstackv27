@@ -1,4 +1,7 @@
+from django.apps import apps
+from django.conf import settings
 from django.db import transaction
+from django.shortcuts import get_object_or_404
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -7,6 +10,9 @@ from .serializers import CartItemFormSaveSerializer, CartItemSerializer, CartSer
 from .services.cart_validation import apply_validation, validate_cart_item
 from .services.checkout_service import execute_checkout, prepare_checkout
 from .services.exceptions import CartItemStaleError, CheckoutDomainError
+from .services.identity import resolve_creator
+from .services.form_builder import load_definition
+from .services.request_form_schema import build_request_form
 
 class CurrentCartView(APIView):
     permission_classes=[permissions.IsAuthenticated]
@@ -16,13 +22,29 @@ class CurrentCartView(APIView):
 
 class CartItemRequestFormView(APIView):
     permission_classes=[permissions.IsAuthenticated]
+    def get(self, request, line_key):
+        item = get_object_or_404(
+            CartItem.objects.select_related("cart", "product"),
+            line_key=line_key,
+            cart__owner=request.user,
+            cart__status="open",
+        )
+        return Response(build_request_form(
+            item.product,
+            resolve_creator(request),
+            saved_values=item.request_form_values,
+            line_key=item.line_key,
+            revision=item.revision,
+            definition=load_definition(),
+        ))
+
     def put(self,request,line_key):
         serializer=CartItemFormSaveSerializer(data=request.data); serializer.is_valid(raise_exception=True)
         with transaction.atomic():
             item=CartItem.objects.select_for_update().select_related("cart","product").get(line_key=line_key,cart__owner=request.user,cart__status="open")
             if item.revision != serializer.validated_data["revision"]:
                 return Response({"error_code":"CART_ITEM_STALE","message":"This cart item changed in another session.","line_key":str(item.line_key),"current_revision":item.revision},status=status.HTTP_409_CONFLICT)
-            result=validate_cart_item(item.product,serializer.validated_data["form_values"]); apply_validation(item,result); item.revision += 1
+            result=validate_cart_item(item.product,serializer.validated_data["form_values"],definition=load_definition()); apply_validation(item,result); item.revision += 1
             item.save(update_fields=["request_form_values","request_details_complete","business_justification_complete","data_usage_complete","is_complete","missing_sections","validation_errors","revision","updated_at"])
         return Response({"item":CartItemSerializer(item).data,"cart":CartSerializer(item.cart).data})
 
@@ -36,6 +58,15 @@ class CheckoutSubmitView(APIView):
         except CheckoutDomainError as exc:
             return Response({"status":"failed","error_code":exc.code,"message":exc.message,"items":exc.items},status=400)
         return Response(CheckoutSerializer(checkout).data,status=200 if checkout.status=="submitted" else 502)
+
+class ProductRequestFormView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, product_id):
+        product_model = apps.get_model(getattr(settings, "MARKETPLACE_PRODUCT_MODEL", "marketplace.Product"))
+        product = get_object_or_404(product_model, pk=product_id)
+        return Response(build_request_form(product, resolve_creator(request), definition=load_definition()))
+
 
 class CheckoutDetailView(APIView):
     permission_classes=[permissions.IsAuthenticated]

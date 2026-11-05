@@ -24,8 +24,8 @@
   transition: 0.3s;
 }
 .hp-components-item:hover {
-  -webkit-box-shadow: 0px 16px 32px rgba(0, 16, 247, 0.04);
-          box-shadow: 0px 16px 32px rgba(0, 16, 247, 0.04);
+  -webkit-box-shadow: 0px 16px 32px rgba(229, 0, 0, 0.04);
+          box-shadow: 0px 16px 32px rgba(229, 0, 0, 0.04);
   background: #ffffff !important;
 }
 .hp-components-item:hover .hp-components-item-img img {
@@ -33,5 +33,5 @@
           transform: scale(0.9);
 }
 .hp-components-item:hover .hp-components-item-title {
-  color: #0010f7 !important;
+  color: #e50000 !important;
 }

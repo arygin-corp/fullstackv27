@@ -1,10 +1,9 @@
-import json
 import logging
 from django import forms
 from django.forms import inlineformset_factory # Import inlineformset_factory
 from django_ckeditor_5.widgets import CKEditor5Widget
 from django_select2.forms import Select2MultipleWidget, Select2Widget
-from .models import Product, SampleData, Domain, SubDomain_1, SubDomain_2, FieldValue, FieldName, Catalog, ProductImage # Import ProductImage model
+from .models import Product, Domain, SubDomain_1, SubDomain_2, Catalog, ProductImage
 from apps.teams.models import Team # Assuming this import is correct for your Team model
 
 logger = logging.getLogger(__name__)
@@ -61,10 +60,6 @@ class ProductForm(forms.ModelForm):
 
         # Call parent's __init__ method
         super().__init__(*args, **kwargs)
-        # Only access sample_data if it exists in fields
-        if 'sample_data' in self.fields:
-            self.fields['sample_data'].widget = forms.HiddenInput()
-            # Remove any other sample_data processing that might cause issues
 
         # Apply Bootstrap styling to all fields
         for field_name, field in self.fields.items():
@@ -125,9 +120,6 @@ class ProductForm(forms.ModelForm):
         self.fields['data_review_status'].widget.attrs.update({})
         self.fields['data_review_team'].widget.attrs.update({})
         self.fields['is_active'].widget.attrs.update({})
-        # Only update sample_data field attributes if the field exists
-        if 'sample_data' in self.fields:
-            self.fields['sample_data'].widget.attrs.update({})
         self.fields['status'].widget.attrs.update({})
 
         # Additional configurations (preserved from your original __init__)
@@ -202,62 +194,7 @@ class ProductForm(forms.ModelForm):
             cleaned_data['data_review_status'] = 'not_required'
             cleaned_data['data_review_team'] = None
 
-        # Validate and normalize sample data without writing to the database.
-        if 'sample_data_manual' in self.data:
-            sample_data_manual = self.data.get('sample_data_manual', '')
-            if sample_data_manual:
-                try:
-                    entries = json.loads(sample_data_manual)
-                except json.JSONDecodeError:
-                    raise forms.ValidationError('Sample data must be valid JSON.')
-                if not isinstance(entries, list):
-                    raise forms.ValidationError('Sample data must be a JSON list.')
-
-                normalized_entries = []
-                for entry in entries[:10]:
-                    if not isinstance(entry, dict):
-                        raise forms.ValidationError('Each sample data entry must be an object.')
-                    field_name_id = entry.get('field_name_id')
-                    field_value_id = entry.get('field_value_id')
-                    if not field_name_id or not field_value_id:
-                        continue
-                    if not FieldName.objects.filter(pk=field_name_id).exists():
-                        raise forms.ValidationError(f'Unknown field name ID: {field_name_id}.')
-                    if not FieldValue.objects.filter(pk=field_value_id, field_name_id=field_name_id).exists():
-                        raise forms.ValidationError(
-                            f'Field value ID {field_value_id} does not belong to field name ID {field_name_id}.'
-                        )
-                    normalized_entries.append({
-                        'glossary_id': entry.get('glossary_id') or '',
-                        'field_name_id': field_name_id,
-                        'field_value_id': field_value_id,
-                    })
-                cleaned_data['sample_data_entries'] = normalized_entries
-            else:
-                cleaned_data['sample_data_entries'] = []
         return cleaned_data
-
-    def save_sample_data(self, product):
-        """Persist validated manual sample data after the product saves successfully."""
-        if 'sample_data_manual' not in self.data:
-            return
-
-        previous = list(product.sample_data.all())
-        created = []
-        for entry in self.cleaned_data.get('sample_data_entries', []):
-            created.append(SampleData.objects.create(
-                glossary_id_1=entry['glossary_id'] or None,
-                field_name_1_id=entry['field_name_id'],
-                field_value_1_id=entry['field_value_id'],
-                created_by=getattr(product, 'created_by', None),
-                updated_by=getattr(product, 'updated_by', None) or getattr(product, 'created_by', None),
-                is_active=True,
-            ))
-
-        product.sample_data.set(created)
-        for old in previous:
-            if not old.product_set.exists():
-                old.delete()
 
 # The following forms are preserved as they were in your original forms.py
 class DomainForm(forms.ModelForm): # Changed to forms.ModelForm for Meta class to work
@@ -334,88 +271,6 @@ def __init__(self, *args, **kwargs):
         except (ValueError, TypeError):
             pass  # fallback to empty queryset
 """
-
-class SampleDataForm(forms.ModelForm): # Changed to forms.ModelForm
-    def __init__(self, *args, **kwargs):
-        super(SampleDataForm, self).__init__(*args, **kwargs)
-        # Note: Your SampleDataForm Meta class has fields ('sku', 'name', 'description', 'slug', 'level', 'is_active')
-        # but your __init__ is setting attrs for 'glossary_id', 'field_name', 'field_value', 'sorting_id'.
-        # This might indicate a mismatch between the form's fields and the model's fields, or intended usage.
-        # I'm keeping your __init__ as is, but be aware of this potential discrepancy.
-        if 'glossary_id_1' in self.fields: # Adjusting to match model field names
-            self.fields['glossary_id_1'].widget.attrs = {'class': 'form-control col-md-12'}
-        if 'field_name_1' in self.fields:
-            self.fields['field_name_1'].widget.attrs = {'class': 'form-control col-md-12'}
-        if 'field_value_1' in self.fields:
-            self.fields['field_value_1'].widget.attrs = {'class': 'form-control col-md-12'}
-        # Assuming sorting_id is not directly on SampleData model based on your models.py
-        # You might need to adjust this if it's a field you intend to use.
-        # if 'sorting_id' in self.fields:
-        #     self.fields['sorting_id'].widget.attrs = {'class': 'form-control col-md-12'}
-        if 'is_active' in self.fields:
-            self.fields['is_active'].widget.attrs = {'class': 'form-control col-md-12'}
-
-
-    class Meta:
-        model = SampleData
-        # Explicitly listing fields from SampleData model for clarity
-        fields = ('glossary_id_1', 'field_name_1', 'field_value_1',
-                  'glossary_id_2', 'field_name_2', 'field_value_2',
-                  'glossary_id_3', 'field_name_3', 'field_value_3',
-                  'glossary_id_4', 'field_name_4', 'field_value_4',
-                  'glossary_id_5', 'field_name_5', 'field_value_5',
-                  'glossary_id_6', 'field_name_6', 'field_value_6',
-                  'glossary_id_7', 'field_name_7', 'field_value_7',
-                  'glossary_id_8', 'field_name_8', 'field_value_8',
-                  'glossary_id_9', 'field_name_9', 'field_value_9',
-                  'glossary_id_10', 'field_name_10', 'field_value_10',
-                  'is_active')
-        widgets = {
-            # Assuming 'name' was a placeholder or intended for a different field.
-            # If you want to use Select2MultipleWidget for field_name_1 etc., you'd list them here.
-            # 'name': Select2MultipleWidget(attrs={'class': 'form-control col-md-12'}),
-        }
-
-class FieldNameForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # Apply Bootstrap styling to all fields
-        for field in self.fields.values():
-            field.widget.attrs.setdefault('class', 'form-control col-md-12')
-
-        # Optional: Add specific widget updates if needed
-        if 'name' in self.fields:
-            self.fields['name'].widget.attrs.update({})
-        if 'is_active' in self.fields:
-            self.fields['is_active'].widget.attrs.update({})
-
-    class Meta:
-        model = FieldName
-        fields = ('name', 'is_active')
-        widgets = {
-            'name': Select2MultipleWidget(attrs={'class': 'form-control col-md-12'}),
-        }
-
-class FieldValueForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # Apply Bootstrap styling to all fields
-        for field in self.fields.values():
-            field.widget.attrs.setdefault('class', 'form-control col-md-12')
-
-        if 'value' in self.fields:
-            self.fields['value'].widget.attrs.update({})
-        if 'is_active' in self.fields:
-            self.fields['is_active'].widget.attrs.update({})
-
-    class Meta:
-        model = FieldValue
-        fields = ('value', 'is_active')
-        widgets = {
-            'value': Select2MultipleWidget(attrs={'class': 'form-control col-md-12'}),
-        }
 
 class CatalogForm(forms.ModelForm):
     class Meta:

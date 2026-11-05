@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment} from '../../../environments/environment';
-import { CitationReference, ProductReference, VikkiChatResponse, VikkiContextResponse, VikkiMessage} from '../interfaces/vikki';
+import { MsalService } from '@azure/msal-angular';
+import { CitationReference, ProductReference, VikkiChatResponse, VikkiContextResponse, VikkiMessage, VikkiPageContext} from '../interfaces/vikki';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,11 @@ import { CitationReference, ProductReference, VikkiChatResponse, VikkiContextRes
 export class AiChatService {
   private readonly apiBase = environment.apiUrl;
   private readonly storageKey = 'vikki-chat-history-v1';
+  private readonly conversationKey = 'vikki-conversation-id';
 
   constructor(
-    private readonly http: HttpClient, 
+    private readonly http: HttpClient,
+    private readonly msal: MsalService,
   ) {}
 
   sendMessage(
@@ -24,7 +27,9 @@ export class AiChatService {
     productId?: number,
     conversationId?: number,
     sessionId?: string,
-    onCitations?: (citations: CitationReference[]) => void
+    onCitations?: (citations: CitationReference[]) => void,
+    page?: VikkiPageContext,
+    onStatus?: (status: string) => void
   ): Promise<VikkiChatResponse> {
     const question = query.trim();
 
@@ -39,7 +44,10 @@ export class AiChatService {
       session_id: sessionId || undefined,
 
       page_context: {
-        page: 'angular-chat-component',
+        page: page?.page || 'angular-chat',
+        route: page?.route || '',
+        product_id: page?.productId,
+        product_name: page?.productName || '',
 
         recent_client_messages: history.filter(message =>
           Boolean(message.text?.trim())).slice(-6).map(message => ({
@@ -50,7 +58,11 @@ export class AiChatService {
       }
     };
 
-    return new Promise<VikkiChatResponse>((resolve, reject) => {
+    return this.streamMessage(payload, onToken, onSources, onCitations, onStatus).catch(error => {
+      if (error?.name === 'StreamBodyError') {
+        return Promise.reject(error);
+      }
+      return new Promise<VikkiChatResponse>((resolve, reject) => {
       this.http.post<VikkiChatResponse>(`${this.apiBase}/api/ai/chat/`, payload).subscribe({
         next: response => {onToken(response.answer || '');
         const productSources: ProductReference[] = (response.recommendations || []).map(item => ({
@@ -83,15 +95,117 @@ export class AiChatService {
         }
       });
     });
+    });
   }
 
 
-  getContext(): Observable<VikkiContextResponse> {
-    // const token = localStorage.getItem('access_token');
+  getContext(page?: VikkiPageContext): Observable<VikkiContextResponse> {
     return this.http.get<VikkiContextResponse>(`${this.apiBase}/api/ai/chat/context/`, {
-        // headers: { Authorization: `Bearer ${token}` }
+      params: {
+        route: page?.route || '',
+        page: page?.page || '',
+        product_id: page?.productId ? String(page.productId) : '',
+        product_name: page?.productName || '',
       }
-    );
+    });
+  }
+
+  private async streamMessage(
+    payload: Record<string, unknown>,
+    onToken: (token: string) => void,
+    onSources: (sources: ProductReference[]) => void,
+    onCitations?: (citations: CitationReference[]) => void,
+    onStatus?: (status: string) => void
+  ): Promise<VikkiChatResponse> {
+    const headers = await this.authHeaders();
+    const response = await fetch(`${this.apiBase}/api/ai/chat/stream/`, {
+      method: 'POST',
+      headers: { ...headers, 'Content-Type': 'application/json', Accept: 'text/event-stream' },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok || !response.body) {
+      throw new Error('Vikki stream is unavailable.');
+    }
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    const result: VikkiChatResponse = { answer: '' };
+    while (true) {
+      const chunk = await reader.read();
+      if (chunk.done) {
+        break;
+      }
+      buffer += decoder.decode(chunk.value, { stream: true });
+      const events = buffer.split('\n\n');
+      buffer = events.pop() || '';
+      for (const event of events) {
+        const line = event.split('\n').find(item => item.startsWith('data:'));
+        if (!line) {
+          continue;
+        }
+        const data = JSON.parse(line.slice(5).trim());
+        if (data.type === 'status') {
+          onStatus?.(data.status === 'answering' ? 'Writing an answer' : 'Searching your knowledge');
+        } else if (data.type === 'token') {
+          result.answer += data.token || '';
+          onToken(data.token || '');
+        } else if (data.type === 'conversation') {
+          result.conversation_id = data.conversation_id;
+        } else if (data.type === 'citations') {
+          result.citations = data.citations || [];
+          onCitations?.((result.citations || []).map(item => ({
+            documentId: item.document_id,
+            documentTitle: item.title,
+            chunkId: item.chunk_id,
+            position: item.position,
+            excerpt: item.excerpt,
+          })));
+        } else if (data.type === 'recommendations') {
+          result.recommendations = data.recommendations || [];
+          onSources((result.recommendations || []).map(item => ({
+            id: item.product.id,
+            name: item.product.name,
+            url: `/marketplace/products/${item.product.id}/`,
+            domain: item.product.domain,
+            dataType: item.product.data_type,
+            score: item.score,
+            reason: item.reason,
+          })));
+        } else if (data.type === 'suggestions') {
+          result.suggestions = data.suggestions || [];
+        } else if (data.type === 'actions') {
+          result.actions = data.actions || [];
+        } else if (data.type === 'guidance') {
+          result.guidance = data.guidance || '';
+        } else if (data.type === 'cached' || data.type === 'done') {
+          result.cached = Boolean(data.cached);
+          if (data.conversation_id) {
+            result.conversation_id = data.conversation_id;
+          }
+        } else if (data.type === 'error') {
+          const failure = new Error(data.message || 'Vikki could not answer.');
+          failure.name = 'StreamBodyError';
+          throw failure;
+        }
+      }
+    }
+    return result;
+  }
+
+  private async authHeaders(): Promise<Record<string, string>> {
+    try {
+      const account = this.msal.instance.getActiveAccount() || this.msal.instance.getAllAccounts()[0];
+      if (!account) {
+        return {};
+      }
+      const result = await this.msal.instance.acquireTokenSilent({
+        scopes: ['api://496a6de0-52a2-44d9-aaab-42a964716e65/access_as_user'],
+        account,
+      });
+      return { Authorization: `Bearer ${result.accessToken}` };
+    } catch {
+      return {};
+    }
   }
 
   submitFeedback(payload: {
@@ -141,9 +255,31 @@ export class AiChatService {
   }
 
 
+  loadConversationId(): number | undefined {
+    try {
+      const raw = localStorage.getItem(this.conversationKey);
+      const parsed = raw ? Number(raw) : NaN;
+      return Number.isInteger(parsed) ? parsed : undefined;
+    } catch {
+      return undefined;
+    }
+  }
+
+  saveConversationId(conversationId?: number): void {
+    if (!conversationId) {
+      return;
+    }
+    try {
+      localStorage.setItem(this.conversationKey, String(conversationId));
+    } catch {
+      return;
+    }
+  }
+
   clearHistory(): void {
     try {
       localStorage.removeItem(this.storageKey);
+      localStorage.removeItem(this.conversationKey);
     } catch {
       /*
        * Nothing further is required when local storage

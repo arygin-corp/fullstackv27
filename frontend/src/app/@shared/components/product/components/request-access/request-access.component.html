@@ -391,13 +391,6 @@
 
                     <div class="col-lg-12">
                         <div class="form-floating mt-3">
-                            <input type="text" class="form-control" formControlName="radar_productname" ngModel="{{product?.name}}" [attr.disabled]="true">
-                            <label for="floatingInput">RADAR Product Name</label>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-floating mt-3">
                             <input type="text" class="form-control" formControlName="v_dar_dm_version" ngModel="Version {{currentApplicationVersion}}" [attr.disabled]="true">
                             <label for="floatingInput">Application Build Version</label>
                         </div>
@@ -426,14 +419,47 @@
                             <select name="requestingID" id="requestingID" class="form-control" formControlName="requesting_id">
                                 <option value="Me" [selected]="isSelected">For me</option>
                                 <option value="User">For someone else</option>
+                                <option *ngIf="product?.datatype === 'Datasets'" value="Service Account">For a Service Account</option>
                             </select>
                             <label for="floatingInput"><span class="text-danger">* </span>Who are you requesting data access for?</label>
                         </div>
                     </div>
                     <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'User'">
                         <div class="form-floating mt-3">
-                            <app-people-finder></app-people-finder>
+                            <app-people-finder [control]="form.get('v_dar_objectid_reqfor')"></app-people-finder>
                         </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'Service Account'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_service_account">
+                            <label for="serviceAccount"><span class="text-danger">* </span>Service Account (only for TBDP platform requests)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="product?.datatype === 'Datasets' && form.get('requesting_id')?.value !== 'Service Account'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="requesting_tdsp_processing">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                            <label><span class="text-danger">* </span>Is this for TDSP?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_tdsp_processing')?.value === 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="appropriateTDSPPod">
+                                <option value="" disabled>Choose a Pod</option>
+                                <option *ngFor="let option of podsOptions" [value]="option.u_primary">{{ option.u_primary }}</option>
+                            </select>
+                            <label><span class="text-danger">* </span>Select the appropriate TDSP Pod</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-12" id="calculatedADGroup" style="margin-top: 12px" *ngIf="product?.datatype === 'Datasets'">
+                        <label for="adGroupValue">
+                            <ng-container *ngIf="form.get('requesting_id')?.value === 'Service Account'">Service Account AD Group</ng-container>
+                            <ng-container *ngIf="form.get('requesting_id')?.value !== 'Service Account' && form.get('requesting_tdsp_processing')?.value === 'Yes'">TDSP AD Group</ng-container>
+                            <ng-container *ngIf="form.get('requesting_id')?.value !== 'Service Account' && form.get('requesting_tdsp_processing')?.value === 'No'">AD Group</ng-container>
+                        </label>
+                        <input id="adGroupValue" type="text" class="form-control" formControlName="v_dar_ad_group" readonly/>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-floating mt-3">
@@ -686,9 +712,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" *ngIf="product?.datatype !== 'Datasets'">
                         <div class="form-floating mt-3">
-                            <input class="form-control" formControlName="v_dar_ad_group" ngModel="" [attr.disabled]="true">
+                            <input class="form-control" formControlName="v_dar_ad_group" [attr.disabled]="true">
                             <label for="floatingInput">AD Group</label>
                         </div>
                     </div>
@@ -1231,13 +1257,6 @@
 
                     <div class="col-lg-12">
                         <div class="form-floating mt-3">
-                            <input type="text" class="form-control" formControlName="radar_productname" ngModel="{{product?.name}}" [attr.disabled]="true">
-                            <label for="floatingInput">RADAR Product Name</label>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-floating mt-3">
                             <input type="text" class="form-control" formControlName="v_dar_dm_version" ngModel="Version {{currentApplicationVersion}}" [attr.disabled]="true">
                             <label for="floatingInput">Application Build Version</label>
                         </div>
@@ -1259,6 +1278,7 @@
                             <select name="requestingID" id="requestingID" class="form-control" formControlName="requesting_id">
                                 <option value="Me" [selected]="isSelected">For me</option>
                                 <option value="User">For someone else</option>
+                                <option *ngIf="product?.datatype === 'Datasets'" value="Service Account">For a Service Account</option>
                             </select>
                             <label for="floatingInput"><span class="text-danger">* </span>Who are you requesting data access for?</label>
                         </div>
@@ -1271,8 +1291,40 @@
                     </div>
                     <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'User'">
                         <div class="form-floating mt-3">
-                            <app-people-finder></app-people-finder>
+                            <app-people-finder [control]="form.get('v_dar_objectid_reqfor')"></app-people-finder>
                         </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_id').value === 'Service Account'">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" formControlName="v_dar_service_account">
+                            <label for="serviceAccount"><span class="text-danger">* </span>Service Account (only for TBDP platform requests)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="product?.datatype === 'Datasets' && form.get('requesting_id')?.value !== 'Service Account'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="requesting_tdsp_processing">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                            <label><span class="text-danger">* </span>Is this for TDSP?</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="form.get('requesting_tdsp_processing')?.value === 'Yes'">
+                        <div class="form-floating mt-3">
+                            <select class="form-control" formControlName="appropriateTDSPPod">
+                                <option value="" disabled>Choose a Pod</option>
+                                <option *ngFor="let option of podsOptions" [value]="option.u_primary">{{ option.u_primary }}</option>
+                            </select>
+                            <label><span class="text-danger">* </span>Select the appropriate TDSP Pod</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-12" id="calculatedADGroup" style="margin-top: 12px" *ngIf="product?.datatype === 'Datasets'">
+                        <label for="adGroupValue">
+                            <ng-container *ngIf="form.get('requesting_id')?.value === 'Service Account'">Service Account AD Group</ng-container>
+                            <ng-container *ngIf="form.get('requesting_id')?.value !== 'Service Account' && form.get('requesting_tdsp_processing')?.value === 'Yes'">TDSP AD Group</ng-container>
+                            <ng-container *ngIf="form.get('requesting_id')?.value !== 'Service Account' && form.get('requesting_tdsp_processing')?.value === 'No'">AD Group</ng-container>
+                        </label>
+                        <input id="adGroupValue" type="text" class="form-control" formControlName="v_dar_ad_group" readonly/>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-floating mt-3">
@@ -1525,9 +1577,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" *ngIf="product?.datatype !== 'Datasets'">
                         <div class="form-floating mt-3">
-                            <input class="form-control" formControlName="v_dar_ad_group" ngModel="" [attr.disabled]="true">
+                            <input class="form-control" formControlName="v_dar_ad_group" [attr.disabled]="true">
                             <label for="floatingInput">AD Group</label>
                         </div>
                     </div>

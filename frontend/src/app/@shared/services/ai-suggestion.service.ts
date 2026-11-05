@@ -10,18 +10,13 @@ export class AiSuggestionService {
 
   constructor(private http: HttpClient) { }
 
-  getSuggestions(params: { 
-    'database-schema'?: string, 
-    'tablenames'?: string, 
-    'data-request-description'?: string, 
-    'intended-use'?: string 
-  }): Observable<any> {
+  getSuggestions(params: Record<string, any>): Observable<any> {
     let httpParams = new HttpParams();
     
     // Map the internal form values to your Django API expected query parameters
     Object.entries(params).forEach(([key, value]) => {
       if (value) {
-        httpParams = httpParams.set(key, value);
+        httpParams = httpParams.set(key, String(value));
       }
     });
 

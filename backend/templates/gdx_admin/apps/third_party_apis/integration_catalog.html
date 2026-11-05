@@ -1,55 +1,73 @@
 {% extends "gdx_admin/base.html" %}
+{% block page_header %}{% endblock %}
 {% load static %}
-{% block title %}Data Marketplace Integrations{% endblock %}
-{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.0">{% endblock %}
+{% block title %}Integrations{% endblock %}
+{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=toolbar-full">{% endblock %}
 {% block content %}
 <section class="integration-catalog" data-integration-catalog data-api-url="{% url 'third_party_api:integration_catalog_api' %}">
 
-  {% if messages %}
-    <div class="mb-4">
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
-        {{ message }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <section class="module-hero">
+    <div class="module-hero__content">
+      <span class="module-hero__kicker">INTEGRATION CATALOG</span>
+      <div class="module-hero__title-row">
+        <span class="module-hero__icon" aria-hidden="true">▦</span>
+        <div>
+          <h1>Integrations</h1>
+          <p>Manage, validate, and review third-party API integrations for the data marketplace.</p>
+        </div>
       </div>
-      {% endfor %}
     </div>
-  {% endif %}
+    <div class="module-hero__metric">
+      <span>Catalog</span>
+      <strong data-catalog-metric>—</strong>
+      <small>modules currently enabled</small>
+    </div>
+  </section>
 
-  <header class="integration-header">
-    <div class="d-flex justify-content-between align-items-start">
-      <div>
-        <h1>Data Marketplace Integrations</h1>
-        <p>Manage, validate, and review third-party API integrations for the data marketplace.</p>
-      </div>
-
+  <section class="module-dashboard-heading-row">
+    <div>
+      <p class="module-breadcrumb">Modules &nbsp;»&nbsp; Integrations</p>
+      <h2>Integration catalog</h2>
+      <p>Browse, filter, and open every registered module.</p>
+    </div>
+    <div class="module-dashboard-actions">
+      <a class="integration-button" href="{% url 'third_party_api_ops:dashboard' %}">Dashboard</a>
+      <a class="integration-button" href="{% url 'third_party_api_ops:analytics' %}">Analytics</a>
       {% if request.user.is_staff %}
-      <div class="mt-2">
-        <form method="post" action="{% url 'third_party_api:sync_integrations' %}">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-primary">Sync Modules</button>
-        </form>
-      </div>
+      <form method="post" action="{% url 'third_party_api:sync_integrations' %}">
+        {% csrf_token %}
+        <button type="submit" class="integration-button integration-button--primary">Sync Modules</button>
+      </form>
       {% endif %}
     </div>
-  </header>
+  </section>
   <section class="integration-toolbar" aria-label="Integration filters">
-    <label class="integration-search"><span class="sr-only">Search integrations</span><input data-module-search type="search" placeholder="Search modules by name, source, endpoint, or description..."></label>
+    <label class="integration-search"><span class="sr-only">Search integrations</span><input data-module-search type="search" placeholder="Search modules" aria-label="Search modules by name, source, endpoint, or description"></label>
     <select data-source-filter aria-label="Filter by source"><option value="all">All Sources</option></select>
     <select data-status-filter aria-label="Filter by status"><option value="all">All Statuses</option><option value="enabled">Enabled</option><option value="disabled">Disabled</option></select>
-    <select data-sort aria-label="Sort integrations"><option value="name_asc">Name (A-Z)</option><option value="name_desc">Name (Z-A)</option></select>
-    <label class="integration-layout-select-wrap">
-      <span class="sr-only">Module layout</span>
-      <select data-layout-select aria-label="Module layout">
-        <option value="grid-4">4 Columns</option>
-        <option value="grid-3">3 Columns</option>
-        <option value="list">List Rows</option>
-      </select>
-    </label>
+    <div class="integration-layout-switcher" data-layout-switch role="group" aria-label="Module layout">
+        <button type="button" class="integration-layout-button" data-layout-choice="grid-4" aria-label="Four columns">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="1" y="2" width="2.4" height="12" rx=".4" fill="currentColor"/><rect x="4.9" y="2" width="2.4" height="12" rx=".4" fill="currentColor"/><rect x="8.8" y="2" width="2.4" height="12" rx=".4" fill="currentColor"/><rect x="12.6" y="2" width="2.4" height="12" rx=".4" fill="currentColor"/></svg>
+        </button>
+        <button type="button" class="integration-layout-button" data-layout-choice="grid-3" aria-label="Three columns">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="1" y="2" width="3.6" height="12" rx=".4" fill="currentColor"/><rect x="6.2" y="2" width="3.6" height="12" rx=".4" fill="currentColor"/><rect x="11.4" y="2" width="3.6" height="12" rx=".4" fill="currentColor"/></svg>
+        </button>
+        <button type="button" class="integration-layout-button" data-layout-choice="list" aria-label="List">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="1" y="2" width="14" height="2.4" rx=".4" fill="currentColor"/><rect x="1" y="6.8" width="14" height="2.4" rx=".4" fill="currentColor"/><rect x="1" y="11.6" width="14" height="2.4" rx=".4" fill="currentColor"/></svg>
+        </button>
+    </div>
+    <select data-page-size class="integration-page-size" aria-label="Cards per page">
+        <option value="8" selected>8</option>
+        <option value="16">16</option>
+        <option value="24">24</option>
+        <option value="36">36</option>
+        <option value="48">48</option>
+    </select>
     <p data-result-count aria-live="polite">Loading...</p>
   </section>
   <div data-loading class="integration-state">Loading integrations...</div>
   <div data-module-grid class="integration-grid"></div>
+  <nav class="integration-pager" data-pager hidden aria-label="Module pages"></nav>
   <div data-empty class="integration-state" hidden>No integrations match your filters.</div>
   <div data-error class="integration-state integration-state--error" hidden>Unable to load integrations.</div>
 </section>
@@ -80,4 +98,4 @@
   <footer class="integration-modal__footer"><button type="button" class="integration-button integration-button--primary" data-view-close>Close</button></footer>
 </dialog>
 {% endblock %}
-{% block extra_js %}{{ block.super }}<script src="{% static 'gdx_admin/theme/js/catalog.js' %}?v=22.0" defer></script>{% endblock %}
+{% block extra_js %}{{ block.super }}<script src="{% static 'gdx_admin/theme/js/catalog.js' %}?v=page-size" defer></script>{% endblock %}
