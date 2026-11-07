@@ -2,7 +2,7 @@
 {% block page_header %}{% endblock %}
 {% load static %}
 {% block title %}Integrations{% endblock %}
-{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=toolbar-full">{% endblock %}
+{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=tablet-desktop">{% endblock %}
 {% block content %}
 <section class="integration-catalog" data-integration-catalog data-api-url="{% url 'third_party_api:integration_catalog_api' %}">
 
@@ -82,7 +82,7 @@
 <div class="integration-drawer-backdrop" data-edit-backdrop hidden></div>
 <aside class="integration-drawer integration-drawer--edit" data-edit-panel role="dialog" aria-modal="true" aria-labelledby="edit-title" aria-hidden="true" tabindex="-1">
   <header class="integration-drawer__header"><div><span class="integration-eyebrow">Module management</span><h2 id="edit-title" data-edit-title>Edit Integration</h2><p data-edit-key></p></div><button type="button" data-edit-close aria-label="Close editor">×</button></header>
-  <form data-edit-form class="integration-edit-form"><div class="integration-drawer__body" data-edit-body></div><footer class="integration-drawer__footer"><p data-edit-message aria-live="polite"></p><div><button type="button" class="integration-button" data-edit-cancel>Cancel</button><button type="submit" class="integration-button integration-button--primary">Save Changes</button></div></footer></form>
+  <form data-edit-form class="integration-edit-form">{% csrf_token %}<div class="integration-drawer__body" data-edit-body></div><footer class="integration-drawer__footer"><p data-edit-message aria-live="polite"></p><div><button type="button" class="integration-button" data-edit-cancel>Cancel</button><button type="submit" class="integration-button integration-button--primary">Save Changes</button></div></footer></form>
 </aside>
 {% endif %}
 
@@ -98,4 +98,4 @@
   <footer class="integration-modal__footer"><button type="button" class="integration-button integration-button--primary" data-view-close>Close</button></footer>
 </dialog>
 {% endblock %}
-{% block extra_js %}{{ block.super }}<script src="{% static 'gdx_admin/theme/js/catalog.js' %}?v=page-size" defer></script>{% endblock %}
+{% block extra_js %}{{ block.super }}<script src="{% static 'gdx_admin/theme/js/catalog.js' %}?v=csrf-save" defer></script>{% endblock %}

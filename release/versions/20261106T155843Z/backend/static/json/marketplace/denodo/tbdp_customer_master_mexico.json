@@ -1,0 +1,611 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "communication_channel_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "communication_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "communication_permission_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "communication_permission_value"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "customer_corp_permission_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "ecord_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_corp_permission",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "communication_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "communication_value"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "customer_guid_association_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "guid_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_guid_association",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "customer_preference_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "preferred_communication_channel"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "preferred_communication_channel_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "preferred_language"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_preference",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "customer_privacy_permission_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "privacy_category"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "privacy_value"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_privacy_permission",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "customer_product_association_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "customer_product_role"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "effective_dt_derived_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "expiration_dr_derived_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "match_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "match_cd_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "prod_assoc_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "prod_assoc_expiration_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "product_ownership_event_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_product_association",
+      "column_name": "serialized_product_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "curp"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "customer_rosetta_stone_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "guid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "tax_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "tmcc_mx_ucid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "tmcc_us_ucid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "tmis_mx_ucid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "customer_rosetta_stone",
+      "column_name": "tmis_us_ucid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "activation_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "product_external_sys_key"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "serialized_product_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "serialized_product_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-master-mexico",
+      "dbname": "cust_master_mexico_trn_ext",
+      "elementname": "serialized_product",
+      "column_name": "vin_validity_cd"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-master-mexico%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

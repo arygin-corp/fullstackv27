@@ -1,51 +1,10 @@
-<div class="container py-5 text-center">
+<div class="container text-center success-intro">
+    <app-icon class="order-success__icon" name="check-100" size="100"></app-icon>
     <h2>Hi, {{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }}</h2>
     <h2>Request Submitted Successfully!</h2>
     <p class="text-muted">Your requests have been partitioned and sent to the respective fulfillment queues.</p>
-
-    <div class="row mt-5 text-start justify-content-center">
-
-        <div class="col-md-5 mx-2 card p-0 border-primary" *ngIf="receipt?.ritm">
-
-        <div class="col-md-12 mx-2 card p-0 border-primary">   
-            <div class="card-header bg-primary text-white">
-                <i class="ri-shield-user-line me-2"></i>Data Access Request Entitlements (Engine A)
-            </div>
-            <div class="card-body">
-                <h4 class="text-primary">{{ receipt.ritm }}</h4>
-                <p class="small text-muted">ServiceNow Reference Number</p>
-                <hr>
-                <h6>Next Steps:</h6>
-                <ul class="small">
-                    <li>The Technical Owner has been notified.</li>
-                    <li>Track progress in the <strong>ServiceNow Portal</strong>.</li>
-                    <li>Access is usually granted within 24-48 hours.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-md-5 mx-2 card p-0 border-dark" *ngIf="receipt?.stagingId">
-
-        <div class="col-md-12 mx-2 card p-0 border-dark">
-            <div class="card-header bg-dark text-white">
-                <i class="ri-database-2-line me-2"></i> Product Onboarding (Engine B)
-            </div>
-            <div class="card-body">
-                <h4 class="text-dark">#STG-{{ receipt.stagingId }}</h4>
-                <p class="small text-muted">Postgres Staging Audit ID</p>
-                <hr>
-                <h6>Next Steps:</h6>
-                <ul class="small">
-                    <li>Your product is currently in the <strong>Audit Queue</strong>.</li>
-                    <li>Admin will review metadata for quality compliance.</li>
-                    <li>You will receive an email once the product is "Live".</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-5">
-        <button routerLink="/" class="btn btn-secondary btn-lg">Back to Marketplace</button>
+    <div class="success-intro__action">
+        <a routerLink="/marketplace/user/orders" class="btn btn-xs btn-secondary">Go To Order History</a>
     </div>
 </div>
 
@@ -55,17 +14,15 @@
             
             <!-- Header Section -->
             <div class="order-success__header">
-                <app-icon class="order-success__icon" name="check-100" size="100"></app-icon>
-                <h1 class="order-success__title">Thank you, {{ appSvc?.userData?.givenName }}</h1>
-                <div class="order-success__subtitle">Your request has been successfully submitted!</div>
-                 <div class="order-success__actions mb-4">
-                    <a routerLink="/marketplace/user/orders" class="btn btn-xs btn-secondary">Go To Order History</a>
-                </div>
-                <div class="order-success__meta" *ngIf="activeTab === 'products'" style="margin-top: 50px;">
+                <div class="order-success__meta">
                     <ul class="order-success__meta-list">
                         <li class="order-success__meta-item">
                             <span class="order-success__meta-title">Order Type:</span>
-                            <span class="order-success__meta-value">Product(s)</span>
+                            <span class="order-success__meta-value">{{ isDar ? 'DAR' : 'Product(s)' }}</span>
+                        </li>
+                        <li class="order-success__meta-item">
+                            <span class="order-success__meta-title">RITM Number:</span>
+                            <span class="order-success__meta-value">{{ ritmNumber }}</span>
                         </li>
                         <li class="order-success__meta-item">
                             <span class="order-success__meta-title">Request Number:</span>
@@ -76,138 +33,57 @@
                             <span class="order-success__meta-value">{{ order.date }}</span>
                         </li>
                         <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Total:</span>
-                            <span class="order-success__meta-value">{{ order.total|currencyFormat }}</span>
-                        </li>
-                        <li class="order-success__meta-item">
                             <span class="order-success__meta-title">Payment method:</span>
-                            <span class="order-success__meta-value">{{ order.paymentMethod }}</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="order-success__meta" *ngIf="activeTab === 'dars'" style="margin-top: 50px;">
-                    <ul class="order-success__meta-list">
-                        <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Order Type:</span>
-                            <span class="order-success__meta-value">DAR(s)</span>
-                        </li>
-                        <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Request Number:</span>
-                            <span class="order-success__meta-value">#{{ orderId }}</span>
-                        </li>
-                        <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Created At:</span>
-                            <span class="order-success__meta-value">{{ order.date }}</span>
-                        </li>
-                        <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Total:</span>
-                            <span class="order-success__meta-value">{{ order.total|currencyFormat }}</span>
-                        </li>
-                        <li class="order-success__meta-item">
-                            <span class="order-success__meta-title">Payment method:</span>
-                            <span class="order-success__meta-value">{{ order.paymentMethod }}</span>
+                            <span class="order-success__meta-value">Cost Center</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Tabs Navigation -->
-            <div class="order-success__tabs mt-5">
-                <ul class="nav nav-pills justify-content-center">
-                    <li class="nav-item">
-                        <button class="nav-link" [class.active]="activeTab === 'products'" (click)="activeTab = 'products'">
-                            Products ({{ receipt?.items?.length || 0 }})
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link" [class.active]="activeTab === 'dars'" (click)="activeTab = 'dars'">
-                            DARs ({{ receipt?.darRequests?.length || 0 }})
-                        </button>
-                    </li>
-                </ul>
+            <div class="success-lines" *ngIf="!isDar">
+                <article class="success-line" *ngFor="let item of receipt?.items">
+                    <img class="success-line__image" [src]="getProductImage(item.product)" [alt]="item.product.name">
+                    <div class="success-line__body">
+                        <div class="success-line__title">
+                            <p class="success-line__kind">Catalog product</p>
+                            <h3>{{ item.product.name }}</h3>
+                        </div>
+                        <ul class="success-line__facts">
+                            <li><span>Domain</span><strong>{{ fieldLabel(item.product.domain) }}</strong></li>
+                            <li><span>Datatype</span><strong>{{ fieldLabel(item.product.datatype) }}</strong></li>
+                            <li><span>Classification</span><strong>{{ fieldLabel(item.product.classification) }}</strong></li>
+                            <li><span>Qty</span><strong>{{ item.quantity || 1 }}</strong></li>
+                        </ul>
+                    </div>
+                    <div class="success-line__total">
+                        <span>Total</span>
+                        <strong>{{ 0 | currencyFormat }}</strong>
+                    </div>
+                </article>
             </div>
 
-            <!-- Content Card -->
-            <div class="card mt-3">
-                <div class="order-list">
-                    
-                    <!-- PRODUCTS TABLE -->
-                    <table *ngIf="activeTab === 'products'">
-                        <thead class="order-list__header">
-                            <tr>
-                                <th class="order-list__column-label" colspan="2">Product</th>
-                                <th class="order-list__column-total text-center">Domain</th>
-                                <th class="order-list__column-total text-center">Datatype</th>
-                                <th class="order-list__column-total text-center">Classification</th>
-                                <th class="order-list__column-quantity">Qty</th>
-                                <th class="order-list__column-total">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody class="order-list__products">
-                            <tr *ngFor="let item of receipt?.items">
-                                <td class="order-list__column-image" style="padding: 0px 32px 0 32px;">
-                                    <div class="product-image">
-                                        <img [src]="getProductImage(item.product.image)" width="80" alt="item.product.name">
-                                    </div>
-                                </td>
-                                <td class="order-list__column-product" style="padding-left: 19px !important;">
-                                    <strong>{{ item.product.name }}</strong>
-                                    <div class="text-muted small">Standard Onboarding</div>
-                                </td>
-                                <td class="order-list__column-total text-center">{{ item.product.domain }}</td>
-                                <td class="order-list__column-total text-center">{{ item.product.datatype }}</td>
-                                <td class="order-list__column-total text-center">{{ item.product.classification }}</td>
-                                <td class="order-list__column-quantity">1</td>
-                                <td class="order-list__column-total">{{ 0 | currencyFormat }}</td>
-                            </tr>
-                            <tr *ngIf="!receipt?.items?.length">
-                                <td colspan="4" class="text-center py-4 text-muted">No products in this request.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- DARs TABLE -->
-                    <table *ngIf="activeTab === 'dars'">
-                        <thead class="order-list__header">
-                            <tr>
-                                <th class="order-list__column-label" colspan="2">Data Access Request</th>
-                                <th class="order-list__column-total text-center">Domain</th>
-                                <th class="order-list__column-total text-center">Platform</th>
-                                <th class="order-list__column-total text-center">Environment</th>
-                                <th class="order-list__column-total text-center">PI</th>
-                                <th class="order-list__column-total text-center">SPI</th>
-                                <th class="order-list__column-quantity">Qty</th>
-                                <th class="order-list__column-total text-end">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody class="order-list__products">                            
-                            <tr *ngFor="let dar of receipt?.darRequests">
-                                <td class="order-list__column-image" style="padding: 0px 32px 0 32px;">
-                                    <div class="product-image">
-                                        <img src="assets/images/product_images/data-access-request.jpg" width="80" alt="Data Access Request" />
-                                    </div>
-                                </td>
-                                <td class="order-list__column-product" style="padding-left: 19px !important;">
-                                    <strong>Data Access Request</strong>
-                                    <div class="text-muted text-danger small">
-                                        <strong>Note: </strong> We will provide the annouce ment here!
-                                    </div>
-                                </td>
-                                <td class="order-list__column-total text-center">{{ dar.v_dar_dataDomainSelect }}</td>
-                                <td class="order-list__column-total text-center">{{ formatPlatform(dar.v_dar_platform) }}</td>
-                                <td class="order-list__column-total text-center">{{ dar.v_dar_environment }}</td>
-                                <td class="order-list__column-total text-center">{{ formatOrNA(dar.v_dar_pi) }}</td>
-                                <td class="order-list__column-total text-center">{{ formatOrNA(dar.v_dar_spi) }}</td>
-                                <td class="order-list__column-quantity">1</td>
-                                <td class="order-list__column-total">{{ 0 | currencyFormat }}</td>
-                            </tr>
-                            <tr *ngIf="!receipt?.darRequests?.length">
-                                <td colspan="2" class="text-center py-4 text-muted">No DARs in this request.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="success-lines" *ngIf="isDar">
+                <article class="success-line" *ngFor="let dar of receipt?.darRequests">
+                    <img class="success-line__image" src="assets/images/product_images/data-access-request.jpg" alt="Data Access Request">
+                    <div class="success-line__body">
+                        <div class="success-line__title">
+                            <p class="success-line__kind">Data access request</p>
+                            <h3>Data Access Request</h3>
+                        </div>
+                        <ul class="success-line__facts">
+                            <li><span>Domain</span><strong>{{ dar.v_dar_dataDomainSelect }}</strong></li>
+                            <li><span>Platform</span><strong>{{ formatPlatform(dar.v_dar_platform) }}</strong></li>
+                            <li><span>Environment</span><strong>{{ dar.v_dar_environment }}</strong></li>
+                            <li><span>PI</span><strong>{{ formatOrNA(dar.v_dar_pi) }}</strong></li>
+                            <li><span>SPI</span><strong>{{ formatOrNA(dar.v_dar_spi) }}</strong></li>
+                            <li><span>Qty</span><strong>1</strong></li>
+                        </ul>
+                    </div>
+                    <div class="success-line__total">
+                        <span>Total</span>
+                        <strong>{{ 0 | currencyFormat }}</strong>
+                    </div>
+                </article>
             </div>
 
             <div class="order-success__actions mt-5 text-center">

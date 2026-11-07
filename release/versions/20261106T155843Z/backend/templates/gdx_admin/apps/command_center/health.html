@@ -1,0 +1,25 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Command Center Health{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="COMMAND CENTER" hero_title="Health" hero_description="Current state of the platform services this environment depends on." hero_metric_label="Checks" hero_metric_value=checks|length hero_metric_caption="Platform" hero_icon="✚" %}
+{% include "gdx_admin/apps/command_center/_nav.html" %}
+<section class="deploy-panel">
+    <h2>Platform health</h2>
+    <table class="deploy-table">
+        <thead><tr><th>Check</th><th>State</th><th>Detail</th></tr></thead>
+        <tbody>
+        {% for check in checks %}
+        <tr>
+            <td>{{ check.name }}</td>
+            <td class="cc-{{ check.state }}">{{ check.state }}</td>
+            <td>{{ check.detail }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+{% endblock %}

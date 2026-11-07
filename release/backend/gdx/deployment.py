@@ -2,6 +2,7 @@
 
 import json
 import os
+import pty
 import re
 import shutil
 import subprocess
@@ -19,6 +20,8 @@ STATUS_PATH = Path(settings.BASE_DIR) / "data" / "deployment_status.json"
 HISTORY_PATH = Path(settings.BASE_DIR) / "data" / "deployment_history.json"
 CONFIG_PATH = Path(settings.BASE_DIR) / "data" / "deployment_config.json"
 LOG_DIR = Path(settings.BASE_DIR) / "data" / "deployments"
+AI_STATUS_PATH = Path(settings.BASE_DIR) / "data" / "ai_engine_status.json"
+AI_HISTORY_PATH = Path(settings.BASE_DIR) / "data" / "ai_engine_history.json"
 
 TARGETS = {
     "backend": "Backend only",
@@ -113,6 +116,7 @@ def deployment_status():
         _write_json(STATUS_PATH, record)
         _remember(record)
     record["log"] = _tail(record.get("log_path"))
+    record["step_log"] = step_log(record.get("log_path"))
     record["target_label"] = TARGETS.get(record.get("target"), "")
     return record
 
@@ -156,6 +160,52 @@ def deployment_analytics():
             for key in ENVIRONMENTS
         ],
     }
+
+
+def ai_engine_begin():
+    record = {
+        "id": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
+        "state": "running",
+        "started_at": _now(),
+        "finished_at": "",
+        "exit_code": None,
+    }
+    _write_json(AI_STATUS_PATH, record)
+    return record["id"]
+
+
+def ai_engine_finish(run_id, code):
+    record = _read_json(AI_STATUS_PATH, {})
+    if record.get("id") != run_id:
+        record = {"id": run_id, "started_at": _now()}
+    record["exit_code"] = code
+    record["finished_at"] = _now()
+    record["state"] = "succeeded" if code == 0 else "failed"
+    _write_json(AI_STATUS_PATH, record)
+    items = _read_json(AI_HISTORY_PATH, [])
+    if not isinstance(items, list):
+        items = []
+    items = [item for item in items if item.get("id") != run_id]
+    items.append(record)
+    _write_json(AI_HISTORY_PATH, items[-100:])
+
+
+def ai_engine_analytics():
+    items = _read_json(AI_HISTORY_PATH, [])
+    if not isinstance(items, list):
+        items = []
+    status = _read_json(AI_STATUS_PATH, {})
+    counts = {
+        "total": len(items),
+        "succeeded": 0,
+        "failed": 0,
+        "running": 1 if status.get("state") == "running" else 0,
+    }
+    for item in items:
+        state = item.get("state")
+        if state in ("succeeded", "failed"):
+            counts[state] += 1
+    return counts
 
 
 def deployment_releases():
@@ -232,17 +282,24 @@ def start_build(target, environment, engineer, actor=""):
         "message": "Build started.",
         "log_path": str(log_path),
     }
-    log_file = log_path.open("w", encoding="utf-8")
+    log_file = log_path.open("w", encoding="utf-8", buffering=1)
+    command = ["node", str(SCRIPT), target, environment, f"--engineer={engineer}"]
+    log_file.write("$ " + " ".join(command) + "\n")
+    log_file.flush()
+    master, slave = pty.openpty()
     try:
         process = subprocess.Popen(
-            ["node", str(SCRIPT), target, environment, f"--engineer={engineer}"],
+            command,
             cwd=str(ROOT),
-            stdout=log_file,
-            stderr=subprocess.STDOUT,
+            stdin=slave,
+            stdout=slave,
+            stderr=slave,
             start_new_session=True,
-            env=_build_environment(environment, target, stamp),
+            env=_build_environment(environment, target, stamp, engineer=engineer),
         )
     except OSError as error:
+        os.close(slave)
+        os.close(master)
         log_file.close()
         record["state"] = "failed"
         record["finished_at"] = _now()
@@ -250,16 +307,21 @@ def start_build(target, environment, engineer, actor=""):
         _write_json(STATUS_PATH, record)
         _remember(record)
         return False, record["message"]
+    os.close(slave)
 
     record["pid"] = process.pid
     _write_json(STATUS_PATH, record)
-    threading.Thread(target=_watch, args=(process, log_file), daemon=True).start()
+    threading.Thread(target=_pump_terminal, args=(master, log_file), daemon=True).start()
+    threading.Thread(target=_watch, args=(process, None), daemon=True).start()
     return True, f"{TARGETS[target]} build started for {environment}."
 
 
-def _build_environment(environment, target, deployment_id, scope=""):
+def _build_environment(environment, target, deployment_id, scope="", engineer=""):
     env = os.environ.copy()
     env["GDX_DEPLOYMENT_ID"] = deployment_id
+    name = (engineer or "").strip()
+    if name:
+        env["BUILD_ENGINEER"] = name
     needs_frontend = target in ("frontend", "all") or scope in ("frontend", "all")
     if not needs_frontend:
         return env
@@ -273,9 +335,31 @@ def _build_environment(environment, target, deployment_id, scope=""):
     return env
 
 
+def build_is_running():
+    record = _read_json(STATUS_PATH, {})
+    return record.get("state") == "running" and _alive(record.get("pid"))
+
+
+def _pump_terminal(master, log_file):
+    try:
+        while True:
+            try:
+                chunk = os.read(master, 4096)
+            except OSError:
+                break
+            if not chunk:
+                break
+            log_file.write(chunk.decode("utf-8", "replace"))
+            log_file.flush()
+    finally:
+        log_file.close()
+        os.close(master)
+
+
 def _watch(process, log_file):
     code = process.wait()
-    log_file.close()
+    if log_file is not None:
+        log_file.close()
     record = _read_json(STATUS_PATH, {})
     if record.get("pid") != process.pid:
         return
@@ -455,6 +539,13 @@ def build_log(log_path):
     return _tail(log_path)
 
 
+def step_log(log_path, limit=5000):
+    lines = _read_lines(log_path)
+    if len(lines) <= limit:
+        return "\n".join(lines)
+    return "\n".join(lines[:250] + lines[-(limit - 250):])
+
+
 def log_steps(log_text, state="", target="", environment=""):
     steps = []
     seen = set()
@@ -465,24 +556,8 @@ def log_steps(log_text, state="", target="", environment=""):
         seen.add(title)
         steps.append({"title": title, "detail": "", "state": "done"})
 
-    pending_version = ""
     for raw in (log_text or "").splitlines():
-        line = raw.strip()
-        if line.startswith("Version:") or line.startswith("Version saved:"):
-            if pending_version:
-                add(f"Version {pending_version}")
-            pending_version = line.split(":", 1)[1].strip()
-            continue
-        if pending_version and line.lower().startswith("build id:"):
-            add(f"Version {pending_version} - {line.split(':', 1)[1].strip()}")
-            pending_version = ""
-            continue
-        if pending_version:
-            add(f"Version {pending_version}")
-            pending_version = ""
-        add(_step_title(line))
-    if pending_version:
-        add(f"Version {pending_version}")
+        add(_step_title(raw.strip()))
 
     heading = _build_heading(target, environment)
     if heading and (steps or state == "running"):
@@ -515,6 +590,20 @@ def _build_heading(target, environment):
 def _step_title(line):
     if not line:
         return ""
+    if line.startswith((
+        "Validated version metadata:",
+        "Build metadata prepared successfully.",
+        "Version:",
+        "Build ID:",
+        "Environment:",
+        "Engineer:",
+        "Timestamp:",
+        "Branch:",
+    )):
+        return line
+    progress = _angular_progress(line)
+    if progress:
+        return progress
     version = re.search(r"@(\d{2}[./]\d{2}[./]\d{2})", line)
     if version:
         return f"Version {version.group(1)}"
@@ -550,14 +639,35 @@ def _step_title(line):
     return ""
 
 
-def _tail(log_path, limit=160):
+def _angular_progress(line):
+    cleaned = re.sub(r"^[\s✔✓✖✘*\-–—\u2800-\u28FF]+", "", line).strip()
+    lowered = cleaned.lower()
+    markers = (
+        "generating browser application bundles",
+        "browser application bundle generation complete",
+        "copying assets",
+        "generating index html",
+        "index html generation complete",
+        "generating service worker",
+        "service worker generation complete",
+        "build completed successfully",
+    )
+    if any(lowered.startswith(marker) for marker in markers):
+        return cleaned
+    return ""
+
+
+def _read_lines(log_path):
     if not log_path:
-        return ""
+        return []
     try:
-        lines = Path(log_path).read_text(encoding="utf-8", errors="replace").splitlines()
+        return Path(log_path).read_text(encoding="utf-8", errors="replace").splitlines()
     except OSError:
-        return ""
-    return "\n".join(lines[-limit:])
+        return []
+
+
+def _tail(log_path, limit=160):
+    return "\n".join(_read_lines(log_path)[-limit:])
 
 
 def _alive(pid):

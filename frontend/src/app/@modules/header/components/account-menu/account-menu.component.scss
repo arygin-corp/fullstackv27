@@ -22,4 +22,30 @@
     color: #222;
 }
 
+.account-menu__logout {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    color: #e36a62 !important;
+    font-weight: 500;
+}
+
+.account-menu__logout i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.account-menu__signin {
+    margin: 0;
+    padding: 4px 20px 18px;
+    color: #1f2937;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.account-menu__signin strong {
+    display: block;
+    font-weight: 700;
+}
+
 

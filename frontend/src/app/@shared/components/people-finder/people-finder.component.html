@@ -20,7 +20,7 @@
             </div>
 
             <div class="pf-list" (scroll)="onContainerScroll($event)">
-                <div *ngIf="!loading && users.length === 0" class="pf-notfound">This person is not in the GAC Tenant.</div>
+                <div *ngIf="!loading && searched && users.length === 0" class="pf-notfound">This person is not in the GAC Tenant.</div>
                 
                 <div *ngFor="let u of users; let i = index; trackBy: trackById"
                     class="pf-item"

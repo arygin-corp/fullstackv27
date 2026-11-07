@@ -2,45 +2,88 @@
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    color: inherit;
     background-color: #ededed;
     text-align: center;
     color: #363636;
 }
+
+.jumbotron h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.jumbotron .lead {
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.faq-page {
+    max-width: 920px;
+    margin: 0 auto 48px;
+    padding-bottom: 24px;
+}
+
+.faq-section {
+    margin-bottom: 28px;
+}
+
+.faq-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
 .accordion {
     background-color: #eee;
-    color: #444;
+    color: #222;
     cursor: pointer;
-    padding: 18px;
+    padding: 16px 18px;
     width: 100%;
     border: none;
+    border-bottom: 1px solid #e5e5e5;
     text-align: left;
     outline: none;
     font-size: 15px;
-    transition: 0.4s;
+    font-weight: 600;
+    transition: background-color 0.2s;
 }
-  
-.active, .accordion:hover {
-    background-color: #ccc;
+
+.accordion:hover,
+.accordion.active {
+    background-color: #e4e4e4;
 }
-  
+
 .accordion:after {
     content: '\002B';
     color: #777;
     font-weight: bold;
     float: right;
-    margin-left: 5px;
+    margin-left: 12px;
 }
-  
-.active:after {
+
+.accordion.active:after {
     content: '\2212';
 }
-  
+
 .panel {
-    padding: 0 18px;
-    background-color: white;
+    background-color: #fff;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-  
+
+.panel--open {
+    max-height: 480px;
+}
+
+.panel p {
+    margin: 12px 18px;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.panel p:last-child {
+    margin-bottom: 16px;
+}

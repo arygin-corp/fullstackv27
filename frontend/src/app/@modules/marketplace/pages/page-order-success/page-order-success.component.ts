@@ -23,7 +23,6 @@ export class PageOrderSuccessComponent {
     toyota = toyota;
     receipt: any;
     orderId: string = '';
-    activeTab: 'products' | 'dars' = 'products'; // Default tab
 
     constructor(
         private route: ActivatedRoute,
@@ -55,12 +54,29 @@ export class PageOrderSuccessComponent {
             }
         }
 
-        // Auto-select tab using receipt arrays (items / darRequests)
-        if (this.receipt?.items?.length > 0) {
-            this.activeTab = 'products';
-        } else if (this.receipt?.darRequests?.length > 0) {
-            this.activeTab = 'dars';
+    }
+
+    get isDar(): boolean {
+        const orderType = String(this.receipt?.orderType || '').toLowerCase();
+        if (orderType === 'dar') {
+            return true;
         }
+        if (orderType === 'product') {
+            return false;
+        }
+        return !(this.receipt?.items?.length) && this.receipt?.darRequests?.length > 0;
+    }
+
+    get ritmNumber(): string {
+        const stored = this.receipt?.ritm || this.receipt?.ritm_number;
+        if (stored) {
+            return String(stored);
+        }
+        const requestNumber = String(this.orderId || '');
+        if (requestNumber.startsWith('REQ') && requestNumber.length > 3) {
+            return `RITM${requestNumber.slice(3)}`;
+        }
+        return '';
     }
 
     getProductImage(product: any): string {
@@ -95,6 +111,16 @@ export class PageOrderSuccessComponent {
         const normalized = (platform || '').toString().toUpperCase();
         const tbdpKeys = ['IRM', 'PASA', 'C360', 'Q360', 'IRM-PRICING'];
         return tbdpKeys.some(k => normalized.includes(k)) ? 'TBDP' : platform;
+    }
+
+    fieldLabel(value: any): string {
+        if (value == null) {
+            return '';
+        }
+        if (typeof value === 'string' || typeof value === 'number') {
+            return String(value);
+        }
+        return value.name || value.label || '';
     }
 
     formatOrNA(value: any): string {

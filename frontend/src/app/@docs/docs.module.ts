@@ -21,6 +21,7 @@ import { DataQualityProcessComponent } from './components/pdfs/data-quality-proc
 import { MetadataPolicyComponent } from './components/pdfs/metadata-policy/metadata-policy.component';
 import { ProductsComponent } from './components/json/products/products.component';
 import { DataSecurityProcessComponent } from './components/pdfs/data-security-process/data-security-process.component';
+import { DocumentWindowComponent } from './components/pdfs/document-window/document-window.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DataSecurityProcessComponent } from './components/pdfs/data-security-pr
     DataQualityProcessComponent,
     MetadataPolicyComponent,
     ProductsComponent,
-    DataSecurityProcessComponent
+    DataSecurityProcessComponent,
+    DocumentWindowComponent
   ],
   exports: [
     DomainsComponent,

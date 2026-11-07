@@ -1,4 +1,4 @@
-{% extends 'gdx_users/partials/base.html' %}
+{% extends 'partials/base.html' %}
 
 {% block title %}Delete Product - {{ product.name }}{% endblock %}
 
@@ -15,7 +15,7 @@
                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Confirm Delete
                 </button>
-                <a href="{% url 'marketplace:detail' object.pk %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                <a href="{% url 'marketplace:product-detail' object.pk %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                     Cancel
                 </a>
             </div>

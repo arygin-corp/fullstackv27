@@ -1,0 +1,63 @@
+<style>
+    .device-gate {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 200000;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 20px;
+        background: #0d234a;
+        color: #fff;
+    }
+    .device-gate__card {
+        width: min(100%, 420px);
+        text-align: center;
+    }
+    .device-gate__kicker {
+        margin: 0 0 14px;
+        color: rgba(255, 255, 255, .72);
+        font-size: .75rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+    .device-gate__card h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.7rem;
+        line-height: 1.2;
+    }
+    .device-gate__card p:last-child {
+        margin: 14px 0 0;
+        color: rgba(255, 255, 255, .86);
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    @media (max-width: 767px), (max-width: 932px) and (max-height: 500px) and (pointer: coarse) {
+        .device-gate { display: flex; }
+        body { overflow: hidden !important; }
+    }
+</style>
+<div class="device-gate" data-device-gate role="dialog" aria-modal="true" aria-labelledby="device-gate-title">
+    <div class="device-gate__card">
+        <p class="device-gate__kicker">{{ app_name|default:"GDX Data Marketplace" }}</p>
+        <h1 id="device-gate-title">This app is only available on tablets and desktops.</h1>
+        <p>Open it in a tablet or desktop browser to continue. Phones cannot use this app.</p>
+    </div>
+</div>
+<script>
+(function () {
+    var query = window.matchMedia("(max-width: 767px), (max-width: 932px) and (max-height: 500px) and (pointer: coarse)");
+    function sync() {
+        var app = document.querySelector("[data-device-app]");
+        if (!app) return;
+        if (query.matches) app.setAttribute("inert", "");
+        else app.removeAttribute("inert");
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", sync);
+    else sync();
+    if (query.addEventListener) query.addEventListener("change", sync);
+    else query.addListener(sync);
+})();
+</script>

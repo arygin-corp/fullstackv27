@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block contents %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.media }}
+
+  <div class="card">
+      <div class="card-header">
+          <h4 class="card-title">Subdomain Level 1 Details</h4>
+      </div>
+      <div class="card-body">
+          {{ form.as_p }}
+      </div>
+  </div>
+
+  <button class="btn btn-primary mt-4">Submit</button>
+  <a href="{% url 'marketplace:subdomain1-index' %}" class="btn btn-light mt-4">Cancel</a>
+</form>
+{% endblock %}

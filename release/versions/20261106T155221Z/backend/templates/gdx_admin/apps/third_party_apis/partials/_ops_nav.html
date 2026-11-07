@@ -1,0 +1,20 @@
+<nav class="module-context-header" aria-label="Module administration">
+  <div class="module-context-header__copy">
+    <div class="module-context-breadcrumb"><span>Modules</span><span aria-hidden="true">»</span><span aria-current="page">{{ page_label|default:"Administration" }}</span></div>
+    <h1>{{ page_heading|default:"Module Administration" }}</h1>
+    <p>{{ page_subheading|default:"Administration, operations, governance, readiness, and reference for third-party API modules." }}</p>
+  </div>
+  <div class="module-context-header__actions module-context-header__menu">
+    <a href="{% url 'third_party_api_ops:dashboard' %}">Dashboard</a>
+    <a href="{% url 'third_party_api_pages:integration_catalog' %}">Module Catalog</a>
+    <a href="{% url 'third_party_api_ops:analytics' %}">Analytics</a>
+    <a href="{% url 'third_party_api_ops:reports' %}">Reports</a>
+    <a href="{% url 'third_party_api_pages:integration_test_dashboard' %}">Readiness</a>
+    <a href="{% url 'third_party_api_ops:configuration' %}">Configuration</a>
+    <a href="{% url 'third_party_api_ops:activity' %}">Activity</a>
+    <a href="{% url 'third_party_api_ops:audit_list' %}">Audit</a>
+    <a href="{% url 'third_party_api_ops:health' %}">Health</a>
+    <a href="{% url 'third_party_api_ops:dependencies' %}">Dependencies</a>
+    <a href="{% url 'third_party_api_ops:documentation_index' %}">Documentation</a>
+  </div>
+</nav>

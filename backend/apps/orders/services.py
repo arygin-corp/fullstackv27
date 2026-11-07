@@ -153,7 +153,7 @@ def normalize_servicenow_payload(raw, marketplace_order_id=None):
 
 
 def export_orders_json(correlation_id=None, sync_run_id=""):
-    path = Path(getattr(settings, "ORDERS_EXPORT_PATH", Path(settings.BASE_DIR) / "static/json/marketplace/orders/orders.json"))
+    path = Path(getattr(settings, "ORDERS_EXPORT_PATH", Path(settings.BASE_DIR) / "assets/json/marketplace/orders/orders.json"))
     path.parent.mkdir(parents=True, exist_ok=True)
     data = []
     for order in MarketplaceOrder.objects.prefetch_related("requests__tasks"):

@@ -1,0 +1,564 @@
+/*!* ============================================================*/
+/*   CUSTOM SIDEBAR*/
+/*   ============================================================ *!*/
+.analytics-row {
+  align-items: flex-start!important;
+}
+.analytics-kpi-card {
+  height: 110px;
+  overflow: hidden;
+}
+.analytics-chart-card {
+  height: 420px;
+  max-height: 420px;
+  overflow: hidden;
+}
+.analytics-chart-body {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+.analytics-chart-body canvas {
+  width: 100%!important;
+  height: 100%!important;
+}
+.analytics-table-card {
+  height: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+.analytics-table-card .table-responsive {
+  height: 430px;
+  max-height: 430px;
+  overflow-y: auto;
+}
+.analytics-map-card {
+  overflow: hidden;
+}
+#locationMap {
+  height: 550px;
+  max-height: 550px;
+  width: 100%;
+  border-radius: .5rem;
+}
+@media (min-width:1400px) {
+  .analytics-chart-card {
+    height: 440px;
+    max-height: 440px;
+  }
+  .analytics-chart-body {
+    height: 370px;
+  }
+  #locationMap {
+    height: 600px;
+    max-height: 600px;
+  }
+}
+@media (max-width:1199px) {
+  .analytics-chart-card {
+    height: 380px;
+    max-height: 380px;
+  }
+  .analytics-chart-body {
+    height: 310px;
+  }
+  .analytics-table-card {
+    height: 450px;
+    max-height: 450px;
+  }
+  .analytics-table-card .table-responsive {
+    height: 380px;
+    max-height: 380px;
+  }
+  #locationMap {
+    height: 450px;
+    max-height: 450px;
+  }
+}
+@media (max-width:767px) {
+  .analytics-kpi-card {
+    height: auto;
+    min-height: 90px;
+  }
+  .analytics-chart-card {
+    height: 320px;
+    max-height: 320px;
+  }
+  .analytics-chart-body {
+    height: 250px;
+  }
+  .analytics-table-card {
+    height: 360px;
+    max-height: 360px;
+  }
+  .analytics-table-card .table-responsive {
+    height: 280px;
+    max-height: 280px;
+  }
+  #locationMap {
+    height: 320px;
+    max-height: 320px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* ------------------------------------------------------------*/
+/*   DAR FORMS - PARENT MENU*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .dar-sidebar-menu > a {*/
+/*  color: #1f2937 !important;*/
+/*  transition:*/
+/*          color 0.2s ease,*/
+/*          background-color 0.2s ease;*/
+/*}*/
+
+
+/*!* DAR Forms icon *!*/
+
+/*#sidebar-two .dar-sidebar-menu > a > i {*/
+/*  color: #64748b !important;*/
+/*  font-size: 16px;*/
+/*  transition: color 0.2s ease;*/
+/*}*/
+
+
+/*!* DAR Forms text *!*/
+
+/*#sidebar-two .dar-sidebar-menu > a > span:not(.menu-arrow) {*/
+/*  color: #1f2937 !important;*/
+/*  transition: color 0.2s ease;*/
+/*}*/
+
+
+/*!* ------------------------------------------------------------*/
+/*   DAR FORMS - HOVER*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .dar-sidebar-menu > a:hover {*/
+/*  color: #7c3aed !important;*/
+/*  background-color: #faf7ff;*/
+/*}*/
+
+
+/*#sidebar-two .dar-sidebar-menu > a:hover > i {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*#sidebar-two .dar-sidebar-menu > a:hover > span:not(.menu-arrow) {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*!* ------------------------------------------------------------*/
+/*   DAR FORMS - ACTIVE*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .dar-sidebar-menu.active > a,*/
+/*#sidebar-two .dar-sidebar-menu > a.subdrop {*/
+/*  color: #7c3aed !important;*/
+/*  background-color: #f5f3ff !important;*/
+/*}*/
+
+
+/*#sidebar-two .dar-sidebar-menu.active > a > i,*/
+/*#sidebar-two .dar-sidebar-menu > a.subdrop > i {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*#sidebar-two .dar-sidebar-menu.active > a > span:not(.menu-arrow),*/
+/*#sidebar-two .dar-sidebar-menu > a.subdrop > span:not(.menu-arrow) {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*!* ------------------------------------------------------------*/
+/*   DAR FORMS - CHILD LINKS*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .dar-sidebar-menu > ul > li > a {*/
+/*  color: #374151 !important;*/
+/*  transition:*/
+/*          color 0.2s ease,*/
+/*          background-color 0.2s ease;*/
+/*}*/
+
+
+/*!* Child hover *!*/
+
+/*#sidebar-two .dar-sidebar-menu > ul > li > a:hover {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*!* Child active *!*/
+
+/*#sidebar-two .dar-sidebar-menu > ul > li > a.active {*/
+/*  color: #7c3aed !important;*/
+/*  font-weight: 600;*/
+/*}*/
+
+
+/*!* ------------------------------------------------------------*/
+/*   CHANGELOG*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .changelog-sidebar-menu > a {*/
+/*  color: #1f2937 !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > a > i {*/
+/*  color: #64748b !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > a > span:not(.menu-arrow) {*/
+/*  color: #1f2937 !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > a:hover {*/
+/*  color: #7c3aed !important;*/
+/*  background-color: #faf7ff;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > a:hover > i,*/
+/*#sidebar-two .changelog-sidebar-menu > a:hover > span:not(.menu-arrow) {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*!* Changelog active parent *!*/
+
+/*#sidebar-two .changelog-sidebar-menu.active > a,*/
+/*#sidebar-two .changelog-sidebar-menu > a.subdrop {*/
+/*  color: #7c3aed !important;*/
+/*  background-color: #f5f3ff !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu.active > a > i,*/
+/*#sidebar-two .changelog-sidebar-menu > a.subdrop > i {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu.active > a > span:not(.menu-arrow),*/
+/*#sidebar-two .changelog-sidebar-menu > a.subdrop > span:not(.menu-arrow) {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*!* Changelog child links *!*/
+
+/*#sidebar-two .changelog-sidebar-menu > ul > li > a {*/
+/*  color: #374151 !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > ul > li > a:hover {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+
+/*#sidebar-two .changelog-sidebar-menu > ul > li > a.active {*/
+/*  color: #7c3aed !important;*/
+/*  font-weight: 600;*/
+/*}*/
+
+
+/*!* ------------------------------------------------------------*/
+/*   MENU ARROW*/
+/*   ------------------------------------------------------------ *!*/
+
+/*#sidebar-two .dar-sidebar-menu .menu-arrow,*/
+/*#sidebar-two .changelog-sidebar-menu .menu-arrow {*/
+/*  color: #64748b !important;*/
+/*}*/
+
+
+/*#sidebar-two .dar-sidebar-menu > a:hover .menu-arrow,*/
+/*#sidebar-two .dar-sidebar-menu > a.subdrop .menu-arrow,*/
+/*#sidebar-two .changelog-sidebar-menu > a:hover .menu-arrow,*/
+/*#sidebar-two .changelog-sidebar-menu > a.subdrop .menu-arrow {*/
+/*  color: #7c3aed !important;*/
+/*}*/
+
+/* Keep module pages in the same content width as every other admin page. */
+.page-wrapper .content .module-page,
+.page-wrapper .content .module-master-dashboard {
+  max-width: none;
+  margin: 0;
+  padding: 0 0 28px;
+}
+
+/* Page headers share the module dashboard banner. */
+.page-wrapper .content > .module-hero,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 {
+  position: relative;
+  border: 0;
+  border-radius: 10px;
+  min-height: 220px;
+  background-image: linear-gradient(110deg, #7137ff 0%, #8a26ff 52%, #c000ff 100%);
+  box-shadow: 0 13px 0 -6px rgba(111, 68, 255, 0.12), 0 13px 28px rgba(77, 38, 157, 0.13);
+  overflow: hidden;
+}
+.page-wrapper .content .flex-fill:has(> .card.bg-primary-gradient-200) {
+  margin-bottom: 22px;
+}
+.page-wrapper .content .flex-fill:has(> .card.bg-primary-gradient-200) > .position-absolute {
+  display: none;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -140px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 66%);
+  pointer-events: none;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+  padding: 40px 46px;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .badge {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14) !important;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .avatar {
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.13) !important;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 h1,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 p {
+  max-width: 760px;
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end h1,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end h2,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end .display-5 {
+  margin: 6px 0;
+  color: #fff;
+  font-size: 2.7rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end p,
+.page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .text-lg-end small {
+  color: rgba(255, 255, 255, 0.87);
+}
+@media (max-width: 700px) {
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .card-body {
+    padding: 28px 24px;
+  }
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 h1,
+  .page-wrapper .content .flex-fill > .card.bg-primary-gradient-200 .col-lg-8 h2 {
+    font-size: 1.55rem;
+  }
+}
+
+/* Tablets and desktops: keep content inside the viewport and let sections reflow. */
+@media (min-width: 768px) {
+  .page-wrapper,
+  .page-wrapper .content,
+  .module-page,
+  .integration-catalog {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .page-wrapper .content img,
+  .page-wrapper .content video,
+  .page-wrapper .content canvas,
+  .page-wrapper .content iframe,
+  .page-wrapper .content pre {
+    max-width: 100%;
+  }
+  .page-wrapper .content h1,
+  .page-wrapper .content h2,
+  .page-wrapper .content h3,
+  .page-wrapper .content p {
+    overflow-wrap: break-word;
+  }
+  .page-wrapper .content .table-responsive,
+  .settings-table,
+  .access-matrix-wrap {
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .page-wrapper .module-hero,
+  .integration-catalog .module-hero {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: 0;
+    padding: 28px 22px;
+  }
+  .page-wrapper .module-hero__content,
+  .integration-catalog .module-hero__content {
+    max-width: 100%;
+  }
+  .page-wrapper .module-hero__metric,
+  .integration-catalog .module-hero__metric {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+  .page-wrapper .module-hero h1,
+  .integration-catalog .module-hero h1 {
+    font-size: 1.7rem;
+  }
+  .page-wrapper .module-hero__metric strong,
+  .integration-catalog .module-hero__metric strong {
+    font-size: 2.1rem;
+  }
+  .module-dashboard-heading-row,
+  .integration-toolbar {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .integration-search {
+    flex: 1 1 100%;
+  }
+  .module-metric-grid,
+  .dashboard-submetric-grid,
+  .dashboard-readiness-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .page-wrapper .content {
+    padding: 18px;
+  }
+  .page-wrapper .module-hero,
+  .integration-catalog .module-hero {
+    gap: 16px;
+    min-height: 0;
+    padding: 28px;
+  }
+  .page-wrapper .module-hero__metric,
+  .integration-catalog .module-hero__metric {
+    min-width: 140px;
+  }
+  .integration-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper .content .row > [class*="col-"] {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 16px 12px;
+  }
+  .module-hero,
+  .module-dashboard-heading-row,
+  .integration-toolbar,
+  .card-header,
+  .page-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .content .table,
+  .content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .content img,
+  .content svg,
+  .content canvas,
+  .content video,
+  .form-control,
+  .form-select,
+  textarea,
+  select {
+    max-width: 100%;
+  }
+  .content .btn:has(i),
+  .content a.btn:has(i),
+  .module-dashboard-actions button:has(i),
+  .integration-toolbar button:has(i) {
+    font-size: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .content .btn:has(i) i,
+  .content .btn:has(i) svg,
+  .content a.btn:has(i) i,
+  .module-dashboard-actions button:has(i) i,
+  .integration-toolbar button:has(i) i {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .header .input-icon-end {
+    display: none;
+  }
+}

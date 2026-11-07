@@ -1,0 +1,5 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS Environment Parity{% endblock %}
+{% block content %}
+<div class="container-fluid py-4"><div class="mb-4"><a href="{% url 'third_party_api_aws:index' %}">← AWS Integrations</a><h1 class="h3 mt-2">AWS Environment Parity</h1><p class="text-muted">Compare enabled AWS resource configurations by environment.</p></div><div class="card"><div class="table-responsive"><table class="table align-middle mb-0"><thead><tr><th>Environment</th><th>Account</th><th>Region</th><th>Enabled Resources</th></tr></thead><tbody>{% for env in environments %}<tr><th>{{ env.get_environment_display }}</th><td>{{ env.account_alias|default:env.account_id|default:"Not configured" }}</td><td>{{ env.region }}</td><td>{{ env.resources.all|length }}</td></tr>{% endfor %}</tbody></table></div></div></div>
+{% endblock %}

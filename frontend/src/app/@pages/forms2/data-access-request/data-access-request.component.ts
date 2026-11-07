@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router, NavigationEnd } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from '../../../@shared/services/app.service';
+import { UserActivityService } from '../../../@shared/services/user-activity.service';
+import { CartService } from '../../../@shared/services/cart.service';
+import { OffcanvasCartService } from '../../../@shared/services/offcanvas-cart.service';
 import { environment } from '../../../../environments/environment';
 import { SuggestedAiComponent } from '../../../@shared/components/suggested-ai/suggested-ai.component';
 import { AiSuggestionService } from '../../../@shared/services/ai-suggestion.service';
@@ -20,6 +23,7 @@ interface DbNameOption {
 interface ElementInfo {
   column_name: string;
   elementname: string;
+  dbname: string;
 }
 
 @Component({
@@ -36,6 +40,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   suggestions: any[] = [];
   isSearching: boolean = false;
   private lastTriggerState: 'none' | 'standard' | 'verified' = 'none';
+  private lastQueryKey = '';
 
   // ============================================================================
   // EXISTING PROPERTIES (PRESERVED)
@@ -49,6 +54,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
 
   dbnames: DbNameOption[] = [];
   elements: ElementInfo[] = [];
+  private denodoRows: ElementInfo[] = [];
 
   codes = [
     { id: '735de5d80fef39404758e388b1050eb0', name: 'U010 - Financial Developer IT Group' },
@@ -127,7 +133,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   fileToUpload: File | null = null;
   public shouldShow = false;
   public shouldHide = true;
-  button = 'Submit Order';
+  button = 'Add to Cart';
   repos: any;
   interval: any;
   isLoading = false;
@@ -204,7 +210,10 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     public appSvc: AppService,
     private aiService: AiSuggestionService,
     private cdr: ChangeDetectorRef,  // NEW
-    private ngZone: NgZone   
+    private ngZone: NgZone,
+    private activity: UserActivityService,
+    private cart: CartService,
+    private offcanvasCart: OffcanvasCartService
   ) {
     this.uploadForm = this.fu.group({});
     setTimeout(() => {
@@ -216,13 +225,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   // NGONINIT (PRESERVED WITH FORM VALUE CHANGES)
   // ============================================================================
   ngOnInit() {
-    const url = `${environment.gdx.denodoTables}`;
-    this.http.get<DbNameOption[]>(url).subscribe(data => {
-      this.dbnames = data.sort((a, b) =>
-        a.dbname.localeCompare(b.dbname)
-      );
-    });
-
+    document.body.classList.add('dar-form-scroll');
     moment.updateLocale('en', {
       holidays: [
         '01-02-2023', '01-16-2023', '05-29-2023', '07-04-2023',
@@ -245,7 +248,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       requesting_id: ['Me'],
       v_dar_dm_version: [''],
       v_dar_objectid_createdby: [''],
-      v_dar_objectid_reqfor: ['', Validators.required],
+      v_dar_objectid_reqfor: [''],
       v_dar_platform: ['', Validators.required],
       v_dar_workdayID_created_by: [''],
       v_dar_dataDomainSelect: ['', Validators.required],
@@ -372,6 +375,9 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       v_dar_mnfr_project_area_group: [''],
     });
 
+    this.form.get('v_dar_ad_group').valueChanges.subscribe(() => this.loadDenodoTables());
+    this.loadDenodoTables();
+
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
@@ -389,28 +395,20 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       debounceTime(2000),
 
       map((v: Record<string, any>) => ({
-        platform: v.v_dar_platform?.trim() || '',
-        domain: v.v_dar_dataDomainSelect?.trim() || '',
-        dbSchema: v.v_dar_post_database_schema?.trim() || '',
-        tables: v.v_dar_post_table_names?.map(t => t.trim()) || null,
-        description: v.v_dar_DataReqDescription?.trim() || '',
-        justification: v.v_dar_businessJustification?.trim() || '',
-        environment: v.v_dar_environment?.trim() || ''
+        platform: this.aiText(v.v_dar_platform),
+        domain: this.aiText(v.v_dar_dataDomainSelect),
+        dbSchema: this.aiText(v.v_dar_post_database_schema),
+        tables: this.aiList(v.v_dar_post_table_names).join(','),
+        description: this.aiText(v.v_dar_DataReqDescription),
+        justification: this.aiText(v.v_dar_businessJustification),
+        environment: this.aiText(v.v_dar_environment)
       })),
 
       // Require base fields and environment = 'Prod' or 'All'
       filter(x => !!(x.platform && x.domain && x.dbSchema && x.tables) && (x.environment === 'Prod'|| x.environment === 'All')),
 
       // Only fire when something relevant actually changed
-      distinctUntilChanged((prev, curr) =>
-        prev.platform === curr.platform &&
-        prev.domain === curr.domain &&
-        prev.dbSchema === curr.dbSchema &&
-        prev.tables === curr.tables &&
-        prev.description === curr.description &&
-        prev.justification === curr.justification &&
-        prev.environment === curr.environment
-      ),
+      distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr)),
 
       // ✅ THIS LINE FIXES THE ERROR
       takeUntil(this.destroy$)
@@ -421,6 +419,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    document.body.classList.remove('dar-form-scroll');
     // Set the flag first
     this.componentIsDestroyed = true;
 
@@ -469,17 +468,21 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     if (hasBasicFields && hasNarrativeFields) currentTier = 'verified';
     else if (hasBasicFields) currentTier = 'standard';
 
+    const queryKey = JSON.stringify({
+      platform, dbValue, tables, description, justification, currentTier
+    });
     console.log("Tier check:", { currentTier, lastState: this.lastTriggerState, isSearching: this.isSearching });
 
     // ---- Guards ----
     if (
       currentTier === 'none' ||
-      currentTier === this.lastTriggerState ||
+      queryKey === this.lastQueryKey ||
       this.isSearching
     ) {
       console.log("GUARD BLOCKED - returning early");
       return;
     }
+    this.lastQueryKey = queryKey;
 
     this.isSearching = true;
     console.log("Starting API call...");
@@ -494,7 +497,8 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
         databaseSchema: dbValue,
         tableNames: tables,
         description,
-        justification
+        justification,
+        tier
       });
     };
 
@@ -504,9 +508,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       callApi('standard').subscribe({
         next: (response: any) => {
           this.ngZone.run(() => {
-            const results = Array.isArray(response)
-              ? response
-              : (response?.product || []);
+            const results = this.suggestionRows(response);
 
             if (!results || results.length === 0) {
               this.isSearching = false;
@@ -528,9 +530,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
               callApi('verified').subscribe({
                 next: (verifiedResponse: any) => {
                   this.ngZone.run(() => {
-                    const verifiedResults = Array.isArray(verifiedResponse)
-                      ? verifiedResponse
-                      : (verifiedResponse?.product || []);
+                    const verifiedResults = this.suggestionRows(verifiedResponse);
 
                     if (verifiedResults && verifiedResults.length > 0) {
                       // ✅ overwrite with enriched results
@@ -563,54 +563,85 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     });
   }
 
-  onDbChange(selectedDb: DbNameOption): void {
-    if (!selectedDb?.dbname) {
+  private aiText(value: any): string {
+    if (Array.isArray(value)) {
+      return this.aiList(value).join(',');
+    }
+    if (value && typeof value === 'object') {
+      return String(value.dbname || value.elementname || value.name || value.label || '').trim();
+    }
+    return String(value ?? '').trim();
+  }
+
+  private aiList(value: any): string[] {
+    const rows = Array.isArray(value) ? value : (value ? [value] : []);
+    return rows.map(item => this.aiText(item)).filter(Boolean);
+  }
+
+  private suggestionRows(response: any): any[] {
+    if (Array.isArray(response)) {
+      return response;
+    }
+    const rows = response?.suggestions || response?.product || [];
+    return Array.isArray(rows) ? rows : [];
+  }
+
+  private denodoRole(): string {
+    return String(this.form?.get('v_dar_ad_group')?.value || '').trim();
+  }
+
+  private loadDenodoTables(): void {
+    const role = this.denodoRole();
+    if (!role) {
+      this.denodoRows = [];
+      this.dbnames = [];
       this.elements = [];
       return;
     }
-
-    const dbname = selectedDb.dbname;
-    const url = `${environment.gdx.denodoTables}?database=${encodeURIComponent(dbname)}`;
-
-    this.http.get<ElementInfo[]>(url).subscribe({
-      next: (data: ElementInfo[]) => {
-        const uniqueTables = new Map<string, ElementInfo>();
-
-        for (const item of data ?? []) {
-          const tableName = item.elementname?.trim();
-
-          if (!tableName) {
-            continue;
-          }
-
-          // Normalize the key so differences in casing or spaces
-          // do not create duplicate table options.
-          const normalizedName = tableName.toLowerCase();
-
-          if (!uniqueTables.has(normalizedName)) {
-            uniqueTables.set(normalizedName, {
-              ...item,
-              elementname: tableName
-            });
+    const url = `${environment.gdx.denodoTables}?userrolename=${encodeURIComponent(role)}`;
+    this.http.get<any>(url).subscribe({
+      next: data => {
+        const rows = Array.isArray(data) ? data : (data?.value || data?.elements || []);
+        this.denodoRows = rows;
+        const names = new Map<string, DbNameOption>();
+        for (const row of rows) {
+          const name = String(row?.dbname || '').trim();
+          if (name && !names.has(name)) {
+            names.set(name, { dbname: name, label: name });
           }
         }
-
-        this.elements = Array.from(uniqueTables.values()).sort((a, b) =>
-          a.elementname.localeCompare(
-            b.elementname,
-            undefined,
-            { sensitivity: 'base' }
-          )
-        );
-
-        console.log('Unique tables loaded:', this.elements);
+        this.dbnames = Array.from(names.values()).sort((a, b) => a.dbname.localeCompare(b.dbname));
       },
-
-      error: error => {
-        console.error('Error loading elements:', error);
-        this.elements = [];
+      error: () => {
+        this.denodoRows = [];
+        this.dbnames = [];
       }
     });
+  }
+
+  onDbChange(selectedDb: DbNameOption | string | null): void {
+    const dbname = (typeof selectedDb === 'string' ? selectedDb : selectedDb?.dbname || '').trim();
+    if (!dbname) {
+      this.elements = [];
+      return;
+    }
+    const uniqueTables = new Map<string, ElementInfo>();
+    for (const item of this.denodoRows) {
+      if (String(item?.dbname || '').trim() !== dbname) {
+        continue;
+      }
+      const tableName = item.elementname?.trim();
+      if (!tableName) {
+        continue;
+      }
+      const normalizedName = tableName.toLowerCase();
+      if (!uniqueTables.has(normalizedName)) {
+        uniqueTables.set(normalizedName, { ...item, elementname: tableName });
+      }
+    }
+    this.elements = Array.from(uniqueTables.values()).sort((a, b) =>
+      a.elementname.localeCompare(b.elementname, undefined, { sensitivity: 'base' })
+    );
   }
 
   onTableSelectClose() {
@@ -709,8 +740,24 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     const db2planjobnameControl = this.form.get('v_dar_mf_db2_plan_tso_id_or_job_name');
     const db2plannameControl = this.form.get('v_dar_mf_db2_plan_plan_name');
 
+    this.syncRequesterRule();
+    this.form.get('requesting_id').valueChanges.subscribe(() => this.syncRequesterRule());
+
     this.form.get('v_dar_platform').valueChanges
       .subscribe(v_dar_platform => {
+        [
+          apinameControl,
+          databaseschemaControl,
+          tablenameControl,
+          otherplatformControl,
+          datawarehouseControl,
+          oracleaccessControl,
+          gatewayschemaplatformControl,
+          bidataaccessplatformControl,
+          dataaccessplatformControl,
+          mainframeaccessControl,
+          environmentControl,
+        ].forEach((control) => control?.clearValidators());
 
         if (v_dar_platform === 'API (EIG Application Support)') {
           apinameControl.setValidators([Validators.required]);
@@ -1125,6 +1172,16 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     }
   }
 
+  addToCart(): void {
+    if (!this.form.valid) {
+      this.validateAllFormFields(this.form);
+      return;
+    }
+    this.cart.addDataRequest(this.form.getRawValue()).subscribe({
+      complete: () => this.offcanvasCart.open()
+    });
+  }
+
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
@@ -1146,17 +1203,13 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       'Content-Type': 'application/json',
     }
 
-    var HTTP_URL = `${environment.gdx.addToCart}`;
-
-    this.http.post(HTTP_URL, data).subscribe(
-      (response) => {
-        if (response) {
-          var HTTP2_URL = `${environment.gdx.submitCart}`;
-
-          this.http.post(HTTP2_URL, null).subscribe(
-            (res) => {
+    const submitOrder = () => this.http.post(environment.gdx.submitCart, data).subscribe(
+      (res: any) => {
               this.repos = res;
               this.isShow = true;
+              const requestNumber = res?.result?.request_number || res?.result?.ritm_number || '';
+              const detail = this.form?.value?.v_dar_platform || this.form?.value?.v_dar_dataDomainSelect || 'Data access request';
+              this.activity.record('data_access_request', String(detail), String(requestNumber));
               document.body.scrollTop = 0; // For Safari
               document.documentElement.scrollTop = 0;
 
@@ -1254,14 +1307,33 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
                   (response) => {
                     this.save = response;
                     this.upload = true;
+                    this.isLoading = false;
+                    this.isProcessing = false;
+                    this.button = 'Submit';
                   }
                 );
               }
-            },          
-          )
-        }
       },
-    )
+      () => {
+        this.isLoading = false;
+        this.isProcessing = false;
+        this.button = 'Submit';
+      }
+    );
+
+    if (this.fileToUpload) {
+      const upload = new FormData();
+      upload.append('file', this.fileToUpload, this.fileToUpload.name);
+      this.http.post<any>(environment.gdx.fileUpload, upload).subscribe(
+        (uploaded) => {
+          data.variables.attachment = uploaded?.result || null;
+          submitOrder();
+        },
+        () => submitOrder()
+      );
+    } else {
+      submitOrder();
+    }
 
 
     this.isLoading = true;
@@ -1291,7 +1363,25 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
 
   getProfile() {this.http.get(environment.microsoft.graphAPI).subscribe(profile => {
       this.profile = profile;
+      this.syncRequesterRule();
     });
+  }
+
+  private syncRequesterRule(): void {
+    const control = this.form?.get('v_dar_objectid_reqfor');
+    if (!control) {
+      return;
+    }
+    const forSomeoneElse = this.form.get('requesting_id')?.value === 'User';
+    if (forSomeoneElse) {
+      control.setValidators([Validators.required]);
+    } else {
+      control.clearValidators();
+      if (!control.value && this.profile?.id) {
+        control.setValue(this.profile.id, { emitEvent: false });
+      }
+    }
+    control.updateValueAndValidity({ emitEvent: false });
   }
 
   toggleVisibility(e) {
@@ -1323,7 +1413,20 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   }
 
   goToLink1() {
-    window.open("https://data.toyota.com/docs/protected/access-guide", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=0,width=800,height=1000");
+    window.open("https://data.toyota.com/docs/protected/access-guide", "darHelp", "popup=yes,toolbar=yes,scrollbars=yes,resizable=yes,width=980,height=820");
+  }
+
+  openWindow(event: Event, url: string) {
+    event.preventDefault();
+    const external = /^https?:/i.test(url);
+    const path = external
+      ? `/docs/protected/document?url=${encodeURIComponent(url)}`
+      : (url.startsWith('/') ? url : `/${url}`);
+    window.open(
+      `${window.location.origin}${path}`,
+      "darHelp",
+      "popup=yes,scrollbars=yes,resizable=yes,width=1280,height=900"
+    );
   }
 
   setTimeout() {
@@ -1467,7 +1570,11 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       if (!control) return;
       const enforced = (field.validators || []).some((rule) => rule.enforced);
       const extra = !this.builtInFieldNames.has(field.name);
-      if (enforced || extra) {
+      const visible = this.ruleMatches(field.visible_when, values);
+      if (!visible && (enforced || extra)) {
+        control.clearValidators();
+        control.updateValueAndValidity({emitEvent: false});
+      } else if (enforced || extra) {
         control.setValidators(this.validatorsFor(field, values));
         control.updateValueAndValidity({emitEvent: false});
       }
@@ -1482,6 +1589,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
         }
       }
     });
+    this.syncRequesterRule();
     this.paintVisibility();
   }
 

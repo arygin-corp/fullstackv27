@@ -5,6 +5,7 @@ import { catchError, finalize, takeUntil } from 'rxjs/operators';
 import { ProductAssociation } from '../interfaces/product-associations';
 import { Product } from '../interfaces/product';
 import { CartItem } from '../interfaces/cart-item';
+import { UserActivityService } from './user-activity.service';
 
 export interface CartTotal {
     title: string;
@@ -66,7 +67,8 @@ export class CartService {
     }
 
     constructor(
-        @Inject(PLATFORM_ID) private platformId: object
+        @Inject(PLATFORM_ID) private platformId: object,
+        private activity: UserActivityService
     ) {
         if (isPlatformBrowser(this.platformId)) {
             this.loadFromStorage();
@@ -99,6 +101,57 @@ export class CartService {
         }
 
         this.calc();
+    }
+
+    public getSavedCart(): any | null {
+        return this.readSavedCart();
+    }
+
+    public retrieveCart(): boolean {
+        const saved = this.readSavedCart();
+        if (!saved) {
+            return false;
+        }
+        this.data.items = saved.items || [];
+        this.data.darRequests = saved.darRequests || [];
+        this.data.productRequests = saved.productRequests || [];
+        localStorage.removeItem('savedCart');
+        this.persistAndPublish();
+        return true;
+    }
+
+    public saveCart(): Date | null {
+        if (!isPlatformBrowser(this.platformId)) {
+            return null;
+        }
+        if (!this.data.items.length && !this.data.darRequests.length) {
+            return null;
+        }
+        const expiresAt = this.addBusinessDays(new Date(), 7);
+        try {
+            localStorage.setItem('savedCart', JSON.stringify({
+                expiresAt: expiresAt.toISOString(),
+                items: this.data.items,
+                darRequests: this.data.darRequests,
+                productRequests: this.data.productRequests,
+            }));
+        } catch {
+            return null;
+        }
+        this.data.items = [];
+        this.data.darRequests = [];
+        this.data.productRequests = [];
+        this.persistAndPublish();
+        return expiresAt;
+    }
+
+    public savedCartExpiresAt(): Date | null {
+        const saved = this.readSavedCart();
+        if (!saved?.expiresAt) {
+            return null;
+        }
+        const expiresAt = new Date(saved.expiresAt);
+        return Number.isNaN(expiresAt.getTime()) ? null : expiresAt;
     }
 
     private save(): void {
@@ -195,7 +248,19 @@ export class CartService {
         }
 
         this.persistAndPublish();
+        this.recordCartAdd(incomingProduct, safeQuantity);
         return of(item);
+    }
+
+    public saveRequest(product: Product, formData: any): Observable<CartItem> {
+        const existing = this.findItem(product.id);
+        if (!existing) {
+            return this.add(product, 1, [], formData);
+        }
+        existing.formData = formData;
+        existing.product = this.mergeProduct(existing.product, this.cloneProduct(product));
+        this.persistAndPublish();
+        return of(existing);
     }
 
     public addOnce(
@@ -224,6 +289,7 @@ export class CartService {
 
         this.data.items.push(item);
         this.persistAndPublish();
+        this.recordCartAdd(incomingProduct, 1);
         return of(item);
     }
 
@@ -437,9 +503,34 @@ export class CartService {
         );
     }
 
+    private recordCartAdd(product: Product, quantity: number): void {
+        const name = product?.name || 'Catalog product';
+        this.activity.record('cart_add', name, String(product?.id || ''), {
+            order_type: 'product',
+            product_id: product?.id ?? '',
+            name,
+            domain: product?.domain || '',
+            datatype: product?.datatype || '',
+            classification: product?.classification || '',
+            quantity,
+        });
+    }
+
     public addDataRequest(dataRequest: any): Observable<void> {
         this.data.darRequests.push(dataRequest);
         this.persistAndPublish();
+        const form = dataRequest?.formData || dataRequest || {};
+        const detail = dataRequest?.product?.name
+            || form?.v_dar_platform
+            || 'Data access request';
+        this.activity.record('cart_add', detail, '', {
+            order_type: 'dar',
+            name: detail,
+            platform: form?.v_dar_platform || '',
+            domain: form?.v_dar_dataDomainSelect || '',
+            environment: form?.v_dar_environment || '',
+            access_type: form?.v_dat_data_access_type || '',
+        });
         return of(void 0);
     }
 
@@ -490,6 +581,7 @@ export class CartService {
             request?.product?.id !== productId
         );
         this.persistAndPublish();
+        this.activity.record('cart_remove', item?.product?.name || 'Catalog product', String(item?.product?.id || ''));
         return of(void 0);
     }
 
@@ -505,7 +597,46 @@ export class CartService {
         this.data.items = [];
         this.data.darRequests = [];
         this.data.productRequests = [];
+        if (isPlatformBrowser(this.platformId)) {
+            try {
+                localStorage.removeItem('savedCart');
+            } catch {}
+        }
         this.persistAndPublish();
+    }
+
+    private readSavedCart(): any | null {
+        if (!isPlatformBrowser(this.platformId)) {
+            return null;
+        }
+        try {
+            const raw = localStorage.getItem('savedCart');
+            if (!raw) {
+                return null;
+            }
+            const saved = JSON.parse(raw);
+            const expiresAt = new Date(saved?.expiresAt || 0).getTime();
+            if (!expiresAt || expiresAt <= Date.now()) {
+                localStorage.removeItem('savedCart');
+                return null;
+            }
+            return saved;
+        } catch {
+            return null;
+        }
+    }
+
+    private addBusinessDays(start: Date, days: number): Date {
+        const result = new Date(start.getTime());
+        let added = 0;
+        while (added < days) {
+            result.setDate(result.getDate() + 1);
+            const day = result.getDay();
+            if (day !== 0 && day !== 6) {
+                added += 1;
+            }
+        }
+        return result;
     }
 
     private persistAndPublish(): void {

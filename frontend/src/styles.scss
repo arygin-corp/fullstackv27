@@ -181,3 +181,43 @@ app-root {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+body.dar-form-scroll {
+    height: 100vh;
+    overflow: hidden !important;
+}
+
+body.dar-form-scroll app-root,
+body.dar-form-scroll app-zoom-scale,
+body.dar-form-scroll .zoom-container,
+body.dar-form-scroll app-main,
+body.dar-form-scroll .site {
+    height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+body.dar-form-scroll .site {
+    display: flex;
+    flex-direction: column;
+}
+
+body.dar-form-scroll .site__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+body.dar-form-scroll .site__footer {
+    display: none;
+}
+
+body.dar-form-scroll app-data-access-request {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}

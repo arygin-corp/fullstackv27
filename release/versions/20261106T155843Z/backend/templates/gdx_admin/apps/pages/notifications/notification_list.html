@@ -1,0 +1,1 @@
+{% extends "gdx_admin/base.html" %}{% block title %}Notifications{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/notifications/includes/hero.html" %}{% for item in items %}<div class="list-group-item"><strong>{{ item.subject }}</strong><p>{{ item.body_text }}</p></div>{% empty %}<p>No notifications.</p>{% endfor %}{% endblock %}

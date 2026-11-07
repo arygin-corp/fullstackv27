@@ -15,6 +15,7 @@ import { RequestFlowComplexComponent } from './components/pdfs/request-flow-comp
 import { DMFlowComponent } from './components/pdfs/d-m-flow/d-m-flow.component';
 import { DataSecurityProcessComponent } from './components/pdfs/data-security-process/data-security-process.component'; 
 import { UserGuideComponent } from './components/pdfs/user-guide/user-guide.component';
+import { DocumentWindowComponent } from './components/pdfs/document-window/document-window.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-guide', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'data-quality-process', component: DataQualityProcessComponent },
   { path: 'dm-flow', component: DMFlowComponent },
   { path: 'domains', component: DomainsComponent },
+  { path: 'document', component: DocumentWindowComponent },
   { path: 'data-security-process', component: DataSecurityProcessComponent },
   { path: 'metadata-process', component: MetadataProcessComponent },
   { path: 'onboarding', component: OnboardingComponent },

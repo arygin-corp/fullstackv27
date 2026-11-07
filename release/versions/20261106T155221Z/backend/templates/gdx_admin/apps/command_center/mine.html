@@ -1,0 +1,27 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="COMMAND CENTER" hero_title=page_title hero_description=page_description hero_metric_label="Saved" hero_metric_value=views|length hero_metric_caption="Yours" hero_icon="▤" %}
+{% include "gdx_admin/apps/command_center/_nav.html" %}
+<section class="deploy-panel">
+    <h2>{{ page_title }}</h2>
+    <table class="deploy-table">
+        <thead><tr><th>Name</th><th>Data</th><th>Charts</th></tr></thead>
+        <tbody>
+        {% for item in views %}
+        <tr>
+            <td><a href="{% url 'command_center:view' item.id %}">{{ item.name }}</a></td>
+            <td>{{ item.scope_label }}</td>
+            <td>{{ item.elements|length }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">{{ empty_message }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+{% endblock %}

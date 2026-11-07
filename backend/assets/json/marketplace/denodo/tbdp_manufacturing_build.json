@@ -460,6 +460,90 @@
     {
       "userrolename": "tbdp-manufacturing-build",
       "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "attributeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "messagenumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attribute",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "attributeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "local_timezone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "attributevalue",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
       "elementname": "avi_tmmi_est_assmbly_avievents",
       "column_name": "active_record"
     },
@@ -1566,6 +1650,78 @@
       "dbname": "mfg_build_trn_ext",
       "elementname": "avi_vehicle_pitch_dtl",
       "column_name": "start_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "bmessageid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "local_timezone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_message",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "bctypeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "broadcast_type",
+      "column_name": "name"
     },
     {
       "userrolename": "tbdp-manufacturing-build",
@@ -2086,6 +2242,42 @@
     {
       "userrolename": "tbdp-manufacturing-build",
       "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "familycodeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "family_code",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
       "elementname": "ftzcnty",
       "column_name": "accounting_id"
     },
@@ -2166,6 +2358,48 @@
       "dbname": "mfg_build_trn_ext",
       "elementname": "ftzcnty",
       "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "lineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "lineofftrackingpointname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "line",
+      "column_name": "scrapvehicletrackingpointname"
     },
     {
       "userrolename": "tbdp-manufacturing-build",
@@ -2956,6 +3190,54 @@
     {
       "userrolename": "tbdp-manufacturing-build",
       "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "g3name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shift",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
       "elementname": "shift_history",
       "column_name": "active_record"
     },
@@ -3006,6 +3288,120 @@
       "dbname": "mfg_build_trn_ext",
       "elementname": "shift_history",
       "column_name": "shift_start_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "lineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "productiondate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "shifthistoryid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "shifthistory",
+      "column_name": "shiftstartutc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "psc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "siteid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "streetaddress"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "site",
+      "column_name": "zipcode"
     },
     {
       "userrolename": "tbdp-manufacturing-build",
@@ -4948,6 +5344,558 @@
     {
       "userrolename": "tbdp-manufacturing-build",
       "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "attributeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "galcversion"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "messagenumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attribute",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "attributeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_attributevalue",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "bmessageid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "messagenumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_message",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "bctypeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcast_type",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "bmessageid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_broadcastmessagevalue",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "galcname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shift",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "lineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "productiondate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "shifthistoryid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_shifthistory",
+      "column_name": "shiftstartutc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "localtimezone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "psc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "siteid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "streetaddress"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_site",
+      "column_name": "zipcode"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "isenabled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "lineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "locationorder"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpoint",
+      "column_name": "trackingpointid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "actualutc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "canceledutc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "iscanceled"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "plannedutc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "productiondate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "sequencenumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "trackingpointid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "trackingpointresultid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_trackingpointresult",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_vehicledescriptorsection",
+      "column_name": "vehicledescriptorsectionid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmc_worldmanufacturingindicator",
+      "column_name": "worldmanufacturingindicatorid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
       "elementname": "tmmi_bmessagevalue",
       "column_name": "active_record"
     },
@@ -4992,6 +5940,186 @@
       "dbname": "mfg_build_trn_ext",
       "elementname": "tmmi_bmessagevalue",
       "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "actual_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "bctype_desc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "bctype_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "body_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "canceled_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "family_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "is_canceled_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "is_deleted_in_galc"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "is_erased_in_g3_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "is_scrapped_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "is_trial_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "line_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "local_time_zone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "planned_lineoff_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "planned_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "production_dt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "ref_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "seq_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "shift_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "tracking_point_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "tracking_point_result_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "urn_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "vehicle_ident_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "vehicleid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "vin_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "vin_vds_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build",
+      "dbname": "mfg_build_trn_ext",
+      "elementname": "tmmi_tracking_point_result_rt",
+      "column_name": "vin_wmi_nm"
     },
     {
       "userrolename": "tbdp-manufacturing-build",

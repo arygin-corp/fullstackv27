@@ -119,6 +119,12 @@ def header_notifications(request):
         return empty
 
 
+def staff_sidebar(request):
+    from gdx.sidebar_nav import sidebar_sections
+
+    return {"sidebar_sections": sidebar_sections(request)}
+
+
 def app_display_version(request):
     """
     Expose the human-readable application release version

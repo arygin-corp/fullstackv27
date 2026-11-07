@@ -1,0 +1,17 @@
+{{- if .Values.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: notification-app-migrate-{{ .Release.Revision }}
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccountName: notification-app
+      containers:
+        - name: migrate
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["python","manage.py","migrate","--noinput"]
+          envFrom: [{secretRef: {name: notification-app-secrets}}, {configMapRef: {name: notification-app-config}}]
+{{- end }}

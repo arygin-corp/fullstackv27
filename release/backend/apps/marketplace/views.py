@@ -18,7 +18,7 @@ from django.db.models import Prefetch
 
 class ProductDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Product
-    template_name = 'marketplace/products/delete.html'
+    template_name = 'gdx_users/apps/marketplace/products/delete.html'
     success_url = reverse_lazy('marketplace:index')
 
     def test_func(self):
@@ -28,7 +28,7 @@ class ProductDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class IndexView(ListView):
     model = Product
-    template_name = 'marketplace/products/index.html'
+    template_name = 'gdx_users/apps/marketplace/products/index.html'
     context_object_name = 'products'
     paginate_by = 10
 
@@ -191,7 +191,7 @@ class IndexView(ListView):
 class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
-    template_name = 'marketplace/products/create.html'
+    template_name = 'gdx_users/apps/marketplace/products/create.html'
     success_url = reverse_lazy('marketplace:index')
 
     def get_form_kwargs(self):
@@ -231,7 +231,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'marketplace/products/detail.html'
+    template_name = 'gdx_users/apps/marketplace/products/detail.html'
     context_object_name = 'product'
 
     def get_context_data(self, **kwargs):
@@ -259,7 +259,7 @@ class ProductDetailView(DetailView):
 
 class PendingListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     model = Product
-    template_name = 'marketplace/products/pending.html'
+    template_name = 'gdx_users/apps/marketplace/products/pending.html'
     context_object_name = 'pending_products'
 
     def get_context_data(self, **kwargs):
@@ -294,7 +294,7 @@ def approve_product(request, pk):
 class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Product
     form_class = ProductForm
-    template_name = 'marketplace/products/edit.html'
+    template_name = 'gdx_users/apps/marketplace/products/edit.html'
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['request'] = self.request

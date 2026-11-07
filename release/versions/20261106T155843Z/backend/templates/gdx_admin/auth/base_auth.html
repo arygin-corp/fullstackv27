@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GDX Admin authentication">
+    <title>{% block title %}GDX Admin{% endblock %}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'gdx_admin/img/favicon.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'gdx_admin/img/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="{% static 'gdx_admin/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'gdx_admin/plugins/tabler-icons/tabler-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'gdx_admin/css/iconsax.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{% static 'gdx_admin/css/style.css' %}">
+
+    <style>
+        :root {
+            --gdx-primary: #2563eb;
+            --gdx-primary-dark: #1d4ed8;
+            --gdx-ink: #172033;
+            --gdx-muted: #697386;
+            --gdx-border: #dfe4ec;
+        }
+        html, body { min-height: 100%; }
+        body { background: #fff; color: var(--gdx-ink); font-family: "Instrument Sans", sans-serif; }
+        .gdx-auth-shell { min-height: 100vh; }
+        .gdx-auth-cover {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            background:
+                linear-gradient(135deg, rgba(13, 35, 74, .94), rgba(37, 99, 235, .78)),
+                url("{% block cover_image %}{% static 'gdx_admin/img/auth/auth-cover.jpg' %}{% endblock %}") center/cover no-repeat;
+        }
+        .gdx-auth-cover::before,
+        .gdx-auth-cover::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,.09);
+        }
+        .gdx-auth-cover::before { width: 32rem; height: 32rem; right: -10rem; top: -12rem; }
+        .gdx-auth-cover::after { width: 23rem; height: 23rem; left: -9rem; bottom: -10rem; }
+        .gdx-cover-content { position: relative; z-index: 1; max-width: 620px; }
+        .gdx-cover-eyebrow { letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; font-weight: 700; opacity: .82; }
+        .gdx-cover-title { font-size: clamp(2.25rem, 5vw, 4.75rem); line-height: 1.02; letter-spacing: -.04em; }
+        .gdx-cover-copy { max-width: 540px; font-size: 1.05rem; color: rgba(255,255,255,.8); }
+        .gdx-auth-panel { min-height: 100vh; background: #fff; }
+        .gdx-auth-inner { width: min(100%, 510px); }
+        .gdx-logo { max-height: 46px; max-width: 220px; }
+        .gdx-auth-card { border: 0; border-radius: 1.25rem; box-shadow: 0 20px 55px rgba(20, 35, 70, .10); }
+        .gdx-auth-card .card-body { padding: clamp(1.5rem, 4vw, 2.75rem); }
+        .gdx-auth-card .form-control,
+        .gdx-auth-card .input-group-text {
+            min-height: 50px;
+            border-color: var(--gdx-border);
+            background: #fff;
+        }
+        .gdx-auth-card .form-control:focus { border-color: var(--gdx-primary); box-shadow: none; }
+        .gdx-auth-card .input-group:focus-within { box-shadow: 0 0 0 .2rem rgba(37,99,235,.12); border-radius: .5rem; }
+        .gdx-auth-card .input-group:focus-within .form-control,
+        .gdx-auth-card .input-group:focus-within .input-group-text { border-color: var(--gdx-primary); }
+        .gdx-password-wrap { position: relative; }
+        .gdx-password-toggle {
+            position: absolute; right: .8rem; top: 50%; transform: translateY(-50%);
+            z-index: 5; border: 0; background: transparent; color: #667085; padding: .35rem;
+        }
+        .gdx-password-wrap .form-control { padding-right: 3rem !important; }
+        .gdx-submit { min-height: 50px; border: 0; background: linear-gradient(135deg, var(--gdx-primary), #4f46e5); }
+        .gdx-submit:hover, .gdx-submit:focus { background: linear-gradient(135deg, var(--gdx-primary-dark), #4338ca); }
+        .gdx-field-errors, .errorlist { list-style: none; padding: 0; margin: .4rem 0 0; color: #b42318; font-size: .875rem; }
+        .gdx-alert-error { color: #912018; background: #fef3f2; border-color: #fecdca; }
+        @media (max-width: 991.98px) {
+            .gdx-auth-cover { min-height: 34vh; }
+            .gdx-auth-panel { min-height: 66vh; }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+{% include "gdx_admin/partials/device_gate.html" %}
+<main class="container-fluid p-0" data-device-app>
+    <div class="row g-0 gdx-auth-shell">
+        <section class="col-lg-7 gdx-auth-cover d-flex align-items-end p-4 p-md-5" aria-label="GDX introduction">
+            <div class="gdx-cover-content p-lg-4">
+                <div class="gdx-cover-eyebrow mb-3">GDX Admin</div>
+                <h1 class="gdx-cover-title fw-bold mb-4">{% block cover_title %}Govern with clarity.{% endblock %}</h1>
+                <p class="gdx-cover-copy mb-0">{% block cover_text %}A focused workspace for secure, consistent, and trusted administration.{% endblock %}</p>
+            </div>
+        </section>
+
+        <section class="col-lg-5 gdx-auth-panel d-flex align-items-center justify-content-center p-3 p-sm-4 p-xl-5">
+            <div class="gdx-auth-inner py-4">
+                <div class="text-center mb-4">
+                    <a href="{% url 'home' %}" aria-label="Go to GDX Admin home">
+                        <img src="{% static 'gdx_admin/img/logo-large.svg' %}" class="img-fluid gdx-logo" alt="GDX Admin">
+                    </a>
+                </div>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags|default:'info' }}" role="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
+                {% block auth_content %}{% endblock %}
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="{% static 'gdx_admin/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'gdx_admin/js/script.js' %}"></script>
+<script>
+(() => {
+    document.querySelectorAll('[data-password-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const input = document.getElementById(button.dataset.passwordToggle);
+            if (!input) return;
+            const show = input.type === 'password';
+            input.type = show ? 'text' : 'password';
+            button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+            const icon = button.querySelector('i');
+            if (icon) icon.className = show ? 'isax isax-eye' : 'isax isax-eye-slash';
+        });
+    });
+})();
+</script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

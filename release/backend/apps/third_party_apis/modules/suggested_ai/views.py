@@ -145,13 +145,22 @@ def get_refined_score(query, product_name, p_datatype, preferred_type):
 def suggest_products_by_role(request):
     try:
         # 1. EXTRACT INPUTS
-        platform = request.GET.get('v_dar_platform', '').upper()
-        db_raw = request.GET.get('database-schema', '').strip()
-        tbl_raw = request.GET.get('tablenames', '').strip()
-        api_name = request.GET.get('v_dat_api_name', '').strip()
-        desc_raw = request.GET.get('v_dar_DataReqDescription', '').strip()
+        def first(*names):
+            for name in names:
+                value = request.GET.get(name)
+                if value and str(value).strip():
+                    return str(value).strip()
+            return ""
 
-        is_verification_mode = len(desc_raw) > 3
+        platform = first("v_dar_platform", "platform").upper()
+        db_raw = first("database-schema", "databaseSchema", "query")
+        tbl_raw = first("tablenames", "tableNames")
+        api_name = first("v_dat_api_name", "apiName")
+        desc_raw = first("v_dar_DataReqDescription", "description")
+        justification = first("v_dar_businessJustification", "justification")
+
+        tier = first("tier")
+        is_verification_mode = tier == "verified" or (not tier and len(desc_raw) > 3)
 
         # Load Data & History
         denodo_records, all_products = load_data_cached()
@@ -162,10 +171,10 @@ def suggest_products_by_role(request):
             "Dashboards" if "GATEWAY" in platform else "Datasets")
 
         # Define Engine Source
-        input_source = f"{desc_raw} {db_raw} {tbl_raw}".strip() if is_verification_mode else (
+        input_source = f"{desc_raw} {justification} {db_raw} {tbl_raw}".strip() if is_verification_mode else (
             api_name if "API" in platform else f"{db_raw} {tbl_raw}")
 
-        threshold = 95 if is_verification_mode else 25
+        threshold = 25
 
         if not input_source.strip():
             return JsonResponse({"status": "success", "suggestions": []})

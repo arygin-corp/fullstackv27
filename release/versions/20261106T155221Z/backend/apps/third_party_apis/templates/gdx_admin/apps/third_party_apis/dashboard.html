@@ -1,0 +1,1 @@
+{% extends "gdx_admin/base.html" %}{% block content %}<main class="v19"><h1>Master Module Dashboard</h1><div class="v19-grid">{% for m in modules %}<article><h2>{{ m.name }}</h2><p>{{ m.description }}</p><strong>{{ m.enabled|yesno:"Enabled,Disabled" }}</strong></article>{% endfor %}</div></main>{% endblock %}

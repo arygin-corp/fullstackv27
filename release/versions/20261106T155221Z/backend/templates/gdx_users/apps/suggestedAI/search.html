@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AI Suggested Search</title>
+        <link rel="stylesheet" href="{% static 'ai/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'ai/css/app.css' %}">
+        <link rel="stylesheet" href="{% static 'ai/css/suggestedAI/suggestedAI.css' %}">
+    </head>
+    <body>
+        <main class="container mt-4">
+            <h1>AI Suggested Product Search</h1>
+
+            <!-- NEW: Platform Selection -->
+            <section class="mt-4">
+                <label for="v_dar_platform" class="form-label">Platform</label>
+                <select class="form-select" id="v_dar_platform">
+                    <option value="TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.), My SQL, PostgreSQL, SQL">SQL Platforms (TBDP/Postgres/MySQL)</option>
+                    <option value="Gateway Access Request (PowerBI, Tableau, Alteryx, etc)">Analytics Platforms (PowerBI/Tableau)</option>
+                    <option value="API (EIG Application Support)">API Platforms (EIG Support)</option>
+                </select>
+            </section>
+
+            <!-- API Name Field (Hidden by default or shown based on JS) -->
+            <section class="mt-4" id="api-name-section" style="display: none;">
+                <label for="v_dat_api_name" class="form-label">API Name</label>
+                <input type="text" class="form-control" id="v_dat_api_name" placeholder="e.g. GetVehicleDataV1">
+            </section>
+
+            <section class="mt-4" id="db-section">
+                <label for="database-schema" class="form-label">Database/Schema</label>
+                <input type="text" class="form-control" id="database-schema" placeholder="e.g. customer_fueling_ops">
+            </section>
+
+            <section class="mt-4" id="table-section">
+                <label for="tablenames" class="form-label">Table Name(s)</label>
+                <input type="text" class="form-control" id="tablenames" placeholder="e.g. date_month">
+            </section>
+
+            <section class="mt-4">
+                <label for="data-request-description" class="form-label">Data Request Description</label>
+                <textarea class="form-control" formcontrolname="v_dar_DataReqDescription" rows="5" id="data-request-description"></textarea>
+            </section>
+        </main>
+        <!-- apps/suggestedAI/templates/suggestedAI/search.html -->
+        <script src="{% static 'js/search.js' %}" defer></script>
+        <script src="{% static 'ai/js/enhanced-search.js' %}" defer></script>
+    </body>
+</html>

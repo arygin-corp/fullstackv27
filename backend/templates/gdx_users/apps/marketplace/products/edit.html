@@ -1,4 +1,4 @@
-{% extends 'gdx_users/partials/base.html' %}
+{% extends 'partials/base.html' %}
 {% load static %}
 {% load web_tags %}
 
@@ -104,6 +104,56 @@
     <div class="bg-white shadow-md rounded-lg p-6">
         <form method="post" enctype="multipart/form-data" style="padding: 40px 40px;">
             {% csrf_token %}
+            {% if form.errors or form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <h5 class="alert-heading">
+                        Product could not be updated
+                    </h5>
+
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div>
+                                <strong>{{ field.label }}:</strong>
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% for error in form.non_field_errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if image_formset.errors or image_formset.non_form_errors %}
+                <div class="alert alert-danger">
+                    <h5 class="alert-heading">
+                        Product image validation failed
+                    </h5>
+
+                    {% for image_form in image_formset %}
+                        {% for field in image_form %}
+                            {% for error in field.errors %}
+                                <div>
+                                    <strong>
+                                        Image {{ forloop.parentloop.parentloop.counter }}
+                                        {{ field.label }}:
+                                    </strong>
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                        {% for error in image_form.non_field_errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% for error in image_formset.non_form_errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
             {{ form.media }}
             {{ image_formset.media }}
 
@@ -150,7 +200,9 @@
 
             <div class="row">
                 {% for field in form %}
-                    {% if field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
+                    {% if field.name == 'sample_data' %}
+                        <!-- Skip sample_data field - will be handled separately -->
+                    {% elif field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
                         {# CKEditor fields WITHOUT floating labels #}
                         <div class="col-12">
                             <div class="ckeditor-field">
@@ -243,17 +295,14 @@
                         <div class="{% if field.name == 'status' or field.name == 'category' or field.name == 'priority' or field.name == 'classification' %}col-md-6{% else %}col-12{% endif %}">
                             <div class="form-floating mb-3">
                                 {% if field.field.widget.input_type == 'select' or field.name == 'status' %}
-                                    <select class="form-select{% if field.errors %} is-invalid{% endif %}"
-                                            id="{{ field.id_for_label }}"
-                                            name="{{ field.name }}">
-                                        <option value="">-- Select {{ field.label }} --</option>
-                                        {% for choice in field.field.choices %}
-                                            <option value="{{ choice.0 }}"{% if field.value == choice.0 %} selected{% endif %}>
-                                                {{ choice.1 }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
+                                    {{ field }}
+
+                                    <label for="{{ field.id_for_label }}">
+                                        {{ field.label }}
+                                        {% if field.field.required %}
+                                            <span class="required-indicator">*</span>
+                                        {% endif %}
+                                    </label>
                                 {% elif field.field.widget.input_type == 'textarea' %}
                                     <textarea class="form-control{% if field.errors %} is-invalid{% endif %}"
                                             id="{{ field.id_for_label }}"
@@ -282,13 +331,76 @@
                 {% endfor %}
             </div>
 
+            <!-- Sample Data Section - Smart Sort Order Management -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="sample-data-section" style="margin-bottom: 2rem;">
+                        <div class="section-title mb-3 d-flex justify-content-between align-items-center mb-6" style="padding-bottom: 22px !important;">
+                            <h5 class="mb-0 col-8">Sample Data</h5>
+                            <div class="source-toggle-container class-2">
+                                <label class="source-switch">
+                                    <input type="checkbox" id="global-data-source-toggle">
+                                    <span class="source-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Safe rendering of sample_data field -->
+                            {% if form.sample_data %}
+                                {{ form.sample_data.as_hidden }}
+                            {% else %}
+                                <input type="hidden" name="sample_data_manual" id="id_sample_data_manual" value="">
+                            {% endif %}
+                            
+                            <!-- Header Row -->
+                            <div class="row mb-2 header-row">
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Sort</label>
+                                </div>
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Source</label>
+                                </div>
+                                <div class="col-md-3 header-collibra-column">
+                                    <label class="form-label fw-bold">Source ID</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">Field Name</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">Field Value</label>
+                                </div>
+                                <div class="col-md-1 center-content">
+                                    <label class="form-label fw-bold">Actions</label>
+                                </div>
+                            </div>
+
+                            <!-- Sample Data Fields Container -->
+                            <div id="sample-data-container">
+                                <!-- Initial field will be added by JavaScript -->
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="mt-3">
+                                <button type="button" class="btn btn-primary btn-sm" id="add-sample-data-btn">
+                                    <i class="bx bx-plus"></i> Add More Sample Data
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="clear-all-sample-data-btn">
+                                    <i class="bx bx-trash"></i> Clear All
+                                </button>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+
             <div class="d-flex justify-content-between align-items-center mt-6">
                 <div>
                     <button type="submit" class="btn btn-soft-success waves-effect waves-light">Update Product</button>
-                    <a href="{% url 'marketplace:detail' product.pk %}" class="btn btn-soft-secondary waves-effect waves-light">Cancel</a>
+                    <a href="{% url 'marketplace:product-detail' product.pk %}" class="btn btn-soft-secondary waves-effect waves-light">Cancel</a>
                 </div>
                 <div>
-                    <a href="{% url 'marketplace:delete' product.pk %}" class="btn btn-danger waves-effect waves-light">Delete</a>
+                    <a href="{% url 'marketplace:product-delete' product.pk %}" class="btn btn-danger waves-effect waves-light">Delete</a>
                 </div>
             </div>
         </form>
@@ -324,6 +436,16 @@
     <script src="{% static '/js/ckeditor.js' %}"></script>
     <script>
         $(document).ready(function() {
+             $('#product-edit-form').on('submit', function () {
+                // Update the hidden sample-data value before submitting.
+                syncSampleDataToForm();
+
+                // Disabled controls are not included in POST.
+                // Re-enable these immediately before submission.
+                $('#id_data_review_status').prop('disabled', false);
+                $('#id_data_review_team').prop('disabled', false);
+            });
+
             // $('.collibra-id-input, .axon-id-input').attr('readonly', true).css({
             //     'background-color': '#e9ecef',
             //     'pointer-events': 'none'
@@ -939,6 +1061,8 @@
             $('#add-sample-data-btn').on('click', addSampleDataField);
             $('#clear-all-sample-data-btn').on('click', clearAllSampleData);
 
+            // Initialize with first field
+            addSampleDataField();
             // Enhanced reorganize function that maintains proper order
             function reorganizeSortLetters() {                
                 const currentRows = $('.sample-data-row');

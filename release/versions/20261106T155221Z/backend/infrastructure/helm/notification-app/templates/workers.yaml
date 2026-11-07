@@ -1,0 +1,36 @@
+{{- if .Values.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: notification-app-worker}
+spec:
+  replicas: {{ .Values.worker.replicas }}
+  selector: {matchLabels: {app: notification-app, component: worker}}
+  template:
+    metadata: {labels: {app: notification-app, component: worker}}
+    spec:
+      serviceAccountName: notification-app
+      terminationGracePeriodSeconds: 90
+      containers:
+        - name: worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["celery","-A","config","worker","-l","INFO"]
+          envFrom: [{secretRef: {name: notification-app-secrets}}, {configMapRef: {name: notification-app-config}}]
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: notification-app-beat}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: notification-app, component: beat}}
+  template:
+    metadata: {labels: {app: notification-app, component: beat}}
+    spec:
+      serviceAccountName: notification-app
+      containers:
+        - name: beat
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["celery","-A","config","beat","-l","INFO"]
+          envFrom: [{secretRef: {name: notification-app-secrets}}, {configMapRef: {name: notification-app-config}}]
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+{{- end }}

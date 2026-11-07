@@ -4,6 +4,138 @@
     {
       "userrolename": "tbdp-customer-lifecycle-sales-service",
       "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "buy_sell_indicator"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "deactivation_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "deactivation_type"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "factory_status"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_interest_data",
+      "column_name": "launch_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "businessprovider"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "dealercd"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "dealername"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "enddate"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "launchdate"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "launchstatus"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "paymentsolution"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "providerdealer"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "schedulertoken"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "schedulerurl"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "spmservice"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "startdate"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
       "elementname": "mst_deal_history",
       "column_name": "amount_due_at_sign"
     },
@@ -414,6 +546,174 @@
       "dbname": "cust_lifecycle_sales_service_trn_ext",
       "elementname": "signal_dcv_snapshot",
       "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_cust_cost_amt_cert"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_cust_cost_amt_ewu"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_cust_cost_amt_gap"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_cust_cost_amt_tac"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_cust_cost_amt_vsa"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_dlr_cost_amt_cert"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_dlr_cost_amt_ewu"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_dlr_cost_amt_gap"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_dlr_cost_amt_tac"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "agr_dlr_cost_amt_vsa"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "cust_dg"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "cust_mst"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "cust_splead"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "dlr_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "event_type"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "flat_fee"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "prgm_orig_dlr_rsrv_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "rdr_date"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "rdr_year_month"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "row_number"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "tmna_sp_time_to_present"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "twk_total_customer_cost"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "twk_total_dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "vehicle_purch_price_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "vehicle_whls_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "vin_mst"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "spma_tfs_profitability",
+      "column_name": "vin_splead"
     },
     {
       "userrolename": "tbdp-customer-lifecycle-sales-service",
@@ -935,6 +1235,12 @@
       "userrolename": "tbdp-customer-lifecycle-sales-service",
       "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
       "elementname": "dim_dealer",
+      "column_name": "appointeddate"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
+      "elementname": "dim_dealer",
       "column_name": "audit_create_date"
     },
     {
@@ -948,6 +1254,24 @@
       "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
       "elementname": "dim_dealer",
       "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
+      "elementname": "dim_dealer",
+      "column_name": "currdistrictcode"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
+      "elementname": "dim_dealer",
+      "column_name": "currregioncode"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
+      "elementname": "dim_dealer",
+      "column_name": "currregionname"
     },
     {
       "userrolename": "tbdp-customer-lifecycle-sales-service",
@@ -1188,6 +1512,12 @@
       "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
       "elementname": "dim_dealer",
       "column_name": "tendistrictname"
+    },
+    {
+      "userrolename": "tbdp-customer-lifecycle-sales-service",
+      "dbname": "spma_cust_lifecycle_sales_service_ing_ext",
+      "elementname": "dim_dealer",
+      "column_name": "terminationdate"
     },
     {
       "userrolename": "tbdp-customer-lifecycle-sales-service",

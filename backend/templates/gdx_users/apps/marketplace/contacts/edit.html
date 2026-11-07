@@ -1,0 +1,24 @@
+{% extends 'partials/base.html' %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-8">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Contact Details</h4>
+                </div>
+                <div class="card-body">
+                    {% if object.avatar %}<img src="{{ object.avatar.url }}" alt="{{ object.name }}" class="rounded mb-3" style="width: 80px; height: 80px; object-fit: cover;">{% endif %}
+                    {{ form.as_p }}
+                </div>
+            </div>
+
+            <button class="btn btn-primary mt-4">Submit</button>
+            <a href="{% url 'marketplace:contact-detail' object.pk %}" class="btn btn-light mt-4">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

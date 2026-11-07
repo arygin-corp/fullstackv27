@@ -1,0 +1,43 @@
+.product-intake {
+    padding: 32px 24px 64px;
+}
+
+.product-intake h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.product-intake__lead {
+    margin: 0 0 24px;
+    color: #4b5563;
+}
+
+.product-intake__error {
+    color: #b91c1c;
+}
+
+.product-intake table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ebebeb;
+}
+
+.product-intake th,
+.product-intake td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ebebeb;
+    vertical-align: top;
+}
+
+.product-intake th {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #4b5563;
+}
+
+.product-intake__status {
+    text-transform: capitalize;
+}

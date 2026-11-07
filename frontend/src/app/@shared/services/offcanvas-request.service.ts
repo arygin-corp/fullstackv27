@@ -1,21 +1,25 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
+import { Product } from '../interfaces/product';
 
 @Injectable({
     providedIn: 'root'
 })
 export class OffcanvasRequestService {
     private openSubject$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    private productSubject$ = new BehaviorSubject<Product | null>(null);
 
     isOpen$: Observable<boolean> = this.openSubject$.asObservable();
+    readonly product$: Observable<Product | null> = this.productSubject$.asObservable();
 
     constructor(
         @Inject(PLATFORM_ID)
         private platformId: any
     ) { }
 
-    open(): void {
+    open(product?: Product): void {
+        this.productSubject$.next(product || null);
         if (isPlatformBrowser(this.platformId)) {
             const bodyWidth = document.body.offsetWidth;
 

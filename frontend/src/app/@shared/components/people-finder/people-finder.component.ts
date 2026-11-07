@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
-import { Subject, from, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Subject, Subscription, of } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { PeopleService } from '../../../@shared/services/people.service';
 
 @Component({
@@ -26,6 +26,7 @@ export class PeopleFinderComponent implements OnInit, OnDestroy {
   selectedUser: any = null;
   dropdownOpen = false;
   highlightedIndex = -1;
+  searched = false;
 
   constructor(private peopleService: PeopleService, private elementRef: ElementRef) {}
 
@@ -34,16 +35,15 @@ export class PeopleFinderComponent implements OnInit, OnDestroy {
       v_dar_objectid_reqfor: new FormControl()
     });
 
-    this.loadUsers();
-
     this.subs.add(
       this.peopleInput$
         .pipe(
           debounceTime(300),
           distinctUntilChanged(),
-          switchMap(q => from(this.peopleService.getUsers(q)))
+          switchMap(q => this.peopleService.getUsers(q).pipe(catchError(() => of([]))))
         )
         .subscribe((result: any[]) => {
+          this.searched = true;
           this.allUsers = result || [];
           this.users = this.allUsers.slice(0, this.bufferSize);
           this.loading = false;
@@ -54,13 +54,6 @@ export class PeopleFinderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subs.unsubscribe();
-  }
-
-  private loadUsers() {
-    from(this.peopleService.getUsers('')).subscribe((users: any[]) => {
-      this.allUsers = users || [];
-      this.users = this.allUsers.slice(0, this.bufferSize);
-    });
   }
 
   onInput(value: string) {

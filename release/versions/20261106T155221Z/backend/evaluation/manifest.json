@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-09-26T04:39:16.425625+00:00",
+  "django_settings": "gdx.settings",
+  "document_model": "knowledge.Document",
+  "chunk_model": "knowledge.DocumentChunk",
+  "model_fields": {
+    "document_title": "title",
+    "chunk_document": "document",
+    "chunk_text": "content",
+    "chunk_position": "position"
+  },
+  "supported_extensions": [
+    ".csv",
+    ".docx",
+    ".htm",
+    ".html",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".pdf",
+    ".pptx",
+    ".rst",
+    ".tsv",
+    ".txt",
+    ".xls",
+    ".xlsx",
+    ".xml",
+    ".yaml",
+    ".yml"
+  ],
+  "source_mode": "both",
+  "data_directory": "/Users/giovanni.austin/PycharmProjects/backend/data",
+  "additional_source_paths": [],
+  "discovered_file_count": 226,
+  "provider": "ollama",
+  "candidate_count": 0,
+  "ground_truth_count": 0,
+  "review_status_counts": {},
+  "require_human_approval": false,
+  "exclude_from_ingestion": true
+}

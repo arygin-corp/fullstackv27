@@ -774,17 +774,27 @@
                         form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
                         form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
                         form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
-                        <div class="form-floating mt-3">
-                            <select class="form-control" formControlName="v_emd_PI_access" ngModel="">
+                        <div class="pi-notice" *ngIf="piNotice">{{ piNotice }}</div>
+                        <div class="form-floating mt-3" *ngIf="!piNotice">
+                            <select class="form-control" formControlName="v_dar_pi">
+                                <option value="" selected>Choose One</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
-                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting for any Sensitive Personal Information (Sensitive PI) data?</label>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting Personal Information (PI) data?</label>
+                        </div>
+                        <div class="form-floating mt-3" *ngIf="!piNotice">
+                            <select class="form-control" formControlName="v_emd_PI_access">
+                                <option value="" selected>Choose One</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting Sensitive Personal Information (Sensitive PI) data?</label>
                         </div>
                     </div>
 
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="edm_PI_personal_details">
                                 <option value="Yes">Yes</option>
@@ -801,7 +811,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="v_edm_type_of_work">
                                 <option value="Development">Development</option>
@@ -815,7 +825,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="v_edm_3rd_party_vendor">
                                 <option value="Yes">Yes</option>
@@ -1639,17 +1649,27 @@
                         form.get('v_dar_accessReqClassification').value == 'Highly Confidential' || 
                         form.get('v_dar_accessReqClassification').value == 'Personal Information' || 
                         form.get('v_dar_accessReqClassification').value == 'Legal/Privileged'">
-                        <div class="form-floating mt-3">
-                            <select class="form-control" formControlName="v_emd_PI_access" ngModel="">
+                        <div class="pi-notice" *ngIf="piNotice">{{ piNotice }}</div>
+                        <div class="form-floating mt-3" *ngIf="!piNotice">
+                            <select class="form-control" formControlName="v_dar_pi">
+                                <option value="" selected>Choose One</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
-                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting for any Sensitive Personal Information (Sensitive PI) data?</label>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting Personal Information (PI) data?</label>
+                        </div>
+                        <div class="form-floating mt-3" *ngIf="!piNotice">
+                            <select class="form-control" formControlName="v_emd_PI_access">
+                                <option value="" selected>Choose One</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="floatingInput"><span class="text-danger">* </span>Are you requesting Sensitive Personal Information (Sensitive PI) data?</label>
                         </div>
                     </div>
 
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="edm_PI_personal_details">
                                 <option value="Yes">Yes</option>
@@ -1666,7 +1686,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="v_edm_type_of_work">
                                 <option value="Development">Development</option>
@@ -1680,7 +1700,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12" *ngIf="
-                        form.value.v_emd_PI_access == 'Yes'">
+                        form.value.v_emd_PI_access == 'Yes' || form.value.v_dar_pi == 'Yes'">
                         <div class="form-floating mt-3">
                             <select class="form-control" formControlName="v_edm_3rd_party_vendor">
                                 <option value="Yes">Yes</option>

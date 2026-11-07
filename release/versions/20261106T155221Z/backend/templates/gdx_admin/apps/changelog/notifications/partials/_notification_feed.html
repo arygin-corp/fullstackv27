@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h3 class="h5 mb-1"><i class="ti ti-activity me-2 text-primary"></i>Notification feed</h3>
+      <p class="text-muted mb-0">Recent changelog activity and release updates.</p>
+    </div>
+    <span class="badge bg-light text-dark border">
+      {% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ notifications|length }}{% endif %} notifications
+    </span>
+  </div>
+  <div class="card-body">
+    {% for notification in notifications %}
+      {% include "gdx_admin/apps/changelog/notifications/partials/_notification_card.html" with notification=notification %}
+    {% empty %}
+      {% include "gdx_admin/apps/changelog/notifications/partials/_notification_empty_state.html" %}
+    {% endfor %}
+  </div>
+</div>

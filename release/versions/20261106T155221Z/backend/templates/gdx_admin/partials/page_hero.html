@@ -1,0 +1,32 @@
+<section class="module-hero module-master-hero">
+    <div class="module-hero__content">
+        <span class="module-hero__kicker">{{ staff_page_kicker|default:"GDX ADMIN" }}</span>
+        <div class="module-hero__title-row">
+            <span class="module-hero__icon" aria-hidden="true">{{ staff_page_icon|default:"▦" }}</span>
+            <div>
+                <h1>{{ staff_page_title|default:"Page" }}</h1>
+                <p>{{ staff_page_description|default:"Review the records on this page and take the next action." }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="module-hero__metric">
+        <span>{{ staff_page_metric_label|default:"Overview" }}</span>
+        <strong>{% if staff_page_metric_value or staff_page_metric_value == 0 %}{{ staff_page_metric_value }}{% else %}—{% endif %}</strong>
+        <small>{{ staff_page_metric_caption|default:"current view" }}</small>
+    </div>
+</section>
+<section class="module-dashboard-heading-row">
+    <div>
+        <p class="module-breadcrumb">{{ staff_page_kicker|default:"GDX ADMIN"|title }} &nbsp;»&nbsp; {{ staff_page_title|default:"Page" }}</p>
+        <h2>{{ staff_page_heading|default:staff_page_title }}</h2>
+        <p>{{ staff_page_heading_text|default:staff_page_description }}</p>
+    </div>
+    {% if staff_page_mark_read %}
+    <div class="module-dashboard-actions">
+        <form method="post" action="{% url 'notifications:mark_all_read' %}">
+            {% csrf_token %}
+            <button class="integration-button" type="submit">Mark all read</button>
+        </form>
+    </div>
+    {% endif %}
+</section>

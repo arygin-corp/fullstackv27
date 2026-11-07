@@ -1,0 +1,38 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS Services · {{ environment.get_environment_display }}{% endblock %}
+{% block content %}
+{% include "third_party_apis/aws/partials/_aws_layout_styles.html" %}
+{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS services" hero_description="Services this environment can connect. Choose a card to configure that resource." hero_metric_label="Environment" hero_metric=environment.get_environment_display %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Services" page_heading="Connect an AWS service" page_description="Each card is a service the AWS module can integrate. Connect adds a resource configuration for this environment." selected_environment=environment.environment environments=environments environment_url_name="third_party_api_aws:resource_list" %}
+
+{% for group in service_groups %}
+<section class="aws-service-section">
+  <h2>{{ group.category }}</h2>
+  <div class="aws-service-grid">
+    {% for service in group.services %}
+    <article class="card aws-service-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start justify-content-between gap-2">
+          <span class="avatar bg-primary-subtle text-primary rounded-circle"><i class="ti ti-cloud"></i></span>
+          {% if service.adapter %}
+          <span class="badge bg-success-subtle text-success">Adapter ready</span>
+          {% else %}
+          <span class="badge bg-light text-dark border">Configure only</span>
+          {% endif %}
+        </div>
+        <h3 class="h6 mb-0">{{ service.label }}</h3>
+        <p class="text-muted small">{{ service.summary }}</p>
+        {% if service.operations %}
+        <p class="small mb-0">{{ service.operations|join:", " }}</p>
+        {% endif %}
+        <p class="small text-muted mb-0">{{ service.enabled }} enabled · {{ service.configured }} configured</p>
+        <div class="aws-service-card__actions">
+          <a class="btn btn-primary btn-sm" href="{% url 'third_party_api_aws:resource_create' environment.environment %}?resource_type={{ service.key }}">Connect</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

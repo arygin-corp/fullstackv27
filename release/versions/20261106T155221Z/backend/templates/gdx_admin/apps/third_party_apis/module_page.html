@@ -1,0 +1,89 @@
+{% extends "gdx_admin/base.html" %}
+{% block page_header %}{% endblock %}
+{% load static %}
+
+{% block title %}{{ module.name }} {{ page_label }}{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.8">
+{% endblock %}
+
+{% block content %}
+<main class="module-page module-master-dashboard">
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_title=module.name hero_metric_label=page_label hero_metric_value=metrics.requests hero_metric_caption="recorded requests" %}
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_nav.html" %}
+
+    {% if not module.installed %}
+    <p class="module-page-note">This module is registered. Sync it from the catalog to start recording activity, audit events, and health checks.</p>
+    {% endif %}
+
+    {% if page_key == "dashboard" or page_key == "analytics" or page_key == "report" %}
+    <section class="dashboard-kpi-grid" aria-label="{{ module.name }} metrics">
+        <article class="dashboard-kpi-card"><div><span>Requests</span><strong>{{ metrics.requests }}</strong><small>Recorded requests</small></div></article>
+        <article class="dashboard-kpi-card"><div><span>Successes</span><strong>{{ metrics.successes }}</strong><small>Successful outcomes</small></div></article>
+        <article class="dashboard-kpi-card"><div><span>Failures</span><strong>{{ metrics.failures }}</strong><small>Failed outcomes</small></div></article>
+        <article class="dashboard-kpi-card"><div><span>Warnings</span><strong>{{ metrics.warnings }}</strong><small>Warning outcomes</small></div></article>
+    </section>
+    {% endif %}
+
+    {% if page_key == "dashboard" or page_key == "health" or page_key == "report" %}
+    <section class="module-panel">
+        <div class="module-panel__header"><div><h2>Health</h2><p>Latest readiness result for this module.</p></div></div>
+        <dl class="module-facts">
+            <dt>Status</dt><dd>{{ health.status }}</dd>
+            <dt>Last checked</dt><dd>{% if health.last_checked_at %}{{ health.last_checked_at }}{% else %}Not checked{% endif %}</dd>
+            <dt>Audit failures</dt><dd>{{ health.failure_count }}</dd>
+            <dt>Audit warnings</dt><dd>{{ health.warning_count }}</dd>
+            <dt>Missing settings</dt><dd>{% if health.missing_required %}{{ health.missing_required|join:", " }}{% else %}None{% endif %}</dd>
+            <dt>Enabled</dt><dd>{% if module.enabled %}Yes{% else %}No{% endif %}</dd>
+            <dt>Last success</dt><dd>{% if module.last_success_at %}{{ module.last_success_at }}{% else %}None recorded{% endif %}</dd>
+        </dl>
+    </section>
+    {% endif %}
+
+    {% if page_key == "analytics" %}
+    <section class="module-panel">
+        <div class="module-panel__header"><div><h2>Daily metrics</h2><p>The latest 30 recorded days.</p></div></div>
+        <div class="module-table-wrap">
+            <table class="module-table">
+                <thead><tr><th>Date</th><th>Requests</th><th>Successes</th><th>Failures</th><th>Warnings</th><th>Duration</th></tr></thead>
+                <tbody>
+                    {% for metric in daily_metrics %}
+                    <tr>
+                        <td>{{ metric.date }}</td>
+                        <td>{{ metric.request_count }}</td>
+                        <td>{{ metric.success_count }}</td>
+                        <td>{{ metric.failure_count }}</td>
+                        <td>{{ metric.warning_count }}</td>
+                        <td>{{ metric.total_duration_ms }} ms</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="6" class="module-table__empty">No daily metrics have been recorded yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page_key == "audit" or page_key == "activity" or page_key == "dashboard" %}
+    {% include "gdx_admin/apps/third_party_apis/partials/_audit_table.html" with audit_rows=logs audit_title=page_heading %}
+    {% endif %}
+
+    {% if page_key == "report" %}
+    <section class="module-panel">
+        <div class="module-panel__header"><div><h2>Module</h2><p>Identity included in this report.</p></div></div>
+        <dl class="module-facts">
+            <dt>Name</dt><dd>{{ module.name }}</dd>
+            <dt>Key</dt><dd><code>{{ module.module_key }}</code></dd>
+            <dt>Source</dt><dd>{{ module.source_name|default:"—" }}</dd>
+            <dt>Owner</dt><dd>{{ module.owner|default:"—" }}</dd>
+            <dt>Endpoint</dt><dd><code>{{ module.endpoint|default:"—" }}</code></dd>
+            <dt>Duration</dt><dd>{{ metrics.duration }} ms</dd>
+        </dl>
+    </section>
+    {% include "gdx_admin/apps/third_party_apis/partials/_audit_table.html" with audit_rows=failures audit_title="Recent failures" %}
+    {% endif %}
+</main>
+{% endblock %}

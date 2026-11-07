@@ -5,7 +5,7 @@ locals {
   git_url             = "https://github.com/Toyota-Motor-North-America/edmp-aws-infra-live"
   team                = "Data Marketplace Team"
   data_classification = "Protected"
-  git_revision        = get_env("GIT_REVISION", "not-supplied")
+  git_revision        = trimspace(run_cmd("--terragrunt-quiet", "bash", "-c", "if [ -n \"$${GIT_REVISION}\" ]; then printf '%s' \"$${GIT_REVISION}\"; elif [ -n \"$${GITHUB_SHA}\" ]; then printf '%s' \"$${GITHUB_SHA}\"; else echo 'tmna:git_revision requires GIT_REVISION or GITHUB_SHA.' >&2; exit 1; fi"))
   blueprint_sources   = get_env("CHOFER_BLUEPRINT_NAME", "local-v10-baseline")
   timestamp           = get_env("DEPLOYMENT_TIMESTAMP", "not-supplied")
 }

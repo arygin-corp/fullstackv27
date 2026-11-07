@@ -4,6 +4,54 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "removed_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "removed_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "removed_tmra_scheduleperiod",
+      "column_name": "schedule_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "teis_t_company",
       "column_name": "active_record"
     },
@@ -114,6 +162,54 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "teis_t_company",
       "column_name": "usermodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "corporateid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_corporate",
+      "column_name": "updated_at"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2068,6 +2164,1110 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "copyidentifier"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "designnumberfrom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "designnumberto"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "islevelone"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "markid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "minormark"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "parentpartnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "partid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "partlevel"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "partnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "partvariationid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "partversionid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "periodfrom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "periodto"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "processsign"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "selection"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "smsgroup"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_sms_part",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "additionalinformation"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "additionalinformationid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "additionalinformationid2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "comment"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "commenticonid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "copyidentifier"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "criticalchecksymbolid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "datecreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "datemodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "displaystepnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "drivetime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "drivetime2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "eisid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "eissheetid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "fundamentalskillid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "hasadditionalpoint"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "hassupplementalknowledge"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "howtodo"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "isbeingcopied"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "isfundamentalskill"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "keypoint"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "keypointiconid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "knowledgesheetid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "languageculture"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "measuredtime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "originalpicturepath"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "parentstepid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "picturepath"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "prepositionconjunctionid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "primaryskillid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "primaryskillkeypointid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "productionpercentage"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "productionpercentage2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reasoniconid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reasonid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reasonid2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reasonid3"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "reasonid4"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "secondaryskillid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "sheetorder"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "stepid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "stepnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "steptime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "steptime2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "substepnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "supplementalknowledgeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "uniquekey"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "usercreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "usermodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "valueadded"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "valueadded2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "verbid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "verbid2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "verbtimeid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "videoid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "waittime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "waittime2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "walktime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "walktime2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_step",
+      "column_name": "what"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "datecreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "datemodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "hand"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "parentelementid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "subelementnumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "tebaaddedsubelementid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "time"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "usercreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "usermodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaaddedsubelements",
+      "column_name": "verbid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "addedelementid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "backposture"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "backsidebend"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "backtime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "backtwist"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "comment"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "datecreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "datemodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "elementdataid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "elementid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "hand"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handaction"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforcekgf"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforcenumberofstrikes"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforcenumberofturns"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforceposture"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforcetime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handforcewristbend"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handnumberoftoolpullsorseconds"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handtebashoptocompanytoolid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handtoolsocketlengthgreater150mm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handtoolusetype"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handtoolwristbend"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handweightkg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "handweightwristbend"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "iscleared"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "neckposture"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "necktime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "processid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "productionpercentage"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "shoulderposture"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "shouldertime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "usercreated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "teis_t_tebaelementdata",
+      "column_name": "usermodified"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_absent",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_absent",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_absent",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_absent",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_absent",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_absent",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_absent",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_absent",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_absent",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_absent",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "job_order"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "period"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "seq_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "tm_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedule_detail",
+      "column_name": "tm_role_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "config_info"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "day_shift_only"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "generated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "generated_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "night_shift_only"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "seq_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_gen_schedules",
+      "column_name": "start_period"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_arch_schedule",
       "column_name": "active_record"
     },
@@ -2136,6 +3336,150 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_arch_schedule",
       "column_name": "src_last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "burden_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "schedule_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "violation_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "violation_one"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_arch_scheduleviolation",
+      "column_name": "violation_two"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "abs_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "last_updated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "ret_time_value"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "tm_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "type_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "update_reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_attendance",
+      "column_name": "updated_by"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2314,6 +3658,258 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "abs_start_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "acs_cf_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "callin_src"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "log_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "return_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "submit_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "tm_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_callin_log_trn",
+      "column_name": "workday_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "company_group_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "pto_company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "special_activities_flag"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company",
+      "column_name": "time_zone_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "active"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "create_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "is_fixed"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "shift_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "update_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_shift",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "url_hostname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_company_urlhost",
+      "column_name": "url_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_cross_line_assignment",
       "column_name": "active_flg"
     },
@@ -2453,6 +4049,18 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_cumulative_frequency",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency",
       "column_name": "frequency"
     },
     {
@@ -2496,18 +4104,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_cumulative_frequency",
       "column_name": "peoplesoft_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_cumulative_frequency",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_cumulative_frequency",
-      "column_name": "plant_name"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2562,6 +4158,78 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_cumulative_frequency",
       "column_name": "workday_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "actual_frequency"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "actual_minutes"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "frequency"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "minutes"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "src_last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_cumulative_frequency_trn",
+      "column_name": "tm_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2777,6 +4445,18 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_group_restriction",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction",
       "column_name": "group_restriction_id"
     },
     {
@@ -2819,18 +4499,6 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_group_restriction",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_group_restriction",
-      "column_name": "plant_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_group_restriction",
       "column_name": "record_change_timestamp"
     },
     {
@@ -2850,6 +4518,60 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_group_restriction",
       "column_name": "shop_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "group_restriction_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "grouping"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_group_restriction_trn",
+      "column_name": "restriction"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2880,6 +4602,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_hierarchy",
       "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_hierarchy",
+      "column_name": "company_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -2963,12 +4691,6 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_hierarchy",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_hierarchy",
       "column_name": "process_id"
     },
     {
@@ -3035,6 +4757,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_hierarchy_cost_center",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_hierarchy_cost_center",
       "column_name": "company_name"
     },
     {
@@ -3096,12 +4824,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_hierarchy_cost_center",
       "column_name": "period_by_min_enabled"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_hierarchy_cost_center",
-      "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3263,6 +4985,18 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_job_history",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_job_history",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_job_history",
       "column_name": "end_date"
     },
     {
@@ -3305,18 +5039,6 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_job_history",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_job_history",
-      "column_name": "plant_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_job_history",
       "column_name": "record_change_timestamp"
     },
     {
@@ -3340,6 +5062,84 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "anchor"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "anchor_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "anchoroffset"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "chainlimit"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "enddate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_jobhistory",
+      "column_name": "startdate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_line",
       "column_name": "active_record"
     },
@@ -3354,6 +5154,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_line",
       "column_name": "auto_schedule_partial_tms"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_line",
+      "column_name": "fixedschedule"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3431,6 +5237,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_manpower_andon_status",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_andon_status",
       "column_name": "company_name"
     },
     {
@@ -3462,12 +5274,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_manpower_andon_status",
       "column_name": "line_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_manpower_andon_status",
-      "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3515,6 +5321,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_manpower_andon_submit_log",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_andon_submit_log",
       "column_name": "company_name"
     },
     {
@@ -3534,12 +5346,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_manpower_andon_submit_log",
       "column_name": "line_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_manpower_andon_submit_log",
-      "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3586,6 +5392,114 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "last_updated"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "last_updated_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_status",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "submitted_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_manpower_submit_log",
+      "column_name": "submitted_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_periods_by_mins_config",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_periods_by_mins_config",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_periods_by_mins_config",
       "column_name": "line_id"
     },
@@ -3600,6 +5514,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_periods_by_mins_config",
       "column_name": "period_num"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_periods_by_mins_config",
+      "column_name": "record_change_timestamp"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3629,13 +5549,25 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "company_code"
+      "column_name": "company_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "company_name"
+      "column_name": "create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_plant",
+      "column_name": "create_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_plant",
+      "column_name": "disable_date"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3647,19 +5579,13 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "plant_group_nm"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_plant",
       "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "pto_company_code"
+      "column_name": "plant_name"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3671,13 +5597,13 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "special_activities_flag"
+      "column_name": "update_date"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plant",
-      "column_name": "time_zone_id"
+      "column_name": "update_user"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3780,6 +5706,36 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_plantshopmap",
       "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_removed_absent",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_removed_absent",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_removed_absent",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_removed_absent",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_removed_absent",
+      "column_name": "tm_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -3887,6 +5843,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_schedule",
+      "column_name": "inc_nso_tm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_schedule",
       "column_name": "last_updated_at"
     },
     {
@@ -3900,6 +5862,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_schedule",
       "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_schedule",
+      "column_name": "notes"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4109,6 +6077,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_schedule_dtl",
+      "column_name": "tm_company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_schedule_dtl",
       "column_name": "tm_id"
     },
     {
@@ -4116,12 +6090,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_schedule_dtl",
       "column_name": "tm_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_schedule_dtl",
-      "column_name": "tm_plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4444,6 +6412,72 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "burden_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "schedule_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "violation_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "violation_one"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_scheduleviolation",
+      "column_name": "violation_two"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_sequence",
       "column_name": "active_record"
     },
@@ -4505,7 +6539,25 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_shop",
+      "column_name": "create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
+      "column_name": "create_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
       "column_name": "days_frequency_alert"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
+      "column_name": "days_knldg_downgrade"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4517,13 +6569,31 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_shop",
+      "column_name": "downgrade_level"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
       "column_name": "expected_run"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_shop",
+      "column_name": "is_deleted"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
       "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
+      "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4548,6 +6618,102 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_shop",
       "column_name": "shop_short_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_shop",
+      "column_name": "update_user"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "burden_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "burden_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenname",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "burden_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tburdenscore",
+      "column_name": "value"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4583,7 +6749,19 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm",
+      "column_name": "assigned_night_shift_only"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
       "column_name": "assigned_shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
+      "column_name": "company_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4595,13 +6773,31 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm",
+      "column_name": "email_address"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
       "column_name": "employee_status"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm",
+      "column_name": "expire_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
       "column_name": "first_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
+      "column_name": "hire_date"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4661,12 +6857,6 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tm",
       "column_name": "record_change_timestamp"
     },
     {
@@ -4680,6 +6870,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm",
       "column_name": "short_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm",
+      "column_name": "src_last_updated_at"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4889,6 +7085,18 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_attendance_status",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status",
       "column_name": "job_id"
     },
     {
@@ -4926,18 +7134,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_attendance_status",
       "column_name": "period_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tm_attendance_status",
-      "column_name": "plant_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tm_attendance_status",
-      "column_name": "plant_name"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -4998,6 +7194,78 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_attendance_status",
       "column_name": "workday_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "attendance_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "job_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "period_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "schedule_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_attendance_status_trn",
+      "column_name": "update_date"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5249,6 +7517,12 @@
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_job_versatility",
+      "column_name": "tm_company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_job_versatility",
       "column_name": "tm_id"
     },
     {
@@ -5256,12 +7530,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_job_versatility",
       "column_name": "tm_name"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tm_job_versatility",
-      "column_name": "tm_plant_name"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5296,6 +7564,108 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "active"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "assign_period_ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "assigned_line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "assigned_shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "home_line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "home_period_ordernumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "home_shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "home_shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "last_updated_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "periodmove_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "schedule_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "src_last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "tm_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_period_movement",
+      "column_name": "trc_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_training_history",
       "column_name": "action"
     },
@@ -5310,6 +7680,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_training_history",
       "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tm_training_history",
+      "column_name": "company_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5364,12 +7740,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tm_training_history",
       "column_name": "peoplesoft_id"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tm_training_history",
-      "column_name": "plant_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5466,6 +7836,12 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tmjob",
       "column_name": "modified_updated_by"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_tmjob",
+      "column_name": "primary_job"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5604,12 +7980,6 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_tmjob_certification",
       "column_name": "record_change_timestamp"
-    },
-    {
-      "userrolename": "tbdp-manufacturing-job-process",
-      "dbname": "mfg_job_process_trn_ext",
-      "elementname": "tmra_tmjob_certification",
-      "column_name": "second_job_id"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -5782,6 +8152,168 @@
     {
       "userrolename": "tbdp-manufacturing-job-process",
       "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "dropdown_disp_order"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "manpower_board_disp_order"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "name_for_manpower_board_disp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "name_for_update"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "partial_allowed"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "short_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "short_name_abs_present"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "trc_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company",
+      "column_name": "trc_code_descr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "dropdown_disp_order"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "manpower_board_disp_order"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "name_for_manpower_board_disp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "name_for_update"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "partial_allowed"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "short_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "short_name_abs_present"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_trc_code_config_company_trn",
+      "column_name": "trc_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_trc_code_config_plant",
       "column_name": "active_record"
     },
@@ -5868,6 +8400,114 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_trc_code_config_plant",
       "column_name": "trc_code_descr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "login_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "login_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "shift_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_user_company_shift",
+      "column_name": "user_name"
     },
     {
       "userrolename": "tbdp-manufacturing-job-process",
@@ -6114,6 +8754,216 @@
       "dbname": "mfg_job_process_trn_ext",
       "elementname": "tmra_user_shop",
       "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usercompany",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usercompany",
+      "column_name": "company_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usercompany",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usercompany",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usercompany",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userline",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userline",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userline",
+      "column_name": "line_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userline",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userline",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userpermission",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userpermission",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userpermission",
+      "column_name": "permission_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userpermission",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userpermission",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userplant",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userplant",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userplant",
+      "column_name": "plant_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userplant",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_userplant",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershift",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershift",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershift",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershift",
+      "column_name": "shift_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershift",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershop",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershop",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershop",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershop",
+      "column_name": "shop_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_usershop",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_violation",
+      "column_name": "active_record"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_violation",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_violation",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_violation",
+      "column_name": "record_change_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-job-process",
+      "dbname": "mfg_job_process_trn_ext",
+      "elementname": "tmra_violation",
+      "column_name": "violation_id"
     }
   ],
   "links": [

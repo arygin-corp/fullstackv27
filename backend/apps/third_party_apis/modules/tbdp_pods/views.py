@@ -1,25 +1,16 @@
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.external_apis.domain_services import tdsp_pods
+from .services import PodsError, pod_options
 
 
 class PodDropdownView(APIView):
-    permission_classes = [IsAuthenticated]
+    authentication_classes = []
+    permission_classes = [AllowAny]
 
     def get(self, request):
-        rows = tdsp_pods(request) or []
-        options = []
-        for row in rows:
-            if not isinstance(row, dict):
-                continue
-            value = str(row.get("u_primary") or row.get("value") or "").strip()
-            if not value:
-                continue
-            options.append({
-                "u_primary": value,
-                "label": str(row.get("label") or value),
-                "value": value,
-            })
-        return Response(options)
+        try:
+            return Response(pod_options())
+        except PodsError as error:
+            return Response({"error": error.message}, status=error.status_code)

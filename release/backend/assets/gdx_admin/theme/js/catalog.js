@@ -106,6 +106,8 @@
     };
 
     const csrf = () => {
+        const input = document.querySelector("[name=csrfmiddlewaretoken]");
+        if (input && input.value) return input.value;
         const cookie = document.cookie
             .split(";")
             .map(value => value.trim())
@@ -560,9 +562,22 @@
                     headers: {Accept: "application/json"},
                 });
                 if (!response.ok) throw Error(response.status);
-                editing = await response.json();
+                const saved = await response.json();
+                editing = {
+                    ...module,
+                    ...saved,
+                    manage_url: module.manage_url,
+                    icon_upload_url: module.icon_upload_url,
+                    icon_url: saved.icon_url || module.icon_url,
+                };
             }
             el.editBody.innerHTML = editMarkup(editing);
+            el.editForm.querySelector("[data-icon]")?.addEventListener("change", event => {
+                const file = event.target.files?.[0];
+                const image = el.editForm.querySelector(".integration-module-icon img");
+                if (!file || !image) return;
+                image.src = URL.createObjectURL(file);
+            });
             el.editMsg.textContent = "";
         } catch (error) {
             console.error(error);
@@ -652,7 +667,10 @@
 
     async function saveEdit(event) {
         event.preventDefault();
-        if (!editing?.manage_url) return;
+        if (!editing?.manage_url) {
+            el.editMsg.textContent = "This module cannot be saved yet.";
+            return;
+        }
 
         const formData = new FormData(el.editForm);
         let config;
@@ -681,10 +699,14 @@
                     config,
                 }),
             });
-            if (!response.ok) throw Error(response.status);
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw Error(data.error || response.status);
+            }
 
             const file = el.editForm.querySelector("[data-icon]")?.files?.[0];
-            if (file && editing.icon_upload_url) {
+            if (file) {
+                if (!editing.icon_upload_url) throw Error("Icon upload is not available.");
                 const iconData = new FormData();
                 iconData.append("icon", file);
                 const upload = await fetch(editing.icon_upload_url, {
@@ -693,7 +715,10 @@
                     headers: {"X-CSRFToken": csrf()},
                     body: iconData,
                 });
-                if (!upload.ok) throw Error(upload.status);
+                if (!upload.ok) {
+                    const data = await upload.json().catch(() => ({}));
+                    throw Error(data.error || upload.status);
+                }
             }
 
             await load();
@@ -701,7 +726,7 @@
             editing = null;
         } catch (error) {
             console.error(error);
-            el.editMsg.textContent = "Unable to save changes.";
+            el.editMsg.textContent = error.message && error.message !== "Error" ? error.message : "Unable to save changes.";
         }
     }
 

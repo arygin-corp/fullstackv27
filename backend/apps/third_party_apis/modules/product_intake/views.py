@@ -3,10 +3,13 @@ from django.contrib.auth.models import Group
 from django.db import models, transaction
 from django.utils import timezone
 from rest_framework import mixins, status, viewsets
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from apps.orders.authentication import MarketplaceSignInAuthentication
 
 from .access import can_manage_protected_membership, can_manage_workflow, can_view_audit, normalized_email
 from .audit import snapshot, write_audit
@@ -15,7 +18,18 @@ from .serializers import AuditSerializer, IntakeApprovalEventSerializer, Notific
 from .services import activate_marketplace_product, approve_intake, assign_intake, reject_intake, request_information, resubmit_intake, start_review, submit_intake
 
 
+def signed_in_email(request):
+    """Email from the marketplace sign-in token, or the Django account when one is used."""
+    claims = request.auth if isinstance(request.auth, dict) else {}
+    for key in ("preferred_username", "email", "upn"):
+        value = claims.get(key)
+        if isinstance(value, str) and "@" in value:
+            return normalized_email(value)
+    return normalized_email(getattr(request.user, "email", ""))
+
+
 class ProductIntakeViewSet(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,mixins.UpdateModelMixin,viewsets.GenericViewSet):
+    authentication_classes = [SessionAuthentication, BasicAuthentication, MarketplaceSignInAuthentication]
     permission_classes=[IsAuthenticated]
 
     def get_serializer_class(self):
@@ -24,7 +38,9 @@ class ProductIntakeViewSet(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.
     def get_queryset(self):
         qs=ProductIntake.objects.select_related("marketplace_product","marketplace_domain","marketplace_datatype","marketplace_classification").prefetch_related("product_tags")
         if can_manage_workflow(self.request.user): return qs
-        email=normalized_email(self.request.user.email)
+        email=signed_in_email(self.request)
+        if not email:
+            return qs.none()
         return qs.filter(models.Q(requester_email__iexact=email)|models.Q(submitted_by_email__iexact=email)).distinct()
 
     def perform_create(self, serializer):

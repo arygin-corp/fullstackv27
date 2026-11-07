@@ -1,0 +1,7 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class Region(TimeStampedModel):name=models.CharField(max_length=100);key=models.SlugField(unique=True);data_residency=models.JSONField(default=dict);active=models.BooleanField(default=True)
+class TenantRegionPolicy(TimeStampedModel):tenant=models.OneToOneField(Tenant,related_name='region_policy',on_delete=models.CASCADE);primary=models.ForeignKey(Region,related_name='+',on_delete=models.PROTECT);read_regions=models.ManyToManyField(Region,related_name='read_tenants');failover=models.ForeignKey(Region,related_name='+',null=True,on_delete=models.SET_NULL);residency_rules=models.JSONField(default=dict)
+class ReplicationStatus(TimeStampedModel):source=models.ForeignKey(Region,related_name='replication_sources',on_delete=models.CASCADE);target=models.ForeignKey(Region,related_name='replication_targets',on_delete=models.CASCADE);stream=models.CharField(max_length=120);checkpoint=models.JSONField(default=dict);lag_seconds=models.DecimalField(max_digits=14,decimal_places=3,default=0);status=models.CharField(max_length=30,default='unknown')
+class FailoverEvent(TimeStampedModel):from_region=models.ForeignKey(Region,related_name='+',on_delete=models.PROTECT);to_region=models.ForeignKey(Region,related_name='+',on_delete=models.PROTECT);reason=models.TextField();status=models.CharField(max_length=30,default='planned');evidence=models.JSONField(default=dict)

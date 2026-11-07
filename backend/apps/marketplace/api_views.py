@@ -4,6 +4,8 @@ from difflib import SequenceMatcher
 from django.core.paginator import Paginator
 from django.contrib.postgres.search import TrigramSimilarity
 from django.db.models import Avg, Case, Count, F, Func, Prefetch, Q, Value, When
+
+from .campaign_ranking import most_requested_product_ids
 from django.shortcuts import get_object_or_404
 
 from pgvector.django import CosineDistance
@@ -463,6 +465,11 @@ class ShopProductViewSet(
         elif sort == "name_desc":
             queryset = queryset.order_by(
                 "-name"
+            )
+
+        elif sort == "newest":
+            queryset = queryset.order_by(
+                "-created_at"
             )
 
         return queryset
@@ -1230,6 +1237,26 @@ class ProductJsonViewSet(viewsets.ViewSet):
             )
         )
 
+    def get_campaign_queryset(self):
+        return (
+            Product.objects
+            .published()
+            .select_related(
+                "domain",
+                "platform",
+            )
+            .prefetch_related(
+                "badge",
+                "images",
+            )
+        )
+
+    def campaign_request(self, request):
+        return (
+            request.query_params.get("campaign")
+            in ("1", "true", "yes")
+        )
+
     # -----------------------------------------------------
     # Filter helpers
     # -----------------------------------------------------
@@ -1944,6 +1971,45 @@ class ProductJsonViewSet(viewsets.ViewSet):
             ),
         }
 
+    def serialize_campaign_product(
+        self,
+        request,
+        product,
+    ):
+        return {
+            "id": product.id,
+            "name": product.name,
+            "slug": product.slug,
+            "sku": product.sku,
+            "brief_desc": product.brief_desc,
+            "short_desc": product.short_desc,
+            "domain": (
+                product.domain.name
+                if product.domain
+                else None
+            ),
+            "platform": (
+                product.platform.name
+                if product.platform
+                else None
+            ),
+            "badges": [
+                badge.name
+                for badge
+                in product.badge.all()
+            ],
+            "images": [
+                request.build_absolute_uri(
+                    image.image.url
+                )
+                for image
+                in product.images.all()
+                if image.image
+            ],
+            "rating": 0,
+            "reviews": 0,
+        }
+
     # -----------------------------------------------------
     # DETAIL ENDPOINT
     #
@@ -1998,6 +2064,42 @@ class ProductJsonViewSet(viewsets.ViewSet):
             status=status.HTTP_200_OK,
         )
 
+    def most_requested_list(self, request):
+        product_ids = most_requested_product_ids()
+        if product_ids:
+            order = Case(
+                *[
+                    When(pk=product_id, then=position)
+                    for position, product_id in enumerate(product_ids)
+                ]
+            )
+            products = self.get_campaign_queryset().filter(
+                pk__in=product_ids
+            ).order_by(order)
+        else:
+            products = []
+
+        return Response(
+            {
+                "debug_version": "FILTER_API_V2",
+                "count": len(product_ids),
+                "page": 1,
+                "limit": 20,
+                "pages": 1 if product_ids else 0,
+                "has_previous": False,
+                "has_next": False,
+                "from": 1 if product_ids else 0,
+                "to": len(product_ids),
+                "products": [
+                    self.serialize_campaign_product(request, product)
+                    for product in products
+                ],
+                "filters": [],
+                "filterValues": {},
+            },
+            status=status.HTTP_200_OK,
+        )
+
     # -----------------------------------------------------
     # LIST ENDPOINT
     # -----------------------------------------------------
@@ -2007,8 +2109,17 @@ class ProductJsonViewSet(viewsets.ViewSet):
         request,
     ):
         try:
+            if request.query_params.get("sort") == "most_requested":
+                return self.most_requested_list(request)
+
+            campaign = self.campaign_request(
+                request
+            )
+
             base_queryset = (
-                self.get_base_queryset()
+                self.get_campaign_queryset()
+                if campaign
+                else self.get_base_queryset()
             )
 
             searched_queryset = (
@@ -2019,7 +2130,9 @@ class ProductJsonViewSet(viewsets.ViewSet):
             )
 
             filters = (
-                self.build_filters(
+                []
+                if campaign
+                else self.build_filters(
                     searched_queryset,
                     request,
                 )
@@ -2057,24 +2170,35 @@ class ProductJsonViewSet(viewsets.ViewSet):
             )
 
             products = [
-                self.serialize_product(
-                    request,
-                    product,
+                (
+                    self.serialize_campaign_product(
+                        request,
+                        product,
+                    )
+                    if campaign
+                    else self.serialize_product(
+                        request,
+                        product,
+                    )
                 )
                 for product
                 in page_object.object_list
             ]
 
-            filter_values = {
-                slug: ",".join(values)
-                for slug, values
-                in (
-                    self.get_filter_values(
-                        request
-                    ).items()
-                )
-                if values
-            }
+            filter_values = (
+                {}
+                if campaign
+                else {
+                    slug: ",".join(values)
+                    for slug, values
+                    in (
+                        self.get_filter_values(
+                            request
+                        ).items()
+                    )
+                    if values
+                }
+            )
 
             return Response(
                 {

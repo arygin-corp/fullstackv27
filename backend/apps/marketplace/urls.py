@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from .api_views import ProductJsonViewSet, DomainJsonViewSet, HybridProductSearchViewSet, SearchSuggestionsViewSet
 from .resource_api import resource_routes
+from .page_views import MarketplaceHomeView
 
 app_name = "marketplace"
 
@@ -18,6 +19,7 @@ product_list = ProductJsonViewSet.as_view({"get": "list",})
 product_detail = ProductJsonViewSet.as_view({"get": "retrieve",})
 
 urlpatterns = [
+    path("", MarketplaceHomeView.as_view(), name="home"),
     path('api/', include(router.urls)),
     path("api/products/<str:pk>/", product_detail, name="api-products-detail",),
 ]

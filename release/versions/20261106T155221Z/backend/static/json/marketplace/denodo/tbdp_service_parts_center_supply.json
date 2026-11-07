@@ -1,0 +1,2537 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "customer_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "dist_comments"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "event_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "event_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "forecast1_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "forecast2_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "harm_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "item_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "job_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "order_amended_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "order_part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "order_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "partition_events_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "ppo_inter_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "update_source"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_detail",
+      "column_name": "zn_cd_sup"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "bo_kill_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "compl_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "crcy_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "dealer_order_ref"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "disc_rate_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "drop_shp_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "emergency_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "event_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "event_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "free_of_charge_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "job_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "nature_of_order_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "ord_skip_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_kind_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_processed_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_processed_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_received_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "order_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "partition_events_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "reimb_cost_ctr"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "sep_invc_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "sep_pkg_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "ship_to_dealer"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "ssc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "transportation_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "upd_foc_srce"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_order_header",
+      "column_name": "update_source"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "allocation_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "backorder_recog_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "disc_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "disc_sell_pri_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "disc_sell_pri_inv_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "dist_sell_pri_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "dist_sell_pri_inv_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "eta_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_n_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_n_init_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_n_last_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_n_prev_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_port_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_port_init_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_port_last_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "etd_fr_port_prev_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "event_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "event_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "exchange_rate_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "final_picking_due_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "flow_thru_wh"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "item_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "item_skip_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "job_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "line_status_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "line_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "oe_proc_cnt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "order_download_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "order_smooth_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "outstanding_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "part_byp_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "partition_events_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "plan_ship_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "plan_ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "plan_ship_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "poss_ship_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "price_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "price_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "price_formula_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "process_part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "procure_part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "ra_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "region_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "sep_invc_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "sep_pkg_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "ship_wh"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "spo_pri_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "sti_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "stock_allocation_crossdock_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "tentative_price_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "transportation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "update_source"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "vor_ds_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_plan_ship",
+      "column_name": "vor_sep_po_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "air_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "bill_of_lading"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "container_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "container_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "cubic_measure"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "currency_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "dist_final_destination_sls"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "etd_from_port"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "event_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "event_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "flight_number"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "flow_thru_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "flow_thru_wh"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "freight_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "gross_weight"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "handling_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "houseairwaybill_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "insurance_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "invoice_amount"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "invoice_container_extract_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "invoice_dt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "invoice_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "job_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "mastr_air_bill_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "misc_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "net_weight"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "outbound_eta_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "partition_events_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "port_ship_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "sales_section_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "sales_tax"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "service_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "ship_wh"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "shipment_identification"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "shipping_agent"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "shipping_completion_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "shipto_dealer"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "special_tax"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "transportation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "vessel_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_invoice",
+      "column_name": "warehouse_ship_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "allocation_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "backorder_recognition_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "case_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "cif_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "cif_frt_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "cif_insur_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "container_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "custom_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "dealer_order_reference_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "disc_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "disc_sell_pri_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "disc_sell_pri_inv_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "dist_sell_pri_dol_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "dist_sell_pri_inv_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "distributor_comments"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "event_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "event_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "ex_num"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "exchange_rate_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "final_pickng_due_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "free_of_charge_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "invoice_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "item_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "job_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "order_download_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "order_processed_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "order_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "order_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "ordered_part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "part_bypass_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "partition_events_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "price_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "price_formula_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "pricing_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "purch_pri_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "region_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "reimbursing_cost_center"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "spo_pri_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "stock_allocation_crossdock_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "tentative_price_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "traffic_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "transportation_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "update_free_of_charge_source"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "tpna_shipment_item",
+      "column_name": "zone_supply_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "air_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "allocation_status_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "bill_of_lading"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "container_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "currency_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "dealer_order_ref_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "etd_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "exchange_rate_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "exp_consol_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "fob_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "free_of_charge_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "freight_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "gross_wt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "handling_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "haz_mat_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "insurance_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "invoice_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "invoice_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "invoice_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "invoice_timestamp"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "invoice_timestamp_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "load_id"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "measurement_cubic_meter"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "misc_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "net_wt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "number_of_pkgs_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "partition_dt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "service_charge_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "shipping_line_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "tracking_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "transportation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "vessel_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "wms_change_time_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_invoice_header",
+      "column_name": "wms_job_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "allocated_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "allocation_status_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "custom_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "destinaion"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "disc_sell_dollar_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "disc_sell_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "dist_comments"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "dist_priority_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "emergency_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "final_picking_due_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "home_position"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "item_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "nature_of_order"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "non_allocated_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_classifier"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_drop_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_drop_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_drop_timestamp"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_drop_timestamp_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "order_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "parent_dist_fd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "partition_dt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "plan_ship_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "plan_ship_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "planned_ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "preferred_sub_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "priority_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "process_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "process_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "procured_part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "separation_invoice_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "separation_pack_flg"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "ship_carrier_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "ship_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "small_dist_flag"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "sti_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "stk_allocation_xd_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "traffic_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "transportation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "wms_change_time_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_detail",
+      "column_name": "zone_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "currency_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "customer_address_id"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "customer_order_reference_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "dealer_order_ref_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "delivery_option"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "destinaion"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "exchange_rate_amt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "free_of_charge_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "master_dealer_group"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "over_sea_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "partition_dt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_addr1"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_addr2"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_city"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_dealer"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_state"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_zip1"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "ship_to_zip2"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_addr1"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_addr2"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_city"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_state"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_zip1"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sold_to_zip2"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "sortation_code"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "transportation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "wms_change_time_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_pending_order_header",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "bmp_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "bmp_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "carrier_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "common_carrier_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "container_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "core_group"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "core_transporation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "customer_order_reference_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "item_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "movable_unit_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "offsite_id"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "offsite_sort_key"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "order_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "parent_dist_final_destination"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "partition_dt"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "picking_location"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "planned_picking_date"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "planned_shipment_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "planned_shipment_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "separation_invoice_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "separation_packing_ind"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "ship_to_dealer"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "sort_key"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "sti_cd"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "tracking_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "transporation_mode"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "wms_change_time_utc"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "work_assignment_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "work_assignment_seq_no"
+    },
+    {
+      "userrolename": "tbdp-service-parts-center-supply",
+      "dbname": "parts_center_supply_trn_ext",
+      "elementname": "wms_shipment_core_detail",
+      "column_name": "work_status_cd"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-service-parts-center-supply%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

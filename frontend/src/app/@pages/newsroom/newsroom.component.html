@@ -7,16 +7,18 @@
 
       <div class="content">
         <h6>
-          <a [routerLink]="['post', post.category, post.slug]">
+          <a [routerLink]="['/newsroom/post', post.category, post.slug]">
             {{ post.title }}
           </a>
         </h6>
         <p>{{ post.summary }}</p>
 
         <div class="meta">
-          <img [src]="post.authorImage" class="avatar">
-          <span><strong><small>{{ post.author }}</small></strong></span>
-          <span><small>{{ post.date }}</small></span>
+          <img [src]="post.authorImage" class="avatar" alt="">
+          <div class="meta-text">
+            <strong>{{ post.author }}</strong>
+            <span>{{ post.date }}</span>
+          </div>
         </div>
 
         <span class="category">{{ post.category }}</span>

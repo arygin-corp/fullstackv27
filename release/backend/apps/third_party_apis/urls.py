@@ -41,6 +41,11 @@ urlpatterns = [
         name="integration_manage_api",
     ),
     path(
+        "<slug:module_key>/icon/",
+        manage_views.upload_icon,
+        name="integration_icon_api",
+    ),
+    path(
         "test/<slug:module_key>/run/",
         test_views.integration_test,
         name="integration_test_run",

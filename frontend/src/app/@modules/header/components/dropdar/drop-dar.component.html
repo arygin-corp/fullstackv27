@@ -121,7 +121,7 @@
                     <div class="form-floating mt-3">
                         <ng-select id="ng-dropdown-panel2 "
                             class="form-control"
-                            formControlName="productTagsControl" 
+                            formControlName="productTags" 
                             [items]="availableTags"
                             bindLabel="name"
                             bindValue="id"
@@ -134,7 +134,7 @@
                             (add)="onTagAdd($event)">
                         </ng-select>
                         <label>Hashtags or labels used to associate the product? <span style="color:red">*</span></label>              
-                        <div *ngIf="addNewProductForm.get('productTagsControl')?.invalid && addNewProductForm.get('productTagsControl')?.touched" class="text-danger mt-1 ps-3">
+                        <div *ngIf="addNewProductForm.get('productTags')?.invalid && addNewProductForm.get('productTags')?.touched" class="text-danger mt-1 ps-3">
                             At least one product tag is required.
                         </div>
                     </div>
@@ -186,7 +186,7 @@
 
                     <!-- Product Stakeholder -->                    
                     <div class="form-floating mt-3">
-                        <app-people-finder></app-people-finder>
+                        <app-people-finder [control]="addNewProductForm.get('stakeholderName')"></app-people-finder>
                         <p><small class="text-muted font-italic control-label ps-3">Search and select the Stakeholder or SME or point of contact for the product</small></p>
                     </div>
 
@@ -203,54 +203,10 @@
                         <small class="text-muted font-italic ps-3">If you do not know about this, please type 'I don't know'</small>
                     </p>
 
-                    <form [formGroup]="sampleForm">
-                        <div formArrayName="samples">
-                            <div class="row gx-1 gy-1 mt-3" *ngFor="let group of samples.controls; let i = index" [formGroupName]="i" [attr.id]="'sample-' + i">
-                                <!-- Sample Field -->
-                                <div class="col-5">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Enter Your Answer" formControlName="field"></textarea>
-                                        <label>Sample Field {{ i + 1 }} <span style="color:red">*</span></label>
-                                        <div *ngIf="group.get('field')?.invalid && group.get('field')?.touched" class="text-danger ps-3">
-                                            Sample Field {{ i + 1 }} is required.
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <small class="text-muted font-italic ps-3">e.g. Make, Model, Dealer Cost</small>
-                                    </p>
-                                </div>
-
-                                <!-- Sample Value -->
-                                <div class="col-5">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Enter Your Answer" formControlName="value"></textarea>
-                                        <label>Sample Value {{ i + 1 }} <span style="color:red">*</span></label>
-                                        <div *ngIf="group.get('value')?.invalid && group.get('value')?.touched" class="text-danger ps-3">
-                                            Sample Value {{ i + 1 }} is required.
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <small class="text-muted font-italic ps-3">e.g. TOYOTA, CAMRY, $19000</small>
-                                    </p>
-                                </div>
-
-                                <!-- Remove Button -->
-                                <div class="col-2 d-flex justify-content-center align-items-center" *ngIf="i > 0">
-                                    <button type="button" class="btn btn-danger rounded-circle d-flex justify-content-center align-items-center p-0" (click)="removeSample(i)" style="width: 30px; height: 30px; font-size: 0.75rem;">&times;
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Add Button -->
-                        <button type="button" class="btn btn-primary mt-3" (click)="addSample()" [disabled]="samples.length >= 10">
-                            Add More Sample Data
-                        </button>
-                    </form>
                     <!-- Submit Buttons -->
                     <div class="dropcart__buttons mt-4">
                         <button type="button" class="btn btn-secondary" (click)="resetForm(); close()">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit Product</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="addNewProductForm.invalid || addingToCart">Submit Product</button>
                     </div>
                 </div>
             </div>

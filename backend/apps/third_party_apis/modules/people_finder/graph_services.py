@@ -4,10 +4,11 @@ import time
 from urllib.parse import urlparse
 import requests
 from django.core.cache import cache
-from .exceptions import PeopleDirectoryError
-from apps.external_apis.audit import create_api_audit
-from apps.external_apis.exceptions import (ExternalApiConfigurationError, ExternalApiRequestError,)
-from apps.external_apis.models import APIRequestAudit
+from .exceptions import (
+    ExternalApiConfigurationError,
+    ExternalApiRequestError,
+    PeopleDirectoryError,
+)
 
 TOKEN_KEY = "people:graph:app-token"
 TOKEN_LOCK_KEY = "people:graph:token-lock"
@@ -184,7 +185,6 @@ def _validate_users_url(url):
 
 def _get(url, request, params=None):
     _validate_users_url(url)
-    started = time.monotonic()
     correlation_id = getattr(request, "correlation_id", None)
 
     try:
@@ -200,50 +200,12 @@ def _get(url, request, params=None):
             timeout=15,
         )
         response.raise_for_status()
-        payload = response.json()
-        create_api_audit(
-            request=request,
-            correlation_id=correlation_id,
-            direction=APIRequestAudit.Direction.OUTBOUND,
-            status=APIRequestAudit.Status.SUCCESS,
-            method="GET",
-            request_path=url,
-            upstream_status_code=response.status_code,
-            duration_ms=round((time.monotonic() - started) * 1000),
-            request_parameters=params or {},
-        )
-        return payload
+        return response.json()
     except requests.Timeout as exc:
-        create_api_audit(
-            request=request,
-            correlation_id=correlation_id,
-            direction=APIRequestAudit.Direction.OUTBOUND,
-            status=APIRequestAudit.Status.TIMEOUT,
-            method="GET",
-            request_path=url,
-            duration_ms=round((time.monotonic() - started) * 1000),
-            request_parameters=params or {},
-            error_code="GRAPH_TIMEOUT",
-            exception=exc,
-        )
         raise ExternalApiRequestError(
             "Microsoft Graph request timed out."
         ) from exc
     except (requests.RequestException, ValueError) as exc:
-        status_code = getattr(getattr(exc, "response", None), "status_code", None)
-        create_api_audit(
-            request=request,
-            correlation_id=correlation_id,
-            direction=APIRequestAudit.Direction.OUTBOUND,
-            status=APIRequestAudit.Status.FAILED,
-            method="GET",
-            request_path=url,
-            upstream_status_code=status_code,
-            duration_ms=round((time.monotonic() - started) * 1000),
-            request_parameters=params or {},
-            error_code="GRAPH_REQUEST_FAILED",
-            exception=exc,
-        )
         raise ExternalApiRequestError(
             "Microsoft Graph request failed or returned invalid JSON."
         ) from exc

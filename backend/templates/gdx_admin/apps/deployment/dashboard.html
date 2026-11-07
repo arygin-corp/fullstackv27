@@ -6,12 +6,24 @@
 {% block content %}
 <main class="module-page">
 {% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Dashboard" hero_description="Start a Python build, a frontend build, or both. Configuration stays in Settings." hero_metric_label="Succeeded" hero_metric_value=analytics.succeeded hero_metric_caption="Finished builds" hero_icon="↑" %}
-<div class="deploy-grid">
-    <article class="deploy-metric"><span>Running</span><strong>{{ analytics.running }}</strong></article>
-    <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.succeeded }}</strong></article>
-    <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.failed }}</strong></article>
-    <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.total }}</strong></article>
-</div>
+<section class="deploy-group">
+    <h2>Build</h2>
+    <div class="deploy-grid">
+        <article class="deploy-metric"><span>Running</span><strong>{{ analytics.running }}</strong></article>
+        <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.succeeded }}</strong></article>
+        <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.failed }}</strong></article>
+        <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.total }}</strong></article>
+    </div>
+</section>
+<section class="deploy-group">
+    <h2>AI Engine</h2>
+    <div class="deploy-grid">
+        <article class="deploy-metric"><span>Running</span><strong>{{ ai_analytics.running }}</strong></article>
+        <article class="deploy-metric"><span>Succeeded</span><strong>{{ ai_analytics.succeeded }}</strong></article>
+        <article class="deploy-metric"><span>Failed</span><strong>{{ ai_analytics.failed }}</strong></article>
+        <article class="deploy-metric"><span>Recorded</span><strong>{{ ai_analytics.total }}</strong></article>
+    </div>
+</section>
 <section class="deploy-build-layout">
 <section class="deploy-panel">
     <h2>Start a build</h2>
@@ -29,22 +41,21 @@
             <p id="build-bucket" style="margin:8px 0 0;color:#64758b"></p>
         </div>
         <div class="deploy-choices">
-            {% if config.python_enabled %}<button class="deploy-choice" type="submit" name="target" value="backend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Backend only</strong><span>Check Django and collect static files.</span></button>{% endif %}
-            {% if config.frontend_enabled %}<button class="deploy-choice" type="submit" name="target" value="frontend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Frontend only</strong><span>Build the Angular application.</span></button>{% endif %}
-            {% if config.combined_enabled %}<button class="deploy-choice" type="submit" name="target" value="all"{% if deployment.state == "running" %} disabled{% endif %}><strong>Both</strong><span>Build Python, then the frontend.</span></button>{% endif %}
+            {% if config.python_enabled %}<button class="deploy-choice" type="button" data-target="backend"><strong>Backend only</strong><span>Check Django and collect static files.</span></button>{% endif %}
+            {% if config.frontend_enabled %}<button class="deploy-choice" type="button" data-target="frontend"><strong>Frontend only</strong><span>Build the Angular application.</span></button>{% endif %}
+            {% if config.combined_enabled %}<button class="deploy-choice" type="button" data-target="all"><strong>Both</strong><span>Build Python, then the frontend.</span></button>{% endif %}
         </div>
     </form>
     {% else %}
     <p>Only a SuperAdmin can start a build.</p>
     {% endif %}
+    {% if can_build %}
+    <div style="margin-top:16px">
+        <button class="deploy-ai-button" type="button" id="run-ai-engine">Run AI Suggestion Engine</button>
+    </div>
+    {% endif %}
 </section>
-<aside class="deploy-panel deploy-timeline-col">
-    <h2>Build timeline</h2>
-    {% include "gdx_admin/apps/deployment/_timeline.html" %}
-    {% if not steps %}<p>No build steps yet.</p>{% endif %}
-</aside>
 </section>
-{% if deployment.state == "running" %}<script>setTimeout(function () { window.location.reload(); }, 4000);</script>{% endif %}
 {{ config.frontend_buckets|json_script:"frontend-buckets" }}
 <script>
 (function () {
@@ -58,13 +69,205 @@
             note.textContent = "Local builds stay on this machine.";
             return;
         }
-        note.textContent = buckets[select.value]
+        var bucket = buckets[select.value]
             ? "Angular files upload to " + buckets[select.value] + "."
             : "Add the S3 bucket for this environment in Deployment settings.";
+        note.textContent = select.value === "prod"
+            ? bucket + " Prod runs the AI Suggestion Engine first, then the build, in one terminal."
+            : bucket;
     }
     select.addEventListener("change", show);
     show();
 })();
 </script>
 </main>
+{% if can_build %}
+<div class="ai-terminal-backdrop" id="ai-terminal-backdrop" hidden></div>
+<div class="process-notice" id="process-notice" hidden role="status">
+    <strong id="process-notice-label">Running</strong>
+    <span id="process-notice-time">00:00</span>
+</div>
+<aside class="ai-terminal" id="ai-terminal" hidden aria-label="Deployment terminal">
+    <header>
+        <strong id="ai-terminal-title">Terminal</strong>
+        <span id="ai-terminal-time">00:00</span>
+        <button type="button" id="ai-terminal-close">Close</button>
+    </header>
+    <pre id="ai-terminal-log"></pre>
+</aside>
+<form id="ai-engine-form" hidden>{% csrf_token %}</form>
+<script>
+(function () {
+    var button = document.getElementById("run-ai-engine");
+    var panel = document.getElementById("ai-terminal");
+    var backdrop = document.getElementById("ai-terminal-backdrop");
+    var log = document.getElementById("ai-terminal-log");
+    var title = document.getElementById("ai-terminal-title");
+    var clock = document.getElementById("ai-terminal-time");
+    var notice = document.getElementById("process-notice");
+    var noticeLabel = document.getElementById("process-notice-label");
+    var noticeTime = document.getElementById("process-notice-time");
+    var closeButton = document.getElementById("ai-terminal-close");
+    var tokenInput = document.querySelector("input[name=csrfmiddlewaretoken]");
+    var buildButtons = Array.prototype.slice.call(document.querySelectorAll(".deploy-choice"));
+    if (!panel || !log || !tokenInput) return;
+    var busy = false;
+    var startedAt = 0;
+    var timer = 0;
+    var noticeTimer = 0;
+
+    function elapsed() {
+        var seconds = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+        var hours = Math.floor(seconds / 3600);
+        var minutes = Math.floor((seconds % 3600) / 60);
+        var remain = seconds % 60;
+        function pad(value) { return String(value).padStart(2, "0"); }
+        return hours > 0 ? hours + ":" + pad(minutes) + ":" + pad(remain) : pad(minutes) + ":" + pad(remain);
+    }
+    function tick() {
+        var text = elapsed();
+        if (clock) clock.textContent = text;
+        if (noticeTime) noticeTime.textContent = text;
+    }
+    function startClock(label) {
+        startedAt = Date.now();
+        window.clearInterval(timer);
+        window.clearTimeout(noticeTimer);
+        tick();
+        timer = window.setInterval(tick, 1000);
+        if (notice && noticeLabel) {
+            noticeLabel.textContent = label + " is running";
+            notice.hidden = false;
+        }
+    }
+    function stopClock(label) {
+        window.clearInterval(timer);
+        timer = 0;
+        var text = elapsed();
+        if (clock) clock.textContent = text;
+        if (notice && noticeLabel && noticeTime) {
+            noticeLabel.textContent = label + " finished in";
+            noticeTime.textContent = text;
+            notice.hidden = false;
+            noticeTimer = window.setTimeout(function () { notice.hidden = true; }, 8000);
+        }
+    }
+    function openPanel(label) {
+        if (title) title.textContent = label;
+        backdrop.hidden = false;
+        panel.hidden = false;
+        startClock(label);
+    }
+    function closePanel() {
+        backdrop.hidden = true;
+        panel.hidden = true;
+    }
+    function write(text) {
+        log.textContent += text;
+        log.scrollTop = log.scrollHeight;
+    }
+    function lastExitOk() {
+        var matches = log.textContent.match(/\[process exited (\d+)\]/g);
+        if (!matches) return false;
+        return matches[matches.length - 1] === "[process exited 0]";
+    }
+    function setBusy(value) {
+        busy = value;
+        if (button) button.disabled = value;
+        buildButtons.forEach(function (item) { item.disabled = value; });
+    }
+    async function readStream(response) {
+        if (!response.ok || !response.body) {
+            write(await response.text());
+            return;
+        }
+        var reader = response.body.getReader();
+        var decoder = new TextDecoder();
+        while (true) {
+            var chunk = await reader.read();
+            if (chunk.done) break;
+            write(decoder.decode(chunk.value, {stream: true}));
+        }
+    }
+    closeButton.addEventListener("click", closePanel);
+    backdrop.addEventListener("click", closePanel);
+
+    if (button) {
+        button.addEventListener("click", async function () {
+            if (busy) return;
+            log.textContent = "";
+            openPanel("AI Suggestion Engine");
+            setBusy(true);
+            try {
+                var response = await fetch("{% url 'deployment:ai_suggestion_engine' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value},
+                    credentials: "same-origin"
+                });
+                await readStream(response);
+                stopClock("AI Suggestion Engine");
+            } catch (error) {
+                write("\n" + error + "\n");
+                stopClock("AI Suggestion Engine");
+            } finally {
+                setBusy(false);
+            }
+        });
+    }
+
+    buildButtons.forEach(function (item) {
+        item.addEventListener("click", async function () {
+            if (busy) return;
+            var environment = document.getElementById("build-environment");
+            var environmentValue = environment ? environment.value : "local";
+            var prod = environmentValue === "prod";
+            var label = prod ? "Prod deployment" : "Build";
+            var body = new URLSearchParams();
+            body.set("target", item.getAttribute("data-target") || "");
+            body.set("environment", environmentValue);
+            log.textContent = "";
+            openPanel(label);
+            setBusy(true);
+            try {
+                if (prod) {
+                    var engine = await fetch("{% url 'deployment:ai_suggestion_engine' %}", {
+                        method: "POST",
+                        headers: {"X-CSRFToken": tokenInput.value},
+                        credentials: "same-origin"
+                    });
+                    await readStream(engine);
+                    if (!engine.ok || !lastExitOk()) {
+                        write("\nBuild was not started because the AI Suggestion Engine did not finish successfully.\n");
+                        stopClock(label);
+                        return;
+                    }
+                    write("\n");
+                }
+                var started = await fetch("{% url 'deployment:build_terminal' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value, "Content-Type": "application/x-www-form-urlencoded"},
+                    credentials: "same-origin",
+                    body: body.toString()
+                });
+                var payload = {};
+                try { payload = await started.json(); } catch (parseError) { payload = {}; }
+                if (!payload.started) {
+                    write((payload.message || "The build did not start.") + "\n");
+                    stopClock(label);
+                    return;
+                }
+                var response = await fetch("{% url 'deployment:build_terminal_log' %}", {credentials: "same-origin"});
+                await readStream(response);
+                stopClock(label);
+            } catch (error) {
+                write("\n" + error + "\n");
+                stopClock(label);
+            } finally {
+                setBusy(false);
+            }
+        });
+    });
+})();
+</script>
+{% endif %}
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div>
+                        <h4 class="card-title mb-1">{{ object.name }}</h4>
+                        {% if object.is_active %}
+                            <span class="badge-soft-success me-1 badge badge-soft-success-custom">Active</span>
+                        {% else %}
+                            <span class="badge-soft-dark me-1 badge badge-soft-dark-custom">Inactive</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <ul class="list-unstyled mb-0">
+                    <li><strong>Value:</strong> {{ object.value }}</li>
+                    {% if object.created_by %}
+                        <li><strong>Created by:</strong> {{ object.created_by.username }} on {{ object.created_at|date:"j F, Y" }}</li>
+                    {% endif %}
+                    {% if object.updated_by %}
+                        <li><strong>Last updated by:</strong> {{ object.updated_by.username }} on {{ object.updated_at|date:"j F, Y" }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        {# Action Buttons #}
+        <div class="mt-3">
+            {% if is_content_manager or is_super_admin %}
+                <a href="{% url 'marketplace:classification-edit' object.id %}" class="btn btn-primary">
+                    Edit Classification
+                </a>
+            {% endif %}
+
+            {% if is_super_admin %}
+                <a href="{% url 'marketplace:classification-delete' object.id %}" class="btn btn-danger">
+                    Delete Classification
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

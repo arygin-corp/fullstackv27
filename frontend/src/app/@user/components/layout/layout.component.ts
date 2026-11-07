@@ -10,7 +10,6 @@ export class LayoutComponent {
         {label: 'My Profile', url: './profile'},
         {label: 'Dashboard', url: './dashboard'},
         {label: 'Order History', url: './orders'},
-        {label: 'Order Details', url: './orders/5'},
     ];
 
     constructor() { }

@@ -1,7 +1,10 @@
 from rest_framework import permissions, status
+from rest_framework.authentication import SessionAuthentication
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from apps.third_party_apis.modules.vikki.chat.authentication import EntraAccessTokenAuthentication
 from .graph_services import get_person_manager, get_user_photo
 
 from .permissions import PeopleFrontendApplicationPermission
@@ -15,6 +18,10 @@ from .services import (
 
 
 class PeopleAPIView(APIView):
+    authentication_classes = (
+        EntraAccessTokenAuthentication,
+        SessionAuthentication,
+    )
     permission_classes = (
         permissions.IsAuthenticated,
         PeopleFrontendApplicationPermission,

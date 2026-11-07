@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+import { AppService } from '../../../../@shared/services/app.service';
 import { CartService } from '../../../../@shared/services/cart.service';
 import { RootService } from '../../../../@shared/services/root.service';
 import { OffcanvasRequestService } from '../../../../@shared/services/offcanvas-request.service';
@@ -32,16 +33,21 @@ export class PageCartComponent implements OnInit, OnDestroy {
     updating = false;
     dropcartType: 'dropdown' | 'offcanvas' = 'offcanvas';
     product: any = null;
-    activeTab: 'all' | 'products' | 'dar' = 'all';
+    activeTab: 'all' | 'products' | 'dar' | 'saved' = 'all';
+    saveMessage = '';
+    savedItems: any[] = [];
+    hasSavedCart = false;
 
     constructor(
         public cart: CartService,
+        public appSvc: AppService,
         public root: RootService,
         public offCanvasRequestService: OffcanvasRequestService,
         public offCanvasDarService: OffcanvasDARService
     ) {}
 
     ngOnInit(): void {
+        this.loadSavedCart();
         this.cart.items$.pipe(
             takeUntil(this.destroy$),
             map(cartItems => cartItems
@@ -66,7 +72,103 @@ export class PageCartComponent implements OnInit, OnDestroy {
         });
     }
 
-    rebuildAll(): void { this.allItems = [...this.productItems, ...this.darRequests]; }
+    rebuildAll(): void {
+        this.allItems = [...this.productItems, ...this.darRequests];
+        this.syncActiveTab();
+    }
+
+    get visibleItems(): any[] {
+        if (this.activeTab === 'saved') {
+            return this.savedItems;
+        }
+        if (this.activeTab === 'products') {
+            return this.productItems;
+        }
+        if (this.activeTab === 'dar') {
+            return this.darRequests;
+        }
+        return this.allItems;
+    }
+    saveCart(): void {
+        const expires = this.cart.saveCart();
+        if (!expires) {
+            return;
+        }
+        this.loadSavedCart();
+        this.activeTab = 'saved';
+        this.refreshSaveMessage();
+    }
+
+    retrieveCart(): void {
+        if (!this.cart.retrieveCart()) {
+            return;
+        }
+        this.saveMessage = '';
+        this.loadSavedCart();
+        this.activeTab = this.defaultLiveTab();
+    }
+
+    private syncActiveTab(): void {
+        if (this.activeTab === 'saved') {
+            if (!this.hasSavedCart) {
+                this.activeTab = this.defaultLiveTab();
+            }
+            return;
+        }
+        if (this.activeTab === 'products' && this.hasProducts) {
+            return;
+        }
+        if (this.activeTab === 'dar' && this.hasDar) {
+            return;
+        }
+        if (this.activeTab === 'all' && this.allItems.length) {
+            return;
+        }
+        this.activeTab = this.defaultLiveTab();
+    }
+
+    private defaultLiveTab(): 'all' | 'products' | 'dar' | 'saved' {
+        if (this.allItems.length) {
+            return 'all';
+        }
+        return this.hasSavedCart ? 'saved' : 'all';
+    }
+
+    private loadSavedCart(): void {
+        const saved = this.cart.getSavedCart();
+        this.hasSavedCart = !!saved;
+        const products = (saved?.items || [])
+            .filter((cartItem: any) => !!cartItem?.product)
+            .map((cartItem: any) => ({
+                type: 'product',
+                cartItem,
+                quantity: cartItem.quantity,
+                saved: true,
+            }));
+        const requests = (saved?.darRequests || []).map((dar: any) => ({ type: 'dar', dar, saved: true }));
+        this.savedItems = [...products, ...requests];
+        if (!this.hasSavedCart && this.activeTab === 'saved') {
+            this.activeTab = this.defaultLiveTab();
+        }
+    }
+
+    private refreshSaveMessage(): void {
+        const expires = this.cart.savedCartExpiresAt();
+        if (!expires) {
+            this.saveMessage = '';
+            return;
+        }
+        const name = this.appSvc?.userData?.givenName || 'there';
+        const when = expires.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        this.saveMessage = `Hi ${name}, this cart is save until ${when}. After that this cart will be deleted.`;
+    }
+
+    clearCart(): void {
+        this.cart.clear();
+        this.saveMessage = '';
+        this.loadSavedCart();
+    }
+
     editItem(item: CartItem): void { this.selectedItem = item; this.offCanvasRequestService.open(); }
     editDar(dar: any): void { this.selectedDar = dar; this.offCanvasDarService.open(); }
 
@@ -108,10 +210,11 @@ export class PageCartComponent implements OnInit, OnDestroy {
 
     getProductFormStatus(item: any): CartFormStatus {
         const request = this.getProductRequest(item);
+        const form = item?.cartItem?.formData || {};
         const forms = [
-            { label: 'Request Details', complete: this.hasValue(request?.requestDetails ?? request?.businessPurpose) },
-            { label: 'Business Justification', complete: this.hasValue(request?.businessJustification ?? request?.justification) },
-            { label: 'Data Usage', complete: this.hasValue(request?.dataUsage ?? request?.intendedUse) }
+            { label: 'Request Details', complete: this.hasValue(request?.requestDetails ?? request?.businessPurpose ?? form.v_dar_DataReqDescription) },
+            { label: 'Business Justification', complete: this.hasValue(request?.businessJustification ?? request?.justification ?? form.v_dar_businessJustification) },
+            { label: 'Data Usage', complete: this.hasValue(request?.dataUsage ?? request?.intendedUse ?? form.v_dat_data_access_type) }
         ];
         return this.buildStatus(forms);
     }
@@ -175,10 +278,17 @@ export class PageCartComponent implements OnInit, OnDestroy {
     }
 
     getProductDataSteward(product: any): string {
-        const steward = product?.data_steward;
-        if (!steward) return '—';
-        if (typeof steward === 'string') return steward.trim() || '—';
-        return steward?.name || '—';
+        return this.personName(product?.data_steward);
+    }
+
+    getProductContact(product: any): string {
+        return this.personName(product?.poc_name || product?.business_contact);
+    }
+
+    private personName(person: any): string {
+        if (!person) return '—';
+        if (typeof person === 'string') return person.trim() || '—';
+        return person?.name || '—';
     }
 
     getProductDomain(product: any): string {

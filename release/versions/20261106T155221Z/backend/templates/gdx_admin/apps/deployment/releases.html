@@ -1,0 +1,72 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}{% if section == 'rollback' %}Deployment Rollback{% else %}Deployment Releases{% endif %}{% endblock %}
+{% block page_header %}{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% if section == 'rollback' %}
+{% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Rollback" hero_description="Restore a saved version of the Python application, the Angular application, or both." hero_metric_label="Versions" hero_metric_value=versions|length hero_metric_caption="Saved versions" hero_icon="↩" %}
+{% else %}
+{% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Releases" hero_description="Python and frontend artifacts written by the latest build." hero_metric_label="Artifacts" hero_metric_value="2" hero_metric_caption="Release folders" hero_icon="▣" %}
+{% endif %}
+{% if running %}<meta http-equiv="refresh" content="4">{% endif %}
+<section class="deploy-panel">
+    <table class="deploy-table">
+        <thead><tr><th>Artifact</th><th>Status</th><th>Updated</th><th>Folder</th></tr></thead>
+        <tbody>
+        {% for item in releases %}
+        <tr>
+            <td>{{ item.label }}</td>
+            <td>{% if item.ready %}<span class="deploy-ok">Ready</span>{% else %}<span class="deploy-bad">Not built</span>{% endif %}</td>
+            <td>{{ item.updated|default:"—" }}</td>
+            <td>{{ item.path }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="deploy-panel">
+    <h2>Saved versions</h2>
+    {% if versions %}
+    <table class="deploy-table">
+        <thead><tr><th>Version</th><th>Environment</th><th>Includes</th><th>Finished</th><th>Restore</th></tr></thead>
+        <tbody>
+        {% for item in versions %}
+        <tr>
+            <td>
+                {% if item.backend_label and item.frontend_label and item.backend_label != item.frontend_label %}
+                <div>Python {{ item.backend_label }}</div>
+                <div>Angular {{ item.frontend_label }}</div>
+                {% else %}
+                {{ item.version_label|default:"—" }}
+                {% endif %}
+            </td>
+            <td>{{ item.environment_label }}</td>
+            <td>{% if item.has_backend %}Python{% endif %}{% if item.has_backend and item.has_frontend %} and {% endif %}{% if item.has_frontend %}Angular{% endif %}</td>
+            <td>{{ item.finished_at|default:item.started_at }}</td>
+            <td>
+                {% if can_rollback and not running %}
+                <form method="post" class="deploy-rollback">
+                    {% csrf_token %}
+                    <input type="hidden" name="version_id" value="{{ item.id }}">
+                    {% if item.has_backend %}<button type="submit" name="scope" value="backend">Backend only</button>{% endif %}
+                    {% if item.has_frontend %}<button type="submit" name="scope" value="frontend">Frontend only</button>{% endif %}
+                    {% if item.has_backend and item.has_frontend %}<button type="submit" name="scope" value="all">Both</button>{% endif %}
+                </form>
+                {% elif running %}
+                <span class="deploy-note">A deployment is running.</span>
+                {% else %}
+                <span class="deploy-note">Only a SuperAdmin can roll back.</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="deploy-note">No saved versions yet. The next successful build keeps one you can restore.</p>
+    {% endif %}
+</section>
+</main>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS {{ environment.get_environment_display }} Settings{% endblock %}
+{% block content %}
+{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title=environment.get_environment_display|add:" AWS Account" hero_description="Configure account, region, role, and environment state." hero_metric_label="Environment" hero_metric=environment.get_environment_display %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Environment Settings" page_heading="AWS environment settings" page_description="Use IAM role-based access; do not enter long-lived AWS access keys." %}
+
+<div class="row g-4">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h5 mb-0"><i class="ti ti-settings me-2 text-primary"></i>Environment configuration</h3>
+      </div>
+      <form method="post">
+        <div class="card-body">
+          {% csrf_token %}
+          {% include "third_party_apis/aws/partials/_aws_form_fields.html" with form=form %}
+          <div class="alert alert-info mt-4 mb-0">Use an AWS IAM role ARN for runtime access. This form does not collect AWS access-key secrets.</div>
+        </div>
+        {% include "third_party_apis/aws/partials/_aws_form_actions.html" with environment=environment submit_label="Save Environment" %}
+      </form>
+    </div>
+  </div>
+
+  <div class="col-12">
+    {% include "third_party_apis/aws/partials/_aws_form_help.html" %}
+  </div>
+</div>
+{% endblock %}

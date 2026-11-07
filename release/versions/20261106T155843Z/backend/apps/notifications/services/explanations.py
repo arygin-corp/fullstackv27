@@ -1,0 +1,4 @@
+from apps.notifications.models import NotificationDelivery
+def explain_notification(notification):
+    priority=getattr(notification,"priority_assessment",None);fatigue=getattr(notification,"fatigue_assessment",None)
+    return {"why_received":{"recipient_id":notification.recipient_id,"source":notification.source,"application":getattr(notification.application,"name",None),"source_object_type":notification.source_object_type,"source_object_id":notification.source_object_id},"priority":{"final":getattr(priority,"final_priority",None),"score":getattr(priority,"score",None),"reasons":getattr(priority,"reason_codes",[])},"bundle":{"decision":getattr(fatigue,"decision",None),"reasons":getattr(fatigue,"reason_codes",[]),"duplicate_count":getattr(fatigue,"duplicate_count",0)},"delivery_failures":[{"channel":d.channel,"code":d.failure_code,"summary":d.failure_summary,"attempts":d.attempt_count} for d in notification.deliveries.filter(status="failed")]}

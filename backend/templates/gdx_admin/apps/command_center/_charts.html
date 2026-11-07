@@ -1,0 +1,9 @@
+{{ dataset|json_script:"cc-dataset" }}
+<div class="cc-widgets">
+    {% for element in elements %}
+    <article class="cc-widget{% if element.wide %} cc-widget-wide{% endif %}" data-element="{{ element.type }}">
+        <header><h3>{{ element.label }}</h3></header>
+        <div class="cc-widget-body"></div>
+    </article>
+    {% endfor %}
+</div>

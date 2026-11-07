@@ -1,0 +1,140 @@
+{% extends 'gdx_users/apps/account/base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+
+{% block extra_css %}
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="{% static 'libs/owl.carousel/dist/assets/owl.carousel.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'libs/owl.carousel/dist/assets/owl.theme.default.min.css' %}">
+{% endblock extra_css %}
+    
+{% block content %}
+<body class="auth-body-bg">
+        
+    <div>
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                
+                <div class="col-xl-9">
+                    <div class="auth-full-bg pt-lg-5 p-4">
+                        <div class="w-100">
+                            <div class="bg-overlay"></div>
+                            <div class="d-flex h-100 flex-column">
+                                <div class="p-4 mt-auto">
+                                    <div class="row justify-content-left">
+                                        <div class="col-lg-8">
+                                            <div class="text-left">
+                                                <div dir="ltr">
+                                                    <div class="l">
+                                                        <div class="item">
+                                                            <div class="py-3">
+                                                                <h1 class="semi-bold text-white">Meet GDX Portal - The simplest, fastest, & easiest way to management content.</h1>
+
+                                                                <p class="small text-white">Our beautifully-designed UI Framework come with hundreds of customizable features. Every Layout is just a starting point. <br>©<script>document.write(new Date().getFullYear())</script> {{ footer_text }}</p>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-xl-3">
+                    <div class="auth-full-page-content p-md-5 p-4">
+                        <div class="w-100">
+
+                            <div class="d-flex flex-column h-100">
+                                <div class="mb-4 mb-md-5">
+                                    <a href="{% url 'home' %}" class="d-block auth-logo">
+                                        <img src="{% static 'images/gdx/gdx-logo-dark.svg' %}" alt="" height="64" class="auth-logo-dark">
+                                        <img src="{% static 'images/gdx/gdx-logo-light.svg' %}" alt="" height="64" class="auth-logo-light">
+                                    </a>
+                                </div>
+                                <div class="my-auto">
+                                    <div>
+                                        <h5 class="text-primary">Hi Toyota Team Member!</h5>
+                                        <p class="text-muted">Sign in to Data Marketplace Administration Portal.</p>
+                                    </div>
+
+                                    <section>
+                                        <div class="mt-3 d-grid">
+                                            <a class="btn btn-light waves-effect waves-light" href="{% url 'microsoft_authentication:microsoft_authentication_login' %}?next=/sa/">
+                                                <object type="image/svg+xml" data="https://s3-eu-west-1.amazonaws.com/cdn-testing.web.bas.ac.uk/scratch/bas-style-kit/ms-pictogram/ms-pictogram.svg" class="x-icon" style="position: relative; top: 3px;"></object>
+                                                <span class="fs-semibold" style="position: relative; top: -3px; font-weight: 500;">Sign in with Microsoft</span>
+                                            </a>
+                                            <p class="text-muted small mt-2 mb-0">SuperAdmin opens Command Center with a Microsoft work email.</p>
+                                        </div>
+                                    </section>
+        
+                                    <div class="mt-4">
+                                        <form class="form-horizontal" action="{% url 'login' %}" method="POST">
+                                            {% csrf_token %}
+                                            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+                                            {% for message in messages %}
+                                                <div class="alert {{ message.tags }} mb-4" role="alert">
+                                                    <strong>{{ message }}</strong>
+                                                </div>
+                                            {% endfor %}
+
+                                            {{ form.as_p }}
+
+                                            <div class="mt-3 d-grid">
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
+                                            </div>
+                                        </form>
+
+                                        <div class="mt-5 text-center">
+                                            <p>Do you need access? <br>
+                                                <span>
+                                                    <a href="{% url 'account_signup' %}" class="fw-medium text-primary">Request Team Account</a><br>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 mt-md-5 text-center">
+                                    <small>
+                                        <p class="mb-0">
+                                            <span class="logo-sm">
+                                                <img src="{% static 'images/site/FullToyota-dark.svg' %}" alt="" height="16">
+                                            </span>
+                                            <span class="logo-sm">
+                                                <img src="{% static 'images/site/OneTech-dark.svg' %}" alt="" height="16">
+                                            </span><br>
+                                            ©<script>document.write(new Date().getFullYear())</script> {{ footer_text }}
+                                        </p>
+                                    </small>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container-fluid -->
+    </div>
+
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- owl.carousel js -->
+    <script src="{% static 'libs/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+
+    <!-- auth-2-carousel init -->
+    <script src="{% static 'js/pages/auth-2-carousel.init.js' %}"></script>
+{% endblock extra_javascript %}
+    

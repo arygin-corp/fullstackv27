@@ -1,0 +1,3 @@
+resource "aws_lb" "this"{name=var.name;internal=false;load_balancer_type="application";security_groups=var.security_group_ids;subnets=var.subnet_ids;enable_deletion_protection=true;drop_invalid_header_fields=true;tags=merge(var.tags,{"tmna:environment"=var.environment});lifecycle{prevent_destroy=true}}
+resource "aws_lb_listener" "https"{load_balancer_arn=aws_lb.this.arn;port=443;protocol="HTTPS";ssl_policy="ELBSecurityPolicy-TLS13-1-2-2021-06";certificate_arn=var.certificate_arn;default_action{type="fixed-response";fixed_response{content_type="text/plain";message_body="Not Found";status_code="404"}}}
+resource "aws_wafv2_web_acl_association" "this"{count=var.waf_web_acl_arn!=""?1:0;resource_arn=aws_lb.this.arn;web_acl_arn=var.waf_web_acl_arn}

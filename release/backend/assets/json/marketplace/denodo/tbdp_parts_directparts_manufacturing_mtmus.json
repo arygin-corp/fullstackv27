@@ -1505,6 +1505,12 @@
       "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_mtmus_view",
+      "column_name": "aet_event_description"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_mtmus_view",
       "column_name": "analyst"
     },
     {
@@ -1584,6 +1590,24 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_mtmus_view",
       "column_name": "eta"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_mtmus_view",
+      "column_name": "exception_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_mtmus_view",
+      "column_name": "exception_comments"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_mtmus_view",
+      "column_name": "exception_description"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
@@ -2399,12 +2423,6 @@
       "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_mtmus_view",
-      "column_name": "napipe_status"
-    },
-    {
-      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
-      "dbname": "parts_mfgparts_trn_ext",
-      "elementname": "xtab_phd_mtmus_view",
       "column_name": "number_of_containers"
     },
     {
@@ -2412,6 +2430,12 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_mtmus_view",
       "column_name": "order_number"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_mtmus_view",
+      "column_name": "order_release_dt"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
@@ -2580,12 +2604,6 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_mtmus_view",
       "column_name": "revised_eta"
-    },
-    {
-      "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",
-      "dbname": "parts_mfgparts_trn_ext",
-      "elementname": "xtab_phd_mtmus_view",
-      "column_name": "revised_qty"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing-mtmus",

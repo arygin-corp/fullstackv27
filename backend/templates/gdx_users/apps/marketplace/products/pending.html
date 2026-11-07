@@ -1,4 +1,4 @@
-{% extends 'gdx_users/partials/base.html' %}
+{% extends 'partials/base.html' %}
 
 {% block contents %}
 <h1>Pending Products</h1>
@@ -7,11 +7,11 @@
   <tbody>
   {% for p in object_list %}
     <tr>
-      <td><a href="{% url 'marketplace:detail' p.pk %}">{{ p.title }}</a></td>
+      <td><a href="{% url 'marketplace:product-detail' p.pk %}">{{ p.title }}</a></td>
       <td>{{ p.team.name }}</td>
       <td>{{ p.created_by.username }}</td>
       <td>
-        <form method="post" action="{% url 'marketplace:approve' p.pk %}">{% csrf_token %}<button class="btn btn-sm btn-success">Approve</button></form>
+        <form method="post" action="{% url 'marketplace:product-approve' p.pk %}">{% csrf_token %}<button class="btn btn-sm btn-success">Approve</button></form>
       </td>
     </tr>
   {% endfor %}

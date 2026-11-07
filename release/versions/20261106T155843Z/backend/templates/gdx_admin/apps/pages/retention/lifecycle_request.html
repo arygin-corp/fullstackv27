@@ -1,0 +1,1 @@
+{% extends "gdx_admin/base.html" %}{% block title %}Lifecycle Request{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/retention/includes/hero.html" %}<h2>{{ page.title }}</h2><form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-warning">Submit request</button></form>{% endblock %}

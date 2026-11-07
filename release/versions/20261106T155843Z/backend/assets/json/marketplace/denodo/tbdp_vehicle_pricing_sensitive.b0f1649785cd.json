@@ -1,0 +1,2261 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "dph_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "dph_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "dph_end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "final_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "intro_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "model_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "dph_classification",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "contract_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "funding_source"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "incentive_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "incentive_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "sold_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_apr_input",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "contract_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "funding_source"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "incentive_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "incentive_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "sold_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_lease_input",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "built_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_bonus_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_customer_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_dealer_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_lexus_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_others"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_subvention_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "contest_category_vspp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "dealer_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "dealer_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "dest_processing_handling_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "emission_accy_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "exterior_color_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "factory_accy_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "fleet_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_lexus_corporate"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_lexus_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_tfs_lfs_corporate"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_tfs_lfs_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_toyota_corporate"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "funding_source_toyota_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "grade_spec_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "interior_color_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "isys_contract_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "lexus_corporate_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "lexus_region_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "ppo_accy_list"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "ppr_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "retail_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "retail_rdr_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "retail_rdr_seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "retail_reversal_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "ship_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "sold_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "suggested_base_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "suggested_fio_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "suggested_ppo_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "suggested_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "tfs_lfs_corporate_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "tfs_lfs_region_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "toyota_corporate_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "toyota_region_isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_vin_incentives_sfn_ntl",
+      "column_name": "wholesale_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "cash_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "fin_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "lease_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "own_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_apr_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_apr_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_cash_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_cash_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_dealer_margin_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_dealer_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_dph_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_lease_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg",
+      "column_name": "tmna_lease_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "cash_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "fin_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "lease_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "own_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_apr_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_apr_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_cash_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_cash_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_dealer_margin_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_dealer_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_dph_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_lease_cftp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_tmna_sales_agg_ntl",
+      "column_name": "tmna_lease_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "accessory_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "dealer_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "distributor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "install_location_flat_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "katashiki_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "phase_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "plant_loc_abbreviation"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "plant_long_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "plant_numeric_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "raw_brand_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "raw_plant_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_accy_pricing",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "dealer_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "distributor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "fob_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "katashiki_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "phase_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "plant_loc_abbreviation"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "plant_long_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "plant_numeric_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "raw_brand_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "raw_plant_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_4_level_veh_pricing",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "banks_closed"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "businessmonth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "day"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "dayofweek"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "load_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "record_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "sd_bm_sale"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "selling_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "sellingday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "stores_closed"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "sum_ext_part_price_amt_bm_total"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "sum_ext_part_price_amt_selling_day"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_agg_calc_block2",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "aps_last_part_in_chain_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "banks_closed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "bill_to_customer_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "business_month_month_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "business_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "dayofweek"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "ext_part_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "ext_purchase_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "journal_dt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "journal_dt_my_original"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "last_in_chain_dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "last_in_chain_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "last_in_chain_district_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "load_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "part_description_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "part_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "parts_sell_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "parts_sell_days_complete"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "parts_sell_days_remain"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "price_class_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "prod_detail_category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "prod_detail_category_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "prod_major_category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "prod_major_category_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "product_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "product_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "product_code_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "record_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "selling_business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "selling_business_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "selling_day"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "ship_to_state_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_agg_block2",
+      "column_name": "stores_closed_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "businessmonth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "load_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "return_amount_actual"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "selling_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_data_calc_block2",
+      "column_name": "shipment_amount_actual"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "aps_last_part_in_chain_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "bill_to_customer_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "business_month_month_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "business_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "ext_part_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "ext_purchase_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "journal_dt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "journal_dt_my_original"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "last_in_chain_dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "last_in_chain_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "last_in_chain_district_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "load_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "part_description_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "part_qty"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "price_class_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "prod_detail_category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "prod_detail_category_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "prod_major_category_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "prod_major_category_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "product_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "product_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "product_code_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "record_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_input_block1",
+      "column_name": "ship_to_state_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "april"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "august"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "banks_closed"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "businessmonth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "cumulativesellingdaysratio"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "currentbusinessmonth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "currentdate"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "day"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "dayofweek"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "december"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "february"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "friday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "holiday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "holidayflag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "january"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "july"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "june"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "load_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "march"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "may"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "monday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "monthformatted"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "november"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "october"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "outlierflag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "pasa_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "post_holiday_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "pre_holiday_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "record_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "regiongroups"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sd_bm_sale"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "selling_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sellingday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sellingdaysratio"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "september"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sequencenumber"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "stores_closed"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sum_ext_part_price_amt_bm_total"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "sum_ext_part_price_amt_selling_day"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "thursday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "totalsellingdays"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "totalsequencenumber"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "tuesday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "wednesday"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "ircm_vehicle_sales_used_vin_ing_ext",
+      "elementname": "intg_irm_pacesetter_model_data_block3",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "brand_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "brand_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dest_process_handling_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dph_dtl_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "dph_dtl_exp_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "model_year_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "party_role_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "product_group_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_classification",
+      "column_name": "shipping_cls_product_group_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "brand_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "brand_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "model_year_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "product_group_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "product_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-pricing-sensitive",
+      "dbname": "pricing_trn",
+      "elementname": "dph_model_classification",
+      "column_name": "series_nm"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-pricing-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

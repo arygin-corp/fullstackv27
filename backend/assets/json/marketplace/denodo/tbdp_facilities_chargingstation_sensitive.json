@@ -4,6 +4,96 @@
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
       "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "charge_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "charge_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "countdistinct_event_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "ct_model_description"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "ct_model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "repeat_vin_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "speed_duration_usage_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "sum_charge_duration"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "sum_total_kwh_charged"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "agg_charging_sessions_dcfc",
+      "column_name": "vin_alias_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "agg_customer_charging_by_ers_and_month",
       "column_name": "charge_month"
     },
@@ -88,6 +178,540 @@
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
       "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "_rsid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "address"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_duration"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_location_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_start_datetime"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_start_timestamp"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_stop_datetime"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_stop_timestamp"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charge_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charger_kw_throughput"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charger_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "charging_session_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "clean_assist_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "country_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "county"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "created_on"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "ct_model_description"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "ct_model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "cust_city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "cust_dwl_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "cust_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "cust_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "cust_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dcm"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_city_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_region_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_region_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_state_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dealer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "distance_m"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "distance_miles"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "division_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "dlrshp_nm"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "event_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "event_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "free_charge_enddate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "generation"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "geo_cd_lat"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "geo_cd_lon"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "grade_spec_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "hu_gen"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "load_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "managed_charging_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "nearest_rank"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "nrel_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "nrel_open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "nrel_station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "potential_free_charging_event"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "reporting_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "retail_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "retail_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "series_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "speed_duration_usage_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "start_charge_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "state_of_charge_after_charge_battery"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "state_of_charge_before_charge_battery"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "station_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "station_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "station_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "stop_charge_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "subseries"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "sum_quantity"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "total_kwh_charged"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "updatedon"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "v1g_reporting_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "vehicle_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "vin_alias_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "zero_event_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "charging_sessions_dcfc",
+      "column_name": "zipcode"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "ct_ersp_distinct_vins",
       "column_name": "charge_quarter"
     },
@@ -108,6 +732,618 @@
       "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "ct_ersp_distinct_vins",
       "column_name": "elec_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "_rsid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "address"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_duration"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_location_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_start_datetime"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_start_timestamp"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_stop_datetime"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_stop_timestamp"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charge_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charger_kw_throughput"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charger_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "charging_session_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "clean_assist_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cluster_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "country_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "county"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "created_on"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cust_city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cust_dwl_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cust_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cust_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "cust_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dcm"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_city_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_region_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_region_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_state_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dealer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "distance_m"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "distance_miles"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "division_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "dlrshp_nm"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "event_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "event_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "free_charge_enddate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "generation"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "geo_cd_lat"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "geo_cd_lon"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "grade_spec_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "hu_gen"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "loaddate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "managed_charging_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "model_description"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "nearest_rank"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "nrel_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "potential_free_charging_event"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "reporting_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "retail_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "retail_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "right_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "series_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "speed_duration_usage_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "start_charge_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "state_of_charge_after_charge_battery"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "state_of_charge_before_charge_battery"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "station_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "station_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "station_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "stop_charge_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "subseries"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "sum_quantity"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "total_kwh_charged"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "updatedon"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "v1g_reporting_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "vehicle_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "vin_alias_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "zero_event_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna",
+      "column_name": "zipcode"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "avg_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "avg_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "cluster_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "concat_ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "count_distinct_event_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "count_distinct_vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "data_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "ionna_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "dc_fast_clusters_ionna_agg",
+      "column_name": "sum_total_kwh_charged"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
@@ -256,6 +1492,468 @@
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
       "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "connector_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "lat"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "lon"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "network_trn"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "street"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ev_combined_charger_list",
+      "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "access_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "access_detail_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "clean_assist_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "cust_city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "cust_dwl_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "cust_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "cust_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "cust_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "data_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "date_last_confirmed"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dcm"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_city_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_region_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_region_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_state_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "dealer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "distance_miles"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "distance_parameter"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "division_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "ev_dc_fast_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "ev_level1_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "ev_level2_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "ev_pricing"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "expected_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "facility_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "find_nearest_rank"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "fuel_type_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "geocode_status"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "grade_spec_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "hu_gen"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "managed_charging_eligibile"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "owner_type_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "retail_month"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "retail_year"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "status_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "subseries"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "sum_quantity"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "universe_audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "universe_centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "universe_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "universe_station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "updated_at"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "vehicle_fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "vin_alias_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "ionna_customer_radius",
+      "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "managed_charging_result_prep",
       "column_name": "access_code"
     },
@@ -348,6 +2046,18 @@
       "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "managed_charging_result_prep",
       "column_name": "created_on"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "managed_charging_result_prep",
+      "column_name": "ct_model_description"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "managed_charging_result_prep",
+      "column_name": "ct_model_year"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
@@ -539,6 +2249,12 @@
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
       "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "managed_charging_result_prep",
+      "column_name": "nearest_rank"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "managed_charging_result_prep",
       "column_name": "reporting_state"
     },
     {
@@ -564,6 +2280,12 @@
       "dbname": "evcs_facilities_chargingstation_ing",
       "elementname": "managed_charging_result_prep",
       "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "managed_charging_result_prep",
+      "column_name": "source"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
@@ -669,6 +2391,684 @@
     },
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_active_indicator"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_city_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_product_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_region_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_region_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_state_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "dealer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "distance_miles"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "stations_to_nearest_dealers",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "accessnotes"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_countryid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_region"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_regionid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_street"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "address_zip"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "addressnotes"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "battery"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "centroid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "counted"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "dateopened"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "elevationmeters"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "facilityhours"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "facilityname"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "gps_latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "gps_longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "hours"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "last_refreshed"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "locationid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "nrel_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "nrel_open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "osmid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "otherevs"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "parkingid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_ccs1"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_ccs2"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_gbt"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_multi"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_nacs"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_other"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_tpc"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugs_type2"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "plugshareid"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "powerkilowatt"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "solarcanopy"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stall_versions_at_site"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stallcount"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_accessible"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_other"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_trailerfriendly"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_urban"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_v2"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_v3"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "stalls_v4"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "statusdays"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "t_l_accessible_wf"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evcs_facilities_chargingstation_ing",
+      "elementname": "tesla_supercharger_nrel_data",
+      "column_name": "urldiscuss"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_stationid_grouping",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_stationid_grouping",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_stationid_grouping",
+      "column_name": "new_station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_stationid_grouping",
+      "column_name": "station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_vin_mapping",
+      "column_name": "bev_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_vin_mapping",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_vin_mapping",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_vin_mapping",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_vin_mapping",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_ops_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_ops_data",
+      "column_name": "data_element_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_ops_data",
+      "column_name": "sheet"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_ops_data",
+      "column_name": "time_frame"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_ops_data",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "data_element_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "time_frame"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_build_out_forecast",
+      "column_name": "value"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_rechargeries_list",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_rechargeries_list",
+      "column_name": "ionna_station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_rechargeries_list",
+      "column_name": "nrel_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "ionna_site_rechargeries_list",
+      "column_name": "site_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "address"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "amenity"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "connector_level_group"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "connector_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "country"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "kilowatts"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "lat"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "location_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "long"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "manufacturer"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "manufacturer_group"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "no_of_connectors"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "no_of_stations"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "parking_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "plugscore"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "plugscore_bins"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "poi_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "plugshare_location",
+      "column_name": "zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
       "dbname": "facilities_chargingstation_trn",
       "elementname": "tesla_adapter_campaign",
       "column_name": "audit_create_date"
@@ -696,6 +3096,12 @@
       "dbname": "facilities_chargingstation_trn",
       "elementname": "tesla_adapter_campaign",
       "column_name": "campaign_title"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation-sensitive",
+      "dbname": "facilities_chargingstation_trn",
+      "elementname": "tesla_adapter_campaign",
+      "column_name": "country"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation-sensitive",

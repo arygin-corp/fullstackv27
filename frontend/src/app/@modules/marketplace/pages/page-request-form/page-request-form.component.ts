@@ -4,6 +4,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MsalService } from '@azure/msal-angular';
 import { CartService } from '../../../../@shared/services/cart.service';
+import { PodOptions, PodsService } from '../../../../@shared/services/pods.service';
 import { ProductService } from '../../../../@shared/services/product.service';
 import { AppService } from '../../../../@shared/services/app.service';
 import { environment } from '../../../../../environments/environment';
@@ -25,6 +26,7 @@ export class PageRequestFormComponent implements OnInit {
   title = "Request Access";
   form: FormGroup;
   addingToCart = false;
+  podsOptions: PodOptions[] = [];
   profile;
 
   constructor(
@@ -34,6 +36,7 @@ export class PageRequestFormComponent implements OnInit {
     public fb: FormBuilder,
     private http: HttpClient,
     private cart: CartService,
+    private podsService: PodsService,
     public appSvc: AppService
   ) {}
 
@@ -50,6 +53,10 @@ export class PageRequestFormComponent implements OnInit {
       productName: [''],
       quantity: [1],
       // Add your form controls here
+    });
+    this.podsService.getPodsOptions().subscribe({
+      next: (options) => this.podsOptions = options || [],
+      error: () => this.podsOptions = [],
     });
   }
 

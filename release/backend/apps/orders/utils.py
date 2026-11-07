@@ -48,7 +48,7 @@ def export_master_orders_json():
         order_data.append(req_entry)
 
     # File path setup
-    file_path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/orders/orders.json')
+    file_path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/orders/orders.json')
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     with open(file_path, 'w', encoding='utf-8') as f:

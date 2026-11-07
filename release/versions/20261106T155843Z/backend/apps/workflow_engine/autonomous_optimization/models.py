@@ -1,0 +1,5 @@
+from django.db import models
+from ..models import TimeStampedModel,WorkflowDefinition
+class OptimizationPolicy(TimeStampedModel):workflow=models.ForeignKey(WorkflowDefinition,related_name='optimization_policies',on_delete=models.CASCADE);enabled=models.BooleanField(default=False);allowed_actions=models.JSONField(default=list);guardrails=models.JSONField(default=dict);approval_required=models.BooleanField(default=True)
+class OptimizationProposal(TimeStampedModel):policy=models.ForeignKey(OptimizationPolicy,related_name='proposals',on_delete=models.CASCADE);kind=models.CharField(max_length=80);evidence=models.JSONField(default=dict);change=models.JSONField(default=dict);expected_impact=models.JSONField(default=dict);status=models.CharField(max_length=30,default='proposed');simulation_required=models.BooleanField(default=True)
+class OptimizationExperiment(TimeStampedModel):proposal=models.ForeignKey(OptimizationProposal,related_name='experiments',on_delete=models.CASCADE);allocation=models.JSONField(default=dict);status=models.CharField(max_length=30,default='draft');results=models.JSONField(default=dict);rollback_criteria=models.JSONField(default=dict)
