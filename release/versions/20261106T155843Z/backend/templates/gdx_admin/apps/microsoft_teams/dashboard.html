@@ -1,0 +1,14 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Microsoft Teams{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="MICROSOFT TEAMS" hero_title="Microsoft Teams" hero_description="Teams destinations used for GDX notifications." hero_metric_label="Provider" hero_metric_value="Microsoft" hero_metric_caption="Teams" hero_icon="✉" %}
+<section class="deploy-panel">
+    <h2>Destinations</h2>
+    <p>Webhook destinations for Teams are managed with notification settings.</p>
+    <p><a href="{% url 'notifications:teams_destination' %}">Open Teams destinations</a></p>
+</section>
+</main>
+{% endblock %}

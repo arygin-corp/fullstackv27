@@ -68,4 +68,23 @@ export class AccountMenuComponent {
         this.msalService.logout();
         sessionStorage.clear();
     }
+
+    get lastSignInLabel(): string {
+        const account = this.msalService.instance.getActiveAccount() || this.msalService.instance.getAllAccounts()[0];
+        const claims = account?.idTokenClaims as { auth_time?: number; iat?: number } | undefined;
+        const seconds = claims?.auth_time || claims?.iat;
+        if (!seconds) {
+            return '';
+        }
+        return this.formatSignIn(new Date(seconds * 1000));
+    }
+
+    private formatSignIn(date: Date): string {
+        const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const suffix = hours >= 12 ? 'p.m.' : 'a.m.';
+        hours = hours % 12 || 12;
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}, ${hours}:${minutes} ${suffix}`;
+    }
 }

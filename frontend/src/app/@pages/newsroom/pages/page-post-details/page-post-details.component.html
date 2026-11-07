@@ -37,7 +37,7 @@
       
       <div class="post-footer">
         <div class="tags">
-          <span class="tag" *ngFor="let tag of [post.category]">#{{ tag }}</span>
+          <span class="tag">{{ post.category }}</span>
         </div>
         
         <a routerLink="/newsroom" class="back-to-top">

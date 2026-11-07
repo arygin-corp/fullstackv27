@@ -814,6 +814,282 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "acd_login_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "person_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "team_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_acd_login_person",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "group_page_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "person_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_group_page_person",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "queue_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "skill_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_queue_workload",
+      "column_name": "workload_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "skill_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "skillset_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_skillset_skill",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "date_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "interval_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "local_date_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "local_interval_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "time_zone_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "bridge_time_zone",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "calldetail_viw",
       "column_name": "accountcode"
     },
@@ -2914,6 +3190,60 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "business_unit_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "business_unit_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_business_unit",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dim_date",
       "column_name": "audit_create_date"
     },
@@ -3094,6 +3424,108 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "business_unit_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "business_unit_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_is_custom"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_page_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_page_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_page_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "group_page_name_resource_key"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_group_page",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dim_interval",
       "column_name": "audit_create_date"
     },
@@ -3155,6 +3587,228 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dim_interval",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "decreasing_value_is_positive"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_between_color"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_higher_than_max_color"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_lower_than_min_color"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_max_value"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_min_value"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "default_target_value"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "kpi_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "kpi_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "kpi_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "resource_key"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "target_value_type"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_kpi",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "location_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "location_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "location_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "resource_key"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_location",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "is_deleted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "overtime_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "overtime_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
+      "column_name": "overtime_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_overtime",
       "column_name": "update_date"
     },
     {
@@ -3568,6 +4222,78 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "log_object_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "queue_agg_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "queue_description"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "queue_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "queue_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "queue_original_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_queue",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dim_request_status",
       "column_name": "audit_create_date"
     },
@@ -3870,6 +4596,234 @@
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dim_skill",
       "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "skillset_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "skillset_code_hash"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "skillset_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "skillset_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_skillset",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "scorecard_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "site_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "team_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "team_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "team_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_team",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "default_zone"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "only_one_default_zone"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "time_zone_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "time_zone_iana"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "time_zone_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "time_zone_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "to_be_deleted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "utc_conversion"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "utc_conversion_dst"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dim_time_zone",
+      "column_name": "utc_in_use"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
@@ -11128,6 +12082,396 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "accountnumber"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "accountsource"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "annualrevenue"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingcity"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingcountry"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingcountrycode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billinggeocodeaccuracy"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billinglatitude"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billinglongitude"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingpostalcode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingstate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingstatecode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "billingstreet"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "channelprogramlevelname"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "channelprogramname"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "createdbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "dealer_region_area"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "distributor_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "district"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "fax"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "industry"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "is_user_region_match"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "iscustomerportal"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "ispartner"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "jigsaw"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "last_refreshed_on"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "lastmodifiedbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "lastmodifieddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "main_phone"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "numberofemployees"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "ownerid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "ownership"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "parentid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "phone"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "rating"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "recordtypeid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingcity"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingcountry"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingcountrycode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippinggeocodeaccuracy"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippinglatitude"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippinglongitude"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingpostalcode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingstate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingstatecode"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "shippingstreet"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "sic"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "sicdesc"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "siebel_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "site"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "tickersymbol"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "toll_free_phone"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "user_region"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_account",
+      "column_name": "website"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_action",
       "column_name": "act_entry_objid"
     },
@@ -12401,6 +13745,12 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_case",
+      "column_name": "account_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_case",
       "column_name": "accumulator_open_days"
     },
     {
@@ -13283,6 +14633,12 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_case",
+      "column_name": "company_executive_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_case",
       "column_name": "condition"
     },
     {
@@ -13632,6 +14988,12 @@
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_case",
       "column_name": "documented_nsh_visit_insp_rpr"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_case",
+      "column_name": "dr_hq_contact"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
@@ -15317,6 +16679,12 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_case",
+      "column_name": "tier_1_case"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_case",
       "column_name": "tier_1_phase"
     },
     {
@@ -15330,6 +16698,12 @@
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_case",
       "column_name": "tms_reimb_assign_dt"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_case",
+      "column_name": "top_keywords"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
@@ -18598,6 +19972,150 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "createdbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "developer_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "does_include_bosses"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "does_send_email_to_members"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "email"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "lastmodifiedbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "lastmodifieddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "ownerid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "queue_routing_config_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "related_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "systemmodstamp"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "groupid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "systemmodstamp"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_group_member",
+      "column_name": "user_or_group_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_offer_approval_history",
       "column_name": "approvalprocesscompleteddate"
     },
@@ -20866,6 +22384,186 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "case_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "contact_person"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "createdbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "customer_contacted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "date_disposed"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "date_inspector_assigned"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "date_of_inspection"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "distributor_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "edr_received"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "edr_received_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "inspection_completed"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "inspection_delay_incomplete"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "inspection_location"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "inspection_requested"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "inspector_name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "isdeleted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "lastmodifiedbyid"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "lastmodifieddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "lastreferenceddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "lastvieweddate"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "salvage_disposed"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "siebel_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "systemmodstamp"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "tech_inspection_assigned"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "dst_tech_inspection",
+      "column_name": "tech_inspection_returned"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "dst_vote",
       "column_name": "audit_create_date"
     },
@@ -21244,6 +22942,96 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "acd_login_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "after_call_work_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "answered_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "completed_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "date_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "hold_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "interval_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "queue_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "talk_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "transfered_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_agent_queue",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "fact_agent_skill",
       "column_name": "active"
     },
@@ -21503,6 +23291,12 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "fact_quality",
+      "column_name": "case_number"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_quality",
       "column_name": "cb_contact_id"
     },
     {
@@ -21594,6 +23388,156 @@
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "fact_quality",
       "column_name": "sf_contact_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "abandoned_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "abandoned_calls_within_sl"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "abandoned_short_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "after_call_work_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "answered_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "answered_calls_within_sl"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "completed_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "date_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "handle_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "hold_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "interval_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "longest_delay_in_queue_abandoned_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "longest_delay_in_queue_answered_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "offered_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "overflow_in_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "overflow_out_calls"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "queue_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "speed_of_answer_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "talk_time_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "time_to_abandon_s"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_queue",
+      "column_name": "update_date"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
@@ -22403,6 +24347,84 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "fact_schedule_forecast_skill",
+      "column_name": "update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "creation_year"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "datasource_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "datasource_update_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "date_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "insert_date"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "is_deleted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "location_code"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "location_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "person_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
+      "column_name": "scenario_id"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "fact_schedule_location",
       "column_name": "update_date"
     },
     {
@@ -28552,97 +30574,97 @@
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "audit_create_date"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "brand"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "creation_year"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "cust_vin_id"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "customer_id"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "customer_pay"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "dealer_number"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "event_id"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "first_name"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "full_name"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "labor_code"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "last_name"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "ro_close_date"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "ro_number"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "total_hours"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
-      "elementname": "service_history_customer_pay",
+      "elementname": "service_history_customer_pay_redshift_spectrum",
       "column_name": "vin"
     },
     {
@@ -31091,6 +33113,12 @@
       "userrolename": "tbdp-cust-exp-mgmt",
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "voicecall",
+      "column_name": "top_keywords"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecall",
       "column_name": "tophonenumber"
     },
     {
@@ -31746,6 +33774,54 @@
       "dbname": "callcenter_cust_exp_trn_ext",
       "elementname": "voicecallmaster",
       "column_name": "attr_remedy2"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smscaseemail"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smscasenumber"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smsconfirmedlegalmessage"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smsconfirmedmatchedani"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smsphonenumber"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smsportalcaseofferaccepted"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smstextoutcome"
+    },
+    {
+      "userrolename": "tbdp-cust-exp-mgmt",
+      "dbname": "callcenter_cust_exp_trn_ext",
+      "elementname": "voicecallmaster",
+      "column_name": "attr_smstype"
     },
     {
       "userrolename": "tbdp-cust-exp-mgmt",

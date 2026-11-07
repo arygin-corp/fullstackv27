@@ -1,0 +1,24 @@
+{% extends 'gdx_users/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Targeted CSS for the Home Page -->
+<link href="{% static 'css/pages/home.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block contents %}
+
+<div id="content">
+	<h3 class="page-header mb-3"> Hi, {{user.first_name}}. <small class="text-muted fs-5">This is what is happening in Data Marketplace.</small></h3>
+	<div class="row">
+		
+	</div>
+</div>
+
+{% endblock %}
+{% block extra_javascript %}
+<!-- apexcharts -->
+<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
+<!-- Saas dashboard init -->
+<script src="{% static 'js/pages/dashboard-job.init.js' %}"></script>
+{% endblock %}

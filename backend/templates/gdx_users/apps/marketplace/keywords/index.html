@@ -1,0 +1,131 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block extra_javascript %}
+
+    {# jQuery is already loaded (blocking, in order) by partials/base.html's javascript block. #}
+    {# These must load without `async` too, so they run in document order, after jQuery         #}
+    {# and before the inline init script below - `async` lets scripts run out of order and        #}
+    {# race the jQuery load, which is why $(...).DataTable ends up undefined.                     #}
+
+    <!-- DataTables core -->
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+
+    <!-- Responsive extension -->
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function() {
+            var keywordsTable = $('#keywords-list').DataTable({
+                "processing": true,       // Show processing indicator
+                "serverSide": true,       // Enable server-side processing
+                "ajax": {
+                    "url": "{% url 'marketplace:keyword-index' %}", // URL to your Django IndexView
+                    "type": "GET",
+                    "data": function (d) {
+                        // Custom parameters to send to the server
+                        d.q = $('#searchTableList').val();
+                        d.status = $('#idStatus').val();
+                        // DataTables already sends 'start', 'length', 'draw', etc.
+                    },
+                    "error": function (xhr, error, thrown) {
+                        console.log("DataTables Ajax Error:", xhr.responseText);
+                        alert("DataTables warning: table id=keywords-list - Ajax error. For more information about this error, please check the console.");
+                    }
+                },
+                "columns": [
+                    { "data": "id", "className": "text-center" },
+                    { "data": "name" },
+                    { "data": "status", "className": "text-center" },
+                    { "data": "actions", "orderable": false, "searchable": false, "className": "text-center" }
+                ],
+                "pageLength": {{ current_per_page }}, // Set initial page length from Django context
+                "lengthChange": false, // Disable DataTables' default length change dropdown as we have a custom one
+                "searching": false, // Disable DataTables' default search input as we have a custom one
+                "info": true, // Show "Showing X to Y of Z entries"
+                "paging": true, // Enable pagination
+                "responsive": true
+            });
+
+            // Re-draw the table immediately when the custom search input changes
+            $('#searchTableList').on('input', function() {
+                keywordsTable.ajax.reload();
+            });
+
+            // Re-draw the table when custom filter dropdowns change
+            $('#idStatus').on('change', function() {
+                keywordsTable.ajax.reload();
+            });
+
+            // Handle 'Keywords per page' change
+            $('#idPerPage').on('change', function() {
+                keywordsTable.page.len($(this).val()).draw(); // Use DataTables' built-in page.len() for this
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ total_keywords_count }} Keywords</h5>
+                    <div class="flex-shrink-0">
+                        {% if is_content_manager or is_super_admin %}
+                        <a href="{% url 'marketplace:keyword-create' %}" class="btn btn-primary">Add New Keyword</a>
+                        {% endif %}
+                        {# Refresh button now reloads the DataTable via AJAX #}
+                        <a href="javascript:void(0);" class="btn btn-light" onclick="$('#keywords-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-bottom">
+                <div class="row g-3">
+                    <div class="col-xxl-6 col-lg-6">
+                        <input type="search" class="form-control" id="searchTableList" placeholder="Search for ..." value="">
+                    </div>
+                    <div class="col-xxl-3 col-lg-3">
+                        <select class="form-select" id="idStatus" aria-label="Default select example">
+                            <option value="all" selected>Select Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="col-xxl-1 col-lg-1">
+                        <select class="form-select" id="idPerPage" aria-label="Keywords per page">
+                            <option value="25" {% if current_per_page == 25 %}selected{% endif %}>25</option>
+                            <option value="50" {% if current_per_page == 50 %}selected{% endif %}>50</option>
+                            <option value="100" {% if current_per_page == 100 %}selected{% endif %}>100</option>
+                            <option value="150" {% if current_per_page == 150 %}selected{% endif %}>150</option>
+                            <option value="200" {% if current_per_page == 200 %}selected{% endif %}>200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle dt-responsive nowrap w-100 table-check" id="keywords-list">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {# DataTables will populate this tbody via AJAX #}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

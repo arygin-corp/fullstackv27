@@ -1,8 +1,9 @@
 import { Inject, Injectable, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { BehaviorSubject, Observable, Subject, timer } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, timer } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import { UserActivityService } from './user-activity.service';
 
 interface CompareData {
     items: Product[];
@@ -26,7 +27,8 @@ export class CompareService implements OnDestroy {
 
     constructor(
         @Inject(PLATFORM_ID)
-        private platformId: any
+        private platformId: any,
+        private activity: UserActivityService
     ) {
         if (isPlatformBrowser(this.platformId)) {
             this.load();
@@ -40,14 +42,30 @@ export class CompareService implements OnDestroy {
                 // Using spread to ensure we aren't mutating the same reference everywhere
                 this.data.items = [...this.data.items, product];
                 this.save();
+                this.activity.record('compare_add', product?.name || 'Catalog product', String(product?.id || ''));
             }
         }));
     }
 
     remove(product: Product): Observable<void> {
         return timer(1000).pipe(map(() => {
-            this.data.items = this.data.items.filter(item => item.id !== product.id);
+            const next = this.data.items.filter(item => item.id !== product.id);
+            if (next.length !== this.data.items.length) {
+                this.data.items = next;
+                this.save();
+                this.activity.record('compare_remove', product?.name || 'Catalog product', String(product?.id || ''));
+            }
+        }));
+    }
+
+    clear(): Observable<void> {
+        return of(undefined).pipe(map(() => {
+            if (!this.data.items.length) {
+                return;
+            }
+            this.data.items = [];
             this.save();
+            this.activity.record('compare_remove', 'Cleared all compare', '');
         }));
     }
 

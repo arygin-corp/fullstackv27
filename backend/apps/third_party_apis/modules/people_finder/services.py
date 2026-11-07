@@ -1,5 +1,5 @@
 from urllib.parse import parse_qs, urlparse
-from apps.external_apis.exceptions import (ExternalApiConfigurationError, ExternalApiRequestError,)
+from .exceptions import ExternalApiConfigurationError, ExternalApiRequestError
 from .graph_services import next_users, search_users, graph_base, _get
 
 

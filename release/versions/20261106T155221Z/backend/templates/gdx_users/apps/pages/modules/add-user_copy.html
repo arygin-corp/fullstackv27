@@ -1,0 +1,198 @@
+
+       <div class="row justify-content-center h-100 align-items-center">
+        <div class="col-xl-12 col-lg-12">
+           <div class="card">
+              <div class="card-header">
+                 <h4 class="card-title">New User Form</h4>
+              </div>
+              <div class="card-body">
+                 <div class="basic-form">
+                    <form  method="post" enctype="multipart/form-data" novalidate autocomplete="off">
+                       {% csrf_token %}
+                       <div class="row">
+
+
+                      <div class="mb-3 col-md-6">
+                               <div class="avatar-upload">
+                                  <div class="avatar-edit">
+                                     {{ form.avatar|attr:"type:file" }}
+                                     <label for="id_avatar"><i class="fas fa-pencil-alt"></i></label>
+                                  </div>
+                                  <div class="avatar-preview">
+                                     <div id="imagePreview" style="background-image: url('{{ form.instance.avatar.url }}');">
+                                     </div>
+                                  </div>
+                            </div>
+                            <div class="text-danger w-100 d-block mt-1">
+                               {{ form.avatar.errors }}     
+                           </div>
+
+                      </div>
+
+
+
+
+
+
+                      <div class="row col-md-6">
+                          <div class="mb-3 col-md-6">
+                             <label class="form-label">First Name {% if form.first_name.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                             {{ form.first_name|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:First Name" }}
+                             <div class="text-danger w-100 d-block mt-1">
+                             {{ form.first_name.errors }}
+                             </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                             <label class="form-label">Last Name {% if form.last_name.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                             {{ form.last_name|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:Last Name" }}
+                             <div class="text-danger w-100 d-block mt-1">
+                             {{ form.last_name.errors }}
+                             </div>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="form-label">Email {% if form.email.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                            {{ form.email|attr:"type:email"|attr:"class:form-control"|attr:"placeholder:Email" }}
+                            <div class="text-danger w-100 d-block mt-1">
+                            {{ form.email.errors }}
+                            </div>
+                         </div>
+
+                      </div>
+
+
+                      <div class="col-md-6 col-md-6 m-auto">
+                         <div class="form-check form-check-inline">
+                            {{ form.is_active|attr:"class:form-check-input"|attr:"type:checkbox"|attr:"checked" }}
+                            <label class="form-check-label">
+                            is active
+                            </label>
+                         </div>
+                      </div>
+
+
+
+
+                          
+                          <div class="mb-3 col-md-6">
+                             <label class="form-label">Phone Number {% if form.phone_number.field.required %}<span class="text-danger">*</span> {% endif %} </label>
+                             {{ form.phone_number|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:Phone Number" }}
+                             <div class="text-danger w-100 d-block mt-1">
+                             {{ form.phone_number.errors }}
+                             </div>
+                          </div>
+
+                      
+                      <div class="row">
+                         <div class="mb-3 col-md-4 custom-user">
+                            <label class="form-label">Role {% if form.groups.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                            {{ form.groups|attr:"class:multi-select form-control"|attr:"name:groups[]" }}
+                            <div class="text-danger w-100 d-block mt-1">
+                            {{ form.groups.errors }}
+                            </div>
+                         </div>
+                          <div class="mb-3 col-md-4 custom-user">
+                             <label class="form-label">Gender {% if form.gender.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                             {{ form.gender|attr:"class:form-control from-height-1 default-select wide" }}
+                             <div class="text-danger w-100 d-block mt-1 ">
+                             {{ form.gender.errors }}
+                             </div>
+                          </div>
+                          <div class="mb-3 col-md-4 custom-date-picker">
+                             <label class="form-label">Date of Birth {% if form.dob.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                           
+                              {{ form.dob|attr:"class:form-control"|attr:"type:date"}} 
+                             <div class="text-danger w-100 d-block mt-1">
+                             {{ form.dob.errors }}
+                             </div>
+                          </div>
+                      </div>
+
+                         <div class="mb-3 col-md-12 ">
+                              <label class="form-label">About {% if form.about.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                              {{ form.about|attr:"class:form-control"|attr:"style:height: 144px;"|attr:"placeholder:Write About YourSelf..." }}
+                              <div class="text-danger w-100 d-block mt-1">
+                              {{ form.about.errors }}
+                              </div>
+                            </div>
+
+
+
+                        
+
+                   {% if form.password1 %}
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label">Password {% if form.password1.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                             <div class="input-group transparent-append">
+                                {% comment %} <span class="input-group-text"> <i class="fa fa-lock"></i> </span> {% endcomment %}
+                                
+                                {{ form.password1|attr:"class:form-control"|attr:"placeholder:Password"|attr:"id:dz-password"|attr:"type:password" }}
+                                <span class="input-group-text show-pass"> 
+                                <i class="fa fa-eye-slash"></i>
+                                <i class="fa fa-eye"></i>
+                                </span>
+                                <div class="text-danger w-100 d-block mt-1">
+                                {{ form.password1.errors }}
+                                </div>
+
+                             </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label">Confirm Password {% if form.password2.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                             <div class="input-group transparent-append">
+                                {% comment %} <span class="input-group-text"> <i class="fa fa-lock"></i> </span> {% endcomment %}
+                                
+                                {{ form.password2|attr:"class:form-control"|attr:"placeholder:Confirm Password"|attr:"id:dz-con-password"|attr:"type:password" }}
+                                <span class="input-group-text show-con-pass"> 
+                                <i class="fa fa-eye-slash"></i>
+                                <i class="fa fa-eye"></i>
+                                </span>
+                                <div class="text-danger w-100 d-block mt-1">
+                                {{ form.password2.errors }}
+                                </div>
+                             </div>
+                          </div>
+                          {% endif %}
+                      </div>
+                       <button type="submit" class="btn btn-secondary mt-4 mb-5 ">Save</button>
+                       <a href="{% url 'vora:users' %}" class="btn btn-primary mt-4 mb-5">Cancel</a>
+                    </form>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     {% block additional_js %}
+
+
+
+
+     <script>
+        function readURL(input) {
+     
+           if (input.files && input.files[0]) {
+                 var reader = new FileReader();
+                 reader.onload = function(e) {
+                    $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                 }
+                 reader.readAsDataURL(input.files[0]);
+           }
+        }
+        $("#id_avatar").change(function() {
+           readURL(this);
+        });
+     </script> 
+     
+     
+     <script>
+        $(".multi-select").select2({
+           placeholder: "Select the Role"
+       });
+     </script>
+     
+     
+     {% endblock %}
+     
+     
+     

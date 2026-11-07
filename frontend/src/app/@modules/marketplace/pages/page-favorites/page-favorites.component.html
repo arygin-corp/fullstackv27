@@ -3,7 +3,16 @@
     {label: 'Favorites', url: ''}
 ]"></app-page-header>
 
-<div class="block block-empty" *ngIf="!(favorites.items$|async)?.length">
+<div class="block" *ngIf="items.length">
+    <div class="container-fluid">
+        <div class="favorites__toolbar">
+            <p class="favorites__summary">{{ items.length }} saved {{ items.length === 1 ? 'product' : 'products' }}</p>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="clearFavorites()" [disabled]="clearing">Clear Favorites</button>
+        </div>
+    </div>
+</div>
+
+<div class="block block-empty" *ngIf="!items.length">
     <div class="container">
         <div class="block-empty__body">
             <div class="block-empty__message">You currently have not added any products to your favorites!</div>
@@ -14,55 +23,32 @@
     </div>
 </div>
 
-<div class="block" *ngIf="(favorites.items$|async)?.length">
+<div class="block" *ngIf="items.length">
     <div class="container-fluid">
-        <table class="wishlist">
-            <thead class="wishlist__head">
-            <tr class="wishlist__row">
-                <th class="wishlist__column wishlist__column--image">Image</th>
-                <th class="wishlist__column wishlist__column--product">Product</th>
-                <th class="wishlist__column wishlist__column--stock">Datatype</th>
-                <!--<th class="wishlist__column wishlist__column--stock">Type</th>-->
-                <th class="wishlist__column wishlist__column--stock"></th>
-                <!--<th class="wishlist__column wishlist__column--stock">Data Steward</th>
-                <th class="wishlist__column wishlist__column--stock">Point of Contact</th>-->
-                <th class="wishlist__column wishlist__column--tocart">Action</th>
-                <th class="wishlist__column wishlist__column--remove">Remove</th>
-            </tr>
-            </thead>
-            <tbody class="wishlist__body">
-            <tr *ngFor="let product of favorites.items$|async" class="wishlist__row">
-                <td class="wishlist__column wishlist__column--image">
-                    <div class="product-image">
-                        <a *ngIf="product.images?.length" [routerLink]="root.product(product)" class="product-image__body">
-                            <img class="product-image__img" [src]="product.images[0]" alt="">
-                        </a>
-                    </div>
-                </td>
-
-                <td class="wishlist__column wishlist__column--product">
-                    <a [href]="root.product(product)" class="wishlist__product-name"><small>{{ product.name }}</small></a>
-                    <div class="wishlist__product-rating">
-                        <div class="wishlist__product-rating-legend" style="margin-left: 0px; color: #222"><small><span style="font-weight: 700;">Classification: </span>{{ product.classification }}</small></div>
-                    </div>
-                </td>
-
-                <td class="wishlist__column wishlist__column--stock"><small>{{ product.datatype }}</small></td>
-                <!--<td class="wishlist__column wishlist__column--stock"><small>{{ product.platformType }}</small></td>-->
-                <td class="wishlist__column wishlist__column--stock text-danger"><small><strong>{{ product.org.name }}</strong></small></td>
-                <!--<td class="wishlist__column wishlist__column--stock"><small>{{ product.dataSteward }}</small></td>
-                <td class="wishlist__column wishlist__column--stock"><small>{{ product.pocName }}</small></td>-->
-                <!--<td class="wishlist__column wishlist__column--price">{{ product.price|currencyFormat }}</td>-->
-                <td class="wishlist__column wishlist__column--tocart">
-                    <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)" [ngClass]="{'btn-loading': addedToCartProducts.includes(product)}">Add To Cart</button>
-                </td>
-                <td class="wishlist__column wishlist__column--image">
-                    <button type="button" class="btn btn-light btn-sm btn-svg-icon" (click)="remove(product)" [ngClass]="{'btn-loading': removedProducts.includes(product)}">
-                        <app-icon name="cross-12" size="12"></app-icon>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <article class="favorites__item" *ngFor="let product of pagedItems">
+            <a class="favorites__media" [routerLink]="root.product(product)" [attr.aria-label]="product.name">
+                <img *ngIf="product.images?.length" [src]="product.images[0]" [alt]="product.name">
+            </a>
+            <div class="favorites__body">
+                <a class="favorites__name" [routerLink]="root.product(product)">{{ product.name }}</a>
+                <p class="favorites__desc" *ngIf="product.short_desc">{{ product.short_desc }}</p>
+                <ul class="favorites__meta">
+                    <li *ngIf="product.domain">{{ product.domain }}</li>
+                    <li *ngIf="product.datatype">{{ product.datatype }}</li>
+                    <li *ngIf="product.classification" class="favorites__class" [ngClass]="classificationClass(product.classification)">{{ product.classification }}</li>
+                    <li *ngIf="personName(product.data_steward)">Data Steward: <strong>{{ personName(product.data_steward) }}</strong></li>
+                    <li *ngIf="personName(product.poc_name || product.business_contact)">Contact: <strong>{{ personName(product.poc_name || product.business_contact) }}</strong></li>
+                    <li *ngIf="product.pi === 'Yes'" class="favorites__class is-high">Personal information</li>
+                </ul>
+            </div>
+            <div class="favorites__actions">
+                <a class="btn btn-secondary btn-sm" [routerLink]="root.product(product)">View product</a>
+                <button type="button" class="btn btn-primary btn-sm" (click)="requestAccess(product)">Request access</button>
+                <button type="button" class="btn btn-light btn-sm" (click)="remove(product)" [ngClass]="{'btn-loading': removedProducts.includes(product)}">Remove</button>
+            </div>
+        </article>
+        <div class="favorites-pagination" *ngIf="items.length > pageSize">
+            <app-pagination [current]="page" [siblings]="2" [total]="pageCount" (pageChange)="onPageChange($event)"></app-pagination>
+        </div>
     </div>
 </div>

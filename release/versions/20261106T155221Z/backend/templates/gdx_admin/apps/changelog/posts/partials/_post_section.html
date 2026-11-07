@@ -1,0 +1,14 @@
+{% load changelog_extras %}
+{% if content|has_meaningful_content %} 
+<section class="card mb-3">
+	<div class="card-body p-4">
+		<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+			<span class="badge bg-primary-subtle text-primary">
+				<i class="ti ti-category me-1"></i>{{ category_name }}
+			</span>
+			<span class="text-muted small">Section {{ letter }}</span>
+		</div>
+		<h3 class="h5">{{ subtitle }}</h3>
+		<div class="text-break">{{ content|sanitized_html }}</div>
+	</div>
+</section>{% endif %}

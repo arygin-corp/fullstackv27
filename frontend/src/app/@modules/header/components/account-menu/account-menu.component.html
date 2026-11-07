@@ -17,12 +17,22 @@
     <div class="account-menu__divider"></div>
     <ul class="account-menu__links">
         <li><a routerLink="/marketplace/user/profile" (click)="closeMenu.emit()">My Profile</a></li>
+        <li><a routerLink="/marketplace/user/dashboard" (click)="closeMenu.emit()">My Dashboard</a></li>
         <li><a routerLink="/marketplace/user/orders" (click)="closeMenu.emit()">Order History</a></li>
         <!--<li><a routerLink="/marketplace/user/addresses" (click)="closeMenu.emit()">Addresses</a></li>
         <li><a routerLink="/marketplace/user/password" (click)="closeMenu.emit()">Password</a></li>-->
     </ul>
     <div class="account-menu__divider"></div>
     <ul class="account-menu__links">
-        <li><a (click)="logout()">Logout</a></li>
+        <li>
+            <a class="account-menu__logout" (click)="logout()">
+                <i class="ri-lock-unlock-line" aria-hidden="true"></i>
+                Log Out
+            </a>
+        </li>
     </ul>
+    <p class="account-menu__signin" *ngIf="lastSignInLabel">
+        Hi, {{ profile?.givenName }}! Your last sign in was on
+        <strong>{{ lastSignInLabel }}.</strong>
+    </p>
 </div>

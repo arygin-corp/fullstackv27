@@ -49,6 +49,15 @@ logger = logging.getLogger(__name__)
 # Utility functions
 # ---------------------------------------------------------------------------
 
+def home_for(user):
+    """SuperAdmin opens the staff site. Every other account opens the marketplace."""
+    from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
+
+    if access_type_for(user) == ACCESS_SUPERADMIN:
+        return "/sa/command-center/"
+    return "/marketplace/"
+
+
 def _safe_next_url(request, candidate):
     """
     Return candidate when it is a safe local redirect.
@@ -71,12 +80,16 @@ def _safe_next_url(request, candidate):
 
 class HomeView(LoginRequiredMixin, View):
     def get(self, request):
-        context = {
-            "heading": "Dashboard",
-            "heading2": "Home",
-            "pageview": "Marketplace",
-        }
-        return render(request, "gdx_users/apps/pages/pages/home.html", context)
+        return redirect(home_for(request.user))
+
+
+@login_required
+def staff_home(request):
+    from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
+
+    if access_type_for(request.user) != ACCESS_SUPERADMIN:
+        return redirect("/marketplace/")
+    return redirect("command_center:dashboard")
 
 
 class ChangelogView(LoginRequiredMixin, View):
@@ -187,9 +200,12 @@ def not_authorized(request):
 
 
 class GDXLoginView(LoginView):
-    template_name = "gdx_admin/auth/login.html"
+    template_name = "gdx_users/apps/account/login.html"
     authentication_form = GDXAuthenticationForm
     redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return self.get_redirect_url() or home_for(self.request.user)
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -202,7 +218,7 @@ class GDXLoginView(LoginView):
 
 def register(request):
     if request.user.is_authenticated:
-        return redirect(settings.LOGIN_REDIRECT_URL)
+        return redirect(home_for(request.user))
 
     form = GDXRegistrationForm(request.POST or None)
 
@@ -213,7 +229,7 @@ def register(request):
             user,
             backend="django.contrib.auth.backends.ModelBackend",
         )
-        return redirect(settings.LOGIN_REDIRECT_URL)
+        return redirect(home_for(user))
 
     return render(
         request,

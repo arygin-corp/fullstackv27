@@ -20,9 +20,11 @@ def is_active_authenticated(user):
 
 
 def in_group(user, *names):
+    groups = getattr(user, "groups", None)
     return bool(
         is_active_authenticated(user)
-        and user.groups.filter(name__in=names).exists()
+        and groups is not None
+        and groups.filter(name__in=names).exists()
     )
 
 

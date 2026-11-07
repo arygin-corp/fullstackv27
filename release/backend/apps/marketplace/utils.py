@@ -87,7 +87,7 @@ def export_active_products_json():
         data.append(item)
 
     # Save to Static JSON Path
-    path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/products/products.json')
+    path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/products/products.json')
     atomic_json_dump(data, path, indent=4)
 
 
@@ -95,7 +95,7 @@ def export_active_ad_groups_json():
     """Generates ad_groups.json with active ad groups."""
     ad_values = list(ADGroup.objects.filter(is_active=True).values_list('value', flat=True).distinct())
 
-    path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/ad_groups/ad_groups.json')
+    path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/ad_groups/ad_groups.json')
     atomic_json_dump(ad_values, path, indent=2)
 
 
@@ -166,7 +166,7 @@ def export_active_domains_json():
         hierarchy_data.append(domain_node)
 
     # Save to the static path
-    path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/domains/domains.json')
+    path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/domains/domains.json')
     atomic_json_dump(hierarchy_data, path, indent=4)
 
 
@@ -212,7 +212,7 @@ def export_master_orders_json():
         order_data.append(req_entry)
 
     # File path setup
-    file_path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/orders/orders.json')
+    file_path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/orders/orders.json')
     atomic_json_dump(order_data, file_path, indent=4, default=str)
 
     return file_path

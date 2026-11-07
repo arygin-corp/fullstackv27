@@ -1,0 +1,14 @@
+<article class="card h-100 {% if check.level == 'success' %}border-success{% elif check.level == 'warning' %}border-warning{% elif check.level == 'danger' %}border-danger{% elif check.level == 'info' %}border-info{% endif %}">
+  <div class="card-body p-4">
+    <div class="d-flex align-items-start gap-3">
+      {% include "gdx_admin/apps/dar/health/partials/_health_icon.html" with check=check %}
+      <div class="flex-grow-1 min-w-0">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-2">
+          <h3 class="h5 mb-0 text-break">{{ check.name }}</h3>
+          {% include "gdx_admin/apps/dar/health/partials/_health_level_badge.html" with check=check %}
+        </div>
+        <p class="text-muted text-break mb-0">{{ check.message }}</p>
+      </div>
+    </div>
+  </div>
+</article>

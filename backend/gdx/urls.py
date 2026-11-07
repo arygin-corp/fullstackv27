@@ -13,10 +13,11 @@ from .forms import GDXPasswordResetForm, GDXSetPasswordForm
 
 urlpatterns = [
     path('marketplace/', include("apps.marketplace.urls")),
+    path("view/endpoint/requests/", include("apps.third_party_apis.modules.onets_order_history.urls")),
     # AUTH - GDX USERS
+    path('account/signup/', TemplateView.as_view(template_name="gdx_users/apps/account/signup.html"), name='signup'),
     path('account/', include('allauth.urls')),
-    path('account/login/', TemplateView.as_view(template_name="account/login.html"), name='login'),
-    path('account/signup/', TemplateView.as_view(template_name="account/signup.html"), name='signup'),
+    path('account/login/', TemplateView.as_view(template_name="gdx_users/apps/account/login.html"), name='account_login_page'),
     path('account/logout/', TemplateView.as_view(template_name="account/logout-success.html"), name='logout'),
     path('account/session/timeout', TemplateView.as_view(template_name="account/lock-screen.html"), name='lockscreen'),
     path('accounts/password/change/', login_required(MyPasswordChangeView.as_view()), name="account_change_password"),
@@ -25,7 +26,7 @@ urlpatterns = [
     path("login/", views.GDXLoginView.as_view(), name="login"),
     path("not-authorized/", views.not_authorized, name="not_authorized"),
     path("header/environment/", views.set_header_environment, name="set_header_environment"),
-    path("logout/", auth_views.LogoutView.as_view(template_name="gdx_admin/auth/logged_out.html"), name="logout"),
+    path("logout/", auth_views.LogoutView.as_view(template_name="gdx_users/apps/account/logout.html"), name="logout"),
     path("register/", views.register, name="register"),
     path("lock-screen/", views.lock_screen, name="lock_screen"),
     path("password-reset/", auth_views.PasswordResetView.as_view(template_name="gdx_admin/auth/password_reset_form.html", email_template_name="gdx_admin/auth/password_reset_email.html", subject_template_name="gdx_admin/auth/password_reset_subject.txt", form_class=GDXPasswordResetForm, success_url=reverse_lazy("gdx_admin:password_reset_done")), name="password_reset"),
@@ -37,7 +38,6 @@ urlpatterns = [
 
     # GLOBAL API URLS
     path('api/', include('apps.api.urls')),
-    path("api/tdsp/", include("apps.external_apis.urls")),
     path("api/changelog/", include("apps.changelog.urls")),
     path("api/new/product/intake/", include("apps.third_party_apis.modules.product_intake.urls", namespace="intake")),
     path("api/marketplace/", include("apps.marketplace.admin_urls")),
@@ -59,6 +59,7 @@ urlpatterns = [
     # path("api/notifications/", include("apps.notifications.urls")),
     path("api/product-checkout/", include("apps.product_checkout.urls")),
     path("api/integrations/", include(("apps.third_party_apis.api_urls", "third_party_api"), namespace="third_party_api")),
+    path("api/integrations/", include("apps.third_party_apis.modules.denodo.urls")),
     path("api/integrations/people-finder/", include(("apps.third_party_apis.modules.people_finder.urls", "people"), namespace="people_finder_directory")),
     path("api/integrations/tbdp-pods/", include("apps.third_party_apis.modules.tbdp_pods.urls", namespace="tbdp_pods")),
     path("api/marketplace/", include(( "apps.third_party_apis.modules.checkout.urls", "data_marketplace_checkout",), namespace="data_marketplace_checkout")),
@@ -68,6 +69,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # SUPER ADMINISTRATORS - GDX ADMIN
+    path("sa/", views.staff_home, name="staff_home"),
     path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
     path("sa/checkout/", include("apps.third_party_apis.modules.checkout.page_urls", namespace="checkout_pages")),
     path("sa/changelog/", include("apps.changelog.admin_urls")),
@@ -86,6 +88,10 @@ urlpatterns = [
     path("maintenance/", views.maintenance, name="maintenance"),
     path("sa/settings/", views.platform_settings, name="platform_settings"),
     path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
+    path("sa/command-center/", include(("apps.third_party_apis.modules.command_center.urls", "command_center"), namespace="command_center")),
+    path("sa/microsoft-teams/", include(("apps.third_party_apis.modules.microsoft_teams.urls", "microsoft_teams"), namespace="microsoft_teams")),
+    path("sa/microsoft-email/", include(("apps.third_party_apis.modules.microsoft_email.urls", "microsoft_email"), namespace="microsoft_email")),
+    path("sa/google-analytics/", include(("apps.third_party_apis.modules.google_analytics.urls", "google_analytics"), namespace="google_analytics")),
     path("sa/documentation/", views.documentation_hub, name="documentation_sites"),
     path("sa/documentation/<slug:site>/<path:asset>", views.documentation_asset, name="documentation_asset"),
     path("sa/modules/aws/", include(("apps.third_party_apis.modules.aws.urls", "third_party_api_aws"), namespace="third_party_api_aws"),),

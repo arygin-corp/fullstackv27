@@ -5,10 +5,11 @@ from rapidfuzz import fuzz
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from .models import ProductFeedback
+from django.conf import settings
 from django.core.cache import cache
 from difflib import SequenceMatcher
 
-file_path = os.path.join('static', 'json', 'marketplace', 'products', 'products.json')
+file_path = str(settings.MARKETPLACE_PRODUCT_MASTER)
 with open(file_path, encoding='utf-8') as f:
     file = json.load(f)
 
@@ -107,7 +108,7 @@ def get_verified_history(product_id):
     Parses @master-order.json to find if this specific product
     has a history of 'Closed Complete' with approval confirmation.
     """
-    with open('static/json/marketplace/orders/@master-order.json', 'r') as f:
+    with open(settings.MARKETPLACE_ORDER_MASTER, 'r') as f:
         master_data = json.load(f)
 
     # Filtering Criteria:

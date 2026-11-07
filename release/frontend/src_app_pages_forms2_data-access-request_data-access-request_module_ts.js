@@ -14811,7 +14811,8 @@ class DataAccessRequestComponent {
 
     this.suggestions = [];
     this.isSearching = false;
-    this.lastTriggerState = 'none'; // ============================================================================
+    this.lastTriggerState = 'none';
+    this.lastQueryKey = ''; // ============================================================================
     // EXISTING PROPERTIES (PRESERVED)
     // ============================================================================
 
@@ -14822,6 +14823,7 @@ class DataAccessRequestComponent {
     this.componentIsDestroyed = false;
     this.dbnames = [];
     this.elements = [];
+    this.denodoRows = [];
     this.codes = [{
       id: '735de5d80fef39404758e388b1050eb0',
       name: 'U010 - Financial Developer IT Group'
@@ -15068,10 +15070,6 @@ class DataAccessRequestComponent {
 
 
   ngOnInit() {
-    const url = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.denodoTables}`;
-    this.http.get(url).subscribe(data => {
-      this.dbnames = data.sort((a, b) => a.dbname.localeCompare(b.dbname));
-    });
     moment_business_days__WEBPACK_IMPORTED_MODULE_2___default().updateLocale('en', {
       holidays: ['01-02-2023', '01-16-2023', '05-29-2023', '07-04-2023', '09-04-2023', '11-23-2023', '11-24-2023', '12-22-2023', '12-25-2023', '12-26-2023', '12-27-2023', '12-28-2023', '12-29-2023'],
       holidayFormat: 'MM-DD-YYYY'
@@ -15213,6 +15211,8 @@ class DataAccessRequestComponent {
       v_dar_mf_ims_ims_id: [''],
       v_dar_mnfr_project_area_group: ['']
     });
+    this.form.get('v_dar_ad_group').valueChanges.subscribe(() => this.loadDenodoTables());
+    this.loadDenodoTables();
     this.router.events.subscribe(evt => {
       if (!(evt instanceof _angular_router__WEBPACK_IMPORTED_MODULE_11__.NavigationEnd)) {
         return;
@@ -15225,21 +15225,17 @@ class DataAccessRequestComponent {
     // AI DISCOVERY TRIGGER - UPDATED
     // ============================================================================
 
-    this.form.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.debounceTime)(2000), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.map)(v => {
-      var _a, _b, _c, _d, _e, _f, _g;
-
-      return {
-        platform: ((_a = v.v_dar_platform) === null || _a === void 0 ? void 0 : _a.trim()) || '',
-        domain: ((_b = v.v_dar_dataDomainSelect) === null || _b === void 0 ? void 0 : _b.trim()) || '',
-        dbSchema: ((_c = v.v_dar_post_database_schema) === null || _c === void 0 ? void 0 : _c.trim()) || '',
-        tables: ((_d = v.v_dar_post_table_names) === null || _d === void 0 ? void 0 : _d.map(t => t.trim())) || null,
-        description: ((_e = v.v_dar_DataReqDescription) === null || _e === void 0 ? void 0 : _e.trim()) || '',
-        justification: ((_f = v.v_dar_businessJustification) === null || _f === void 0 ? void 0 : _f.trim()) || '',
-        environment: ((_g = v.v_dar_environment) === null || _g === void 0 ? void 0 : _g.trim()) || ''
-      };
-    }), // Require base fields and environment = 'Prod' or 'All'
+    this.form.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.debounceTime)(2000), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.map)(v => ({
+      platform: this.aiText(v.v_dar_platform),
+      domain: this.aiText(v.v_dar_dataDomainSelect),
+      dbSchema: this.aiText(v.v_dar_post_database_schema),
+      tables: this.aiList(v.v_dar_post_table_names).join(','),
+      description: this.aiText(v.v_dar_DataReqDescription),
+      justification: this.aiText(v.v_dar_businessJustification),
+      environment: this.aiText(v.v_dar_environment)
+    })), // Require base fields and environment = 'Prod' or 'All'
     (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.filter)(x => !!(x.platform && x.domain && x.dbSchema && x.tables) && (x.environment === 'Prod' || x.environment === 'All')), // Only fire when something relevant actually changed
-    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.distinctUntilChanged)((prev, curr) => prev.platform === curr.platform && prev.domain === curr.domain && prev.dbSchema === curr.dbSchema && prev.tables === curr.tables && prev.description === curr.description && prev.justification === curr.justification && prev.environment === curr.environment), // ✅ THIS LINE FIXES THE ERROR
+    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.distinctUntilChanged)((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr)), // ✅ THIS LINE FIXES THE ERROR
     (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.takeUntil)(this.destroy$)).subscribe(() => {
       this.openAiDiscovery();
     });
@@ -15292,17 +15288,26 @@ class DataAccessRequestComponent {
     const hasNarrativeFields = description.length >= 10 && justification.length >= 10;
     let currentTier = 'none';
     if (hasBasicFields && hasNarrativeFields) currentTier = 'verified';else if (hasBasicFields) currentTier = 'standard';
+    const queryKey = JSON.stringify({
+      platform,
+      dbValue,
+      tables,
+      description,
+      justification,
+      currentTier
+    });
     console.log("Tier check:", {
       currentTier,
       lastState: this.lastTriggerState,
       isSearching: this.isSearching
     }); // ---- Guards ----
 
-    if (currentTier === 'none' || currentTier === this.lastTriggerState || this.isSearching) {
+    if (currentTier === 'none' || queryKey === this.lastQueryKey || this.isSearching) {
       console.log("GUARD BLOCKED - returning early");
       return;
     }
 
+    this.lastQueryKey = queryKey;
     this.isSearching = true;
     console.log("Starting API call...");
 
@@ -15315,7 +15320,8 @@ class DataAccessRequestComponent {
         databaseSchema: dbValue,
         tableNames: tables,
         description,
-        justification
+        justification,
+        tier
       });
     }; // CRITICAL FIX: Ensure we're in Angular zone
 
@@ -15325,7 +15331,7 @@ class DataAccessRequestComponent {
       callApi('standard').subscribe({
         next: response => {
           this.ngZone.run(() => {
-            const results = Array.isArray(response) ? response : (response === null || response === void 0 ? void 0 : response.product) || [];
+            const results = this.suggestionRows(response);
 
             if (!results || results.length === 0) {
               this.isSearching = false;
@@ -15346,7 +15352,7 @@ class DataAccessRequestComponent {
               callApi('verified').subscribe({
                 next: verifiedResponse => {
                   this.ngZone.run(() => {
-                    const verifiedResults = Array.isArray(verifiedResponse) ? verifiedResponse : (verifiedResponse === null || verifiedResponse === void 0 ? void 0 : verifiedResponse.product) || [];
+                    const verifiedResults = this.suggestionRows(verifiedResponse);
 
                     if (verifiedResults && verifiedResults.length > 0) {
                       // ✅ overwrite with enriched results
@@ -15378,48 +15384,110 @@ class DataAccessRequestComponent {
     });
   }
 
-  onDbChange(selectedDb) {
-    if (!(selectedDb === null || selectedDb === void 0 ? void 0 : selectedDb.dbname)) {
+  aiText(value) {
+    if (Array.isArray(value)) {
+      return this.aiList(value).join(',');
+    }
+
+    if (value && typeof value === 'object') {
+      return String(value.dbname || value.elementname || value.name || value.label || '').trim();
+    }
+
+    return String(value !== null && value !== void 0 ? value : '').trim();
+  }
+
+  aiList(value) {
+    const rows = Array.isArray(value) ? value : value ? [value] : [];
+    return rows.map(item => this.aiText(item)).filter(Boolean);
+  }
+
+  suggestionRows(response) {
+    if (Array.isArray(response)) {
+      return response;
+    }
+
+    const rows = (response === null || response === void 0 ? void 0 : response.suggestions) || (response === null || response === void 0 ? void 0 : response.product) || [];
+    return Array.isArray(rows) ? rows : [];
+  }
+
+  denodoRole() {
+    var _a, _b;
+
+    return String(((_b = (_a = this.form) === null || _a === void 0 ? void 0 : _a.get('v_dar_ad_group')) === null || _b === void 0 ? void 0 : _b.value) || '').trim();
+  }
+
+  loadDenodoTables() {
+    const role = this.denodoRole();
+
+    if (!role) {
+      this.denodoRows = [];
+      this.dbnames = [];
       this.elements = [];
       return;
     }
 
-    const dbname = selectedDb.dbname;
-    const url = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.denodoTables}?database=${encodeURIComponent(dbname)}`;
+    const url = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.denodoTables}?userrolename=${encodeURIComponent(role)}`;
     this.http.get(url).subscribe({
       next: data => {
-        var _a;
+        const rows = Array.isArray(data) ? data : (data === null || data === void 0 ? void 0 : data.value) || (data === null || data === void 0 ? void 0 : data.elements) || [];
+        this.denodoRows = rows;
+        const names = new Map();
 
-        const uniqueTables = new Map();
+        for (const row of rows) {
+          const name = String((row === null || row === void 0 ? void 0 : row.dbname) || '').trim();
 
-        for (const item of data !== null && data !== void 0 ? data : []) {
-          const tableName = (_a = item.elementname) === null || _a === void 0 ? void 0 : _a.trim();
-
-          if (!tableName) {
-            continue;
-          } // Normalize the key so differences in casing or spaces
-          // do not create duplicate table options.
-
-
-          const normalizedName = tableName.toLowerCase();
-
-          if (!uniqueTables.has(normalizedName)) {
-            uniqueTables.set(normalizedName, Object.assign(Object.assign({}, item), {
-              elementname: tableName
-            }));
+          if (name && !names.has(name)) {
+            names.set(name, {
+              dbname: name,
+              label: name
+            });
           }
         }
 
-        this.elements = Array.from(uniqueTables.values()).sort((a, b) => a.elementname.localeCompare(b.elementname, undefined, {
-          sensitivity: 'base'
-        }));
-        console.log('Unique tables loaded:', this.elements);
+        this.dbnames = Array.from(names.values()).sort((a, b) => a.dbname.localeCompare(b.dbname));
       },
-      error: error => {
-        console.error('Error loading elements:', error);
-        this.elements = [];
+      error: () => {
+        this.denodoRows = [];
+        this.dbnames = [];
       }
     });
+  }
+
+  onDbChange(selectedDb) {
+    var _a;
+
+    const dbname = (typeof selectedDb === 'string' ? selectedDb : (selectedDb === null || selectedDb === void 0 ? void 0 : selectedDb.dbname) || '').trim();
+
+    if (!dbname) {
+      this.elements = [];
+      return;
+    }
+
+    const uniqueTables = new Map();
+
+    for (const item of this.denodoRows) {
+      if (String((item === null || item === void 0 ? void 0 : item.dbname) || '').trim() !== dbname) {
+        continue;
+      }
+
+      const tableName = (_a = item.elementname) === null || _a === void 0 ? void 0 : _a.trim();
+
+      if (!tableName) {
+        continue;
+      }
+
+      const normalizedName = tableName.toLowerCase();
+
+      if (!uniqueTables.has(normalizedName)) {
+        uniqueTables.set(normalizedName, Object.assign(Object.assign({}, item), {
+          elementname: tableName
+        }));
+      }
+    }
+
+    this.elements = Array.from(uniqueTables.values()).sort((a, b) => a.elementname.localeCompare(b.elementname, undefined, {
+      sensitivity: 'base'
+    }));
   }
 
   onTableSelectClose() {
@@ -15901,113 +15969,127 @@ class DataAccessRequestComponent {
     const headers = {
       'Content-Type': 'application/json'
     };
-    var HTTP_URL = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.addToCart}`;
-    this.http.post(HTTP_URL, data).subscribe(response => {
-      if (response) {
-        var HTTP2_URL = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.submitCart}`;
-        this.http.post(HTTP2_URL, null).subscribe(res => {
-          this.repos = res;
-          this.isShow = true;
-          document.body.scrollTop = 0; // For Safari
 
-          document.documentElement.scrollTop = 0;
+    const submitOrder = () => this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.submitCart, data).subscribe(res => {
+      this.repos = res;
+      this.isShow = true;
+      document.body.scrollTop = 0; // For Safari
 
-          if (this.isShow === true) {
-            const payload = {
-              requestNum: this.repos.result['request_number'],
-              requestID: this.repos.result['request_id'],
-              ritmID: this.repos.result['ritm_id'],
-              sysID: this.repos.result['sys_id'],
-              objectId: this.selectedUser || this.profile.id,
-              productId: 999999999,
-              productIdentifier: 999999999,
-              ritm: this.repos.result['ritm_number'],
-              approvalStage: 'Requested',
-              ritmState: 'Open',
-              stage: 'Waiting for Approval',
-              formData: Object.assign({
-                requesting_id: this.form.value.requesting_id,
-                v_dar_objectid_createdby: this.form.value.v_dar_objectid_createdby,
-                v_dar_objectid_reqfor: this.form.value.v_dar_objectid_reqfor,
-                v_dar_workdayID_created_by: this.form.value.v_dar_workdayID_created_by,
-                v_dar_workdayID: this.form.value.v_dar_workdayID,
-                companyName: this.form.value.companyName,
-                v_dar_organization: this.form.value.v_dar_organization,
-                v_dar_platform: this.form.value.v_dar_platform,
-                v_dar_dataDomainSelect: this.form.value.v_dar_dataDomainSelect,
-                v_dar_userType: this.form.value.v_dar_userType,
-                v_dar_accessType: this.form.value.v_dar_accessType,
-                v_dar_environment: this.form.value.v_dar_environment,
-                v_dar_accessReqClassification: this.form.value.v_dar_accessReqClassification,
-                v_dar_accessStage: this.form.value.v_dar_accessStage,
-                v_dar_pi: this.form.value.v_dar_pi,
-                v_dar_spi: this.form.value.v_dar_spi,
-                edm_PI_personal_details: this.form.value.edm_PI_personal_details,
-                v_emd_specify_PII_needs: this.form.value.v_emd_specify_PII_needs,
-                v_edm_type_of_work: this.form.value.v_edm_type_of_work,
-                v_edm_3rd_party_vendor: this.form.value.v_edm_3rd_party_vendor,
-                v_dat_api_name: this.form.value.v_dat_api_name,
-                v_dar_select_a_data_warehouse_mart: this.form.value.v_dar_select_a_data_warehouse_mart,
-                v_dar_bi_data_access_type: this.form.value.v_dar_bi_data_access_type,
-                v_dar_gateway_if_other: this.form.value.v_dar_gateway_if_other,
-                v_dar_gateway_database_schema: this.form.value.v_dar_gateway_database_schema,
-                v_dar_post_database_schema: this.form.value.v_dar_post_database_schema,
-                v_dar_post_table_names: this.form.value.v_dar_post_table_names,
-                v_dar_tbdp_is_this_request_fort_irm_pricing: this.form.value.v_dar_tbdp_is_this_request_fort_irm_pricing,
-                v_dar_select_an_oracle_access_type: this.form.value.v_dar_select_an_oracle_access_type,
-                v_dar_oracle_other: this.form.value.v_dar_oracle_other,
-                v_dar_OtherType: this.form.value.v_dar_OtherType,
-                v_dar_mfr_other: this.form.value.v_dar_mfr_other,
-                v_dar_mainframe_access_type: this.form.value.v_dar_mainframe_access_type,
-                v_dar_mainframe_change_tso_id: this.form.value.v_dar_mainframe_change_tso_id,
-                v_dare_mainframe_change_authorizers_vertical_horizontal: this.form.value.v_dare_mainframe_change_authorizers_vertical_horizontal,
-                v_dar_mainframe_changeman_application: this.form.value.v_dar_mainframe_changeman_application,
-                v_dar_mf_tso_id_removed: this.form.value.v_dar_mf_tso_id_removed,
-                v_dar_mf_transaction: this.form.value.v_dar_mf_transaction,
-                b_dar_mf_db2_plan_grant: this.form.value.b_dar_mf_db2_plan_grant,
-                b_dar_mf_db2_plan_revoke: this.form.value.b_dar_mf_db2_plan_revoke,
-                v_dar_mf_db2_plan_tso_id_or_job_name: this.form.value.v_dar_mf_db2_plan_tso_id_or_job_name,
-                v_dar_mf_db2_plan_plan_name: this.form.value.v_dar_mf_db2_plan_plan_name,
-                b_dar_mf_db2_plan_bind: this.form.value.b_dar_mf_db2_plan_bind,
-                b_dar_mf_db2_plan_execute: this.form.value.b_dar_mf_db2_plan_execute,
-                v_dar_mf_db2_table_name_s: this.form.value.v_dar_mf_db2_table_name_s,
-                b_dar_mf_db2_select: this.form.value.b_dar_mf_db2_select,
-                b_dar_mf_db2_update: this.form.value.b_dar_mf_db2_update,
-                b_dar_mf_db2_insert: this.form.value.b_dar_mf_db2_insert,
-                b_dar_mf_db2_delete: this.form.value.b_dar_mf_db2_delete,
-                b_dar_mf_db2_grant: this.form.value.b_dar_mf_db2_grant,
-                b_dar_mf_db2_revoke: this.form.value.b_dar_mf_db2_revoke,
-                v_dar_mf_db2_tso_or_job_name: this.form.value.v_dar_mf_db2_tso_or_job_name,
-                v_dar_mnfr_ims_option_type: this.form.value.v_dar_mnfr_ims_option_type,
-                v_dar_mnfr_ims_options_select: this.form.value.v_dar_mnfr_ims_options_select,
-                v_dar_mnfr_transaction_id: this.form.value.v_dar_mnfr_transaction_id,
-                v_dar_mnfr_ims_transaction_group: this.form.value.v_dar_mnfr_ims_transaction_group,
-                v_dar_mfrn_ims_transaction_group_description: this.form.value.v_dar_mfrn_ims_transaction_group_description,
-                b_dar_ims_add: this.form.value.b_dar_ims_add,
-                v_dar_mf_ims_tmna_region_area_code_for_adds: this.form.value.v_dar_mf_ims_tmna_region_area_code_for_adds,
-                v_dar_mf_ims_transaction_group: this.form.value.v_dar_mf_ims_transaction_group,
-                b_dar_ims_delete: this.form.value.b_dar_ims_delete,
-                v_dar_mf_ims_ims_id_for_deletes: this.form.value.v_dar_mf_ims_ims_id_for_deletes,
-                v_dat_data_access_type: this.form.value.v_dat_data_access_type,
-                v_dar_DataReqDescription: this.form.value.v_dar_DataReqDescription,
-                v_dar_businessJustification: this.form.value.v_dar_businessJustification,
-                v_custom_control_group: this.form.value.v_custom_control_group,
-                v_custom_routing_rule_identifier: this.form.value.v_custom_routing_rule_identifier,
-                v_custom_fulfillment_group_1: this.form.value.v_custom_fulfillment_group_1,
-                chk_dar_terms_message: this.form.value.chk_dar_terms_message,
-                v_dar_dm_version: this.form.value.v_dar_dm_version
-              }, this.extraFieldValues())
-            };
-            console.log(payload.sysID);
-            console.log(payload.ritmID);
-            this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.requestSave, payload).subscribe(response => {
-              this.save = response;
-              this.upload = true;
-            });
-          }
+      document.documentElement.scrollTop = 0;
+
+      if (this.isShow === true) {
+        const payload = {
+          requestNum: this.repos.result['request_number'],
+          requestID: this.repos.result['request_id'],
+          ritmID: this.repos.result['ritm_id'],
+          sysID: this.repos.result['sys_id'],
+          objectId: this.selectedUser || this.profile.id,
+          productId: 999999999,
+          productIdentifier: 999999999,
+          ritm: this.repos.result['ritm_number'],
+          approvalStage: 'Requested',
+          ritmState: 'Open',
+          stage: 'Waiting for Approval',
+          formData: Object.assign({
+            requesting_id: this.form.value.requesting_id,
+            v_dar_objectid_createdby: this.form.value.v_dar_objectid_createdby,
+            v_dar_objectid_reqfor: this.form.value.v_dar_objectid_reqfor,
+            v_dar_workdayID_created_by: this.form.value.v_dar_workdayID_created_by,
+            v_dar_workdayID: this.form.value.v_dar_workdayID,
+            companyName: this.form.value.companyName,
+            v_dar_organization: this.form.value.v_dar_organization,
+            v_dar_platform: this.form.value.v_dar_platform,
+            v_dar_dataDomainSelect: this.form.value.v_dar_dataDomainSelect,
+            v_dar_userType: this.form.value.v_dar_userType,
+            v_dar_accessType: this.form.value.v_dar_accessType,
+            v_dar_environment: this.form.value.v_dar_environment,
+            v_dar_accessReqClassification: this.form.value.v_dar_accessReqClassification,
+            v_dar_accessStage: this.form.value.v_dar_accessStage,
+            v_dar_pi: this.form.value.v_dar_pi,
+            v_dar_spi: this.form.value.v_dar_spi,
+            edm_PI_personal_details: this.form.value.edm_PI_personal_details,
+            v_emd_specify_PII_needs: this.form.value.v_emd_specify_PII_needs,
+            v_edm_type_of_work: this.form.value.v_edm_type_of_work,
+            v_edm_3rd_party_vendor: this.form.value.v_edm_3rd_party_vendor,
+            v_dat_api_name: this.form.value.v_dat_api_name,
+            v_dar_select_a_data_warehouse_mart: this.form.value.v_dar_select_a_data_warehouse_mart,
+            v_dar_bi_data_access_type: this.form.value.v_dar_bi_data_access_type,
+            v_dar_gateway_if_other: this.form.value.v_dar_gateway_if_other,
+            v_dar_gateway_database_schema: this.form.value.v_dar_gateway_database_schema,
+            v_dar_post_database_schema: this.form.value.v_dar_post_database_schema,
+            v_dar_post_table_names: this.form.value.v_dar_post_table_names,
+            v_dar_tbdp_is_this_request_fort_irm_pricing: this.form.value.v_dar_tbdp_is_this_request_fort_irm_pricing,
+            v_dar_select_an_oracle_access_type: this.form.value.v_dar_select_an_oracle_access_type,
+            v_dar_oracle_other: this.form.value.v_dar_oracle_other,
+            v_dar_OtherType: this.form.value.v_dar_OtherType,
+            v_dar_mfr_other: this.form.value.v_dar_mfr_other,
+            v_dar_mainframe_access_type: this.form.value.v_dar_mainframe_access_type,
+            v_dar_mainframe_change_tso_id: this.form.value.v_dar_mainframe_change_tso_id,
+            v_dare_mainframe_change_authorizers_vertical_horizontal: this.form.value.v_dare_mainframe_change_authorizers_vertical_horizontal,
+            v_dar_mainframe_changeman_application: this.form.value.v_dar_mainframe_changeman_application,
+            v_dar_mf_tso_id_removed: this.form.value.v_dar_mf_tso_id_removed,
+            v_dar_mf_transaction: this.form.value.v_dar_mf_transaction,
+            b_dar_mf_db2_plan_grant: this.form.value.b_dar_mf_db2_plan_grant,
+            b_dar_mf_db2_plan_revoke: this.form.value.b_dar_mf_db2_plan_revoke,
+            v_dar_mf_db2_plan_tso_id_or_job_name: this.form.value.v_dar_mf_db2_plan_tso_id_or_job_name,
+            v_dar_mf_db2_plan_plan_name: this.form.value.v_dar_mf_db2_plan_plan_name,
+            b_dar_mf_db2_plan_bind: this.form.value.b_dar_mf_db2_plan_bind,
+            b_dar_mf_db2_plan_execute: this.form.value.b_dar_mf_db2_plan_execute,
+            v_dar_mf_db2_table_name_s: this.form.value.v_dar_mf_db2_table_name_s,
+            b_dar_mf_db2_select: this.form.value.b_dar_mf_db2_select,
+            b_dar_mf_db2_update: this.form.value.b_dar_mf_db2_update,
+            b_dar_mf_db2_insert: this.form.value.b_dar_mf_db2_insert,
+            b_dar_mf_db2_delete: this.form.value.b_dar_mf_db2_delete,
+            b_dar_mf_db2_grant: this.form.value.b_dar_mf_db2_grant,
+            b_dar_mf_db2_revoke: this.form.value.b_dar_mf_db2_revoke,
+            v_dar_mf_db2_tso_or_job_name: this.form.value.v_dar_mf_db2_tso_or_job_name,
+            v_dar_mnfr_ims_option_type: this.form.value.v_dar_mnfr_ims_option_type,
+            v_dar_mnfr_ims_options_select: this.form.value.v_dar_mnfr_ims_options_select,
+            v_dar_mnfr_transaction_id: this.form.value.v_dar_mnfr_transaction_id,
+            v_dar_mnfr_ims_transaction_group: this.form.value.v_dar_mnfr_ims_transaction_group,
+            v_dar_mfrn_ims_transaction_group_description: this.form.value.v_dar_mfrn_ims_transaction_group_description,
+            b_dar_ims_add: this.form.value.b_dar_ims_add,
+            v_dar_mf_ims_tmna_region_area_code_for_adds: this.form.value.v_dar_mf_ims_tmna_region_area_code_for_adds,
+            v_dar_mf_ims_transaction_group: this.form.value.v_dar_mf_ims_transaction_group,
+            b_dar_ims_delete: this.form.value.b_dar_ims_delete,
+            v_dar_mf_ims_ims_id_for_deletes: this.form.value.v_dar_mf_ims_ims_id_for_deletes,
+            v_dat_data_access_type: this.form.value.v_dat_data_access_type,
+            v_dar_DataReqDescription: this.form.value.v_dar_DataReqDescription,
+            v_dar_businessJustification: this.form.value.v_dar_businessJustification,
+            v_custom_control_group: this.form.value.v_custom_control_group,
+            v_custom_routing_rule_identifier: this.form.value.v_custom_routing_rule_identifier,
+            v_custom_fulfillment_group_1: this.form.value.v_custom_fulfillment_group_1,
+            chk_dar_terms_message: this.form.value.chk_dar_terms_message,
+            v_dar_dm_version: this.form.value.v_dar_dm_version
+          }, this.extraFieldValues())
+        };
+        console.log(payload.sysID);
+        console.log(payload.ritmID);
+        this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.requestSave, payload).subscribe(response => {
+          this.save = response;
+          this.upload = true;
+          this.isLoading = false;
+          this.isProcessing = false;
+          this.button = 'Submit';
         });
       }
+    }, () => {
+      this.isLoading = false;
+      this.isProcessing = false;
+      this.button = 'Submit';
     });
+
+    if (this.fileToUpload) {
+      const upload = new FormData();
+      upload.append('file', this.fileToUpload, this.fileToUpload.name);
+      this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.gdx.fileUpload, upload).subscribe(uploaded => {
+        data.variables.attachment = (uploaded === null || uploaded === void 0 ? void 0 : uploaded.result) || null;
+        submitOrder();
+      }, () => submitOrder());
+    } else {
+      submitOrder();
+    }
+
     this.isLoading = true;
     this.button = 'Processing Order..';
     this.isProcessing = true;
@@ -16491,22 +16573,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AiSuggestionService": () => (/* binding */ AiSuggestionService)
 /* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../environments/environment */ 92340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+
 
 
 
 class AiSuggestionService {
     constructor(http) {
         this.http = http;
-        this.apiUrl = 'http://localhost:8000/ai/suggest-products-by-role/';
+        this.apiUrl = `${_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl}/ai/suggest-products-by-role/`;
     }
     getSuggestions(params) {
-        let httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpParams();
+        let httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpParams();
         // Map the internal form values to your Django API expected query parameters
         Object.entries(params).forEach(([key, value]) => {
-            if (value) {
-                httpParams = httpParams.set(key, String(value));
+            const text = Array.isArray(value)
+                ? value.map(item => String(item !== null && item !== void 0 ? item : '').trim()).filter(Boolean).join(',')
+                : String(value !== null && value !== void 0 ? value : '').trim();
+            if (text) {
+                httpParams = httpParams.set(key, text);
             }
         });
         // Default pagination parameters
@@ -16514,8 +16601,8 @@ class AiSuggestionService {
         return this.http.get(this.apiUrl, { params: httpParams });
     }
 }
-AiSuggestionService.ɵfac = function AiSuggestionService_Factory(t) { return new (t || AiSuggestionService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient)); };
-AiSuggestionService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: AiSuggestionService, factory: AiSuggestionService.ɵfac, providedIn: 'root' });
+AiSuggestionService.ɵfac = function AiSuggestionService_Factory(t) { return new (t || AiSuggestionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
+AiSuggestionService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: AiSuggestionService, factory: AiSuggestionService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

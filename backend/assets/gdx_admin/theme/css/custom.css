@@ -416,6 +416,104 @@
   }
 }
 
+/* Tablets and desktops: keep content inside the viewport and let sections reflow. */
+@media (min-width: 768px) {
+  .page-wrapper,
+  .page-wrapper .content,
+  .module-page,
+  .integration-catalog {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .page-wrapper .content img,
+  .page-wrapper .content video,
+  .page-wrapper .content canvas,
+  .page-wrapper .content iframe,
+  .page-wrapper .content pre {
+    max-width: 100%;
+  }
+  .page-wrapper .content h1,
+  .page-wrapper .content h2,
+  .page-wrapper .content h3,
+  .page-wrapper .content p {
+    overflow-wrap: break-word;
+  }
+  .page-wrapper .content .table-responsive,
+  .settings-table,
+  .access-matrix-wrap {
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .page-wrapper .module-hero,
+  .integration-catalog .module-hero {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: 0;
+    padding: 28px 22px;
+  }
+  .page-wrapper .module-hero__content,
+  .integration-catalog .module-hero__content {
+    max-width: 100%;
+  }
+  .page-wrapper .module-hero__metric,
+  .integration-catalog .module-hero__metric {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+  .page-wrapper .module-hero h1,
+  .integration-catalog .module-hero h1 {
+    font-size: 1.7rem;
+  }
+  .page-wrapper .module-hero__metric strong,
+  .integration-catalog .module-hero__metric strong {
+    font-size: 2.1rem;
+  }
+  .module-dashboard-heading-row,
+  .integration-toolbar {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .integration-search {
+    flex: 1 1 100%;
+  }
+  .module-metric-grid,
+  .dashboard-submetric-grid,
+  .dashboard-readiness-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .page-wrapper .content {
+    padding: 18px;
+  }
+  .page-wrapper .module-hero,
+  .integration-catalog .module-hero {
+    gap: 16px;
+    min-height: 0;
+    padding: 28px;
+  }
+  .page-wrapper .module-hero__metric,
+  .integration-catalog .module-hero__metric {
+    min-width: 140px;
+  }
+  .integration-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper .content .row > [class*="col-"] {
+    min-width: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     padding: 16px 12px;

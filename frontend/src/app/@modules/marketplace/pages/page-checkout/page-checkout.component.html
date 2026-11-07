@@ -24,7 +24,7 @@
             </div>
 
             <!-- Left Column: Billing Details (Auto-filled from AppService) -->
-            <div class="col-12 col-xl-4 col-lg-6 ">
+            <div class="col-12 col-xl-4 col-lg-6" *ngIf="false">
                 <div class="card mb-lg-0">
                     <div class="card-body">
                         <h3 class="card-title">Employee Details</h3>
@@ -75,28 +75,34 @@
             </div>
 
             <!-- Right Column: Order Summary -->
-            <div class="col-12 col-xl-8 col-lg-6 mt-4 mt-lg-0">
+            <div class="col-12 mt-4 mt-lg-0">
                 <div class="card mb-0">
                     <div class="card-body">
                         <h3 class="card-title">Your Order Summary</h3>
 
                         <ng-container *ngIf="cart.state$ | async as state">
                             
-                            <!-- PRODUCTS TABLE: Hidden if 0 items -->
-                            <table class="checkout__totals" *ngIf="state.items.length > 0" [class.dars]="state.items.length > 0 && state.darRequests.length > 0">
-                                <thead class="checkout__totals-header">
-                                    <tr>
-                                        <th>Data Products</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="checkout__totals-products">
-                                    <tr *ngFor="let item of state.items">
-                                        <td>{{ item.product.name }}</td>
-                                        <td>{{ 0 | currencyFormat }}</td> 
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="checkout-products" *ngIf="state.items.length > 0" [class.has-dars]="state.darRequests.length > 0">
+                                <div class="checkout-products__header">
+                                    <span>Data Products</span>
+                                    <span>Total</span>
+                                </div>
+                                <article class="checkout-line" *ngFor="let item of state.items">
+                                    <div class="checkout-line__media">
+                                        <img [src]="productImage(item.product)" [alt]="item.product.name">
+                                    </div>
+                                    <div class="checkout-line__body">
+                                        <h4>{{ item.product.name }}</h4>
+                                        <ul class="checkout-line__meta">
+                                            <li *ngIf="productDatatype(item.product) !== '—'">Datatype: <strong>{{ productDatatype(item.product) }}</strong></li>
+                                            <li *ngIf="productClassification(item.product) !== '—'">Classification: <strong>{{ productClassification(item.product) }}</strong></li>
+                                            <li *ngIf="productSteward(item.product) !== '—'">Data Steward: <strong>{{ productSteward(item.product) }}</strong></li>
+                                            <li *ngIf="productContact(item.product) !== '—'">Contact: <strong>{{ productContact(item.product) }}</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="checkout-line__total">{{ 0 | currencyFormat }}</div>
+                                </article>
+                            </div>
 
                             <!-- DAR TABLE: Shows Data Access Requests -->
                             <table class="checkout__totals" *ngIf="state.darRequests.length > 0">

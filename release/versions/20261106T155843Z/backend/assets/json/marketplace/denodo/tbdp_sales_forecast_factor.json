@@ -1,0 +1,161 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "gas_price_change",
+      "column_name": "avg_gas_price"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "gas_price_change",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "gas_price_change",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "gas_price_change",
+      "column_name": "gas_price_change_percent"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "gas_price_change",
+      "column_name": "industry_number_selling_days"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "calendarmonth_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "createtimestamp_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "effectivedate_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "eianationalgasprice_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "eianationalpricedate_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_eia_national_gas_price",
+      "column_name": "sourcefilenm_0"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "avg_eia_national_gas_price"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-sales-forecast-factor",
+      "dbname": "ircm_ing",
+      "elementname": "vw_vehicle_gas_prc",
+      "column_name": "version_nm"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-sales-forecast-factor%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

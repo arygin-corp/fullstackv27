@@ -1,0 +1,15 @@
+{{- if and .Values.enabled .Values.keda.enabled }}
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: {name: notification-app-worker}
+spec:
+  scaleTargetRef: {name: notification-app-worker}
+  minReplicaCount: 1
+  maxReplicaCount: 20
+  triggers:
+    - type: redis
+      metadata:
+        address: {{ .Values.keda.redisAddress | quote }}
+        listName: {{ .Values.keda.listName | quote }}
+        listLength: "20"
+{{- end }}

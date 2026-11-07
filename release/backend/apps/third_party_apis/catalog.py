@@ -122,7 +122,11 @@ def _serialize_registered_module(module, row=None):
         "manage_url": _reverse_optional(
             "third_party_api:integration_manage_api",
             module_key=module.key,
-        ) if row else None,
+        ),
+        "icon_upload_url": _reverse_optional(
+            "third_party_api:integration_icon_api",
+            module_key=module.key,
+        ),
         "test_run_url": _reverse_optional(
             "third_party_api:integration_test_run",
             module_key=module.key,

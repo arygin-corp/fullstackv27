@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">
+        <div>
+            <h3 class="h5 mb-1">
+                <i class="ti ti-list-details me-2 text-primary"></i>
+                Rule-group directory
+            </h3>
+            <p class="text-muted mb-0">Conditional form behavior grouped by evaluation mode.</p>
+        </div>
+        <span class="badge bg-light text-dark border">
+            {% if page_obj %}
+            {{ page_obj.paginator.count }}
+            {% else %}
+            {{ rule_groups|length }}
+            {% endif %} groups
+        </span>
+    </div>
+    <div class="list-group list-group-flush">
+        {% for item in rule_groups %}
+        <a class="list-group-item list-group-item-action p-4" href="{% url 'dar-admin:rule-detail' pk=item.id %}">
+            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                <div class="d-flex align-items-start gap-3 min-w-0">
+                    <span class="avatar bg-primary-subtle text-primary rounded-circle flex-shrink-0">
+                        <i class="ti ti-git-merge"></i>
+                    </span>
+                    <div class="min-w-0">
+                        <strong class="d-block text-break">{{ item.name }}</strong>
+                        <span class="text-muted small d-flex align-items-center gap-1 mt-1">
+                            <i class="ti ti-forms"></i>{{ item.form }}
+                        </span>
+                    </div>
+                </div>
+                {% include "gdx_admin/apps/dar/rules/partials/_evaluation_badge.html" with item=item %}
+            </div>
+        </a>
+        {% empty %}
+        {% include "gdx_admin/apps/dar/rules/partials/_rules_empty_state.html" %}
+        {% endfor %}
+    </div>
+</div>

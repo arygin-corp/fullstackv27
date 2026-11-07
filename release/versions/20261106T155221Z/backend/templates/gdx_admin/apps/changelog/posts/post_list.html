@@ -1,0 +1,17 @@
+{% extends "gdx_admin/base.html" %}
+{% block page_header %}{% endblock %}
+{% block title %}Release Notes{% endblock %}
+{% block content %} 
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+    {% if page_obj %}
+    {% include "gdx_admin/apps/changelog/posts/includes/_post_hero.html" with hero_title="Release Notes" hero_description="Create, review, approve, publish, and archive structured changelog releases." hero_metric_label="Releases" hero_metric=page_obj.paginator.count hero_metric_help="Available release records" hero_icon="ti ti-notes" %}
+    {% else %}
+    {% include "gdx_admin/apps/changelog/posts/includes/_post_hero.html" with hero_title="Release Notes" hero_description="Create, review, approve, publish, and archive structured changelog releases." hero_metric_label="Releases" hero_metric=posts|length hero_metric_help="Available release records" hero_icon="ti ti-notes" %}
+    {% endif %}
+    {% include "gdx_admin/apps/changelog/posts/includes/_post_toolbar.html" with heading="Release directory" description="Search and manage changelog releases." show_compare=True show_create=True %}
+    {% include "gdx_admin/apps/changelog/posts/partials/_post_search.html" %}
+    {% include "gdx_admin/apps/changelog/posts/partials/_post_table.html" %}
+    {% include "gdx_admin/apps/changelog/posts/partials/_post_pagination.html" %}
+</div>
+{% endblock %}

@@ -1,8 +1,9 @@
 import { Inject, Injectable, OnDestroy, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, timer } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, timer } from 'rxjs';
 import { Product } from '../interfaces/product';
 import { map, takeUntil } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import { UserActivityService } from './user-activity.service';
 
 interface FavoritesData {
     items: Product[];
@@ -26,7 +27,8 @@ export class FavoritesService implements OnDestroy {
 
     constructor(
         @Inject(PLATFORM_ID)
-        private platformId: any
+        private platformId: any,
+        private activity: UserActivityService
     ) {
         if (isPlatformBrowser(this.platformId)) {
             this.load();
@@ -43,6 +45,7 @@ export class FavoritesService implements OnDestroy {
             if (index === -1) {
                 this.data.items.push(product);
                 this.save();
+                this.activity.record('favorite_add', product?.name || 'Catalog product', String(product?.id || ''));
             }
         }));
     }
@@ -55,7 +58,19 @@ export class FavoritesService implements OnDestroy {
             if (index !== -1) {
                 this.data.items.splice(index, 1);
                 this.save();
+                this.activity.record('favorite_remove', product?.name || 'Catalog product', String(product?.id || ''));
             }
+        }));
+    }
+
+    clear(): Observable<void> {
+        return of(undefined).pipe(map(() => {
+            if (!this.data.items.length) {
+                return;
+            }
+            this.data.items = [];
+            this.save();
+            this.activity.record('favorite_remove', 'Cleared all favorites', '');
         }));
     }
 

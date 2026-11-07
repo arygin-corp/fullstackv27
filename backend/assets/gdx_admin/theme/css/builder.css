@@ -13,7 +13,7 @@
     --text-strong: #202a3d;
     --text-muted: #64748b;
     --text-light: #91a0ba;
-    --primary: #5145ff;
+    --primary: #7539FF;
     --primary-hover: #4338e8;
     --primary-soft: #eef0ff;
     --primary-ring: rgba(81, 69, 255, 0.16);
@@ -33,7 +33,7 @@ body {
     min-height: 100%;
     background: var(--builder-bg);
     color: var(--text);
-    font-family: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Instrument Sans", sans-serif;
     font-size: 14px;
     line-height: 1.5;
 }

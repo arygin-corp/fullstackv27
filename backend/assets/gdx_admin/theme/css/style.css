@@ -5989,7 +5989,7 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 .select2-container .select2-search--inline .select2-search__field {
   margin-top: 7px;
-  font-family: "Inter", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
 }
 .select2-container .select2-search textarea::placeholder {
   color: var(--gray-400);
@@ -13837,7 +13837,7 @@ p:last-child {
   margin-bottom: 0;
 }
 .sidebar .sidebar-menu > ul > li.active a, .sidebars .sidebar-menu > ul > li.active a {
-  color: var(--white);
+  color: var(--primary);
 }
 .sidebar .sidebar-menu > ul > li > a, .sidebars .sidebar-menu > ul > li > a {
   display: -webkit-box;
@@ -13852,18 +13852,22 @@ p:last-child {
   border-bottom: none;
 }
 .sidebar .sidebar-menu > ul > li > a.active, .sidebars .sidebar-menu > ul > li > a.active {
-  background: var(--light);
+  background: var(--white);
   border-radius: 5px;
   border-left: 2px solid var(--primary);
+  color: var(--primary);
 }
-.sidebar .sidebar-menu > ul > li > a.active span, .sidebars .sidebar-menu > ul > li > a.active span {
-  color: #FE9F43;
+.sidebar .sidebar-menu > ul > li > a.active span,
+.sidebar .sidebar-menu > ul > li > a.active i,
+.sidebars .sidebar-menu > ul > li > a.active span,
+.sidebars .sidebar-menu > ul > li > a.active i {
+  color: var(--primary);
 }
 .sidebar .sidebar-menu > ul > li > a.active .menu-arrow, .sidebars .sidebar-menu > ul > li > a.active .menu-arrow {
-  background: #FFEDDC;
+  background: var(--primary-transparent);
 }
 .sidebar .sidebar-menu > ul > li > a.active .menu-arrow::before, .sidebars .sidebar-menu > ul > li > a.active .menu-arrow::before {
-  border-color: #FE9F43;
+  border-color: var(--primary);
 }
 .sidebar .sidebar-menu > ul > li > a span, .sidebars .sidebar-menu > ul > li > a span {
   font-size: 15px;

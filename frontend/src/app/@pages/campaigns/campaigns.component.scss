@@ -1,9 +1,516 @@
-.jumbotron {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    color: inherit;
-    background-color: #ededed;
+.campaign-hero {
+    margin: 0;
+}
+
+.campaign-hero__slide {
+    position: relative;
+    display: block;
+    min-height: 420px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+}
+
+.campaign-hero__slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.campaign-hero__copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 28px 36px 48px;
+    background: linear-gradient(180deg, rgba(2, 25, 26, 0) 0%, rgba(0, 55, 58, 0.45) 38%, rgba(0, 32, 34, 0.94) 100%);
+}
+
+.campaign-hero__copy p {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.campaign-hero__copy h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.campaign-hero__copy span {
+    max-width: 640px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+:host ::ng-deep .campaign-hero .owl-dots {
+    position: absolute;
+    left: 36px;
+    bottom: 16px;
+}
+
+:host ::ng-deep .campaign-hero .owl-dot span {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+:host ::ng-deep .campaign-hero .owl-dot.active span {
+    background: #fff;
+}
+
+.campaigns {
+    padding: 24px 24px 48px;
+}
+
+.campaign-highlights {
+    display: flex;
+    margin-bottom: 32px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+}
+
+.campaign-highlights__item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    gap: 18px;
+    padding: 16px 24px;
+}
+
+.campaign-highlights__item i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 500px;
+    background: #363636;
+    color: #04fdff;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.campaign-highlights__item strong,
+.campaign-highlights__item span {
+    display: block;
+}
+
+.campaign-highlights__item strong {
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.campaign-highlights__item span {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.campaign-highlights__divider {
+    flex-shrink: 0;
+    width: 1px;
+    background: #f0f0f0;
+}
+
+@media (max-width: 991px) {
+    .campaign-highlights {
+        flex-wrap: wrap;
+    }
+
+    .campaign-highlights__item {
+        flex: 1 1 calc(50% - 1px);
+    }
+
+    .campaign-highlights__divider:nth-child(4) {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+@media (max-width: 575px) {
+    .campaign-highlights__item {
+        flex-basis: 100%;
+    }
+
+    .campaign-highlights__divider {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+.campaigns__lead,
+.campaigns__error {
+    margin: 0 0 20px;
+    color: #4b5563;
+    font-size: 15px;
+}
+
+.campaigns__error {
+    color: #b91c1c;
+}
+
+.campaign-row {
+    margin-bottom: 36px;
+}
+
+.campaign-banner {
+    margin: 8px 0 36px;
+}
+
+.campaign-products {
+    margin-bottom: 36px;
+}
+
+.campaign-domains {
+    margin-bottom: 36px;
+}
+
+.campaign-featured {
+    margin-bottom: 36px;
+}
+
+.campaign-featured__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 20px;
+}
+
+.campaign-featured__item {
+    display: flex;
+    min-width: 0;
+}
+
+:host ::ng-deep .campaign-featured__item app-product-card,
+:host ::ng-deep .campaign-featured .product-card {
+    width: 100%;
+    height: 100%;
+}
+
+:host ::ng-deep .campaign-featured .product-card__name {
+    max-height: none;
+    overflow: visible;
+}
+
+:host ::ng-deep .campaign-featured .product-card__text {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .campaign-featured__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .campaign-featured__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.campaign-brands {
+    margin-bottom: 36px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+}
+
+.campaign-brands ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0;
+    padding: 22px 28px;
+    list-style: none;
+}
+
+.campaign-brands li {
+    display: flex;
+    flex: 0 1 auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.campaign-brands img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 36px;
+    object-fit: contain;
+}
+
+@media (max-width: 767px) {
+    .campaign-brands ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .campaign-brands li {
+        flex: 0 1 40%;
+    }
+}
+
+.campaign-domains__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.domain-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.domain-card__media {
+    display: block;
+    height: 168px;
+    background: #f3f4f6;
+}
+
+.domain-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.domain-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 14px 16px 16px;
+}
+
+.domain-card__body h3 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.domain-card__body h3 a {
+    color: #1f2937;
+    text-decoration: none;
+}
+
+.domain-card__body ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.domain-card__body li + li {
+    margin-top: 4px;
+}
+
+.domain-card__body li a {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.domain-card__body li a:hover,
+.domain-card__all:hover {
+    color: #1a66ff;
+}
+
+.domain-card__all {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #1a66ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    .campaign-domains__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .campaign-domains__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+:host ::ng-deep .campaign-products .block-products__list-item .product-card__text {
+    display: none;
+}
+
+.campaign-banner__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    overflow: hidden;
+    background: #fff;
+    color: #1f2937;
     text-align: center;
-    color: #363636;
+    text-decoration: none;
+}
+
+.campaign-banner__body img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+}
+
+.campaign-banner__copy {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+    padding: 0 16px;
+}
+
+.campaign-banner__copy h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.campaign-banner__copy p {
+    margin: 8px 0 16px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.campaign-row__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.campaign-row h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.campaign-row__arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.campaign-row__arrows button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    background: #fff;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.campaign-row__arrows button:hover {
+    background: #f3f4f6;
+}
+
+.campaign-row__arrows i {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.campaign-domain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #1f2937;
+}
+
+.campaign-domain__media {
+    display: block;
+}
+
+.campaign-domain img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.campaign-domain strong,
+.campaign-domain span {
+    padding: 0 14px;
+}
+
+.campaign-domain strong {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.campaign-domain strong a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.campaign-domain span {
+    margin: 6px 0 0;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.campaign-domain__action {
+    margin: auto 14px 14px;
+    align-self: flex-start;
+}
+
+:host ::ng-deep .campaign-row .owl-stage,
+:host ::ng-deep .campaign-row .owl-item {
+    display: flex;
+    align-items: stretch;
+}
+
+:host ::ng-deep .campaign-row .owl-item > * {
+    display: flex;
+    width: 100%;
+}
+
+:host ::ng-deep .campaign-row app-product-card,
+:host ::ng-deep .campaign-row .product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+:host ::ng-deep .campaign-row .product-card__actions {
+    margin-top: auto;
+}
+
+@media (min-width: 1200px) {
+    :host ::ng-deep .campaign-row--single .owl-item {
+        width: calc((100% - 48px) / 4) !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    :host ::ng-deep .campaign-row--single .owl-item {
+        width: calc((100% - 16px) / 2) !important;
+    }
 }

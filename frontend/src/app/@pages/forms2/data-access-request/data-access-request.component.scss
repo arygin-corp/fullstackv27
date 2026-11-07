@@ -1,16 +1,364 @@
 :host {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
     color: #1f2937;
 }
 
+:host > div,
+:host .right-panel,
+:host .right-panel > .container,
+:host .right-panel > .container > .row,
+:host .right-panel .col-md-12,
+:host .right-panel .error-template {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+}
+
+:host > div,
+:host .right-panel,
+:host .right-panel .error-template {
+    overflow: hidden;
+}
+
+:host .right-panel > .jumbotron {
+    flex: 0 0 auto;
+}
+
+:host .right-panel form {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+:host .right-panel form > .col-lg-3 {
+    flex: 0 0 240px;
+    width: 240px;
+    max-width: 240px;
+    float: none !important;
+    align-self: stretch;
+}
+
+:host .right-panel form > .col-lg-3 div[style*="position: fixed"] {
+    position: sticky !important;
+    top: 1rem;
+    width: 220px !important;
+}
+
+:host .right-panel form > .col-lg-9 {
+    flex: 1 1 0;
+    width: auto;
+    max-width: calc(100% - 240px);
+    min-width: 0;
+    margin-left: 0 !important;
+    float: none !important;
+}
+
+:host .right-panel form > .col-lg-9,
+:host .right-panel form > .tablet-dar {
+    overflow-wrap: anywhere;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 0;
+    max-height: 100%;
+    align-self: stretch;
+}
+
+:host .form-check {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 1.75rem;
+}
+
+:host .form-check .form-check-input {
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: 0;
+    border: 1.5px solid #4b5563;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.75rem;
+    appearance: none;
+}
+
+:host .form-check .form-check-input:checked {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+:host .title-bg,
+:host .form-note,
+:host .dar-platform-note .title-bg {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 8px;
+    color: #6b7280;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+:host .note-card,
+:host .title-bg h5.note-card {
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 0 0 12px;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+:host .note-card a {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+:host .note-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+
+:host .form-group.note-card p {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+:host .form-group.note-card p strong {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+:host .form-group.note-card p:last-child {
+    margin-bottom: 0;
+}
+
+:host .title-bg h5,
+:host .title-bg .title-padding,
+:host .form-note {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+:host .title-bg small,
+:host .title-bg strong {
+    font-size: inherit;
+    color: inherit;
+    font-weight: 600;
+}
+
+:host .title-bg strong {
+    font-weight: 500;
+}
+
+:host .title-bg h5.note-card > strong.note-title {
+    font-weight: 700;
+}
+
+:host h5.note-card.even-gap,
+:host .title-bg h5.note-card.even-gap,
+:host .form-group.note-card.even-gap {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+:host .title-bg a,
+:host .form-note a,
+:host .right-panel form a[href] {
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+:host .title-bg a:hover,
+:host .right-panel form a[href]:hover {
+    text-decoration: underline;
+}
+
+:host .mainframe-question {
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+:host .mainframe-question .panel,
+:host .mainframe-question .plus {
+    display: none;
+}
+
+:host .mainframe-question .panel-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+:host .mainframe-question .panel-title::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #1d4ed8;
+    border-bottom: 2px solid #1d4ed8;
+    transform: rotate(45deg);
+    margin-top: -4px;
+}
+
+:host .mainframe-question .panel:checked + .plus + .panel-title::before {
+    transform: rotate(225deg);
+    margin-top: 2px;
+}
+
+:host .mainframe-question .panel-content {
+    display: none;
+    padding: 0 16px 12px 28px;
+    color: #374151;
+}
+
+:host .mainframe-question .panel:checked ~ .panel-content {
+    display: block;
+}
+
+:host .mainframe-question .panel-content ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+:host .mainframe-question .panel-content li {
+    margin-bottom: 6px;
+}
+
+:host .right-panel form .form-group:not(.collapse):has(> .form-control:not([type="checkbox"]):not([type="radio"])),
+:host .right-panel form .col-sm-12:has(> .form-control:not([type="checkbox"]):not([type="radio"])),
+:host .right-panel form .form-group:not(.collapse):has(> ng-select),
+:host .right-panel form .col-sm-12:has(> ng-select) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    margin-top: 1.15rem;
+
+    > label:not(.panel-title) {
+        grid-row: 1;
+        grid-column: 1;
+        z-index: 2;
+        align-self: start;
+        justify-self: start;
+        width: auto;
+        max-width: calc(100% - 1.5rem);
+        margin: 0 0 0 0.7rem;
+        padding: 0 0.35rem;
+        transform: translateY(-0.55rem);
+        background: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #4b5563;
+        pointer-events: none;
+        text-align: left;
+    }
+
+    > .form-control,
+    > ng-select {
+        grid-row: 1;
+        grid-column: 1;
+        height: auto;
+        min-height: 3.4rem;
+        padding-top: 1.05rem;
+        padding-bottom: 0.4rem;
+    }
+
+    > textarea.form-control {
+        min-height: 6.5rem;
+        padding-top: 1.35rem;
+    }
+
+    > .form-note,
+    > small,
+    > app-field-error-display,
+    > .collapse,
+    > div:not(.title-bg) {
+        grid-column: 1;
+    }
+
+    &:focus-within > label:not(.panel-title) {
+        color: #0b6bcb;
+    }
+
+    &:has(> .title-bg) {
+        > .title-bg {
+            grid-row: 1;
+            margin-bottom: 1.5rem !important;
+        }
+
+        > label:not(.panel-title),
+        > .form-control,
+        > ng-select {
+            grid-row: 2;
+        }
+    }
+}
+
+:host .col-lg-3 .requirements-title {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+:host .col-lg-3 .validation-margin,
+:host .col-lg-3 .validation-margi,
+:host .col-lg-3 .text-validation {
+    font-size: 12px !important;
+    margin-bottom: 2px;
+}
+
+:host .col-lg-3 .validation-margin strong,
+:host .col-lg-3 .text-validation strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+:host .col-lg-3 .icon-validation {
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
+  position: sticky;
+  top: 0;
+  background: #ededed;
   background-color: #ededed;
   text-align: center;
   color: #363636;
+  z-index: 500;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+  border-radius: 0;
 }
 
 .layout {
@@ -165,6 +513,7 @@
 .dar-terms-content {
   border-radius: 8px;
   max-height: 320px;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 

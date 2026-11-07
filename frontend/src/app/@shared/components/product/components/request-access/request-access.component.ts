@@ -32,6 +32,7 @@ export class RequestAccessComponent implements OnChanges {
     @Output() closeMenu: EventEmitter<void> = new EventEmitter<void>();
     @Input() requestAccess: RequestAccess | null = null;
     @Output() accessRequested = new EventEmitter<RequestAccess>();
+    private catalogProduct: Product;
     quantity: FormControl = new FormControl(1);
     savedProduct: any = null;
     savedFormData: any = null;
@@ -151,6 +152,7 @@ export class RequestAccessComponent implements OnChanges {
             v_edm_3rd_party_vendor: [''],
             v_edm_option: [''],
             v_edm_type_of_work: [''],
+            v_dar_pi: ['', Validators.required],
             v_emd_PI_access: ['', Validators.required],
             v_emd_specify_PII_needs: [''],
             v_dar_DataReqDescription: ['', Validators.required],
@@ -162,6 +164,9 @@ export class RequestAccessComponent implements OnChanges {
             next: (options) => this.podsOptions = options || [],
             error: () => this.podsOptions = [],
         });
+        this.form.get('requesting_tdsp_processing').valueChanges.subscribe(() => this.applyPodRequirement());
+        this.form.get('requesting_id').valueChanges.subscribe(() => this.applyPodRequirement());
+        this.applyPodRequirement();
 
         const storedItem = sessionStorage.getItem('cartItems');
         if (storedItem) {
@@ -174,16 +179,92 @@ export class RequestAccessComponent implements OnChanges {
         this.savedFormData = this.loadFormData();
         this.savedProduct = this.loadProduct();
         this.fillAdGroup();
+        this.applyProductPi();
+        this.state.product$.subscribe((product) => this.useRequestProduct(product));
 
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        if (changes['product']?.currentValue) {
+            this.catalogProduct = changes['product'].currentValue;
+        }
         // If the item to edit changes (user clicked the edit button)
         if (changes['itemToEdit'] && this.itemToEdit && this.itemToEdit.formData) {
             // This fills all matching fields in your form automatically
             this.form.patchValue(this.itemToEdit.formData);
         }
         this.fillAdGroup();
+        this.applyProductPi();
+    }
+
+    private useRequestProduct(product: Product | null): void {
+        if (product) {
+            this.product = product;
+        } else if (this.catalogProduct) {
+            this.product = this.catalogProduct;
+        } else {
+            this.product = null;
+        }
+        this.fillAdGroup();
+        this.applyProductPi();
+    }
+
+    private isYes(value: unknown): boolean {
+        return String(value ?? '').trim().toLowerCase() === 'yes';
+    }
+
+    get piNotice(): string {
+        const productPi = this.isYes(this.product?.pi);
+        const productSensitive = this.isYes(this.product?.sensitive_pi);
+        if (productPi || productSensitive) {
+            return this.piNoticeText(productPi, productSensitive);
+        }
+        const pi = this.form?.get('v_dar_pi')?.value;
+        const sensitive = this.form?.get('v_emd_PI_access')?.value;
+        if (!pi || !sensitive || (pi !== 'Yes' && sensitive !== 'Yes')) {
+            return '';
+        }
+        return this.piNoticeText(pi === 'Yes', sensitive === 'Yes');
+    }
+
+    private piNoticeText(pi: boolean, sensitive: boolean): string {
+        if (pi && sensitive) {
+            return 'This product contains Personal Information (PI) and Sensitive Personal Information (PI) data.';
+        }
+        if (pi) {
+            return 'This product contains Personal Information (PI) data.';
+        }
+        return 'This product contains Sensitive Personal Information (PI) data.';
+    }
+
+    private applyProductPi() {
+        if (!this.form || (!this.isYes(this.product?.pi) && !this.isYes(this.product?.sensitive_pi))) {
+            return;
+        }
+        const pi = this.form.get('v_dar_pi');
+        const sensitive = this.form.get('v_emd_PI_access');
+        if (pi && !pi.value) {
+            pi.setValue(this.isYes(this.product?.pi) ? 'Yes' : 'No');
+        }
+        if (sensitive && !sensitive.value) {
+            sensitive.setValue(this.isYes(this.product?.sensitive_pi) ? 'Yes' : 'No');
+        }
+    }
+
+    private applyPodRequirement() {
+        const pod = this.form?.get('appropriateTDSPPod');
+        if (!pod) {
+            return;
+        }
+        const show = this.product?.datatype === 'Datasets'
+            && this.form.get('requesting_id')?.value !== 'Service Account'
+            && this.form.get('requesting_tdsp_processing')?.value === 'Yes';
+        if (show) {
+            pod.setValidators(Validators.required);
+        } else {
+            pod.clearValidators();
+        }
+        pod.updateValueAndValidity({ emitEvent: false });
     }
 
     fillAdGroup() {
@@ -262,13 +343,6 @@ export class RequestAccessComponent implements OnChanges {
             return;
         }
 
-        const isAlreadyInCart = this.cart.items.some(item => item.product.id === this.product.id);
-        if (!this.itemToEdit && isAlreadyInCart) {
-            this.appSvc.notifyInfo?.(`"${this.product.name}" is already in your cart.`);
-            this.state.close();
-            return;
-        }
-
         this.addingToCart = true;
         const formData = this.form.getRawValue();
 
@@ -280,7 +354,7 @@ export class RequestAccessComponent implements OnChanges {
 
         if (useLocalOnly) {
             // LOCAL: skip any ServiceNow API call and add directly to local cart
-            this.cart.add(this.product, 1, [], formData).subscribe({
+            this.cart.saveRequest(this.product, formData).subscribe({
                 next: () => {
                     const msg = this.itemToEdit ? `Changes saved.` : `"${this.product.name}" added to cart.`;
                     this.appSvc.notifySuccess?.(msg);

@@ -1,0 +1,1 @@
+<!doctype html><html><body><h1>Preferences</h1><form method="post">{% csrf_token %}<label><input type="checkbox" name="in_app_enabled" {% if preference.in_app_enabled %}checked{% endif %}> In-app</label><label><input type="checkbox" name="email_enabled" {% if preference.email_enabled %}checked{% endif %}> Email</label><button>Save</button></form></body></html>

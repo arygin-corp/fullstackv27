@@ -4,7 +4,9 @@
 .deploy-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
 .deploy-nav a{padding:8px 12px;border-radius:999px;background:#f4f6f8;color:#3d4d63;font-weight:700;text-decoration:none}
 .deploy-nav a.is-current{background:#efeaff;color:#5547ff}
-.deploy-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.deploy-group{margin:0 0 18px}
+.deploy-group h2{margin:0 0 10px;font-size:1rem;color:#1c2740}
+.deploy-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .deploy-metric,.deploy-panel{padding:16px 18px;border:1px solid #e6ebf2;border-radius:14px;background:#fff}
 .deploy-metric span{display:block;color:#64758b;font-size:.78rem;font-weight:700}
 .deploy-metric strong{display:block;margin-top:4px;font-size:1.6rem;color:#1c2740}
@@ -28,13 +30,14 @@
 .deploy-timeline__dot{position:absolute;top:0;left:0;width:16px;height:16px;border:3px solid #fff;border-radius:50%;background:#5547ff;box-shadow:0 0 0 1px #5547ff}
 .deploy-timeline li.is-running .deploy-timeline__dot{background:#f59e0b;box-shadow:0 0 0 1px #f59e0b}
 .deploy-timeline li.is-failed .deploy-timeline__dot{background:#dc2626;box-shadow:0 0 0 1px #dc2626}
-.deploy-timeline strong{display:block;color:#1c2740;font-size:.92rem}
-.deploy-timeline small{display:block;margin-top:4px;color:#64758b;font-size:.75rem;line-height:1.35}
+.deploy-timeline strong{display:block;color:#1c2740;font-size:.92rem;overflow-wrap:anywhere}
+.deploy-timeline small{display:block;margin-top:4px;color:#64758b;font-size:.75rem;line-height:1.35;overflow-wrap:anywhere}
 .deploy-ok{color:#167940;font-weight:700}
 .deploy-bad{color:#b42318;font-weight:700}
-.deploy-build-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,320px);gap:12px;align-items:start}
-.deploy-timeline-col h2{margin:0 0 16px;font-size:1.15rem}
-.deploy-timeline-col .deploy-timeline{display:flex;flex-direction:column;overflow:visible;margin:0;padding:0}
+.deploy-build-layout{display:block}
+.deploy-timeline-col{display:flex;flex-direction:column;max-height:min(640px,70vh);overflow:hidden}
+.deploy-timeline-col h2{flex:none;margin:0 0 16px;font-size:1.15rem}
+.deploy-timeline-col .deploy-timeline{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;margin:0;padding:0 6px 0 0}
 .deploy-timeline-col .deploy-timeline li{flex:none;min-width:0;padding:0 0 22px 28px}
 .deploy-timeline-col .deploy-timeline li::before{top:16px;bottom:-6px;left:7px;right:auto;width:2px;height:auto}
 .deploy-timeline-col .deploy-timeline li:last-child::before{display:none}
@@ -45,4 +48,17 @@
 .deploy-rollback{display:flex;flex-wrap:wrap;gap:6px;margin:0}
 .deploy-rollback button{height:32px;padding:0 10px;border:1px solid #d7deea;border-radius:8px;background:#fff;color:#1c2740;font-size:.78rem;font-weight:700;cursor:pointer}
 .deploy-rollback button:hover{border-color:#5547ff;color:#5547ff}
+.deploy-ai-button{height:40px;padding:0 16px;border:0;border-radius:10px;background:#1c2740;color:#fff;font-weight:700;cursor:pointer}
+.deploy-ai-button:disabled{opacity:.55;cursor:wait}
+.ai-terminal-backdrop{position:fixed;inset:0;z-index:4000;background:rgba(16,22,34,.35)}
+.ai-terminal{position:fixed;top:0;right:0;z-index:4001;display:flex;flex-direction:column;width:min(640px,100vw);height:100vh;background:#0d1117;color:#d6deeb;box-shadow:-16px 0 40px rgba(0,0,0,.28)}
+.ai-terminal[hidden],.ai-terminal-backdrop[hidden],.process-notice[hidden]{display:none !important}
+.process-notice{position:fixed;top:16px;left:50%;z-index:4002;display:flex;align-items:center;gap:12px;transform:translateX(-50%);padding:10px 14px;border-radius:999px;background:#1c2740;color:#fff;box-shadow:0 10px 30px rgba(16,22,34,.28);font-weight:700}
+.process-notice span{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#7ee787}
+.ai-terminal header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid #21262d;background:#161b22}
+.ai-terminal header strong{color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem}
+.ai-terminal header span{margin-left:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#7ee787}
+.ai-terminal header button{height:32px;padding:0 10px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#d6deeb;cursor:pointer}
+.ai-terminal pre{flex:1;margin:0;padding:16px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;line-height:1.45}
+.ai-terminal .is-prompt{color:#7ee787}
 </style>

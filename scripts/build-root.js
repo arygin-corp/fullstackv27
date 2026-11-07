@@ -10,7 +10,8 @@ const release = path.join(root, "release");
 const target = process.argv[2];
 const environment = process.argv[3];
 const engineerFlag = process.argv.slice(4).find(value => value.startsWith("--engineer="));
-const engineer = engineerFlag?.slice("--engineer=".length) || process.env.BUILD_ENGINEER;
+const engineer = (engineerFlag?.slice("--engineer=".length) || process.env.BUILD_ENGINEER || "").trim();
+if (engineer) process.env.BUILD_ENGINEER = engineer;
 const environments = new Set(["local", "dev", "qa", "demo", "stage", "prod"]);
 const venvPython = process.platform === "win32"
   ? path.join(root, ".venv", "Scripts", "python.exe")
@@ -123,10 +124,10 @@ function angularOutputPath() {
 }
 function buildFrontend() {
   if (!environments.has(environment)) throw new Error("Frontend environment must be local, dev, qa, demo, stage, or prod.");
-  if (!engineer?.trim()) throw new Error('Engineer required. Use --engineer="Name" or BUILD_ENGINEER.');
+  if (!engineer) throw new Error('Engineer required. Use --engineer="Name" or BUILD_ENGINEER.');
   if (!existsSync(path.join(frontend, "package.json"))) throw new Error("Missing frontend/package.json.");
   if (!existsSync(path.join(frontend, "build", "build.js"))) throw new Error("Missing frontend/build/build.js.");
-  run("npm", ["run", `build:${environment}`], frontend, { BUILD_ENGINEER: engineer.trim() });
+  run("npm", ["run", `build:${environment}`], frontend, { BUILD_ENGINEER: engineer });
   const output = angularOutputPath();
   if (!existsSync(output)) throw new Error(`Angular output not found at ${output}. Verify angular.json outputPath.`);
   publishFrontend(output);

@@ -1,0 +1,416 @@
+[
+  {
+    "name": "Vehicle",
+    "children": [
+      {
+        "name": "Sales",
+        "children": [
+          {
+            "name": "New Car Sales",
+            "children": []
+          },
+          {
+            "name": "Used Car Sales",
+            "children": []
+          },
+          {
+            "name": "Integrated Revenue & Cost Management",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Vehicle Logistics Management",
+        "children": [
+          {
+            "name": "New Car Sales",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      },
+      {
+        "name": "Incentive",
+        "children": [
+          {
+            "name": "Actuals",
+            "children": []
+          },
+          {
+            "name": "New Car Sales",
+            "children": []
+          },
+          {
+            "name": "Forecast",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Factors",
+        "children": []
+      },
+      {
+        "name": "Orders",
+        "children": [
+          {
+            "name": "Order Forecast",
+            "children": []
+          },
+          {
+            "name": "Order Actuals",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Planning",
+        "children": []
+      },
+      {
+        "name": "Pricing",
+        "children": []
+      },
+      {
+        "name": "Configuration",
+        "children": []
+      },
+      {
+        "name": "Inventory Volume",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Customer",
+    "children": [
+      {
+        "name": "Social Media",
+        "children": []
+      },
+      {
+        "name": "Customer Predictive Score",
+        "children": []
+      },
+      {
+        "name": "Communication Management",
+        "children": []
+      },
+      {
+        "name": "Contact Center",
+        "children": [
+          {
+            "name": "Customer Interaction",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Customer Master",
+        "children": []
+      },
+      {
+        "name": "Vehicle Purchase Details",
+        "children": []
+      },
+      {
+        "name": "California Consumer Privacy Act (CCPA)",
+        "children": []
+      },
+      {
+        "name": "Customer- Dealer Relationship",
+        "children": []
+      },
+      {
+        "name": "Parts Ecommerce",
+        "children": []
+      },
+      {
+        "name": "Customer Marketing",
+        "children": []
+      },
+      {
+        "name": "Global Access",
+        "children": []
+      },
+      {
+        "name": "Fueling Operations",
+        "children": []
+      },
+      {
+        "name": "Customer Alias",
+        "children": []
+      },
+      {
+        "name": "Lifecycle Sales Service",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Parts",
+    "children": [
+      {
+        "name": "Service & Accessory Parts",
+        "children": [
+          {
+            "name": "Logisitcs",
+            "children": []
+          },
+          {
+            "name": "Inline Accessories",
+            "children": []
+          },
+          {
+            "name": "Incentives",
+            "children": []
+          },
+          {
+            "name": "Sales",
+            "children": []
+          },
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Trial Parts",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Manufacturing Parts",
+        "children": [
+          {
+            "name": "Logisitcs",
+            "children": []
+          },
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Trade Compliance",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Productivity",
+        "children": [
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Logisitcs",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Manufacturing",
+    "children": [
+      {
+        "name": "Internal Logistics Parts",
+        "children": []
+      },
+      {
+        "name": "Build",
+        "children": []
+      },
+      {
+        "name": "Productivity",
+        "children": []
+      },
+      {
+        "name": "Inspection",
+        "children": []
+      },
+      {
+        "name": "Equipment",
+        "children": []
+      },
+      {
+        "name": "Job Process",
+        "children": []
+      },
+      {
+        "name": "Indirect Procurement",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Telematics",
+    "children": []
+  },
+  {
+    "name": "Warranty",
+    "children": [
+      {
+        "name": "Warranty Claims",
+        "children": []
+      },
+      {
+        "name": "Warranty Insurance",
+        "children": []
+      },
+      {
+        "name": "Parts Claims",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Quality",
+    "children": [
+      {
+        "name": "Quality Campaigns",
+        "children": []
+      },
+      {
+        "name": "Reports",
+        "children": []
+      },
+      {
+        "name": "Diagnostics",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Service History",
+    "children": []
+  },
+  {
+    "name": "Distributor / Region / Dealership",
+    "children": [
+      {
+        "name": "Region Master",
+        "children": []
+      },
+      {
+        "name": "Dealer Personnel",
+        "children": []
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      },
+      {
+        "name": "Dealership Metrics",
+        "children": []
+      },
+      {
+        "name": "Call Center",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Facilities",
+    "children": []
+  },
+  {
+    "name": "Finance Management & Accounting",
+    "children": [
+      {
+        "name": "Accounting",
+        "children": [
+          {
+            "name": "Accounting Master",
+            "children": []
+          },
+          {
+            "name": "Transactions",
+            "children": []
+          },
+          {
+            "name": "Journal Entry",
+            "children": []
+          },
+          {
+            "name": "Calendar",
+            "children": []
+          },
+          {
+            "name": "Accounting Invoice",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Finance Management",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Human Resources",
+    "children": []
+  },
+  {
+    "name": "Survey",
+    "children": []
+  },
+  {
+    "name": "Identity Management",
+    "children": []
+  },
+  {
+    "name": "Research & Development",
+    "children": []
+  },
+  {
+    "name": "Internal Audit",
+    "children": []
+  },
+  {
+    "name": "Procurement",
+    "children": [
+      {
+        "name": "Transactions",
+        "children": []
+      },
+      {
+        "name": "Contracts",
+        "children": []
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Integrated Revenue Management",
+    "children": []
+  },
+  {
+    "name": "Purchasing",
+    "children": []
+  },
+  {
+    "name": "Reference",
+    "children": []
+  },
+  {
+    "name": "Vendors & Partners",
+    "children": []
+  },
+  {
+    "name": "Legal",
+    "children": []
+  },
+  {
+    "name": "Affiliates",
+    "children": []
+  }
+]

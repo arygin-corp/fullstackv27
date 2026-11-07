@@ -1,5 +1,6 @@
 from django.test import SimpleTestCase
 
+from apps.third_party_apis.catalog import _serialize_registered_module
 from apps.third_party_apis.registry import registry
 
 
@@ -18,6 +19,10 @@ class MarketplaceCatalogModuleTests(SimpleTestCase):
             "workflow_engine": ("Workflow Engine", "GDX Data Marketplace", "/api/workflow/workflows/"),
             "role_based_access_control": ("Role-Based Access Control", "GDX Data Marketplace", "/admin/auth/group/"),
             "email_campaign_manager": ("Email Campaign Manager", "GDX Data Marketplace", "/sa/notifications/campaigns/"),
+            "command_center": ("Command Center", "GDX Data Marketplace", "/sa/command-center/"),
+            "microsoft_teams": ("Microsoft Teams", "Microsoft", "/sa/microsoft-teams/"),
+            "microsoft_email": ("Microsoft Email", "Microsoft", "/sa/microsoft-email/"),
+            "google_analytics": ("Google Analytics", "Google", "/sa/google-analytics/"),
         }
         for key, (name, source, endpoint) in expected.items():
             module = registry.get(key)
@@ -48,13 +53,15 @@ class MarketplaceCatalogModuleTests(SimpleTestCase):
             "azure_service_bus": ("Azure Service Bus", "Microsoft"),
             "document_management": ("Document Management", "External document provider"),
             "microsoft_365": ("Microsoft 365", "Microsoft"),
+            "microsoft_teams": ("Microsoft Teams", "Microsoft"),
+            "microsoft_email": ("Microsoft Email", "Microsoft"),
+            "google_analytics": ("Google Analytics", "Google"),
+            "onets_attachment": ("OneTS Attachment", "OneTS"),
+            "onets_orders": ("OneTS Orders", "OneTS"),
             "sendgrid": ("SendGrid", "Twilio"),
-            "amazon_ses": ("Amazon SES", "Amazon Web Services"),
             "mailgun": ("Mailgun", "Sinch"),
             "twilio_sms": ("Twilio", "Twilio"),
-            "aws_sns": ("AWS SNS", "Amazon Web Services"),
             "twilio_voice": ("Twilio Voice", "Twilio"),
-            "amazon_connect": ("Amazon Connect", "Amazon Web Services"),
             "github_actions": ("GitHub Actions", "GitHub"),
             "gitlab_ci": ("GitLab CI", "GitLab"),
             "jenkins": ("Jenkins", "Continuous Delivery Foundation"),
@@ -77,6 +84,13 @@ class MarketplaceCatalogModuleTests(SimpleTestCase):
             self.assertEqual(module.upstream_provider, provider)
             if provider != "GDX Data Marketplace":
                 self.assertNotIn("GDX Data Marketplace", module.tags)
+
+    def test_unsynced_module_still_has_a_save_url(self):
+        registry.autodiscover()
+        module = registry.get("google_analytics")
+        payload = _serialize_registered_module(module, row=None)
+        self.assertEqual(payload["manage_url"], "/api/integrations/google_analytics/manage/")
+        self.assertEqual(payload["icon_upload_url"], "/api/integrations/google_analytics/icon/")
 
     def test_vikki_is_connected_to_ai_knowledge(self):
         registry.autodiscover()

@@ -11,6 +11,7 @@ import { intended } from '../../../../../data/intended-use';
 import { WhatsIncluded } from '../../../../@shared/interfaces/whats-included'; 
 import { included } from '../../../../../data/whats-included';
 import { resource } from '../../../../../data/product-resource';
+import { environment } from '../../../../../environments/environment';
 import { description } from '../../../../../data/product-description';
 
 @Component({
@@ -54,15 +55,19 @@ export class ProductTabsComponent {
     ) { }
 
     showTablesAndColumns(currentState: boolean) {
-        if (!currentState) {
-            const adgroup = (this.product as any).adGroup || (this.product as any).adgroup;
-            if (adgroup != null) {
-                this.httpClient.get<any>(this.tableUrl).subscribe(
-                    data => this.denodos = data.elements,
-                    () => this.denodos = []
-                );
-            }
+        if (currentState) {
+            return;
         }
+        const role = this.product?.ad_group || (this.product as any).adGroup || (this.product as any).adgroup;
+        if (!role) {
+            this.denodos = [];
+            return;
+        }
+        const url = `${environment.gdx.denodoTables}?userrolename=${encodeURIComponent(role)}`;
+        this.httpClient.get<any>(url).subscribe(
+            data => this.denodos = data?.elements || data?.value || data || [],
+            () => this.denodos = []
+        );
     }
 
 }

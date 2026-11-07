@@ -10,6 +10,8 @@
     flex-direction: column;
 }
 .site__header {
+    position: relative;
+    z-index: 700;
     flex-shrink: 0;
 }
 .site__body {

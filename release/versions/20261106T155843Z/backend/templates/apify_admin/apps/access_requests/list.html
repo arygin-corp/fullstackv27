@@ -1,0 +1,1 @@
+{% extends 'apify_admin/base.html' %}{% block content %}<h1>API access requests</h1>{% for item in access_requests %}<a href="{% url 'apify_admin:access-request-detail' item.pk %}">{{ item.application }} → {{ item.api_product }}</a>{% empty %}<p>No requests.</p>{% endfor %}{% endblock %}

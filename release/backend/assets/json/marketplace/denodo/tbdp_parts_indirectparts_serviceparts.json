@@ -724,6 +724,114 @@
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts",
       "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "bill_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "gross_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "invoice_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "invoice_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "part_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "ra_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "sales_order"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "sales_order_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "ship_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "sold_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "supplier"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "transaction_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "dds_invoice_accy_sales",
+      "column_name": "warranty_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
       "elementname": "dealer",
       "column_name": "crte_by"
     },
@@ -21702,6 +21810,174 @@
       "dbname": "parts_indirectparts_serviceparts_trn_ext",
       "elementname": "tshpdtl",
       "column_name": "vdr_shp_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "asn_extract_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "chk_sort_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "comm_carr_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "comm_carr_trk_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "core_grp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "depot_alpha_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "dlr_grp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "dlr_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "facing_pdc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "haz_mat_flg"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "high_dmg_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ingest_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ord_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ord_ref_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "pc_invoice_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "seq_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ship_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ship_to_dlr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "ship_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "shp_ref_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "traf_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "tran_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "tran_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "upd_srce"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts",
+      "dbname": "parts_indirectparts_serviceparts_trn_ext",
+      "elementname": "tshptrk",
+      "column_name": "upd_timestamp"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts",

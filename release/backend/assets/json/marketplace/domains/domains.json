@@ -1,1062 +1,416 @@
 [
-    {
-        "id": 1,
-        "name": "Vehicle",
-        "description": "Vehicle life cycle information from initial order through retail sale",
-        "slug": null,
-        "sku": 100,
-        "image": "http://localhost:8000/media/marketplace/domains/vehicle.jpg",
-        "level": 0,
-        "product_count": 136,
-        "subdomains": [
-            {
-                "id": 1,
-                "name": "Sales",
-                "description": "New and certified used car retail sales information",
-                "slug": "vehicle-sales",
-                "sku": 105,
-                "image": "http://localhost:8000/media/marketplace/domains/vehicle-sales.jpg",
-                "level": 1,
-                "product_count": 32,
-                "subdomains": [
-                    {
-                        "id": 1,
-                        "name": "New Car Sales",
-                        "description": "Retail Delivery Report (RDR) information for new vehicles",
-                        "slug": "vehicle-sales-new-care-sales",
-                        "sku": 102,
-                        "image": "http://localhost:8000/media/marketplace/domains/new-car-sales.jpg",
-                        "level": 2,
-                        "product_count": 16
-                    },
-                    {
-                        "id": 2,
-                        "name": "Integrated Revenue & Cost Management",
-                        "description": "Harmonized master data from multiple data sources for Revenue Optimization insights",
-                        "slug": "vehicle-sales-ircm",
-                        "sku": 104,
-                        "image": "http://localhost:8000/media/marketplace/domains/ircm-list.jpg",
-                        "level": 2,
-                        "product_count": 12
-                    },
-                    {
-                        "id": 3,
-                        "name": "Used Car Sales",
-                        "description": "Information related to Toyota and Lexus used vehicle certification and sales",
-                        "slug": "vehicle-sales-used-car-sales",
-                        "sku": 106,
-                        "image": "http://localhost:8000/media/default.jpg",
-                        "level": 2,
-                        "product_count": 5
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Master Data",
-                "description": "Build, Distribution, Pricing, and Accounting information for a vehicle",
-                "slug": "vehicle-master-data",
-                "sku": 110,
-                "image": "http://localhost:8000/media/marketplace/domains/master-data.jpg",
-                "level": 1,
-                "product_count": 37,
-                "subdomains": []
-            },
-            {
-                "id": 3,
-                "name": "Vehicle Logistics Management",
-                "description": "Information related to the transport of a vehicle from manufacturing plant to dealer",
-                "slug": "vehicle-logistics-management",
-                "sku": 115,
-                "image": "http://localhost:8000/media/marketplace/domains/vlm-list.jpg",
-                "level": 1,
-                "product_count": 24,
-                "subdomains": []
-            },
-            {
-                "id": 4,
-                "name": "Configuration",
-                "description": "The components or qualifiers of a specific make, series, and/or model",
-                "slug": "vehicle-configuration",
-                "sku": 120,
-                "image": "http://localhost:8000/media/marketplace/domains/configuration-list.jpg",
-                "level": 1,
-                "product_count": 13,
-                "subdomains": []
-            },
-            {
-                "id": 5,
-                "name": "Pricing",
-                "description": "Model and option pricing information - MSRP, Dealer Price, and Distributor Price",
-                "slug": "vehicle-pricing",
-                "sku": 125,
-                "image": "http://localhost:8000/media/marketplace/domains/pricing.jpg",
-                "level": 1,
-                "product_count": 7,
-                "subdomains": []
-            },
-            {
-                "id": 6,
-                "name": "Orders",
-                "description": "Forecast and actual orders for vehicles submitted to the manufacturing plants",
-                "slug": "vehicle-orders",
-                "sku": 130,
-                "image": "http://localhost:8000/media/marketplace/domains/orders.jpg",
-                "level": 1,
-                "product_count": 5,
-                "subdomains": [
-                    {
-                        "id": 4,
-                        "name": "Order Actuals",
-                        "description": "Submitted, confirmed, and/or allocated vehicle orders for the various manufacturing plants",
-                        "slug": "vehicle-orders-orders-actuals",
-                        "sku": 108,
-                        "image": "http://localhost:8000/media/marketplace/domains/orders-actuals-list.jpg",
-                        "level": 2,
-                        "product_count": 4
-                    },
-                    {
-                        "id": 5,
-                        "name": "Order Forecast",
-                        "description": "Anticipated future orders by plant and how those vehicles are forecast to be allocated",
-                        "slug": "vehicle-orders-orders-forecast",
-                        "sku": 110,
-                        "image": "http://localhost:8000/media/marketplace/domains/orders-forcast-list.jpg",
-                        "level": 2,
-                        "product_count": 1
-                    }
-                ]
-            },
-            {
-                "id": 7,
-                "name": "Incentive",
-                "description": "Customer cash rebates, financing, and leases that are subsidized by the manufacturer",
-                "slug": "vehicle-incentive",
-                "sku": 135,
-                "image": "http://localhost:8000/media/marketplace/domains/incentive.jpg",
-                "level": 1,
-                "product_count": 12,
-                "subdomains": [
-                    {
-                        "id": 6,
-                        "name": "Actuals",
-                        "description": "Cash rebates, financing and lease incentive options by models or series",
-                        "slug": "vehicle-incentive-actuals",
-                        "sku": 112,
-                        "image": "http://localhost:8000/media/marketplace/domains/actuals.jpg",
-                        "level": 2,
-                        "product_count": 9
-                    },
-                    {
-                        "id": 7,
-                        "name": "Forecast",
-                        "description": "Incentive forecast details by VIN and/or region",
-                        "slug": "vehicle-incentive-forecast",
-                        "sku": 114,
-                        "image": "http://localhost:8000/media/marketplace/domains/forecast.jpg",
-                        "level": 2,
-                        "product_count": 2
-                    }
-                ]
-            },
-            {
-                "id": 8,
-                "name": "Inventory Volume",
-                "description": "Aggregated number of vehicles in inventory by common groupings (e.g. Camry or SUV)",
-                "slug": "vehicle-inventory-volume",
-                "sku": 140,
-                "image": "http://localhost:8000/media/marketplace/domains/inventory.jpg",
-                "level": 1,
-                "product_count": 4,
-                "subdomains": []
-            },
-            {
-                "id": 9,
-                "name": "Factors",
-                "description": "Elements used to forecast the supply mix required to meet objectives",
-                "slug": "vehicle-factors",
-                "sku": 145,
-                "image": "http://localhost:8000/media/marketplace/domains/factors.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 10,
-                "name": "Planning",
-                "description": "Forecasted demand and supply mix used to maximize availability of desirable",
-                "slug": "vehicle-planning",
-                "sku": 150,
-                "image": "http://localhost:8000/media/marketplace/domains/planning.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            }
+  {
+    "name": "Vehicle",
+    "children": [
+      {
+        "name": "Sales",
+        "children": [
+          {
+            "name": "New Car Sales",
+            "children": []
+          },
+          {
+            "name": "Used Car Sales",
+            "children": []
+          },
+          {
+            "name": "Integrated Revenue & Cost Management",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 2,
-        "name": "Parts",
-        "description": "Manufacturing Parts, Service Parts, and Accessories",
-        "slug": null,
-        "sku": 110,
-        "image": "http://localhost:8000/media/marketplace/domains/parts.jpg",
-        "level": 0,
-        "product_count": 79,
-        "subdomains": [
-            {
-                "id": 11,
-                "name": "Service & Accessory Parts",
-                "description": "Service and Accessory Parts pricing, specs, logistics, inventory, and sales",
-                "slug": "parts-service-accessory-parts",
-                "sku": 155,
-                "image": "http://localhost:8000/media/marketplace/domains/parts-accessories.jpg",
-                "level": 1,
-                "product_count": 44,
-                "subdomains": [
-                    {
-                        "id": 8,
-                        "name": "Master Data",
-                        "description": "Master data including Service and Accessory Parts specifications and costs",
-                        "slug": "parts-serviic-accessory-parts-master-data",
-                        "sku": 116,
-                        "image": "http://localhost:8000/media/marketplace/domains/service-master-data.jpg",
-                        "level": 2,
-                        "product_count": 0
-                    },
-                    {
-                        "id": 9,
-                        "name": "Logisitics",
-                        "description": "Movement of Parts and Accessories from the Distribution Center to Plants/Dealers",
-                        "slug": "logistics",
-                        "sku": 118,
-                        "image": "http://localhost:8000/media/marketplace/domains/service-logistics.jpg",
-                        "level": 2,
-                        "product_count": 0
-                    },
-                    {
-                        "id": 10,
-                        "name": "Sales",
-                        "description": "Service Parts &amp; Accessories sales analysis, statistics, trends, and forecasts",
-                        "slug": "parts-serviic-accessory-parts-sales",
-                        "sku": 200,
-                        "image": "http://localhost:8000/media/marketplace/domains/service-sales.jpg",
-                        "level": 2,
-                        "product_count": 4
-                    },
-                    {
-                        "id": 11,
-                        "name": "Inline Accessories",
-                        "description": "Factory-installed Accessory details including procurement and planning",
-                        "slug": "inline-accessories",
-                        "sku": 202,
-                        "image": "http://localhost:8000/media/marketplace/domains/inline-accessories.jpg",
-                        "level": 2,
-                        "product_count": 2
-                    },
-                    {
-                        "id": 12,
-                        "name": "Incentives",
-                        "description": "Info regarding incentives for the purchase of Service Parts and Accessories",
-                        "slug": "parts-service-accessory-parts-incentives",
-                        "sku": 204,
-                        "image": "http://localhost:8000/media/marketplace/domains/service-incentives.jpg",
-                        "level": 2,
-                        "product_count": 1
-                    },
-                    {
-                        "id": 13,
-                        "name": "Trial Parts",
-                        "description": "Trial Parts events and ordering information",
-                        "slug": "trial-parts",
-                        "sku": 206,
-                        "image": "http://localhost:8000/media/marketplace/domains/service-trial-parts.jpg",
-                        "level": 2,
-                        "product_count": 1
-                    }
-                ]
-            },
-            {
-                "id": 12,
-                "name": "Manufacturing Parts",
-                "description": "Visibility into Manufacturing Parts pricing, specs, logistics, and sales",
-                "slug": "parts-manufacturing-parts",
-                "sku": 160,
-                "image": "http://localhost:8000/media/marketplace/domains/manufacturing-parts-list.jpg",
-                "level": 1,
-                "product_count": 33,
-                "subdomains": [
-                    {
-                        "id": 14,
-                        "name": "Logisitcs",
-                        "description": "Movement of Parts from the supplier to NAMCs",
-                        "slug": "manufacturing-logistics",
-                        "sku": 208,
-                        "image": "http://localhost:8000/media/marketplace/domains/manufacturing-logistics.jpg",
-                        "level": 2,
-                        "product_count": 26
-                    },
-                    {
-                        "id": 15,
-                        "name": "Master Data",
-                        "description": "Master data including Manufacturing Parts specifications, costs, and tracking",
-                        "slug": "manufacturing-master-data",
-                        "sku": 210,
-                        "image": "http://localhost:8000/media/marketplace/domains/manufacturing-master-data.jpg",
-                        "level": 2,
-                        "product_count": 42
-                    },
-                    {
-                        "id": 16,
-                        "name": "Trade Compliance",
-                        "description": "Trade-related activities of imported/exported products and services in compliance with regulatory requirements",
-                        "slug": "trade-compliance",
-                        "sku": 212,
-                        "image": "http://localhost:8000/media/marketplace/domains/manufacturing-trade-compliance.jpg",
-                        "level": 2,
-                        "product_count": 3
-                    },
-                    {
-                        "id": 17,
-                        "name": "USMCA",
-                        "description": "United States Mexico Canada Trade Agreement process, sourcing, and survey data",
-                        "slug": "usmca",
-                        "sku": 214,
-                        "image": "http://localhost:8000/media/marketplace/domains/usmca.jpg",
-                        "level": 2,
-                        "product_count": 0
-                    }
-                ]
-            }
+      },
+      {
+        "name": "Vehicle Logistics Management",
+        "children": [
+          {
+            "name": "New Car Sales",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 3,
-        "name": "Customer",
-        "description": "Customers of TMNA and affiliates with VIN/household data and marketing preferences",
-        "slug": null,
-        "sku": 120,
-        "image": "http://localhost:8000/media/marketplace/domains/customer.jpg",
-        "level": 0,
-        "product_count": 77,
-        "subdomains": [
-            {
-                "id": 13,
-                "name": "Customer Master",
-                "description": "General information related to customers. Includes name and contact details",
-                "slug": "customer-master",
-                "sku": 165,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-master-list.jpg",
-                "level": 1,
-                "product_count": 35,
-                "subdomains": []
-            },
-            {
-                "id": 14,
-                "name": "Customer Predictive Score",
-                "description": "Data Science Models that help predict customer buying patterns and behavior",
-                "slug": "customer-predictive score",
-                "sku": 170,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-predictive-score-list.jpg",
-                "level": 1,
-                "product_count": 10,
-                "subdomains": []
-            },
-            {
-                "id": 15,
-                "name": "Communication Management",
-                "description": "Provides visibility to documents provided by the customer",
-                "slug": "customer-communication-management",
-                "sku": 175,
-                "image": "http://localhost:8000/media/marketplace/domains/communication-management-list.jpg",
-                "level": 1,
-                "product_count": 7,
-                "subdomains": []
-            },
-            {
-                "id": 16,
-                "name": "Contact Center",
-                "description": "Information related to customer reported questions and complaints",
-                "slug": "customer-contact-center",
-                "sku": 180,
-                "image": "http://localhost:8000/media/marketplace/domains/contact-center.jpg",
-                "level": 1,
-                "product_count": 4,
-                "subdomains": [
-                    {
-                        "id": 18,
-                        "name": "Customer Interaction",
-                        "description": "Customer connection information, including case notes and callback request information",
-                        "slug": "customer-interaction",
-                        "sku": 216,
-                        "image": "http://localhost:8000/media/marketplace/domains/customer_interaction2.jpg",
-                        "level": 2,
-                        "product_count": 4
-                    }
-                ]
-            },
-            {
-                "id": 17,
-                "name": "Customer Marketing",
-                "description": "Toyota and Lexus customer demographic data for the use of marketing analytics",
-                "slug": "customer-marketing",
-                "sku": 185,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-marketing.jpg",
-                "level": 1,
-                "product_count": 4,
-                "subdomains": []
-            },
-            {
-                "id": 18,
-                "name": "Parts Ecommerce",
-                "description": "Get a complete picture of every electronic and online order placed for Toyota Parts",
-                "slug": "customer-parts-ecommerce",
-                "sku": 190,
-                "image": "http://localhost:8000/media/marketplace/domains/parts_ecommerce.jpg",
-                "level": 1,
-                "product_count": 3,
-                "subdomains": []
-            },
-            {
-                "id": 19,
-                "name": "California Consumer Privacy Act (CCPA)",
-                "description": "Information related to usage and disclosure of customers\u2019 personal data provided under CCPA",
-                "slug": "customer-ccpa",
-                "sku": 195,
-                "image": "http://localhost:8000/media/default.jpg",
-                "level": 1,
-                "product_count": 7,
-                "subdomains": []
-            },
-            {
-                "id": 20,
-                "name": "Customer Alias",
-                "description": "Anonymized customer data meeting privacy and security compliance",
-                "slug": "customer-alias",
-                "sku": 200,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-customer-alias.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 21,
-                "name": "Fueling Operations",
-                "description": "Information related to Electric Vehicle (EV) charging and hydrogen fueling stations",
-                "slug": "customer-fueling-operations",
-                "sku": 205,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-fueling-operations.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 22,
-                "name": "Global Access",
-                "description": "Customer survey data and market research by country or territory",
-                "slug": "customer-global-access",
-                "sku": 210,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-global-access.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 23,
-                "name": "Lifecycle Sales Service",
-                "description": "Data collected at each stage of the customer's purchasing journey",
-                "slug": "customer-lifecyle-sales-service",
-                "sku": 215,
-                "image": "http://localhost:8000/media/marketplace/domains/lifecycle-sales-service.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 24,
-                "name": "Customer- Dealer Relationship",
-                "description": "Quality and Services audit between the dealer and customer",
-                "slug": "customer-dealer-relationship",
-                "sku": 220,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-dealer-rel.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 25,
-                "name": "Social Media",
-                "description": "Customer trends and/or sentiments related to our products and services.",
-                "slug": "customer-social-media",
-                "sku": 225,
-                "image": "http://localhost:8000/media/marketplace/domains/customer-social-media.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 26,
-                "name": "Vehicle Purchase Details",
-                "description": "Offers, incentives, and deal terms received by the customer",
-                "slug": "customer-vehicle-purchase-details",
-                "sku": 230,
-                "image": "http://localhost:8000/media/marketplace/domains/vehicle-purchase.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 50,
-                "name": "Lifecycle Sale Service",
-                "description": "Data collected at each stage of the customer's purchasing journey",
-                "slug": "lifecycle-sale-service",
-                "sku": 365,
-                "image": null,
-                "level": 1,
-                "product_count": 0,
-                "subdomains": []
-            },
-            {
-                "id": 51,
-                "name": "Customer - Dealer Relationship",
-                "description": "Quality and Services audit between the dealer and customer",
-                "slug": "customer-dealer-relationship",
-                "sku": 370,
-                "image": null,
-                "level": 1,
-                "product_count": 0,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      },
+      {
+        "name": "Incentive",
+        "children": [
+          {
+            "name": "Actuals",
+            "children": []
+          },
+          {
+            "name": "New Car Sales",
+            "children": []
+          },
+          {
+            "name": "Forecast",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 4,
-        "name": "Manufacturing",
-        "description": "North American manufacturing facilities activity data from product build to facility management",
-        "slug": null,
-        "sku": 130,
-        "image": "http://localhost:8000/media/marketplace/domains/manufacturing.jpg",
-        "level": 0,
-        "product_count": 46,
-        "subdomains": [
-            {
-                "id": 27,
-                "name": "Productivity",
-                "description": "Manufacturing plant's operating performance data tracking",
-                "slug": "manufacturing-productivity",
-                "sku": 235,
-                "image": "http://localhost:8000/media/marketplace/domains/productivity-list.jpg",
-                "level": 1,
-                "product_count": 12,
-                "subdomains": []
-            },
-            {
-                "id": 28,
-                "name": "Inspection",
-                "description": "Inspection results and repair of vehicle/parts in the manufacturing process",
-                "slug": "manufacturing-inspection",
-                "sku": 240,
-                "image": "http://localhost:8000/media/marketplace/domains/inspection-list.jpg",
-                "level": 1,
-                "product_count": 8,
-                "subdomains": []
-            },
-            {
-                "id": 29,
-                "name": "Internal Logistics Parts",
-                "description": "Movement of manufactured parts within the manufacturing facility",
-                "slug": "manufacturing-internal-logistics-parts",
-                "sku": 245,
-                "image": "http://localhost:8000/media/marketplace/domains/internal-logistics-parts.jpg",
-                "level": 1,
-                "product_count": 13,
-                "subdomains": []
-            },
-            {
-                "id": 30,
-                "name": "Equipment",
-                "description": "Data related to the machines used during the production of vehicles, units, and parts",
-                "slug": "manufacturing-equipment",
-                "sku": 250,
-                "image": "http://localhost:8000/media/marketplace/domains/equipment-list.jpg",
-                "level": 1,
-                "product_count": 3,
-                "subdomains": []
-            },
-            {
-                "id": 31,
-                "name": "Build",
-                "description": "Process tracking data for vehicle and parts assembly",
-                "slug": "manufacturing-build",
-                "sku": 255,
-                "image": "http://localhost:8000/media/marketplace/domains/build-list.jpg",
-                "level": 1,
-                "product_count": 5,
-                "subdomains": []
-            },
-            {
-                "id": 32,
-                "name": "Job Process",
-                "description": "Work performed by team members during vehicle or unit build",
-                "slug": "manufacturing-job-process",
-                "sku": 260,
-                "image": "http://localhost:8000/media/marketplace/domains/job-process-list.jpg",
-                "level": 1,
-                "product_count": 6,
-                "subdomains": []
-            },
-            {
-                "id": 33,
-                "name": "Indirect Procurement",
-                "description": "Maintenance, goods, and service expenditures that meet the operational the needs of business",
-                "slug": "manufacturing-indirect-procurement",
-                "sku": 265,
-                "image": "http://localhost:8000/media/marketplace/domains/indirect-procurement.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Factors",
+        "children": []
+      },
+      {
+        "name": "Orders",
+        "children": [
+          {
+            "name": "Order Forecast",
+            "children": []
+          },
+          {
+            "name": "Order Actuals",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 5,
-        "name": "Telematics",
-        "description": "Connected services capabilities, subscriptions, notifications, and alerts",
-        "slug": null,
-        "sku": 140,
-        "image": "http://localhost:8000/media/marketplace/domains/telematics.jpg",
-        "level": 0,
-        "product_count": 31,
-        "subdomains": []
-    },
-    {
-        "id": 6,
-        "name": "Finance Management & Accounting",
-        "description": "Finance forecasting, actuals, transactions, and volumes",
-        "slug": null,
-        "sku": 150,
-        "image": "http://localhost:8000/media/marketplace/domains/finance-management.jpg",
-        "level": 0,
-        "product_count": 31,
-        "subdomains": [
-            {
-                "id": 34,
-                "name": "Accounting",
-                "description": "Accounting focuses on the day-to-day flow of money in and out of the company",
-                "slug": "finance-management-accounting",
-                "sku": 270,
-                "image": "http://localhost:8000/media/marketplace/domains/accounting.jpg",
-                "level": 1,
-                "product_count": 27,
-                "subdomains": [
-                    {
-                        "id": 19,
-                        "name": "Accounting Master",
-                        "description": "Chart of Accounts and related metadata",
-                        "slug": "accounting-master",
-                        "sku": 218,
-                        "image": "http://localhost:8000/media/marketplace/domains/accounting-master.jpg",
-                        "level": 2,
-                        "product_count": 14
-                    },
-                    {
-                        "id": 20,
-                        "name": "Transactions",
-                        "description": "Business transactions supporting account entry",
-                        "slug": "accounting-transactions",
-                        "sku": 220,
-                        "image": "http://localhost:8000/media/marketplace/domains/accounting-transactions.jpg",
-                        "level": 2,
-                        "product_count": 6
-                    },
-                    {
-                        "id": 21,
-                        "name": "Calendar",
-                        "description": "All Calendars such as Accounting, Manufacturing Month-End, Parts Month-End, Sales Month-End",
-                        "slug": "accounting-calendar",
-                        "sku": 222,
-                        "image": "http://localhost:8000/media/marketplace/domains/accounting-calendar.jpg",
-                        "level": 2,
-                        "product_count": 2
-                    },
-                    {
-                        "id": 22,
-                        "name": "Journal Entry",
-                        "description": "General Ledger entries including sales transactions, expenses, inventory, and debt",
-                        "slug": "journal-entry",
-                        "sku": 224,
-                        "image": "http://localhost:8000/media/marketplace/domains/accounting-journal-entry.jpg",
-                        "level": 2,
-                        "product_count": 1
-                    },
-                    {
-                        "id": 23,
-                        "name": "Accounting Invoice",
-                        "description": "Accounts receivable",
-                        "slug": "accounting-invoice",
-                        "sku": 226,
-                        "image": "http://localhost:8000/media/marketplace/domains/accounting-invoice.jpg",
-                        "level": 2,
-                        "product_count": 4
-                    }
-                ]
-            },
-            {
-                "id": 35,
-                "name": "Finance Management",
-                "description": "Financial planning, forecasting, budgeting, profitability, and master data",
-                "slug": "finance-management-accounting-finance-management",
-                "sku": 275,
-                "image": "http://localhost:8000/media/marketplace/domains/finance-management-list.jpg",
-                "level": 1,
-                "product_count": 4,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Planning",
+        "children": []
+      },
+      {
+        "name": "Pricing",
+        "children": []
+      },
+      {
+        "name": "Configuration",
+        "children": []
+      },
+      {
+        "name": "Inventory Volume",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Customer",
+    "children": [
+      {
+        "name": "Social Media",
+        "children": []
+      },
+      {
+        "name": "Customer Predictive Score",
+        "children": []
+      },
+      {
+        "name": "Communication Management",
+        "children": []
+      },
+      {
+        "name": "Contact Center",
+        "children": [
+          {
+            "name": "Customer Interaction",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 7,
-        "name": "Quality",
-        "description": "Campaign master data and affected VINs by campaign/status",
-        "slug": null,
-        "sku": 160,
-        "image": "http://localhost:8000/media/marketplace/domains/quality.jpg",
-        "level": 0,
-        "product_count": 24,
-        "subdomains": [
-            {
-                "id": 36,
-                "name": "Reports",
-                "description": "Information providing visibility into the quality of TMNA products",
-                "slug": "quality-reports",
-                "sku": 280,
-                "image": "http://localhost:8000/media/marketplace/domains/quality_reports.jpg",
-                "level": 1,
-                "product_count": 14,
-                "subdomains": []
-            },
-            {
-                "id": 37,
-                "name": "Quality Campaigns",
-                "description": "Special Service Campaign (SSC) information",
-                "slug": "quality-campaigns",
-                "sku": 285,
-                "image": "http://localhost:8000/media/marketplace/domains/quality-campaigns-list.jpg",
-                "level": 1,
-                "product_count": 9,
-                "subdomains": []
-            },
-            {
-                "id": 38,
-                "name": "Diagnostics",
-                "description": "Diagnostic information from various sources, used to monitor quality of components",
-                "slug": "quality-diagnostics",
-                "sku": 290,
-                "image": "http://localhost:8000/media/marketplace/domains/quality-diagnostics.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Customer Master",
+        "children": []
+      },
+      {
+        "name": "Vehicle Purchase Details",
+        "children": []
+      },
+      {
+        "name": "California Consumer Privacy Act (CCPA)",
+        "children": []
+      },
+      {
+        "name": "Customer- Dealer Relationship",
+        "children": []
+      },
+      {
+        "name": "Parts Ecommerce",
+        "children": []
+      },
+      {
+        "name": "Customer Marketing",
+        "children": []
+      },
+      {
+        "name": "Global Access",
+        "children": []
+      },
+      {
+        "name": "Fueling Operations",
+        "children": []
+      },
+      {
+        "name": "Customer Alias",
+        "children": []
+      },
+      {
+        "name": "Lifecycle Sales Service",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Parts",
+    "children": [
+      {
+        "name": "Service & Accessory Parts",
+        "children": [
+          {
+            "name": "Logisitcs",
+            "children": []
+          },
+          {
+            "name": "Inline Accessories",
+            "children": []
+          },
+          {
+            "name": "Incentives",
+            "children": []
+          },
+          {
+            "name": "Sales",
+            "children": []
+          },
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Trial Parts",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 8,
-        "name": "Service History",
-        "description": "Repair order details by VIN/status.",
-        "slug": null,
-        "sku": 170,
-        "image": "http://localhost:8000/media/marketplace/domains/service-history-list.jpg",
-        "level": 0,
-        "product_count": 18,
-        "subdomains": []
-    },
-    {
-        "id": 9,
-        "name": "Distributor / Region / Dealership",
-        "description": "Information related to Franchise Dealers and Affiliated Non-Dealer Entities",
-        "slug": null,
-        "sku": 180,
-        "image": "http://localhost:8000/media/marketplace/domains/dealer.jpg",
-        "level": 0,
-        "product_count": 26,
-        "subdomains": [
-            {
-                "id": 39,
-                "name": "Master Data",
-                "description": "Information related to Franchise Dealers and Affiliated Non-Dealer Entities",
-                "slug": "distributor-region-dealer-master-data",
-                "sku": 295,
-                "image": "http://localhost:8000/media/marketplace/domains/master-data-list.jpg",
-                "level": 1,
-                "product_count": 15,
-                "subdomains": []
-            },
-            {
-                "id": 40,
-                "name": "Dealership Metrics",
-                "description": "Dealership Financial Statements and Accounts",
-                "slug": "dealership-metrics",
-                "sku": 300,
-                "image": "http://localhost:8000/media/marketplace/domains/dealership-metrics-list.jpg",
-                "level": 1,
-                "product_count": 7,
-                "subdomains": []
-            },
-            {
-                "id": 41,
-                "name": "Dealer Personnel",
-                "description": "Staff Master information related to personnel working at dealerships",
-                "slug": "dealer-personnel",
-                "sku": 305,
-                "image": "http://localhost:8000/media/marketplace/domains/dealer-personnel.jpg",
-                "level": 1,
-                "product_count": 2,
-                "subdomains": []
-            },
-            {
-                "id": 42,
-                "name": "Region Master",
-                "description": "Dealership and corporate office information by region",
-                "slug": "distributor-region-dealership-region-master",
-                "sku": 310,
-                "image": "http://localhost:8000/media/marketplace/domains/region-master-list.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 43,
-                "name": "Call Center",
-                "description": "Information related to Dealership Call Center requests for service",
-                "slug": "distributor-region-dealership-call-center",
-                "sku": 315,
-                "image": "http://localhost:8000/media/marketplace/domains/call-center-list.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Manufacturing Parts",
+        "children": [
+          {
+            "name": "Logisitcs",
+            "children": []
+          },
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Trade Compliance",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 10,
-        "name": "Survey",
-        "description": "Customer, service, and vehicle satisfaction survey results",
-        "slug": null,
-        "sku": 190,
-        "image": "http://localhost:8000/media/marketplace/domains/survey.jpg",
-        "level": 0,
-        "product_count": 15,
-        "subdomains": []
-    },
-    {
-        "id": 11,
-        "name": "Integrated Revenue Management",
-        "description": "Industry and operational data which optimizes vehicle revenue and profit",
-        "slug": null,
-        "sku": 200,
-        "image": "http://localhost:8000/media/marketplace/domains/integrated-revenue.jpg",
-        "level": 0,
-        "product_count": 12,
-        "subdomains": []
-    },
-    {
-        "id": 12,
-        "name": "Warranty",
-        "description": "Vehicle warranty claims master data and details by VIN claim/status",
-        "slug": null,
-        "sku": 210,
-        "image": "http://localhost:8000/media/marketplace/domains/warranty.jpg",
-        "level": 0,
-        "product_count": 21,
-        "subdomains": [
-            {
-                "id": 44,
-                "name": "Warranty Claims",
-                "description": "Warranty claims information submitted by Toyota and Lexus dealers",
-                "slug": "warranty-claims",
-                "sku": 320,
-                "image": "http://localhost:8000/media/marketplace/domains/warranty-claims.jpg",
-                "level": 1,
-                "product_count": 17,
-                "subdomains": []
-            },
-            {
-                "id": 45,
-                "name": "Parts Claims",
-                "description": "Parts claims master data by claim number or status",
-                "slug": "warranty-parts-claims",
-                "sku": 325,
-                "image": "http://localhost:8000/media/marketplace/domains/parts-claims.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            },
-            {
-                "id": 46,
-                "name": "Warranty Insurance",
-                "description": "Warranty and insurance products used by Toyota/Lexus customers",
-                "slug": "warranty-insurance",
-                "sku": 330,
-                "image": "http://localhost:8000/media/marketplace/domains/warranty-insurance.jpg",
-                "level": 1,
-                "product_count": 3,
-                "subdomains": []
-            }
+      },
+      {
+        "name": "Productivity",
+        "children": [
+          {
+            "name": "Master Data",
+            "children": []
+          },
+          {
+            "name": "Logisitcs",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 13,
-        "name": "Procurement",
-        "description": "Information related to sourcing, acquiring, and paying for goods and services",
-        "slug": null,
-        "sku": 220,
-        "image": "http://localhost:8000/media/marketplace/domains/procurement.jpg",
-        "level": 0,
-        "product_count": 6,
-        "subdomains": [
-            {
-                "id": 47,
-                "name": "Transactions",
-                "description": "Records and information in relation to purchasing products and services from external vendors",
-                "slug": "procurement-transactions",
-                "sku": 335,
-                "image": "http://localhost:8000/media/marketplace/domains/procurement-transactions.jpg",
-                "level": 1,
-                "product_count": 3,
-                "subdomains": []
-            },
-            {
-                "id": 48,
-                "name": "Master Data",
-                "description": "Information related to procurement activities within the organization",
-                "slug": "procurement-master-data",
-                "sku": 340,
-                "image": "http://localhost:8000/media/marketplace/domains/procurement-masterdata.jpg",
-                "level": 1,
-                "product_count": 2,
-                "subdomains": []
-            },
-            {
-                "id": 49,
-                "name": "Contracts",
-                "description": "Procurement records pertaining to agreement terms and conditions between a buyer and seller.",
-                "slug": "procurement-contracts",
-                "sku": 345,
-                "image": "http://localhost:8000/media/marketplace/domains/procurement-contracts.jpg",
-                "level": 1,
-                "product_count": 1,
-                "subdomains": []
-            }
+      }
+    ]
+  },
+  {
+    "name": "Manufacturing",
+    "children": [
+      {
+        "name": "Internal Logistics Parts",
+        "children": []
+      },
+      {
+        "name": "Build",
+        "children": []
+      },
+      {
+        "name": "Productivity",
+        "children": []
+      },
+      {
+        "name": "Inspection",
+        "children": []
+      },
+      {
+        "name": "Equipment",
+        "children": []
+      },
+      {
+        "name": "Job Process",
+        "children": []
+      },
+      {
+        "name": "Indirect Procurement",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Telematics",
+    "children": []
+  },
+  {
+    "name": "Warranty",
+    "children": [
+      {
+        "name": "Warranty Claims",
+        "children": []
+      },
+      {
+        "name": "Warranty Insurance",
+        "children": []
+      },
+      {
+        "name": "Parts Claims",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Quality",
+    "children": [
+      {
+        "name": "Quality Campaigns",
+        "children": []
+      },
+      {
+        "name": "Reports",
+        "children": []
+      },
+      {
+        "name": "Diagnostics",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Service History",
+    "children": []
+  },
+  {
+    "name": "Distributor / Region / Dealership",
+    "children": [
+      {
+        "name": "Region Master",
+        "children": []
+      },
+      {
+        "name": "Dealer Personnel",
+        "children": []
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      },
+      {
+        "name": "Dealership Metrics",
+        "children": []
+      },
+      {
+        "name": "Call Center",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Facilities",
+    "children": []
+  },
+  {
+    "name": "Finance Management & Accounting",
+    "children": [
+      {
+        "name": "Accounting",
+        "children": [
+          {
+            "name": "Accounting Master",
+            "children": []
+          },
+          {
+            "name": "Transactions",
+            "children": []
+          },
+          {
+            "name": "Journal Entry",
+            "children": []
+          },
+          {
+            "name": "Calendar",
+            "children": []
+          },
+          {
+            "name": "Accounting Invoice",
+            "children": []
+          }
         ]
-    },
-    {
-        "id": 14,
-        "name": "Purchasing",
-        "description": "Buying of goods, materials, and services needed to operate and/or manufacture products",
-        "slug": null,
-        "sku": 230,
-        "image": "http://localhost:8000/media/marketplace/domains/purchasing.jpg",
-        "level": 0,
-        "product_count": 5,
-        "subdomains": []
-    },
-    {
-        "id": 15,
-        "name": "Identity Management",
-        "description": "Identity and Access Management for Enterprise Users, Suppliers, and Dealers",
-        "slug": null,
-        "sku": 240,
-        "image": "http://localhost:8000/media/marketplace/domains/identity_mgmt.jpg",
-        "level": 0,
-        "product_count": 6,
-        "subdomains": []
-    },
-    {
-        "id": 16,
-        "name": "Facilities",
-        "description": "Buildings owned or used by Toyota Motor Corporation, Inc. (TMC) or its affiliates",
-        "slug": null,
-        "sku": 250,
-        "image": "http://localhost:8000/media/marketplace/domains/facilities.jpg",
-        "level": 0,
-        "product_count": 3,
-        "subdomains": []
-    },
-    {
-        "id": 17,
-        "name": "Internal Audit",
-        "description": "Account and transaction entries, policy compliance, internal financial reporting, and other data related to internal controls",
-        "slug": null,
-        "sku": 260,
-        "image": "http://localhost:8000/media/marketplace/domains/internal-audit.jpg",
-        "level": 0,
-        "product_count": 2,
-        "subdomains": []
-    },
-    {
-        "id": 18,
-        "name": "Affiliates",
-        "description": "Data pertaining to companies and subsidiaries of Toyota's global network",
-        "slug": null,
-        "sku": 270,
-        "image": "http://localhost:8000/media/marketplace/domains/affiliates.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    },
-    {
-        "id": 19,
-        "name": "Research & Development",
-        "description": "Research related to vehicle design, development, procurement, and safety",
-        "slug": null,
-        "sku": 280,
-        "image": "http://localhost:8000/media/marketplace/domains/rd.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    },
-    {
-        "id": 20,
-        "name": "Legal",
-        "description": "Data relevant to vehicle legal matters and cases",
-        "slug": null,
-        "sku": 290,
-        "image": "http://localhost:8000/media/marketplace/domains/legal.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    },
-    {
-        "id": 21,
-        "name": "Reference",
-        "description": "Reference data related to vehicle sales events, event trends, calendars, and census tracts",
-        "slug": null,
-        "sku": 300,
-        "image": "http://localhost:8000/media/marketplace/domains/reference.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    },
-    {
-        "id": 22,
-        "name": "Human Resources",
-        "description": "Information related to Team Members and Business Partners",
-        "slug": null,
-        "sku": 310,
-        "image": "http://localhost:8000/media/marketplace/domains/human-resources.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    },
-    {
-        "id": 23,
-        "name": "Vendors & Partners",
-        "description": "Vendors, Service Providers, or Business Partners that conduct business with or on behalf of TMNA",
-        "slug": null,
-        "sku": 320,
-        "image": "http://localhost:8000/media/marketplace/domains/vendors-partners.jpg",
-        "level": 0,
-        "product_count": 1,
-        "subdomains": []
-    }
+      },
+      {
+        "name": "Finance Management",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Human Resources",
+    "children": []
+  },
+  {
+    "name": "Survey",
+    "children": []
+  },
+  {
+    "name": "Identity Management",
+    "children": []
+  },
+  {
+    "name": "Research & Development",
+    "children": []
+  },
+  {
+    "name": "Internal Audit",
+    "children": []
+  },
+  {
+    "name": "Procurement",
+    "children": [
+      {
+        "name": "Transactions",
+        "children": []
+      },
+      {
+        "name": "Contracts",
+        "children": []
+      },
+      {
+        "name": "Master Data",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Integrated Revenue Management",
+    "children": []
+  },
+  {
+    "name": "Purchasing",
+    "children": []
+  },
+  {
+    "name": "Reference",
+    "children": []
+  },
+  {
+    "name": "Vendors & Partners",
+    "children": []
+  },
+  {
+    "name": "Legal",
+    "children": []
+  },
+  {
+    "name": "Affiliates",
+    "children": []
+  }
 ]

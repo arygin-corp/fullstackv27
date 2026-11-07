@@ -1,0 +1,188 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment Dashboard{% endblock %}
+{% block page_header %}{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/deployment/_shell_start.html" with hero_kicker="DEPLOYMENT" hero_title="Dashboard" hero_description="Start a Python build, a frontend build, or both. Configuration stays in Settings." hero_metric_label="Succeeded" hero_metric_value=analytics.succeeded hero_metric_caption="Finished builds" hero_icon="↑" %}
+<div class="deploy-grid">
+    <article class="deploy-metric"><span>Running</span><strong>{{ analytics.running }}</strong></article>
+    <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.succeeded }}</strong></article>
+    <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.failed }}</strong></article>
+    <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.total }}</strong></article>
+</div>
+<section class="deploy-build-layout">
+<section class="deploy-panel">
+    <h2>Start a build</h2>
+    <p>{{ deployment.message }}</p>
+    {% if can_build %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="deploy-field">
+            <label for="build-environment">Environment</label>
+            <select class="form-select" id="build-environment" name="environment">
+                {% for value, label in environments %}
+                <option value="{{ value }}"{% if value == config.default_environment %} selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            <p id="build-bucket" style="margin:8px 0 0;color:#64758b"></p>
+        </div>
+        <div class="deploy-choices">
+            {% if config.python_enabled %}<button class="deploy-choice" type="button" data-target="backend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Backend only</strong><span>Check Django and collect static files.</span></button>{% endif %}
+            {% if config.frontend_enabled %}<button class="deploy-choice" type="button" data-target="frontend"{% if deployment.state == "running" %} disabled{% endif %}><strong>Frontend only</strong><span>Build the Angular application.</span></button>{% endif %}
+            {% if config.combined_enabled %}<button class="deploy-choice" type="button" data-target="all"{% if deployment.state == "running" %} disabled{% endif %}><strong>Both</strong><span>Build Python, then the frontend.</span></button>{% endif %}
+        </div>
+    </form>
+    {% else %}
+    <p>Only a SuperAdmin can start a build.</p>
+    {% endif %}
+    {% if can_build %}
+    <div style="margin-top:16px">
+        <button class="deploy-ai-button" type="button" id="run-ai-engine">Run AI Suggestion Engine</button>
+    </div>
+    {% endif %}
+</section>
+<aside class="deploy-panel deploy-timeline-col">
+    <h2>Build timeline</h2>
+    {% include "gdx_admin/apps/deployment/_timeline.html" %}
+    {% if not steps %}<p>No build steps yet.</p>{% endif %}
+</aside>
+</section>
+{% if deployment.state == "running" %}<script>setTimeout(function () { window.location.reload(); }, 4000);</script>{% endif %}
+{{ config.frontend_buckets|json_script:"frontend-buckets" }}
+<script>
+(function () {
+    var select = document.getElementById("build-environment");
+    var note = document.getElementById("build-bucket");
+    var data = document.getElementById("frontend-buckets");
+    if (!select || !note || !data) return;
+    var buckets = JSON.parse(data.textContent);
+    function show() {
+        if (select.value === "local") {
+            note.textContent = "Local builds stay on this machine.";
+            return;
+        }
+        note.textContent = buckets[select.value]
+            ? "Angular files upload to " + buckets[select.value] + "."
+            : "Add the S3 bucket for this environment in Deployment settings.";
+    }
+    select.addEventListener("change", show);
+    show();
+})();
+</script>
+</main>
+{% if can_build %}
+<div class="ai-terminal-backdrop" id="ai-terminal-backdrop" hidden></div>
+<aside class="ai-terminal" id="ai-terminal" hidden aria-label="Deployment terminal">
+    <header>
+        <strong id="ai-terminal-title">Terminal</strong>
+        <button type="button" id="ai-terminal-close">Close</button>
+    </header>
+    <pre id="ai-terminal-log"></pre>
+</aside>
+<form id="ai-engine-form" hidden>{% csrf_token %}</form>
+<script>
+(function () {
+    var button = document.getElementById("run-ai-engine");
+    var panel = document.getElementById("ai-terminal");
+    var backdrop = document.getElementById("ai-terminal-backdrop");
+    var log = document.getElementById("ai-terminal-log");
+    var title = document.getElementById("ai-terminal-title");
+    var closeButton = document.getElementById("ai-terminal-close");
+    var tokenInput = document.querySelector("#ai-engine-form input[name=csrfmiddlewaretoken]");
+    var buildButtons = Array.prototype.slice.call(document.querySelectorAll(".deploy-choice"));
+    if (!panel || !log || !tokenInput) return;
+    var busy = false;
+
+    function openPanel(label) {
+        title.textContent = label;
+        backdrop.hidden = false;
+        panel.hidden = false;
+    }
+    function closePanel() {
+        backdrop.hidden = true;
+        panel.hidden = true;
+    }
+    function write(text) {
+        log.textContent += text;
+        log.scrollTop = log.scrollHeight;
+    }
+    function setBusy(value) {
+        busy = value;
+        if (button) button.disabled = value;
+        buildButtons.forEach(function (item) { item.disabled = value; });
+    }
+    async function readStream(response) {
+        if (!response.ok || !response.body) {
+            write(await response.text());
+            return;
+        }
+        var reader = response.body.getReader();
+        var decoder = new TextDecoder();
+        while (true) {
+            var chunk = await reader.read();
+            if (chunk.done) break;
+            write(decoder.decode(chunk.value, {stream: true}));
+        }
+    }
+    closeButton.addEventListener("click", closePanel);
+    backdrop.addEventListener("click", closePanel);
+
+    if (button) {
+        button.addEventListener("click", async function () {
+            if (busy) return;
+            setBusy(true);
+            log.textContent = "";
+            openPanel("AI Suggestion Engine");
+            try {
+                var response = await fetch("{% url 'deployment:ai_suggestion_engine' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value},
+                    credentials: "same-origin"
+                });
+                await readStream(response);
+            } catch (error) {
+                write("\n" + error + "\n");
+            } finally {
+                setBusy(false);
+            }
+        });
+    }
+
+    buildButtons.forEach(function (item) {
+        item.addEventListener("click", async function () {
+            if (busy || item.disabled) return;
+            var environment = document.getElementById("build-environment");
+            var body = new URLSearchParams();
+            body.set("target", item.getAttribute("data-target") || "");
+            body.set("environment", environment ? environment.value : "local");
+            setBusy(true);
+            log.textContent = "";
+            openPanel("Build");
+            try {
+                var started = await fetch("{% url 'deployment:build_terminal' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value, "Content-Type": "application/x-www-form-urlencoded"},
+                    credentials: "same-origin",
+                    body: body.toString()
+                });
+                var payload = await started.json();
+                if (!payload.started) {
+                    write((payload.message || "The build did not start.") + "\n");
+                    return;
+                }
+                var response = await fetch("{% url 'deployment:build_terminal_log' %}", {credentials: "same-origin"});
+                await readStream(response);
+                window.location.reload();
+            } catch (error) {
+                write("\n" + error + "\n");
+            } finally {
+                setBusy(false);
+            }
+        });
+    });
+})();
+</script>
+{% endif %}
+{% endblock %}

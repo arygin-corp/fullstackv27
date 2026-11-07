@@ -1,0 +1,16 @@
+{% extends "gdx_admin/base.html" %}
+{% block page_header %}{% endblock %}
+{% block title %}Company Holidays | DAR Administration{% endblock %}
+{% block content %}
+<div class="container-fluid px-3 px-lg-4 py-4">
+  {% if page_obj %}
+    {% include "gdx_admin/apps/dar/lookups/includes/_lookup_hero.html" with hero_title="Company Holidays" hero_description="Calendar lookup values used by DAR workflows." hero_metric_label="Holiday records" hero_metric=page_obj.paginator.count hero_metric_help="Available calendar values" hero_icon="ti ti-calendar-star" %}
+  {% else %}
+    {% include "gdx_admin/apps/dar/lookups/includes/_lookup_hero.html" with hero_title="Company Holidays" hero_description="Calendar lookup values used by DAR workflows." hero_metric_label="Holiday records" hero_metric=holidays|length hero_metric_help="Available calendar values" hero_icon="ti ti-calendar-star" %}
+  {% endif %}
+  {% include "gdx_admin/apps/dar/lookups/includes/_lookup_header.html" with current_label="Company Holidays" page_heading="Holiday lookup values" page_description="Review names, recurring calendar dates, and active states." %}
+  {% include "gdx_admin/apps/dar/lookups/partials/_lookup_scope.html" with scope_description="Company holiday records support calendar lookup behavior in DAR workflows." %}
+  {% include "gdx_admin/apps/dar/lookups/partials/_holiday_table.html" %}
+  {% include "gdx_admin/apps/dar/lookups/partials/_lookup_pagination.html" %}
+</div>
+{% endblock %}

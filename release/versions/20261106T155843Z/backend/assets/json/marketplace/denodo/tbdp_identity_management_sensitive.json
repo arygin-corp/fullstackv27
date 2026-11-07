@@ -1,0 +1,125 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "actv_tm_vw",
+      "column_name": "cost_cntr_cd"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "actv_tm_vw",
+      "column_name": "emp_id"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "actv_tm_vw",
+      "column_name": "full_nm"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "actv_tm_vw",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "actv_tm_vw",
+      "column_name": "wrkday_id"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "cost_cntr_cd"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "emp_id"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "envt_obs_closed_dt"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "envt_obs_created_dt"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "evnt_obs_nbr"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "inc_selfrpt_vw",
+      "column_name": "wrkday_id"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "glbl_incd_rt"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "hrs_qty"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "incd_dt"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-identity-management-sensitive",
+      "dbname": "identity_management_sensitive_trn_ext",
+      "elementname": "safety_rpt_fct",
+      "column_name": "tot_incd_rt"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-identity-management-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

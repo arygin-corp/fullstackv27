@@ -6,6 +6,7 @@ import { RootService } from '../../../../@shared/services/root.service';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AppService } from '../../../../@shared/services/app.service';
+import { UserActivityService } from '../../../../@shared/services/user-activity.service';
 
 @Component({
     selector: 'app-checkout',
@@ -22,66 +23,151 @@ export class PageCheckoutComponent {
         public cart: CartService,
         public appSvc: AppService,
         private http: HttpClient,
-        public router: Router
+        public router: Router,
+        private activity: UserActivityService
     ) {}
+
+    productImage(product: any): string {
+        const fallback = 'assets/images/product_images/data-access-request.jpg';
+        if (!product) {
+            return fallback;
+        }
+        let img = '';
+        if (Array.isArray(product.images) && product.images.length) {
+            img = String(product.images[0]).trim();
+        } else if (product.image) {
+            img = String(product.image).trim();
+        } else {
+            return fallback;
+        }
+        if (!img) {
+            return fallback;
+        }
+        if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('//')) {
+            return img;
+        }
+        if (img.startsWith('/') || img.startsWith('assets/')) {
+            return img;
+        }
+        return `assets/images/product_images/${img}`;
+    }
+
+    productDatatype(product: any): string {
+        return this.namedValue(product?.datatype);
+    }
+
+    productClassification(product: any): string {
+        return this.namedValue(product?.classification);
+    }
+
+    productSteward(product: any): string {
+        return this.personName(product?.data_steward);
+    }
+
+    productContact(product: any): string {
+        return this.personName(product?.poc_name || product?.business_contact);
+    }
+
+    private namedValue(value: any): string {
+        if (!value) {
+            return '—';
+        }
+        if (typeof value === 'string') {
+            return value.trim() || '—';
+        }
+        return value?.name || '—';
+    }
+
+    private personName(person: any): string {
+        if (!person) {
+            return '—';
+        }
+        if (typeof person === 'string') {
+            return person.trim() || '—';
+        }
+        return person?.name || '—';
+    }
 
     async executeCheckout() {
         this.cart.loadFromStorage();
         const state = await this.cart.state$.pipe(take(1)).toPromise();
         
-        if (!state || (state.catalogItems.length === 0 && state.darRequests.length === 0)) {
+        const products = state?.catalogItems || [];
+        const dars = state?.darRequests || [];
+        if (!state || (products.length === 0 && dars.length === 0)) {
             this.appSvc.notifyError?.("Your cart is empty.");
             return;
         }
+        if (products.length > 0 && dars.length > 0) {
+            this.appSvc.notifyError?.("Products and Data Access Requests check out separately.");
+            return;
+        }
+
+        const orderType = dars.length > 0 ? 'dar' : 'product';
 
         this.isSubmitting = true;
         try {
             this.submissionStatus = 'fulfilling';
-            const snResult = await this.triggerServiceNowFulfillment(state);
+            const snResult = await this.triggerServiceNowFulfillment(state, orderType);
 
             this.submissionStatus = 'success';
             await new Promise(resolve => setTimeout(resolve, 3000));
 
             // Store the receipt data BEFORE clearing the cart
-            const orderId = snResult?.result?.number || snResult?.number || 'REQ-SUCCESS';
+            const result = snResult?.result || snResult || {};
+            const orderId = result.request_number || result.number || 'REQ-SUCCESS';
             this.cart.setReceipt({
                 id: orderId,
-                items: [...state.catalogItems],
-                darRequests: [...state.darRequests],
+                ritm: result.ritm_number || '',
+                orderType: result.order_type || orderType,
+                items: orderType === 'product' ? products : [],
+                darRequests: orderType === 'dar' ? dars.map((dar: any) => dar?.formData || dar) : [],
                 date: new Date().toLocaleDateString(),
                 total: 0 // As these are free requests
             });
-
             this.cart.clear();
             this.router.navigate(['/marketplace/order/cart/checkout/success'], { queryParams: { id: orderId } });
         } catch (error: any) {
-            // ... error handling
+            this.submissionStatus = 'error';
+            this.appSvc.notifyError?.('Checkout could not be submitted.');
         } finally {
             this.isSubmitting = false;
         }
     }
 
-    private async triggerServiceNowFulfillment(state: any): Promise<any> {
-        const headers = new HttpHeaders({
-            'Authorization': `Basic ${environment.serviceNow.auth}`, 
-            'Content-Type': 'application/json'
-        });
+    private async triggerServiceNowFulfillment(state: any, orderType: 'dar' | 'product'): Promise<any> {
+        const auth = await this.activity.authorizationHeaders();
+        const headers = (auth || new HttpHeaders()).set('Content-Type', 'application/json');
 
         const payload = {
             sysparm_quantity: '1',
+            order_type: orderType,
             variables: {
+                order_type: orderType,
                 v_dar_objectid_createdby: this.appSvc?.userData?.id,
-                // Now both use the same mapping logic
-                cart_items: state.catalogItems.map((item: any) => ({
-                    formData: this.mapFormData(item.formData)
-                })),
-                dar_requests: state.darRequests.map((dar: any) => ({
-                    formData: this.mapFormData(dar.formData)
-                })),
+                cart_items: orderType === 'product' ? state.catalogItems.map((item: any) => ({
+                    order_type: 'product',
+                    formData: {
+                        ...this.mapFormData(item.formData),
+                        order_type: 'product',
+                        productId: item.product?.id,
+                        product_name: item.product?.name,
+                        domain: item.product?.domain,
+                        datatype: item.product?.datatype,
+                        classification: item.product?.classification,
+                    }
+                })) : [],
+                dar_requests: orderType === 'dar' ? state.darRequests.map((dar: any) => ({
+                    order_type: 'dar',
+                    formData: {
+                        ...this.mapFormData(dar?.formData || dar),
+                        order_type: 'dar',
+                    }
+                })) : [],
             }
         };
 
-        return this.http.post(environment.serviceNow.submitOrder, payload, { headers }).toPromise();
+        return this.http.post(environment.gdx.submitCart, payload, { headers }).toPromise();
     }
 
     /**

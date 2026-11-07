@@ -7,152 +7,87 @@
 <div class="block">
     <div class="container-fluid">
         <div class="row justify-content-left">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
                 <div class="card flex-grow-1 mb-0 mt-2">
                     <div class="card-body">
                         <div class="card-title text-center"><h4>Track Request</h4></div>
                         <p class="mb-4 pt-2 text-center">
-                            Looking for a specific Data Product Request Order you have placed. Now you can track your more easily and efficiently.
+                            Look up one of your requests with its request number or RITM number.
                         </p>
-                        <form>
+                        <form (ngSubmit)="track($event)">
                             <div class="form-group">
                                 <div class="pt-3">
-                                    <div class="d-flex justify-content-center">
-                                        <p for="track-order-id"><strong>Request Number</strong></p>
-                                    </div>
-                                    <input id="track-order-id" type="text" class="form-control" placeholder="What is your Request #?">
+                                    <label for="track-request-number"><strong>Request Number</strong></label>
+                                    <input id="track-request-number" name="requestNumber" type="text" class="form-control" [(ngModel)]="requestNumber" placeholder="REQ000145" autocomplete="off">
                                 </div>
                                 <div class="pt-3">
-                                    <div class="d-flex justify-content-center">
-                                        <p for="track-order-id"><strong>RITM Number</strong></p>
-                                    </div>
-                                    <input id="track-order-id" type="text" class="form-control" placeholder="What is your RITM #?">
+                                    <label for="track-ritm-number"><strong>RITM Number</strong></label>
+                                    <input id="track-ritm-number" name="ritmNumber" type="text" class="form-control" [(ngModel)]="ritmNumber" placeholder="RITM000145" autocomplete="off">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="d-flex justify-content-center">
-                                    <p for="track-email"><strong>Email address</strong></p>
-                                </div>
-                                <input id="track-email" type="email" class="form-control" value="{{appSvc?.userData?.mail}}" disabled>
+                            <div class="form-group pt-3">
+                                <label for="track-email"><strong>Email address</strong></label>
+                                <input id="track-email" type="email" class="form-control" [value]="appSvc?.userData?.mail || ''" disabled>
                             </div>
+                            <p class="track-hint">Use one number. The lookup uses the account you are signed in with.</p>
                             <div class="pt-3 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Track</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!canTrack">
+                                    {{ searching ? 'Tracking...' : 'Track' }}
+                                </button>
                             </div>
+                            <p class="track-error" *ngIf="error">{{ error }}</p>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12">
-                <div class="card-table mt-2">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="padding: 150px;">
-                        <img class="center" src="assets/images/icons/package.png" style="width: 100%;max-width: 200px;opacity: 0.2;">
-                        <h1 class="text-center" style="color: #e5e5e5;">No Orders Available</h1>
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                <div class="card-table mt-2" *ngIf="!result">
+                    <div class="track-empty">
+                        <img class="center" src="assets/images/icons/package.png" alt="">
+                        <h2>{{ searched ? 'No matching request' : 'No request selected' }}</h2>
+                        <p *ngIf="!searched">Enter a request number or an RITM number to see its status.</p>
                     </div>
-
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="padding: 150px;">
-                        <img class="center" src="assets/images/icons/package.png" style="width: 100%;max-width: 200px;opacity: 0.2;">
-                        <h1 class="text-center" style="color: #e5e5e5;">Waiting For Requested Order</h1>
-                    </div> -->
                 </div>
 
-                <!--<div class="card-table mt-2">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                        <table>
-                            <tbody class="card-table__body card-table__body--merge-rows">-->
-                                <!-- <tr class="col-12" *ngFor="let item of order.items"> -->
-                                <!--<tr class="col-12">
-                                    <td class="col-12" style="padding: 24px; border: 2px solid #e5e5e5;">
-                                        <div class="col-lg-12">
-                                            <div class="d-flex justify-content-between" style="margin-bottom: 12px; padding: 0px 20px 0px 0px;">-->
-                                                <!-- <strong class="text-start">{{ item.name }} <br> -->
-                                                <!--<strong class="text-start">Demo Product Name<br>
-                                                    <span>
-                                                        <small class="text-start" style="font-size: 12px; font-weight: 400;"><strong>Classification: </strong>Protected</small><br>
-                                                    </span>
-                                                    <small class="d-block d-sm-none" style="font-size: 12px; font-weight: 400;"><strong>Data Steward: </strong>Omar Casas<br>
-                                                        <span>
-                                                            <small class="" style="font-size: 12px; font-weight: 400;"><strong>Contact: </strong>Hali Crutchfield</small>
-                                                        </span>
-                                                    </small>
-                                                </strong>
-            
-                                                <small class="text-end d-none d-sm-block d-sm-none d-md-block" style="font-size: 12px; font-weight: 400;"><strong>Data Steward: </strong>Omar Casas<br>
-                                                    <span>
-                                                        <small class="text-end" style="font-size: 12px; font-weight: 400;"><strong>Contact: </strong>Hali Crutchfield</small>
-                                                    </span>
-                                                </small>
-                                            </div>
-            
-                                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left;">
-                                                <img src="assets/images/product_images/adas_vehicle_info.jpg" style="width: 100%; padding: 8px 0px;">
-                                            </div>
-            
-                                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
-                                                <p class="product-delivery text-primary">
-                                                    <strong style="font-weight: 600; font-size: 20px;">Pending Approval Date</strong>
-                                                    <br>
-                                                    <span class="text-dark" style="font-weight: 400; font-size: 16px;">Approval Due By</span>
-                                                </p>
-                                                <p class="delivery-day text-primary">Friday</p> 
-                                                <p class="delivery-date text-primary" style="float: left;">12</p>
-                                                <p class="delivery-month text-primary" style="float: left;">01</p>
-                                                <br>
-                                                <p class="delivery-year text-primary" style="float: left;">2024</p>
-                                            </div>
-            
-                                            <div class="col-xl-3 col-lg-8 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 0px;">
-                                                <p class="order-status">Order Status</p>
-                                                <div class="progress mb-3" style="position: relative; top: 2px;">
-                                                    <ng-container>
-                                                        <ng-container>
-                                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-success" style="width: 33.33%; border: 1px solid;"></div>
-                                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-blue" style="width: 33.33%; border: 1px solid;"></div>
-                                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-grey" style="width: 33.33%; border: 1px solid;"></div>
-                                                        </ng-container>
-                                                    </ng-container>
-                                                </div>
-                                                <p class="order-status-notification" style="font-size: 14px;">
-                                                    <ng-container>
-                                                        <ng-container>
-                                                            Your request is <span class="text-primary font-weight-bold">Pending</span> with <span class="text-info font-weight-bold">Omar Casas</span>
-                                                        </ng-container>
-                                                    </ng-container>
-                                                </p>
-                                            </div>
-            
-                                            <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
-                                                <ng-container>
-                                                    <p class="text-center" style="margin: 0px; padding-top: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 8px;font-size:14px;">
-                                                        <strong>Quick Actions</strong>
-                                                    </p>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-success btn-action-approve align-middle">Approve</a>
-                                                    </div>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-danger btn-action-deny align-middle">Rejected</a>
-                                                    </div>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-history-teams align-middle">Microsoft Teams</a>
-                                                    </div>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-history-outlook align-middle">Microsoft Outlook</a>
-                                                    </div>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-action-upload align-middle">Upload Attachment</a>
-                                                    </div>
-                                                    <div class="col-lg-12" style="margin: 0px">
-                                                        <a type="button" href="" class="btn btn-sm btn-dark btn-action-review align-middle">Write A Review</a>
-                                                    </div>
-                                                </ng-container>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="track-result card mt-2" *ngIf="result">
+                    <div class="card-body">
+                        <div class="track-result__header">
+                            <div>
+                                <p class="track-kicker">Request</p>
+                                <h2>{{ result.requests[0]?.request_number || result.marketplace_order_id }}</h2>
+                                <p class="track-order-id" *ngIf="result.marketplace_order_id && result.marketplace_order_id !== result.requests[0]?.request_number">Order {{ result.marketplace_order_id }}</p>
+                            </div>
+                            <span class="track-pill" *ngIf="isSyncStatus(result.sync_status)">{{ result.sync_status }}</span>
+                        </div>
+
+                        <article class="track-request" *ngFor="let item of result.requests">
+                            <div class="track-request__title">
+                                <h3>{{ item.request_number || 'Request' }}</h3>
+                                <span class="track-pill">{{ item.ritm_state || item.stage || 'Open' }}</span>
+                            </div>
+                            <dl>
+                                <div><dt>RITM</dt><dd>{{ item.ritm_number || 'Not assigned' }}</dd></div>
+                                <div><dt>Stage</dt><dd>{{ item.stage || 'Not available' }}</dd></div>
+                                <div><dt>Approval</dt><dd>{{ item.approval_stage || 'Not available' }}</dd></div>
+                                <div><dt>Product</dt><dd>{{ item.product_id || 'Not available' }}</dd></div>
+                                <div><dt>Opened</dt><dd>{{ item.opened_at ? (item.opened_at | date:'MMMM d, y, h:mm a') : 'Not available' }}</dd></div>
+                                <div><dt>Closed</dt><dd>{{ item.closed_at ? (item.closed_at | date:'MMMM d, y, h:mm a') : 'Still open' }}</dd></div>
+                            </dl>
+
+                            <h4 *ngIf="item.tasks?.length">Tasks</h4>
+                            <ul *ngIf="item.tasks?.length">
+                                <li *ngFor="let task of item.tasks">
+                                    <strong>{{ task.task_number }}</strong>
+                                    <span>{{ task.state || 'Open' }}</span>
+                                    <span *ngIf="task.assignment_group">{{ task.assignment_group }}</span>
+                                    <span *ngIf="task.assigned_to">{{ task.assigned_to }}</span>
+                                </li>
+                            </ul>
+                            <p class="track-empty-tasks" *ngIf="!item.tasks?.length">No tasks are linked to this request yet.</p>
+                        </article>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>

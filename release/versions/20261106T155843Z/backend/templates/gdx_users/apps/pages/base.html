@@ -1,0 +1,36 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+
+{% block extra_css %}=
+    <link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- DataTables -->
+    <link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />  
+    {% comment %} <link href="{% static 'libs/select2/css/select2.min.css' %}" rel="stylesheet" type="text/css" /> {% endcomment %}
+{% endblock %}
+{% block contents %}
+
+
+
+
+
+{% endblock %}
+
+{% block extra_content %}  
+
+
+
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <!-- Required datatable js -->
+    <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <!-- Responsive examples -->
+    <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'js/pages/job-list.init.js' %}"></script>
+{% endblock %}

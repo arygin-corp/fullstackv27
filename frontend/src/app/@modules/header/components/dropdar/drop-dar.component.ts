@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, FormControl, Validators, ValidatorFn, FormArray } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { CartService } from '../../../../@shared/services/cart.service';
@@ -37,7 +37,6 @@ export class DropDARComponent {
     isRequiredField: any;
     productTags: FormArray;
     availableTags: any[] = []; // Add this property
-    sampleForm: FormGroup; // Add this property
 
     constructor(
         public state: OffcanvasProductService,
@@ -49,11 +48,7 @@ export class DropDARComponent {
         private msalService: MsalService,
         public appSvc: AppService,
         private notify:NotificationService,
-        ) { 
-            this.sampleForm = this.fb.group({
-                samples: this.fb.array([])
-            });
-        }
+        ) { }
 
     // Add auto-save logic
     onFormChange() {
@@ -81,7 +76,8 @@ export class DropDARComponent {
 
     ngOnInit() {
         this.generateForm();
-        this.setFormValidators('Report');
+        this.fillRequester();
+        this.setFormValidators('');
         const productTypeControl = this.addNewProductForm.get('productType');
         const productURLControl = this.addNewProductForm.get('productURL');
         const productPIIControl = this.addNewProductForm.get('productPII');
@@ -101,24 +97,34 @@ export class DropDARComponent {
         }
     }
 
+    fillRequester(): void {
+        const user = this.appSvc?.userData;
+        if (!user || !this.addNewProductForm) {
+            return;
+        }
+        this.addNewProductForm.patchValue({
+            requesterName: `${user.givenName || ''} ${user.surname || ''}`.trim(),
+            requesterID: user.id || '',
+            requesterMail: user.mail || user.userPrincipalName || ''
+        });
+    }
+
     generateForm():void{
         this.addNewProductForm=this.fb.group({
-            requestingAdd:[''],
-            requesterName:['',Validators.required],
-            requesterMail:['',Validators.required],
-            requesterID:['',Validators.required],
-            productName:['',Validators.required],
-            productDesc:['',Validators.required],
-            productType:['',Validators.required],
+            requestingAdd:['', Validators.required],
+            requesterName:[''],
+            requesterMail:[''],
+            requesterID:[''],
+            productName:['', Validators.required],
+            productDesc:['', [Validators.required, Validators.minLength(16)]],
+            productType:['', Validators.required],
             productURL:[''],
-            productTags: [''],
-            productDomain:[''],
-            stakeholderName:[''],
-            productPII:[''],
+            productTags: [[]],
+            productDomain:['', Validators.required],
+            stakeholderName:['', Validators.required],
+            productPII:['', Validators.required],
             piiExplanation:[''],
-            sampleFields:[''],
-            sampleValues:[''],
-            fulfillmentGroup:['',Validators.minLength(10)]
+            fulfillmentGroup:['', [Validators.required, Validators.minLength(10)]]
         });
     }
 
@@ -145,7 +151,7 @@ export class DropDARComponent {
             if (productDomain) productDomain.setValidators(Validators.required);
             if (stakeholderName) stakeholderName.setValidators(Validators.required);
             if (productPII) productPII.setValidators(Validators.required);
-            if (productURL) productURL.setValidators([Validators.required,Validators.minLength(10)]);
+            if (productURL) productURL.setValidators([Validators.required,Validators.minLength(16)]);
             break;
         }
         case 'Data Science Model' :
@@ -175,28 +181,15 @@ export class DropDARComponent {
     setPIIValidators(productPIIvalue:string):void{
         this.PIIHasValue=productPIIvalue=='true' || productPIIvalue=='false';
         const piiExplanation= this.addNewProductForm.get('piiExplanation');
-        const sampleFields= this.addNewProductForm.get('sampleFields');
-        const sampleValues= this.addNewProductForm.get('sampleValues');
         const fulfillmentGroup= this.addNewProductForm.get('fulfillmentGroup');
         if (piiExplanation) piiExplanation.clearValidators();
-        if (sampleFields) sampleFields.clearValidators();
-        if (sampleValues) sampleValues.clearValidators();
         if (fulfillmentGroup) fulfillmentGroup.clearValidators();
 
+        if (fulfillmentGroup) fulfillmentGroup.setValidators([Validators.required, Validators.minLength(10)]);
         if(productPIIvalue=="true"){
-            if (piiExplanation) piiExplanation.setValidators([Validators.required,Validators.minLength(10)]);
-            if (sampleFields) sampleFields.setValidators(Validators.required);
-            if (sampleValues) sampleValues.setValidators(Validators.required);
-            if (fulfillmentGroup) fulfillmentGroup.setValidators(Validators.required);
-        }
-        else if(productPIIvalue=="false"){
-            if (sampleFields) sampleFields.setValidators(Validators.required);
-            if (sampleValues) sampleValues.setValidators(Validators.required);
-            if (fulfillmentGroup) fulfillmentGroup.setValidators([Validators.required,Validators.minLength(10)]);
+            if (piiExplanation) piiExplanation.setValidators([Validators.required,Validators.minLength(12)]);
         }
         if (piiExplanation) piiExplanation.updateValueAndValidity();
-        if (sampleFields) sampleFields.updateValueAndValidity();
-        if (sampleValues) sampleValues.updateValueAndValidity();
         if (fulfillmentGroup) fulfillmentGroup.updateValueAndValidity();
     }
 
@@ -299,34 +292,9 @@ export class DropDARComponent {
         return item.givenName.toLowerCase().includes(term) || item.surname.toLowerCase().includes(term) || item.companyName.toLowerCase().includes(term) || item.department.toLowerCase().includes(term) || item.mail.toLowerCase().includes(term);
     }
 
-    // Add getter for samples FormArray
-    get samples(): FormArray {
-        return this.sampleForm.get('samples') as FormArray;
-    }
-    
-    // Add this method
     onTagAdd(event: any): void {
         // Implement tag addition logic
         console.log('Tag added:', event);
-    }
-  
-    // Add this method
-    addSample(): void {
-        if (this.samples.length < 10) {
-        const sampleGroup = this.fb.group({
-            // Add your sample form controls here
-            name: [''],
-            description: ['']
-        });
-        this.samples.push(sampleGroup);
-        }
-    }
-  
-    // Add this method
-    removeSample(index: number): void {
-        if (this.samples.length > 0) {
-        this.samples.removeAt(index);
-        }
     }
 }
 

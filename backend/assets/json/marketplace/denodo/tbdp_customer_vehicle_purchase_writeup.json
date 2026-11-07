@@ -2147,6 +2147,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "approved_offers",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "approved_offers",
       "column_name": "basemonthlypayment"
     },
     {
@@ -2184,6 +2190,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "approved_offers",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "approved_offers",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -2315,6 +2327,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customer_desired_offers",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customer_desired_offers",
       "column_name": "cashdown"
     },
     {
@@ -2340,6 +2358,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customer_desired_offers",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customer_desired_offers",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -2405,6 +2429,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customer_tradeins",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customer_tradeins",
       "column_name": "brand"
     },
     {
@@ -2430,6 +2460,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customer_tradeins",
       "column_name": "customerid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customer_tradeins",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -2579,6 +2615,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customers",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customers",
       "column_name": "ccpadeleteflag"
     },
     {
@@ -2682,6 +2724,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "customers",
       "column_name": "dealercode"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "customers",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -2873,6 +2921,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "d_and_d",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "d_and_d",
       "column_name": "createddate"
     },
     {
@@ -2886,6 +2940,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "d_and_d",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "d_and_d",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -2939,6 +2999,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_history",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_history",
       "column_name": "createddate"
     },
     {
@@ -2975,6 +3041,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_history",
+      "column_name": "delete_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_history",
       "column_name": "paymenttype"
     },
     {
@@ -2988,6 +3060,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_term_comments",
       "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_term_comments",
+      "column_name": "audit_update_date"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3024,6 +3102,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_term_comments",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_term_comments",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3072,6 +3156,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_terms",
       "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_terms",
+      "column_name": "audit_update_date"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3186,6 +3276,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "deal_terms",
       "column_name": "dealtype"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "deal_terms",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3407,6 +3503,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "dealer_installed_options",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "dealer_installed_options",
       "column_name": "createddate"
     },
     {
@@ -3432,6 +3534,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "dealer_installed_options",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "dealer_installed_options",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3521,6 +3629,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "estimated_offers",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "estimated_offers",
       "column_name": "basemonthlypayment"
     },
     {
@@ -3564,6 +3678,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "estimated_offers",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "estimated_offers",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3707,6 +3827,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "incentives",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "incentives",
       "column_name": "createddate"
     },
     {
@@ -3720,6 +3846,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "incentives",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "incentives",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3767,6 +3899,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "pricegridincentives",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "pricegridincentives",
       "column_name": "createddate"
     },
     {
@@ -3786,6 +3924,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "pricegridincentives",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "pricegridincentives",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -3863,6 +4007,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "pricegridterm",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "pricegridterm",
       "column_name": "baserateeditable"
     },
     {
@@ -3912,6 +4062,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "pricegridterm",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "pricegridterm",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -4079,6 +4235,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "protection_products",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "protection_products",
       "column_name": "capitalizable"
     },
     {
@@ -4116,6 +4278,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "protection_products",
       "column_name": "deductible"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "protection_products",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -4253,6 +4421,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "tax_details",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "tax_details",
       "column_name": "createddate"
     },
     {
@@ -4266,6 +4440,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "tax_details",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "tax_details",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -4301,6 +4481,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "taxes_and_fees",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "taxes_and_fees",
       "column_name": "createddate"
     },
     {
@@ -4314,6 +4500,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "taxes_and_fees",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "taxes_and_fees",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -4403,6 +4595,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "tradeins",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "tradeins",
       "column_name": "brand"
     },
     {
@@ -4428,6 +4626,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "tradeins",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "tradeins",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
@@ -4523,6 +4727,12 @@
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "vehicles",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "vehicles",
       "column_name": "available"
     },
     {
@@ -4608,6 +4818,12 @@
       "dbname": "cust_vehicle_purchase_writeup_trn_ext",
       "elementname": "vehicles",
       "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-vehicle-purchase-writeup",
+      "dbname": "cust_vehicle_purchase_writeup_trn_ext",
+      "elementname": "vehicles",
+      "column_name": "delete_ind"
     },
     {
       "userrolename": "tbdp-customer-vehicle-purchase-writeup",

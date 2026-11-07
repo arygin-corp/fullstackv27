@@ -2489,7 +2489,19 @@
       "userrolename": "tbdp-call-center",
       "dbname": "cust_callcenter_trn_ext",
       "elementname": "rnt_case_comments",
+      "column_name": "automated_comment_flag"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
       "column_name": "case_comments"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "case_comments_rich_text"
     },
     {
       "userrolename": "tbdp-call-center",

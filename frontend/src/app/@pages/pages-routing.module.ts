@@ -9,6 +9,7 @@ import { HackathonComponent } from './hackathon/hackathon.component';
 import { SupportComponent } from './support/support.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { OrgComponent } from './org/org.component';
+import { ProductIntakeComponent } from './product-intake/product-intake.component';
 
 const routes: Routes = [
   { path: 'team', component: TeamComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'hackathon', component: HackathonComponent },
   { path: 'support', component: SupportComponent },
   { path: 'ads', component: CampaignsComponent },
+  { path: 'product-intake', component: ProductIntakeComponent },
   { path: 'organization-chart', component: OrgComponent },
   { path: 'landing', component: LandingPageComponent },
 ];

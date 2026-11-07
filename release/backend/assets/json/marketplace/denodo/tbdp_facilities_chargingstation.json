@@ -1144,6 +1144,60 @@
     {
       "userrolename": "tbdp-facilities-chargingstation",
       "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "covered_parking_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "food_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "handicapped_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "illuminated_parking_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "restroom_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "shopping_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "amenities",
+      "column_name": "wifi_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
       "elementname": "balancing_authority_mapping_sessions",
       "column_name": "address"
     },
@@ -2088,6 +2142,72 @@
       "dbname": "evds_facilities_chargingstation_ing_ext",
       "elementname": "charging_price",
       "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "ccs_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "ccs_source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "chademo_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "chademo_source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "j1772_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "j1772_source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "nacs_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "nacs_source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "no_of_ports"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "connectors",
+      "column_name": "ports_source"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation",
@@ -4276,6 +4396,144 @@
     {
       "userrolename": "tbdp-facilities-chargingstation",
       "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "address"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_connector_types"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_dc_fast_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_level1_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_level2_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_network"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "ev_pricing"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "facility_type"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "magic_dock_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "open_date"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "other_ev_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "preferred_partner_flg"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "preferred_partner_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "restricted_access"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "station_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "street_address"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "nrel_preferred_partner",
+      "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
       "elementname": "plugshare_connectors",
       "column_name": "access_type"
     },
@@ -4446,6 +4704,534 @@
       "dbname": "evds_facilities_chargingstation_ing_ext",
       "elementname": "plugshare_connectors",
       "column_name": "zip_code"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "preferred_partner_priority",
+      "column_name": "preferred_partner_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "preferred_partner_priority",
+      "column_name": "preferred_partner_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "preferred_partner_priority",
+      "column_name": "priority"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "avg_price"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "free_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_0"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_1"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_10"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_11"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_12"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_13"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_14"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_15"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_16"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_17"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_18"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_19"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_2"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_20"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_21"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_22"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_23"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_3"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_4"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_5"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_6"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_7"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_8"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "hr_9"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "pricing_model"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "pricing",
+      "column_name": "type_of_charger"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "age_of_charger_years"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "avg_charge_duration"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "avg_energy_per_session"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "avg_power"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "avg_state_of_charge_after_charging"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "avg_state_of_charge_before_charging"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "bev_flg"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "cas"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "ccs"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "ccs_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "chademo_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "chs"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "cps"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "crs"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "css"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "cus"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "dcfc_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "ev_dc_fast_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "ev_level1_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "ev_level2_evse_num"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "experience_score"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "group_id"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "health_score"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "l1_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "l2_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "latest_start_time"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "nacs_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "network_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "network_failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "network_zero_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "nss"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "operational_flag"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "past_week_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "past_week_failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "past_week_zero_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "rcss"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "recent_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "recent_failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "recent_zero_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "scenario"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "tcss"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_recent_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_recent_failure_rate"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_recent_zero_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "total_zero_charge_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "trcss"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "utilization"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "vin_count"
+    },
+    {
+      "userrolename": "tbdp-facilities-chargingstation",
+      "dbname": "evds_facilities_chargingstation_ing_ext",
+      "elementname": "reliability_score",
+      "column_name": "zero_charge_count"
     },
     {
       "userrolename": "tbdp-facilities-chargingstation",

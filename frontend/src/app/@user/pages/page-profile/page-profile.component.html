@@ -1,7 +1,7 @@
 <main id="content" role="main" class="main">
 	<div class="container-fluid">
 		<div class="row justify-content-lg-center">
-			<div class="col-lg-4" style="float: left;">
+			<div class="col-12">
 				<div class="profile-cover">
 					<div class="profile-cover-img-wrapper">
 						<img id="profileCoverImg" class="profile-cover-img d-none d-sm-block d-sm-none d-md-block " src="./assets/images/cover/default.jpg" alt="OneTech Cover Image">
@@ -83,8 +83,8 @@
 					</ul>
 				</div>
 				
-                <div class="col-lg-12">
-                    <div class="col-lg-4 col-sm-12 col-12 p-3" style="float: left;">
+                <div class="profile-lower">
+                    <div class="profile-lower__side">
                         <div class="card card-body mb-3 mb-lg-5 col-lg-12">
                             <h5>Complete your profile</h5>
                             <div class="d-flex justify-content-between align-items-center">
@@ -133,7 +133,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="card mb-3 mb-lg-5 col-lg-12">
+                        <div class="card col-lg-12">
                             <div class="card-header card-header-content-between">
                                 <div class="card-body text-center">
                                     <div class="mb-4">
@@ -148,9 +148,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="d-grid gap-3 gap-lg-5 p-3">
+                    <div class="profile-lower__stream">
                     <!-- Card -->
                     <div class="card">
                         <!-- Header -->
@@ -159,187 +157,82 @@
                         </div>
                         <!-- End Header -->
                         <!-- Body -->
-                        <div class="card-body card-body-height ms-1" style="height: 51.4rem;">
+                        <div class="card-body card-body-height ms-1">
                             <!-- Step -->
                             <ul class="step step-icon-xs mb-0">
-                                <!-- Step Item -->
-                                <li class="step-item">
+                                <li class="step-item" *ngIf="activityLoading">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                                        <div class="step-content">
+                                            <h5 class="step-title">Loading activity</h5>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step-item" *ngIf="!activityLoading && activityError">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                                        <div class="step-content">
+                                            <h5 class="step-title">{{ activityError }}</h5>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step-item" *ngIf="!activityLoading && !activityError && !activity.length">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                                        <div class="step-content">
+                                            <h5 class="step-title">No activity yet</h5>
+                                            <p class="fs-5 mb-1">Cart, favorites, compare, and checkout actions for this account will show up here.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step-item" *ngFor="let item of visibleActivity">
                                     <div class="step-content-wrapper">
                                         <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
                                         <div class="step-content">
                                             <h5 class="step-title">
-                                                <a class="text-dark" href="#">Task report - uploaded weekly reports</a>
+                                                <span class="text-dark">{{ item.title }}</span>
                                             </h5>
-                                            <p class="fs-5 mb-1">Added 3 files to task <a class="text-uppercase" href="#">
-                                                    <i class="bi-journal-bookmark-fill"></i> Fd-7 </a>
+                                            <p class="fs-5 mb-1">
+                                                {{ item.detail }}
+                                                <a *ngIf="item.reference" class="text-uppercase" routerLink="/marketplace/user/orders">
+                                                    <i class="bi-journal-bookmark-fill"></i> {{ item.reference }}
+                                                </a>
+                                                <span [class]="statusClass(item.tone)">
+                                                    <span [class]="indicatorClass(item.tone)"></span>{{ item.status }}
+                                                </span>
                                             </p>
-                                            <ul class="list-group">
-                                                <!-- Item -->
-                                                <li class="list-group-item list-group-item-light">
-                                                    <div class="row gx-1">
-                                                        <div class="col-sm-4">
-                                                            <div class="d-flex">
-                                                                <span class="flex-shrink-0">
-                                                                    <img class="avatar avatar-xs" src="assets/images/badges/brands/microsoft-word.svg" alt="Image Description">
-                                                                </span>
-                                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                                    <span class="d-block fs-6 text-dark text-truncate" title="weekly-reports.xls">tmna_brochure.docx</span>
-                                                                    <span class="d-block small text-muted">12kb</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Col -->
-                                                        <div class="col-sm-4">
-                                                            <div class="d-flex">
-                                                                <span class="flex-shrink-0">
-                                                                    <img class="avatar avatar-xs" src="assets/images/badges/brands/microsoft-excel.svg" alt="Image Description">
-                                                                </span>
-                                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                                    <span class="d-block fs-6 text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
-                                                                    <span class="d-block small text-muted">4kb</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Col -->
-                                                        <div class="col-sm-4">
-                                                            <div class="d-flex">
-                                                                <span class="flex-shrink-0">
-                                                                    <img class="avatar avatar-xs" src="assets/images/badges/brands/microsoft-excel.svg" alt="Image Description">
-                                                                </span>
-                                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                                    <span class="d-block fs-6 text-dark text-truncate" title="monthly-reports.xls">monthly-reports.xls</span>
-                                                                    <span class="d-block small text-muted">8kb</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Col -->
-                                                    </div>
-                                                    <!-- End Row -->
-                                                </li>
-                                                <!-- End Item -->
-                                            </ul>
-                                            <span class="text-muted small text-uppercase">Now</span>
+                                            <span class="text-muted small text-uppercase">{{ item.occurred_at | date:'mediumDate' }}</span>
                                         </div>
                                     </div>
                                 </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li class="step-item">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">Product updated</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">Marked <a class="text-uppercase" href="#">
-                                                    <i class="bi-journal-bookmark-fill"></i> Fr-6 </a> as <span class="badge bg-soft-success text-success rounded-pill">
-                                                    <span class="legend-indicator bg-success"></span>"Completed" </span>
-                                            </p>
-                                            <span class="text-muted small text-uppercase">Today</span>
+                                <li id="collapseActivitySection" class="collapse" *ngIf="extraActivity.length">
+                                    <div class="step-item" *ngFor="let item of extraActivity">
+                                        <div class="step-content-wrapper">
+                                            <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                                            <div class="step-content">
+                                                <h5 class="step-title">
+                                                    <span class="text-dark">{{ item.title }}</span>
+                                                </h5>
+                                                <p class="fs-5 mb-1">
+                                                    {{ item.detail }}
+                                                    <a *ngIf="item.reference" class="text-uppercase" routerLink="/marketplace/user/orders">
+                                                        <i class="bi-journal-bookmark-fill"></i> {{ item.reference }}
+                                                    </a>
+                                                    <span [class]="statusClass(item.tone)">
+                                                        <span [class]="indicatorClass(item.tone)"></span>{{ item.status }}
+                                                    </span>
+                                                </p>
+                                                <span class="text-muted small text-uppercase">{{ item.occurred_at | date:'mediumDate' }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li class="step-item">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">New Prodcut Images added</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">Added 3 new images to <a href="#">Products</a>
-                                            </p>
-                                            <ul class="list-group">
-                                                <!-- Item -->
-                                                <li class="list-group-item list-group-item-light">
-                                                    <div class="row gx-2">
-                                                        <div class="col">
-                                                            <img class="img-fluid rounded-2" src="assets/images/product_images/camex_yms_gate_in_tema.jpg" alt="Image Description">
-                                                        </div>
-                                                        <div class="col">
-                                                            <img class="img-fluid rounded-2" src="assets/images/product_images/cust_profile_info.jpg" alt="Image Description">
-                                                        </div>
-                                                        <div class="col">
-                                                            <img class="img-fluid rounded-2" src="assets/images/product_images/cvs_enriched_fdf_ctp.jpg" alt="Image Description">
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!-- Item -->
-                                            </ul>
-                                            <span class="text-muted small text-uppercase">May 12</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li class="step-item">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">Dean added a new team member</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">Added a new member to Data Marketplace Admin Dashboard</p>
-                                            <span class="text-muted small text-uppercase">May 15</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li class="step-item">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">Product status updated</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">Marked <a class="text-uppercase" href="#">
-                                                    <i class="bi-journal-bookmark-fill"></i> Fr-3 </a> as <span class="badge bg-soft-primary text-primary rounded-pill">
-                                                    <span class="legend-indicator bg-primary"></span>"In progress" </span>
-                                            </p>
-                                            <span class="text-muted small text-uppercase">Apr 29</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li class="step-item">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">Achievements</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">New user has a "VIP" <i class="tio-verified text-primary"></i> badge </p>
-                                            <span class="text-muted small text-uppercase">Apr 06</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Step Item -->
-                                <!-- Step Item -->
-                                <li id="collapseActivitySection" class="step-item collapse">
-                                    <div class="step-content-wrapper">
-                                        <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-                                        <div class="step-content">
-                                            <h5 class="step-title">
-                                                <a class="text-dark" href="#">Product status updated</a>
-                                            </h5>
-                                            <p class="fs-5 mb-1">Updated <a class="text-uppercase" href="#">
-                                                    <i class="bi-journal-bookmark-fill"></i> Fr-3 </a> as <span class="badge bg-soft-secondary text-secondary rounded-pill">
-                                                    <span class="legend-indicator bg-secondary"></span>"To do" </span>
-                                            </p>
-                                            <span class="text-muted small text-uppercase">Feb 10</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Step Item -->
                             </ul>
                             <!-- End Step -->
                         </div>
                         <!-- End Body -->
                         <!-- Footer -->
-                        <div class="card-footer">
+                        <div class="card-footer" *ngIf="extraActivity.length">
                             <a class="link link-collapse" data-bs-toggle="collapse" href="#collapseActivitySection" role="button" aria-expanded="false" aria-controls="collapseActivitySection">
                                 <span class="link-collapse-default">View more</span>
                                 <span class="link-collapse-active">View less</span>
@@ -348,6 +241,7 @@
                         <!-- End Footer -->
                     </div>
                     <!-- End Card -->
+                    </div>
                 </div>
                 <!-- Sticky Block End Point -->
                 <div id="stickyBlockEndPoint"></div>

@@ -1,0 +1,1127 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "dealer_cost_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_major_category"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_part_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_part_detail_category"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_product_code_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "fdw_vendor"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "irm_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "ro_part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "ircm_ing",
+      "elementname": "pseudo_rpm_parts_match",
+      "column_name": "tmna_hq_cost_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "avg_cp_parts_spend_per_vin"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "avg_parts_spend_per_ro"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "distinct_ro_count"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "distinct_vin_count"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "average_parts_spent_ing",
+      "column_name": "total_parts_spend"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "avg_parts_amt_per_claim"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "avg_total_repair_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "claims_pct_flagged_total_loss"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "parts_pct_of_total_repair_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "state_abbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "total_claim_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "total_loss_claim_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "avg_parts_amt_per_claim"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "avg_total_repair_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "claims_pct_flagged_total_loss"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "parts_pct_of_total_repair_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "state_abbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "total_claim_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "total_loss_claim_cnt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "collision_claim_ing",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "address_line"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "affiliation_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "assigned_dealer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "assignment_type_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "business_type_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "census"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "census_block"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "census_tract"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "chain_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "company_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "distance_from_dealer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "employee_range"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "estimated_location_employee_count"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "estimated_opened_for_business"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "facebook_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "fips_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "foursquare_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "geo_match_level"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "infogroup_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "instagram_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "labels"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "landmark_address"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "linked_in_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "location_sales_volume"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "manual_geocoordinate"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "naics_code_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "new_shop_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "phone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "pinterest_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "place_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "postal_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "primary_irf_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "primary_naics_code_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "primary_sic_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "primary_sic_code_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "sales_range"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "sec_sic_codes"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "secondary_irf_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "sic_code_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "street"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "suite"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "tumblr_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "twitter_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "verified_on"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "website"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "yelp_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "youtube_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list",
+      "column_name": "zip_four"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "address_line"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "affiliation_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "assigned_dealer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "assignment_type_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "business_type_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "census"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "census_block"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "census_tract"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "chain_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "company_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "distance_from_dealer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "employee_range"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "estimated_location_employee_count"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "estimated_opened_for_business"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "facebook_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "fips_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "foursquare_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "geo_match_level"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "infogroup_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "instagram_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "labels"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "landmark_address"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "linked_in_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "location_sales_volume"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "manual_geocoordinate"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "naics_code_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "new_shop_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "phone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "pinterest_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "place_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "postal_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "primary_irf_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "primary_naics_code_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "primary_sic_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "primary_sic_code_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "sales_range"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "sec_sic_codes"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "secondary_irf_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "sic_code_ids"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "street"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "suite"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "tumblr_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "twitter_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "verified_on"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "website"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "yelp_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "youtube_url"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "zip"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "irf_list_ing",
+      "column_name": "zip_four"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "sic_code_options",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "sic_code_options",
+      "column_name": "irf_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "sic_code_options",
+      "column_name": "sic_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "sic_code_options",
+      "column_name": "sic_code_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "consultant"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "contract_end"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "contract_start"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "dealer_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "dealership_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "district"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "enrollment_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "program_enrollment"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "program_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "program_table"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "region"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers",
+      "column_name": "unenrollment_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "consultant"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "contract_end"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "contract_start"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "dealer_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "dealership_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "district"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "enrolled_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "enrollment_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "program_enrollment"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "program_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "program_table"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "region"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-incentives",
+      "dbname": "parts_indirectparts_serviceparts_incentives_trn_ext",
+      "elementname": "starelite_enrolled_dealers_ing",
+      "column_name": "unenrollment_date"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-parts-indirectparts-serviceparts-incentives%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

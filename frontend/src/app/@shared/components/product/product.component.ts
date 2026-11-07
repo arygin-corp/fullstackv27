@@ -511,7 +511,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
         this.addingToCompare = true;
         this.compare.add(this.product)
             .pipe(finalize(() => this.addingToCompare = false), takeUntil(this.destroy$))
-            .subscribe({ error: () => this.notify('The product could not be added for comparison.') });
+            .subscribe({ error: (err) => this.notify(err?.message || 'The product could not be added for comparison.') });
     }
 
     getTeamsLink(contact: any): string {

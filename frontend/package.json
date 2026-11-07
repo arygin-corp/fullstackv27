@@ -1,10 +1,10 @@
 {
   "name": "global-enterprise-data-marketplace",
-  "version": "26.11.05",
+  "version": "26.11.06",
   "engineer1": "Giovanni Austin",
   "engineer2": "Shivasanjana Narla",
   "engines": {
-    "node": ">=16",
+    "node": ">=18",
     "npm": ">=9"
   },
   "bin": {
@@ -24,14 +24,17 @@
     "build": "npm run build:prod",
     "build:ci": "npm run build:prod",
     "build:check": "node --check build/build.js",
-    "build:metadata": "node build/build.js --env=local --metadata-only",
-    "build:local": "node build/build.js --env=local",
-    "build:dev": "node build/build.js --env=dev",
-    "build:qa": "node build/build.js --env=qa",
-    "build:demo": "node build/build.js --env=demo",
-    "build:stage": "node build/build.js --env=stage",
-    "build:prod": "node build/build.js --env=prod",
+    "build:metadata": "node build/build.js --env=local --metadata-only --engineer=\"$BUILD_ENGINEER\"",
+    "build:local": "node build/build.js --env=local --engineer=\"$BUILD_ENGINEER\"",
+    "build:dev": "node build/build.js --env=dev --engineer=\"$BUILD_ENGINEER\"",
+    "build:qa": "node build/build.js --env=qa --engineer=\"$BUILD_ENGINEER\"",
+    "build:demo": "node build/build.js --env=demo --engineer=\"$BUILD_ENGINEER\"",
+    "build:stage": "node build/build.js --env=stage --engineer=\"$BUILD_ENGINEER\"",
+    "build:prod": "node build/build.js --env=prod --engineer=\"$BUILD_ENGINEER\"",
     "deploy": "node build/build.js"
+  },
+  "overrides": {
+    "esbuild": "0.25.12"
   },
   "private": true,
   "dependencies": {

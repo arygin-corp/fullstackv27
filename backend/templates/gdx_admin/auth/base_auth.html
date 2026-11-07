@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'gdx_admin/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'gdx_admin/plugins/tabler-icons/tabler-icons.min.css' %}">
     <link rel="stylesheet" href="{% static 'gdx_admin/css/iconsax.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="{% static 'gdx_admin/css/style.css' %}">
 
     <style>
@@ -24,7 +25,7 @@
             --gdx-border: #dfe4ec;
         }
         html, body { min-height: 100%; }
-        body { background: #fff; color: var(--gdx-ink); }
+        body { background: #fff; color: var(--gdx-ink); font-family: "Instrument Sans", sans-serif; }
         .gdx-auth-shell { min-height: 100vh; }
         .gdx-auth-cover {
             min-height: 100vh;
@@ -81,7 +82,8 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-<main class="container-fluid p-0">
+{% include "gdx_admin/partials/device_gate.html" %}
+<main class="container-fluid p-0" data-device-app>
     <div class="row g-0 gdx-auth-shell">
         <section class="col-lg-7 gdx-auth-cover d-flex align-items-end p-4 p-md-5" aria-label="GDX introduction">
             <div class="gdx-cover-content p-lg-4">

@@ -19,6 +19,7 @@ export interface ListOptions {
     filterValues?: { [k: string]: string };
     status?: string;
     query?: string;
+    campaign?: boolean;
 }
 
 @Injectable({
@@ -597,6 +598,10 @@ export class ShopService {
                 'status',
                 options.status.trim()
             );
+        }
+
+        if (options.campaign) {
+            params = params.set('campaign', '1');
         }
 
         /*

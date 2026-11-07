@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="dashboard__address card address-card address-card--featured">
-        <div class="address-card__badge" *ngIf="address.default" style="background-color: #222; color: #04fdff">Default Address</div>
+        <div class="address-card__badge" *ngIf="appSvc?.userData?.streetAddress || appSvc?.userData?.city" style="background-color: #222; color: #04fdff">Office Address</div>
         <div class="address-card__body">
             <div class="address-card__name" style="font-size: 24px;font-weight: 700;">
                 <span *ngIf="
@@ -98,7 +98,7 @@
             </div>
             <div class="address-card__row">
                 <div class="address-card__row-title">Phone Number</div>
-                <div class="address-card__row-content">{{ appSvc?.userData?.businessPhones }}</div>
+                <div class="address-card__row-content">{{ phone }}</div>
             </div>
             <div class="address-card__row">
                 <div class="address-card__row-title">Email Address</div>
@@ -108,28 +108,107 @@
     </div>
 
     <div class="dashboard__orders card">
-        <div class="card-header">
-            <h5>Recent Orders</h5>
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Recent Orders</h5>
+            <a *ngIf="showAllOrders" routerLink="../orders" class="btn btn-sm btn-secondary">View All Orders</a>
         </div>
         <div class="card-divider"></div>
         <div class="card-table">
             <div class="table-responsive-sm">
-                <table>
+                <table class="table table-sm">
                     <thead>
                     <tr>
-                        <th>Order</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Total</th>
+                        <th>Opened By</th>
+                        <th class="text-center">Request ID</th>
+                        <th class="text-center">RITM #</th>
+                        <th class="text-center">Order Date</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Approval</th>
+                        <th class="text-center">Details</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let order of orders">
-                        <td><a href="">#{{ order.id }}</a></td>
-                        <td>{{ order.date }}</td>
-                        <td>{{ order.status }}</td>
-                        <td>{{ order.total|currencyFormat }} for {{ order.quantity }} item(s)</td>
+                    <tr *ngIf="ordersLoading">
+                        <td colspan="7">Loading your orders...</td>
                     </tr>
+                    <tr *ngIf="!ordersLoading && !orders.length">
+                        <td colspan="7">No orders yet.</td>
+                    </tr>
+                    <ng-container *ngFor="let item of orders">
+                        <tr>
+                            <td>{{ item.open_by }}</td>
+                            <td class="text-center">{{ item.id }}</td>
+                            <td class="text-center">{{ item.number }}</td>
+                            <td class="text-center">{{ item.openedAt | date:'MMMM dd, yyyy' }}</td>
+                            <td class="text-center">
+                                <span class="status-pill" [ngClass]="getStatusClass(item.status)">{{ item.status || 'Pending' }}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="approval-pill" [ngClass]="getApprovalClass(item.approval)">{{ item.approval || 'Waiting' }}</span>
+                            </td>
+                            <td>
+                                <div class="text-center">
+                                    <button class="btn btn-sm btn-secondary" (click)="toggleDetails(item)">
+                                        {{ isExpanded(item) ? 'Close Order' : 'View Order' }}
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr *ngIf="isExpanded(item)">
+                            <td colspan="7" class="p-2">
+                                <div class="card card-body">
+                                    <div class="row mt-3">
+                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left;">
+                                            <img [src]="item.product?.image || 'assets/images/product_images/adas_vehicle_info.jpg'" style="width: 100%; padding: 8px 0px;" alt="">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
+                                            <p class="product-delivery text-primary">
+                                                <strong style="font-weight: 600; font-size: 20px;">Pending Approval Date</strong>
+                                                <br>
+                                                <span class="text-dark" style="font-weight: 400; font-size: 16px;">Approval Due By</span>
+                                            </p>
+                                            <p class="delivery-day text-primary">{{ (item.pendingApprovalDate || item.openedAt) | date:'EEEE' }}</p>
+                                            <p class="delivery-date text-primary" style="float: left;">{{ (item.pendingApprovalDate || item.openedAt) | date:'dd' }}</p>
+                                            <p class="delivery-month text-primary" style="float: left;">{{ (item.pendingApprovalDate || item.openedAt) | date:'MM' }}</p>
+                                            <br>
+                                            <p class="delivery-year text-primary" style="float: left;">{{ (item.pendingApprovalDate || item.openedAt) | date:'yyyy' }}</p>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-8 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 0px;">
+                                            <p class="order-status">Order Status</p>
+                                            <div class="progress mb-3" style="position: relative; top: 2px;">
+                                                <div role="progressbar" class="progress-bar bg-success" style="width: 33.33%; border: 1px solid;"></div>
+                                                <div role="progressbar" class="progress-bar bg-blue" style="width: 33.33%; border: 1px solid;"></div>
+                                                <div role="progressbar" class="progress-bar bg-grey" style="width: 33.33%; border: 1px solid;"></div>
+                                            </div>
+                                            <p class="order-status-notification" style="font-size: 14px;">
+                                                Your request is
+                                                <span class="text-primary font-weight-bold">{{ item.status || 'Pending' }}</span>
+                                                with
+                                                <span class="text-info font-weight-bold">{{ item.approver || item.requestedFor || 'Approver' }}</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12" style="float: left; padding: 8px 20px;">
+                                            <p class="text-center" style="margin: 0px; padding-bottom: 8px; font-size:14px;">
+                                                <strong>Quick Actions</strong>
+                                            </p>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a class="btn btn-sm btn-dark btn-history-teams align-middle" (click)="openTeams(item)">Microsoft Teams</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a class="btn btn-sm btn-dark btn-history-outlook align-middle" (click)="openOutlook(item)">Microsoft Outlook</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a class="btn btn-sm btn-dark btn-action-upload align-middle" (click)="uploadAttachment(item)">Upload Attachment</a>
+                                            </div>
+                                            <div class="col-lg-12" style="margin: 0px">
+                                                <a class="btn btn-sm btn-dark btn-action-review align-middle" (click)="writeReview(item)">Write A Review</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-container>
                     </tbody>
                 </table>
             </div>

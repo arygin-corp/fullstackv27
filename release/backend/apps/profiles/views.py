@@ -41,7 +41,9 @@ def microsoft_callback(request):
         profile, created = Profile.objects.get_or_create(user=user)
         if profile.is_verified:
             login(request, user, backend="django.contrib.auth.backends.ModelBackend")
-            return redirect(settings.LOGIN_REDIRECT_URL or '/')
+            from gdx.views import home_for
+
+            return redirect(home_for(user))
         else:
             messages.warning(request, f"Your account ({email}) is pending verification.")
             return redirect('profiles:request_access')

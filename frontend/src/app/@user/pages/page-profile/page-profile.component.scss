@@ -32815,3 +32815,50 @@ a .disabled {
     background-color: #EBEAEA !important;
     color: #8d8c8c !important;
 }
+
+.profile-lower {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 0 1rem 1rem;
+}
+
+.profile-lower__side {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 1rem;
+}
+
+.profile-lower__stream {
+    flex: 1 1 auto;
+    display: flex;
+    min-width: 0;
+    padding: 1rem 1rem 1rem 0;
+}
+
+.profile-lower__stream > .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.profile-lower__stream .card-body {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: auto;
+}
+
+@media (max-width: 991px) {
+    .profile-lower {
+        flex-direction: column;
+    }
+
+    .profile-lower__side,
+    .profile-lower__stream {
+        flex: none;
+        max-width: none;
+        padding: 1rem;
+    }
+}

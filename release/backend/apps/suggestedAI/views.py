@@ -56,7 +56,7 @@ STOP_WORDS = {'the', 'and', 'for', 'with', 'this', 'that', 'need', 'access', 'to
 
 def load_master_orders():
     """Load and filter successful historical orders."""
-    path = os.path.join(settings.BASE_DIR, 'static/json/orders/@master-order.json')
+    path = str(getattr(settings, "MARKETPLACE_ORDER_MASTER", ""))
     if not os.path.exists(path):
         return []
     try:
@@ -96,9 +96,8 @@ def load_data_cached():
     cache_key = 'marketplace_master_v29'
     cached = cache.get(cache_key)
     if cached: return cached['denodo'], cached['products']
-    base = settings.BASE_DIR
-    p_path = os.path.join(base, 'static/json/marketplace/products/products.json')
-    d_path = os.path.join(base, 'static/json/marketplace/@denodo_masterdata/@master-denodo.json')
+    p_path = str(getattr(settings, "MARKETPLACE_PRODUCT_MASTER", ""))
+    d_path = str(getattr(settings, "MARKETPLACE_DENODO_MASTER", ""))
     products, denodo = [], []
     try:
         if os.path.exists(p_path):
@@ -143,137 +142,10 @@ def get_refined_score(query, product_name, p_datatype, preferred_type):
 # --- 3. VIEWS ---
 @csrf_exempt
 def suggest_products_by_role(request):
+    """Suggested products using the same retrieval and scoring path as the Node AI engine."""
     try:
-        # 1. EXTRACT INPUTS
-        platform = request.GET.get('v_dar_platform', '').upper()
-        db_raw = request.GET.get('database-schema', '').strip()
-        tbl_raw = request.GET.get('tablenames', '').strip()
-        api_name = request.GET.get('v_dat_api_name', '').strip()
-        desc_raw = request.GET.get('v_dar_DataReqDescription', '').strip()
-
-        is_verification_mode = len(desc_raw) > 3
-
-        # Load Data & History
-        denodo_records, all_products = load_data_cached()
-        historical_orders = load_master_orders()
-        suggestions_map = {}
-
-        preferred_type = "Webservices (APIs)" if "API" in platform else (
-            "Dashboards" if "GATEWAY" in platform else "Datasets")
-
-        # Define Engine Source
-        input_source = f"{desc_raw} {db_raw} {tbl_raw}".strip() if is_verification_mode else (
-            api_name if "API" in platform else f"{db_raw} {tbl_raw}")
-
-        threshold = 95 if is_verification_mode else 25
-
-        if not input_source.strip():
-            return JsonResponse({"status": "success", "suggestions": []})
-
-        for p in all_products:
-            p_name = p.get('name', '')
-            p_datatype = p.get('datatype', '')
-            slug = slugify(p_name)
-            final_score = get_refined_score(input_source, p_name, p_datatype, preferred_type)
-
-            # Match Evidence Gathering
-            has_historical_success = False
-            match_count = 0
-            found_order = None
-
-            # Cross-reference against Denodo technical path
-            p_roles = [str(r).lower() for r in
-                       (p.get("ad_group", []) if isinstance(p.get("ad_group", []), list) else [p.get("ad_group")]) if r]
-            if db_raw or tbl_raw:
-                for record in denodo_records:
-                    if record.get('dbname', '').lower() == db_raw.lower() and \
-                            record.get('elementname', '').lower() in tbl_raw.lower() and \
-                            record.get('userrolename', '').lower() in p_roles:
-                        has_historical_success = True
-                        break
-
-            # Extract Facts from Master Order History
-            for order in historical_orders:
-                o_db = (order.get('database_schema') or order.get('database') or "").lower()
-                o_pname = (order.get('product_name') or "").lower()
-                if o_db == db_raw.lower() or p_name.lower() in o_pname:
-                    match_count += 1
-                    if not found_order: found_order = order
-
-            is_verified = (final_score >= 95 or (is_verification_mode and has_historical_success and final_score >= 80))
-
-            if final_score >= threshold:
-                display_percentage = 100 if (is_verified and is_verification_mode) else final_score
-                h_db = found_order.get('database_schema') if found_order else (p.get('db_name') or db_raw)
-                h_tbl = found_order.get('tablenames') or found_order.get('table_name') if found_order else (
-                            p.get('tbl_name') or tbl_raw)
-                h_justification = found_order.get('justification') or found_order.get(
-                    'business_justification') if found_order else "Used for granular reporting and data lifecycle analytics."
-
-                # --- GENERATE DETAILED HTML COMPARISON TABLE ---
-                v_color = "#28a745" if is_verified else "#007bff"
-                detailed_html = f"""
-                <div class="ai-audit-report" style="font-family: 'Segoe UI', Tahoma; font-size: 13px;">
-                    <div style="border-left: 5px solid {v_color}; padding: 12px; background: #fcfcfc; margin-bottom: 15px; border-radius: 0 8px 8px 0;">
-                        <h4 style="margin: 0 0 5px 0; color: {v_color}; text-transform: uppercase;">AI VERIFICATION: {'SUCCESS' if is_verified else 'SUGGESTION'}</h4>
-                        <p style="margin: 0; color: #666;">Validated against matched technical signatures and <b>{match_count if match_count > 0 else 1}</b> historical approval patterns.</p>
-                    </div>
-
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; border: 1px solid #e0e0e0; background: white;">
-                        <thead>
-                            <tr style="background: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: left;">
-                                <th style="padding: 10px; border: 1px solid #e0e0e0; width: 30%;">Comparison Analysis</th>
-                                <th style="padding: 10px; border: 1px solid #e0e0e0;">User Input Context</th>
-                                <th style="padding: 10px; border: 1px solid #e0e0e0;">Matched Asset Proof</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0; font-weight: 600; background: #fafafa;">Search Intent</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">{desc_raw[:80] if desc_raw else input_source[:80]}...</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0; font-weight: 600; color: #007bff;">{p_name}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0; font-weight: 600; background: #fafafa;">Target Schema</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">{db_raw or 'Natural Language Detection'}</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">{h_db or 'Catalog Master'}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0; font-weight: 600; background: #fafafa;">Access History</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Pending Authorization</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0; color: #28a745; font-weight: 600;">Approved for {match_count if match_count > 0 else 3} users</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div style="background: #eff6ff; padding: 12px; border-radius: 6px; border: 1px solid #dbeafe;">
-                        <span style="font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">✔ HISTORICAL JUSTIFICATION PROOF:</span>
-                        <p style="margin: 0; font-style: italic; color: #475569;">"{h_justification}"</p>
-                    </div>
-                </div>
-                """.replace('\n', '').strip()
-
-                suggestions_map[slug] = {
-                    **p,
-                    "match_percentage": round(display_percentage, 2),
-                    "slug": slug,
-                    "url": f"/marketplace/products/{p.get('id')}?from_ai=true",
-                    "reason": "Historical Access Pattern" if has_historical_success else "Semantic Metadata Match",
-                    "explanation": f"Verified because {match_count if match_count > 0 else 3} other users were granted access to this schema.",
-                    "detailed_explanation": detailed_html,
-                    "business_justification": h_justification,
-                    "db_name": h_db,
-                    "tbl_name": h_tbl,
-                    "verified": is_verified,
-                    "badges": ["VERIFIED"] if is_verified else (["TYPE MATCH"] if p_datatype == preferred_type else [])
-                }
-
-        # SORT AND RETURN
-        sorted_results = sorted(suggestions_map.values(), key=lambda x: x['match_percentage'], reverse=True)
-        for item in sorted_results:
-            item['grade'], item['color_class'] = get_grade_and_color(item['match_percentage'])
-
-        return JsonResponse({"status": "success", "suggestions": sorted_results[:5]})
+        from .node_engine.engine import suggest_from_request
+        return JsonResponse(suggest_from_request(request))
     except Exception:
         return JsonResponse({"status": "error", "message": str(traceback.format_exc())}, status=500)
 

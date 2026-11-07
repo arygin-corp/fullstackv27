@@ -194,6 +194,7 @@ INSTALLED_APPS = [
     "apps.marketplace",
     "apps.changelog",
     "apps.orders",
+    "apps.third_party_apis.modules.onets_order_history.apps.OnetsOrderHistoryConfig",
     "apps.third_party_apis.modules.product_intake.apps.ProductIntakeConfig",
     "apps.resources",
     "apps.forms",
@@ -202,7 +203,6 @@ INSTALLED_APPS = [
     "apps.people",
     "apps.profiles",
     "apps.product_checkout",
-    "apps.external_apis",
     "apps.third_party_apis.modules.vikki.chat",
     "apps.knowledge",
     "apps.workflow_engine",
@@ -230,7 +230,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    "apps.external_apis.middleware.CorrelationIdMiddleware",
+    "gdx.correlation.CorrelationIdMiddleware",
     "apps.changelog.middleware.AuditRequestMiddleware",
     "apps.notifications.monitoring.middleware.DatabaseQueryMetricsMiddleware",
     "apps.third_party_apis.modules.apify_platforms.platform.middleware.CatalogAccessMiddleware",
@@ -259,6 +259,7 @@ TEMPLATES = [
                 "gdx.context_processors.header_notifications",
                 "gdx.context_processors.header_account",
                 "gdx.context_processors.staff_page_header",
+                "gdx.context_processors.staff_sidebar",
             ],
         },
     },
@@ -272,8 +273,8 @@ AUTHENTICATION_BACKENDS = [
     "gdx.access.AccessTypePermissionBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
-LOGIN_URL = "/microsoft_authentication/login"
-LOGIN_REDIRECT_URL = "/admin"
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
@@ -507,9 +508,32 @@ TDSP_PODS_CACHE_SECONDS = env_int("TDSP_PODS_CACHE_SECONDS", 300)
 TDSP_PODS_MAX_RESULTS = env_int("TDSP_PODS_MAX_RESULTS", 1000)
 TDSP_PODS_VERIFY_SSL = env_bool("TDSP_PODS_VERIFY_SSL", True)
 
-MARKETPLACE_DENODO_MASTER = BASE_DIR / "static/json/marketplace/@denodo_master/@master-denodo.json"
-MARKETPLACE_PRODUCT_MASTER = BASE_DIR / "static/json/marketplace/products/products.json"
-MARKETPLACE_ORDER_MASTER = BASE_DIR / "static/json/marketplace/orders/@master-order.json"
+# Pipeline scripts live in backend/scripts and write this tree:
+#   assets/json/marketplace/products/products.json
+#   assets/json/marketplace/products/products_enriched.json
+#   assets/json/marketplace/orders/master_orders.json
+#   assets/json/marketplace/domains/domains.json
+#   assets/json/marketplace/ad_groups/ad_groups.json
+#   assets/json/marketplace/denodo/<adgroup>.json
+#   assets/json/marketplace/@denodo_masterdata/@master-denodo.json
+#   assets/json/marketplace/historical/orders.json
+#   assets/json/marketplace/historical/formData.json
+#   assets/json/marketplace/historical/enriched_orders.json
+#   assets/json/marketplace/historical/historical_request.json
+#   assets/json/marketplace/historical/all_historical_orders.json
+#   assets/json/training/chat_training_<date>.json
+MARKETPLACE_JSON_ROOT = Path(
+    os.getenv(
+        "MARKETPLACE_JSON_ROOT",
+        os.getenv("SUGGESTED_AI_JSON_ROOT", str(BASE_DIR / "assets" / "json" / "marketplace")),
+    )
+)
+MARKETPLACE_DENODO_MASTER = MARKETPLACE_JSON_ROOT / "@denodo_masterdata" / "@master-denodo.json"
+MARKETPLACE_PRODUCT_MASTER = MARKETPLACE_JSON_ROOT / "products" / "products.json"
+MARKETPLACE_PRODUCTS_ENRICHED = MARKETPLACE_JSON_ROOT / "products" / "products_enriched.json"
+MARKETPLACE_ORDER_MASTER = MARKETPLACE_JSON_ROOT / "orders" / "master_orders.json"
+MARKETPLACE_ENRICHED_ORDERS = MARKETPLACE_JSON_ROOT / "historical" / "enriched_orders.json"
+MARKETPLACE_DOMAINS = MARKETPLACE_JSON_ROOT / "domains" / "domains.json"
 
 # ---------------------------------------------------------------------------
 # Notifications / schedules
@@ -546,6 +570,10 @@ CELERY_BEAT_SCHEDULE = {
     "notification-digests-hourly": {
         "task": "apps.notifications.tasks.build_notification_digests",
         "schedule": 3600.0,
+    },
+    "onets-order-history-refresh": {
+        "task": "apps.third_party_apis.modules.onets_order_history.tasks.refresh_open_order_history",
+        "schedule": 60.0,
     },
     "notification-outbox-every-10-seconds": {
         "task": "apps.notifications.tasks.process_outbox_batch",

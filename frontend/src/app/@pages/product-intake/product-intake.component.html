@@ -1,0 +1,29 @@
+<section class="product-intake">
+    <h1>View Product Request</h1>
+    <p class="product-intake__lead">Product requests submitted to add a catalog product.</p>
+
+    <p *ngIf="loading">Loading product requests...</p>
+    <p class="product-intake__error" *ngIf="error">{{ error }}</p>
+    <p *ngIf="!loading && !error && !items.length">No product requests yet. Use Add New Product in the header to submit one.</p>
+
+    <table *ngIf="items.length">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Domain</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{ item.product_name || 'Untitled product' }}</td>
+                <td>{{ item.product_domain || '—' }}</td>
+                <td>{{ item.product_type || '—' }}</td>
+                <td><span class="product-intake__status">{{ statusLabel(item.status) }}</span></td>
+                <td>{{ (item.submitted_at || item.created_at) | date:'mediumDate' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

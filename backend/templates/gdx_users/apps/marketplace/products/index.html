@@ -1,4 +1,4 @@
-{% extends 'gdx_users/partials/base.html' %}
+{% extends 'partials/base.html' %}
 {% load static %}
 
 {% block extra_javascript %}
@@ -20,7 +20,7 @@
                 "processing": true,       // Show processing indicator
                 "serverSide": true,       // Enable server-side processing
                 "ajax": {
-                    "url": "{% url 'marketplace:index' %}", // URL to your Django IndexView
+                    "url": "{% url 'marketplace:product-index' %}", // URL to your Django IndexView
                     "type": "GET",
                     "data": function (d) {
                         // Custom parameters to send to the server
@@ -99,7 +99,7 @@
                 <div class="d-flex align-items-center">
                     <h5 class="mb-0 card-title flex-grow-1">{{ total_products_count }} Products</h5>
                     <div class="flex-shrink-0">
-                        <a href="{% url 'marketplace:create' %}" class="btn btn-primary">Add New Product</a>
+                        <a href="{% url 'marketplace:product-create' %}" class="btn btn-primary">Add New Product</a>
                         {# Refresh button now reloads the DataTable via AJAX #}
                         <a href="javascript:void(0);" class="btn btn-light" onclick="$('#products-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
                         <!-- <div class="dropdown d-inline-block">

@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light" data-sidebar="light" data-color="primary" data-topbar="white" data-layout="default" data-size="default" data-width="fluid">
 	<head>
 		<!-- Meta Tags -->
 		<meta charset="utf-8" />
@@ -47,22 +47,25 @@
 		<!-- FontAwesome CSS -->
 		<link rel="stylesheet" href="{% static 'gdx_admin/theme/plugins/fontawesome/css/all.min.css' %}">
 		<!-- Main CSS -->
-		<link href="{% static 'gdx_admin/theme/css/style.css' %}" rel="stylesheet" /> 
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/style.css' %}?v=kanakku" rel="stylesheet" /> 
 		<link href="{% static 'gdx_admin/theme/css/notifications.css' %}" rel="stylesheet" /> 
 		<link href="{% static 'gdx_admin/theme/css/operations.css' %}" rel="stylesheet" /> 
-		<link href="{% static 'gdx_admin/theme/css/custom.css' %}?v=responsive" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/builder.css' %}" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/custom.css' %}?v=tablet-desktop" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/builder.css' %}?v=kanakku" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/workflow.css' %}" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/workflow2.css' %}" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/template_designer_layout.css' %}" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=22.9" rel="stylesheet">
+		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=tablet-desktop" rel="stylesheet">
 		<link href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}" rel="stylesheet">
 		{% block extra_css %}
 		{% endblock %}
+		<link href="{% static 'gdx_admin/theme/css/responsive.css' %}?v=settings-tabs" rel="stylesheet">
 	</head>
 	<body>
+		{% include "gdx_admin/partials/device_gate.html" %}
 		<!-- Begin Wrapper -->
-		<div class="main-wrapper">
+		<div class="main-wrapper" data-device-app>
 			<!-- Topbar Start --> {% include 'gdx_admin/partials/header.html' %}
 			<!-- Topbar End -->
 			<!-- Sidenav Menu Start --> {% include 'gdx_admin/partials/sidebar.html' %}

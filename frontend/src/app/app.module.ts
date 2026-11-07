@@ -40,8 +40,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ZoomScaleComponent } from './@components/zoom-scale/zoom-scale.component';
 import { AppComponent } from './app.component';
 import { RootComponent } from './@components/root/root.component';
-import { PeopleService } from './@shared/services/people.service';
-import { MockPeopleService } from './@shared/interceptor/people.service.mock';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -86,6 +84,9 @@ export const msalInterceptorConfig: {
   interactionType: InteractionType.Redirect,
   protectedResourceMap: new Map<string, string[]>([
     ['https://graph.microsoft.com/v1.0/me', ['user.read']],
+    ...(environment.ai.chatApiScope
+      ? [[`${environment.apiUrl}/api/integrations/people-finder/*`, [environment.ai.chatApiScope]] as [string, string[]]]
+      : []),
     [`${environment.ai.chatProtectedResource}/*`, [environment.ai.chatApiScope]]
   ])
 };
@@ -168,10 +169,6 @@ export const msalGuardConfig: {
       provide: HTTP_INTERCEPTORS, 
       useClass: MockServiceNowInterceptor, 
       multi: true 
-    },
-    { 
-      provide: PeopleService, 
-      useClass: MockPeopleService 
     },
     { 
       provide: 'isBrowser', 

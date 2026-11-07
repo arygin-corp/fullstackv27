@@ -1,0 +1,32 @@
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+	<div>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb breadcrumb-arrow mb-2">
+				<li class="breadcrumb-item">
+					<a href="{% url 'changelog:dashboard' %}">Changelog</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="{% url 'changelog:post-list' %}">Releases</a>
+				</li>
+                {% if current_label %} 
+                <li class="breadcrumb-item active">{{ current_label }}</li>
+                {% endif %}
+			</ol>
+		</nav>
+		<h2 class="h4 mb-1">{{ heading }}</h2>
+		<p class="text-muted mb-0">{{ description }}</p>
+	</div>
+	<div class="d-flex flex-wrap gap-2">
+        {% if show_compare %} 
+        <a class="btn btn-light border" href="{% url 'changelog:post-compare' %}">
+			<i class="ti ti-arrows-diff me-1"></i>
+            Compare releases 
+        </a>
+        {% endif %}
+        {% if show_create and perms.changelog.add_post %} 
+        <a class="btn btn-primary" href="{% url 'changelog:post-create' %}">
+			<i class="ti ti-plus me-1"></i>New release 
+        </a>
+        {% endif %} 
+    </div>
+</div>

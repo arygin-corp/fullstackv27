@@ -1,0 +1,27 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Command Center Reports{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="COMMAND CENTER" hero_title="Reports" hero_description="Saved reports for the platform, a module, or a page." hero_metric_label="Reports" hero_metric_value=views|length hero_metric_caption="Saved" hero_icon="▤" %}
+{% include "gdx_admin/apps/command_center/_nav.html" %}
+<section class="deploy-panel">
+    <h2>Reports</h2>
+    <table class="deploy-table">
+        <thead><tr><th>Name</th><th>Data</th><th>Created by</th></tr></thead>
+        <tbody>
+        {% for item in views %}
+        <tr>
+            <td><a href="{% url 'command_center:view' item.id %}">{{ item.name }}</a></td>
+            <td>{{ item.scope_label }}</td>
+            <td>{{ item.created_by }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No reports yet. Use Create and choose a module or a page.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+{% endblock %}

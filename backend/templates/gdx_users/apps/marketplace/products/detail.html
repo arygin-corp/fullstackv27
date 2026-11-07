@@ -1,4 +1,4 @@
-{% extends 'gdx_users/partials/base.html' %}
+{% extends 'partials/base.html' %}
 
 {% block contents %}
 <div class="container mt-4">
@@ -60,13 +60,13 @@
 
     {# Action Buttons #}
     {% if is_content_manager %}
-        <a href="{% url 'products:edit' object.id %}" class="btn btn-primary">
+        <a href="{% url 'marketplace:product-edit' object.id %}" class="btn btn-primary">
             Edit Product
         </a>
     {% endif %}
 
     {% if is_super_admin %}
-        <a href="{% url 'products:delete' object.id %}" class="btn btn-danger">
+        <a href="{% url 'marketplace:product-delete' object.id %}" class="btn btn-danger">
             Delete Product
         </a>
     {% endif %}

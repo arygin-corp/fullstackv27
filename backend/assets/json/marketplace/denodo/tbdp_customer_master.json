@@ -3791,6 +3791,18 @@
       "userrolename": "tbdp-customer-master",
       "dbname": "cust_master_trn_ext",
       "elementname": "customer_postal_address",
+      "column_name": "postal_addr_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "customer_postal_address",
+      "column_name": "postal_addr_effective_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "customer_postal_address",
       "column_name": "postal_address_id"
     },
     {
@@ -4842,6 +4854,90 @@
       "dbname": "cust_master_trn_ext",
       "elementname": "postal_address",
       "column_name": "tril_match_street_nm"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "action_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "action_expiry_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "privacy_right"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "privacy_right_action"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "privacy_rights_control_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "privacy_rights_control",
+      "column_name": "tbdp_delete_flag"
     }
   ],
   "links": [

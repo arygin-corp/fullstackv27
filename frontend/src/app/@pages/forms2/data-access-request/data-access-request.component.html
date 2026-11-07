@@ -14,12 +14,15 @@
 
 <div>
   	<div class="right-panel">
-    	<nav class="breadcrumb container d-none d-lg-block">
-      		<div>
-        		<a class="breadcrumb-item breaditem" style="color: rgb(2, 117, 216);" routerLink="/category" >Domains</a>
-        		<a class="breadcrumb-item">Data Access Request</a>
-      		</div>
-    	</nav>
+    	<div class="jumbotron jumbotron-fluid">
+    		<div class="container">
+    			<h1 class="display-4 text-center" style="font-size: 28px; font-weight: 700;">Data Access Request</h1>
+    			<p class="lead text-center" style="font-size: 14px; font-weight: 300; margin-top: 12px;">
+    				Submit a request for access to the data you need for your work.<br>
+    				Describe the platform, domain, and intended use so the request can be reviewed.
+    			</p>
+    		</div>
+    	</div>
 
     	<div class="container" style="padding: 0px;">
       		<div class="row">
@@ -61,44 +64,44 @@
               				</div>
             			</div>
 
-            			<form *ngIf="!isShow" [formGroup]="form" (ngSubmit)="submit()">
+            			<form *ngIf="!isShow" [formGroup]="form" (ngSubmit)="addToCart()">
             				<div class="col-lg-3 col-md-3 d-none d-lg-block float-left">
               					<div class="col-lg-12 col-md-12" style="padding: 0px;">
               						<!--UI/UX VALIDATION-->
                 					<div style="position: fixed;width: 100%;">
-                  						<label for="exampleFormControlSelect2 float-left col-6" style="margin-top: 26px;margin: 8px 0px 0px 0px;">Required Information</label>
+                  						<p class="requirements-title"><strong>Required Information</strong></p>
 
 										<!--REQUEST VALIDATION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('requesting_id').value === ''"> 
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>Requested For</strong>
 					                  	</p>
 										<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('requesting_id').value === 'Me' && !form.get('v_dar_objectid_reqfor').value">
 											<span style="margin-right: 6px;">
-												<i class="fas fa-check-circle text-success"></i>
+												<i class="ri-check-fill text-success icon-validation"></i>
 											</span><strong>Requested For</strong>
 										</p>
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_objectid_reqfor').value != '' && form.get('requesting_id').value === ''" hidden="form.get('v_dar_objectid_reqfor').value == ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>Requested For</strong>
 					                  	</p>
 										<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('requesting_id').value === 'User' && !form.get('v_dar_objectid_reqfor').value"> 
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>Requested For</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_objectid_reqfor').value">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-check-circle text-success"></i>
+					                      		<i class="ri-check-fill text-success icon-validation"></i>
 					                    	</span><strong>Requested For</strong>
 					                  	</p>
 
                   						<!--PLATFORM VALIDATION-->
                   						<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_platform').value === ''">
                     						<span style="margin-right: 6px;">
-                      							<i class="fas fa-times-circle text-danger"></i>
+                      							<i class="ri-prohibited-line text-danger icon-validation"></i>
                     						</span><strong>Platform</strong>
                   						</p>
                   						<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -115,13 +118,13 @@
 						                  	form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' ||
 						                  	form.get('v_dar_platform').value === 'Other'">
                     						<span style="margin-right: 6px;">
-                      							<i class="fas fa-check-circle text-success"></i>
+                      							<i class="ri-check-fill text-success icon-validation"></i>
                     						</span><strong>Platform</strong>
                   						</p>
                   						<!--DATA DOMAIN VALIDATION-->
                   						<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_dataDomainSelect').value === ''">
                     						<span style="margin-right: 6px;">
-                      							<i class="fas fa-times-circle text-danger"></i>
+                      							<i class="ri-prohibited-line text-danger icon-validation"></i>
                     						</span><strong>Data Domain</strong>
                   						</p>
                   						<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -141,64 +144,64 @@
 						                  	form.get('v_dar_dataDomainSelect').value === 'Vehicles' || 
 						                  	form.get('v_dar_dataDomainSelect').value === 'Warranty'">
                     						<span style="margin-right: 6px;">
-                      							<i class="fas fa-check-circle text-success"></i>
+                      							<i class="ri-check-fill text-success icon-validation"></i>
                     						</span><strong>Data Domain</strong>
                   						</p>
 					                  	<!--USER ACCESS TYPE VALIDATION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_userType').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>User Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_userType').value === 'TMNA User' || form.get('v_dar_userType').value === 'TMNA Affiliates' || form.get('v_dar_userType').value === 'External User'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>User Access</strong>
 					                  	</p>
 					                  	<!--INVIDUAL/APP ACCESS TYPE VALIDATION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_accessType').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
-						                    </span><strong>Individual Access</strong>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
+						                    </span><strong>User/App Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_accessType').value === 'User Requested Access (Individual is directly accessing the data)' || form.get('v_dar_accessType').value === 'Application Requested Access (Program/System is accessing the data; non-human actor)'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
-						                    </span><strong>Individual/App Access</strong>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
+						                    </span><strong>User/App Access</strong>
 					                  	</p>
 					                  	<!--SYSTEM ACCESS VALIDATION-->
 					                  	<!--MANUFACTURING-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
-					                  		form.get('v_dar_platform').value === 'ame (DB2, IMS, CICS, Flat files, Reports, etc.)Mainfr' && 
+					                  		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 						                  	form.get('v_dar_dataDomainSelect').value === 'Manufacturing' && 
 						                  	form.get('v_dar_mf_what_system').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>System Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
-					                  		form.get('v_dar_platform').value === 'ame (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
+					                  		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 					                  		form.get('v_dar_dataDomainSelect').value === 'Manufacturing' && 
 					                  		form.get('v_dar_mf_what_system').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>System Access</strong>
 					                  	</p>
 					                  	<!--MANUFACTURING PARTS-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
-					                  		form.get('v_dar_platform').value === 'ame (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
+					                  		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 					                  		form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts' && 
 					                  		form.get('v_dar_mf_what_system').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>System Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
-					                  		form.get('v_dar_platform').value === 'ame (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
+					                  		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 					                  		form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts' && 
 					                  		form.get('v_dar_mf_what_system').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>System Access</strong>
 					                  	</p>
 					                  	<!--MAINFRAME ACCESS-->
@@ -206,14 +209,14 @@
 							                form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 							                form.get('v_dar_mainframe_access_type').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Mainframe Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 						                  	form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 						                  	form.get('v_dar_mainframe_access_type').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Mainframe Access</strong>
 					                  	</p>
 					                  	<!--PLATFORM - OTHER-->
@@ -221,66 +224,66 @@
 					                   		form.get('v_dar_platform').value === 'Other' && form.get('v_dar_OtherType').value === ''" [hidden]="
 					                  		form.get('v_dar_bi_data_access_type').value === 'Other'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<p id="other1" class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'Other' && form.get('v_dar_OtherType').value != ''" [hidden]="
 					                  		form.get('v_dar_bi_data_access_type').value === 'Other'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<!--GATEWAY - OTHER-->
 					                  	<p id="other2" class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_bi_data_access_type').value === 'Other' && form.get('v_dar_gateway_if_other').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<p id="other2" class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_bi_data_access_type').value === 'Other' && form.get('v_dar_gateway_if_other').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<!--ORACLE - OTHER-->
 					                  	<p id="other3" class="text-danger validation-margin check" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_select_an_oracle_access_type').value === 'Other (Non-warehouse)' && form.get('v_dar_oracle_other').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<p id="other3" class="text-success validation-margin check" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_select_an_oracle_access_type').value === 'Other (Non-warehouse)' && form.get('v_dar_oracle_other').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Other</strong>
 					                  	</p>
 					                  	<!--API NAMEE-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'API (EIG Application Support)' && form.get('v_dat_api_name').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>API Name</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'API (EIG Application Support)' && form.get('v_dat_api_name').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>API Name</strong>
 					                  	</p>
 					                  	<!--DATA WAREHOUSE-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'Data Warehouse/Mart (VDW, FDW, FDM, NDW, etc.)' && form.get('v_dar_select_a_data_warehouse_mart').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Data Warehouse/Mart</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'Data Warehouse/Mart (VDW, FDW, FDM, NDW, etc.)' && form.get('v_dar_select_a_data_warehouse_mart').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Data Warehouse/Mart</strong>
 					                  	</p>
 					                  	<!--GATEWAY ACCESS-->
@@ -291,7 +294,7 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PowerBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-times-circle text-danger"></i>
+						                      <i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Gateway Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -301,26 +304,26 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PowerBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Gateway Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  	form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' && form.get('v_dar_bi_data_access_type').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Gateway Access</strong>
 					                  	</p>
 					                  	<!--ORACLE ACCESS-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' && form.get('v_dar_select_an_oracle_access_type').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Oracle Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' && form.get('v_dar_select_an_oracle_access_type').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Oracle Access</strong>
 					                  	</p>
 					                  	<!--DATABASE/SCHEMA-->
@@ -331,13 +334,13 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PoweraBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'My SQL' && form.get('v_dar_post_database_schema').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p id="db2" class="text-danger validation-margin" style="font-size: 14px" *ngIf="
@@ -347,13 +350,13 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PoweraBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'PostgreSQL' && form.get('v_dar_post_database_schema').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p id="db3" class="text-danger validation-margin" style="font-size: 14px" *ngIf="
@@ -363,7 +366,7 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PoweraBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -373,7 +376,7 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PoweraBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p id="db4" class="text-danger validation-margin" style="font-size: 14px" *ngIf="
@@ -383,74 +386,74 @@
 					                  		form.get('v_dar_bi_data_access_type').value === 'PoweraBI' || 
 					                  		form.get('v_dar_bi_data_access_type').value === 'Tableau'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)' && form.get('v_dar_post_database_schema').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                 	<p id="db6" class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                 	form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' && form.get('v_dar_gateway_database_schema').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  	form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' && form.get('v_dar_gateway_database_schema').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Database/Schema</strong>
 					                  	</p>
 					           			<!--TABLE NAMES-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'My SQL' && form.get('v_dar_post_table_names').value === null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-times-circle text-danger"></i>
+						                      <i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'My SQL' && form.get('v_dar_post_table_names').value != null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-check-circle text-success"></i>
+						                      <i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'PostgreSQL' && form.get('v_dar_post_table_names').value === null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-times-circle text-danger"></i>
+						                      <i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'PostgreSQL' && form.get('v_dar_post_table_names').value != null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-check-circle text-success"></i>
+						                      <i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'SQL' && form.get('v_dar_post_table_names').value === null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-times-circle text-danger"></i>
+						                      <i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'SQL' && form.get('v_dar_post_table_names').value != null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-check-circle text-success"></i>
+						                      <i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)' && form.get('v_dar_post_table_names').value === null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-times-circle text-danger"></i>
+						                      <i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
 					                  		form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)' && form.get('v_dar_post_table_names').value != null">
 						                    <span style="margin-right: 6px;">
-						                      <i class="fas fa-check-circle text-success"></i>
+						                      <i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Table Name(s)</strong>
 					                  	</p>
 					                  	<!--ENVIRONMENT-->
@@ -461,7 +464,7 @@
 					                  	form.get('v_dar_mainframe_access_type').value === 'Mainframe Service Account' || 
 					                  	form.get('v_dar_mainframe_access_type').value === 'ChangeMan Approval Authority'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Environment</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -470,7 +473,7 @@
 					                  		form.get('v_dar_environment').value === 'Prod' || 
 					                  		form.get('v_dar_environment').value === 'All'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Environment</strong>
 					                  	</p>
 					                  	<!--MAINFRAME DATA ACCESS-->
@@ -493,7 +496,7 @@
 					                  		form.get('v_dat_data_access_type_flat').value === 'Create/Delete'
 					                		">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Data Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="
@@ -509,47 +512,47 @@
 					                  		form.get('v_dat_data_access_type_flat').value === 'Create/Delete'
 					                  		">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Data Access</strong>
 					                  	</p>
 					                  	<!--REQUEST DESCRIPTION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_DataReqDescription').value.length < '10'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Request Description</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_DataReqDescription').value.length > '9'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Request Description</strong>
 					                  	</p>
 					                  	<!--INTENDED USE-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_businessJustification').value.length < '10'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Intended Use</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_businessJustification').value.length > '9'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Intended Use</strong>
 					                  	</p>
 
 					                  	<!--PI VALIDATION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_pi').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Personal Information</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_pi').value === 'No'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Personal Information</strong>
 					                  	</p>
 					                  	<!--PII VALIDATION-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_spi').value === ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-times-circle text-danger"></i>
+						                      	<i class="ri-prohibited-line text-danger icon-validation"></i>
 						                    </span><strong>Sensitive PI</strong>
 					                  	</p>
 
@@ -565,7 +568,7 @@
 					                   		form.get('v_edm_3rd_party_vendor').value != ''}">
 					                    	<p class="text-danger validation-margin" id="error" style="font-size: 14px" *ngIf="form.get('v_dar_spi').value === 'Yes'">
 					                      		<span style="margin-right: 6px;">
-					                        		<i class="fas fa-times-circle text-danger"></i>
+					                        		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                      		</span><strong>Sensitive PI</strong>
 					                    	</p>
 					                  	</div> -->
@@ -573,13 +576,13 @@
 					                  	<!--SUCCESSFUL VALIDATION-->
 										<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_spi').value === 'Yes'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Sensitive PI</strong>
 					                  	</p>
 
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('v_dar_spi').value === 'No'">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Sensitive PI</strong>
 					                  	</p>
 
@@ -590,7 +593,7 @@
 					                  		form.get('v_edm_type_of_work').value != '' && 
 					                  		form.get('v_edm_3rd_party_vendor').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Sensitive PI</strong>
 					                  	</p> -->
 
@@ -601,73 +604,73 @@
 					                  		form.get('v_edm_type_of_work').value != '' && 
 					                  		form.get('v_edm_3rd_party_vendor').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Sensitive PI</strong>
 					                  	</p> -->
 
 					                  	<p class="text-danger validation-margin " style="font-size: 14px" *ngIf="
 					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('edm_PI_personal_details').value === ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
-					                    	</span><strong>Sensitive PI Access</strong>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
+					                    	</span><strong>PII Access</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin " style="font-size: 14px" *ngIf="
-					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('edm_PI_personal_details').value === 'Yes' || form.get('edm_PI_personal_details').value === 'No'">
+					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && (form.get('edm_PI_personal_details').value === 'Yes' || form.get('edm_PI_personal_details').value === 'No')">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-check-circle text-success"></i>
-					                    	</span><strong>Sensitive PI Access</strong>
+					                      		<i class="ri-check-fill text-success icon-validation"></i>
+					                    	</span><strong>PII Access</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin " style="font-size: 14px" *ngIf="
 					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('edm_PI_personal_details').value === 'Yes' && form.get('v_emd_specify_PII_needs').value === ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
-					                    	</span><strong>Specify Sensitive PI Details</strong>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
+					                    	</span><strong>PII Explanation</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin " style="font-size: 14px" *ngIf="
 					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('edm_PI_personal_details').value != '' && form.get('v_emd_specify_PII_needs').value != ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-check-circle text-success"></i>
-					                    	</span><strong>Specify Sensitive PI Details</strong>
+					                      		<i class="ri-check-fill text-success icon-validation"></i>
+					                    	</span><strong>PII Explanation</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin " style="font-size: 14px" *ngIf="
 					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('v_edm_type_of_work').value === ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>Type of Work</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin " style="font-size: 14px" *ngIf="
-						                  	(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && 
+						                  	(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && (
 						                  	form.get('v_edm_type_of_work').value === 'Development' || 
 						                  	form.get('v_edm_type_of_work').value === 'Analysis' || 
 						                  	form.get('v_edm_type_of_work').value === 'Research' || 
 						                  	form.get('v_edm_type_of_work').value === 'Extract' || 
 						                  	form.get('v_edm_type_of_work').value === 'Other' || 
-						                  	form.get('v_edm_type_of_work').value === 'All'">
+						                  	form.get('v_edm_type_of_work').value === 'All')">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-check-circle text-success"></i>
+					                      		<i class="ri-check-fill text-success icon-validation"></i>
 					                    	</span><strong>Type of Work</strong>
 					                  	</p>
 					                  	<p class="text-danger validation-margin " style="font-size: 14px" *ngIf="
 					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('v_edm_3rd_party_vendor').value === ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>3rd Party Vendor</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin " style="font-size: 14px" *ngIf="
-					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && form.get('v_edm_3rd_party_vendor').value === 'Yes' || form.get('v_edm_3rd_party_vendor').value === 'No'">
+					                  		(form.get('v_dar_pi').value === 'Yes' || form.get('v_dar_spi').value === 'Yes') && (form.get('v_edm_3rd_party_vendor').value === 'Yes' || form.get('v_edm_3rd_party_vendor').value === 'No')">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-check-circle text-success"></i>
+					                      		<i class="ri-check-fill text-success icon-validation"></i>
 					                    	</span><strong>3rd Party Vendor</strong>
 					                  	</p>
 					                  	<!--TERMS OF USE-->
 					                  	<p class="text-danger validation-margin" style="font-size: 14px" *ngIf="form.get('chk_dar_terms_message').value == ''">
 					                    	<span style="margin-right: 6px;">
-					                      		<i class="fas fa-times-circle text-danger"></i>
+					                      		<i class="ri-prohibited-line text-danger icon-validation"></i>
 					                    	</span><strong>Terms of Use</strong>
 					                  	</p>
 					                  	<p class="text-success validation-margin" style="font-size: 14px" *ngIf="form.get('chk_dar_terms_message').value != ''">
 						                    <span style="margin-right: 6px;">
-						                      	<i class="fas fa-check-circle text-success"></i>
+						                      	<i class="ri-check-fill text-success icon-validation"></i>
 						                    </span><strong>Terms of Use</strong>
 					                  	</p>
                 					</div>
@@ -838,9 +841,9 @@
                     				</label>
                     				<!--DATA DOMAIN HELP SECTION-->
                     				<div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
-			    	        			<h5 class="title-padding">
+			    	        			<h5 class="title-padding note-card">
 			    	        				<small style="font-size: 14px;">Please use the following link to understand our Data Domains</small><br>
-			    	        				<span><a class="pointer" routerLink='../../docs/protected/domains' style="font-size: 14px; font-weight: bold;">Data Domain Help Document</a></span>
+			    	        				<span><a class="pointer" href="/docs/protected/domains" (click)="openWindow($event, '/docs/protected/domains')">Data Domain Help Document</a></span>
 			    	        			</h5>
     	        					</div>
     	        					<!--DATA DOMAIN CHOICES-->
@@ -1062,6 +1065,26 @@
 				                form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 				                form.get('v_dar_dataDomainSelect').value === 'Manufacturing'">
 				                  	<div class="col-lg-12">
+				                    	<h5 class="title-padding note-card even-gap">
+				                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
+				                        	<div class="mainframe-content">
+				                          		<div class="mainframe-question">
+				                            		<input id="dar-note-2" type="checkbox" class="panel">
+				                           	 		<div class="plus">+</div>
+				                           			<label for="dar-note-2" class="panel-title">
+				                           				<small style="font-size: 14px;">Click Here To Learn More</small>
+				                           			</label>
+				                            		<div class="panel-content">
+				                              			<ul style="font-size: 14px">
+							                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
+							                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
+							                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
+							                                <li><strong>Other</strong></li>
+				                              			</ul>
+				                            		</div>
+				                          		</div>
+				                        	</div>
+				                    	</h5>
 				                    	<div class="col-lg-12 title-bg" style="margin-left: 0px;">
 				                      		<h5 class="title-padding">
 				                        		<strong>Mainframe Access for Manufacturing</strong><br>
@@ -1074,6 +1097,26 @@
 				                form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 				                form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts'">
 				                  	<div class="col-lg-12">
+				                    	<h5 class="title-padding note-card even-gap">
+				                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
+				                        	<div class="mainframe-content">
+				                          		<div class="mainframe-question">
+				                            		<input id="dar-note-3" type="checkbox" class="panel">
+				                           	 		<div class="plus">+</div>
+				                           			<label for="dar-note-3" class="panel-title">
+				                           				<small style="font-size: 14px;">Click Here To Learn More</small>
+				                           			</label>
+				                            		<div class="panel-content">
+				                              			<ul style="font-size: 14px">
+							                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
+							                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
+							                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
+							                                <li><strong>Other</strong></li>
+				                              			</ul>
+				                            		</div>
+				                          		</div>
+				                        	</div>
+				                    	</h5>
 				                    	<div class="col-lg-12 title-bg" style="margin-left: 0px;">
 				                      		<h5 class="title-padding">
 				                        		<strong>Mainframe Access for Manufacturing</strong><br>
@@ -1244,14 +1287,14 @@
 			                  		<app-field-error-display [displayError]="isFieldValid('v_dar_mf_loc_if_other')" errorMsg="Other is required."></app-field-error-display>
 			                	</div>
 			                	<!--REQUEST DESCRIPTION-->
-				                <div class="collapse">
+				                <div class="dar-platform-note" *ngIf="form.get('v_dar_platform').value">
 				                	<div class="col-lg-12">
 				                		<div class="col-lg-12 title-bg" style="margin-left: 0px;">
-				                			<h5 *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="title-padding">
-				                				<strong>API Access Request</strong><br>
+				                			<h5 *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="title-padding note-card even-gap">
+				                				<strong class="note-title">API Access Request</strong><br>
 				                				<small style="font-size: 14px;">Please use the following link to search for the API Name</small><br>
 				                				<!--<span><a href="https://developer.apic.toyota.com/tmna/prod/" target="_blank" style="font-size: 14px; font-weight: bold;">Toyota API Catalog</a></span>-->
-												<span><a href="https://developer.eig.toyota.com?session=true" target="_blank" style="font-size: 14px; font-weight: bold;">Toyota API Catalog</a></span>
+												<span><a href="https://developer.eig.toyota.com?session=true" (click)="openWindow($event, 'https://developer.eig.toyota.com?session=true')">Toyota API Catalog</a></span>
 				                			</h5>
 				                			<h5 *ngIf="form.get('v_dar_platform').value === 'My SQL'" class="title-padding">
 				                    			<strong>My SQL Access Request</strong><br>
@@ -1312,13 +1355,13 @@
 						                      	form.get('v_dar_platform').value === 'Cloud (AWS)' || 
 						                      	form.get('v_dar_platform').value === 'Cloud (Azure)' || 
 						                      	form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' || 
-						                      	form.get('v_dar_platform').value === 'Other'" class="title-padding">
-						            			<strong>Sales - Mainframe Access Request</strong><br>
+						                      	form.get('v_dar_platform').value === 'Other'" class="title-padding note-card even-gap">
+						            			<strong class="note-title">Sales - Mainframe Access Request</strong><br>
 						                        <div class="mainframe-content">
 						                          	<div class="mainframe-question">
-						                            	<input id="q1" type="checkbox" class="panel">
+						                            	<input id="dar-note-1" type="checkbox" class="panel">
 						                            	<div class="plus">+</div>
-						                            	<label for="q1" class="panel-title">
+						                            	<label for="dar-note-1" class="panel-title">
 						                            		<small style="font-size: 14px;">Click Here To Learn More</small>
 						                            	</label>
 						                            	<div class="panel-content">
@@ -1340,52 +1383,6 @@
 						                          	</div>
 						                        </div>
 						            		</h5>
-						            		<!--MANUFCATURING BAR-->
-					                      	<h5 *ngIf="
-					                      		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
-					                      		form.get('v_dar_dataDomainSelect').value === 'Manufacturing'" class="title-padding">
-					                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
-					                        	<div class="mainframe-content">
-					                          		<div class="mainframe-question">
-					                            		<input id="q1" type="checkbox" class="panel">
-					                           	 		<div class="plus">+</div>
-					                           			<label for="q1" class="panel-title">
-					                           				<small style="font-size: 14px;">Click Here To Learn More</small>
-					                           			</label>
-					                            		<div class="panel-content">
-					                              			<ul style="font-size: 14px">
-								                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
-								                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
-								                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
-								                                <li><strong>Other</strong></li>
-					                              			</ul>
-					                            		</div>
-					                          		</div>
-					                        	</div>
-					                      	</h5>
-
-					                      	<h5 *ngIf="
-					                      		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
-					                      		form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts'" class="title-padding">
-					                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
-					                        	<div class="mainframe-content">
-					                          		<div class="mainframe-question">
-					                            		<input id="q1" type="checkbox" class="panel">
-					                           	 		<div class="plus">+</div>
-					                           			<label for="q1" class="panel-title">
-					                           				<small style="font-size: 14px;">Click Here To Learn More</small>
-					                           			</label>
-					                            		<div class="panel-content">
-					                              			<ul style="font-size: 14px">
-								                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
-								                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
-								                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
-								                                <li><strong>Other</strong></li>
-					                              			</ul>
-					                            		</div>
-					                          		</div>
-					                        	</div>
-					                      	</h5>
 					            		</div>
 				            	    </div>
 				                </div>
@@ -3076,13 +3073,12 @@
 					                form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' || 
 					                form.get('v_dar_platform').value === 'Other'
 					                " class="form-group col-12" id="data_request_description" style="margin-top: 12px;">
-				                  	<label for="exampleFormControlTextarea1" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Data Request Description
-				                   		<p class="form-note">
-				                      		List additional information about the data or access level being requested, including any privileged access. Privileged access is highly restricted in the QA and Production environments, so detailed justification is required in the Intended Use field.
-				                    	</p>
-										<small style="color: red"><strong>Note:</strong> Don't use acronyms or your request will get rejected for lack of clarity.</small>
-				                	</label>
+				                  	<label for="exampleFormControlTextarea1" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Data Request Description</label>
 				                  	<textarea class="form-control" formControlName="v_dar_DataReqDescription" minlength="10"></textarea>
+				                   	<p class="form-note">
+				                      	List additional information about the data or access level being requested, including any privileged access. Privileged access is highly restricted in the QA and Production environments, so detailed justification is required in the Intended Use field.
+				                    </p>
+									<small style="color: red"><strong>Note:</strong> Don't use acronyms or your request will get rejected for lack of clarity.</small>
 				                  	<!--DATA REQUEST DESCRIPTION ERROR-->
 				                  	<app-field-error-display [displayError]="isFieldValid('v_dar_DataReqDescription')" errorMsg="Data Request Description is required and need a minimum of 10 characters."></app-field-error-display>
 				                </div>
@@ -3100,15 +3096,19 @@
 					                form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' || 
 					                form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' || 
 					                form.get('v_dar_platform').value === 'Other'" class="form-group col-12" id="intended_use" style="margin-top: 12px;">
-				                  	<label for="v_dar_businessJustification" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Intended Use
-				                    	<p class="form-note">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</p>
-				                  	</label>
+				                  	<label for="v_dar_businessJustification" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Intended Use</label>
 				                  	<textarea autofocus class="form-control" formControlName="v_dar_businessJustification" minlength="10"></textarea>
+				                    <p class="form-note">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</p>
 				                  	<!--INTENDED USE ERROR-->
 				                  	<app-field-error-display [displayError]="isFieldValid('v_dar_businessJustification')" errorMsg="Intended Use is required and need a minimum of 10 characters."></app-field-error-display>
 				                </div>
 
 				                <!--PII REQUEST-->
+				                <div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
+			    	        			<h5 class="title-padding note-card even-gap">
+			    	        				<span><a class="pointer" href="https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents" (click)="openWindow($event, 'https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents')">P02 Information Classification and Handling Policy</a></span>
+			    	        			</h5>
+    	        					</div>
 				                <div class="form-group col-12" id="pi_access" style="margin-top: 12px;" [ngClass]="displayFieldCss('v_dar_pi')">
 				                  	<label for="v_dar_pi" class="control-label required">
 				                  		<span class="text-danger">*</span>Are you requesting Personal Information (PI) data?
@@ -3124,11 +3124,6 @@
 				                  	<label for="v_dar_spi" class="control-label required">
 				                  		<span class="text-danger">*</span>Are you requesting Sensitive Personal Information (Sensitive PI) data?
 				                  	</label>
-									  <div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
-			    	        			<h5 class="title-padding">
-			    	        				<span><a class="pointer" href="https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents"  target = "_blank" style="font-size: 14px; font-weight: bold;"> P02 Information Classification and Handling Policy</a></span>
-			    	        			</h5>
-    	        					</div>
 				                  	<select class="form-control" formControlName="v_dar_spi">
 					                  	<option value="" selected="selected">Choose One</option>
 					                    <option value="Yes">Yes</option>
@@ -3193,15 +3188,15 @@
 				                </div>
 
 					            <!--ACKNOWLEDGEMENT NOTES-->
-				                <div class="form-group col-12" id="terms" style="margin-top: 12px;">
-									<p>Please read and accept the Terms of Use, and specifically acknowledge that: </p>
+				                <div class="form-group col-12 note-card even-gap" id="terms">
+									<p><strong>Please read and accept the Terms of Use, and specifically acknowledge that:</strong></p>
 									<p>a. I am authorized to use this data solely to perform my job duties.</p>
 									<p>b. I shall not disclose it to any person or entity unless approved in advance.</p>
 									<p>c. I shall protect and will not share my access credentials with anyone.</p>
 									<p>d. I will not use the data for unauthorized, fraudulent or malicious purposes, or in a manner that could damage, disable, overburden or impair TMNA systems.</p>
 									<p>e. I understand that this data should only be used for the use case for which it has been approved.  Any use beyond this specific use case requires an additional corresponding approval.</p>
 									<p>f. I have read and will comply with all TMNA and Data Enablement & Global Compliance policies pertaining to data. 
-									  <a href="https://dataenablement.toyota.com/" target="_blank">https://dataenablement.toyota.com/</a> 
+									  <a href="https://dataenablement.toyota.com/" (click)="openWindow($event, 'https://dataenablement.toyota.com/')">https://dataenablement.toyota.com/</a> 
 									</p>
 				                </div>
 				                <!--ACKNOWLEDGEMENT CONFIRMATION-->
@@ -3213,7 +3208,7 @@
 									</div>
 								  </div>
 				  
-								  <div class="row" [ngClass]="{show: shouldShow, hide: !shouldShow}" >
+								  <div class="row" *ngIf="shouldShow">
 									<div class="container">
 									  <p class="alert alert-success loading">
 										  <strong>Please wait while your data request is being submitted</strong>
@@ -3243,13 +3238,10 @@
 								  <!--FORM SUBMISSION-->
 								  <div class="form-group row">
 									<div class="col-sm-10">
-									  <button class="btn btn-primary" 
-									  [disabled]="!form.valid" 
-									  (click)="shouldShow = !shouldShow"
-									  [disabled]="!form.valid" 
-									  (click)="onSubmit()"
-									  [ngClass]="{'btn-disabled': isLoading, 'btn-success': !isLoading, 'disabled': isProcessing}"
-									  (click)="actionMethod(); clicked = true;">{{button}}</button>
+									  <button class="btn btn-primary" type="button"
+									  [disabled]="!form.valid || isProcessing"
+									  (click)="addToCart()"
+									  [ngClass]="{'btn-disabled': isLoading || !form.valid, 'btn-success': !isLoading && form.valid, 'disabled': isProcessing}">{{button}}</button>
 									</div>
 								  </div>
 
@@ -3416,9 +3408,9 @@
                     				</label>
                     				<!--DATA DOMAIN HELP SECTION-->
                     				<div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
-			    	        			<h5 class="title-padding">
+			    	        			<h5 class="title-padding note-card">
 			    	        				<small style="font-size: 14px;">Please use the following link to understand our Data Domains</small><br>
-			    	        				<span><a routerLink="../../docs/protected/domains" style="font-size: 14px; font-weight: bold;">Data Domain Help Document</a></span>
+			    	        				<span><a href="/docs/protected/domains" (click)="openWindow($event, '/docs/protected/domains')">Data Domain Help Document</a></span>
 			    	        			</h5>
     	        					</div>
     	        					<!--DATA DOMAIN CHOICES-->
@@ -3646,6 +3638,26 @@
 				                form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 				                form.get('v_dar_dataDomainSelect').value === 'Manufacturing'">
 				                  	<div class="col-lg-12">
+				                    	<h5 class="title-padding note-card even-gap">
+				                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
+				                        	<div class="mainframe-content">
+				                          		<div class="mainframe-question">
+				                            		<input id="dar-note-5" type="checkbox" class="panel">
+				                           	 		<div class="plus">+</div>
+				                           			<label for="dar-note-5" class="panel-title">
+				                           				<small style="font-size: 14px;">Click Here To Learn More</small>
+				                           			</label>
+				                            		<div class="panel-content">
+				                              			<ul style="font-size: 14px">
+							                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
+							                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
+							                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
+							                                <li><strong>Other</strong></li>
+				                              			</ul>
+				                            		</div>
+				                          		</div>
+				                        	</div>
+				                    	</h5>
 				                    	<div class="col-lg-12 title-bg" style="margin-left: 0px;">
 				                      		<h5 class="title-padding">
 				                        		<strong>Mainframe Access for Manufacturing</strong><br>
@@ -3658,6 +3670,26 @@
 				                form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
 				                form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts'">
 				                  	<div class="col-lg-12">
+				                    	<h5 class="title-padding note-card even-gap">
+				                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
+				                        	<div class="mainframe-content">
+				                          		<div class="mainframe-question">
+				                            		<input id="dar-note-6" type="checkbox" class="panel">
+				                           	 		<div class="plus">+</div>
+				                           			<label for="dar-note-6" class="panel-title">
+				                           				<small style="font-size: 14px;">Click Here To Learn More</small>
+				                           			</label>
+				                            		<div class="panel-content">
+				                              			<ul style="font-size: 14px">
+							                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
+							                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
+							                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
+							                                <li><strong>Other</strong></li>
+				                              			</ul>
+				                            		</div>
+				                          		</div>
+				                        	</div>
+				                    	</h5>
 				                    	<div class="col-lg-12 title-bg" style="margin-left: 0px;">
 				                      		<h5 class="title-padding">
 				                        		<strong>Mainframe Access for Manufacturing</strong><br>
@@ -3827,13 +3859,13 @@
 			                  		<app-field-error-display [displayError]="isFieldValid('v_dar_mf_loc_if_other')" errorMsg="Other is required."></app-field-error-display>
 			                	</div>
 			                	<!--REQUEST DESCRIPTION-->
-				                <div class="collapse">
+				                <div class="dar-platform-note" *ngIf="form.get('v_dar_platform').value">
 				                	<div class="col-lg-12">
 				                		<div class="col-lg-12 title-bg" style="margin-left: 0px;">
-				                			<h5 *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="title-padding">
-				                				<strong>API Access Request</strong><br>
+				                			<h5 *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="title-padding note-card even-gap">
+				                				<strong class="note-title">API Access Request</strong><br>
 				                				<small style="font-size: 14px;">Please use the following link to search for the API Name</small><br>
-				                				<span><a href="https://developer.apic.toyota.com/tmna/prod/" target="_blank" style="font-size: 14px; font-weight: bold;">Toyota API Catalog</a></span>
+				                				<span><a href="https://developer.eig.toyota.com?session=true" (click)="openWindow($event, 'https://developer.eig.toyota.com?session=true')">Toyota API Catalog</a></span>
 				                			</h5>
 				                			<h5 *ngIf="form.get('v_dar_platform').value === 'My SQL'" class="title-padding">
 				                    			<strong>My SQL Access Request</strong><br>
@@ -3894,13 +3926,13 @@
 						                      	form.get('v_dar_platform').value === 'Cloud (AWS)' || 
 						                      	form.get('v_dar_platform').value === 'Cloud (Azure)' || 
 						                      	form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' || 
-						                      	form.get('v_dar_platform').value === 'Other'" class="title-padding">
-						            			<strong>Sales - Mainframe Access Request</strong><br>
+						                      	form.get('v_dar_platform').value === 'Other'" class="title-padding note-card even-gap">
+						            			<strong class="note-title">Sales - Mainframe Access Request</strong><br>
 						                        <div class="mainframe-content">
 						                          	<div class="mainframe-question">
-						                            	<input id="q1" type="checkbox" class="panel">
+						                            	<input id="dar-note-4" type="checkbox" class="panel">
 						                            	<div class="plus">+</div>
-						                            	<label for="q1" class="panel-title">
+						                            	<label for="dar-note-4" class="panel-title">
 						                            		<small style="font-size: 14px;">Click Here To Learn More</small>
 						                            	</label>
 						                            	<div class="panel-content">
@@ -3922,52 +3954,6 @@
 						                          	</div>
 						                        </div>
 						            		</h5>
-						            		<!--MANUFCATURING BAR-->
-					                      	<h5 *ngIf="
-					                      		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
-					                      		form.get('v_dar_dataDomainSelect').value === 'Manufacturing'" class="title-padding">
-					                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
-					                        	<div class="mainframe-content">
-					                          		<div class="mainframe-question">
-					                            		<input id="q1" type="checkbox" class="panel">
-					                           	 		<div class="plus">+</div>
-					                           			<label for="q1" class="panel-title">
-					                           				<small style="font-size: 14px;">Click Here To Learn More</small>
-					                           			</label>
-					                            		<div class="panel-content">
-					                              			<ul style="font-size: 14px">
-								                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
-								                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
-								                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
-								                                <li><strong>Other</strong></li>
-					                              			</ul>
-					                            		</div>
-					                          		</div>
-					                        	</div>
-					                      	</h5>
-
-					                      	<h5 *ngIf="
-					                      		form.get('v_dar_platform').value === 'Mainframe (DB2, IMS, CICS, Flat files, Reports, etc.)' && 
-					                      		form.get('v_dar_dataDomainSelect').value === 'Manufacturing Parts'" class="title-padding">
-					                        	<strong>Manufacturing - Mainframe Access Request</strong><br>
-					                        	<div class="mainframe-content">
-					                          		<div class="mainframe-question">
-					                            		<input id="q1" type="checkbox" class="panel">
-					                           	 		<div class="plus">+</div>
-					                           			<label for="q1" class="panel-title">
-					                           				<small style="font-size: 14px;">Click Here To Learn More</small>
-					                           			</label>
-					                            		<div class="panel-content">
-					                              			<ul style="font-size: 14px">
-								                                <li><strong>Mainframe TSO ID</strong> - Select this option to create or update an ID for a specific, individual, person</li>
-								                                <li><strong>Mainframe Service Account</strong> - Select this option to create or update an ID for an application, program, BOT, etc.</li>
-								                                <li><strong>IMS Access</strong> - Select this option to create or modify on-line IMS IDs, screens, transactions, and transaction groups</li>
-								                                <li><strong>Other</strong></li>
-					                              			</ul>
-					                            		</div>
-					                          		</div>
-					                        	</div>
-					                      	</h5>
 					            		</div>
 				            	    </div>
 				                </div>
@@ -5532,13 +5518,12 @@
 					                form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' || 
 					                form.get('v_dar_platform').value === 'Other'
 					                " class="form-group col-12" id="data_request_description" style="margin-top: 12px;">
-				                  	<label for="exampleFormControlTextarea1" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Data Request Description
-				                   		<p class="form-note">
-				                      		List additional information about the data or access level being requested, including any privileged access. Privileged access is highly restricted in the QA and Production environments, so detailed justification is required in the Intended Use field.
-				                    	</p>
-										<small style="color: red"><strong>Note:</strong> Don't use acronyms or your request will get rejected for lack of clarity.</small>
-				                	</label>
+				                  	<label for="exampleFormControlTextarea1" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Data Request Description</label>
 				                  	<textarea class="form-control" formControlName="v_dar_DataReqDescription" minlength="10"></textarea>
+				                   	<p class="form-note">
+				                      	List additional information about the data or access level being requested, including any privileged access. Privileged access is highly restricted in the QA and Production environments, so detailed justification is required in the Intended Use field.
+				                    </p>
+									<small style="color: red"><strong>Note:</strong> Don't use acronyms or your request will get rejected for lack of clarity.</small>
 				                  	<!--DATA REQUEST DESCRIPTION ERROR-->
 				                  	<app-field-error-display [displayError]="isFieldValid('v_dar_DataReqDescription')" errorMsg="Data Request Description is required and need a minimum of 10 characters."></app-field-error-display>
 				                </div>
@@ -5556,15 +5541,19 @@
 					                form.get('v_dar_platform').value === 'Gateway Access Request (PowerBI, Tableau, Alteryx, etc)' || 
 					                form.get('v_dar_platform').value === 'Oracle (Non-Data Warehouse, MDW, TOMS, Customer Central, etc.)' || 
 					                form.get('v_dar_platform').value === 'Other'" class="form-group col-12" id="intended_use" style="margin-top: 12px;">
-				                  	<label for="v_dar_businessJustification" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Intended Use
-				                    	<p class="form-note">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</p>
-				                  	</label>
+				                  	<label for="v_dar_businessJustification" class="control-label required" style="text-align: left;"><span class="text-danger">*</span>Intended Use</label>
 				                  	<textarea autofocus class="form-control" formControlName="v_dar_businessJustification" minlength="10"></textarea>
+				                    <p class="form-note">The Intended Use should explain the purpose and business value including key performance indicators (KPI), problem statement, and decision scenario (what are you trying to solve/answer).</p>
 				                  	<!--INTENDED USE ERROR-->
 				                  	<app-field-error-display [displayError]="isFieldValid('v_dar_businessJustification')" errorMsg="Intended Use is required and need a minimum of 10 characters."></app-field-error-display>
 				                </div>
 
 				                <!--PII REQUEST-->
+				                <div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
+			    	        			<h5 class="title-padding note-card even-gap">
+			    	        				<span><a class="pointer" href="https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents" (click)="openWindow($event, 'https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents')">P02 Information Classification and Handling Policy</a></span>
+			    	        			</h5>
+    	        					</div>
 				                <div class="form-group col-12" id="pi_access" style="margin-top: 12px;" [ngClass]="displayFieldCss('v_dar_pi')">
 				                  	<label for="v_dar_pi" class="control-label required">
 				                  		<span class="text-danger">*</span>Are you requesting Personal Information (PI) data?
@@ -5580,11 +5569,6 @@
 				                  	<label for="v_dar_spi" class="control-label required">
 				                  		<span class="text-danger">*</span>Are you requesting Sensitive Personal Information (Sensitive PI) data?
 				                  	</label>
-									  <div class="col-lg-12 title-bg" style="margin-left: 0px;margin-bottom: 12px;">
-			    	        			<h5 class="title-padding">
-			    	        				<span><a class="pointer" href="https://myteams.toyota.com/sites/tmnaisinfosecGRC/Policies/TMNA%20All%20%20Policy%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents%2FP02%20Information%20Classification%20and%20Handling%20Policy%2Epdf&parent=%2Fsites%2FtmnaisinfosecGRC%2FPolicies%2FTMNA%20All%20%20Policy%20Documents"  target = "_blank" style="font-size: 14px; font-weight: bold;"> P02 Information Classification and Handling Policy</a></span>
-			    	        			</h5>
-    	        					</div>
 				                  	<select class="form-control" formControlName="v_dar_spi">
 					                  	<option value="" selected="selected">Choose One</option>
 					                    <option value="Yes">Yes</option>
@@ -5649,15 +5633,15 @@
 				                </div>
 
 					            <!--ACKNOWLEDGEMENT NOTES-->
-				                <div class="form-group col-12" id="terms" style="margin-top: 12px;">
-									<p>Please read and accept the Terms of Use, and specifically acknowledge that: </p>
+				                <div class="form-group col-12 note-card even-gap" id="terms">
+									<p><strong>Please read and accept the Terms of Use, and specifically acknowledge that:</strong></p>
 									<p>a. I am authorized to use this data solely to perform my job duties.</p>
 									<p>b. I shall not disclose it to any person or entity unless approved in advance.</p>
 									<p>c. I shall protect and will not share my access credentials with anyone.</p>
 									<p>d. I will not use the data for unauthorized, fraudulent or malicious purposes, or in a manner that could damage, disable, overburden or impair TMNA systems.</p>
 									<p>e. I understand that this data should only be used for the use case for which it has been approved.  Any use beyond this specific use case requires an additional corresponding approval.</p>
 									<p>f. I have read and will comply with all TMNA and Data Enablement & Global Compliance policies pertaining to data. 
-									  <a href="https://dataenablement.toyota.com/" target="_blank">https://dataenablement.toyota.com/</a> 
+									  <a href="https://dataenablement.toyota.com/" (click)="openWindow($event, 'https://dataenablement.toyota.com/')">https://dataenablement.toyota.com/</a> 
 									</p>
 				                </div>
 
@@ -5670,7 +5654,7 @@
 									</div>
 								  </div>
 				  
-								  <div class="row" [ngClass]="{show: shouldShow, hide: !shouldShow}" >
+								  <div class="row" *ngIf="shouldShow">
 									<div class="container">
 									  <p class="alert alert-success loading">
 										  <strong>Please wait while your data request is being submitted</strong>
@@ -5697,13 +5681,10 @@
 								  <!--FORM SUBMISSION-->
 								  <div class="form-group row">
 									<div class="col-sm-10">
-									  <button class="btn btn-primary" 
-									  [disabled]="!form.valid" 
-									  (click)="shouldShow = !shouldShow"
-									  [disabled]="!form.valid" 
-									  (click)="onSubmit()"
-									  [ngClass]="{'btn-disabled': isLoading, 'btn-success': !isLoading, 'disabled': isProcessing}"
-									  (click)="actionMethod(); clicked = true;">{{button}}</button>
+									  <button class="btn btn-primary" type="button"
+									  [disabled]="!form.valid || isProcessing"
+									  (click)="addToCart()"
+									  [ngClass]="{'btn-disabled': isLoading || !form.valid, 'btn-success': !isLoading && form.valid, 'disabled': isProcessing}">{{button}}</button>
 									</div>
 								  </div>
 

@@ -57,7 +57,7 @@ class Command(BaseCommand):
             }
             master_orders.append(order)
 
-        output_path = os.path.join(settings.BASE_DIR, 'static/json/marketplace/orders/master_orders.json')
+        output_path = os.path.join(settings.BASE_DIR, 'assets/json/marketplace/orders/master_orders.json')
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
         with open(output_path, 'w', encoding='utf-8') as f:

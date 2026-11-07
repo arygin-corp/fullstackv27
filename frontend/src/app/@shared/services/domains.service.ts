@@ -24,4 +24,8 @@ export class DomainsService {
     }
     return this.domains$;
   }
+
+  getCampaignDomains(): Observable<Domain[]> {
+    return this.http.get<Domain[]>(`${this.apiUrl}?campaign=1`);
+  }
 }

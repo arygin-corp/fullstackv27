@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from '../../../../app/@shared/services/app.service';
 import { OrderHistoryService } from '../../../../app/@shared/services/order-history.service';
-import { OrderService } from '../../../../app/@shared/services/order.service';
+import { UserActivityService } from '../../../../app/@shared/services/user-activity.service';
 import { Router } from '@angular/router';
 import moment from 'moment-business-days';
 import { environment } from "../../../../environments/environment";
@@ -44,7 +44,7 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
     constructor(
       private appService: AppService,
       private orderHistoryService: OrderHistoryService,
-      private orderService: OrderService,
+      private ordersApi: UserActivityService,
       private _http: HttpClient,
       private router: Router
     ) {
@@ -59,7 +59,6 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
       this.catalogItem = "9a51d2dd1b03c490d96b11b92a4bcb99";
       this.limit = "500";
       this.GetRequestNumbers();
-      this.apiTimer = setInterval(() => { this.GetRequestNumbers(); }, 1000);
       moment.updateLocale('en', {
         holidays: [
           '01-02-2023','01-16-2023','05-29-2023','07-04-2023','09-04-2023',
@@ -84,31 +83,11 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
     }
 
     GetRequestNumbers(){
-      this.orderService.getOrders().subscribe(
-        (data: any[]) => {
-          if (data && data.length) {
-            this.masterOrderList = data;
-            this.postProcessOrders();
-          } else {
-            this.orderHistoryService.GetRequestNumbers(this.requestedFor).subscribe((d: any[]) => {
-              this.masterOrderList = d || [];
-              this.postProcessOrders();
-            }, () => {
-              this.masterOrderList = [];
-              this.postProcessOrders();
-            });
-          }
-        },
-        () => {
-          this.orderHistoryService.GetRequestNumbers(this.requestedFor).subscribe((d: any[]) => {
-            this.masterOrderList = d || [];
-            this.postProcessOrders();
-          }, () => {
-            this.masterOrderList = [];
-            this.postProcessOrders();
-          });
-        }
-      );
+      this.ordersApi.recentOrders(100).subscribe((data: any[]) => {
+        this.masterOrderList = data || [];
+        this.postProcessOrders();
+        this.noOrder = true;
+      });
     }
 
     postProcessOrders(){

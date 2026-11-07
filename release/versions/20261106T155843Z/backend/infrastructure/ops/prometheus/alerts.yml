@@ -1,0 +1,62 @@
+groups:
+  - name: notification-app
+    rules:
+      - alert: SustainedNotificationCreationFailures
+        expr: increase(notification_creation_failures_total[15m]) >= 5
+        for: 5m
+        labels: {severity: critical}
+        annotations: {summary: "Sustained notification-creation failures"}
+      - alert: RedisConnectionFailures
+        expr: increase(notification_redis_connection_failures_total[15m]) >= 3
+        for: 2m
+        labels: {severity: critical}
+        annotations: {summary: "Redis connection failures"}
+      - alert: CeleryQueueGrowth
+        expr: notification_celery_queue_depth >= 100
+        for: 10m
+        labels: {severity: warning}
+        annotations: {summary: "Celery queue growth"}
+      - alert: RepeatedTaskRetries
+        expr: increase(notification_task_retries_total[15m]) >= 10
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "Repeated task retries"}
+      - alert: DeliveryFailureRateIncrease
+        expr: notification_delivery_failure_rate >= 0.10
+        for: 10m
+        labels: {severity: critical}
+        annotations: {summary: "Delivery failure-rate increase"}
+      - alert: SSEConnectionLimit
+        expr: notification_active_sse >= 100
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "SSE connection count exceeds configured infrastructure limit"}
+      - alert: DatabaseQueryLatencyIncrease
+        expr: increase(notification_db_slow_queries_total[15m]) > 0
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "Database query latency increase"}
+      - alert: NotificationCreatedButNotPublished
+        expr: notification_unpublished_notifications > 0
+        for: 5m
+        labels: {severity: critical}
+        annotations: {summary: "No notification events published despite recorded notification creation"}
+  - name: notification-reliability
+    rules:
+      - alert: NotificationOutboxBacklog
+        expr: notification_outbox_backlog >= 100
+        for: 10m
+        labels: {severity: warning}
+        annotations: {summary: "Notification outbox backlog exceeds threshold"}
+      - alert: NotificationDeadLettersOpen
+        expr: notification_dead_letters_open >= 1
+        for: 1m
+        labels: {severity: critical}
+        annotations: {summary: "Open notification dead letters require attention"}
+  - name: notification-ledger
+    rules:
+      - alert: NotificationAuditLedgerVerificationFailed
+        expr: notification_ledger_verification_failed > 0
+        for: 1m
+        labels: {severity: critical}
+        annotations: {summary: "Notification audit ledger verification failed"}

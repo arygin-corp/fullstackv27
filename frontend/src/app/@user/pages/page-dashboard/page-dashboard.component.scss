@@ -1,0 +1,102 @@
+.status-pill,
+.approval-pill {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+    min-width: 56px;
+    text-align: center;
+}
+
+.status-pill-cancelled,
+.approval-pill-rejected { background-color: #DC4C64; }
+
+.status-pill-completed,
+.approval-pill-approved { background-color: #14A44D; }
+
+.status-pill-pending,
+.approval-pill-pending { background-color: #54B4D3; }
+
+.status-pill-progress { background-color: #3B71CA; }
+
+.status-pill-hold,
+.approval-pill-requested { background-color: #E4A11B; color: #1f1f1f; }
+
+.status-pill-default,
+.approval-pill-default { background-color: #9FA6B2; color: #1f1f1f; }
+
+.approval-pill-pending { color: #1f1f1f; }
+
+.product-delivery {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.delivery-date,
+.delivery-day {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.delivery-day {
+    position: relative;
+    top: 12px;
+    font-size: 24px;
+}
+
+.delivery-date {
+    font-size: 46px;
+}
+
+.delivery-month,
+.delivery-year {
+    position: relative;
+    left: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.delivery-month { top: 12px; }
+.delivery-year { top: 8px; }
+
+.order-status {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.order-status-notification {
+    position: relative;
+    bottom: 6px;
+    font-size: 12px;
+}
+
+.bg-grey { background-color: #AEAEAE; }
+.bg-blue { background-color: #007bff; }
+
+.btn-action-upload,
+.btn-action-review,
+.btn-history-teams,
+.btn-history-outlook {
+    font-size: 14px;
+    float: right;
+    margin-bottom: 6px;
+    width: 100% !important;
+    padding: 8px 10px;
+    border: none;
+    color: #fff;
+}
+
+.btn-action-upload { color: #000; background-color: #FEC901; }
+.btn-action-upload:hover { background-color: #987800; color: #fff; }
+.btn-action-review { background-color: #363636; }
+.btn-action-review:hover { background-color: #000; color: #fff; }
+.btn-history-teams { background-color: #505AC9; }
+.btn-history-teams:hover { background-color: #383e8c; color: #fff; }
+.btn-history-outlook { background-color: #0072C6; }
+.btn-history-outlook:hover { background-color: #004f8a; color: #fff; }

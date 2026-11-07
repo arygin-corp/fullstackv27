@@ -10,7 +10,7 @@ class InstalledThirdPartyApi(models.Model):
     description = models.TextField(blank=True)
 
     icon_image = models.ImageField(
-        upload_to="third_party_apis/icons/",
+        upload_to="module/icons/",
         blank=True,
         null=True,
     )
@@ -41,6 +41,15 @@ class InstalledThirdPartyApi(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True,
     )
+
+    def save(self, *args, **kwargs):
+        from django.utils import timezone
+
+        self.last_success_at = timezone.now()
+        update_fields = kwargs.get("update_fields")
+        if update_fields is not None:
+            kwargs["update_fields"] = set(update_fields) | {"last_success_at"}
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

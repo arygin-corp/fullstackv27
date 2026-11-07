@@ -1,0 +1,56 @@
+{{ operations|json_script:"cc-operations" }}
+{% for section in operations.sections %}
+<section class="cc-board">
+    <h2>{{ section.title }}</h2>
+    {% if section.stats %}
+    <ul class="cc-stats">
+        {% for fact in section.stats %}
+        <li><strong>{{ fact.value }}</strong><span>{{ fact.label }}</span></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if section.note %}<p class="cc-note">{{ section.note }}</p>{% endif %}
+    {% if section.columns %}
+    <div class="cc-chart-grid">
+        {% for column in section.columns %}
+        <article class="cc-chart-card{% if column.wide %} cc-chart-wide{% endif %}">
+            <div class="cc-chart-head">
+                <h3>{{ column.title }}</h3>
+                {% if column.refresh %}
+                <form class="cc-chart-tools" method="get">
+                    {% for item in operations.query %}
+                    {% if item.key not in column.filter_names %}
+                    <input type="hidden" name="{{ item.key }}" value="{{ item.value }}">
+                    {% endif %}
+                    {% endfor %}
+                    {% for control in column.filters %}
+                    <select name="{{ control.name }}" onchange="this.form.submit()">
+                        {% for option in control.options %}
+                        <option value="{{ option.id }}"{% if option.id == control.selected %} selected{% endif %}>{{ option.label }}</option>
+                        {% endfor %}
+                    </select>
+                    {% endfor %}
+                    <button type="submit" aria-label="Refresh"><i class="isax isax-refresh" aria-hidden="true"></i></button>
+                </form>
+                {% endif %}
+            </div>
+            {% if column.chart == "list" %}
+                {% for row in column.rows %}
+                <div class="cc-rank">
+                    <div class="cc-rank-title"><span>{{ row.label }}</span><b>{{ row.value }}</b></div>
+                </div>
+                {% empty %}
+                {% if column.empty %}<p class="cc-note">{{ column.empty }}</p>{% endif %}
+                {% endfor %}
+            {% elif column.rows %}
+            <div class="cc-chart" data-section="{{ forloop.parentloop.counter0 }}" data-column="{{ forloop.counter0 }}"></div>
+            {% elif column.empty %}
+            <p class="cc-note">{{ column.empty }}</p>
+            {% endif %}
+            {% if column.note %}<p class="cc-note">{{ column.note }}</p>{% endif %}
+        </article>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endfor %}

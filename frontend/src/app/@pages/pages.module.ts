@@ -15,6 +15,7 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { OrgComponent } from './org/org.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ProductIntakeComponent } from './product-intake/product-intake.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     CampaignsComponent,
     OrgComponent,
     LandingPageComponent,
+    ProductIntakeComponent,
   ],
   exports: [
     TeamComponent,

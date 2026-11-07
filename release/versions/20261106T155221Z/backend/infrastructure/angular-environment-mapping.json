@@ -1,0 +1,50 @@
+{
+  "angularPromotion": {
+    "poc": [
+      "demo",
+      "dev",
+      "qa",
+      "stage",
+      "prod"
+    ],
+    "engineering": [
+      "dev",
+      "qa",
+      "stage",
+      "prod"
+    ]
+  },
+  "environments": {
+    "demo": {
+      "accountId": "963334842848",
+      "region": "us-west-2",
+      "frontendBucket": "edmp-nonprod-demo-gdx",
+      "buildScript": "build:demo",
+      "optionalPocEntry": true
+    },
+    "dev": {
+      "accountId": "963334842848",
+      "region": "us-west-2",
+      "frontendBucket": "edmp-nonprod-dev-gdx",
+      "buildScript": "build:dev"
+    },
+    "qa": {
+      "accountId": "963334842848",
+      "region": "us-west-2",
+      "frontendBucket": "edmp-nonprod-qa-gdx",
+      "buildScript": "build:qa"
+    },
+    "stage": {
+      "accountId": "963334842848",
+      "region": "us-west-2",
+      "frontendBucket": "edmp-nonprod-stage-gdx",
+      "buildScript": "build:stage"
+    },
+    "prod": {
+      "accountId": "471550468381",
+      "region": "us-east-1",
+      "frontendBucket": "edmp-prod-gdx",
+      "buildScript": "build:prod"
+    }
+  }
+}
