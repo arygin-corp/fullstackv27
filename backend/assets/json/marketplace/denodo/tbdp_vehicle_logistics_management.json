@@ -9478,6 +9478,258 @@
     {
       "userrolename": "tbdp-vehicle-logistics-management",
       "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "active_loc_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "bod_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "facing_vdc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "legacy_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "loc_gid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "loc_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "loc_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "location_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "port_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "prtn_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "rds_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "region_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "shipment_plan_excl"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "spl_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "location_reference",
+      "column_name": "term_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "actavg_rail_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "actavg_trk_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "active_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "avg_mileage"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "destination_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "dlr_direct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "eff_end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "eff_start_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "first_leg_dest"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "first_leg_mode"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "itinerary_gid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "lst_leg_origin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "lst_leg_trans_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "origin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "rail_transit_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "route_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "route_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "route_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "transit_cost"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "transit_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "transport_mode"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "master_transit_mf",
+      "column_name": "trk_transit_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
       "elementname": "npps_vehicle_accessory",
       "column_name": "accessory_code"
     },
@@ -11649,6 +11901,156 @@
     },
     {
       "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "active_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "add_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "add_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "carrier_scac"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "dest_otm_loc_gid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "dest_tms_loc_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "eff_end_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "eff_start_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "origin_otm_loc_gid"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "origin_tms_loc_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "transit_days"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "transit_distance"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "transit_leg_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_mf",
+      "column_name": "transport_mode"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "add_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "add_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "leg_seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "lst_updt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "lst_updt_tmdt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "transit_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "transit_leg_seq_mf",
+      "column_name": "transit_leg_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "frght_rail_events",
       "column_name": "actual_time"
@@ -12491,6 +12893,18 @@
       "userrolename": "tbdp-vehicle-logistics-management",
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "unified_eta",
+      "column_name": "fleet_asap_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
+      "column_name": "fleet_fix_dw"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
       "column_name": "fleet_flag"
     },
     {
@@ -12498,6 +12912,12 @@
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "unified_eta",
       "column_name": "hold_occurence"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
+      "column_name": "hq_flag"
     },
     {
       "userrolename": "tbdp-vehicle-logistics-management",
@@ -12540,6 +12960,12 @@
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "unified_eta",
       "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
+      "column_name": "nvs_est_fqa_date"
     },
     {
       "userrolename": "tbdp-vehicle-logistics-management",
@@ -12629,6 +13055,12 @@
       "userrolename": "tbdp-vehicle-logistics-management",
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "unified_eta",
+      "column_name": "sold_to_dealer"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
       "column_name": "sold_to_region"
     },
     {
@@ -12678,6 +13110,12 @@
       "dbname": "vehicle_logistics_trn_ext",
       "elementname": "unified_eta",
       "column_name": "unit_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-logistics-management",
+      "dbname": "vehicle_logistics_trn_ext",
+      "elementname": "unified_eta",
+      "column_name": "upfit_flag"
     },
     {
       "userrolename": "tbdp-vehicle-logistics-management",

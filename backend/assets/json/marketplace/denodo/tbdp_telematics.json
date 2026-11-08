@@ -3983,6 +3983,12 @@
       "userrolename": "tbdp-telematics",
       "dbname": "telematics_trn_ext",
       "elementname": "ct_maintenance_alert",
+      "column_name": "alert_group_id"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "ct_maintenance_alert",
       "column_name": "alert_priority"
     },
     {
@@ -4152,6 +4158,18 @@
       "dbname": "telematics_trn_ext",
       "elementname": "ct_maintenance_alert",
       "column_name": "region_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "ct_maintenance_alert",
+      "column_name": "repeat_warning_codes"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "ct_maintenance_alert",
+      "column_name": "repeat_warning_flag"
     },
     {
       "userrolename": "tbdp-telematics",
@@ -6004,6 +6022,420 @@
     {
       "userrolename": "tbdp-telematics",
       "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "affiliatecode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "alternatordecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "alternatortestcode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "amphour"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batteryidcapturemethod"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batterylocation"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batteryparameterscode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batteryposttype"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batterytemp"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batterytesttime"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batterytype"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "batteryunits"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "cca"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "ccaconductancetest"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "ccafinalcharge"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "chargemodeduration"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "chargesessionaborted"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "chargetime"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "chargetimeaftertopoff"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "chargetimebeforetopoff"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "conductancetestdecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "customercomplaint"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "extendedchargeduration"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "finalbatterytestdecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "floatchargeduration"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "initialremainingtime"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "initialvoltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "locationid"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "modelyear"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "packconfigurationtype"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "packnumberofbatteries"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "partnumber"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "prtn_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "ratedcca"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "recoverymodeduration"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "recoverymodeentered"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "replaceduringcharge"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "reportdate"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "reservecapacitydecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "serialnumber"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "servicedate"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "servicetime"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "starterdecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "startertestcode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "stateofcharge"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "suppliermfglocation"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "techid"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "tempconductancetest"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "tempfinalcharger"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "tempfurtherdiagnostic"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "tempunit"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "testcode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "testtype"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "timetodecision"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "tooltype"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "transmittedon"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "vehiclemake"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "vehiclemodel"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "vehiclestatus"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "vincapturemethod"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltageconductanceprofile"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltagefinalcharger"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltagefurtherdiagnostic"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltageprecca"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
+      "elementname": "rd_ods_bmis",
+      "column_name": "voltageprescr"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "telematics_trn_ext",
       "elementname": "rd_subscription",
       "column_name": "brri_status"
     },
@@ -7079,6 +7511,672 @@
       "userrolename": "tbdp-telematics",
       "dbname": "telematics_trn_ext",
       "elementname": "t3brri_ffdd",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "avg__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "avg__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "avg__speed_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "avg__speed_pos_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "delta__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "deployment_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "distance_km"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "max__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "max__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "max__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "min__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "min__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "trim"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "uptime_hr"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "xwd"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "day_summary",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "avg__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "avg__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "avg__speed_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "avg__speed_pos_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "delta__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "deployment_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "distance_km"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "hour"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "max__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "max__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "max__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "min__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "min__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "trim"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "uptime_hr"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "xwd"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "hour_summary",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "avg"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "avg_d"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "avg_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "count_1e3"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "depl"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "fin_avail_t"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "init_avail_t"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "label"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "max"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "max_d"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "max_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "med"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "med_d"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "med_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "min"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "min_d"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "min_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "mode"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "mode_d"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "mode_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "std_dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "x__vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "signal_summary",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "avg__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "avg__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "avg__speed_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "avg__speed_pos_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "delta__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "deployment_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "distance_km"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "max__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "max__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "max__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "max__ts"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "min__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "min__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "min__ts"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "trim"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "tvec_id"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "uptime_hr"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "xwd"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "tvec_summary",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "avg__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "avg__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "avg__speed_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "avg__speed_pos_kph"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "delta__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "deployment_name"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "distance_km"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "max__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "max__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "max__dt"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "min__12v_voltage"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "min__date"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "trim"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "uptime_hr"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
+      "column_name": "xwd"
+    },
+    {
+      "userrolename": "tbdp-telematics",
+      "dbname": "veads_rnd_tc",
+      "elementname": "vin_summary",
       "column_name": "year"
     },
     {

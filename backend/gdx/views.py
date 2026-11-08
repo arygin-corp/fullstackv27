@@ -370,6 +370,8 @@ def platform_settings(request):
             _create_user(request)
         elif action == "set_verified":
             _set_verified(request)
+        elif action == "set_employee_type":
+            _set_employee_type(request)
         elif action == "create_group":
             _create_group(request)
         elif action == "assign_group":
@@ -416,7 +418,8 @@ def platform_settings(request):
             messages.success(request, "Attribute permission removed.")
         return _settings_redirect(tab, request)
 
-    from apps.profiles.models import ACCESS_CHOICES
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import ACCESS_CHOICES, EmployeeType
     from gdx.page_access import ACTIONS as page_actions
     from gdx.page_access import ROLES as page_roles
     from gdx.page_access import page_rows
@@ -446,6 +449,8 @@ def platform_settings(request):
             "page_actions": page_actions,
             "page_rows": page_matrix,
             "access_choices": ACCESS_CHOICES,
+            "employee_type_choices": EmployeeType.choices,
+            "can_edit_employee_type": actor_can_edit_employee_type(request.user),
             "deployment_config": _deployment_config(),
             "deployment_buckets": _deployment_buckets(),
             "deployment_engineer": (request.user.get_full_name() or "").strip() or request.user.get_username(),
@@ -514,7 +519,16 @@ def _create_user(request):
     profile.access_type = _stored_access_type(user, request.POST.get("access_type"), request.user)
     if "is_verified" in request.POST:
         profile.is_verified = True
-    profile.save(update_fields=["access_type", "is_verified"])
+    update_fields = ["access_type", "is_verified"]
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import EmployeeType
+
+    if actor_can_edit_employee_type(request.user):
+        employee_type = (request.POST.get("employee_type") or "").strip()
+        if employee_type in {choice for choice, _label in EmployeeType.choices}:
+            profile.employee_type = employee_type
+            update_fields.append("employee_type")
+    profile.save(update_fields=update_fields)
     messages.success(request, f"User {username} created.")
 
 
@@ -546,6 +560,27 @@ def _set_verified(request):
     user.profile.is_verified = request.POST.get("verified") == "1"
     user.profile.save(update_fields=["is_verified"])
     messages.success(request, f"{user.username} is {'verified' if user.profile.is_verified else 'no longer verified'}.")
+
+
+def _set_employee_type(request):
+    from django.contrib.auth import get_user_model
+
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import EmployeeType, Profile
+
+    if not actor_can_edit_employee_type(request.user):
+        messages.error(request, "Only a Data Marketplace Team employee can change employee type.")
+        return
+    user = get_user_model().objects.filter(pk=request.POST.get("user_id")).first()
+    employee_type = (request.POST.get("employee_type") or "").strip()
+    allowed = {choice for choice, _label in EmployeeType.choices}
+    if user is None or employee_type not in allowed:
+        messages.error(request, "Choose a user and an employee type.")
+        return
+    profile, _created = Profile.objects.get_or_create(user=user)
+    profile.employee_type = employee_type
+    profile.save(update_fields=["employee_type"])
+    messages.success(request, f"{user.username} is now {profile.get_employee_type_display()}.")
 
 
 def _user_directory(request):
@@ -640,6 +675,12 @@ def _users_for_settings():
             user.access_verified = False
         user.primary_group = next(iter(user.groups.all()), None)
         user.access_type = access_type_for(user)
+        try:
+            user.employee_type = user.profile.employee_type or ""
+            user.employee_type_label = user.profile.get_employee_type_display() or "—"
+        except ObjectDoesNotExist:
+            user.employee_type = ""
+            user.employee_type_label = "—"
         users.append(user)
     return users
 

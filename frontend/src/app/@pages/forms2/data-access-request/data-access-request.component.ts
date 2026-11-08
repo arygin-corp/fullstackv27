@@ -591,6 +591,10 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   }
 
   private loadDenodoTables(): void {
+    if (environment.useMockServiceNow || !environment.production) {
+      this.useMockDatabases();
+      return;
+    }
     const role = this.denodoRole();
     if (!role) {
       this.denodoRows = [];
@@ -602,21 +606,46 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     this.http.get<any>(url).subscribe({
       next: data => {
         const rows = Array.isArray(data) ? data : (data?.value || data?.elements || []);
-        this.denodoRows = rows;
-        const names = new Map<string, DbNameOption>();
-        for (const row of rows) {
-          const name = String(row?.dbname || '').trim();
-          if (name && !names.has(name)) {
-            names.set(name, { dbname: name, label: name });
-          }
+        const named = rows.filter((row: ElementInfo) => String(row?.dbname || '').trim());
+        if (!named.length) {
+          this.useMockDatabases();
+          return;
         }
-        this.dbnames = Array.from(names.values()).sort((a, b) => a.dbname.localeCompare(b.dbname));
+        this.denodoRows = named;
+        this.dbnames = this.databaseOptions(named);
       },
-      error: () => {
-        this.denodoRows = [];
-        this.dbnames = [];
-      }
+      error: () => this.useMockDatabases()
     });
+  }
+
+  private useMockDatabases(): void {
+    this.denodoRows = [
+      { dbname: 'tdp_vehicle', elementname: 'certified_dealer_participants', column_name: 'dealer_code' },
+      { dbname: 'tdp_vehicle', elementname: 'advertised_dealer_participants', column_name: 'dealer_code' },
+      { dbname: 'tdp_vehicle', elementname: 'vin_sales_actuals', column_name: 'vin' },
+      { dbname: 'tdp_vehicle', elementname: 'aggregated_sales_actuals', column_name: 'sales_month' },
+      { dbname: 'tdp_vehicle', elementname: 'preowned_sales_inquiry', column_name: 'inquiry_id' },
+      { dbname: 'tdp_customer', elementname: 'customer_master', column_name: 'customer_id' },
+      { dbname: 'tdp_customer', elementname: 'customer_contact', column_name: 'email' },
+      { dbname: 'tdp_parts', elementname: 'parts_catalog', column_name: 'part_number' },
+      { dbname: 'tdp_parts', elementname: 'parts_inventory', column_name: 'location_code' },
+      { dbname: 'tdp_finance', elementname: 'customer_master', column_name: 'customer_id' },
+      { dbname: 'tdp_finance', elementname: 'vehicle_sales', column_name: 'vin' },
+      { dbname: 'tdp_sales', elementname: 'new_car_sales', column_name: 'vin' },
+      { dbname: 'tdp_sales', elementname: 'used_car_sales', column_name: 'vin' },
+    ];
+    this.dbnames = this.databaseOptions(this.denodoRows);
+  }
+
+  private databaseOptions(rows: ElementInfo[]): DbNameOption[] {
+    const names = new Map<string, DbNameOption>();
+    for (const row of rows) {
+      const name = String(row?.dbname || '').trim();
+      if (name && !names.has(name)) {
+        names.set(name, { dbname: name, label: name });
+      }
+    }
+    return Array.from(names.values()).sort((a, b) => a.dbname.localeCompare(b.dbname));
   }
 
   onDbChange(selectedDb: DbNameOption | string | null): void {
@@ -644,7 +673,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     );
   }
 
-  onTableSelectClose() {
+  onTableSelectClose(): void {
     this.openAiDiscovery();
   }
 

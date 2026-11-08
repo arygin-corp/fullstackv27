@@ -5,7 +5,6 @@
 {% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
 {% block content %}
 <main class="module-page">
-{% include "gdx_admin/apps/command_center/_nav.html" with hide_tabs=True %}
 <header class="cc-hello">
     <div class="cc-hello-top">
         <div>
@@ -24,6 +23,8 @@
         {% endfor %}
     </ul>
 </header>
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="COMMAND CENTER" hero_title="Analytics" hero_description="Live activity across the platform." hero_metric_label="Active" hero_metric_value=realtime.active_users hero_metric_caption="Last 30 minutes" hero_icon="⌘" title_parent="Command Center" title_label="Analytics" title_heading="Command Center analytics" title_text="Live activity across the platform." %}
+{% include "gdx_admin/apps/command_center/_nav.html" with hide_tabs=True %}
 {{ dataset|json_script:"cc-dataset" }}
 <section class="cc-live">
     <div class="cc-live-map cc-widget" data-element="google_map">

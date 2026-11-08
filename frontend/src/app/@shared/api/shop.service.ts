@@ -20,6 +20,9 @@ export interface ListOptions {
     status?: string;
     query?: string;
     campaign?: boolean;
+    domainId?: string;
+    subdomainId?: string;
+    subdomain2Id?: string;
 }
 
 @Injectable({
@@ -92,6 +95,19 @@ export class ShopService {
 
 
 
+    private plainText(value: string | null | undefined): string {
+        if (!value) {
+            return '';
+        }
+        const withBreaks = String(value)
+            .replace(/<\s*br\s*\/?\s*>/gi, ' ')
+            .replace(/<\/\s*(p|div|li|h[1-6])\s*>/gi, ' ');
+        const text = typeof DOMParser !== 'undefined'
+            ? new DOMParser().parseFromString(withBreaks, 'text/html').body.textContent || ''
+            : withBreaks.replace(/<[^>]*>/g, ' ');
+        return text.replace(/\s+/g, ' ').trim();
+    }
+
     private normalizeProduct(product: any): Product {
         return {
             ...product,
@@ -113,11 +129,15 @@ export class ShopService {
                             'assets/images/product-placeholder.png'
                         ],
 
-            short_desc:
-                product.short_desc ||
-                product.brief_desc ||
-                product.summary ||
-                '',
+            short_desc: this.plainText(product.short_desc),
+
+            brief_desc: this.plainText(product.brief_desc),
+
+            whats_included: this.plainText(product.whats_included),
+
+            intended_use_desc: this.plainText(product.intended_use_desc),
+
+            intended_use: this.plainText(product.intended_use),
 
             sku:
                 product.sku ||
@@ -604,6 +624,16 @@ export class ShopService {
             params = params.set('campaign', '1');
         }
 
+        if (options.domainId) {
+            params = params.set('domain_id', options.domainId);
+        }
+        if (options.subdomainId) {
+            params = params.set('subdomain_id', options.subdomainId);
+        }
+        if (options.subdomain2Id) {
+            params = params.set('subdomain2_id', options.subdomain2Id);
+        }
+
         /*
         * Sidebar filters.
         *
@@ -632,28 +662,12 @@ export class ShopService {
                 }
             });
 
-        console.log(
-            'MARKETPLACE REQUEST:',
-            {
-                domainSlug,
-                page,
-                limit,
-                sort,
-                filterValues
-            }
-        );
-
         return this.http.get<any>(
             `${this.apiBase}/products/`,
             { params }
         ).pipe(
 
             map(response => {
-
-                console.log(
-                    'RAW MARKETPLACE RESPONSE:',
-                    response
-                );
 
                 /*
                 * Products returned for CURRENT PAGE.
@@ -992,11 +1006,6 @@ export class ShopService {
 
             map(res => {
 
-                console.log(
-                    'RAW SUGGESTIONS API RESPONSE:',
-                    res
-                );
-
                 /*
                 * New API response:
                 *
@@ -1065,11 +1074,6 @@ export class ShopService {
                     suggestions
                 };
 
-                console.log(
-                    'NORMALIZED SUGGESTIONS:',
-                    result
-                );
-
                 this.suggestionsCache.set(
                     key,
                     {
@@ -1128,6 +1132,45 @@ export class ShopService {
 
                     suggestions: []
                 });
+            })
+        );
+    }
+
+    getAiSuggestions(
+        query: string,
+        limit: number = 8,
+        opts: { page?: number } = {}
+    ): Observable<any> {
+        const normalizedQuery = (query || '').trim();
+        const page = opts.page || 1;
+        const cacheKey = `ai::${normalizedQuery}::${limit}::${page}`;
+        const cached = this.suggestionsCache.get(cacheKey);
+        if (cached && (Date.now() - cached.ts) < this.cacheTTL) {
+            return of(cached.value);
+        }
+        const params = new HttpParams()
+            .set('q', normalizedQuery)
+            .set('limit', String(limit))
+            .set('page', String(page))
+            .set('source', 'catalog');
+
+        return this.http.get<any>(`${this.apiBase}/search/`, { params }).pipe(
+            map(res => {
+                const rows = Array.isArray(res?.results)
+                    ? res.results
+                    : (Array.isArray(res?.suggestions) ? res.suggestions : []);
+
+                const result = {
+                    query: res?.query ?? normalizedQuery,
+                    did_you_mean: res?.did_you_mean ?? null,
+                    count: Number(res?.count ?? rows.length),
+                    page: Number(res?.page ?? page),
+                    page_size: Number(res?.page_size ?? limit),
+                    total_pages: Number(res?.total_pages ?? 1),
+                    suggestions: rows.map((product: any) => this.normalizeSuggestion(product))
+                };
+                this.suggestionsCache.set(cacheKey, { ts: Date.now(), value: result });
+                return result;
             })
         );
     }

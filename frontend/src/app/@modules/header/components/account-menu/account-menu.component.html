@@ -10,7 +10,7 @@
 
         <div class="account-menu__user-info" style="margin-left: 20px;">
             <div class="account-menu__user-name">{{profile?.givenName}} {{profile?.surname}}</div>
-            <div class="account-menu__user-job-title"><small style="font-size: 12px;">{{profile?.jobTitle}}</small></div>
+            <div class="account-menu__user-job-title" *ngIf="jobTitleLabel"><small style="font-size: 12px;">{{ jobTitleLabel }}</small></div>
             <div class="account-menu__user-email"><small>{{profile?.mail}}</small></div>
         </div>
     </a>
@@ -31,8 +31,11 @@
             </a>
         </li>
     </ul>
-    <p class="account-menu__signin" *ngIf="lastSignInLabel">
-        Hi, {{ profile?.givenName }}! Your last sign in was on
-        <strong>{{ lastSignInLabel }}.</strong>
-    </p>
+    <ng-container *ngIf="lastSignInLabel">
+        <div class="account-menu__divider"></div>
+        <p class="account-menu__signin">
+            Hi, {{ profile?.givenName }}! Your last sign in was on
+            <strong>{{ lastSignInLabel }}</strong>
+        </p>
+    </ng-container>
 </div>

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Advertised Certified Used Dealer Participants",
+    "slug": "advertised-certified-used-dealer-participants",
+    "sku": "100105045",
+    "short_desc": "Certified used vehicle dealer participants and regionalized marketing content.",
+    "datatype": "Webservices (APIs)",
+    "classification": "Public",
+    "ad_group": "GDX-Used-Car-Sales",
+    "image": "/media/marketplace/products/P_48.jpg",
+    "domain": "Vehicle",
+    "reason": "The requested tables line up with certified used dealer participants.",
+    "explanation": "This product is the closest catalog match for used dealer participation data."
+  },
+  {
+    "name": "Certified Used Car Dealer Participants",
+    "slug": "certified-used-car-dealer-participants",
+    "sku": "certified-used-car-dealer-participants",
+    "short_desc": "Dealers participating in the certified used vehicle program.",
+    "datatype": "Datasets",
+    "classification": "Confidential",
+    "ad_group": "GDX-Used-Car-Dealers",
+    "image": "/media/marketplace/products/used_car_dealer_participants_cva.jpg",
+    "domain": "Vehicle",
+    "reason": "Dealer participation is the main subject of this request.",
+    "explanation": "Historical access requests for this subject were fulfilled with this dataset."
+  },
+  {
+    "name": "Used Car Sales VIN-Based Actuals",
+    "slug": "used-car-sales-vin-based-actuals",
+    "sku": "used-car-sales-vin-based-actuals",
+    "short_desc": "VIN-level used car sales actuals.",
+    "datatype": "Datasets",
+    "classification": "Confidential",
+    "ad_group": "GDX-Used-Car-VIN",
+    "image": "/media/marketplace/products/used_car_sales_vin_actual.jpg",
+    "domain": "Vehicle",
+    "reason": "VIN-level sales actuals cover the tables named in the request.",
+    "explanation": "Use this when the request needs sales results for individual vehicles."
+  },
+  {
+    "name": "Used Car Sales Aggregated Actuals",
+    "slug": "used-car-sales-aggregated-actuals",
+    "sku": "used-car-sales-aggregated-actuals",
+    "short_desc": "Aggregated used car sales actuals.",
+    "datatype": "Datasets",
+    "classification": "Confidential",
+    "ad_group": "GDX-Used-Car-Actuals",
+    "image": "/media/marketplace/products/P_338.jpg",
+    "domain": "Vehicle",
+    "reason": "Aggregated actuals match a reporting request across used car sales.",
+    "explanation": "Use this when the request needs totals rather than a single VIN."
+  },
+  {
+    "name": "Pre-Owned Vehicle Sales Inquiry",
+    "slug": "pre-owned-vehicle-sales-inquiry",
+    "sku": "pre-owned-vehicle-sales-inquiry",
+    "short_desc": "Inquiry data for pre-owned vehicle sales.",
+    "datatype": "Datasets",
+    "classification": "Public",
+    "ad_group": "GDX-Pre-Owned-Inquiry",
+    "image": "/media/marketplace/products/P_821.jpg",
+    "domain": "Vehicle",
+    "reason": "Pre-owned inquiry data is a related product in the same domain.",
+    "explanation": "This is a secondary match when the request is about pre-owned sales activity."
+  }
+]

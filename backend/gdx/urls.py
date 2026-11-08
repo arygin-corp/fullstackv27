@@ -47,6 +47,7 @@ urlpatterns = [
     path("api/integrations/data-access-request/", include("apps.third_party_apis.modules.data_access_request.urls", namespace="data_access_request")),
     path("api/workflow/",include(("apps.workflow_engine.urls", "workflow_api"), namespace="workflow_api",)),
     path("api/orders/", include("apps.orders.urls")),
+    path("api/profiles/", include("apps.profiles.api_urls")),
     path("api/v1/", include("apps.notifications.api_v1.urls")),
     path("api/healthz/", health_view, name="healthz"),
     path("api/health/live/", live_view, name="health_live"),

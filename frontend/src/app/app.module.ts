@@ -87,7 +87,9 @@ export const msalInterceptorConfig: {
     ...(environment.ai.chatApiScope
       ? [[`${environment.apiUrl}/api/integrations/people-finder/*`, [environment.ai.chatApiScope]] as [string, string[]]]
       : []),
-    [`${environment.ai.chatProtectedResource}/*`, [environment.ai.chatApiScope]]
+    ...(environment.ai.chatApiScope && environment.ai.chatProtectedResource
+      ? [[`${environment.ai.chatProtectedResource}/*`, [environment.ai.chatApiScope]] as [string, string[]]]
+      : [])
   ])
 };
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface RoadmapEvent {
+  id?: string;
   title: string;
   description?: string;
 }
@@ -10,6 +11,7 @@ export interface RoadmapMonth {
   monthIndex: number;
   monthName: string;
   event?: RoadmapEvent;
+  extraEvents?: RoadmapEvent[];
 }
 
 export interface RoadmapQuarter {
@@ -42,10 +44,82 @@ export class RoadmapService {
     for (const quarter of year.quarters) {
       for (const month of quarter.months) {
         if (month.monthIndex === monthIndex) {
-          month.event = { ...event };
+          month.event = { title: event.title, description: event.description };
           this.currentYear$.next({ ...year });
           return;
         }
+      }
+    }
+  }
+
+  updateExtraEvent(monthIndex: number, eventId: string, event: RoadmapEvent): void {
+    const year = this.getCurrentYearValue();
+    for (const quarter of year.quarters) {
+      for (const month of quarter.months) {
+        if (month.monthIndex !== monthIndex) {
+          continue;
+        }
+        month.extraEvents = (month.extraEvents || []).map(item => item.id === eventId
+          ? { ...item, title: event.title, description: event.description }
+          : item);
+        this.currentYear$.next({ ...year });
+        return;
+      }
+    }
+  }
+
+  moveEvent(fromMonthIndex: number, extraId: string | null, toMonthIndex: number, event: RoadmapEvent): void {
+    const year = this.getCurrentYearValue();
+    let source: RoadmapMonth | null = null;
+    let destination: RoadmapMonth | null = null;
+    for (const quarter of year.quarters) {
+      for (const month of quarter.months) {
+        if (month.monthIndex === fromMonthIndex) {
+          source = month;
+        }
+        if (month.monthIndex === toMonthIndex) {
+          destination = month;
+        }
+      }
+    }
+    if (!source || !destination) {
+      return;
+    }
+    if (extraId) {
+      source.extraEvents = (source.extraEvents || []).filter(item => item.id !== extraId);
+    } else if (source.event?.title) {
+      const extras = source.extraEvents || [];
+      const promoted = extras[0];
+      source.event = promoted ? { title: promoted.title, description: promoted.description, id: promoted.id } : undefined;
+      source.extraEvents = extras.slice(1);
+    }
+    const next = { title: event.title, description: event.description, id: extraId || undefined };
+    if (!destination.event?.title) {
+      destination.event = { title: next.title, description: next.description };
+    } else {
+      destination.extraEvents = [...(destination.extraEvents || []), { ...next, id: next.id || `event-${Date.now()}` }];
+    }
+    this.currentYear$.next({ ...year });
+  }
+
+  addEvent(quarterNumber: number, monthIndex: number, event: RoadmapEvent): void {
+    const year = this.getCurrentYearValue();
+    for (const quarter of year.quarters) {
+      if (quarter.quarterNumber !== quarterNumber) {
+        continue;
+      }
+      for (const month of quarter.months) {
+        if (month.monthIndex !== monthIndex) {
+          continue;
+        }
+        const next = { title: event.title, description: event.description };
+        if (!month.event?.title) {
+          month.event = next;
+        } else {
+          month.extraEvents = [...(month.extraEvents || []), { ...next, id: `event-${Date.now()}` }];
+        }
+        this.currentYear$.next({ ...year });
+        return;
       }
     }
   }

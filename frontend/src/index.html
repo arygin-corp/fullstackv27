@@ -50,6 +50,24 @@
            a.appendChild(r);
        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>-->
+    <script>
+        if (location.port === "4300" && navigator.serviceWorker) {
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                return Promise.all(registrations.map(function (registration) { return registration.unregister(); }))
+                    .then(function () { return registrations.length; });
+            }).then(function (removed) {
+                if (!window.caches) return removed;
+                return caches.keys().then(function (keys) {
+                    return Promise.all(keys.map(function (key) { return caches.delete(key); }));
+                }).then(function () { return removed; });
+            }).then(function (removed) {
+                if (removed && !sessionStorage.getItem("preview-cache-cleared")) {
+                    sessionStorage.setItem("preview-cache-cleared", "1");
+                    location.reload();
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     </div>

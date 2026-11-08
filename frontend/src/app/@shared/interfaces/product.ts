@@ -63,6 +63,8 @@ export interface Product {
     name: string;
     slug: string;
     brief_desc: string;
+    whats_included?: string;
+    intended_use_desc?: string;
     short_desc: string;
 
     // ProductSerializer returns domain.name, not Category[].
@@ -77,6 +79,7 @@ export interface Product {
 
     // ProductSerializer uses ContactSerializer for these values.
     data_steward?: ProductContact | null;
+    alt_approver?: { id: number; name: string; sys_id: string } | null;
     poc_name?: ProductContact | null;
     business_contact?: ProductContact | null;
     business_sme?: ProductContact | null;
@@ -120,4 +123,5 @@ export interface Product {
     is_active: boolean;
     verified: boolean;
     customFields: CustomFields;
+    highlights?: { kind: string; label: string; value: string }[];
 }

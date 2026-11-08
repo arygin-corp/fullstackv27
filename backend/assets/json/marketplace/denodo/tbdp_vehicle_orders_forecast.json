@@ -6941,6 +6941,36 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "actual_build_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "actual_build_week_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "actual_buyoff_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "actual_vessel_arrival_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "actual_vessel_departure_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "assignmentdate"
     },
     {
@@ -6948,6 +6978,30 @@
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
       "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "body_style"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "brand_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "cargo_ready_date_actual"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "cargo_ready_date_planned"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -6989,7 +7043,73 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "dealer_delivery_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "dealer_reserved_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "distributor_code"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "distributor_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "drive_train_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "engine_fuel_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "engine_fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "engine_prefix"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "engine_spec_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "estimated_vessel_arrival_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "estimated_vessel_departure_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "export_indicator"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -7019,7 +7139,19 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "fleet_indicator_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "general_hold_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "grade_spec_code"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -7061,6 +7193,54 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "napcbucode"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "nvs_transmission_long_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "order_month_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "order_year_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "ordering_series_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "plant_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "plant_short_description"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "preproduction_vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "presentedetawindowfromdate"
     },
     {
@@ -7079,7 +7259,25 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "productionvin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "quality_hold_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "retailbaseprice"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "retaildate"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -7098,6 +7296,12 @@
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
       "column_name": "ship_to_region_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "shipping_classification"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -7151,7 +7355,37 @@
       "userrolename": "tbdp-vehicle-orders-forecast",
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
+      "column_name": "suggestedfioretailamount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "suggestedpporetailamount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "suggestedretailsumbasefactoryppo"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
       "column_name": "team_member_lease_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "totalsuggestedretailprice"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "transmission_code"
     },
     {
       "userrolename": "tbdp-vehicle-orders-forecast",
@@ -7164,6 +7398,12 @@
       "dbname": "vehicle_order_forecast_trn_ext",
       "elementname": "vehicle_collection",
       "column_name": "vehicle_lifecycle_status"
+    },
+    {
+      "userrolename": "tbdp-vehicle-orders-forecast",
+      "dbname": "vehicle_order_forecast_trn_ext",
+      "elementname": "vehicle_collection",
+      "column_name": "wholesaledate"
     }
   ],
   "links": [

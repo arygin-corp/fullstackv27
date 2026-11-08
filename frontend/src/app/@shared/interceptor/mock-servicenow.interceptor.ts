@@ -13,8 +13,9 @@ export class MockServiceNowInterceptor implements HttpInterceptor {
     if (!shouldMock) {
       return next.handle(req);
     }
-    const orderNumber = 'REQ-' + Date.now().toString().slice(-8);
-    const body = { result: { number: orderNumber } };
+    const stamp = Date.now().toString().slice(-7);
+    const orderNumber = 'REQ' + stamp;
+    const body = { result: { request_number: orderNumber, number: 'RITM' + stamp, ritm_number: 'RITM' + stamp } };
     console.log('MockServiceNowInterceptor returning mock response for', req.url, orderNumber);
     return of(new HttpResponse({ status: 200, body })).pipe(delay(1500));
   }

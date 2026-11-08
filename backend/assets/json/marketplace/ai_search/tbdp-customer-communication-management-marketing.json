@@ -1,0 +1,26 @@
+{
+  "adgroup": "tbdp-customer-communication-management-marketing",
+  "slugs": [
+    "customer-communication-management-marketing"
+  ],
+  "databases": [
+    "cust_communication_management_trn_ext"
+  ],
+  "tables": [
+    "leo_cust_billing_source"
+  ],
+  "columns": [
+    "audit_create_date",
+    "customer_id",
+    "email_address_date",
+    "email_address_id",
+    "email_address_source",
+    "phone_number_date",
+    "phone_number_id",
+    "phone_number_source",
+    "postal_address_date",
+    "postal_address_id",
+    "postal_address_source",
+    "tbdp_delete_flag"
+  ]
+}

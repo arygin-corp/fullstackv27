@@ -3,6 +3,90 @@
   "elements": [
     {
       "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "audit_update_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "businessprovider"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "dealercd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "dealername"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "enddate"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "launchdate"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "launchstatus"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "paymentsolution"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "providerdealer"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "schedulertoken"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "schedulerurl"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "spmservice"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
+      "dbname": "cust_lifecycle_sales_service_trn_ext",
+      "elementname": "dealer_summary",
+      "column_name": "startdate"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management",
       "dbname": "dealer_mgmt_trn_ext",
       "elementname": "optional_addr_d",
       "column_name": "audit_create_date"

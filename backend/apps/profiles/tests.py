@@ -3,7 +3,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.test import RequestFactory, SimpleTestCase
 
+from apps.profiles.access import can_edit_employee_type, can_edit_roadmap
 from apps.profiles.middleware import VerifiedStaffAccessMiddleware, user_is_verified_staff
+from apps.profiles.models import EmployeeType
 
 
 class _Profile:
@@ -23,6 +25,19 @@ class _User:
         if self._profile is None:
             raise ObjectDoesNotExist
         return self._profile
+
+
+class EmployeeTypeAccessTests(SimpleTestCase):
+    def test_roadmap_edits_require_the_data_marketplace_team(self):
+        self.assertFalse(can_edit_roadmap(False))
+        self.assertTrue(can_edit_roadmap(True))
+
+    def test_only_team_employees_can_change_employee_type(self):
+        self.assertFalse(can_edit_employee_type(False, EmployeeType.EMPLOYEE))
+        self.assertFalse(can_edit_employee_type(True, EmployeeType.CONTRACTOR))
+        self.assertFalse(can_edit_employee_type(True, ""))
+        self.assertTrue(can_edit_employee_type(True, EmployeeType.EMPLOYEE))
+        self.assertTrue(can_edit_employee_type(False, "", is_superuser=True))
 
 
 class VerifiedStaffAccessTests(SimpleTestCase):

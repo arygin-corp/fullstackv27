@@ -310,6 +310,27 @@
         color: #0b6bcb;
     }
 
+    > .form-control:not([type="checkbox"]):not([type="radio"]),
+    > select.form-control {
+        border: 1px solid #c5cdd8;
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    > ng-select ::ng-deep .ng-select-container {
+        border: 1px solid #c5cdd8;
+        border-radius: 4px;
+        background: #fff;
+        min-height: 3.4rem;
+    }
+
+    &:focus-within > .form-control:not([type="checkbox"]):not([type="radio"]),
+    &:focus-within > select.form-control,
+    &:focus-within > ng-select ::ng-deep .ng-select-container {
+        border-color: #0b6bcb;
+        box-shadow: 0 0 0 1px #0b6bcb;
+    }
+
     &:has(> .title-bg) {
         > .title-bg {
             grid-row: 1;

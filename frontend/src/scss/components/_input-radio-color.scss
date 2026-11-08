@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .input-radio-color
 */
@@ -16,7 +17,7 @@ $local-item-margin: 2px;
     display: block;
 }
 .input-radio-color__list {
-    padding: #{max(0, $local-field-height - $local-item-size) / 2} 0;
+    padding: #{math.div(max(0, $local-field-height - $local-item-size), 2)} 0;
     display: flex;
     flex-wrap: wrap;
     margin: -$local-item-margin;
@@ -39,9 +40,9 @@ $local-item-margin: 2px;
         width: $local-item-size;
         height: $local-item-size;
         display: block;
-        border-radius: $local-item-size / 2;
+        border-radius: math.div($local-item-size, 2);
         background: currentColor;
-        transform: scale(#{round(($local-item-size * .75) / 2) / $local-item-size * 2});
+        transform: scale(#{math.div(round(math.div($local-item-size * .75, 2)), $local-item-size) * 2});
         transition: transform .2s;
 
         &:before,
@@ -61,8 +62,8 @@ $local-item-margin: 2px;
             transition: transform .2s;
         }
         &:after {
-            left: ($local-item-size - $local-item-inner-size) / 2;
-            top: ($local-item-size - $local-item-inner-size) / 2;
+            left: math.div($local-item-size - $local-item-inner-size, 2);
+            top: math.div($local-item-size - $local-item-inner-size, 2);
             width: $local-item-inner-size;
             height: $local-item-inner-size;
             background: currentColor;
@@ -72,7 +73,7 @@ $local-item-margin: 2px;
     }
 
     &:hover input:enabled ~ span {
-        transform: scale(#{round(($local-item-size * .875) / 2) / $local-item-size * 2});
+        transform: scale(#{math.div(round(math.div($local-item-size * .875, 2)), $local-item-size) * 2});
     }
 }
 .input-radio-color__item input:enabled:checked {
@@ -90,7 +91,7 @@ $local-item-margin: 2px;
 
         &:before {
             transform: scale(1.33) rotateZ(45deg);
-            left: $local-item-size / 2 - 1px;
+            left: math.div($local-item-size, 2) - 1px;
             top: -1px;
             width: 2px;
             height: calc(100% + 2px);

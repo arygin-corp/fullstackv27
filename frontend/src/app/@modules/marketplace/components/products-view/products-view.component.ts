@@ -12,13 +12,14 @@ import {
     FormGroup
 } from '@angular/forms';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 import {
     Subject
 } from 'rxjs';
 
 import {
     filter,
-    finalize,
     takeUntil
 } from 'rxjs/operators';
 
@@ -29,11 +30,6 @@ import {
 import {
     PageMarketplaceService
 } from '../../services/page-marketplace.service';
-
-import {
-    ShopService,
-    ListOptions
-} from '../../../../@shared/api/shop.service';
 
 import {
     ProductsList
@@ -63,7 +59,8 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
 
     constructor(
         private fb: FormBuilder,
-        private shop: ShopService,
+        private router: Router,
+        private route: ActivatedRoute,
         public sidebar: ShopSidebarService,
         public pageService: PageMarketplaceService
     ) {}
@@ -108,40 +105,19 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
                 takeUntil(this.destroy$)
             )
             .subscribe(value => {
+                const page = Number(value.page || 1);
+                const limit = Number(value.limit || 12);
+                const sort = value.sort || 'default';
 
-                this.pageService.updateOptions({
-                    page:
-                        Number(value.page || 1),
-
-                    limit:
-                        Number(value.limit || 12),
-
-                    sort:
-                        value.sort || 'default'
+                this.router.navigate([], {
+                    relativeTo: this.route,
+                    queryParams: {
+                        page: page > 1 ? page : null,
+                        limit: limit !== 12 ? limit : null,
+                        sort: sort !== 'default' ? sort : null,
+                    },
+                    queryParamsHandling: 'merge',
                 });
-            });
-
-
-        // -------------------------------------------------
-        // IMPORTANT:
-        // Reload products whenever options change.
-        //
-        // This includes filterValues coming from
-        // WidgetFiltersComponent.
-        // -------------------------------------------------
-
-        this.pageService.optionsChange$
-            .pipe(
-                takeUntil(this.destroy$)
-            )
-            .subscribe(options => {
-
-                console.log(
-                    'OPTIONS CHANGED:',
-                    options
-                );
-
-                this.loadProducts(options);
             });
 
 
@@ -202,86 +178,6 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
             });
 
 
-        // -------------------------------------------------
-        // Initial marketplace load
-        // -------------------------------------------------
-
-        this.loadProducts(
-            this.pageService.options
-        );
-    }
-
-
-    // =====================================================
-    // Load products
-    // =====================================================
-
-    private loadProducts(
-        options: ListOptions
-    ): void {
-
-        console.log(
-            'LOADING PRODUCTS WITH OPTIONS:',
-            options
-        );
-
-        console.log(
-            'LOADING PRODUCTS WITH FILTERS:',
-            options.filterValues
-        );
-
-
-        this.pageService.setIsLoading(
-            true
-        );
-
-
-        this.shop
-            .getShopProductsList(
-                this.domainSlug,
-                options
-            )
-            .pipe(
-                takeUntil(
-                    this.destroy$
-                ),
-
-                finalize(() => {
-
-                    this.pageService
-                        .setIsLoading(
-                            false
-                        );
-                })
-            )
-            .subscribe({
-
-                next: list => {
-
-                    console.log(
-                        'PRODUCT LOAD RESULT:',
-                        list
-                    );
-
-                    console.log(
-                        'PRODUCT LOAD TOTAL:',
-                        list.total
-                    );
-
-
-                    this.pageService.setList(
-                        list
-                    );
-                },
-
-                error: error => {
-
-                    console.error(
-                        'PRODUCT LOAD ERROR:',
-                        error
-                    );
-                }
-            });
     }
 
 
@@ -359,5 +255,6 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
     resetFilters(): void {
 
         this.pageService.resetFilters();
+        this.router.navigate(['/marketplace'], { queryParams: {} });
     }
 }

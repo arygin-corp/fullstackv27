@@ -1,0 +1,11 @@
+---
+description: Workflow states use the shared status badge colors
+globs: backend/templates/**/*.html
+alwaysApply: false
+---
+
+# Status colors
+
+Draft, Submitted, In review, Pending, Approved, Published, Open, Rejected, and Archived use one palette from `backend/static/gdx_admin/theme/css/status.css`.
+
+Render a state with `{% load web_tags %}{% status_badge status %}`. Action buttons use the solid dark status color: `class="status-button status-dark status-approved"` and the matching tone for Reject, Submit, Publish, and Archive. Bootstrap success, danger, warning, info, and dark buttons inside a page use the same colors. Do not assign a new color for these states. Action buttons use a 10px corner radius, the same shape as the deployment "Run AI Suggestion Engine" button. Leave circular icon buttons round.

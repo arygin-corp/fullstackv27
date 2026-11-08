@@ -15,18 +15,20 @@
         <small>{{ staff_page_metric_caption|default:"current view" }}</small>
     </div>
 </section>
-<section class="module-dashboard-heading-row">
+<header class="mp-header">
     <div>
-        <p class="module-breadcrumb">{{ staff_page_kicker|default:"GDX ADMIN"|title }} &nbsp;»&nbsp; {{ staff_page_title|default:"Page" }}</p>
+        <nav>
+            <span>{{ staff_page_kicker|default:"GDX ADMIN"|title }}</span>
+            <span>»</span>
+            <span>{{ staff_page_title|default:"Page" }}</span>
+        </nav>
         <h2>{{ staff_page_heading|default:staff_page_title }}</h2>
         <p>{{ staff_page_heading_text|default:staff_page_description }}</p>
     </div>
     {% if staff_page_mark_read %}
-    <div class="module-dashboard-actions">
-        <form method="post" action="{% url 'notifications:mark_all_read' %}">
-            {% csrf_token %}
-            <button class="integration-button" type="submit">Mark all read</button>
-        </form>
-    </div>
+    <form method="post" action="{% url 'notifications:mark_all_read' %}">
+        {% csrf_token %}
+        <button class="mp-button" type="submit">Mark all read</button>
+    </form>
     {% endif %}
-</section>
+</header>

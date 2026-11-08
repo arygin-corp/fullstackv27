@@ -6,31 +6,34 @@
       </div>
       <div class="header-copy">
         <div class="title-row">
-          <h2 id="vikki-title" style="color: #fff">VIKKI</h2>
-          <span class="status" style="color: #fff">
-            <span class="status-dot"></span>Online</span>
-          </div>
-        <p style="color: #fff">Data Marketplace Assistant</p>
+          <h2 id="vikki-title">VIKKI</h2>
+          <span class="status"><span class="status-dot"></span>Online</span>
+        </div>
+        <p>Data Marketplace Assistant</p>
       </div>
-      <button 
-      type="button" 
-      class="icon-button" 
-      (click)="closeChat()" 
-      aria-label="Close VIKKI chat"
-      style="position: relative; bottom: -38px; color: #fff;">×</button>
+      <div class="header-actions">
+        <button type="button" class="end-session" (click)="endAiSession()">End AI Session</button>
+        <button type="button" class="icon-button" (click)="closeChat()" aria-label="Close VIKKI chat">×</button>
+      </div>
     </header>
 
     <div #messageViewport class="message-viewport" aria-live="polite">
       <div *ngIf="messages.length === 0" class="message-row ai-row">
-        <app-brain-chat-icon></app-brain-chat-icon>
-        <div class="bubble ai-bubble">Hello, I'm VIKKI. I'm dedicated to Data Marketplace products, governance, access guidance, analytics, and lineage.</div>
+        <div class="avatar"><app-ai-brain-chat-icon></app-ai-brain-chat-icon></div>
+        <div class="message-column">
+          <div class="bubble ai-bubble">Hello, I'm VIKKI. I'm dedicated to Data Marketplace products, governance, access guidance, analytics, and lineage.</div>
+        </div>
       </div>
 
-      <div *ngFor="let message of messages; trackBy: trackMessage" class="message-row" [class.user-row]="message.sender === 'user'" [class.ai-row]="message.sender === 'ai'">
+      <ng-container *ngFor="let message of messages; trackBy: trackMessage">
+      <div *ngIf="showMessage(message)" class="message-row" [class.user-row]="message.sender === 'user'" [class.ai-row]="message.sender === 'ai'">
         <div class="avatar">
-          <ng-container *ngIf="message.sender === 'user'; else botAvatar">You</ng-container>
+          <ng-container *ngIf="message.sender === 'user'; else botAvatar">
+            <img *ngIf="userPhoto; else initials" [src]="userPhoto" alt="">
+            <ng-template #initials>{{ userInitials }}</ng-template>
+          </ng-container>
           <ng-template #botAvatar>
-            <app-brain-chat-icon></app-brain-chat-icon>
+            <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
           </ng-template>
         </div>
         <div class="message-column">
@@ -61,15 +64,32 @@
             </article>
           </div>
 
-          <div *ngIf="message.sources?.length" class="source-list">
-            <span>Recommended products</span>
-            <button *ngFor="let source of message.sources" type="button" class="source-chip" (click)="openSource(source)">
-              {{ source.name }}
-            </button>
+          <div *ngIf="recommendedProducts(message).length" class="product-slider">
+            <div class="product-slider__head">
+              <span>Recommended products</span>
+              <div class="product-slider__nav">
+                <button type="button" (click)="scrollProducts(message.id, -1)" aria-label="Previous products">‹</button>
+                <button type="button" (click)="scrollProducts(message.id, 1)" aria-label="Next products">›</button>
+              </div>
+            </div>
+            <div class="product-slider__track" [id]="'product-slider-' + message.id">
+              <article class="recommend-card" *ngFor="let source of recommendedProducts(message)">
+                <button type="button" class="recommend-card__media" (click)="openProduct(source)" [attr.aria-label]="'Open ' + source.name">
+                  <img *ngIf="source.image" [src]="source.image" [alt]="source.name" (error)="source.image = ''">
+                  <span *ngIf="!source.image" class="recommend-card__fallback">{{ source.name.slice(0, 1) }}</span>
+                </button>
+                <div class="recommend-card__body">
+                  <p class="recommend-card__domain" *ngIf="source.domain">{{ source.domain }}</p>
+                  <h3>{{ source.name }}</h3>
+                  <p *ngIf="source.reason">{{ source.reason }}</p>
+                  <button type="button" class="recommend-card__view" (click)="openProduct(source)">View</button>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <div *ngIf="message.actions?.length" class="suggestion-strip message-actions">
-            <button *ngFor="let action of message.actions" type="button" (click)="runAction(action)" [attr.aria-label]="action.title">
+          <div *ngIf="visibleActions(message).length" class="suggestion-strip message-actions">
+            <button *ngFor="let action of visibleActions(message)" type="button" (click)="runAction(action)" [attr.aria-label]="action.title">
               <i [class]="suggestionIcon(action.title)" aria-hidden="true"></i>
               <span class="chip-label">{{ action.title }}</span>
             </button>
@@ -90,6 +110,7 @@
           </div>
         </div>
       </div>
+      </ng-container>
 
       <div *ngIf="isThinking" class="message-row ai-row">
         <div class="avatar">
@@ -110,7 +131,7 @@
     <form class="composer" (submit)="$event.preventDefault(); sendMessage(chatInput)">
       <textarea #chatInput rows="1" aria-label="Ask VIKKI about Data Marketplace" placeholder="Ask about Data Marketplace..."
                 [disabled]="isProcessing" (keydown)="handleKeyDown($event, chatInput)"></textarea>
-      <button type="submit" class="send-button" [disabled]="isProcessing" aria-label="Send message" style="color: #363636;background-color: #0abcdf;">
+      <button type="submit" class="send-button" [disabled]="isProcessing" aria-label="Send message">
         <span *ngIf="!isProcessing">➤</span><span *ngIf="isProcessing" class="small-spinner"></span>
       </button>
     </form>
@@ -214,11 +235,28 @@
             </article>
           </div>
 
-          <div *ngIf="message.sources?.length" class="source-list">
-            <span>Recommended products</span>
-            <button *ngFor="let source of message.sources" type="button" class="source-chip" (click)="openSource(source)">
-              {{ source.name }}
-            </button>
+          <div *ngIf="recommendedProducts(message).length" class="product-slider">
+            <div class="product-slider__head">
+              <span>Recommended products</span>
+              <div class="product-slider__nav">
+                <button type="button" (click)="scrollProducts(message.id, -1)" aria-label="Previous products">‹</button>
+                <button type="button" (click)="scrollProducts(message.id, 1)" aria-label="Next products">›</button>
+              </div>
+            </div>
+            <div class="product-slider__track" [id]="'product-slider-' + message.id">
+              <article class="recommend-card" *ngFor="let source of recommendedProducts(message)">
+                <button type="button" class="recommend-card__media" (click)="openProduct(source)" [attr.aria-label]="'Open ' + source.name">
+                  <img *ngIf="source.image" [src]="source.image" [alt]="source.name" (error)="source.image = ''">
+                  <span *ngIf="!source.image" class="recommend-card__fallback">{{ source.name.slice(0, 1) }}</span>
+                </button>
+                <div class="recommend-card__body">
+                  <p class="recommend-card__domain" *ngIf="source.domain">{{ source.domain }}</p>
+                  <h3>{{ source.name }}</h3>
+                  <p *ngIf="source.reason">{{ source.reason }}</p>
+                  <button type="button" class="recommend-card__view" (click)="openProduct(source)">View</button>
+                </div>
+              </article>
+            </div>
           </div>
 
           <div *ngIf="message.sender === 'ai' && message.text" class="feedback-actions">

@@ -93,6 +93,8 @@ class ProductForm(forms.ModelForm):
         self.fields['slug'].widget.attrs.update({'readonly': 'readonly'})
         self.fields['short_desc'].widget.attrs.update({})
         self.fields['brief_desc'].widget.attrs.update({})
+        self.fields['whats_included'].widget.attrs.update({})
+        self.fields['intended_use_desc'].widget.attrs.update({})
         self.fields['catalog'].widget.attrs.update({})
         self.fields['domain'].widget.attrs.update({})
         self.fields['subdomain_2'].widget.attrs.update({})
@@ -151,11 +153,11 @@ class ProductForm(forms.ModelForm):
         fields = ('name', 'slug',
                   'status', 'price', 'sku', 'catalog', 'datatype', 'classification', 'platform', 'one_ts_domain',
                   'org',
-                  'pi', 'sensitive_pi', 'data_steward', 'poc_name', 'business_contact_name', 'business_sme',
+                  'pi', 'sensitive_pi', 'data_steward', 'alt_approver', 'poc_name', 'business_contact_name', 'business_sme',
                   'domain', 'subdomain_2', 'subdomain_3',
                   'resource_url', 'badge', 'org', 'keyword', 'attribute', 'ad_group',
                   'data_review_required', 'data_review_status', 'data_review_team',
-                  'short_desc', 'brief_desc', 'intended_use',
+                  'short_desc', 'brief_desc', 'whats_included', 'intended_use_desc', 'intended_use',
                   'is_active')
         exclude = ['created_at', 'updated_at', 'created_by', 'updated_by'] # Exclude auto-managed fields
         widgets = {
@@ -165,6 +167,8 @@ class ProductForm(forms.ModelForm):
             'status': Select2Widget(attrs={'class': 'form-control col-md-12'}),
             # You can add CKEditor5Widget for brief_desc and short_desc if they are not picked up automatically
             'brief_desc': CKEditor5Widget(config_name='extends', attrs={'class': 'django_ckeditor_5 form-control col-md-12'}),
+            'whats_included': CKEditor5Widget(config_name='extends', attrs={'class': 'django_ckeditor_5 form-control col-md-12'}),
+            'intended_use_desc': CKEditor5Widget(config_name='extends', attrs={'class': 'django_ckeditor_5 form-control col-md-12'}),
             'short_desc': CKEditor5Widget(config_name='extends', attrs={'class': 'django_ckeditor_5 form-control col-md-12'}),
             'intended_use': CKEditor5Widget(config_name='extends', attrs={'class': 'django_ckeditor_5 form-control col-md-12'}),
         }

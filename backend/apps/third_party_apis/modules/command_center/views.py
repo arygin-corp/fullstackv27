@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_POST
 
@@ -446,6 +448,35 @@ def builder(request):
             )
         return redirect("command_center:view", view_id=item["id"])
     return _shell(request, "create", "gdx_admin/apps/command_center/create.html", selected=[])
+
+
+@staff_member_required
+def workflow(request):
+    from apps.third_party_apis.modules.command_center.workflow import decide_approval, pending_approvals
+
+    if request.method == "POST":
+        try:
+            decide_approval(
+                request.user,
+                request.POST.get("kind"),
+                request.POST.get("object_id"),
+                request.POST.get("decision"),
+                request.POST.get("comment"),
+            )
+        except (ValidationError, PermissionDenied) as exc:
+            messages.error(request, " ".join(getattr(exc, "messages", []) or [str(exc)]))
+        else:
+            messages.success(request, "The approval was recorded.")
+        return redirect("command_center:workflow")
+    items = pending_approvals(request.user)
+    waiting = [item for item in items if (item.get("status") or "").lower() != "published"]
+    return _shell(
+        request,
+        "workflow",
+        "gdx_admin/apps/command_center/workflow.html",
+        approvals=items,
+        approval_count=len(waiting),
+    )
 
 
 @staff_member_required

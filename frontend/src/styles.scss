@@ -92,6 +92,11 @@ a:hover {
     padding-left: 0px !important; //change it base on your desired output
 }
 
+.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close),
+button.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close) {
+    border-radius: 10px !important;
+}
+
 .btn-primary {
     color: #000 !important;
     border-color: #04fdff;

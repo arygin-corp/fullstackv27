@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 import { DirectionService } from '../../../@shared/services/direction.service';
 import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {
@@ -39,6 +40,7 @@ export class WidgetFiltersComponent implements OnInit, OnDestroy {
         @Inject(PLATFORM_ID) private platformId: any,
         private direction: DirectionService,
         private fb: FormBuilder,
+        private router: Router,
         public root: RootService,
         public pageDomain: PageMarketplaceService,
     ) {
@@ -65,7 +67,25 @@ export class WidgetFiltersComponent implements OnInit, OnDestroy {
                     filters
                 );
 
-                this.filters = filters;
+                this.filters = filters.map(filter => {
+                    if (filter.type === 'check') {
+                        return {
+                            ...filter,
+                            items: [...filter.items].sort((a, b) =>
+                                (b.count || 0) - (a.count || 0) || a.name.localeCompare(b.name)
+                            ),
+                        };
+                    }
+                    if (filter.type === 'color') {
+                        return {
+                            ...filter,
+                            items: [...filter.items].sort((a, b) =>
+                                (b.count || 0) - (a.count || 0) || a.name.localeCompare(b.name)
+                            ),
+                        };
+                    }
+                    return filter;
+                });
 
                 this.filtersForm =
                     this.makeFiltersForm(filters);
@@ -283,7 +303,9 @@ export class WidgetFiltersComponent implements OnInit, OnDestroy {
             }
         });
 
-        this.filtersForm.setValue(formValues);
+        this.filtersForm.setValue(formValues, { emitEvent: false });
+        this.pageDomain.resetFilters();
+        this.router.navigate(['/marketplace'], { queryParams: {} });
     }
 
     getRangeControl(filter: Filter): FormControl {

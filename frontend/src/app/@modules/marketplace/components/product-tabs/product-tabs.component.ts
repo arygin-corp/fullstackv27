@@ -1,18 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 import { HttpClient, HttpUrlEncodingCodec } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common'; 
+import { Location } from '@angular/common';
 import { Description, Documentation, Resource, Product } from '../../../../@shared/interfaces/product';
-import { Review } from '../../../../@shared/interfaces/review';
-import { reviews } from '../../../../../data/product-reviews';
-import { documentation } from '../../../../../data/product-documentation';
 import { IntendedUse } from '../../../../@shared/interfaces/intended-use';
 import { intended } from '../../../../../data/intended-use';
-import { WhatsIncluded } from '../../../../@shared/interfaces/whats-included'; 
+import { WhatsIncluded } from '../../../../@shared/interfaces/whats-included';
 import { included } from '../../../../../data/whats-included';
 import { resource } from '../../../../../data/product-resource';
 import { environment } from '../../../../../environments/environment';
 import { description } from '../../../../../data/product-description';
+import { documentation } from '../../../../../data/product-documentation';
+import { ReviewService } from '../../../../@shared/services/review.service';
+import { PicService } from '../../../../@shared/services/pic.service';
+import { Review, ReviewSummary } from '../../../../../@models/review.model';
 
 @Component({
     selector: 'app-product-tabs',
@@ -20,16 +22,43 @@ import { description } from '../../../../../data/product-description';
     styleUrls: ['./product-tabs.component.scss']
 })
 
-export class ProductTabsComponent {
+export class ProductTabsComponent implements OnChanges {
     @Input() withSidebar = false;
     @Input() product!: Product;
-    @Input() tab: 'description'|'resource'|'reviews'|'tables'|'intended'|'included'|'documentation' = 'description';
+    @Input() tab: 'description'|'resource'|'reviews'|'tables'|'intended'|'included'|'documentation' = 'resource';
     description: Description[] = description;
     resource: Resource[] = resource;
-    reviews: Review[] = reviews;
+    reviews: Review[] = [];
+    summary: ReviewSummary = {
+        average_rating: 0,
+        review_count: 0,
+        recommended_count: 0,
+        recommended_percentage: 0,
+        rating_distribution: { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0 },
+        category_ratings: { quality: 0, value: 0, ease_of_use: 0, durability: 0 }
+    };
+    reviewPage = 1;
+    reviewPages = 0;
+    selectedRating = 0;
+    reviewTitle = '';
+    reviewComment = '';
+    qualityRating = 0;
+    valueRating = 0;
+    easeRating = 0;
+    durabilityRating = 0;
+    wouldRecommend: boolean | null = null;
+    metExpectations: boolean | null = null;
+    photo: SafeUrl | null = null;
+    myReviewId: number | null = null;
+    myReview: Review | null = null;
+    private failedAvatars = new Set<number>();
+    reviewError = '';
+    reviewSaved = '';
+    submittingReview = false;
+    hasReviewed = false;
     intended: IntendedUse[] = intended;
     included: WhatsIncluded[] = included;
-    documentation: Documentation[] = documentation;  
+    documentation: Documentation[] = documentation;
     codec = new HttpUrlEncodingCodec();
     denodos: any = [];
     clicked = false;
@@ -52,7 +81,202 @@ export class ProductTabsComponent {
         private location: Location,
         public router: Router,
         private httpClient: HttpClient,
-    ) { }
+        private reviewsApi: ReviewService,
+        private pictures: PicService,
+    ) {
+        this.pictures.getUserPhoto().subscribe({
+            next: photo => this.photo = photo,
+            error: () => this.photo = null
+        });
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['product']?.currentValue?.id) {
+            this.reviewPage = 1;
+            this.loadReviews();
+            this.loadMyReview();
+        }
+    }
+
+    isDataset(): boolean {
+        return (this.product?.datatype || '') === 'Datasets';
+    }
+
+    hasRichText(value: string): boolean {
+        return !!(value || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/gi, ' ').trim();
+    }
+
+    reviewCountLabel(): string {
+        const count = this.summary.review_count || 0;
+        return count === 1 ? '1 review' : `${count} reviews`;
+    }
+
+    avatarFor(review: Review): SafeUrl | string | null {
+        if (this.failedAvatars.has(review.id)) {
+            return null;
+        }
+        if (review.id === this.myReviewId && this.photo) {
+            return this.photo;
+        }
+        return review.author?.avatar || null;
+    }
+
+    hideAvatar(reviewId: number): void {
+        this.failedAvatars.add(reviewId);
+    }
+
+    initials(name: string): string {
+        const parts = (name || '').replace(/\(.*?\)/g, '').trim().split(/\s+/).filter(Boolean);
+        const letters = ((parts[0] || '').charAt(0) + (parts[1] || '').charAt(0)).toUpperCase();
+        return letters || 'R';
+    }
+
+    categoryScores(): { label: string, percent: number }[] {
+        const ratings = this.summary.category_ratings || { quality: 0, value: 0, ease_of_use: 0, durability: 0 };
+        return [
+            { label: 'Quality', percent: ratings.quality || 0 },
+            { label: 'Value', percent: ratings.value || 0 },
+            { label: 'Ease of use', percent: ratings.ease_of_use || 0 },
+            { label: 'Durability', percent: ratings.durability || 0 }
+        ];
+    }
+
+    distributionPercent(star: number): number {
+        const count = this.summary.rating_distribution[String(star)] || 0;
+        if (!this.summary.review_count) {
+            return 0;
+        }
+        return Math.round(count * 100 / this.summary.review_count);
+    }
+
+    loadReviews(): void {
+        if (!this.product?.id) {
+            return;
+        }
+        this.reviewsApi.getReviews(this.product.id, this.reviewPage).subscribe({
+            next: response => {
+                this.summary = response.summary;
+                this.reviews = response.reviews || [];
+                this.reviewPage = response.pagination?.page || 1;
+                this.reviewPages = response.pagination?.total_pages || 0;
+                this.product.rating = response.summary.average_rating;
+                this.product.reviews = response.summary.review_count;
+            },
+            error: () => {
+                this.reviews = [];
+            }
+        });
+    }
+
+    loadMyReview(): void {
+        if (!this.product?.id) {
+            return;
+        }
+        this.reviewsApi.getMyReview(this.product.id).subscribe({
+            next: response => {
+                this.hasReviewed = response.has_reviewed;
+                this.myReviewId = response.review?.id || null;
+                this.myReview = response.review;
+                if (response.review) {
+                    this.selectedRating = response.review.rating;
+                    this.reviewTitle = response.review.title || '';
+                    this.reviewComment = response.review.comment || '';
+                    this.qualityRating = response.review.quality || 0;
+                    this.valueRating = response.review.value_for_money || 0;
+                    this.easeRating = response.review.ease_of_use || 0;
+                    this.durabilityRating = response.review.durability || 0;
+                    this.wouldRecommend = response.review.would_recommend;
+                    this.metExpectations = response.review.met_expectations;
+                }
+            },
+            error: () => {
+                this.hasReviewed = false;
+            }
+        });
+    }
+
+    missingReviewFields(): string[] {
+        const missing: string[] = [];
+        if (this.selectedRating < 1) {
+            missing.push('rating');
+        }
+        if (!this.reviewTitle.trim()) {
+            missing.push('review title');
+        }
+        if (!this.reviewComment.trim()) {
+            missing.push('review comment');
+        }
+        if (this.qualityRating < 1) {
+            missing.push('quality');
+        }
+        if (this.valueRating < 1) {
+            missing.push('value');
+        }
+        if (this.easeRating < 1) {
+            missing.push('ease of use');
+        }
+        if (this.wouldRecommend === null) {
+            missing.push('whether you would recommend this product');
+        }
+        if (this.metExpectations === null) {
+            missing.push('whether the product met your expectations');
+        }
+        return missing;
+    }
+
+    yesNo(value: boolean | null): string {
+        if (value === true) {
+            return 'Yes';
+        }
+        if (value === false) {
+            return 'No';
+        }
+        return '';
+    }
+
+    submitReview(): void {
+        this.reviewError = '';
+        this.reviewSaved = '';
+        if (!this.product?.id) {
+            return;
+        }
+        const missing = this.missingReviewFields();
+        if (missing.length) {
+            this.reviewError = 'Required: ' + missing.join(', ') + '.';
+            return;
+        }
+        this.submittingReview = true;
+        this.reviewsApi.createReview(this.product.id, {
+            rating: this.selectedRating as 1 | 2 | 3 | 4 | 5,
+            title: this.reviewTitle.trim(),
+            comment: this.reviewComment.trim(),
+            quality: this.qualityRating as 1 | 2 | 3 | 4 | 5,
+            value_for_money: this.valueRating as 1 | 2 | 3 | 4 | 5,
+            ease_of_use: this.easeRating as 1 | 2 | 3 | 4 | 5,
+            durability: this.durabilityRating ? this.durabilityRating as 1 | 2 | 3 | 4 | 5 : null,
+            would_recommend: this.wouldRecommend,
+            met_expectations: this.metExpectations
+        }).subscribe({
+            next: (review) => {
+                this.submittingReview = false;
+                this.hasReviewed = true;
+                this.myReview = review;
+                this.myReviewId = review.id;
+                this.reviewPage = 1;
+                this.loadReviews();
+            },
+            error: (error) => {
+                this.submittingReview = false;
+                if (error?.status === 409 && error?.error?.review) {
+                    this.hasReviewed = true;
+                    this.myReview = error.error.review;
+                    this.myReviewId = error.error.review.id;
+                    return;
+                }
+                this.reviewError = error?.error?.detail || 'Sign in to review this product.';
+            }
+        });
+    }
 
     showTablesAndColumns(currentState: boolean) {
         if (currentState) {

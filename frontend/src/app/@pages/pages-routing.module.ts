@@ -10,6 +10,8 @@ import { SupportComponent } from './support/support.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { OrgComponent } from './org/org.component';
 import { ProductIntakeComponent } from './product-intake/product-intake.component';
+import { InteractiveMindMapComponent } from '../@shared/components/interactive-mind-map/interactive-mind-map.component';
+import { OpenFeatureWalkthroughComponent } from './feature-walkthrough/feature-walkthrough.component';
 
 const routes: Routes = [
   { path: 'team', component: TeamComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'product-intake', component: ProductIntakeComponent },
   { path: 'organization-chart', component: OrgComponent },
   { path: 'landing', component: LandingPageComponent },
+  { path: 'interactive/mind-map', component: InteractiveMindMapComponent },
+  { path: 'whats-new', component: OpenFeatureWalkthroughComponent },
 ];
 
 @NgModule({

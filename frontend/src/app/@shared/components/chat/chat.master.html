@@ -1,0 +1,309 @@
+<!-- Master reference of the chat layout before the modern redesign. The live component does not use this file. -->
+<div class="vikki-chat-root">
+  <section *ngIf="isChatOpen" class="chat-panel" role="dialog" aria-modal="false" aria-labelledby="vikki-title">
+    <header class="chat-header">
+      <div class="brand-mark" aria-hidden="true">
+        <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
+      </div>
+      <div class="header-copy">
+        <div class="title-row">
+          <h2 id="vikki-title" style="color: #fff">VIKKI</h2>
+          <span class="status" style="color: #fff">
+            <span class="status-dot"></span>Online</span>
+          </div>
+        <p style="color: #fff">Data Marketplace Assistant</p>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="end-session" (click)="endAiSession()">End AI Session</button>
+        <button type="button" class="icon-button" (click)="closeChat()" aria-label="Close VIKKI chat">×</button>
+      </div>
+    </header>
+
+    <div #messageViewport class="message-viewport" aria-live="polite">
+      <div *ngIf="messages.length === 0" class="message-row ai-row">
+        <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
+        <div class="bubble ai-bubble">Hello, I'm VIKKI. I'm dedicated to Data Marketplace products, governance, access guidance, analytics, and lineage.</div>
+      </div>
+
+      <ng-container *ngFor="let message of messages; trackBy: trackMessage">
+      <div *ngIf="showMessage(message)" class="message-row" [class.user-row]="message.sender === 'user'" [class.ai-row]="message.sender === 'ai'">
+        <div class="avatar">
+          <ng-container *ngIf="message.sender === 'user'; else botAvatar">
+            <img *ngIf="userPhoto; else initials" [src]="userPhoto" alt="">
+            <ng-template #initials>{{ userInitials }}</ng-template>
+          </ng-container>
+          <ng-template #botAvatar>
+            <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
+          </ng-template>
+        </div>
+        <div class="message-column">
+          <div class="bubble" [class.user-bubble]="message.sender === 'user'" [class.ai-bubble]="message.sender === 'ai'">
+            <p *ngIf="message.cached" class="learned-label">Answered from a previous question</p>
+            <ng-container *ngIf="message.sender === 'ai'; else plainText">
+              <ng-container *ngFor="let block of answerBlocks(message.text)">
+                <p *ngIf="block.kind === 'text'">
+                  <ng-container *ngFor="let part of sourceParts(block.text || '')">
+                    <sup *ngIf="part.source" class="source-mark">{{ part.source }}</sup>
+                    <span *ngIf="!part.source">{{ part.text }}</span>
+                  </ng-container>
+                </p>
+                <ul *ngIf="block.kind === 'list'">
+                  <li *ngFor="let item of block.items">{{ item }}</li>
+                </ul>
+              </ng-container>
+            </ng-container>
+            <ng-template #plainText><span class="message-text">{{ message.text }}</span></ng-template>
+            <p *ngIf="message.guidance" class="guidance">{{ message.guidance }}</p>
+          </div>
+
+          <div *ngIf="message.citations?.length" class="citation-list">
+            <span>Sources</span>
+            <article *ngFor="let citation of message.citations" class="citation-card">
+              <strong>{{ citation.documentTitle }}</strong>
+              <p>{{ citation.excerpt }}</p>
+            </article>
+          </div>
+
+          <div *ngIf="recommendedProducts(message).length" class="product-slider">
+            <div class="product-slider__head">
+              <span>Recommended products</span>
+              <div class="product-slider__nav">
+                <button type="button" (click)="scrollProducts(message.id, -1)" aria-label="Previous products">‹</button>
+                <button type="button" (click)="scrollProducts(message.id, 1)" aria-label="Next products">›</button>
+              </div>
+            </div>
+            <div class="product-slider__track" [id]="'product-slider-' + message.id">
+              <article class="recommend-card" *ngFor="let source of recommendedProducts(message)">
+                <button type="button" class="recommend-card__media" (click)="openProduct(source)" [attr.aria-label]="'Open ' + source.name">
+                  <img *ngIf="source.image" [src]="source.image" [alt]="source.name" (error)="source.image = ''">
+                  <span *ngIf="!source.image" class="recommend-card__fallback">{{ source.name.slice(0, 1) }}</span>
+                </button>
+                <div class="recommend-card__body">
+                  <p class="recommend-card__domain" *ngIf="source.domain">{{ source.domain }}</p>
+                  <h3>{{ source.name }}</h3>
+                  <p *ngIf="source.reason">{{ source.reason }}</p>
+                  <button type="button" class="recommend-card__view" (click)="openProduct(source)">View</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div *ngIf="visibleActions(message).length" class="suggestion-strip message-actions">
+            <button *ngFor="let action of visibleActions(message)" type="button" (click)="runAction(action)" [attr.aria-label]="action.title">
+              <i [class]="suggestionIcon(action.title)" aria-hidden="true"></i>
+              <span class="chip-label">{{ action.title }}</span>
+            </button>
+          </div>
+
+          <div *ngIf="message.correcting" class="correction-box">
+            <label [attr.for]="'correction-' + message.id">What should Vikki have said?</label>
+            <textarea [id]="'correction-' + message.id" rows="3" [(ngModel)]="message.correction" [name]="'correction-' + message.id"></textarea>
+            <div>
+              <button type="button" (click)="saveCorrection(message)" aria-label="Save correction"><i class="fas fa-check" aria-hidden="true"></i><span class="chip-label">Save correction</span></button>
+              <button type="button" (click)="cancelCorrection(message)" aria-label="Cancel"><i class="fas fa-times" aria-hidden="true"></i><span class="chip-label">Cancel</span></button>
+            </div>
+          </div>
+
+          <div *ngIf="message.sender === 'ai' && message.text" class="feedback-actions">
+            <button type="button" (click)="submitFeedback(message, 'positive')" [class.selected]="message.feedback === 'positive'" aria-label="Helpful response">👍</button>
+            <button type="button" (click)="submitFeedback(message, 'negative')" [class.selected]="message.feedback === 'negative'" aria-label="Unhelpful response">👎</button>
+          </div>
+        </div>
+      </div>
+      </ng-container>
+
+      <div *ngIf="isThinking" class="message-row ai-row">
+        <div class="avatar">
+          <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
+        </div>
+        <div class="bubble ai-bubble thinking" [attr.aria-label]="thinkingLabel"><span class="thinking-label">{{ thinkingLabel }}</span><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-banner" role="alert">{{ errorMessage }}</div>
+    <div class="suggestion-strip" *ngIf="suggestions.length">
+      <button *ngFor="let suggestion of suggestions" type="button" (click)="quickAsk(suggestion.prompt)" [attr.aria-label]="suggestion.title">
+        <i [class]="suggestionIcon(suggestion.title)" aria-hidden="true"></i>
+        <span class="chip-label">{{ suggestion.title }}</span>
+      </button>
+    </div>
+
+    <form class="composer" (submit)="$event.preventDefault(); sendMessage(chatInput)">
+      <textarea #chatInput rows="1" aria-label="Ask VIKKI about Data Marketplace" placeholder="Ask about Data Marketplace..."
+                [disabled]="isProcessing" (keydown)="handleKeyDown($event, chatInput)"></textarea>
+      <button type="submit" class="send-button" [disabled]="isProcessing" aria-label="Send message" style="color: #363636;background-color: #0abcdf;">
+        <span *ngIf="!isProcessing">➤</span><span *ngIf="isProcessing" class="small-spinner"></span>
+      </button>
+    </form>
+  </section>
+
+  <aside *ngIf="sourcePanelOpen" class="source-panel" aria-label="Product reference">
+    <header><h3>{{ selectedSource?.name }}</h3><button type="button" (click)="closeSourcePanel()" aria-label="Close product reference">×</button></header>
+    <div class="source-body">
+      <p *ngIf="selectedSource?.domain"><strong>Domain:</strong> {{ selectedSource?.domain }}</p>
+      <p *ngIf="selectedSource?.dataType"><strong>Data type:</strong> {{ selectedSource?.dataType }}</p>
+      <p *ngIf="selectedSource?.score !== undefined"><strong>Match score:</strong> {{ selectedSource?.score | number:'1.2-2' }}</p>
+      <p *ngIf="selectedSource?.reason">{{ selectedSource?.reason }}</p>
+      <button type="button" class="primary-action" (click)="openSelectedProduct()">Open product details</button>
+    </div>
+  </aside>
+
+  <div *ngIf="isPaletteVisible" class="palette-backdrop" (click)="closePalette()">
+    <section class="command-palette" (click)="$event.stopPropagation()" role="dialog" aria-label="VIKKI commands">
+      <input autofocus [(ngModel)]="commandFilter" name="commandFilter" placeholder="Search commands..." />
+      <button *ngFor="let command of filteredCommands" type="button" (click)="executeCommand(command)">{{ command.name }}</button>
+    </section>
+  </div>
+
+  <!-- <button type="button" class="chat-launcher" [class.open]="isChatOpen" (click)="toggleChat()"
+          [attr.aria-expanded]="isChatOpen" aria-controls="vikki-title">
+    <span class="launcher-icon">{{ isChatOpen ? '×' : 'V' }}</span><span *ngIf="!isChatOpen">Ask VIKKI</span>
+  </button> -->
+
+  <button class="ask-ai-button" [class.chat-open]="isChatOpen" (click)="toggleChat()" [attr.aria-label]="isChatOpen ? 'Close chat' : 'Open chat'">
+		<span class="button-icon">
+			<img class="icon-ai" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVElEQVR4nOWazUocQRSFv0Y0MknIg+QBMgM+wDjBhWZnQp7FB8gMuNTs1KWuBF1FH8QsYoSAJjgS/F2NlNyBoumfmu7b3d7xQNHzU3OrTvepqlunBl4oIuBYinttFh1gJKWNYQw8In2MIgJ+eUR+W5VXxyNhWl6DBCJ967IaWZVXJ4GEKXlF0tHDDCKHUudZPpn3wBpwkkEgSWbrwEKTpCK5q27wnk7Q+bRyKrFCnlQP+CvX0jhW6HxaOcpp+0DquatZIu+AB6nnru59I+Oi7Hj5EvvdZw0iTQz2vViMXQxOvy3gJhbrRj6vDO0MIh8KxvyUEm8FYynKTgqRbSpGP6HRbwVjzQKXKUSugDlqlldRWfVyJo5FjGysvucQ2aRGefVLyOo8h8i51KtFXpPIakbWF7fO/Alcl/4BW8AS8EqbSCQpx1GArFoylbpZaFgyUxhKnJWq1xm/80tyJ/8rpDqjhHIL7ANftXIzHx8lex0ngHWVB2lXZQvgcFEzgVGsuPZV0JuWJzI1YyQJ8x6psrPWtdf5N5Rw30Om2yy43KkrK3boeLqQ+l2N3KtdgX/VyMo+qMge3cwhsqHY1pOUfGvoTNGvWswh0sWI+561Hxlq70eqdt+3U4hsaQSP5EkMZKcWb+RKvusoyGw5hciyhv3zc4K5/ayk19uS9SHuorxu0mXMs0VDfa29oiSaJrIai7OK0WOEt8CdxLvXzJ3844W0wR56XBAKVTc+1Meq4vBzfD5SmQWk6WM1imha/iAQl1dRe/RZoG1dVmM4Kf2QYlZWWMIjBRCCjNetQQAAAAAASUVORK5CYII=" alt="AI Icon">
+			
+			<svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+			</svg>
+		</span>
+		<span class="button-text chip-label" style="font-size: 16px;">Ask VIKKI</span>
+	</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="tailwind-scope">
+	<div id="ai-assistant" class="fixed bottom-4 right-4 w-96 bg-white rounded-2xl shadow-2xl ai-panel-hidden z-50 border" style="transition: transform 0.3s ease;" *ngIf="isChatOpen" (click)="$event.stopPropagation()">
+		<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 rounded-t-2xl flex justify-between items-center">
+			<div class="flex items-center space-x-2">
+				<div class="w-10 h-10 flex items-center justify-center">
+					<app-ai-brain></app-ai-brain>
+				</div>
+
+				<div>
+					<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+						<h3 class="font-bold" style="margin: 0;">VIKKI AI</h3>
+						<span class="bot-status" style="display: flex; align-items: center; gap: 4px; font-size: 12px; color: #10b981;">
+							<div class="status-indicator" style="width: 8px; height: 8px; background-color: #10b981; border-radius: 50%;"></div>
+							<span>Online</span>
+						</span>
+					</div>
+					<p style="font-size: 16px; font-weight: 400; margin: 0 0 4px 0;">Virtual Intuitive, Knowledgeable, & Kinetic Intelligence</p>
+				</div>
+			</div>
+			<button type="button" class="icon-button" (click)="closeChat()" aria-label="Close VIKKI chat">×</button>
+		</div>
+
+		<div #messageViewport id="ai-messages" class="h-80 overflow-y-auto p-4 space-y-3 bg-gray-50 message-viewport" aria-live="polite">
+			<div class="flex gap-2" *ngIf="messages.length === 0" class="message-row ai-row">
+				<div class="avatar">
+          <app-ai-brain-chat-icon></app-ai-brain-chat-icon>
+        </div>
+        <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[90%]" style="position: relative;bottom: 40px; left: 48px;">
+          <div class="bubble ai-bubble">Hello, I’m VIKKI. I’m dedicated to Data Marketplace products, governance, access guidance, analytics, and lineage.</div>
+        </div>
+			</div>
+
+      <div *ngFor="let message of messages; trackBy: trackMessage" class="message-row"
+           [class.user-row]="message.sender === 'user'" [class.ai-row]="message.sender === 'ai'">
+        <div class="avatar">{{ message.sender === 'user' ? 'You' : 'V' }}</div>
+        <div class="message-column">
+          <div class="bubble" [class.user-bubble]="message.sender === 'user'" [class.ai-bubble]="message.sender === 'ai'">
+            <span class="message-text">{{ message.text }}</span>
+          </div>
+
+          <div *ngIf="message.citations?.length" class="citation-list">
+            <span>Sources</span>
+            <article *ngFor="let citation of message.citations" class="citation-card">
+              <strong>{{ citation.documentTitle }}</strong>
+              <p>{{ citation.excerpt }}</p>
+            </article>
+          </div>
+
+          <div *ngIf="recommendedProducts(message).length" class="product-slider">
+            <div class="product-slider__head">
+              <span>Recommended products</span>
+              <div class="product-slider__nav">
+                <button type="button" (click)="scrollProducts(message.id, -1)" aria-label="Previous products">‹</button>
+                <button type="button" (click)="scrollProducts(message.id, 1)" aria-label="Next products">›</button>
+              </div>
+            </div>
+            <div class="product-slider__track" [id]="'product-slider-' + message.id">
+              <article class="recommend-card" *ngFor="let source of recommendedProducts(message)">
+                <button type="button" class="recommend-card__media" (click)="openProduct(source)" [attr.aria-label]="'Open ' + source.name">
+                  <img *ngIf="source.image" [src]="source.image" [alt]="source.name" (error)="source.image = ''">
+                  <span *ngIf="!source.image" class="recommend-card__fallback">{{ source.name.slice(0, 1) }}</span>
+                </button>
+                <div class="recommend-card__body">
+                  <p class="recommend-card__domain" *ngIf="source.domain">{{ source.domain }}</p>
+                  <h3>{{ source.name }}</h3>
+                  <p *ngIf="source.reason">{{ source.reason }}</p>
+                  <button type="button" class="recommend-card__view" (click)="openProduct(source)">View</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div *ngIf="message.sender === 'ai' && message.text" class="feedback-actions">
+            <button type="button" (click)="submitFeedback(message, 'positive')" [class.selected]="message.feedback === 'positive'" aria-label="Helpful response">👍</button>
+            <button type="button" (click)="submitFeedback(message, 'negative')" [class.selected]="message.feedback === 'negative'" aria-label="Unhelpful response">👎</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="isThinking" class="message-row ai-row">
+        <div class="avatar">V</div>
+        <div class="bubble ai-bubble thinking" aria-label="VIKKI is thinking"><i></i><i></i><i></i></div>
+      </div>
+		</div>
+
+		<div class="p-4 bg-white border-t rounded-b-2xl">
+			<div class="flex gap-2">
+				<input type="text" id="ai-input" placeholder="Ask me anything..." class="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" onkeypress="if(event.key==='Enter') sendAIMessage()">
+				<button onclick="sendAIMessage()" class="w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 flex items-center justify-center"><i class="fas fa-paper-plane" style="color: #04fdff!important"></i></button>
+			</div>
+			<div class="flex gap-2 mt-2 overflow-x-auto pb-1">
+				<button onclick="quickAsk('How do I make a call?')" class="px-3 py-1 bg-gray-100 rounded-full text-xs whitespace-nowrap hover:bg-gray-200">How to call?</button>
+				<button onclick="quickAsk('Is my data secure?')" class="px-3 py-1 bg-gray-100 rounded-full text-xs whitespace-nowrap hover:bg-gray-200">Security?</button>
+				<button onclick="quickAsk('How do I join community?')" class="px-3 py-1 bg-gray-100 rounded-full text-xs whitespace-nowrap hover:bg-gray-200">Join community</button>
+			</div>
+		</div>
+	</div>
+
+  <aside *ngIf="sourcePanelOpen" class="source-panel" aria-label="Product reference">
+    <header><h3>{{ selectedSource?.name }}</h3><button type="button" (click)="closeSourcePanel()" aria-label="Close product reference">×</button></header>
+    <div class="source-body">
+      <p *ngIf="selectedSource?.domain"><strong>Domain:</strong> {{ selectedSource?.domain }}</p>
+      <p *ngIf="selectedSource?.dataType"><strong>Data type:</strong> {{ selectedSource?.dataType }}</p>
+      <p *ngIf="selectedSource?.score !== undefined"><strong>Match score:</strong> {{ selectedSource?.score | number:'1.2-2' }}</p>
+      <p *ngIf="selectedSource?.reason">{{ selectedSource?.reason }}</p>
+      <button type="button" class="primary-action" (click)="openSelectedProduct()">Open product details</button>
+    </div>
+  </aside>
+
+  <div *ngIf="isPaletteVisible" class="palette-backdrop" (click)="closePalette()">
+    <section class="command-palette" (click)="$event.stopPropagation()" role="dialog" aria-label="VIKKI commands">
+      <input autofocus [(ngModel)]="commandFilter" name="commandFilter" placeholder="Search commands..." />
+      <button *ngFor="let command of filteredCommands" type="button" (click)="executeCommand(command)">{{ command.name }}</button>
+    </section>
+  </div>
+
+	<button class="ask-ai-button" [class.chat-open]="isChatOpen" (click)="toggleChat()" [attr.aria-label]="isChatOpen ? 'Close chat' : 'Open chat'">
+		<span class="launcher-icon">{{ isChatOpen ? '×' : '' }}</span><span *ngIf="!isChatOpen">Ask VIKKI</span>
+	</button>
+</div> -->

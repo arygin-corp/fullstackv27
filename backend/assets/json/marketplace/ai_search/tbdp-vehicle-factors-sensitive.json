@@ -1,0 +1,59 @@
+{
+  "adgroup": "tbdp-vehicle-factors-sensitive",
+  "slugs": [
+    "vehicle-factors"
+  ],
+  "databases": [
+    "ircm_ing",
+    "ircm_trn"
+  ],
+  "tables": [
+    "gi_toyota_rundown",
+    "rundown_seasonal_factor",
+    "rundown_toyota_seasonal_factor_national",
+    "rundown_toyota_seasonal_factor_regional",
+    "vw_seasonal_fctr_actuals"
+  ],
+  "columns": [
+    "audit_create_date",
+    "base_effective_dt",
+    "business_month",
+    "calendar_mth",
+    "calendar_year",
+    "create_src",
+    "create_ts",
+    "data_set_id",
+    "effective_dt",
+    "end_dt",
+    "entity",
+    "extract_dt",
+    "factor_pct",
+    "fleet_ind",
+    "fleet_indicator",
+    "fuel_type",
+    "make_nm",
+    "model_year",
+    "partn_id",
+    "raw_data_set_row_id",
+    "raw_make_nm",
+    "raw_region",
+    "raw_scenario_nm",
+    "raw_segment",
+    "raw_segment_category_nm",
+    "raw_series",
+    "region_area_cd",
+    "region_area_nm",
+    "region_char_cd",
+    "region_long_nm",
+    "sales_geog_type_cd",
+    "scenario_nm",
+    "seasonal_factor",
+    "segment_category_nm",
+    "segment_nm",
+    "series_fuel_nm",
+    "series_group_nm",
+    "series_nm",
+    "source_table",
+    "version_nm"
+  ]
+}

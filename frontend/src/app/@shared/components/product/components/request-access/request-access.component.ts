@@ -179,6 +179,7 @@ export class RequestAccessComponent implements OnChanges {
         this.savedFormData = this.loadFormData();
         this.savedProduct = this.loadProduct();
         this.fillAdGroup();
+        this.applyControlGroup();
         this.applyProductPi();
         this.state.product$.subscribe((product) => this.useRequestProduct(product));
 
@@ -194,6 +195,7 @@ export class RequestAccessComponent implements OnChanges {
             this.form.patchValue(this.itemToEdit.formData);
         }
         this.fillAdGroup();
+        this.applyControlGroup();
         this.applyProductPi();
     }
 
@@ -206,7 +208,29 @@ export class RequestAccessComponent implements OnChanges {
             this.product = null;
         }
         this.fillAdGroup();
+        this.applyControlGroup();
         this.applyProductPi();
+    }
+
+    get controlGroup(): string {
+        if (this.product?.alt_approver) {
+            return this.product.alt_approver.sys_id || '';
+        }
+        return this.product?.control_group || '';
+    }
+
+    private applyControlGroup() {
+        const control = this.form?.get('v_custom_control_group');
+        if (!control) {
+            return;
+        }
+        if (this.product?.alt_approver) {
+            control.setValue(this.product.alt_approver.sys_id || '');
+            return;
+        }
+        if (!control.value) {
+            control.setValue(this.product?.control_group || '');
+        }
     }
 
     private isYes(value: unknown): boolean {

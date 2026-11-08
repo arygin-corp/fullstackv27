@@ -8,7 +8,8 @@ from django.conf import settings
 
 from .product_requirements import (
     CLASSIFICATIONS, DESCRIPTION_MAX, DESCRIPTION_MIN, INTENDED_USE_MAX, INTENDED_USE_MIN,
-    PUBLIC_CLASSIFICATIONS, PUBLIC_INTENDED_USE, RESTRICTED_CLASSIFICATIONS, requirements_for_product,
+    PUBLIC_CLASSIFICATIONS, PUBLIC_INTENDED_USE, RESTRICTED_CLASSIFICATIONS,
+    checkout_control_group, requirements_for_product,
 )
 
 TMNA_COMPANIES = (
@@ -86,7 +87,7 @@ def _base_values(product, creator):
         "v_dar_userType": "",
         "v_dar_accessType": "User Access",
         "v_dar_dataDomainSelect": _related(domain, "name"),
-        "v_custom_control_group": _text(getattr(product, "control_group", None) or getattr(domain, "control_group", "")),
+        "v_custom_control_group": checkout_control_group(product),
         "v_dar_platform": _related(getattr(product, "platform", None), "name"),
         "v_dar_OtherType": _text(getattr(product, "name", "")),
         "v_dat_api_name": _text(getattr(product, "name", "")),

@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .product-red-zoom
 */
@@ -7,6 +8,29 @@
 @import '~ngx-red-zoom/styles/mixins/common';
 @import '~ngx-red-zoom/styles/mixins/style-window';
 
+@mixin red-zoom-loader(
+    $loader-color: #fff,
+    $loader-size:  40px
+) {
+    position: relative;
+    display: block;
+    content: '';
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba($loader-color, .2);
+    border-top-color: rgba($loader-color, 1);
+    left: calc(50% - #{math.div($loader-size, 2)});
+    top: calc(50% - #{math.div($loader-size, 2)});
+    width: $loader-size;
+    height: $loader-size;
+    border-radius: 100%;
+    animation-name: red-zoom-loader-animation;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    opacity: 0;
+}
 
 $local-gallery-image-padding: 22px;
 $local-lens-expand-width: 20px;
@@ -43,7 +67,7 @@ $local-lens-expand-width: 20px;
                 var(--red-zoom-thumb-w, 0px) +
                 var(--gallery-gutter, 0px) +
                 (var(--width, 0px) - var(--red-zoom-thumb-w, 0px)) / 2 -
-                #{$local-lens-expand-width / 2}
+                #{math.div($local-lens-expand-width, 2)}
                 ) * #{$transform-direction}
             );
         }

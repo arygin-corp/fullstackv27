@@ -11,7 +11,7 @@
 
 {% block content %}
 <main class="module-page module-master-dashboard">
-    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_title=module.name hero_metric_label=page_label hero_metric_value=metrics.requests hero_metric_caption="recorded requests" %}
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_title=module.name hero_metric_label=page_label hero_metric_value=metrics.requests hero_metric_caption="recorded requests"  hero_show_title="0" %}
     {% include "gdx_admin/apps/third_party_apis/partials/_module_nav.html" %}
 
     {% if not module.installed %}

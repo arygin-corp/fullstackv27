@@ -3,6 +3,570 @@
   "elements": [
     {
       "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "data_partnumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "duedate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "gproject"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "orderquantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "packing"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "partname"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "po"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "ponumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "pr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "price"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "received"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "setup"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "suppliercode"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "suppliername"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "tas_partnumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "tooling"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "historical_tas_cost",
+      "column_name": "trucking"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "amenddate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "basic5"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "buyer"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "canceldate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "duedate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "issuedate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "oldqty"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "orderquantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "partname"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "partnumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "ponumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "pr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "project"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "promisedate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "shiftdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "sumofrcvquantity1"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "suppliercode"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "suppliername"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "taspickupdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "tmcrcvdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "updated_buyer_code"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "missingaribaprpo_supplierbuyer",
+      "column_name": "usrcvdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "amenddate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "approver"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "backupemail"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "buyer_name_or_code_buyer"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "closed_order_status"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "collaboration_complete_date_collaboration_complete_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "collaboration_submission_date_col_submit_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "cost_center_or_commodity_cod_cc"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "decline_reason"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "delvery_loctaion_ship_to_location"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "description_of_the_requisition_title"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "due_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "email"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "freight_cost"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "issuedate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "last_proposal_submit_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "line_description"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "need_by"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "oder_cancel_date_canceldate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "oldqty"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "order_status_status"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "orderquantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "packaging_cost"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "part"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "part_number_from_the_ariba_system_part_number"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "part_number_from_the_internal_wips_system__partnumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "partname"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "parts_received_date_by_tmc_tmcrcvdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "parts_received_date_in_us_usrcvdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "pr_line_number_line"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "pricing"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "project_code_project"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "prototype_part_request_number_pprnumber"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "purchase_order_date_po_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "purchase_order_number_epns"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "purchase_order_po"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "purchase_requisition_number_pr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "rct_quantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "real_approver"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "requisition_date_req_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "response_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "setup_cost"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "source_system_identifier_system"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "sum_of_all_proposed_cost"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "sumofrcvquantity"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "supplier_ariba_network_number_supplier_an_number"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "supplier_id_vendor_code"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "supplier_name_vendor"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "supplier_response_response"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "suppliercode"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "taspickupdate"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "tooling_cost"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "type_of_cost_center_or_commodity_code_cc_type"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "prototype_trial_parts_ing",
+      "elementname": "prototype_trial_parts_orders",
+      "column_name": "updated_buyer_code"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
       "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
       "elementname": "ariba_ana_collab_req_fact",
       "column_name": "amountproposed"
@@ -8670,6 +9234,282 @@
       "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
       "elementname": "sap_order_item_outbound_ordim_o",
       "column_name": "zero_inv_ind_zeiei"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "applctn"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "cond_rec_nbr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "cond_typ"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "info_ctgry"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "mtrl_nbr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "plnt"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "purch_org"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "vdr_nbr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "vld_fm"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_plnt_mtrl_info_rec_a017",
+      "column_name": "vld_to"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "accum_accr_not_used"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "addl_val_days"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_amt_pcnt_no_scale"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_calc_type"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_curr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_excl_indicator"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_item_idx"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_pricing_unit"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_rate_lower_limit"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_scale_qty"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_scale_uom"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_seq"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "cond_unit"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "conv_cond_units_base_den"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "conv_cond_units_base_num"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "del_ind_cond_rec"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "max_cond_base_val"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "min_cond_base_val"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "pay_terms"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "planned_cond_basis"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "planned_cond_value"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_application"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_client"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_cond_rec_no"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_cond_type"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_cond_uom"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_cust_no"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_order_uom"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "sap_tax_code_1"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "scale_base_type"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "scale_curr"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "scale_type"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "scale_value"
+    },
+    {
+      "userrolename": "tbdp-purchasing-indirect-direct-purchasing",
+      "dbname": "purchasing_indirect_direct_purchasing_trn_ext",
+      "elementname": "sap_pricing_terms_line_konp",
+      "column_name": "vendor_no"
     },
     {
       "userrolename": "tbdp-purchasing-indirect-direct-purchasing",

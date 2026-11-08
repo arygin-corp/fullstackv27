@@ -1,6 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 from .api_views import ProductJsonViewSet, DomainJsonViewSet, HybridProductSearchViewSet, SearchSuggestionsViewSet
+from .review_api import MyProductReviewView, ProductReviewListView
 from .resource_api import resource_routes
 from .page_views import MarketplaceHomeView
 
@@ -20,6 +21,8 @@ product_detail = ProductJsonViewSet.as_view({"get": "retrieve",})
 
 urlpatterns = [
     path("", MarketplaceHomeView.as_view(), name="home"),
+    path("api/products/<str:pk>/reviews/me/", MyProductReviewView.as_view(), name="api-product-review-me"),
+    path("api/products/<str:pk>/reviews/", ProductReviewListView.as_view(), name="api-product-reviews"),
     path('api/', include(router.urls)),
     path("api/products/<str:pk>/", product_detail, name="api-products-detail",),
 ]

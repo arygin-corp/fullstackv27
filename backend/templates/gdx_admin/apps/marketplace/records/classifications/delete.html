@@ -1,0 +1,10 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Classifications delete{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+{% include "gdx_admin/apps/marketplace/records/_delete.html" %}
+{% endblock %}

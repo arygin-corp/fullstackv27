@@ -1,0 +1,58 @@
+{
+  "adgroup": "tbdp-parts-manufacturing-tradecompliance-canada",
+  "slugs": [
+    "manufacturing-parts-trade-compliance-canada"
+  ],
+  "databases": [
+    "tradecompliance_parts_mfgparts_ing_ext"
+  ],
+  "tables": [
+    "parts_fact"
+  ],
+  "columns": [
+    "add_cvd_status",
+    "assurance_level",
+    "audit_create_date",
+    "ci_usdul01",
+    "ci_usdul01_created_on",
+    "ci_usdul01_remarks",
+    "ci_usdul01_valid_from",
+    "ci_usdul01_valid_to",
+    "classification_flag",
+    "commercial_description",
+    "destination_coe",
+    "eccn_flag",
+    "hts_flag",
+    "input_file_name",
+    "material_group",
+    "material_type",
+    "part_base_unit",
+    "part_changed_on",
+    "part_create_on",
+    "part_gross_weight",
+    "part_net_weight",
+    "part_number",
+    "part_weight_unit",
+    "parts_description",
+    "prt_cat_group",
+    "prtn_key",
+    "sales_mod_plant",
+    "schb_flag",
+    "service_production_flag",
+    "us_hs6",
+    "us_hs6_created_on",
+    "us_hs6_remarks",
+    "us_hs6_valid_from",
+    "us_hs6_valid_to",
+    "us_hts",
+    "us_hts_created_on",
+    "us_hts_remarks",
+    "us_hts_valid_from",
+    "us_hts_valid_to",
+    "us_schb",
+    "us_schb_created_on",
+    "us_schb_remarks",
+    "us_schb_valid_from",
+    "us_schb_valid_to"
+  ]
+}

@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .typography
 */
@@ -65,7 +66,7 @@
         position: relative;
         width: $size;
         height: $size;
-        border-radius: $size / 2;
+        border-radius: math.div($size, 2);
         border: none;
         background: $typography-hr-color;
         margin: 2.5em auto;

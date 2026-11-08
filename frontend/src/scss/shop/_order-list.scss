@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .order-list
 */
@@ -89,7 +90,7 @@
         transform: skewX(-20deg);
 
         @include direction {
-            #{$inset-inline-end}: floor($local-gutter / 2);
+            #{$inset-inline-end}: floor(math.div($local-gutter, 2));
         }
     }
 }

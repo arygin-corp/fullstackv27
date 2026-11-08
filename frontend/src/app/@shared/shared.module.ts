@@ -48,6 +48,7 @@ import { PeopleFinderComponent } from './components/people-finder/people-finder.
 import { SuggestedAiComponent } from './components/suggested-ai/suggested-ai.component';
 import { ValidationStatusComponent } from './components/validation-status/validation-status.component';
 import { InteractiveAiComponent } from './components/interactive-ai/interactive-ai.component';
+import { AiBrain2Component } from './components/ai-brain2/ai-brain2.component';
 import { ProductGalleryComponent } from './components/product-gallery/product-gallery.component';
 import { ProductPopoverComponent } from './components/product-popover/product-popover.component';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
@@ -63,6 +64,7 @@ import { AiBrainComponent } from './components/ai-brain/ai-brain.component';
 import { AiBrainChatIconComponent } from './components/ai-brain-chat-icon/ai-brain-chat-icon.component';
 import { EndToEndSolutionComponent } from'./components/product/end-to-end-solution/end-to-end.component';
 import { ProductAssociationsComponent } from './components/product/product-associations/product-associations.component';
+import { InteractiveMindMapComponent } from './components/interactive-mind-map/interactive-mind-map.component';
   
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -106,6 +108,7 @@ import { ProductAssociationsComponent } from './components/product/product-assoc
         ValidationStatusComponent,
         SuggestedAiComponent,
         InteractiveAiComponent,
+        AiBrain2Component,
         ProductPopoverComponent,
         ComingSoonComponent,
         ChatComponent,
@@ -113,7 +116,8 @@ import { ProductAssociationsComponent } from './components/product/product-assoc
         AiBrainChatIconComponent,
         UpdateAvailableComponent,
         EndToEndSolutionComponent,
-        ProductAssociationsComponent
+        ProductAssociationsComponent,
+        InteractiveMindMapComponent
     ],
     imports: [
         // modules (angular)
@@ -179,7 +183,8 @@ import { ProductAssociationsComponent } from './components/product/product-assoc
         ComingSoonComponent,
         UpdateAvailableComponent,
         EndToEndSolutionComponent,
-        ProductAssociationsComponent
+        ProductAssociationsComponent,
+        InteractiveMindMapComponent
     ]
 })
 

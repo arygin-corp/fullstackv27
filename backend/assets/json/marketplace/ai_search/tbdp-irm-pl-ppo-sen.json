@@ -1,0 +1,37 @@
+{
+  "adgroup": "tbdp-irm-pl-ppo-sen",
+  "slugs": [
+    "profit-and-loss-post-production-options-sensitive"
+  ],
+  "databases": [
+    "finance_profit_trn"
+  ],
+  "tables": [
+    "profit_loss_ppo",
+    "profit_loss_ppo_fleet"
+  ],
+  "columns": [
+    "audit_create_date",
+    "brand",
+    "description_f",
+    "generated_file_name",
+    "model",
+    "model_plant_code",
+    "model_year_f",
+    "plant",
+    "plant_code_f",
+    "ppo_opt_mix_percent",
+    "ppo_option_code",
+    "ppo_option_name",
+    "qty_model_plant",
+    "qty_ppo_opt",
+    "qty_series_plant",
+    "region_code_f",
+    "region_name_f",
+    "sales_period",
+    "series_f",
+    "src_model_year_f",
+    "ttl_tms_ppo_opt_gp_wo_pen_usd",
+    "veh_type"
+  ]
+}

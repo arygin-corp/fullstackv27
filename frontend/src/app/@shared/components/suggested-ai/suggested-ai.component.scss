@@ -1,10 +1,64 @@
+.modal-header {
+    border-top: 0px;
+}
+
+.verified-master-card {
+  border: 2px solid #34c38f !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(52, 195, 143, 0.15);
+}
+
+.ai-audit-report-container ::ng-deep .ai-audit-report {
+  font-family: "Inter", sans-serif;
+}
+.ai-audit-report-container ::ng-deep .ai-audit-report table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ai-audit-report-container ::ng-deep .ai-audit-report table th, .ai-audit-report-container ::ng-deep .ai-audit-report table td {
+  padding: 12px;
+  border: 0.5px solid #f0f0f0;
+  font-size: 0.85rem;
+}
+.ai-audit-report-container ::ng-deep .ai-audit-report table th {
+  background: #f8f9fa;
+  font-weight: 700;
+  color: #495057;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.suggestion-card {
+  transition: all 0.2s ease-in-out;
+  border-left: 5px solid transparent !important;
+}
+.suggestion-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.italic-text {
+  font-style: italic;
+  color: #6c757d;
+}
+
+.score-badge {
+  background: #e1f5fe;
+  color: #0288d1;
+  font-size: 14px;
+}
+
 .modal-content {
     border-radius: 12px;
     overflow: hidden;
 }
 
 .ai-glow {
-    color: #cc0000; // crimson accent
+    color: #cc0000; /* crimson accent */
     text-shadow: 0 0 8px rgba(204, 0, 0, 0.3);
 }
 
@@ -13,33 +67,6 @@
     background-image: radial-gradient(#dee2e6 0.5px, transparent 0.5px);
     background-size: 20px 20px;
 }
-
-// .suggestion-card {
-//     transition: all 0.3s ease;
-//     border-left: 4px solid transparent !important;
-    
-//     // 1. RE-ESTABLISH TEXT ISOLATION
-//     // This stops the 'ai-grade-a' class on the parent from turning all children green.
-//     &.ai-grade-a-plus, &.ai-grade-a, &.ai-grade-a-minus,
-//     &.ai-grade-b-plus, &.ai-grade-b, &.ai-grade-b-minus,
-//     &.ai-grade-c-plus, &.ai-grade-c, &.ai-grade-c-minus,
-//     &.ai-grade-d-plus, &.ai-grade-d, &.ai-grade-d-minus,
-//     &.ai-grade-f-plus, &.ai-grade-f, &.ai-grade-f-minus {
-//         color: initial !important; 
-//     }
-
-//     &:hover {
-//         transform: translateY(-5px);
-//         box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
-        
-//         // 2. DYNAMIC BORDER COLORS (Only on Hover)
-//         &.ai-grade-a-plus, &.ai-grade-a, &.ai-grade-a-minus { border-left-color: #34c38f !important; }
-//         &.ai-grade-b-plus, &.ai-grade-b, &.ai-grade-b-minus { border-left-color: #50a5f1 !important; }
-//         &.ai-grade-c-plus, &.ai-grade-c, &.ai-grade-c-minus { border-left-color: #f1b44c !important; }
-//         &.ai-grade-d-plus, &.ai-grade-d, &.ai-grade-d-minus { border-left-color: #f1734f !important; }
-//         &.ai-grade-f-plus, &.ai-grade-f, &.ai-grade-f-minus { border-left-color: #f46a6a !important; }
-//     }
-// }
 
 .score-badge {
     background: rgba(40, 167, 69, 0.1);
@@ -54,7 +81,7 @@
     display: flex;
     flex-direction: column;
 
-    .label {
+    /* .label {
         font-weight: 700;
         color: #495057;
         text-transform: uppercase;
@@ -67,7 +94,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
+    } */
 }
 
 .line-clamp-3 {
@@ -85,78 +112,33 @@
 }
 
 /* A Tier - Emerald Green Base (#34c38f) */
-.ai-grade-a-plus  { color: #34c38f; font-weight: bold; } // Deep Forest
-.ai-grade-a       { color: #58d2a6; }                   // Your Base
-.ai-grade-a-minus { color: #80ddbb; }                   // Soft Mint
+.ai-grade-a-plus  { color: #34c38f; font-weight: bold; } /* Deep Forest */
+.ai-grade-a       { color: #58d2a6; font-weight: bold; }                   /* Your Base */
+.ai-grade-a-minus { color: #80ddbb; font-weight: bold; }                   /* Soft Mint */
 
 /* B Tier - Blue Base (#50a5f1) */
-.ai-grade-b-plus  { color: #50a5f1; font-weight: bold; } // Deep Royal
-.ai-grade-b       { color: #7fbdf5; }                   // Your Base
-.ai-grade-b-minus { color: #aed5f9; }                   // Sky Blue
+.ai-grade-b-plus  { color: #50a5f1; font-weight: bold; } /* Deep Royal */
+.ai-grade-b       { color: #7fbdf5; font-weight: bold; }                   /* Your Base */
+.ai-grade-b-minus { color: #aed5f9; font-weight: bold; }                   /* Sky Blue */
 
 /* C Tier - Golden Base (#f1b44c) */
-.ai-grade-c-plus  { color: #f1b44c; font-weight: bold; } // Burnt Orange
-.ai-grade-c       { color: #f3be64; }                   // Your Base
-.ai-grade-c-minus { color: #f7d293; }                   // Soft Sand
+.ai-grade-c-plus  { color: #f1b44c; font-weight: bold; } /* Burnt Orange */
+.ai-grade-c       { color: #f3be64; font-weight: bold; }                   /* Your Base */
+.ai-grade-c-minus { color: #f7d293; font-weight: bold; }                   /* Soft Sand */
 
 /* D Tier - Coral Base (#f1734f) */
-.ai-grade-d-plus  { color: #f1734f; }                   // Brick Red
-.ai-grade-d       { color: #f38667; }                   // Your Base
-.ai-grade-d-minus { color: #f7ac96; }                   // Soft Peach
+.ai-grade-d-plus  { color: #f1734f; font-weight: bold; }                   /* Brick Red */
+.ai-grade-d       { color: #f38667; font-weight: bold; }                   /* Your Base */
+.ai-grade-d-minus { color: #f7ac96; font-weight: bold; }                   /* Soft Peach */
 
 /* F Tier - Red Base (#f46a6a) */
-.ai-grade-f-plus  { color: #f46a6a; }                   // Blood Red
-.ai-grade-f       { color: #f03b3b; font-style: italic; } // Your Base
-.ai-grade-f-minus { color: #ee2323; text-decoration: underline; } // Faded Red
+.ai-grade-f       { color: #f03b3b; font-weight: bold; } /* Your Base */
 
 
 /* Tooltip Styling */
 .reason-tooltip {
     position: relative;
     display: inline-block;
-
-    .tooltip-text {
-        visibility: hidden;
-        width: 600px;
-        background-color: #212529;
-        color: #fff;
-        text-align: left;
-        border-radius: 8px;
-        padding: 15px;
-        position: absolute;
-        z-index: 1060;
-        
-        /* Positioning to the LEFT */
-        top: 50%;
-        right: 110%; /* Moves it 10% past the left edge of the button */
-        transform: translateY(-50%); /* Centers it vertically relative to button */
-        
-        opacity: 0;
-        transition: opacity 0.3s, visibility 0.3s;
-        box-shadow: -5px 8px 24px rgba(0,0,0,0.2);
-        font-size: 0.85rem;
-
-        /* Tooltip Arrow pointing RIGHT */
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 100%; /* Arrow on the right side of the tooltip box */
-            margin-top: -8px;
-            border-width: 8px;
-            border-style: solid;
-            border-color: transparent transparent transparent #212529;
-        }
-        
-        strong {
-            color: #04fdff; 
-        }
-    }
-
-    &:hover .tooltip-text {
-        visibility: visible;
-        opacity: 1;
-    }
 }
 
 .custom-data-badge {
@@ -168,20 +150,11 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 50px;
-    background: #f1f3f5; // Neutral default
+    background: #f1f3f5; /* Neutral default */
     color: #495057;
     border: 1px solid #dee2e6;
     box-shadow: 0 2px 4px rgba(0,0,0,0.03);
     transition: all 0.2s ease;
-
-    i {
-        font-size: 12px;
-    }
-
-    &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-    }
 }
 
 /* Specific Badge Variants */
@@ -210,35 +183,37 @@
 
 /* Verified Master Card Layout */
 .verified-master-card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #e0e0e0 !important;
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: scale(1.005);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-    }
-
-    .bg-success-soft {
-        background-color: rgba(52, 195, 143, 0.15);
-    }
-
-    .family-mono {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.9rem;
-        word-break: break-all;
-    }
-
-    .italic-text {
-        font-style: italic;
-        color: #495057;
-        font-size: 0.85rem;
-        line-height: 1.5;
-    }
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e0e0e0 !important;
+  padding: 15px 0;
 }
+  /* transition: transform 0.3s ease; */
+
+  /* &:hover {
+      transform: scale(1.005);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+  }
+
+  .bg-success-soft {
+      background-color: rgba(52, 195, 143, 0.15);
+  }
+
+  .family-mono {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      word-break: break-all;
+  }
+
+  .italic-text {
+      font-style: italic;
+      color: #495057;
+      font-size: 0.85rem;
+      line-height: 1.5;
+  }
+} */
 
 /* Verified Tag (Sticker Style) */
 .verified-tag {
@@ -246,12 +221,6 @@
     top: 15px;
     right: 15px;
     z-index: 5;
-    
-    img {
-        height: 60px;
-        width: auto;
-        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-    }
 }
 
 .border-success {
@@ -260,4 +229,505 @@
 
 .modal-xl {
     max-width: 1140px;
+}
+
+/* ============================================
+   MISSING STYLES - ADD TO YOUR CSS FILE
+   ============================================ */
+
+/* 1. GRADE MODIFIER SUPERSCRIPT STYLING */
+.grade-modifier {
+    font-size: 0.35em;           /* 35% of parent font size (64px = ~22px) */
+    font-weight: 700;
+    line-height: 0;
+    position: relative;
+    top: -0.5em;                 /* Raise above baseline */
+    margin-left: 2px;
+    opacity: 0.95;
+    vertical-align: super;
+}
+
+/* Ensure modifier inherits color from parent grade class */
+h1.ai-grade-a-plus .grade-modifier,
+h1.ai-grade-a .grade-modifier,
+h1.ai-grade-a-minus .grade-modifier {
+    color: inherit;
+}
+
+h1.ai-grade-b-plus .grade-modifier,
+h1.ai-grade-b .grade-modifier,
+h1.ai-grade-b-minus .grade-modifier {
+    color: inherit;
+}
+
+h1.ai-grade-c-plus .grade-modifier,
+h1.ai-grade-c .grade-modifier,
+h1.ai-grade-c-minus .grade-modifier {
+    color: inherit;
+}
+
+h1.ai-grade-d-plus .grade-modifier,
+h1.ai-grade-d .grade-modifier,
+h1.ai-grade-d-minus .grade-modifier {
+    color: inherit;
+}
+
+h1.ai-grade-f .grade-modifier {
+    color: inherit;
+}
+
+/* 2. SCORE BADGE DYNAMIC BACKGROUND COLORS */
+/* These work with [style.background-color] binding in Angular */
+.score-badge {
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 6px 12px;
+    border: 1px solid currentColor;
+    background-color: rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+/* Static fallback classes if dynamic styling fails */
+.score-badge.ai-grade-a-plus,
+.score-badge.ai-grade-a,
+.score-badge.ai-grade-a-minus {
+    background-color: rgba(52, 195, 143, 0.15);
+    border-color: rgba(52, 195, 143, 0.3);
+}
+
+.score-badge.ai-grade-b-plus,
+.score-badge.ai-grade-b,
+.score-badge.ai-grade-b-minus {
+    background-color: rgba(80, 165, 241, 0.15);
+    border-color: rgba(80, 165, 241, 0.3);
+}
+
+.score-badge.ai-grade-c-plus,
+.score-badge.ai-grade-c,
+.score-badge.ai-grade-c-minus {
+    background-color: rgba(241, 180, 76, 0.15);
+    border-color: rgba(241, 180, 76, 0.3);
+}
+
+.score-badge.ai-grade-d-plus,
+.score-badge.ai-grade-d,
+.score-badge.ai-grade-d-minus {
+    background-color: rgba(241, 115, 79, 0.15);
+    border-color: rgba(241, 115, 79, 0.3);
+}
+
+.score-badge.ai-grade-f {
+    background-color: rgba(240, 59, 59, 0.15);
+    border-color: rgba(240, 59, 59, 0.3);
+}
+
+/* 3. SUGGESTION CARD GRADE-SPECIFIC HOVER EFFECTS */
+.suggestion-card.ai-grade-a-plus:hover,
+.suggestion-card.ai-grade-a:hover,
+.suggestion-card.ai-grade-a-minus:hover {
+    box-shadow: 0 8px 25px rgba(52, 195, 143, 0.25) !important;
+}
+
+.suggestion-card.ai-grade-b-plus:hover,
+.suggestion-card.ai-grade-b:hover,
+.suggestion-card.ai-grade-b-minus:hover {
+    box-shadow: 0 8px 25px rgba(80, 165, 241, 0.25) !important;
+}
+
+.suggestion-card.ai-grade-c-plus:hover,
+.suggestion-card.ai-grade-c:hover,
+.suggestion-card.ai-grade-c-minus:hover {
+    box-shadow: 0 8px 25px rgba(241, 180, 76, 0.25) !important;
+}
+
+.suggestion-card.ai-grade-d-plus:hover,
+.suggestion-card.ai-grade-d:hover,
+.suggestion-card.ai-grade-d-minus:hover,
+.suggestion-card.ai-grade-f:hover {
+    box-shadow: 0 8px 25px rgba(241, 115, 79, 0.25) !important;
+}
+
+/* 4. A+ GRADE SPECIAL BORDER (for verified matches) */
+.suggestion-card.ai-grade-a-plus {
+    border-left: 5px solid #34c38f !important;
+}
+
+/* 5. HOVER TRANSFORM (missing from your CSS) */
+.suggestion-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 6. MODAL OPEN BODY CLASS (prevents background scrolling) */
+body.modal-open {
+    overflow: hidden;
+    padding-right: 15px; /* Prevent scrollbar jump */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 20px 60px rgba(0,0,0,.18);
+  --radius: 18px;
+}
+
+.vmodal-backdrop{
+  position: fixed; inset: 0;
+  background: rgba(17,17,17,.55);
+  display: grid; place-items: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.vmodal{
+  width: min(1100px, 96vw);
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.vmodal-close{
+  position: absolute; right: 18px; top: 16px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 999px;
+  width: 40px; height: 40px;
+  cursor: pointer;
+}
+
+.vmodal-grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 0;
+}
+
+.vmodal-left {
+    padding: 0px 18px 44px;
+}
+
+.vmodal-heading{
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 14px 0;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.vmodal-highlight{
+  display: inline-block;
+  padding: .05em .22em;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.vmodal-subtext{
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  max-width: 520px;
+}
+
+.vcard{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 14px 14px;
+  text-align: center;
+  background: #fff;
+}
+
+.detail-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.vmodal-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.detail-box .vmodal-cards:nth-child(2) {
+  border-top: 1px solid #e0e0e0;
+}
+
+
+.detail-box .vmodal-cards .vcard {
+  border-radius: 0;
+  background: transparent;
+}
+
+.detail-box .vmodal-cards .vcard:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+
+
+.vcard-value{
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.vcard-label{
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.vmodal-footer-note{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 44px;
+  color: var(--muted);
+}
+
+.vdots{
+  width: 54px;
+  height: 18px;
+  background-image: radial-gradient(#111 1.2px, transparent 1.2px);
+  background-size: 8px 8px;
+  opacity: .15;
+  border-radius: 10px;
+}
+
+.vmodal-right{
+  padding: 0px 18px 36px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vmodal-hero{
+  display: grid;
+  place-items: center;
+  padding-top: 6px;
+}
+
+.vmodal-illustration{
+  width: min(420px, 100%);
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(17,17,17,.08), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(17,17,17,.08), transparent 45%),
+    #f3f4f6;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vmodal-illustration:before{
+  content:"";
+  position:absolute;
+  left: 24px; top: 22px;
+  width: 72px; height: 42px;
+  background-image: radial-gradient(#111 1.3px, transparent 1.3px);
+  background-size: 8px 8px;
+  opacity: .12;
+  border-radius: 10px;
+}
+
+.vcheck{
+  width: 120px; height: 120px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 60px;
+  font-weight: 900;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+.vmodal-right-title{
+  margin: 18px 0 6px;
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.vmodal-right-text{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.vmodal-social{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+
+.vicon{
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: #111;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* Responsive: stack like a mobile modal */
+@media (max-width: 900px){
+  .vmodal-grid{ grid-template-columns: 1fr; }
+  .vmodal-right{ border-left: 0; border-top: 1px solid var(--border); }
+  .vmodal-social{ justify-content: flex-start; }
+  .vmodal-left{ padding: 42px 28px 28px; }
+  .vmodal-right{ padding: 28px; }
+  .vmodal-cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+.vmodal-kicker {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between arrow and badge */
+}
+
+.vmodal-kicker .verified {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* space between icon and text */
+}
+
+.vmodal-kicker img {
+  width: 36px;
+  height: auto;
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2937;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1f2937;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+
+.vmodal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ai-justification {
+  display: block;
+  background: #F2F5F6;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.ai-justification .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ai-justification-content {
+  display: flex;
+  padding: 30px 40px;
+  gap: 50px;
+}
+
+.vmodal-actions .btn {
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.vmodal-actions .btn-success {
+    background: #10b981;
+    border: none;
+}
+
+.vmodal-actions .btn-success:hover {
+    background: #059669;
+}
+
+.vmodal-actions .btn-outline-secondary {
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.vmodal-actions .btn-outline-secondary:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+
+.h6, h6 {
+    font-size: 1rem;
+    margin-bottom: 0px;
+    font-weight: bold;
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CurrencyService } from '../../../../@shared/services/currency.service';
+import { FeatureWalkthroughService } from '../../../../@pages/feature-walkthrough/feature-walkthrough.service';
 
 interface Currency {
     name: string;
@@ -30,8 +31,13 @@ export class TopbarComponent {
     ];
 
     constructor(
-        public currencyService: CurrencyService
+        public currencyService: CurrencyService,
+        private walkthrough: FeatureWalkthroughService
     ) { }
+
+    openWalkthrough(): void {
+        this.walkthrough.open();
+    }
 
     setCurrency(currency: Currency): void {
         this.currencyService.options = {

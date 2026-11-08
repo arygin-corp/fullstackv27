@@ -290,7 +290,10 @@ export class PageMarketplaceService {
 
         this.updateOptions({
             page: 1,
-            filterValues: {}
+            filterValues: {},
+            domainId: '',
+            subdomainId: '',
+            subdomain2Id: '',
         });
     }
 }

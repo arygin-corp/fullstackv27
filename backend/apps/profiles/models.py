@@ -78,11 +78,24 @@ def access_type_for(user):
     return ACCESS_USER
 
 
+class EmployeeType(models.TextChoices):
+    EMPLOYEE = "employee", "Employee"
+    CONTRACTOR = "contractor", "Contractor"
+
+
 class Profile(models.Model):
     is_verified = models.BooleanField(default=False, help_text="Checked by Superadmin to allow login.")
     access_type = models.CharField(max_length=20, choices=ACCESS_CHOICES, default=ACCESS_USER)
+    employee_type = models.CharField(max_length=20, choices=EmployeeType.choices, blank=True, default="")
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    team = models.IntegerField('Team', blank=True)
+    team = models.ForeignKey(
+        "teams.Team",
+        verbose_name="Team",
+        on_delete=models.SET_NULL,
+        related_name="profiles",
+        null=True,
+        blank=True,
+    )
     image = models.ImageField('Profile Image', upload_to=user_avatar_upload_path, max_length=150, default='default.gif', blank=True)
     job_title = models.CharField('Job Title', max_length=150, blank=True)
     job_subtitle = models.CharField('Job Subtitle', max_length=150, blank=True)

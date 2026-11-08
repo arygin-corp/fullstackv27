@@ -1,0 +1,199 @@
+:host {
+  display: block;
+  color: #111;
+  background: #f7f8f6;
+}
+
+.jumbotron {
+  position: sticky;
+  top: 0;
+  background: #ededed;
+  color: #363636;
+  text-align: center;
+  z-index: 500;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .lead {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+}
+
+.mind-map {
+  min-height: 100vh;
+  padding: 0 24px 24px;
+}
+
+.mind-map__tools {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+
+  input {
+    width: 280px;
+    height: 40px;
+    border: 1px solid #c5cdd8;
+    border-radius: 8px;
+    padding: 0 12px;
+  }
+
+  button {
+    height: 40px;
+    border: 1px solid #111;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    padding: 0 14px;
+  }
+}
+
+.mind-map__status {
+  margin: 0 0 16px;
+  color: #4b5563;
+}
+
+.mind-map__status--error {
+  color: #b91c1c;
+}
+
+.mind-map__stage {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  overflow: auto;
+  padding: 24px 8px 48px;
+}
+
+.mind-map__root {
+  flex: 0 0 auto;
+  border: 2px solid #111;
+  border-radius: 999px;
+  padding: 18px 22px;
+  font-weight: 700;
+  background: #fff;
+}
+
+.mind-map__side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.branch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.branch--left {
+  flex-direction: row-reverse;
+}
+
+.branch__children {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 12px;
+  border-left: 2px solid #d1d5db;
+}
+
+.branch--left .branch__children {
+  padding-left: 0;
+  padding-right: 12px;
+  border-left: 0;
+  border-right: 2px solid #d1d5db;
+}
+
+.node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.node__mark {
+  width: 16px;
+  font-weight: 700;
+}
+
+.node--pillar {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.node--domain {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.node--topic {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.node--group {
+  border-color: #d1d5db;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+
+.node--match {
+  outline: 2px solid #04fdff;
+}
+
+.mind-map__detail {
+  position: sticky;
+  bottom: 16px;
+  max-width: 520px;
+  margin-left: auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0 0 4px;
+  }
+}
+
+.mind-map__kind {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+@media (max-width: 800px) {
+  .mind-map__tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mind-map__tools input {
+    width: 100%;
+  }
+}

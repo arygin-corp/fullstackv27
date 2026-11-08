@@ -1,0 +1,43 @@
+{
+  "adgroup": "tbdp-customer-demographics",
+  "slugs": [
+    "customer-demographics"
+  ],
+  "databases": [
+    "cust_mktg_ihs_trn"
+  ],
+  "tables": [
+    "toyota_lex_uio",
+    "toyota_lex_uio_history"
+  ],
+  "columns": [
+    "audit_create_date",
+    "calendar_year",
+    "dealer_nm",
+    "dealer_number",
+    "district",
+    "effective_dt",
+    "fuel_type",
+    "make_nm",
+    "market_metro_nm",
+    "model_year",
+    "pma",
+    "raw_fuel",
+    "raw_make",
+    "raw_model",
+    "raw_region",
+    "region_area_cd",
+    "region_area_nm",
+    "region_char_cd",
+    "region_long_nm",
+    "sales_geog_type_cd",
+    "segment_category_nm",
+    "segment_nm",
+    "series_fuel_nm",
+    "series_group_nm",
+    "series_nm",
+    "state",
+    "trn_create_ts",
+    "vio_count"
+  ]
+}

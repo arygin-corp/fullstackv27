@@ -5,6 +5,7 @@ export type RatingValue =
 export interface ReviewAuthor {
     id: number;
     display_name: string;
+    avatar?: string;
 }
 
 
@@ -16,7 +17,25 @@ export interface Review {
 
     rating: RatingValue;
 
+    title: string;
+
     comment: string;
+
+    quality: RatingValue | null;
+
+    value_for_money: RatingValue | null;
+
+    ease_of_use: RatingValue | null;
+
+    durability: RatingValue | null;
+
+    would_recommend: boolean | null;
+
+    met_expectations: boolean | null;
+
+    verified_purchaser: boolean;
+
+    status: 'pending' | 'approved' | 'rejected';
 
     created_at: string;
 }
@@ -31,6 +50,17 @@ export interface RatingDistribution {
 }
 
 
+export interface CategoryRatings {
+    quality: number;
+
+    value: number;
+
+    ease_of_use: number;
+
+    durability: number;
+}
+
+
 export interface ReviewSummary {
     average_rating: number;
 
@@ -41,6 +71,8 @@ export interface ReviewSummary {
     recommended_percentage: number;
 
     rating_distribution: RatingDistribution;
+
+    category_ratings: CategoryRatings;
 }
 
 
@@ -67,6 +99,8 @@ export interface ProductReviewsResponse {
 export interface MyReviewResponse {
     has_reviewed: boolean;
 
+    verified_purchaser?: boolean;
+
     review: Review | null;
 }
 
@@ -74,5 +108,19 @@ export interface MyReviewResponse {
 export interface CreateReviewRequest {
     rating: RatingValue;
 
+    title: string;
+
     comment: string;
+
+    quality: RatingValue;
+
+    value_for_money: RatingValue;
+
+    ease_of_use: RatingValue;
+
+    durability?: RatingValue | null;
+
+    would_recommend: boolean;
+
+    met_expectations: boolean;
 }

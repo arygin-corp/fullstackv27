@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .widget-categories
 */
@@ -69,7 +70,7 @@ $local-expand-transition-duration: .2s;
     transition: all .2s;
 
     @include direction {
-        #{$margin-inline-end}: ($local-size - $local-icon-size) / 2 * -1;
+        #{$margin-inline-end}: math.div($local-size - $local-icon-size, 2) * -1;
     }
 
     &:focus,
@@ -96,14 +97,14 @@ $local-expand-transition-duration: .2s;
         top: calc(50% - 1px);
 
         @include direction {
-            #{$inset-inline-start}: calc(50% - #{$local-icon-size / 2});
+            #{$inset-inline-start}: calc(50% - #{math.div($local-icon-size, 2)});
         }
     }
 
     &::after {
         width: 2px;
         height: $local-icon-size;
-        top: calc(50% - #{$local-icon-size / 2});
+        top: calc(50% - #{math.div($local-icon-size, 2)});
         transition: transform $local-expand-transition-duration;
 
         @include direction {

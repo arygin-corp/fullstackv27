@@ -1,0 +1,55 @@
+{
+  "adgroup": "tbdp-warranty-partsclaims",
+  "slugs": [
+    "parts-claims-sensitive"
+  ],
+  "databases": [
+    "quality_reborn_ing"
+  ],
+  "tables": [
+    "parts_returned_claims"
+  ],
+  "columns": [
+    "acceptedamount",
+    "adjusted_part_amount",
+    "adjusted_part_number",
+    "adjusted_part_quantity",
+    "adjustmentdescription",
+    "approveddate",
+    "audit_create_date",
+    "carrier_desc",
+    "carriercode",
+    "cause",
+    "claimadjustmentid",
+    "claimantcode",
+    "claimstatus",
+    "claimtype",
+    "code",
+    "condition",
+    "cpsclaimnumber",
+    "damage_area_desc",
+    "damageareacode",
+    "damagetypecode",
+    "damagetypedescription",
+    "dealer_explanation",
+    "defectreasoncode",
+    "defectreasondescription",
+    "defecttypecode",
+    "defecttypedescription",
+    "firsttransmissiondate",
+    "invoicedate",
+    "orderrefno",
+    "part_extended_cost_amount",
+    "partdescription",
+    "partnumber",
+    "pnlabel",
+    "quantity",
+    "received_qty",
+    "record_last_updt_dt",
+    "reversaldate",
+    "reversalflag",
+    "shipped_qty",
+    "shiprefno",
+    "totalclaimamount"
+  ]
+}

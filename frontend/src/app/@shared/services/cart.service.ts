@@ -6,6 +6,7 @@ import { ProductAssociation } from '../interfaces/product-associations';
 import { Product } from '../interfaces/product';
 import { CartItem } from '../interfaces/cart-item';
 import { UserActivityService } from './user-activity.service';
+import { AiSuggestedProductService } from './ai-suggested-product.service';
 
 export interface CartTotal {
     title: string;
@@ -68,7 +69,8 @@ export class CartService {
 
     constructor(
         @Inject(PLATFORM_ID) private platformId: object,
-        private activity: UserActivityService
+        private activity: UserActivityService,
+        private aiSuggestions: AiSuggestedProductService
     ) {
         if (isPlatformBrowser(this.platformId)) {
             this.loadFromStorage();
@@ -236,13 +238,15 @@ export class CartService {
             item.product = this.mergeProduct(item.product, incomingProduct);
             if (formData !== undefined) item.formData = formData;
             if (options.length > 0) item.options = options;
+            this.keepAiSuggestion(item, incomingProduct);
         } else {
             item = {
                 id: incomingProduct.id,
                 product: incomingProduct,
                 quantity: safeQuantity,
                 options,
-                formData
+                formData,
+                aiSuggested: this.aiSuggestions.isSuggested(incomingProduct)
             };
             this.data.items.push(item);
         }
@@ -259,6 +263,7 @@ export class CartService {
         }
         existing.formData = formData;
         existing.product = this.mergeProduct(existing.product, this.cloneProduct(product));
+        this.keepAiSuggestion(existing, product);
         this.persistAndPublish();
         return of(existing);
     }
@@ -275,6 +280,7 @@ export class CartService {
             existingItem.product = this.mergeProduct(existingItem.product, incomingProduct);
             if (formData !== undefined) existingItem.formData = formData;
             if (options.length > 0) existingItem.options = options;
+            this.keepAiSuggestion(existingItem, incomingProduct);
             this.persistAndPublish();
             return of(existingItem);
         }
@@ -284,7 +290,8 @@ export class CartService {
             product: incomingProduct,
             quantity: 1,
             options,
-            formData
+            formData,
+            aiSuggested: this.aiSuggestions.isSuggested(incomingProduct)
         };
 
         this.data.items.push(item);
@@ -503,10 +510,18 @@ export class CartService {
         );
     }
 
+    private keepAiSuggestion(item: CartItem, product: Product): void {
+        if (this.aiSuggestions.isSuggested(product)) {
+            item.aiSuggested = true;
+        }
+    }
+
     private recordCartAdd(product: Product, quantity: number): void {
         const name = product?.name || 'Catalog product';
         this.activity.record('cart_add', name, String(product?.id || ''), {
             order_type: 'product',
+            source: this.aiSuggestions.isSuggested(product) ? 'ai_suggested' : 'standard',
+            ai_suggested: this.aiSuggestions.isSuggested(product),
             product_id: product?.id ?? '',
             name,
             domain: product?.domain || '',

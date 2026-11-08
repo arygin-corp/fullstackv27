@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import TeamListView, TeamDetailView, TeamCreateView, TeamUpdateView,TeamDeleteView
+from .views import TeamListView, TeamDetailView, TeamCreateView, TeamUpdateView, TeamImageUploadView, TeamDeleteView
 
 app_name = 'teams'
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('new/', TeamCreateView.as_view(), name='create'),
     path('<int:pk>/', TeamDetailView.as_view(), name='detail'),
     path('<int:pk>/edit/', TeamUpdateView.as_view(), name='update'),
+    path('<int:pk>/image/', TeamImageUploadView.as_view(), name='image'),
     path('<int:pk>/delete/', TeamDeleteView.as_view(), name='delete'),
 ]

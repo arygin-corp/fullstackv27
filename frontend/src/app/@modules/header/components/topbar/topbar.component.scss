@@ -6,6 +6,8 @@
 .welcome-msg {
     margin: 0;
     padding: 1.1rem 0;
+    border: 0;
+    background: transparent;
     color: #dedede !important;
     font-size: inherit;
     font-weight: inherit;
@@ -13,13 +15,22 @@
     letter-spacing: -0.0125em;
     line-height: 1.5;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-a.link {
-    color: #dedede !important;
-    transition: color 0.3s;
-}
-
-a.link:hover {
+.welcome-msg:hover,
+a.link:hover,
+button.link:hover {
     color: #04fdff !important;
+}
+
+a.link,
+button.link {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #dedede !important;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.3s;
 }

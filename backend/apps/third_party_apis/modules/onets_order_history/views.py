@@ -108,6 +108,8 @@ def _order_forms(body):
             if isinstance(data, dict) and data:
                 data = dict(data)
                 data["order_type"] = item.get("order_type") or data.get("order_type") or order_type
+                _mark_checkout_source(data)
+                _apply_alt_approver(data)
                 forms.append(data)
     if forms:
         return forms
@@ -159,6 +161,39 @@ def _signed_in_actor(request):
     return object_id, email
 
 
+def _apply_alt_approver(data):
+    """Replace the data-domain control group with the product alternate approver sys_id."""
+    if data.get("order_type") == "dar":
+        return data
+    product_id = data.get("productId") or data.get("product_id")
+    if not product_id:
+        return data
+    from apps.marketplace.models import Product
+
+    try:
+        product = (
+            Product.objects.select_related("alt_approver")
+            .filter(pk=product_id)
+            .first()
+        )
+    except Exception:
+        return data
+    if product is None or getattr(product, "alt_approver_id", None) is None:
+        return data
+    data["v_custom_control_group"] = product.alt_approver.sys_id or ""
+    return data
+
+
+def _mark_checkout_source(data):
+    """A product checkout is either an AI suggestion or a standard product."""
+    if data.get("order_type") == "dar":
+        return data
+    suggested = bool(data.get("ai_suggested"))
+    data["ai_suggested"] = suggested
+    data["source"] = "ai_suggested" if suggested else "standard"
+    return data
+
+
 def _audit_line(form):
     return {
         "order_type": form.get("order_type") or "",
@@ -170,6 +205,8 @@ def _audit_line(form):
         "platform": form.get("v_dar_platform") or "",
         "environment": form.get("v_dar_environment") or "",
         "access_type": form.get("v_dat_data_access_type") or "",
+        "ai_suggested": bool(form.get("ai_suggested")),
+        "source": "ai_suggested" if form.get("ai_suggested") else "standard",
     }
 
 
@@ -191,6 +228,7 @@ def _audit_submitted_order(request, variables, forms, request_number, ritm_numbe
                 "order_type": order_type,
                 "request_number": request_number,
                 "ritm_number": ritm_number,
+                "ai_suggested": any(bool(form.get("ai_suggested")) for form in forms),
                 "items": [_audit_line(form) for form in forms],
             },
         )

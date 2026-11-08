@@ -160,14 +160,9 @@ class DomainSerializer(
         allow_null=True,
     )
 
-    items = serializers.IntegerField(
-        source="product_count",
-        read_only=True,
-    )
+    items = serializers.SerializerMethodField()
 
-    product_count = serializers.IntegerField(
-        read_only=True,
-    )
+    product_count = serializers.SerializerMethodField()
 
     products = serializers.SerializerMethodField()
 
@@ -194,53 +189,50 @@ class DomainSerializer(
 
         return image.url
 
-    def get_products(self, obj):
+    def _catalog_products(self, obj):
+        cached = getattr(obj, "_catalog_products", None)
+        if cached is not None:
+            return cached
+
+        context = self.context or {}
         if isinstance(obj, Domain):
-            products = (
-                obj.product_domain
-                .filter(
-                    status="approved",
-                )
-                .only(
-                    "name",
-                    "slug",
-                )
-            )
-
+            bucket = context.get("products_by_domain")
+            queryset = obj.product_domain
         elif isinstance(obj, SubDomain_1):
-            products = (
-                obj.product_subdomain_2
-                .filter(
-                    status="approved",
-                )
-                .only(
-                    "name",
-                    "slug",
-                )
-            )
-
+            bucket = context.get("products_by_sub1")
+            queryset = obj.product_subdomain_2
         elif isinstance(obj, SubDomain_2):
-            products = (
-                obj.product_subdomain_3
-                .filter(
-                    status="approved",
-                )
-                .only(
-                    "name",
-                    "slug",
-                )
-            )
-
+            bucket = context.get("products_by_sub2")
+            queryset = obj.product_subdomain_3
         else:
-            return []
+            obj._catalog_products = []
+            return obj._catalog_products
 
-        return [
-            {
-                "name": product.name,
-                "slug": product.slug,
-            }
-            for product in products[:1]
-        ]
+        if bucket is not None:
+            products = list(bucket.get(obj.id, []))
+        else:
+            products = [
+                {"name": product.name, "slug": product.slug}
+                for product in queryset.filter(
+                    status="approved",
+                    is_active=True,
+                ).only("name", "slug")
+            ]
+
+        obj._catalog_products = products
+        return products
+
+    def get_product_count(self, obj):
+        return len(self._catalog_products(obj))
+
+    def get_items(self, obj):
+        return self.get_product_count(obj)
+
+    def get_products(self, obj):
+        products = self._catalog_products(obj)
+        if len(products) != 1:
+            return []
+        return products
 
     def get_subdomains(self, obj):
         prefetched_children = getattr(
@@ -347,6 +339,8 @@ class AssociatedProductSummarySerializer(
             "price",
             "short_desc",
             "brief_desc",
+            "whats_included",
+            "intended_use_desc",
             "data_steward",
             "domain",
             "datatype",
@@ -520,6 +514,8 @@ class ProductSerializer(
         allow_null=True,
     )
 
+    alt_approver = serializers.SerializerMethodField()
+
     data_steward = ContactSerializer(
         read_only=True,
     )
@@ -558,6 +554,8 @@ class ProductSerializer(
             "catalog",
             "short_desc",
             "brief_desc",
+            "whats_included",
+            "intended_use_desc",
             "resource_url",
             "original_name",
             "price",
@@ -589,6 +587,7 @@ class ProductSerializer(
             "platform",
             "ad_group",
             "fulfillment_group",
+            "alt_approver",
             "data_steward",
             "poc_name",
             "business_contact",
@@ -603,6 +602,16 @@ class ProductSerializer(
             "org_slug",
             "end_to_end_solution",
         )
+
+    def get_alt_approver(self, obj):
+        approver = obj.alt_approver
+        if not approver:
+            return None
+        return {
+            "id": approver.id,
+            "name": approver.name,
+            "sys_id": approver.sys_id,
+        }
 
     def get_end_to_end_solution(self, obj):
         """

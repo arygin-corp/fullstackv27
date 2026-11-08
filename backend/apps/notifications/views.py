@@ -463,6 +463,74 @@ def mark_all_read(request):
     return redirect(next_url or "notifications:list")
 
 
+def _content_manager(user):
+    return user.is_superuser or user.groups.filter(name="Content Manager Group").exists()
+
+
+def _review_for_notification(notification):
+    if notification.source_object_type != "Review" or not notification.source_object_id:
+        return None
+    from apps.marketplace.models import Review
+    return Review.objects.select_related("author").filter(pk=notification.source_object_id).first()
+
+
+@login_required
+@require_http_methods(["GET", "POST"])
+def notification_detail(request, notification_id):
+    notification = get_object_or_404(
+        Notification,
+        pk=notification_id,
+        recipient=request.user,
+        is_deleted=False,
+    )
+    review = _review_for_notification(notification)
+    if request.method == "POST":
+        if review is None or not _content_manager(request.user):
+            messages.error(request, "Only the Content Manager Group can approve reviews.")
+            return redirect("notifications:detail", notification_id=notification.pk)
+        decision = request.POST.get("decision")
+        if decision not in ("approved", "rejected"):
+            messages.error(request, "Choose approve or reject.")
+            return redirect("notifications:detail", notification_id=notification.pk)
+        if review.status != "pending":
+            messages.info(request, "This review was already decided.")
+            return redirect("notifications:detail", notification_id=notification.pk)
+        review.status = decision
+        review.save(update_fields=["status"])
+        if decision == "approved":
+            messages.success(request, "Review approved and published.")
+        else:
+            messages.success(request, "Review rejected. It stays unpublished.")
+        return redirect("notifications:detail", notification_id=notification.pk)
+    if not notification.read:
+        notification.read = True
+        notification.read_at = timezone.now()
+        notification.save(update_fields=["read", "read_at"])
+    product_name = ""
+    if review is not None:
+        from apps.notifications.services.work import _product_name
+        product_name = _product_name(review)
+    by_channel = {delivery.channel: delivery for delivery in notification.deliveries.all()}
+    return render(request, "gdx_admin/apps/notifications/settings/notification_detail.html", {
+        "notification": notification,
+        "review": review,
+        "product_name": product_name,
+        "in_app_delivery": by_channel.get(DeliveryChannel.IN_APP),
+        "email_delivery": by_channel.get(DeliveryChannel.EMAIL),
+        "can_review_decisions": _content_manager(request.user),
+        "active_nav": "notifications",
+        "staff_page_kicker": "NOTIFICATIONS",
+        "staff_page_title": "Notification",
+        "staff_page_description": "The message you opened from your inbox.",
+        "staff_page_icon": "▦",
+        "staff_page_metric_label": "Status",
+        "staff_page_metric_value": "Read",
+        "staff_page_metric_caption": notification.get_notification_type_display(),
+        "staff_page_heading": "Notification",
+        "staff_page_heading_text": "Message, delivery, and the record it belongs to.",
+    })
+
+
 @login_required
 @require_POST
 def toggle_read(request, notification_id):
@@ -610,6 +678,24 @@ def campaign_manager(request):
             "campaign_form": form,
             "campaigns": campaigns,
             "active_nav": "campaigns",
+        },
+    )
+
+
+@login_required
+def campaign_schedules(request):
+    scheduled = (
+        NotificationCampaign.objects
+        .exclude(scheduled_at=None)
+        .order_by("scheduled_at")
+    )
+    return render(
+        request,
+        "gdx_admin/apps/notifications/campaigns/schedules.html",
+        {
+            "scheduled_campaigns": scheduled,
+            "recurring_jobs": [],
+            "active_nav": "schedules",
         },
     )
 
@@ -1047,6 +1133,12 @@ def advanced_analytics(request):
             "fatigue": fatigue_analytics(),
             "aging": unread_aging(),
             "recommendation_quality": quality_summary(get_current_tenant()),
+            "staff_page_kicker": "NOTIFICATIONS",
+            "staff_page_title": "Analytics",
+            "staff_page_description": "Campaign reach, audiences, fatigue, and unread age.",
+            "staff_page_icon": "▦",
+            "staff_page_heading": "Notification analytics",
+            "staff_page_heading_text": "Counts from campaigns, audiences, and the inbox.",
         },
     )
 

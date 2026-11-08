@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .nouislider
 */
@@ -109,11 +110,11 @@ $local-handle-inner-size: 6px;
     height: $local-height;
 }
 .noUi-base {
-    padding-top: ($local-height - $local-connect-height) / 2;
+    padding-top: math.div($local-height - $local-connect-height, 2);
 }
 .noUi-connects {
     background: $nouislider-bg-color;
-    border-radius: ($local-connect-height) / 2;
+    border-radius: math.div($local-connect-height, 2);
     height: $local-connect-height;
 }
 .noUi-connect {
@@ -124,7 +125,7 @@ $local-handle-inner-size: 6px;
     cursor: ew-resize;
     width: $local-handle-size;
     height: $local-handle-size;
-    border-radius: $local-handle-size / 2;
+    border-radius: math.div($local-handle-size, 2);
     background: $nouislider-border-color;
     box-shadow: 0 0 0 0 rgba($nouislider-border-color, 0);
     transition: box-shadow .2s;
@@ -135,8 +136,8 @@ $local-handle-inner-size: 6px;
         position: absolute;
         width: $local-handle-inner-size;
         height: $local-handle-inner-size;
-        margin: ($local-handle-size - $local-handle-inner-size) / 2;
-        border-radius: $local-handle-inner-size / 2;
+        margin: math.div($local-handle-size - $local-handle-inner-size, 2);
+        border-radius: math.div($local-handle-inner-size, 2);
         background: $nouislider-handle-color;
         transition: transform .2s;
     }
@@ -151,12 +152,12 @@ $local-handle-inner-size: 6px;
 }
 
 .noUi-horizontal .noUi-handle {
-    top: ($local-height - $local-handle-size) / 2;
+    top: math.div($local-height - $local-handle-size, 2);
 }
 
 .noUi-horizontal .noUi-handle {
     @include direction {
         #{$inset-inline-start}: auto;
-        #{$inset-inline-end}: (-$local-handle-size / 2);
+        #{$inset-inline-end}: -(math.div($local-handle-size, 2));
     }
 }

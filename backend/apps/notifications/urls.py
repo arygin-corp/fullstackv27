@@ -10,9 +10,11 @@ urlpatterns = [
     path("stream/", views.sse_notifications, name="stream"),
     path("unread/", views.unread_notifications, name="unread"),
     path("mark-all-read/", views.mark_all_read, name="mark_all_read"),
+    path("<int:notification_id>/", views.notification_detail, name="detail"),
     path("<int:notification_id>/toggle-read/", views.toggle_read, name="toggle_read", ),
     path("preferences/", views.preferences, name="preferences", ),
     path("campaigns/", views.campaign_manager, name="campaign_manager", ),
+    path("schedules/", views.campaign_schedules, name="schedules", ),
     path("rules/", views.rules, name="rules", ),
     path("teams/", views.teams_destination, name="teams_destination", ),
 

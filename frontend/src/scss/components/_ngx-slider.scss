@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .ngx-slider
 */
@@ -10,7 +11,7 @@ $local-handle-inner-size: 6px;
 
 .ngx-slider-custom {
     height: max($local-handle-size, $local-bar-height);
-    padding: (($local-handle-size - $local-bar-height) / 2) 0;
+    padding: math.div($local-handle-size - $local-bar-height, 2) 0;
 
     .ngx-slider {
         display: block;
@@ -23,21 +24,21 @@ $local-handle-inner-size: 6px;
 
         .ngx-slider-bar {
             height: $local-bar-height;
-            border-radius: ($local-bar-height) / 2;
+            border-radius: math.div($local-bar-height, 2);
         }
 
         .ngx-slider-pointer {
             width: $local-handle-size;
             height: $local-handle-size;
-            border-radius: $local-handle-size / 2;
-            top: -(($local-handle-size - $local-bar-height) / 2);
+            border-radius: math.div($local-handle-size, 2);
+            top: -(math.div($local-handle-size - $local-bar-height, 2));
 
             &::after {
                 width: $local-handle-inner-size;
                 height: $local-handle-inner-size;
-                border-radius: $local-handle-inner-size / 2;
-                top: ($local-handle-size / 2 - $local-handle-inner-size / 2);
-                left: ($local-handle-size / 2 - $local-handle-inner-size / 2);
+                border-radius: math.div($local-handle-inner-size, 2);
+                top: (math.div($local-handle-size, 2) - math.div($local-handle-inner-size, 2));
+                left: (math.div($local-handle-size, 2) - math.div($local-handle-inner-size, 2));
             }
         }
 

@@ -27,6 +27,7 @@ export class MenuComponent implements AfterViewChecked {
     @ViewChildren('submenuElement') submenuElements!: QueryList<ElementRef>;
     @ViewChildren('itemElement') itemElements!: QueryList<ElementRef>;
 
+    readonly hackathonYear = new Date().getFullYear();
     hoveredItem: NestedLink|null = null;
     reCalcSubmenuPosition = false;
 

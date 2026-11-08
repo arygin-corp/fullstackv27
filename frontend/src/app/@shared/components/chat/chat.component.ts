@@ -7,10 +7,14 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
+import { MsalService } from '@azure/msal-angular';
 import { NavigationEnd, Router } from '@angular/router';
+import { SafeUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AiChatService } from '../../services/ai-chat.service';
+import { AppService } from '../../services/app.service';
+import { PicService } from '../../services/pic.service';
 import {
   ProductReference,
   VikkiAction,
@@ -44,6 +48,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   sourcePanelOpen = false;
   selectedSource?: ProductReference;
   commandFilter = '';
+  userPhoto: SafeUrl | null = null;
 
   messages: VikkiMessage[] = [];
   suggestions: VikkiSuggestion[] = [];
@@ -60,18 +65,43 @@ export class ChatComponent implements OnInit, OnDestroy {
   ];
 
   private readonly subscriptions = new Subscription();
+  private historyGeneration = 0;
 
   constructor(
     private readonly aiChatService: AiChatService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly appSvc: AppService,
+    private readonly picService: PicService,
+    private readonly msal: MsalService
   ) {}
 
   ngOnInit(): void {
+    if (!this.appSvc.userData) {
+      this.appSvc.getUserData();
+    }
+    this.subscriptions.add(
+      this.picService.getUserPhoto().subscribe({
+        next: photo => this.userPhoto = photo,
+        error: () => this.userPhoto = null
+      })
+    );
     this.sessionId = this.getOrCreateSessionId();
     this.messages = this.aiChatService.loadHistory();
     this.conversationId = this.conversationId ?? this.aiChatService.loadConversationId();
     this.suggestions = this.pageSuggestions();
     this.refreshSuggestions();
+    this.subscriptions.add(
+      this.aiChatService.historyCleared$.subscribe(() => {
+        this.historyGeneration += 1;
+        this.messages = [];
+        this.sources = [];
+        this.conversationId = undefined;
+        this.suggestions = this.pageSuggestions();
+        this.errorMessage = null;
+        this.isProcessing = false;
+        this.isThinking = false;
+      })
+    );
     this.subscriptions.add(
       this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
         if (!this.messages.length) {
@@ -107,6 +137,13 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.closeSourcePanel();
   }
 
+  endAiSession(): void {
+    localStorage.removeItem('chatSessionId');
+    this.sessionId = this.getOrCreateSessionId();
+    this.aiChatService.clearHistory();
+    this.closeChat();
+  }
+
   async sendMessage(input: HTMLTextAreaElement): Promise<void> {
     const query = input.value.trim();
     if (!query || this.isProcessing) return;
@@ -124,48 +161,57 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.isThinking = true;
     this.thinkingLabel = 'Searching your knowledge';
     this.scrollToBottom();
+    const generation = this.historyGeneration;
+    const stillActive = () => generation === this.historyGeneration;
 
     try {
       const response = await this.aiChatService.sendMessage(
         query,
         requestHistory,
         token => {
+          if (!stillActive()) return;
           aiMessage.text += token;
           this.messages = [...this.messages];
           this.isThinking = false;
           this.scrollToBottom();
         },
         productSources => {
-          aiMessage.sources = productSources;
-          this.sources = productSources;
+          if (!stillActive()) return;
+          aiMessage.sources = this.omitCurrentProduct(productSources);
+          this.sources = aiMessage.sources;
           this.messages = [...this.messages];
         },
         this.currentProductId,
         this.conversationId,
         this.sessionId,
         citations => {
+          if (!stillActive()) return;
           aiMessage.citations = citations;
           this.messages = [...this.messages];
         },
         this.pageContext(),
         status => {
+          if (!stillActive()) return;
           this.thinkingLabel = status;
           this.messages = [...this.messages];
         }
       );
 
+      if (!stillActive()) return;
       this.conversationId = response.conversation_id ?? this.conversationId;
       this.aiChatService.saveConversationId(this.conversationId);
       aiMessage.cached = Boolean(response.cached);
-      aiMessage.actions = response.actions || [];
+      aiMessage.actions = this.omitCurrentActions(response.actions || []);
       aiMessage.guidance = response.guidance || '';
       aiMessage.suggestions = response.suggestions || [];
       this.suggestions = aiMessage.actions?.length ? [] : (response.suggestions || this.suggestions);
       this.aiChatService.saveHistory(this.messages);
     } catch {
+      if (!stillActive()) return;
       aiMessage.text = 'Unable to reach VIKKI. Please verify your Data Marketplace session and try again.';
       this.errorMessage = 'The VIKKI service request failed.';
     } finally {
+      if (!stillActive()) return;
       this.isThinking = false;
       this.isProcessing = false;
       this.messages = [...this.messages];
@@ -204,6 +250,17 @@ export class ChatComponent implements OnInit, OnDestroy {
     if (this.selectedSource) this.navigate(this.selectedSource.url);
   }
 
+  openProduct(source: ProductReference): void {
+    this.closeChat();
+    this.navigate(source.url);
+  }
+
+  scrollProducts(messageId: string, direction: number): void {
+    const track = document.getElementById(`product-slider-${messageId}`);
+    const card = track?.querySelector('.recommend-card') as HTMLElement | null;
+    track?.scrollBy({ left: direction * ((card?.offsetWidth || 210) + 10), behavior: 'smooth' });
+  }
+
   executeCommand(command: Command): void {
     command.action();
     this.closePalette();
@@ -229,9 +286,8 @@ export class ChatComponent implements OnInit, OnDestroy {
     if (type === 'negative') {
       message.correcting = true;
       message.correction = message.correction || '';
-      return;
     }
-    this.recordFeedback(message, type, '');
+    this.recordFeedback(message, type, type === 'negative' ? (message.correction || '').trim() : '');
   }
 
   saveCorrection(message: VikkiMessage): void {
@@ -248,14 +304,15 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   suggestionIcon(title: string): string {
     const label = (title || '').toLowerCase();
-    if (label.includes('access')) return 'fas fa-key';
-    if (label.includes('file') || label.includes('source')) return 'fas fa-file-alt';
-    if (label.includes('compar')) return 'fas fa-columns';
-    if (label.includes('governance')) return 'fas fa-balance-scale';
-    if (label.includes('lineage')) return 'fas fa-project-diagram';
-    if (label.includes('open')) return 'fas fa-external-link-alt';
-    if (label.includes('domain') || label.includes('find') || label.includes('product')) return 'fas fa-search';
-    return 'fas fa-comment';
+    if (label.includes('explain')) return 'bi bi-chat-left-text';
+    if (label.includes('access')) return 'bi bi-key';
+    if (label.includes('file') || label.includes('source')) return 'bi bi-file-earmark-text';
+    if (label.includes('compar')) return 'bi bi-layout-split';
+    if (label.includes('governance')) return 'bi bi-shield-check';
+    if (label.includes('lineage')) return 'bi bi-diagram-3';
+    if (label.includes('open')) return 'bi bi-box-arrow-up-right';
+    if (label.includes('domain') || label.includes('find') || label.includes('product')) return 'bi bi-search';
+    return 'bi bi-chat';
   }
 
   runAction(action: VikkiAction): void {
@@ -372,7 +429,10 @@ export class ChatComponent implements OnInit, OnDestroy {
       }).subscribe({
         next: () => {
           message.feedback = type;
-          message.correcting = false;
+          if (type === 'positive') {
+            message.correcting = false;
+          }
+          this.aiChatService.saveHistory(this.messages);
         },
         error: () => this.errorMessage = 'Feedback could not be recorded.'
       })
@@ -396,6 +456,55 @@ export class ChatComponent implements OnInit, OnDestroy {
     );
   }
 
+  showMessage(message: VikkiMessage): boolean {
+    if (message.sender === 'user') {
+      return true;
+    }
+    return !!(message.text || message.guidance || message.citations?.length || this.recommendedProducts(message).length);
+  }
+
+  get userInitials(): string {
+    const account = this.msal.instance.getActiveAccount() || this.msal.instance.getAllAccounts()[0];
+    const claims = account?.idTokenClaims as { given_name?: string; family_name?: string } | undefined;
+    const given = String(this.appSvc.userData?.givenName || claims?.given_name || '').trim();
+    const surname = String(this.appSvc.userData?.surname || claims?.family_name || '').trim();
+    return `${given.charAt(0)}${surname.charAt(0)}`.toUpperCase();
+  }
+
+  recommendedProducts(message: VikkiMessage): ProductReference[] {
+    return this.omitCurrentProduct(message.sources || []);
+  }
+
+  visibleActions(message: VikkiMessage): VikkiAction[] {
+    return this.omitCurrentActions(message.actions || []);
+  }
+
+  private currentProductSlug(): string {
+    const match = (this.pageContext().route || '').match(/product\/([^/?#]+)/);
+    if (!match || match[1] === 'request') {
+      return '';
+    }
+    return decodeURIComponent(match[1]);
+  }
+
+  private omitCurrentProduct(sources: ProductReference[]): ProductReference[] {
+    const slug = this.currentProductSlug();
+    const name = (this.pageContext().productName || '').trim().toLowerCase();
+    return sources.filter(source => {
+      const sameSlug = !!slug && (source.url || '').includes(`/marketplace/product/${slug}`);
+      const sameName = !!name && source.name.trim().toLowerCase() === name;
+      return !sameSlug && !sameName;
+    });
+  }
+
+  private omitCurrentActions(actions: VikkiAction[]): VikkiAction[] {
+    const slug = this.currentProductSlug();
+    if (!slug) {
+      return actions;
+    }
+    return actions.filter(action => !(action.url || '').includes(`/marketplace/product/${slug}`));
+  }
+
   private pageContext() {
     const route = this.router.url || '/';
     const productName = this.currentProductName || this.productNameFromRoute(route);
@@ -404,6 +513,7 @@ export class ChatComponent implements OnInit, OnDestroy {
       page: route.split('?')[0].split('/').filter(Boolean).slice(-1)[0] || 'home',
       productId: this.currentProductId,
       productName,
+      clientTimeZone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
     };
   }
 

@@ -76,10 +76,12 @@ class ProductListView(AdminAccessMixin, ListView):
     paginate_by = 25
     def get_queryset(self):
         qs = Product.objects.select_related("domain","datatype","classification","org","created_by").prefetch_related("images").order_by("-updated_at")
-        q=self.request.GET.get("q","").strip(); status=self.request.GET.get("status",""); domain=self.request.GET.get("domain","")
+        q=self.request.GET.get("q","").strip(); status=self.request.GET.get("status",""); domain=self.request.GET.get("domain",""); active=self.request.GET.get("active","")
         if q: qs=qs.filter(Q(name__icontains=q)|Q(sku__icontains=q)|Q(short_desc__icontains=q))
         if status: qs=qs.filter(status=status)
-        if domain: qs=qs.filter(domain_id=domain)
+        if domain.isdigit(): qs=qs.filter(domain_id=domain)
+        if active == "active": qs=qs.filter(is_active=True)
+        elif active == "inactive": qs=qs.filter(is_active=False)
         return qs
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c.update({"page_title":"Products","domains":Domain.objects.order_by("name"),"status_choices":Product._meta.get_field("status").choices}); return c
@@ -151,7 +153,23 @@ class PeopleView(AdminAccessMixin, TemplateView):
 
 class ReviewListView(AdminAccessMixin, ListView):
     permission_required="marketplace.view_review"; model=Review; template_name="gdx_admin/apps/marketplace/products/reviews/list.html"; context_object_name="reviews"; paginate_by=25
-    def get_queryset(self): return Review.objects.select_related("product","author").order_by("-created_at")
+    def get_queryset(self):
+        qs = Review.objects.select_related("product","author").order_by("-created_at")
+        q = self.request.GET.get("q","").strip()
+        status = self.request.GET.get("status","").strip()
+        rating = self.request.GET.get("rating","").strip()
+        if q:
+            qs = qs.filter(Q(title__icontains=q)|Q(comment__icontains=q)|Q(product__name__icontains=q))
+        if status:
+            qs = qs.filter(status=status)
+        if rating.isdigit():
+            qs = qs.filter(rating=int(rating))
+        return qs
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c["status_choices"] = Review._meta.get_field("status").flatchoices
+        c["rating_choices"] = Review.STAR_CHOICES
+        return c
 
 class SearchAnalyticsView(AdminAccessMixin, ListView):
     permission_required="marketplace.view_searchquerylog"; model=SearchQueryLog; template_name="gdx_admin/apps/marketplace/products/search/index.html"; context_object_name="search_logs"; paginate_by=50
@@ -200,6 +218,11 @@ class DomainListView(AdminAccessMixin, ListView):
 
         if q:
             qs = qs.filter(name__icontains=q)
+        active = self.request.GET.get("active", "")
+        if active == "active":
+            qs = qs.filter(is_active=True)
+        elif active == "inactive":
+            qs = qs.filter(is_active=False)
 
         return qs
 
@@ -304,8 +327,21 @@ class SubDomainListView(
                 |
                 Q(domain__name__icontains=q)
             )
+        active = self.request.GET.get("active", "")
+        if active == "active":
+            qs = qs.filter(is_active=True)
+        elif active == "inactive":
+            qs = qs.filter(is_active=False)
+        domain = self.request.GET.get("domain", "").strip()
+        if domain.isdigit():
+            qs = qs.filter(domain_id=int(domain))
 
         return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["filter_domains"] = Domain.objects.order_by("name")
+        return context
 
 
 class SubDomainDetailView(

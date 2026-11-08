@@ -1,1 +1,130 @@
-{% extends "gdx_admin/base.html" %}{% block title %}{{ form.name }} | DAR Forms{% endblock %}{% block content %}<div class="container-fluid px-3 px-lg-4 py-4">{% include "gdx_admin/apps/dar/forms/includes/_forms_hero.html" with hero_title=form.name hero_description="Configuration, sections, fields, validation rules, and routing." hero_metric_label="Version" hero_metric=form.version hero_metric_help=form.slug hero_icon="ti ti-form-recognizer" %}<div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4"><div><h2 class="h4 mb-1">Form configuration</h2><p class="text-muted mb-0">Inspect the schema and connected behavior.</p></div><div class="d-flex gap-2"><a class="btn btn-light border" href="{% url 'dar-admin:form-preview' form.pk %}"><i class="ti ti-device-desktop me-1"></i>Preview</a></div></div><div class="row g-4 mb-4"><div class="col-12 col-xl-5">{% include "gdx_admin/apps/dar/forms/partials/_form_metadata.html" %}</div><div class="col-12 col-xl-7"><div class="card h-100"><div class="card-header"><h3 class="h5 mb-0"><i class="ti ti-info-circle me-2 text-info"></i>Description</h3></div><div class="card-body"><p class="text-muted mb-0">{{ form.description|default:"No form description has been provided." }}</p></div></div></div></div><h2 class="h4 mb-3">Configured sections</h2>{% for section in form.sections.all %}{% include "gdx_admin/apps/dar/forms/partials/_section_card.html" with section=section %}{% empty %}<div class="alert alert-info">No sections are configured.</div>{% endfor %}<section class="card mb-4"><div class="card-header"><h3 class="h5 mb-0">Unsectioned fields</h3></div><div class="list-group list-group-flush">{% for field in form.fields.all %}{% if not field.section_id %}{% include "gdx_admin/apps/dar/forms/partials/_field_row.html" with field=field %}{% endif %}{% empty %}<div class="list-group-item text-muted py-4">No unsectioned fields.</div>{% endfor %}</div></section><div class="row g-4"><div class="col-12 col-xl-6">{% include "gdx_admin/apps/dar/forms/partials/_rules_panel.html" with panel_title="Rule Groups" panel_icon="ti ti-git-merge" panel_color="text-primary" items=form.rule_groups.all empty_text="No rule groups." %}</div><div class="col-12 col-xl-6">{% include "gdx_admin/apps/dar/forms/partials/_rules_panel.html" with panel_title="Routing Rules" panel_icon="ti ti-route" panel_color="text-warning" items=form.routing_rules.all empty_text="No routing rules." %}</div></div></div>{% endblock %}{% block page_header %}{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}{{ form.name }} | DAR Forms{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="DATA ACCESS" hero_title=form.name hero_description=form.description|default:"Sections, fields, validation, and routing for this form." hero_metric_label="Version" hero_metric_value=form.version hero_metric_caption=form.slug hero_icon="▣" title_parent="Forms" title_parent_url="/sa/dar/forms/definitions/" hero_show_title="0" %}
+    <div class="team-detail-bar">
+        <p class="module-breadcrumb" style="margin:0"><a href="/sa/dar/forms/definitions/">Forms</a> &nbsp;»&nbsp; {{ form.name }}</p>
+        <div class="team-detail-actions">
+            <a class="integration-button integration-button--primary" href="{% url 'dar-admin:form-preview' form.pk %}">Preview</a>
+        </div>
+    </div>
+    <section class="team-panel">
+        <h2>Form</h2>
+        <div class="team-facts">
+            <div class="team-fact"><span>Name</span><strong>{{ form.name }}</strong></div>
+            <div class="team-fact"><span>Slug</span><strong>{{ form.slug }}</strong></div>
+            <div class="team-fact"><span>Version</span><strong>{{ form.version }}</strong></div>
+            <div class="team-fact"><span>State</span><strong>{% if form.is_published %}{% status_badge "Published" %}{% else %}{% status_badge "Draft" %}{% endif %}</strong></div>
+        </div>
+        <h2>Description</h2>
+        <p class="team-description">{{ form.description|default:"No description yet." }}</p>
+    </section>
+
+    <h2 class="h5" style="margin:22px 0 12px">Sections</h2>
+    {% for section in form.sections.all %}
+    <section class="team-panel team-directory" style="margin-bottom:14px">
+        <div style="padding:18px 18px 0">
+            <h2 style="margin-bottom:4px">{{ section.title }}</h2>
+            {% if section.description %}<p class="team-description">{{ section.description }}</p>{% endif %}
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for field in section.fields.all %}
+                    <tr>
+                        <td>
+                            <a class="team-directory__name" href="#field-{{ field.pk }}">{{ field.label }}</a>
+                            <div class="team-directory__slug" id="field-{{ field.pk }}">{{ field.key }}{% if field.help_text %} · {{ field.help_text }}{% endif %}</div>
+                        </td>
+                        <td>
+                            {% status_badge field.get_field_type_display %}
+                            {% if field.required %}{% status_badge "Required" %}{% endif %}
+                            {% if field.hidden %}{% status_badge "Hidden" %}{% endif %}
+                            {% if field.disabled %}{% status_badge "Disabled" %}{% endif %}
+                            {% if not field.is_active %}{% status_badge "Inactive" %}{% endif %}
+                        </td>
+                        <td>
+                            {% for option in field.options.all %}{% if option.is_active %}<span class="team-directory__slug">{{ option.value }}</span>{% endif %}{% endfor %}
+                            {% for validation in field.validation_rules.all %}{% if validation.is_active %}{% status_badge validation.get_validation_type_display %}{% endif %}{% endfor %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="3">No fields in this section.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% empty %}
+    <section class="team-panel"><p class="team-empty">No sections yet.</p></section>
+    {% endfor %}
+
+    <section class="team-panel team-directory" style="margin-bottom:14px">
+        <div style="padding:18px 18px 0"><h2>Fields outside a section</h2></div>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Field</th><th>Type</th><th>Rules</th></tr></thead>
+                <tbody>
+                    {% for field in form.fields.all %}
+                    {% if not field.section_id %}
+                    <tr>
+                        <td>
+                            <strong class="team-directory__name">{{ field.label }}</strong>
+                            <div class="team-directory__slug">{{ field.key }}</div>
+                        </td>
+                        <td>{% status_badge field.get_field_type_display %}{% if field.required %} {% status_badge "Required" %}{% endif %}</td>
+                        <td>{% for validation in field.validation_rules.all %}{% if validation.is_active %}{% status_badge validation.get_validation_type_display %}{% endif %}{% endfor %}</td>
+                    </tr>
+                    {% endif %}
+                    {% empty %}
+                    <tr><td colspan="3">No fields outside a section.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="team-detail-grid">
+        <section class="team-panel">
+            <h2>Rule groups</h2>
+            <div class="team-facts">
+                {% for item in form.rule_groups.all %}
+                <div class="team-fact">
+                    <span>{{ item.get_evaluation_mode_display }}</span>
+                    <strong><a href="{% url 'dar-admin:rule-detail' item.pk %}">{{ item.name }}</a></strong>
+                </div>
+                {% empty %}
+                <p class="team-empty">No rule groups.</p>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="team-panel">
+            <h2>Routing rules</h2>
+            <div class="team-facts">
+                {% for item in form.routing_rules.all %}
+                <div class="team-fact">
+                    <span>Priority {{ item.priority }}</span>
+                    <strong><a href="{% url 'dar-admin:routing-detail' item.pk %}">{{ item.name }}</a></strong>
+                </div>
+                {% empty %}
+                <p class="team-empty">No routing rules.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
