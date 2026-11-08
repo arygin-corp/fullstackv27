@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.core.exceptions import ValidationError
 from django.forms.models import BaseInlineFormSet
 from .models import (
@@ -10,6 +10,7 @@ from .models import (
     Classification,
     Company,
     Contact,
+    AlternateApprover,
     DataSteward,
     Datatype,
     Domain,
@@ -774,6 +775,16 @@ class ADGroupAdmin(admin.ModelAdmin):
 
 
 # =============================================================
+# Alternate Approver
+# =============================================================
+
+@admin.register(AlternateApprover)
+class AlternateApproverAdmin(admin.ModelAdmin):
+    search_fields = ("name", "sys_id")
+    list_display = ("name", "sys_id")
+
+
+# =============================================================
 # Fulfillment Team
 # =============================================================
 
@@ -831,11 +842,14 @@ class ProductAdmin(admin.ModelAdmin):
                     "catalog",
                     "classification",
                     "data_steward",
+                    "alt_approver",
                     "poc_name",
                     "business_contact_name",
                     "business_sme",
                     "status",
                     "brief_desc",
+                    "whats_included",
+                    "intended_use_desc",
                     "short_desc",
                     "intended_use",
                     "is_active",
@@ -965,12 +979,49 @@ class ReviewAdmin(admin.ModelAdmin):
         "product",
         "author",
         "rating",
+        "title",
+        "status",
+        "verified_purchaser",
         "created_at",
     )
 
+    list_filter = ("status",)
+    actions = ("approve_reviews", "reject_reviews")
+
     readonly_fields = (
         "created_at",
+        "verified_purchaser",
     )
+
+    def _content_manager(self, request):
+        user = request.user
+        return user.is_superuser or user.groups.filter(name="Content Manager Group").exists()
+
+    @admin.action(description="Approve selected reviews")
+    def approve_reviews(self, request, queryset):
+        if not self._content_manager(request):
+            self.message_user(request, "Only the Content Manager Group can approve reviews.", level=messages.ERROR)
+            return
+        reviews = list(queryset.select_related("author", "product"))
+        updated = queryset.update(status="approved")
+        from apps.notifications.services.work import notify_review_decision
+        for review in reviews:
+            review.status = "approved"
+            notify_review_decision(review)
+        self.message_user(request, f"{updated} review(s) approved and published.")
+
+    @admin.action(description="Reject selected reviews")
+    def reject_reviews(self, request, queryset):
+        if not self._content_manager(request):
+            self.message_user(request, "Only the Content Manager Group can reject reviews.", level=messages.ERROR)
+            return
+        reviews = list(queryset.select_related("author", "product"))
+        updated = queryset.update(status="rejected")
+        from apps.notifications.services.work import notify_review_decision
+        for review in reviews:
+            review.status = "rejected"
+            notify_review_decision(review)
+        self.message_user(request, f"{updated} review(s) rejected.")
 
 class EndToEndSolutionProductInline(admin.TabularInline):
     model = EndToEndSolutionProduct

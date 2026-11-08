@@ -152,6 +152,8 @@ export class PageCheckoutComponent {
                         order_type: 'product',
                         productId: item.product?.id,
                         product_name: item.product?.name,
+                        ai_suggested: Boolean(item.aiSuggested),
+                        source: item.aiSuggested ? 'ai_suggested' : 'standard',
                         domain: item.product?.domain,
                         datatype: item.product?.datatype,
                         classification: item.product?.classification,

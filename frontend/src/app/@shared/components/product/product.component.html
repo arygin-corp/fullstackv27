@@ -2,6 +2,10 @@
 	<!-- ========================================================= -->
 	<!-- Product Name                                              -->
 	<!-- ========================================================= -->
+	<span *ngIf="showAiSuggested" class="product__ai-pill">
+		<img src="assets/ai/ai-stars.gif" alt="">
+		AI Suggested
+	</span>
 	<h5 class="product__name">
 		{{ product.name }}
 		<span *ngIf="product.dataSharingAgreement === 'active'">
@@ -13,16 +17,16 @@
 	<!-- ========================================================= -->
 	<div class="row" style="margin: 0px;">
 		<ul class="product__meta col-lg-6" style="margin-bottom: 12px;">
-			<!-- <div class="product__rating" style="margin-right: 24px;">
+			<div class="product__rating" style="margin-right: 24px;">
 				<div class="product__rating-stars">
 					<app-rating [value]="product.rating"></app-rating>
 				</div>
 				<div class="product__rating-legend">
-					<a href="" appClick>{{ product.reviews }} Reviews</a>
+					<a href="" appClick>{{ product.reviews }} {{ product.reviews === 1 ? 'Review' : 'Reviews' }}</a>
 					<span>/</span>
 					<a href="" appClick> Write A Review </a>
 				</div>
-			</div> -->
+			</div>
 			<li class="product__meta-platformType"> Datatype: 
                 <span class="text-secondary">
 					<strong>{{ product.datatype }}</strong>

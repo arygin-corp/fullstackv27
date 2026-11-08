@@ -1,18 +1,17 @@
 <div class="search__body">
-    <form [formGroup]="form" class="search__form" style="background-color: #fff;border-radius: 5px; border: 2px #bfbfbf;">
+    <form [formGroup]="form" class="search__form" (ngSubmit)="onSubmit($event)">
         <input
             class="search__input"
             name="search"
-            [placeholder]="'Search over 500 Data Products.....'" 
+            placeholder="Search over 500 Data Products....."
             aria-label="Site search"
             type="text"
             autocomplete="off"
             formControlName="query"
             (keydown.escape)="escape.next()"
             (focus)="openSuggestion()"
-            onfocus="this.value=''" 
             #input>
-        <button class="search__button search__button--type--submit" type="submit">
+        <button class="search__button search__button--type--submit" type="submit" aria-label="Search">
             <app-icon name="search-20" size="20"></app-icon>
         </button>
         <button
@@ -27,15 +26,31 @@
 
     <div class="search__suggestions suggestions suggestions--location--{{ location }} did_you_mean_header">
         <div class="col-12 no-gutters">
-            <div class="col-12 did_you_mean" *ngIf="didYouMean" style="padding: 12px 20px; background: #f8f9fa; border-bottom: 1px solid #e1e9f1;">
-                <p style="margin-bottom: 0; font-size: 14px; font-weight: 400; color: #3d464d;">
-                    Did you mean: 
-                    <span (click)="applySuggestion(didYouMean)" style="color: #007bff; cursor: pointer; text-decoration: underline; font-weight: 700;">
-                        {{ didYouMean }}
+            <div class="col-12 search__modes">
+                <p class="did_you_mean" *ngIf="didYouMean">
+                    Did you mean:
+                    <span (click)="applySuggestion(suggestionLabel(didYouMean))">
+                        {{ suggestionLabel(didYouMean) }}
                     </span>?
                 </p>
+                <button
+                    type="button"
+                    class="search__mode"
+                    [class.is-active]="resultMode === 'user'"
+                    (click)="selectMode('user', $event)">
+                    User-Based
+                </button>
+                <button
+                    type="button"
+                    class="search__mode"
+                    [class.is-active]="resultMode === 'ai'"
+                    (click)="selectMode('ai', $event)">
+                    AI Suggested Products
+                </button>
             </div>
             <div class="col-12">
+                <p *ngIf="resultMode === 'ai' && aiLoading" class="search__status">Looking for AI suggested products...</p>
+                <p *ngIf="!isLoading && !aiLoading && suggestedProducts.length === 0" class="search__status">No products found.</p>
                 <ul *ngIf="suggestedProducts.length > 0" class="suggestions__list" style="padding: 12px 0px;">
                     <li *ngFor="let product of suggestedProducts; trackBy: trackByProductId" class="suggestions__item">
                         <div class="suggestions__item-image product-image">
@@ -45,7 +60,11 @@
                         </div>
 
                         <div class="suggestions__item-info">
-                            <a [routerLink]="root.product(product)" class="suggestions__item-name" (click)="closeSuggestion()">
+                            <a
+                                [routerLink]="root.product(product)"
+                                [queryParams]="resultMode === 'ai' ? { ai: '1' } : null"
+                                class="suggestions__item-name"
+                                (click)="openSuggestedProduct(product); closeSuggestion()">
                                 <span [innerHTML]="product.name | highlight:form.value.query"></span>
                             </a>
                             <div class="suggestions__item-meta">
@@ -67,25 +86,63 @@
                             </div>
                         </div>
 
-                        <div *ngIf="location === 'header'" class="suggestions__item-actions">
-                            <!-- <button
-                                type="button"
-                                title="View Details"
-                                class="btn btn-primary btn-sm btn-svg-icon"
-                                [routerLink]="['/marketplace/product', product.slug || product.sku]"
-                                (click)="closeSuggestion(); closeButtonClick.emit()" 
-                                style="width: 100%; padding: 0px 22px;">
-                                View Details
-                            </button> -->
+                        <div *ngIf="location === 'header'" class="suggestions__item-actions" [class.is-ai]="resultMode === 'ai'">
+                            <span *ngIf="resultMode === 'ai'" class="suggestions__ai-pill">
+                                <img src="assets/ai/ai-stars.gif" alt="">
+                                AI Suggested
+                            </span>
                             <button
                                 type="button"
                                 title="View Details"
-                                class="btn btn-primary btn-sm btn-svg-icon"
+                                class="btn btn-primary btn-sm btn-svg-icon suggestions__details"
                                 [routerLink]="root.product(product)"
-                                (click)="closeSuggestion()"
+                                [queryParams]="resultMode === 'ai' ? { ai: '1' } : null"
+                                (click)="openSuggestedProduct(product); closeSuggestion()"
                                 style="width: 100%; padding: 0px 22px;">
                                 View Details
                             </button>
+                            <div class="suggestions__tools">
+                                <button
+                                    type="button"
+                                    title="Favorites"
+                                    class="btn btn-light btn-sm btn-svg-icon suggestions__tool"
+                                    [class.is-saved]="favoriteIds.has(product.id)"
+                                    (click)="addToFavorites(product, $event)">
+                                    <app-icon name="wishlist-16" size="16"></app-icon>
+                                </button>
+                                <button
+                                    type="button"
+                                    title="Compare"
+                                    class="btn btn-light btn-sm btn-svg-icon suggestions__tool"
+                                    [class.is-saved]="compareIds.has(product.id)"
+                                    (click)="addToCompare(product, $event)">
+                                    <app-icon name="compare-16" size="16"></app-icon>
+                                </button>
+                            </div>
+                            <button
+                                *ngIf="resultMode === 'ai' && product.highlights?.length"
+                                type="button"
+                                class="btn btn-sm suggestions__matches-button"
+                                [attr.aria-expanded]="matchesOpen(product)"
+                                title="Show the ad group, database, table, and column names that matched this product"
+                                (click)="toggleMatches(product, $event)"
+                                style="width: 100%; padding: 0px 22px;">
+                                <svg class="suggestions__matches-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+                                    <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.3"></circle>
+                                    <path fill="currentColor" d="M8.05 4.15c-1.45 0-2.45.86-2.45 1.95h1.28c0-.5.48-.88 1.15-.88.66 0 1.08.32 1.08.8 0 .42-.28.68-.9.96l-.18.08c-.72.32-1.16.82-1.16 1.58v.28h1.28v-.22c0-.38.2-.6.82-.88l.2-.08c.82-.36 1.32-.98 1.32-1.86 0-1.16-1.05-1.73-2.44-1.73zM8 11.25a.82.82 0 1 0 0 1.64.82.82 0 0 0 0-1.64z"></path>
+                                </svg>
+                                {{ matchesOpen(product) ? 'Hide matches' : 'View matches' }}
+                            </button>
+                        </div>
+                        <div *ngIf="resultMode === 'ai' && matchesOpen(product)" class="suggestions__matches">
+                            <div class="suggestions__tags">
+                                <span
+                                    *ngFor="let tag of product.highlights"
+                                    class="suggestions__tag"
+                                    [attr.data-kind]="tag.kind">
+                                    {{ tag.label }}: {{ tag.value }}
+                                </span>
+                            </div>
                         </div>
                     </li>
                 </ul>

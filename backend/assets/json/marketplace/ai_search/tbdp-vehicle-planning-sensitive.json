@@ -1,0 +1,21 @@
+{
+  "adgroup": "tbdp-vehicle-planning-sensitive",
+  "slugs": [
+    "vehicle-planning"
+  ],
+  "databases": [
+    "ircm_ing"
+  ],
+  "tables": [
+    "tmna_my_launch_stages_sfn_ntl"
+  ],
+  "columns": [
+    "business_month",
+    "create_ts",
+    "make_nm",
+    "model_year",
+    "series_fuel_nm",
+    "tmna_months_in_market",
+    "tmna_my_launch_stages"
+  ]
+}

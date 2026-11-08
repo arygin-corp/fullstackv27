@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../@shared/shared.module';
 import { ResourcesRoutingModule } from './resources-routing.module';
 import { ResourcesComponent } from './resources.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -51,6 +52,7 @@ import { PagesMindMapComponent } from './pages/pages-mind-map/pages-mind-map.com
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ResourcesRoutingModule,
   ]
 })

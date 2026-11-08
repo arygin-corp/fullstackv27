@@ -12,9 +12,10 @@
   },
   "scripts": {
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "ng serve --port 4200",
     "start:no-proxy": "ng serve",
-    "start-mock": "node mock-servicenow-server.js",
+    "start-mock": "npm run preview",
+    "preview": "ng build --configuration=preview && node mock-servicenow-server.js",
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "e2e": "ng e2e",

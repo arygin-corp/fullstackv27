@@ -126,3 +126,15 @@
         min-width: 0;
     }
 }
+
+.main-wrapper :is(
+    .btn,
+    .mp-button,
+    .status-button,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"]
+):not(.btn-icon):not(.rounded-circle):not(.btn-close):not(.accordion-button):not(.navbar-toggler) {
+    border-radius: 10px !important;
+}

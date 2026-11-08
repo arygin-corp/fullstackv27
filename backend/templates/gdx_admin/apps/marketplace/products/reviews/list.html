@@ -1,1 +1,47 @@
-{% extends "gdx_admin/base.html" %}{% load static %}{% block title %}Product reviews{% endblock %}{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}?v=1">{% endblock %}{% block content %}<main class="mp-page">{% include "gdx_admin/apps/marketplace/partials/_hero.html" with hero_kicker="MARKETPLACE ADMINISTRATION" hero_title="Product reviews" hero_description="Review Marketplace ratings and comments." hero_stat_label="Administrative view" hero_stat_value="Marketplace" hero_stat_caption="GDX administration" %}{% include "gdx_admin/apps/marketplace/partials/_header.html" with page_label="Reviews" page_heading="Product reviews" page_description="Review Marketplace ratings and comments." %}<section class="mp-panel"><div class="mp-table-wrap"><table class="mp-table"><thead><tr><th>Record</th><th>Status</th><th>Updated</th><th>Action</th></tr></thead><tbody>{% for item in object_list %}<tr><td>{{ item }}</td><td>{{ item.status|default:item.is_active }}</td><td>{{ item.updated_at|default:item.created_at }}</td><td><a href="{{ item.get_absolute_url|default:'#' }}">Open</a></td></tr>{% empty %}<tr><td colspan="4">No records.</td></tr>{% endfor %}</tbody></table></div></section>{% include "gdx_admin/apps/marketplace/partials/_pagination.html" %}</main>{% endblock %}{% block page_header %}{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}Reviews | Marketplace{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="MARKETPLACE" hero_title="Reviews" hero_description="Ratings and comments left on marketplace products." hero_metric_label="Reviews" hero_metric_value=page_obj.paginator.count hero_metric_caption="Directory" hero_icon="▣" hero_show_title="0" %}
+    <section class="module-section-heading">
+        <div>
+            <p class="module-breadcrumb">Marketplace &nbsp;»&nbsp; Reviews</p>
+            <h2>Review directory</h2>
+            <p>Product ratings waiting in the marketplace.</p>
+        </div>
+    </section>
+    <section class="team-panel team-directory">
+        {% include "gdx_admin/apps/marketplace/records/_directory_filters.html" with search_label="reviews" status_choices=status_choices rating_choices=rating_choices %}
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Review</th><th>Product</th><th>Rating</th><th>Status</th></tr></thead>
+                <tbody>
+                    {% for review in reviews %}
+                    <tr>
+                        <td>
+                            <div class="team-directory__team">
+                                <span class="team-directory__mark">{{ review.title|default:review|slice:":1"|upper }}</span>
+                                <div>
+                                    <strong class="team-directory__name">{{ review.title|default:review }}</strong>
+                                    <div class="team-directory__slug">{{ review.created_at|date:"M j, Y" }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ review.product }}</td>
+                        <td>{{ review.rating }}</td>
+                        <td>{% status_badge review.get_status_display %}</td>
+                    </tr>
+                    {% empty %}<tr><td colspan="4">{% if request.GET.q or request.GET.status or request.GET.rating %}No reviews match these filters.{% else %}No reviews yet.{% endif %}</td></tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% include "gdx_admin/partials/pagination.html" %}
+</main>
+{% endblock %}

@@ -1,1 +1,41 @@
-{% extends "gdx_admin/base.html" %}{% load static %}{% block title %}Domain details{% endblock %}{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}?v=1">{% endblock %}{% block content %}<main class="mp-page">{% include "gdx_admin/apps/marketplace/partials/_hero.html" with hero_kicker="MARKETPLACE ADMINISTRATION" hero_title="Domain details" hero_description="Review domain metadata and product coverage." hero_stat_label="Administrative view" hero_stat_value="Marketplace" hero_stat_caption="GDX administration" %}{% include "gdx_admin/apps/marketplace/partials/_header.html" with page_label="Domains" page_heading="Domain details" page_description="Review domain metadata and product coverage." %}<section class="mp-panel"><div class="mp-empty">This page is connected to its existing Marketplace view and model context.</div></section></main>{% endblock %}{% block page_header %}{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}{{ domain.name }} | Domains{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:domain_list' as list_url %}
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="MARKETPLACE" hero_title=domain.name hero_description="Name, status, and description for this domain." hero_metric_label="Status" hero_metric_value=domain.is_active|yesno:"Active,Inactive" hero_metric_caption=domain.slug hero_icon="▣" title_parent="Domains" title_parent_url=list_url %}
+    <div class="team-detail-bar">
+        <div class="team-detail-actions">
+            <a class="integration-button" href="{% url 'marketplace_admin:domain_update' domain.pk %}">Edit</a>
+            <a class="integration-button" href="{% url 'marketplace_admin:domain_delete' domain.pk %}">Delete</a>
+        </div>
+    </div>
+    <section class="team-panel">
+        <h2>Domain</h2>
+        <div class="team-facts">
+            <div class="team-fact"><span>Name</span><strong>{{ domain.name }}</strong></div>
+            <div class="team-fact"><span>Slug</span><strong>{{ domain.slug|default:"—" }}</strong></div>
+            <div class="team-fact"><span>Active</span><strong>{% if domain.is_active %}{% status_badge "Active" %}{% else %}{% status_badge "Inactive" %}{% endif %}</strong></div>
+        </div>
+        <h2>Description</h2>
+        <p class="team-description">{{ domain.description|striptags|default:"No description yet." }}</p>
+    </section>
+    {% if domain.image and domain.image.name != "default.jpg" %}
+    <section class="team-panel" style="margin-top:18px">
+        <h2>Image</h2>
+        <div class="team-images">
+            <div class="team-image-card">
+                <span class="team-label">Domain image</span>
+                <img src="{{ domain.image.url }}" alt="">
+            </div>
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}

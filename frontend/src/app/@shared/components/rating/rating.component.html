@@ -1,7 +1,7 @@
-<div class="rating">
+<div class="rating" [class.rating--interactive]="interactive">
     <div class="rating__body">
         <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
-            <svg class="rating__star" [ngClass]="{'rating__star--active': value >= i}" width="13px" height="12px">
+            <svg class="rating__star" [ngClass]="{'rating__star--active': value >= i}" width="13px" height="12px" (click)="pick(i)">
                 <g class="rating__fill"><use xlink:href="assets/images/sprite.svg#star-normal"></use></g>
                 <g class="rating__stroke"><use xlink:href="assets/images/sprite.svg#star-normal-stroke"></use></g>
             </svg>

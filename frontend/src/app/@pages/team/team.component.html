@@ -1,110 +1,22 @@
-<div class="row">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h4 class="display-4 text-center" style="font-size: 28px; font-weight: 700;">Data Marketplace Team</h4>
-            <p class="lead text-center" style="font-size: 14px; font-weight: 300;">
-                The Data Marketplace team enables secure, governed, and efficient access to TMNA's enterprise data. We partner with business and<br>
-                technology teams to improve data quality, stewardship, accessibility, and compliance, helping Toyota leverage trusted data for<br>
-                better decision-making and innovation
-            </p>
-        </div>
-    </div>
+<div class="team-hero">
+  <div class="container">
+    <h1>Data Marketplace Team</h1>
+    <p>
+      The Data Marketplace team enables secure, governed, and efficient access to TMNA's enterprise data. We partner with business and
+      technology teams to improve data quality, stewardship, accessibility, and compliance, helping Toyota leverage trusted data for
+      better decision-making and innovation.
+    </p>
+  </div>
 </div>
 
-<section id="main">
-    <div class="container">
-        <div class="card board">
-            <div class="imgBx">
-                <img src="assets/images/leadership/omar.jpg" alt=""/>
-            </div>
-            
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Omar Casas <br /><span>Product Owner</span></h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card events">
-            <div class="imgBx">
-                <img src="assets/images/leadership/giovanni.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Giovanni Austin <br /><span>Principle Engineer II</span></h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card board">
-            <div class="imgBx">
-                <img src="assets/images/leadership/ajay.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Ajay Sreedharan<br /><span>Scrum Master</span></h3>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card corp">
-            <div class="imgBx">
-                <img src="assets/images/leadership/shannon.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Shannon Clasen <br /><span>Content Manager</span></h3>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card corp">
-            <div class="imgBx">
-                <img src="assets/images/leadership/hali.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Hali Crutchfield <br /><span> Data Analyst</span></h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card corp">
-            <div class="imgBx">
-                <img src="assets/images/leadership/sanju.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <div class="contentBx">
-                    <h3>Shivasanajana Narla <br /><span> FullStack Engineer</span></h3>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="team">
+  <ul class="team__grid">
+    <li class="member" *ngFor="let member of members">
+      <img [src]="member.image" [alt]="member.name">
+      <div class="member__body">
+        <h2>{{ member.name }}</h2>
+        <p>{{ member.role }}</p>
+      </div>
+    </li>
+  </ul>
 </section>
-
-<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-    $("input").click(function () {
-        document.body.classList.toggle("dark");
-    });
-    $(".list").click(function () {
-        const value = $(this).attr("data-filter");
-        if (value == "all") {
-        $(".card").fadeIn(400);
-        $("li.list.active").removeClass("active");
-        $(this).addClass("active");
-        } else {
-        $("li.list.active").removeClass("active");
-        $(this).addClass("active");
-        $(".card")
-            .not("." + value)
-            .fadeOut(400);
-        $(".card")
-            .filter("." + value)
-            .fadeIn(400);
-        }
-    });
-    });
-</script> 

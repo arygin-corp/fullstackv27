@@ -1,7 +1,8 @@
 // src/app/path-to-chat/services/ai-chat.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { from, Observable, Subject } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { environment} from '../../../environments/environment';
 import { MsalService } from '@azure/msal-angular';
 import { CitationReference, ProductReference, VikkiChatResponse, VikkiContextResponse, VikkiMessage, VikkiPageContext} from '../interfaces/vikki';
@@ -13,6 +14,8 @@ export class AiChatService {
   private readonly apiBase = environment.apiUrl;
   private readonly storageKey = 'vikki-chat-history-v1';
   private readonly conversationKey = 'vikki-conversation-id';
+  private readonly historyCleared = new Subject<void>();
+  readonly historyCleared$ = this.historyCleared.asObservable();
 
   constructor(
     private readonly http: HttpClient,
@@ -48,6 +51,7 @@ export class AiChatService {
         route: page?.route || '',
         product_id: page?.productId,
         product_name: page?.productName || '',
+        client_time_zone: page?.clientTimeZone || '',
 
         recent_client_messages: history.filter(message =>
           Boolean(message.text?.trim())).slice(-6).map(message => ({
@@ -62,19 +66,10 @@ export class AiChatService {
       if (error?.name === 'StreamBodyError') {
         return Promise.reject(error);
       }
-      return new Promise<VikkiChatResponse>((resolve, reject) => {
-      this.http.post<VikkiChatResponse>(`${this.apiBase}/api/ai/chat/`, payload).subscribe({
+      return this.authHeaders().then(headers => new Promise<VikkiChatResponse>((resolve, reject) => {
+      this.http.post<VikkiChatResponse>(`${this.apiBase}/api/ai/chat/`, payload, { headers }).subscribe({
         next: response => {onToken(response.answer || '');
-        const productSources: ProductReference[] = (response.recommendations || []).map(item => ({
-          id: item.product.id,
-          name: item.product.name,
-          url: `/marketplace/products/${item.product.id}/`,
-          domain: item.product.domain,
-          dataType: item.product.data_type,
-          score: item.score,
-          reason: item.reason
-        })
-      );
+        const productSources: ProductReference[] = (response.recommendations || []).map(item => this.productReference(item));
 
       onSources(productSources);
 
@@ -94,19 +89,24 @@ export class AiChatService {
           reject(error);
         }
       });
-    });
+    }));
     });
   }
 
 
   getContext(page?: VikkiPageContext): Observable<VikkiContextResponse> {
-    return this.http.get<VikkiContextResponse>(`${this.apiBase}/api/ai/chat/context/`, {
-      params: {
-        route: page?.route || '',
-        page: page?.page || '',
-        product_id: page?.productId ? String(page.productId) : '',
-        product_name: page?.productName || '',
-      }
+    return new Observable<VikkiContextResponse>(observer => {
+      this.authHeaders().then(headers => {
+        this.http.get<VikkiContextResponse>(`${this.apiBase}/api/ai/chat/context/`, {
+          headers,
+          params: {
+            route: page?.route || '',
+            page: page?.page || '',
+            product_id: page?.productId ? String(page.productId) : '',
+            product_name: page?.productName || '',
+          }
+        }).subscribe(observer);
+      }).catch(error => observer.error(error));
     });
   }
 
@@ -162,15 +162,7 @@ export class AiChatService {
           })));
         } else if (data.type === 'recommendations') {
           result.recommendations = data.recommendations || [];
-          onSources((result.recommendations || []).map(item => ({
-            id: item.product.id,
-            name: item.product.name,
-            url: `/marketplace/products/${item.product.id}/`,
-            domain: item.product.domain,
-            dataType: item.product.data_type,
-            score: item.score,
-            reason: item.reason,
-          })));
+          onSources((result.recommendations || []).map(item => this.productReference(item)));
         } else if (data.type === 'suggestions') {
           result.suggestions = data.suggestions || [];
         } else if (data.type === 'actions') {
@@ -192,17 +184,40 @@ export class AiChatService {
     return result;
   }
 
+  private productReference(item: { product: { id: number; name: string; slug?: string; image?: string; domain?: string; data_type?: string }; score?: number; reason?: string; }): ProductReference {
+    const image = item.product.image || '';
+    return {
+      id: item.product.id,
+      name: item.product.name,
+      url: item.product.slug
+        ? `/marketplace/product/${item.product.slug}`
+        : `/marketplace/products/${item.product.id}/`,
+      image: image.startsWith('http') || !image ? image : `${environment.apiUrl}${image.startsWith('/') ? '' : '/'}${image}`,
+      domain: item.product.domain,
+      dataType: item.product.data_type,
+      score: item.score,
+      reason: item.reason,
+    };
+  }
+
   private async authHeaders(): Promise<Record<string, string>> {
     try {
-      const account = this.msal.instance.getActiveAccount() || this.msal.instance.getAllAccounts()[0];
+      let account = this.msal.instance.getActiveAccount() || this.msal.instance.getAllAccounts()[0];
+      for (let attempt = 0; !account && attempt < 10; attempt += 1) {
+        await new Promise(resolve => setTimeout(resolve, 300));
+        account = this.msal.instance.getActiveAccount() || this.msal.instance.getAllAccounts()[0];
+      }
       if (!account) {
         return {};
       }
       const result = await this.msal.instance.acquireTokenSilent({
-        scopes: ['api://496a6de0-52a2-44d9-aaab-42a964716e65/access_as_user'],
+        scopes: ['openid', 'profile'],
         account,
       });
-      return { Authorization: `Bearer ${result.accessToken}` };
+      if (!result.idToken) {
+        return {};
+      }
+      return { Authorization: `Bearer ${result.idToken}` };
     } catch {
       return {};
     }
@@ -221,10 +236,12 @@ export class AiChatService {
       recorded: boolean;
     }> {
 
-    return this.http.post<{
-      id: number;
-      recorded: boolean;
-    }>(`${this.apiBase}/api/ai/chat/feedback/`, payload);
+    return from(this.authHeaders()).pipe(
+      switchMap(headers => this.http.post<{
+        id: number;
+        recorded: boolean;
+      }>(`${this.apiBase}/api/ai/chat/feedback/`, payload, { headers }))
+    );
   }
 
   loadHistory(): VikkiMessage[] {
@@ -286,5 +303,6 @@ export class AiChatService {
        * is unavailable.
        */
     }
+    this.historyCleared.next();
   }
 }

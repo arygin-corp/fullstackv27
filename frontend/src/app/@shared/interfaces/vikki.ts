@@ -3,6 +3,7 @@ export interface ProductReference {
   id: number;
   name: string;
   url: string;
+  image?: string;
   domain?: string;
   dataType?: string;
   score?: number;
@@ -37,6 +38,7 @@ export interface VikkiPageContext {
   page: string;
   productId?: number;
   productName?: string;
+  clientTimeZone?: string;
 }
 
 
@@ -61,6 +63,8 @@ export interface VikkiRecommendationResponse {
   product: {
     id: number;
     name: string;
+    slug?: string;
+    image?: string;
     domain?: string;
     data_type?: string;
   };

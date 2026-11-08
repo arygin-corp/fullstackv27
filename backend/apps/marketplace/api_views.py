@@ -16,7 +16,7 @@ from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 
 from apps.resources.models import Brand
 
-from .hybrid_search import hybrid_product_search
+from .hybrid_search import fast_suggestion_search, hybrid_product_search
 from .models import (
     Datatype,
     Domain,
@@ -197,7 +197,7 @@ class SearchViewSet(viewsets.ViewSet):
             )
 
         base_qs = base_qs.annotate(
-            avg_rating=Avg("reviews__rating")
+            avg_rating=Avg("reviews__rating", filter=Q(reviews__status="approved"))
         )
 
         if domain_slug:
@@ -520,7 +520,8 @@ class ShopProductViewSet(
             self.get_queryset()
             .annotate(
                 avg_rating=Avg(
-                    "reviews__rating"
+                    "reviews__rating",
+                    filter=Q(reviews__status="approved"),
                 )
             )
             .order_by(
@@ -1179,6 +1180,22 @@ class ProductJsonViewSet(viewsets.ViewSet):
     # Queryset
     # -----------------------------------------------------
 
+    def get_catalog_queryset(self):
+        """Published products for counting, filtering, and paging."""
+        return Product.objects.published().filter(is_active=True)
+
+    def get_list_card_queryset(self):
+        """Fields the marketplace cards render, for one page of products."""
+        return (
+            self.get_catalog_queryset()
+            .annotate(
+                review_count=Count("reviews", filter=Q(reviews__status="approved"), distinct=True),
+                review_average=Avg("reviews__rating", filter=Q(reviews__status="approved")),
+            )
+            .select_related("domain", "platform")
+            .prefetch_related("badge", "images", "attribute")
+        )
+
     def get_base_queryset(self):
         return (
             Product.objects
@@ -1186,6 +1203,11 @@ class ProductJsonViewSet(viewsets.ViewSet):
             .filter(
                 is_active=True
             )
+            .annotate(
+                review_count=Count("reviews", filter=Q(reviews__status="approved"), distinct=True),
+                review_average=Avg("reviews__rating", filter=Q(reviews__status="approved")),
+            )
+            .defer("alt_approver")
             .select_related(
                 "domain",
                 "subdomain_2",
@@ -1241,6 +1263,11 @@ class ProductJsonViewSet(viewsets.ViewSet):
         return (
             Product.objects
             .published()
+            .annotate(
+                review_count=Count("reviews", filter=Q(reviews__status="approved"), distinct=True),
+                review_average=Avg("reviews__rating", filter=Q(reviews__status="approved")),
+            )
+            .defer("alt_approver")
             .select_related(
                 "domain",
                 "platform",
@@ -1374,6 +1401,23 @@ class ProductJsonViewSet(viewsets.ViewSet):
     # Filtering
     # -----------------------------------------------------
 
+    def apply_domain_scope(
+        self,
+        queryset,
+        request,
+    ):
+        subdomain2_id = request.query_params.get("subdomain2_id")
+        subdomain_id = request.query_params.get("subdomain_id")
+        domain_id = request.query_params.get("domain_id")
+
+        if subdomain2_id and str(subdomain2_id).isdigit():
+            return queryset.filter(subdomain_3_id=int(subdomain2_id))
+        if subdomain_id and str(subdomain_id).isdigit():
+            return queryset.filter(subdomain_2_id=int(subdomain_id))
+        if domain_id and str(domain_id).isdigit():
+            return queryset.filter(domain_id=int(domain_id))
+        return queryset
+
     def apply_filters(
         self,
         queryset,
@@ -1466,18 +1510,24 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "slug": "privacy",
             "name": "Privacy",
             "value": selected_values,
-            "items": [
-                {
-                    "slug": "pi",
-                    "name": "PI",
-                    "count": pi_count,
-                },
-                {
-                    "slug": "spi",
-                    "name": "SPI",
-                    "count": spi_count,
-                },
-            ],
+            "items": sorted(
+                [
+                    {
+                        "slug": "pi",
+                        "name": "PI",
+                        "count": pi_count,
+                    },
+                    {
+                        "slug": "spi",
+                        "name": "SPI",
+                        "count": spi_count,
+                    },
+                ],
+                key=lambda item: (
+                    -item["count"],
+                    item["name"].lower(),
+                ),
+            ),
         }
 
     # -----------------------------------------------------
@@ -1512,7 +1562,7 @@ class ProductJsonViewSet(viewsets.ViewSet):
                     distinct=True,
                 )
             )
-            .order_by(field)
+            .order_by("-count", field)
         )
 
         items = []
@@ -1537,6 +1587,13 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 "name": item_value,
                 "count": row["count"],
             })
+
+        items.sort(
+            key=lambda item: (
+                -item["count"],
+                item["name"].lower(),
+            )
+        )
 
         return {
             "type": "check",
@@ -1695,6 +1752,32 @@ class ProductJsonViewSet(viewsets.ViewSet):
             ),
         }
 
+    def serialize_list_product(self, request, product):
+        """Card payload. Detail fields stay on the product page."""
+        return {
+            "id": product.id,
+            "name": product.name,
+            "slug": product.slug,
+            "sku": product.sku,
+            "brief_desc": product.brief_desc,
+            "whats_included": product.whats_included,
+            "intended_use_desc": product.intended_use_desc,
+            "short_desc": product.short_desc,
+            "intended_use": product.intended_use,
+            "domain": product.domain.name if product.domain else None,
+            "platform": product.platform.name if product.platform else None,
+            "badges": [badge.name for badge in product.badge.all()],
+            "attributes": [attribute.name for attribute in product.attribute.all()],
+            "images": [
+                request.build_absolute_uri(image.image.url)
+                for image in product.images.all()
+                if image.image
+            ],
+            "price": str(product.price) if product.price is not None else None,
+            "rating": round(float(getattr(product, "review_average", 0) or 0), 1),
+            "reviews": int(getattr(product, "review_count", 0) or 0),
+        }
+
     def serialize_product(
         self,
         request,
@@ -1707,6 +1790,12 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "sku": product.sku,
             "brief_desc": (
                 product.brief_desc
+            ),
+            "whats_included": (
+                product.whats_included
+            ),
+            "intended_use_desc": (
+                product.intended_use_desc
             ),
             "short_desc": (
                 product.short_desc
@@ -1817,6 +1906,16 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 else None
             ),
 
+            "alt_approver": (
+                {
+                    "id": product.alt_approver.id,
+                    "name": product.alt_approver.name,
+                    "sys_id": product.alt_approver.sys_id,
+                }
+                if "alt_approver_id" in product.__dict__ and product.alt_approver_id
+                else None
+            ),
+
             "team": (
                 product.team.name
                 if product.team
@@ -1913,6 +2012,10 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "is_active":
                 product.is_active,
 
+            "rating": round(float(getattr(product, "review_average", 0) or 0), 1),
+
+            "reviews": int(getattr(product, "review_count", 0) or 0),
+
             "created_by": (
                 product.created_by.username
                 if product.created_by
@@ -1982,6 +2085,8 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "slug": product.slug,
             "sku": product.sku,
             "brief_desc": product.brief_desc,
+            "whats_included": product.whats_included,
+            "intended_use_desc": product.intended_use_desc,
             "short_desc": product.short_desc,
             "domain": (
                 product.domain.name
@@ -2006,8 +2111,8 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 in product.images.all()
                 if image.image
             ],
-            "rating": 0,
-            "reviews": 0,
+            "rating": round(float(getattr(product, "review_average", 0) or 0), 1),
+            "reviews": int(getattr(product, "review_count", 0) or 0),
         }
 
     # -----------------------------------------------------
@@ -2116,15 +2221,14 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 request
             )
 
-            base_queryset = (
-                self.get_campaign_queryset()
-                if campaign
-                else self.get_base_queryset()
+            catalog_queryset = self.apply_domain_scope(
+                self.get_catalog_queryset(),
+                request,
             )
 
             searched_queryset = (
                 self.apply_search(
-                    base_queryset,
+                    catalog_queryset,
                     request,
                 )
             )
@@ -2169,20 +2273,27 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 )
             )
 
+            page_ids = list(
+                page_object.object_list.values_list("pk", flat=True)
+            )
+            card_queryset = (
+                self.get_campaign_queryset()
+                if campaign
+                else self.get_list_card_queryset()
+            )
+            cards = {
+                product.pk: product
+                for product in card_queryset.filter(pk__in=page_ids)
+            }
+            serialize = (
+                self.serialize_campaign_product
+                if campaign
+                else self.serialize_list_product
+            )
             products = [
-                (
-                    self.serialize_campaign_product(
-                        request,
-                        product,
-                    )
-                    if campaign
-                    else self.serialize_product(
-                        request,
-                        product,
-                    )
-                )
-                for product
-                in page_object.object_list
+                serialize(request, cards[product_id])
+                for product_id in page_ids
+                if product_id in cards
             ]
 
             filter_values = (
@@ -2646,7 +2757,7 @@ class SearchSuggestionsViewSet(
         request,
     ):
         try:
-            data = hybrid_product_search(
+            data = fast_suggestion_search(
                 request
             )
 
@@ -2855,9 +2966,13 @@ class HybridProductSearchViewSet(
         request,
     ):
         try:
-            data = hybrid_product_search(
-                request
-            )
+            if request.query_params.get("source") == "catalog":
+                from .ai_catalog import catalog_product_search
+                data = catalog_product_search(request)
+            else:
+                data = hybrid_product_search(
+                    request
+                )
 
             return Response(
                 data,

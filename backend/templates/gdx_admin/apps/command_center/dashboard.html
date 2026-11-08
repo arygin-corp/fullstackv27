@@ -4,181 +4,81 @@
 {% block page_header %}{% endblock %}
 {% block extra_css %}
 <style>
-.cc-dash{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:16px;align-items:start}
-.cc-dash-side{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:16px;min-width:0}
-.cc-dash-main{min-width:0;display:flex}
-.cc-dash-charts{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,.75fr);gap:16px;width:100%;align-items:stretch}
-.cc-dash-charts>.cc-chart{min-width:0;display:flex}
-.cc-dash-charts .card{width:100%;height:100%;margin:0}
-.cc-dash-highlights,.cc-dash-bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px;align-items:stretch}
-.cc-dash-highlights>div,.cc-dash-bottom>div{min-width:0;display:flex}
-.cc-dash-highlights .card,.cc-dash-bottom .card{width:100%;height:100%;margin:0;overflow:hidden!important}
-.cc-dash .card{margin:0}
-.cc-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
-.cc-stats>div,.cc-stats .d-flex>div{min-width:0}
-.cc-stats p,.cc-stats h6{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cc-line{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:12px;align-items:center;margin-bottom:14px}
+.cc-fit{display:grid;gap:12px}
+.cc-metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.cc-metric{display:flex;align-items:center;gap:8px;min-width:0;padding:8px 10px;border:1px solid #e6ebf2;border-radius:10px;background:#fff}
+.cc-metric i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f4f0ff;color:#5547ff;font-size:14px;flex:none}
+.cc-metric p{margin:0;overflow:hidden;color:#64758b;font-size:.68rem;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
+.cc-metric strong{display:block;overflow:hidden;color:#1c2740;font-size:.95rem;line-height:1.15;text-overflow:ellipsis;white-space:nowrap}
+.cc-charts{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(220px,.75fr);gap:12px;align-items:stretch}
+.cc-charts .card{height:100%;margin:0}
+.cc-charts .card-body{padding:12px 14px}
+.cc-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cc-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #e6ebf2;border-radius:12px;background:#fff;color:#1c2740;text-decoration:none}
+.cc-link strong{display:block;font-size:1.15rem;line-height:1}
+.cc-link span{color:#64758b;font-size:.75rem}
+.cc-link em{color:#5547ff;font-size:.75rem;font-style:normal;font-weight:700}
+.cc-dash-bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px;align-items:stretch}
+.cc-dash-bottom>div{min-width:0;display:flex}
+.cc-dash-bottom .card{width:100%;margin:0}
+.cc-dash-bottom .card-body{padding:12px 14px 6px}
+.cc-dash-bottom>.cc-match{height:0;min-height:100%}
+.cc-scroll{display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden}
+.cc-scroll .card-body{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.cc-scroll-body{flex:1;min-height:0;overflow-y:auto}
+.cc-line{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:10px;align-items:center;margin-bottom:8px}
 .cc-line>.d-flex{min-width:0;overflow:hidden}
 .cc-line>.d-flex>div{min-width:0;overflow:hidden;flex:1}
-.cc-line h6,.cc-line p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-line .avatar{width:28px;height:28px;font-size:.72rem}
+.cc-line h6,.cc-line p{overflow:hidden;margin:0;text-overflow:ellipsis;white-space:nowrap}
+.cc-line h6{font-size:.82rem}
+.cc-line p{color:#64758b;font-size:.72rem}
 .cc-line .badge,.cc-line .text-end{white-space:nowrap}
-@media(max-width:1199.98px){.cc-dash,.cc-dash-charts,.cc-dash-highlights,.cc-dash-bottom{grid-template-columns:1fr}.cc-dash-side{grid-template-rows:none}}
+.cc-fit + .card .card-body,.cc-dash-bottom + .card .card-body{padding:12px 14px}
+@media(max-width:1199.98px){.cc-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.cc-charts,.cc-links,.cc-dash-bottom{grid-template-columns:1fr}.cc-dash-bottom>.cc-match{height:auto;max-height:280px}}
 </style>
 {% endblock %}
 {% block content %}
+{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="COMMAND CENTER" hero_title="Dashboard" hero_description="Platform activity, orders, and the people using the marketplace." hero_metric_label="Requests" hero_metric_value=request_total hero_metric_caption=range_label hero_icon="⌘" title_parent="Command Center" title_label="Dashboard" title_heading="Command Center" title_text="Platform activity, orders, and the people using the marketplace." %}
 {{ dataset|json_script:"cc-dataset" }}
-<div class="d-flex d-block align-items-center justify-content-between flex-wrap gap-3 mb-3">
-	<div>
-		<h6 class="mb-0">Command Center Dashboard</h6>
-	</div>
-	<div class="d-flex my-xl-auto right-content align-items-center flex-wrap gap-2">
-		<div class="reportrange-picker d-flex align-items-center">
-			<i class="isax isax-calendar text-gray-5 fs-14 me-1"></i>
-			<span>{{ range_label }}</span>
-		</div>
-		<div class="dropdown">
-			<a href="javascript:void(0);" class="btn btn-outline-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
-				<i class="isax isax-export-1 me-1"></i>Export
-			</a>
-			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="{% url 'command_center:analytics' %}">Open analytics</a></li>
-				<li><a class="dropdown-item" href="{% url 'command_center:reports' %}">Open reports</a></li>
-			</ul>
-		</div>
-		<div class="dropdown">
-			<a class="btn btn-primary d-flex align-items-center justify-content-center dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">Create New</a>
-			<ul class="dropdown-menu dropdown-menu-start">
-				<li><a href="{% url 'command_center:builder' %}" class="dropdown-item d-flex align-items-center"><i class="isax isax-document-text-1 me-2"></i>Dashboard</a></li>
-				<li><a href="{% url 'command_center:reports' %}" class="dropdown-item d-flex align-items-center"><i class="isax isax-chart-2 me-2"></i>Report</a></li>
-				<li><a href="{% url 'command_center:health' %}" class="dropdown-item d-flex align-items-center"><i class="isax isax-health me-2"></i>Health check</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<div class="bg-primary rounded welcome-wrap position-relative mb-3">
-	<div class="row">
-		<div class="col-lg-8 col-md-9 col-sm-7">
-			<h5 class="text-white mb-1">{{ greeting.greeting }}</h5>
-			<p class="text-white mb-3">{{ greeting.summary }}</p>
-			<div class="d-flex align-items-center flex-wrap gap-3">
-				<p class="d-flex align-items-center fs-13 text-white mb-0"><i class="isax isax-calendar5 me-1"></i>{{ greeting.date }}</p>
-				<p class="d-flex align-items-center fs-13 text-white mb-0"><i class="isax isax-clock5 me-1"></i>{{ greeting.time }}</p>
-			</div>
-		</div>
-	</div>
-	<div class="position-absolute end-0 top-50 translate-middle-y p-2 d-none d-sm-block">
-		<img src="{% static 'gdx_admin/assets/img/icons/dashboard.svg' %}" alt="">
-	</div>
-</div>
-
-<div class="cc-dash">
-	<div class="cc-dash-side">
-		<div class="card flex-fill">
+<div class="cc-fit">
+	<section class="cc-metrics" aria-label="Overview">
+		<div class="cc-metric"><i class="isax isax-3d-cube-scan"></i><div><p>Modules</p><strong>{{ metrics.Modules|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-profile-2user"></i><div><p>People</p><strong>{{ metrics.People|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-tick-circle"></i><div><p>Enabled</p><strong>{{ metrics.Enabled|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-document-text"></i><div><p>Pages</p><strong>{{ content_pages }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-document-forward"></i><div><p>Staff pages</p><strong>{{ staff_pages }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-send-2"></i><div><p>Builds</p><strong>{{ builds.total|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-tick-circle"></i><div><p>Succeeded</p><strong>{{ builds.succeeded|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-close-circle"></i><div><p>Failed</p><strong>{{ builds.failed|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-activity"></i><div><p>Last 14 days</p><strong>{{ request_total }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-clock5"></i><div><p>Active now</p><strong>{{ greeting.facts.0.value }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-warning-2"></i><div><p>Running</p><strong>{{ builds.running|default:0 }}</strong></div></div>
+		<div class="cc-metric"><i class="isax isax-shield-tick"></i><div><p>Role</p><strong>{{ greeting.role }}</strong></div></div>
+	</section>
+	<section class="cc-charts">
+		<div class="card">
 			<div class="card-body">
-				<div class="mb-3"><h6 class="d-flex align-items-center mb-1"><i class="isax isax-category5 text-muted me-2"></i>Overview</h6></div>
-				<div class="cc-stats">
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-primary-subtle text-primary flex-shrink-0 me-2"><i class="isax isax-3d-cube-scan fs-20"></i></span><div><p class="mb-1 text-truncate">Modules</p><h6 class="fs-16 fw-semibold mb-0">{{ metrics.Modules|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-success-subtle text-success-emphasis flex-shrink-0 me-2"><i class="isax isax-profile-2user fs-20"></i></span><div><p class="mb-1 text-truncate">People</p><h6 class="fs-16 fw-semibold mb-0">{{ metrics.People|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-warning-subtle text-warning-emphasis flex-shrink-0 me-2"><i class="isax isax-tick-circle fs-20"></i></span><div><p class="mb-1 text-truncate">Enabled</p><h6 class="fs-16 fw-semibold mb-0">{{ metrics.Enabled|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-info-subtle text-info-emphasis flex-shrink-0 me-2"><i class="isax isax-document-text fs-20"></i></span><div><p class="mb-1 text-truncate">Pages</p><h6 class="fs-16 fw-semibold mb-0">{{ content_pages }}</h6></div></div></div>
+				<div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+					<h6 class="mb-0">Requests</h6>
+					<span class="badge badge-sm {% if request_change >= 0 %}badge-soft-success{% else %}badge-soft-danger{% endif %}">{{ request_change }}%</span>
 				</div>
+				<p class="mb-0 text-muted fs-13">Last 14 days · {{ request_total }}</p>
+				<div id="cc-requests"></div>
 			</div>
 		</div>
-		<div class="card flex-fill">
+		<div class="card">
 			<div class="card-body">
-				<div class="mb-3"><h6 class="d-flex align-items-center mb-1"><i class="isax isax-chart-215 text-muted me-2"></i>Platform</h6></div>
-				<div class="cc-stats">
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-primary-subtle text-primary flex-shrink-0 me-2"><i class="isax isax-document-forward fs-20"></i></span><div><p class="mb-1 text-truncate">Staff pages</p><h6 class="fs-16 fw-semibold mb-0">{{ staff_pages }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-success-subtle text-success-emphasis flex-shrink-0 me-2"><i class="isax isax-send-2 fs-20"></i></span><div><p class="mb-1 text-truncate">Builds</p><h6 class="fs-16 fw-semibold mb-0">{{ builds.total|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-warning-subtle text-warning-emphasis flex-shrink-0 me-2"><i class="isax isax-tick-circle fs-20"></i></span><div><p class="mb-1">Succeeded</p><h6 class="fs-16 fw-semibold mb-0">{{ builds.succeeded|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-info-subtle text-info-emphasis flex-shrink-0 me-2"><i class="isax isax-close-circle fs-20"></i></span><div><p class="mb-1 text-truncate">Failed</p><h6 class="fs-16 fw-semibold mb-0">{{ builds.failed|default:0 }}</h6></div></div></div>
-				</div>
+				<h6 class="mb-0">Request stages</h6>
+				<div id="cc-modules"></div>
 			</div>
 		</div>
-		<div class="card flex-fill">
-			<div class="card-body">
-				<div class="mb-3"><h6 class="d-flex align-items-center mb-1"><i class="isax isax-chart-success5 text-muted me-2"></i>Requests</h6></div>
-				<div class="cc-stats">
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-primary-subtle text-primary flex-shrink-0 me-2"><i class="isax isax-activity fs-20"></i></span><div><p class="mb-1 text-truncate">Last 14 days</p><h6 class="fs-16 fw-semibold mb-0">{{ request_total }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-success-subtle text-success-emphasis flex-shrink-0 me-2"><i class="isax isax-clock5 fs-20"></i></span><div><p class="mb-1 text-truncate">Active now</p><h6 class="fs-16 fw-semibold mb-0">{{ greeting.facts.0.value }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-warning-subtle text-warning-emphasis flex-shrink-0 me-2"><i class="isax isax-warning-2 fs-20"></i></span><div><p class="mb-1 text-truncate">Running</p><h6 class="fs-16 fw-semibold mb-0">{{ builds.running|default:0 }}</h6></div></div></div>
-					<div><div class="d-flex align-items-center"><span class="avatar avatar-lg avatar-rounded bg-info-subtle text-info-emphasis flex-shrink-0 me-2"><i class="isax isax-shield-tick fs-20"></i></span><div><p class="mb-1 text-truncate">Role</p><h6 class="fs-16 fw-semibold mb-0">{{ greeting.role }}</h6></div></div></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="cc-dash-main">
-		<div class="cc-dash-charts">
-			<div class="cc-chart">
-				<div class="card flex-fill">
-					<div class="card-body pb-0">
-						<div class="mb-3"><h6 class="mb-1">Requests</h6></div>
-						<div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-							<div>
-								<p class="mb-1">Last 14 days</p>
-								<div class="d-flex align-items-center">
-									<h6 class="fs-16 fw-semibold me-2 mb-0">{{ request_total }}</h6>
-									<span class="badge badge-sm {% if request_change >= 0 %}badge-soft-success{% else %}badge-soft-danger{% endif %}">{{ request_change }}%</span>
-								</div>
-							</div>
-							<p class="fs-13 text-dark d-flex align-items-center mb-0"><i class="fa-solid fa-circle text-primary fs-12 me-1"></i>Requests</p>
-						</div>
-						<div id="cc-requests"></div>
-					</div>
-				</div>
-			</div>
-			<div class="cc-chart">
-				<div class="card">
-					<div class="card-body d-flex flex-column">
-						<h6 class="mb-3">Request stages</h6>
-						<div id="cc-modules"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="cc-dash-highlights">
-			<div class="d-flex flex-column">
-				<div class="card overflow-hidden z-1 flex-fill">
-					<div class="card-body">
-						<div class="d-flex align-items-center mb-3 gap-2">
-							<span class="avatar avatar-xl avatar-rounded bg-primary"><i class="isax isax-3d-cube-scan fs-24"></i></span>
-							<div><p class="mb-1">Modules</p><h6 class="fs-20 fw-bold mb-0">{{ metrics.Modules|default:0 }}</h6></div>
-						</div>
-						<p class="mb-3 pb-3 border-bottom">{{ metrics.Enabled|default:0 }} enabled</p>
-						<a href="{% url 'third_party_api_pages:integration_catalog' %}" class="fw-medium text-decoration-underline">View catalog</a>
-					</div>
-					<div class="position-absolute end-0 top-0 z-n1"><img src="{% static 'gdx_admin/assets/img/bg/card-bg-01.svg' %}" alt=""></div>
-				</div>
-			</div>
-			<div class="d-flex flex-column">
-				<div class="card overflow-hidden z-1 flex-fill">
-					<div class="card-body">
-						<div class="d-flex align-items-center mb-3 gap-2">
-							<span class="avatar avatar-xl avatar-rounded bg-info"><i class="isax isax-profile-2user fs-24"></i></span>
-							<div><p class="mb-1">People</p><h6 class="fs-20 fw-bold mb-0">{{ metrics.People|default:0 }}</h6></div>
-						</div>
-						<p class="mb-3 pb-3 border-bottom text-nowrap">{{ greeting.facts.0.value }} active in 30 min</p>
-						<a href="{% url 'command_center:analytics' %}" class="fw-medium text-decoration-underline">View analytics</a>
-					</div>
-					<div class="position-absolute end-0 top-0 z-n1"><img src="{% static 'gdx_admin/assets/img/bg/card-bg-02.svg' %}" alt=""></div>
-				</div>
-			</div>
-			<div class="d-flex flex-column">
-				<div class="card overflow-hidden z-1 flex-fill">
-					<div class="card-body">
-						<div class="d-flex align-items-center mb-3 gap-2">
-							<span class="avatar avatar-xl avatar-rounded bg-warning"><i class="isax isax-send-2 fs-24"></i></span>
-							<div><p class="mb-1">Builds</p><h6 class="fs-20 fw-bold mb-0">{{ builds.total|default:0 }}</h6></div>
-						</div>
-						<p class="mb-3 pb-3 border-bottom">{{ builds.succeeded|default:0 }} succeeded</p>
-						<a href="{% url 'deployment:dashboard' %}" class="fw-medium text-decoration-underline">View deployment</a>
-					</div>
-					<div class="position-absolute end-0 top-0 z-n1"><img src="{% static 'gdx_admin/assets/img/bg/card-bg-03.svg' %}" alt=""></div>
-				</div>
-			</div>
+	</section>
+	<section class="cc-links">
+		<a class="cc-link" href="{% url 'third_party_api_pages:integration_catalog' %}"><div><span>Modules</span><strong>{{ metrics.Modules|default:0 }}</strong><span>{{ metrics.Enabled|default:0 }} enabled</span></div><em>Catalog</em></a>
+		<a class="cc-link" href="{% url 'command_center:analytics' %}"><div><span>People</span><strong>{{ metrics.People|default:0 }}</strong><span>{{ greeting.facts.0.value }} active in 30 min</span></div><em>Analytics</em></a>
+		<a class="cc-link" href="{% url 'deployment:dashboard' %}"><div><span>Builds</span><strong>{{ builds.total|default:0 }}</strong><span>{{ builds.succeeded|default:0 }} succeeded</span></div><em>Deployment</em></a>
+	</section>
 </div>
 
 <div class="cc-dash-bottom">
@@ -305,13 +205,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="d-flex">
-		<div class="card flex-fill">
+	<div class="d-flex cc-match">
+		<div class="card flex-fill cc-scroll">
 			<div class="card-body">
 				<div class="mb-3 d-flex align-items-center justify-content-between">
 					<h6 class="mb-0">Recent builds</h6>
 					<a href="{% url 'deployment:activity' %}" class="btn btn-icon border border-color rounded-circle"><i class="isax isax-arrow-right-14"></i></a>
 				</div>
+				<div class="cc-scroll-body">
 				{% for item in dataset.activity %}
 				<div class="cc-line">
 					<div>
@@ -323,6 +224,7 @@
 				{% empty %}
 				<p class="mb-0 text-muted">No builds yet.</p>
 				{% endfor %}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -384,7 +286,7 @@
 	var breakdown = data.breakdown || { labels: data.labels || ["Pages"], values: data.values || [0] };
 	var purple = "#7539FF";
 	new ApexCharts(document.querySelector("#cc-requests"), {
-		chart: { type: "area", height: 280, toolbar: { show: false }, fontFamily: "Instrument Sans, sans-serif" },
+		chart: { type: "area", height: 200, toolbar: { show: false }, fontFamily: "Instrument Sans, sans-serif" },
 		series: [{ name: "Requests", data: values }],
 		colors: [purple],
 		stroke: { curve: "smooth", width: 2 },
@@ -396,7 +298,7 @@
 		legend: { show: false }
 	}).render();
 	new ApexCharts(document.querySelector("#cc-modules"), {
-		chart: { type: "donut", height: 210, fontFamily: "Instrument Sans, sans-serif" },
+		chart: { type: "donut", height: 190, fontFamily: "Instrument Sans, sans-serif" },
 		series: (breakdown.values || [0]).map(function (value) { return Number(value) || 0; }),
 		labels: breakdown.labels || ["Pages"],
 		colors: [purple, "#22C55E", "#F59E0B", "#06B6D4", "#E2E4E6"],

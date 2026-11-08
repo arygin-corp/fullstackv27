@@ -36,6 +36,7 @@
     "ci:frontend": "node scripts/ci-build.js frontend prod",
     "ci:all": "node scripts/ci-build.js all prod",
     "clean": "node scripts/clean.js",
+    "mind-map": "node scripts/mind-map.js",
     "validate:wrapper": "node --check scripts/backend.js && node --check scripts/django.js && node --check scripts/setup-python.js && node --check scripts/build-root.js && node --check scripts/ci-build.js && node --check scripts/clean.js && node --check frontend/build/build.js && node --check scripts/asgi.js && node --check scripts/verify-runtime.js",
     "backend:local": "node scripts/django.js run local runserver 8000",
     "build:backend:local": "node scripts/build-root.js backend local",

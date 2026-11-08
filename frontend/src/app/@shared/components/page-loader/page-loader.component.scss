@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .site-loader {
   display: flex;
   flex-direction: column;
@@ -69,8 +71,8 @@
    */
   @keyframes anim-text-flow-keys {
     @for $i from 0 through $animationSteps {
-      #{percentage($i * (1 / $animationSteps))} {
-        color: hsla(random(365), 60, 60, 1);
+      #{percentage($i * math.div(1, $animationSteps))} {
+        color: hsla(random(365), 60%, 60%, 1);
       }
     }
   }
@@ -149,7 +151,7 @@ $item-count: 5;
 @keyframes scrollUp {
   @for $i from 1 through ($item-count - 1) {
     #{($i * 25) - 10%}, #{$i * 25%} {
-      transform: translateY((-100% / $item-count) * $i);
+      transform: translateY(math.div(-100%, $item-count) * $i);
     }
   }
 }

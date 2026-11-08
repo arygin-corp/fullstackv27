@@ -102,12 +102,9 @@
 <nav class="cc-nav" aria-label="Command Center">
     <a href="{% url 'command_center:dashboard' %}" class="{% if section == 'dashboard' %}is-current{% endif %}">Dashboard</a>
     <a href="{% url 'command_center:analytics' %}" class="{% if section == 'analytics' %}is-current{% endif %}">Analytics</a>
-    <a href="{% url 'command_center:my_dashboards' %}" class="{% if section == 'my_dashboards' %}is-current{% endif %}">My Dashboards</a>
-    <a href="{% url 'command_center:my_reports' %}" class="{% if section == 'my_reports' %}is-current{% endif %}">My Reports</a>
-    <a href="{% url 'command_center:reports' %}" class="{% if section == 'reports' %}is-current{% endif %}">Reports</a>
     <a href="{% url 'command_center:health' %}" class="{% if section == 'health' %}is-current{% endif %}">Health</a>
+    <a href="{% url 'command_center:workflow' %}" class="{% if section == 'workflow' %}is-current{% endif %}">Workflow</a>
     <a href="{% url 'deployment:dashboard' %}">Deployment</a>
-    <a class="cc-create" href="{% url 'command_center:builder' %}">Create</a>
 </nav>
 {% endif %}
 {% if error %}<p class="cc-error">{{ error }}</p>{% endif %}

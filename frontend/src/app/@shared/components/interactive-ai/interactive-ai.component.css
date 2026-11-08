@@ -1,0 +1,273 @@
+:host {
+  /* Component itself should not consume layout space when shown */
+  display: block;
+}
+
+/* Fake modal backdrop */
+.fake-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9998;
+
+  /* Optional fade-in */
+  animation: backdropFadeIn 100ms ease-out;
+}
+
+/* Overlay panel (sits ABOVE the form, does not push it) */
+.interactive-ai-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(750px, 92vw);
+  min-height: 400px;
+  max-height: 80vh;
+  overflow: hidden;
+
+  /* Keep your existing look */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  z-index: 9999;
+
+  /* Optional entry animation */
+  animation: fakeModalIn 100ms ease-out;
+}
+
+/* Optional: keep your status overlay */
+.ai-status {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fakeModalIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.canvas-wrapper canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ai-status {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.ai-status.active {
+  background: rgba(102, 34, 204, 0.3);
+  border-color: rgba(102, 34, 204, 0.5);
+}
+.ai-status.active .status-indicator {
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffaa00;
+  transition: all 0.3s ease;
+}
+
+.status-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.controls-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.control-btn {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.control-btn.active {
+  background: rgba(220, 38, 38, 0.3);
+  border-color: rgba(220, 38, 38, 0.5);
+}
+.control-btn.active:hover {
+  background: rgba(220, 38, 38, 0.4);
+}
+
+.no-scroll { 
+  overflow: hidden; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Formato esfera + sombra */
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: var(--dynamic-border-radius);  /* Usando o border-radius dinâmico */
+    box-shadow: 0 0 20px 10px rgba(var(--color-orange), 0.05);
+    animation: rotateShape var(--rotation-duration) infinite ease-in-out;
+}
+
+/* Primeira esfera rotacionando com luz laranja */
+.circle-1 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 67%, rgba(var(--color-orange), 1) 73%, rgba(var(--color-orange), 1) 100%);
+}
+
+/* Segunda esfera rotacionando com luz violeta */
+.circle-2 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 67%, rgba(var(--color-violet), 1) 75%, rgba(var(--color-violet), 1) 100%);
+    animation: rotateShape var(--rotation-duration) infinite reverse ease-in-out;
+}
+
+/* Terceira esfera com luz branca */
+.circle-3 {
+    background: radial-gradient(circle, rgba(var(--color-black), .0) 0%, rgba(var(--color-black), .0) 70%, rgba(var(--color-white), 1) 73%, rgba(var(--color-white), 1) 100%);
+}
+
+/* Animação de rotação */
+@keyframes rotateShape {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        border-radius: var(--dynamic-border-radius);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.05);
+        border-radius: 45% 55% 50% 50%;  /* Deformação adicional durante a animação */
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        border-radius: var(--dynamic-border-radius);  /* Retorna ao valor dinâmico */
+    }
+}
+
+.gradient-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(var(--color-orange), 1),
+        rgba(var(--color-violet), 1),
+        rgba(var(--color-white), 1),
+        rgba(var(--color-orange), 1)
+    );
+    animation: spin 10s infinite;
+    transform-origin: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#love {
+  position: fixed;
+  width: inherit;
+  color: rgba(200, 200, 200, 0.48);
+  bottom: 1rem ;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1.2rem;
+}
+
+#svgator {
+  color: rgba(100, 90, 210, 0.8);
+}
+
+#svgator:hover {
+  color: rgba(100, 90, 230, 1);
+}
+
+a:visited {
+  color: rgba(100, 90, 210, 1);
+}

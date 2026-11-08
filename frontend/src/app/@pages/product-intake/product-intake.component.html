@@ -1,6 +1,15 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron-sticky">
+        <div class="container">
+            <h1 class="display-4 text-center">View Product Request</h1>
+            <p class="lead text-center">
+                Product requests submitted to add a catalog product.
+            </p>
+        </div>
+    </div>
+</div>
+
 <section class="product-intake">
-    <h1>View Product Request</h1>
-    <p class="product-intake__lead">Product requests submitted to add a catalog product.</p>
 
     <p *ngIf="loading">Loading product requests...</p>
     <p class="product-intake__error" *ngIf="error">{{ error }}</p>

@@ -1,82 +1,107 @@
-<div class="roadmap-header">
-  <h4 class="title">Roadmap</h4>
-  <p class="subtitle">A high-level strategic plan outlining vision, priorities and milestones.</p>
-
-  <div class="fiscal-selection">
-    <label class="form-label">Fiscal start</label>
-    <div class="d-flex align-items-center gap-2">
-      <select class="form-select w-auto" [(ngModel)]="selectedFiscalYear" (ngModelChange)="onFiscalYearChange($event)">
-        <option *ngFor="let y of fiscalYears" [ngValue]="y">April 1, {{ y }} - March 31, {{ y + 1 }}</option>
-      </select>
-      <!-- <div class="text-muted">Selected: April 1, {{ selectedFiscalYear }}</div> -->
-    </div>
+<div class="roadmap-hero">
+  <div class="container">
+    <h1>Product Roadmap</h1>
+    <p>Milestones for GDX Data Marketplace, grouped by fiscal quarter. April 1 starts the year.</p>
   </div>
 </div>
-<!-- rest of the timeline markup remains unchanged -->
 
-<div class="roadmap-root">
-  <div class="timeline-wrap" *ngIf="currentYear$ | async as year">
-    <div class="timeline">
-      <div class="timeline-line" aria-hidden="true"></div>
-
-      <ng-container *ngFor="let month of getAllMonths(); let i = index; trackBy: trackByMonth">
-        <div class="timeline-item" [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0" >
-          <div class="card month-card">
-            <div class="card-body">
-              <div class="month-meta">
-                <div class="month-name">{{ getMonthDateDisplay(month) }}</div>
-                <div class="month-index">M{{ month.monthIndex + 1 }}</div>
-              </div>
-
-              <div class="event">
-                <div class="event-title" *ngIf="month.event; else noEventBlock">
-                  {{ month.event.title }}
-                </div>
-                <ng-template #noEventBlock>
-                  <div class="no-event">No planned event</div>
-                </ng-template>
-                <div class="event-desc" *ngIf="month.event?.description">{{ month.event.description }}</div>
-              </div>
-
-              <div class="actions">
-                <button class="btn btn-sm btn-edit" (click)="onEditEvent(month)">Edit</button>
-              </div>
-            </div>
-            <div class="timeline-node" aria-hidden="true">
-              <span class="dot"></span>
-            </div>
-          </div>
-        </div>
-      </ng-container>
-    </div>
+<div class="roadmap" *ngIf="currentYear$ | async as year">
+  <div class="roadmap__toolbar">
+    <label for="fiscal-year">Fiscal year</label>
+    <select id="fiscal-year" class="form-select" [(ngModel)]="selectedFiscalYear" (ngModelChange)="onFiscalYearChange($event)">
+      <option *ngFor="let y of fiscalYears" [ngValue]="y">April 1, {{ y }} – March 31, {{ y + 1 }}</option>
+    </select>
+    <span class="roadmap__count">{{ plannedCount() }} planned</span>
   </div>
 
-  <div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="editingMonth = null"></button>
+  <div class="roadmap__board">
+    <section class="quarter" *ngFor="let quarter of year.quarters; trackBy: trackByQuarter">
+      <header class="quarter__header">
+        <div>
+          <span>Q{{ quarter.quarterNumber }}</span>
+          <strong>{{ quarterSpan(quarter) }}</strong>
         </div>
-        <div class="modal-body" *ngIf="editingMonth">
-          <div class="mb-3">
-            <label class="form-label">Month</label>
-            <input class="form-control" [value]="getMonthDateDisplay(editingMonth)" readonly />
+        <button type="button" class="quarter__add" *ngIf="canAddEvent" (click)="openAdd(quarter)">+ Add</button>
+      </header>
+
+      <ng-container *ngFor="let month of quarter.months; trackBy: trackByMonth">
+        <article
+          class="month"
+          [class.is-planned]="month.event?.title"
+          [class.is-current]="isCurrentMonth(month)">
+          <div class="month__top">
+            <div>
+              <p class="month__name">{{ getMonthDateDisplay(month) }}</p>
+              <p class="month__flag" *ngIf="isCurrentMonth(month)">This month</p>
+            </div>
+            <div class="month__actions">
+              <button type="button" class="month__edit" *ngIf="canEditRoadmap" (click)="onEditEvent(quarter, month)" aria-label="Edit"><i class="bi bi-pencil" aria-hidden="true"></i></button>
+              <button type="button" class="month__view" *ngIf="month.event?.title" (click)="openView(month, month.event)" aria-label="View"><i class="bi bi-eye" aria-hidden="true"></i></button>
+            </div>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Title</label>
-            <input class="form-control" [(ngModel)]="editingEvent.title" />
+          <h3 *ngIf="month.event?.title; else openMonth">{{ month.event.title }}</h3>
+          <ng-template #openMonth>
+            <p class="month__open">No planned event</p>
+          </ng-template>
+          <p class="month__desc" *ngIf="month.event?.description">{{ month.event.description }}</p>
+        </article>
+
+        <article class="month is-planned" *ngFor="let extra of month.extraEvents">
+          <div class="month__top">
+            <p class="month__name">{{ getMonthDateDisplay(month) }}</p>
+            <div class="month__actions">
+              <button type="button" class="month__edit" *ngIf="canEditRoadmap" (click)="onEditEvent(quarter, month, extra)" aria-label="Edit"><i class="bi bi-pencil" aria-hidden="true"></i></button>
+              <button type="button" class="month__view" (click)="openView(month, extra)" aria-label="View"><i class="bi bi-eye" aria-hidden="true"></i></button>
+            </div>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea class="form-control" rows="4" [(ngModel)]="editingEvent.description"></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="editingMonth = null">Cancel</button>
-          <button type="button" class="btn btn-primary" (click)="saveEvent()">Save</button>
-        </div>
+          <h3>{{ extra.title }}</h3>
+          <p class="month__desc" *ngIf="extra.description">{{ extra.description }}</p>
+        </article>
+      </ng-container>
+    </section>
+  </div>
+</div>
+
+<div class="roadmap-modal" *ngIf="modal" role="dialog" aria-modal="true" aria-labelledby="roadmap-modal-title">
+  <button type="button" class="roadmap-modal__backdrop" aria-label="Close" (click)="closeModal()"></button>
+  <div class="roadmap-modal__dialog">
+    <header class="roadmap-modal__header">
+      <h2 id="roadmap-modal-title">{{ modal === 'add' ? 'Add event' : (modal === 'edit' ? 'Edit event' : 'Event detail') }}</h2>
+      <button type="button" class="roadmap-modal__close" (click)="closeModal()" aria-label="Close">×</button>
+    </header>
+
+    <div class="roadmap-modal__body" *ngIf="modal === 'view'">
+      <p class="roadmap-modal__label">Month</p>
+      <p class="roadmap-modal__value">{{ editingMonth ? getMonthDateDisplay(editingMonth) : '' }}</p>
+      <p class="roadmap-modal__label">Title</p>
+      <p class="roadmap-modal__value">{{ editingEvent.title }}</p>
+      <p class="roadmap-modal__label">Description</p>
+      <p class="roadmap-modal__value">{{ editingEvent.description || 'No description.' }}</p>
+    </div>
+
+    <form class="roadmap-modal__body" *ngIf="modal === 'edit' || modal === 'add'" (ngSubmit)="saveEvent()">
+      <label>
+        Month
+        <select class="form-select" name="eventMonth" [(ngModel)]="addMonthIndex">
+          <option *ngFor="let month of addingQuarter?.months" [ngValue]="month.monthIndex">{{ getMonthDateDisplay(month) }}</option>
+        </select>
+      </label>
+      <label>
+        Title
+        <input class="form-control" name="eventTitle" [(ngModel)]="editingEvent.title" required />
+      </label>
+      <label>
+        Description
+        <textarea class="form-control" name="eventDescription" rows="4" [(ngModel)]="editingEvent.description"></textarea>
+      </label>
+      <div class="roadmap-modal__actions">
+        <button type="button" class="btn btn-outline-secondary" (click)="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
       </div>
+    </form>
+
+    <div class="roadmap-modal__actions" *ngIf="modal === 'view'">
+      <button type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
     </div>
   </div>
 </div>

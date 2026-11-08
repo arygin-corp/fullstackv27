@@ -8,5 +8,6 @@ export interface CartItem {
         value: string;
     }[];
     quantity: number;
-    formData?: any; 
+    formData?: any;
+    aiSuggested?: boolean;
 }

@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .mobile-links
 */
@@ -91,7 +92,7 @@ $local-expand-transition-duration: .3s;
             height: $local-item-height;
 
             .mobile-links__item-link {
-                padding: #{($local-item-height - 24px) / 2} 20px;
+                padding: #{math.div($local-item-height - 24px, 2)} 20px;
             }
         }
     }
@@ -105,7 +106,7 @@ $local-expand-transition-duration: .3s;
     line-height: 14px;
 
     .mobile-links__item .mobile-links__item-link {
-        padding: #{(40px - 14px) / 2} 20px;
+        padding: #{math.div(40px - 14px, 2)} 20px;
     }
 
     .mobile-links {

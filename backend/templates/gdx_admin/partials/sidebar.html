@@ -151,6 +151,32 @@
 						<li class="menu-title"><span>{{ section.title }}</span></li>
 						{% include "gdx_admin/partials/sidebar_nodes.html" with nodes=section.items %}
 					{% endfor %}
+					<li class="menu-title"><span>Templates</span></li>
+					<li class="submenu">
+						<a href="#" class="submenu-toggle" role="button" aria-expanded="false">
+							<i class="sidebar-icon isax isax-document" aria-hidden="true"></i>
+							<span>Templates</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<ul>
+							<li><a href="/sa/checkout/form-builder/"><span>Checkout Form</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/"><span>Walkthrough</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/getting-started/"><span>Getting Started</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/create-workflow/"><span>Create Workflow</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/form-builder/"><span>Form Builder</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/rule-builder/"><span>Rule Builder</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/publish-workflow/"><span>Publish Workflow</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/run-monitoring/"><span>Run Monitoring</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/approvals/"><span>Approvals</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/marketplace/"><span>Marketplace</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/connectors/"><span>Connectors</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/governance/"><span>Governance</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/observability/"><span>Observability</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/operations/"><span>Operations</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/workflow-vikki/"><span>Workflow Vikki</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/administration/"><span>Administration</span></a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -221,6 +247,63 @@
 		document.addEventListener("DOMContentLoaded", syncSidebarState);
 	} else {
 		syncSidebarState();
+	}
+
+	function filterSidebar() {
+		var sidebar = document.getElementById("sidebar-menu");
+		var input = document.getElementById("sidebarSearch");
+		if (!sidebar || !input) {
+			return;
+		}
+		var query = input.value.trim().toLowerCase();
+		sidebar.querySelectorAll("li").forEach(function (item) {
+			item.classList.remove("is-filter-hidden");
+		});
+		if (!query) {
+			return;
+		}
+		sidebar.querySelectorAll("li").forEach(function (item) {
+			if (item.classList.contains("menu-title")) {
+				return;
+			}
+			var text = (item.textContent || "").toLowerCase();
+			if (text.indexOf(query) === -1) {
+				item.classList.add("is-filter-hidden");
+			}
+		});
+		sidebar.querySelectorAll("li.submenu").forEach(function (item) {
+			if (item.classList.contains("is-filter-hidden")) {
+				return;
+			}
+			var list = item.querySelector(":scope > ul");
+			var toggle = item.querySelector(":scope > a");
+			if (list) {
+				list.style.display = "block";
+			}
+			if (toggle) {
+				toggle.classList.add("subdrop");
+				toggle.setAttribute("aria-expanded", "true");
+			}
+		});
+		var titles = Array.from(sidebar.querySelectorAll("li.menu-title"));
+		titles.forEach(function (title, index) {
+			var next = titles[index + 1];
+			var node = title.nextElementSibling;
+			var visible = false;
+			while (node && node !== next) {
+				if (!node.classList.contains("is-filter-hidden")) {
+					visible = true;
+					break;
+				}
+				node = node.nextElementSibling;
+			}
+			title.classList.toggle("is-filter-hidden", !visible);
+		});
+	}
+
+	var search = document.getElementById("sidebarSearch");
+	if (search) {
+		search.addEventListener("input", filterSidebar);
 	}
 })();
 </script>

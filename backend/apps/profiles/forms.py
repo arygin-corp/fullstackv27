@@ -4,9 +4,14 @@ from .models import Profile
 from PIL import Image # Import Pillow for image processing (already likely installed for ImageField)
 
 class ProfileForm(forms.ModelForm):
+    def __init__(self, *args, include_employee_type=False, **kwargs):
+        super().__init__(*args, **kwargs)
+        if not include_employee_type and "employee_type" in self.fields:
+            self.fields.pop("employee_type")
+
     class Meta:
         model = Profile
-        fields = ['user', 'team', 'image', 'job_title', 'job_subtitle', 'department', 'address_line1', 'address_line2', 'city', 'state', 'zipcode', 'country', 'phone', 'is_active']
+        fields = ['user', 'team', 'image', 'job_title', 'job_subtitle', 'department', 'address_line1', 'address_line2', 'city', 'state', 'zipcode', 'country', 'phone', 'is_active', 'employee_type']
 
     def clean_profile_picture(self):
         profile_picture = self.cleaned_data.get('profile_picture')

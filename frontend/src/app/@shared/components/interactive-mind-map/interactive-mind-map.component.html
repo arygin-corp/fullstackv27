@@ -1,0 +1,57 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Mind Map</h1>
+    <p class="lead text-center">
+      On November 7, 2026, this mind map became interactive so you can open each security domain instead of reading a static diagram.<br>
+      Search for a group, or open a branch to see the topics and tbdp groups inside it. The page loads the latest mind map each time you visit.
+    </p>
+  </div>
+</div>
+
+<section class="mind-map">
+  <div class="mind-map__tools">
+    <input type="search" [(ngModel)]="query" placeholder="Search a domain or tbdp group" aria-label="Search the mind map">
+    <button type="button" (click)="expandAll()">Expand all</button>
+    <button type="button" (click)="collapseToPillars()">Collapse</button>
+  </div>
+
+  <p class="mind-map__status" *ngIf="loading">Reading the mind map file…</p>
+  <p class="mind-map__status mind-map__status--error" *ngIf="loadError">{{ loadError }}</p>
+
+  <div class="mind-map__stage" *ngIf="!loading && !loadError">
+    <div class="mind-map__side mind-map__side--left">
+      <ng-container *ngFor="let node of left">
+        <ng-container *ngTemplateOutlet="branch; context: { $implicit: node, side: 'left', path: node.label }"></ng-container>
+      </ng-container>
+    </div>
+
+    <div class="mind-map__root">Security Domains</div>
+
+    <div class="mind-map__side">
+      <ng-container *ngFor="let node of right">
+        <ng-container *ngTemplateOutlet="branch; context: { $implicit: node, side: 'right', path: node.label }"></ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <aside class="mind-map__detail" *ngIf="selected">
+    <p class="mind-map__kind">{{ selected.kind }}</p>
+    <h2>{{ selected.label }}</h2>
+    <p *ngIf="selected.note">{{ selected.note }}</p>
+    <p>{{ groupCount(selected) }} tbdp group{{ groupCount(selected) === 1 ? '' : 's' }} in this branch</p>
+  </aside>
+</section>
+
+<ng-template #branch let-node let-side="side" let-path="path">
+  <div class="branch" [class.branch--left]="side === 'left'" *ngIf="visible(node)">
+    <button type="button" class="node" [ngClass]="'node--' + node.kind" [class.node--match]="query && node.label.toLowerCase().includes(query.trim().toLowerCase())" (click)="toggle(node, path)">
+      <span class="node__mark" *ngIf="node.children?.length">{{ isOpen(node, path) ? '–' : '+' }}</span>
+      <span>{{ node.label }}</span>
+    </button>
+    <div class="branch__children" *ngIf="node.children?.length && isOpen(node, path)">
+      <ng-container *ngFor="let child of node.children">
+        <ng-container *ngTemplateOutlet="branch; context: { $implicit: child, side: side, path: path + '/' + child.label }"></ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>

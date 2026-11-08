@@ -13,11 +13,11 @@
 }
 
 @mixin preloader-size($size) {
-    left: calc(50% - #{$size / 2});
-    top: calc(50% - #{$size / 2});
+    left: calc(50% - #{math.div($size, 2)});
+    top: calc(50% - #{math.div($size, 2)});
     width: $size;
     height: $size;
-    border-radius: $size / 2;
+    border-radius: math.div($size, 2);
 }
 
 

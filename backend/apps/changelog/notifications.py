@@ -23,6 +23,21 @@ def notify_release_published(post_id):
         if sub.in_app_enabled
     ]
     Notification.objects.bulk_create(in_app, ignore_conflicts=True)
+    from apps.notifications.services.ingress import publish
+    from apps.notifications.models import NotificationType
+
+    for item in Notification.objects.filter(post=post):
+        publish(
+            recipient=item.user,
+            title=item.title,
+            body=item.message,
+            url="/sa/changelog/notifications/",
+            notification_type=NotificationType.SYSTEM,
+            source="changelog",
+            source_object_type="Post",
+            source_object_id=item.post_id,
+            idempotency_key=f"changelog-notification:{item.pk}",
+        )
 
     from_email = getattr(settings, "DEFAULT_FROM_EMAIL", None)
     emails = [

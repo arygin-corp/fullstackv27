@@ -11,6 +11,7 @@ urlpatterns = [
     path("my-reports/", views.my_reports, name="my_reports"),
     path("reports/", views.reports, name="reports"),
     path("health/", views.health, name="health"),
+    path("workflow/", views.workflow, name="workflow"),
     path("create/", views.builder, name="builder"),
     path("views/<str:view_id>/", views.view_detail, name="view"),
     path("views/<str:view_id>/delete/", views.remove, name="remove"),

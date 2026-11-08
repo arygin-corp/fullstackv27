@@ -47,14 +47,27 @@ def _pages(*page_ids):
     return [_link(page_id) for page_id in page_ids if page_id in BY_ID and page_id not in DASHBOARD_LABELS]
 
 
-def _workflow_pages():
-    """Landing pages from the workflow URL modules, not detail or action routes."""
+def _workflow_watch_pages():
+    """Platform-wide workflow status. Builders stay under Work."""
     return [
         _link("workflow_dashboard", "Dashboard"),
-        _path("Library", "/sa/workflow/workflows/"),
-        _path("Builder", "/sa/workflow/workflows/new/"),
         _path("Runs", "/sa/workflow/runs/"),
         _path("Audit", "/sa/workflow/audit/"),
+        _path("Operations", "/sa/workflow/operations/"),
+        _path("Operations Center", "/sa/workflow/operations/dashboard/"),
+        _path("Observability", "/sa/workflow/observability/"),
+        _path("Reliability Overview", "/sa/workflow/observability/dashboard/"),
+        _path("Governance", "/sa/workflow/governance/"),
+        _path("Governance Overview", "/sa/workflow/governance/dashboard/"),
+        _path("Connector Health", "/sa/workflow/connectors/health/"),
+    ]
+
+
+def _workflow_pages():
+    """Workflow builders. Status pages live under Command Center."""
+    return [
+        _path("Library", "/sa/workflow/workflows/"),
+        _path("Builder", "/sa/workflow/workflows/new/"),
         _path("Forms", "/sa/workflow/forms/form-list/"),
         _path("Form Builder", "/sa/workflow/forms/form-builder/"),
         _path("Rules", "/sa/workflow/rules/rule-list/"),
@@ -64,14 +77,7 @@ def _workflow_pages():
         _path("Marketplace", "/sa/workflow/marketplace/"),
         _path("Certification", "/sa/workflow/marketplace/certification/"),
         _path("Connectors", "/sa/workflow/connectors/"),
-        _path("Connector Health", "/sa/workflow/connectors/health/"),
         _path("Agents", "/sa/workflow/agents/"),
-        _path("Governance", "/sa/workflow/governance/"),
-        _path("Governance Overview", "/sa/workflow/governance/dashboard/"),
-        _path("Operations", "/sa/workflow/operations/"),
-        _path("Operations Center", "/sa/workflow/operations/dashboard/"),
-        _path("Observability", "/sa/workflow/observability/"),
-        _path("Reliability Overview", "/sa/workflow/observability/dashboard/"),
         _path("Simulation", "/sa/workflow/simulation/"),
         _path("Workflow GPS", "/sa/workflow/analytics/workflow-gps/"),
         _path("Workflow Genome", "/sa/workflow/analytics/workflow-genome/"),
@@ -80,6 +86,37 @@ def _workflow_pages():
         _path("Portal", "/sa/workflow/portal/"),
         _path("Workflow Settings", "/sa/workflow/settings/"),
     ]
+
+
+
+
+def _marketplace_crud():
+    """One list link per Marketplace model."""
+    children = [
+        _path("Products", "/sa/marketplace/admin/products/"),
+        _path("Reviews", "/sa/marketplace/admin/reviews/"),
+        _path("Domains", "/sa/marketplace/admin/domains/"),
+        _path("Subdomains", "/sa/marketplace/admin/subdomains/"),
+        _path("Product Images", "/sa/marketplace/admin/records/product-images/"),
+        _path("Subdomains Level 3", "/sa/marketplace/admin/records/subdomains-level-3/"),
+        _path("Datatypes", "/sa/marketplace/admin/records/datatypes/"),
+        _path("Classifications", "/sa/marketplace/admin/records/classifications/"),
+        _path("Contacts", "/sa/marketplace/admin/records/contacts/"),
+        _path("Data Stewards", "/sa/marketplace/admin/records/data-stewards/"),
+        _path("Organizations", "/sa/marketplace/admin/records/organizations/"),
+        _path("Companies", "/sa/marketplace/admin/records/companies/"),
+        _path("Catalogs", "/sa/marketplace/admin/records/catalogs/"),
+        _path("Platforms", "/sa/marketplace/admin/records/platforms/"),
+        _path("Badges", "/sa/marketplace/admin/records/badges/"),
+        _path("Keywords", "/sa/marketplace/admin/records/keywords/"),
+        _path("Attribute Types", "/sa/marketplace/admin/records/attribute-types/"),
+        _path("Attributes", "/sa/marketplace/admin/records/attributes/"),
+        _path("One TS Domains", "/sa/marketplace/admin/records/one-ts-domains/"),
+        _path("AD Groups", "/sa/marketplace/admin/records/ad-groups/"),
+        _path("Fulfillment Groups", "/sa/marketplace/admin/records/fulfillment-groups/"),
+        _path("Alternate Approvers", "/sa/marketplace/admin/records/alternate-approvers/"),
+    ]
+    return _group("Marketplace", "isax-box", children)
 
 
 def _mark(path, nodes):
@@ -105,12 +142,75 @@ def sidebar_sections(request):
                 _group("Command Center", "isax-command", [
                     _link("command_center", "Dashboard"),
                     _link("command_center_analytics", "Analytics"),
-                    _link("command_center_my_dashboards", "My Dashboards"),
-                    _link("command_center_my_reports", "My Reports"),
-                    _link("command_center_reports", "Reports"),
                     _link("command_center_health", "Health"),
-                    _path("Create", "/sa/command-center/create/"),
+                    _link("command_center_workflow", "Workflow Approvals"),
                 ]),
+                _group("Campaign Manager", "isax-sms", [
+                    _link("notifications_campaigns", "Campaigns"),
+                    _path("Templates", "/sa/notifications/templates/"),
+                    _link("campaign_schedules", "Schedules"),
+                    _path("Subscribers", "/sa/notifications/audiences/"),
+                    _link("microsoft_teams", "Meetings"),
+                ]),
+                _group("Deployment", "isax-send-2", [
+                    _link("deployment_dashboard", "Dashboard"),
+                    _link("deployment_analytics", "Analytics"),
+                    _link("deployment_activity", "Activity"),
+                    _link("deployment_releases", "Releases"),
+                    _link("deployment_rollback", "Rollback"),
+                    _link("deployment_health", "Health"),
+                ]),
+                _group("Integrations", "isax-cpu", [
+                    _link("modules_dashboard", "Dashboard"),
+                    _link("modules_analytics", "Analytics"),
+                    _link("integration_catalog", "Catalog"),
+                    _link("integration_readiness", "Readiness"),
+                    _link("modules_reports", "Reports"),
+                    _link("modules_configuration", "Configuration"),
+                    _link("modules_activity", "Activity"),
+                    _link("modules_audit", "Audit"),
+                    _link("modules_health", "Health"),
+                    _link("modules_dependencies", "Dependencies"),
+                    _link("modules_documentation", "Documentation"),
+                    *_pages("vikki_learning"),
+                    _link("microsoft_email", "Microsoft Email"),
+                    _link("google_analytics", "Google Analytics"),
+                    _group("Apify", "isax-code", [
+                        _link("apify_dashboard", "Dashboard"),
+                        _link("apify_analytics", "Analytics"),
+                        *_pages(
+                            "apify_apis",
+                            "apify_products",
+                            "apify_policies",
+                            "apify_applications",
+                            "apify_credentials",
+                            "apify_access_requests",
+                            "apify_subscriptions",
+                            "apify_audit",
+                            "apify_settings",
+                        ),
+                    ]),
+                    _group("AWS", "isax-cloud", _pages("aws_catalog", "aws_parity")),
+                ]),
+                _group("Changelog", "isax-clock", [
+                    _link("changelog_dashboard", "Dashboard"),
+                    _link("changelog_releases", "Releases"),
+                    _path("Timeline", "/sa/changelog/timeline/"),
+                    _link("changelog_categories", "Categories"),
+                    _link("changelog_compare", "Compare"),
+                    _link("changelog_notifications", "Notifications"),
+                    _link("changelog_audit", "Audit"),
+                    _path("New Release", "/sa/changelog/posts/create/"),
+                    _path("New Category", "/sa/changelog/categories/create/"),
+                ]),
+                _group("Notification Operations", "isax-notification", [
+                    _path("Analytics", "/sa/notifications/master/advanced-analytics/"),
+                    _link("notifications_rules", "Rules"),
+                    _path("Unread", "/sa/notifications/unread/"),
+                    _path("Deliveries", "/sa/notifications/deliveries/"),
+                    _path("Operations", "/sa/notifications/operations/"),
+                ]),
+                _group("Workflow Watch", "isax-hierarchy-square-3", _workflow_watch_pages()),
             ],
         },
         {
@@ -163,13 +263,7 @@ def sidebar_sections(request):
             "title": "Work",
             "items": [
                 _group("Notifications", "isax-notification", [
-                    _path("Analytics", "/sa/notifications/master/advanced-analytics/"),
-                    *_pages("notifications_inbox", "notifications_preferences", "notifications_campaigns", "notifications_rules"),
-                    _path("Unread", "/sa/notifications/unread/"),
-                    _path("Templates", "/sa/notifications/templates/"),
-                    _path("Audiences", "/sa/notifications/audiences/"),
-                    _path("Deliveries", "/sa/notifications/deliveries/"),
-                    _path("Operations", "/sa/notifications/operations/"),
+                    *_pages("notifications_inbox", "notifications_preferences"),
                 ]),
                 _group("Teams", "isax-people", [
                     _link("teams", "Teams"),
@@ -179,57 +273,44 @@ def sidebar_sections(request):
             ],
         },
         {
-            "title": "Platform",
+            "title": "CRUD",
             "items": [
-                _group("Integrations", "isax-cpu", [
-                    _link("modules_dashboard", "Dashboard"),
-                    _link("modules_analytics", "Analytics"),
-                    _link("microsoft_email", "Microsoft Email"),
-                    _link("microsoft_teams", "Microsoft Teams"),
-                    _link("google_analytics", "Google Analytics"),
-                    _link("integration_catalog", "Catalog"),
-                    *_pages(
-                        "integration_readiness",
-                        "modules_reports",
-                        "modules_configuration",
-                        "modules_activity",
-                        "modules_audit",
-                        "modules_health",
-                        "modules_dependencies",
-                        "modules_documentation",
-                        "vikki_learning",
-                    ),
-                    _group("Apify", "isax-code", [
-                        _link("apify_dashboard", "Dashboard"),
-                        _link("apify_analytics", "Analytics"),
-                        *_pages(
-                        "apify_apis",
-                        "apify_products",
-                        "apify_policies",
-                        "apify_applications",
-                        "apify_credentials",
-                        "apify_access_requests",
-                        "apify_subscriptions",
-                        "apify_audit",
-                        "apify_settings",
-                    )]),
-                    _group("AWS", "isax-cloud", _pages("aws_catalog", "aws_parity")),
-                ]),
-                _group("Deployment", "isax-send-2", [
-                    _link("deployment_dashboard", "Dashboard"),
-                    _link("deployment_analytics", "Analytics"),
-                    *_pages(
-                    "deployment_activity",
-                    "deployment_releases",
-                    "deployment_rollback",
-                    "deployment_health",
-                )]),
+                _link("teams", "Team", "isax-people"),
+                _marketplace_crud(),
                 _group("Changelog", "isax-clock", [
-                    _link("changelog_dashboard", "Dashboard"),
-                    *_pages("changelog_releases", "changelog_categories", "changelog_compare", "changelog_notifications", "changelog_audit"),
-                    _path("Timeline", "/sa/changelog/timeline/"),
-                    _path("New Release", "/sa/changelog/posts/create/"),
-                    _path("New Category", "/sa/changelog/categories/create/"),
+                    _path("Releases", "/sa/changelog/posts/"),
+                    _path("Categories", "/sa/changelog/categories/"),
+                ]),
+                _group("Pages", "isax-document", [
+                    _path("Pages", "/sa/pages/pages/"),
+                    _path("Page Types", "/sa/pages/page-types/"),
+                ]),
+                _group("Notifications", "isax-notification", [
+                    _path("Rules", "/sa/notifications/rules/"),
+                    _path("Templates", "/sa/notifications/templates/"),
+                ]),
+                _link("checkout_form_builder", "Checkout Form", "isax-document"),
+                _group("Data Access Request", "isax-document-text-1", [
+                    _path("Forms", "/sa/dar/forms/definitions/"),
+                    _path("Submissions", "/sa/dar/forms/submissions/"),
+                    _path("Routing Rules", "/sa/dar/forms/routing/"),
+                    _path("Rule Groups", "/sa/dar/forms/rules/"),
+                    _path("Validation Rules", "/sa/dar/forms/validation/"),
+                    _path("Project Codes", "/sa/dar/forms/lookups/project-codes/"),
+                    _path("Company Holidays", "/sa/dar/forms/lookups/company-holidays/"),
+                ]),
+                _group("Product Intake", "isax-box", [
+                    _path("Intakes", "/admin/intake/productintake/"),
+                    _path("Tags", "/admin/intake/intakeproducttags/"),
+                ]),
+                _group("Resources", "isax-document", [
+                    _path("Homepages", "/admin/resources/homepage/"),
+                    _path("Brands", "/admin/resources/brand/"),
+                    _path("Documents", "/admin/resources/document/"),
+                    _path("Policies", "/admin/resources/policie/"),
+                    _path("Processes", "/admin/resources/processe/"),
+                    _path("Media", "/admin/resources/media/"),
+                    _path("Change Requests", "/admin/resources/resourcechangerequest/"),
                 ]),
             ],
         },

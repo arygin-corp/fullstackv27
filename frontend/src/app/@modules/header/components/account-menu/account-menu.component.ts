@@ -69,6 +69,12 @@ export class AccountMenuComponent {
         sessionStorage.clear();
     }
 
+    get jobTitleLabel(): string {
+        const title = String(this.profile?.jobTitle || '');
+        const cut = title.indexOf(' -');
+        return (cut === -1 ? title : title.slice(0, cut)).trim();
+    }
+
     get lastSignInLabel(): string {
         const account = this.msalService.instance.getActiveAccount() || this.msalService.instance.getAllAccounts()[0];
         const claims = account?.idTokenClaims as { auth_time?: number; iat?: number } | undefined;

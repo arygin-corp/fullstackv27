@@ -4,7 +4,7 @@
     <div class="topbar__container container-fluid">
         <div class="topbar__row">
             <div class="topbar__item topbar__item--link">
-                <p class="welcome-msg">Welcome to Data Marketplace New Site!</p>
+                <button type="button" class="welcome-msg" (click)="openWalkthrough()">Welcome to Data Marketplace New Site!</button>
             </div>
             <div class="topbar__spring"></div>
             <div class="topbar__item">
@@ -18,10 +18,10 @@
                     <a class="link" routerLink="marketplace/order/track-request">Track Request</a>
                 </div>
                 <div class="topbar__item topbar__item--link" style="margin-right: 16px;">
-                    <a class="link" routerLink="site/changelog">Changelog</a>
+                    <button type="button" class="link" (click)="openWalkthrough()">What's New</button>
                 </div>
                 <div class="topbar__item topbar__item--link" style="margin-right: 16px;">
-                    <a class="link" routerLink="site/contact-us">Contact Us</a>
+                    <a class="link" routerLink="site/changelog">Changelog</a>
                 </div>
                 <div class="topbar__item topbar__item--link" style="margin-right: 0px;">
                     <a class="link" routerLink="pages/support">Need Help</a>

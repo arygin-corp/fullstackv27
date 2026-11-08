@@ -66,9 +66,8 @@ export class SubdomainsTwoComponent implements OnInit {
     return `http://localhost:8000${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
   }
 
-  resolveNavigation(subdomain: any): any[] {
-    // Level 3 items lead directly to domains in the product list
-    return ['/products', subdomain.slug || 'domain', subdomain.id];
+  catalogLink(subdomain: any) {
+    return this.domainsService.catalogLink(subdomain, 'subdomain2');
   }
 
   getDescription(item: any): string {

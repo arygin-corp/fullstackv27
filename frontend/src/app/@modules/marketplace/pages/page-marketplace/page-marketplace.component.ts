@@ -83,25 +83,13 @@ export class PageMarketplaceComponent implements OnDestroy {
                 ];
 
                 const slug = this.getDomainSlug();
+                const name = this.route.snapshot.queryParamMap.get('domain_name');
 
-                this.pageHeader = !slug
+                this.pageHeader = name
+                    ? name
+                    : !slug
                     ? 'Marketplace'
                     : (data.domain?.name || 'Marketplace');
-            });
-
-        /*
-         * Initialize options from the URL.
-         *
-         * PageMarketplaceService remains responsible for
-         * pagination, sorting, and filter state.
-         */
-        this.route.queryParams
-            .pipe(takeUntil(this.destroy$))
-            .subscribe(queryParams => {
-                this.pageService.setOptions(
-                    parseProductsListParams(queryParams),
-                    false,
-                );
             });
 
         /*
@@ -156,6 +144,29 @@ export class PageMarketplaceComponent implements OnDestroy {
 
                 this.pageService.setList(list);
             });
+
+        /*
+         * Read the address after the loader is listening.
+         * queryParams emits immediately, and optionsChange$ does not replay.
+         */
+        this.route.queryParams
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(queryParams => {
+                const parsed = parseProductsListParams(queryParams);
+                this.pageHeader = queryParams.domain_name || 'Marketplace';
+                this.pageService.setOptions(
+                    {
+                        page: parsed.page || 1,
+                        limit: parsed.limit || 12,
+                        sort: parsed.sort || 'default',
+                        ...(parsed.filterValues ? { filterValues: parsed.filterValues } : {}),
+                        domainId: queryParams.domain_id || '',
+                        subdomainId: queryParams.subdomain_id || '',
+                        subdomain2Id: queryParams.subdomain2_id || '',
+                    },
+                    true,
+                );
+            });
     }
 
     ngOnDestroy(): void {
@@ -204,6 +215,20 @@ export class PageMarketplaceComponent implements OnDestroy {
             options.sort !== 'default'
         ) {
             params.sort = options.sort;
+        }
+
+        if (options.domainId) {
+            params.domain_id = options.domainId;
+        }
+        if (options.subdomainId) {
+            params.subdomain_id = options.subdomainId;
+        }
+        if (options.subdomain2Id) {
+            params.subdomain2_id = options.subdomain2Id;
+        }
+        const domainName = this.route.snapshot.queryParamMap.get('domain_name');
+        if (domainName && (options.domainId || options.subdomainId || options.subdomain2Id)) {
+            params.domain_name = domainName;
         }
 
         /*

@@ -1,0 +1,15 @@
+[
+  { "dbname": "tdp_vehicle", "elementname": "certified_dealer_participants", "column_name": "dealer_code" },
+  { "dbname": "tdp_vehicle", "elementname": "advertised_dealer_participants", "column_name": "dealer_code" },
+  { "dbname": "tdp_vehicle", "elementname": "vin_sales_actuals", "column_name": "vin" },
+  { "dbname": "tdp_vehicle", "elementname": "aggregated_sales_actuals", "column_name": "sales_month" },
+  { "dbname": "tdp_vehicle", "elementname": "preowned_sales_inquiry", "column_name": "inquiry_id" },
+  { "dbname": "tdp_customer", "elementname": "customer_master", "column_name": "customer_id" },
+  { "dbname": "tdp_customer", "elementname": "customer_contact", "column_name": "email" },
+  { "dbname": "tdp_parts", "elementname": "parts_catalog", "column_name": "part_number" },
+  { "dbname": "tdp_parts", "elementname": "parts_inventory", "column_name": "location_code" },
+  { "dbname": "tdp_finance", "elementname": "customer_master", "column_name": "customer_id" },
+  { "dbname": "tdp_finance", "elementname": "vehicle_sales", "column_name": "vin" },
+  { "dbname": "tdp_sales", "elementname": "new_car_sales", "column_name": "vin" },
+  { "dbname": "tdp_sales", "elementname": "used_car_sales", "column_name": "vin" }
+]

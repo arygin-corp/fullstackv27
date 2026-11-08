@@ -7769,6 +7769,18 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_approval_records",
+      "column_name": "deleted_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_records",
       "column_name": "req_id"
     },
     {
@@ -8009,6 +8021,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_approval_request_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records",
       "column_name": "real_user_name"
     },
     {
@@ -8056,6 +8074,132 @@
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "action_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "api_res_file_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "approvable_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "approver_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "comment_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "comment_text"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "comment_title"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "comment_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "external_comment"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "real_user_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "requestrecords_optional"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "requestrecords_replaced_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_request_records_w_inact",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_approval_requests",
       "column_name": "activation_datetime"
     },
@@ -8094,6 +8238,18 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_approval_requests",
       "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_requests",
+      "column_name": "deleted_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_approval_requests",
+      "column_name": "is_active"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -8507,6 +8663,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_attachments",
+      "column_name": "deleted_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_attachments",
       "column_name": "extension"
     },
     {
@@ -8520,6 +8682,12 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_attachments",
       "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_attachments",
+      "column_name": "is_active"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -8705,6 +8873,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_change_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records",
       "column_name": "previous_version_id"
     },
     {
@@ -8741,6 +8915,114 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_change_records",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "action_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "approvable_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "comment_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "comment_text"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "comment_title"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "comment_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "external_comment"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "previous_version_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "real_user_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_change_records_w_inact",
       "column_name": "user_id"
     },
     {
@@ -9502,6 +9784,762 @@
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountaccepted_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountaccepted_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountaccepted_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountaccepted_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountaccepted_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountbilled_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountbilled_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountbilled_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountbilled_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountbilled_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountcleared_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountcleared_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountcleared_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountcleared_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountcleared_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountinvoiced_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountinvoiced_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountinvoiced_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountinvoiced_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountinvoiced_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountreconciled_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountreconciled_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountreconciled_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountreconciled_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountreconciled_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountrejected_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountrejected_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountrejected_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountrejected_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "amountrejected_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "api_res_file_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "appr_requests_version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "approved_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "approved_state"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "are_order_stuck"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "blanket_order"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "blanket_order_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "budget_check_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "budget_check_status_message"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "budget_ref_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "changed_by_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "chargeamount_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "chargeamount_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "chargeamount_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "chargeamount_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "chargeamount_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "co_code_hdr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "collab_mode"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "collab_state"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "collab_state_order"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_brand"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_buyer_field1"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_collaborator_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_collaborator_report"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_consumer_impact"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_display_custom_field"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_invoice_to"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_requester_field1"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_requester_field2"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "cus_skip_approval"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "discount_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "discount_amount_approx_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "discount_amount_conv_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "discount_amount_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "discount_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "erp_ref_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ext_req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ext_req_url"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ext_sourcing_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "is_forecast"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "is_service_order"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "is_service_req"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "last_modified_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "next_version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "number_receivable_orders"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ordered_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "ordered_state"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "orig_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "orig_system_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "precollab_amount_approx_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "precollab_amount_conv_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "precollab_amount_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "precollab_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "precollab_total_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "preparer_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "previous_appr_request_version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "previous_version_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "proc_unit"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "purch_org_catalog"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "received_state"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "reporting_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "req_doc_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "req_title"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "requester_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "requester_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "resubmit_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "sourcing_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "sourcing_status_descr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "sourcing_status_message"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "submit_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "taxamount_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "taxamount_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "taxamount_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "taxamount_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "taxamount_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "total_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "total_cost_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "total_cost_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "total_cost_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "total_cost_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "vatamount_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "vatamount_amount_in_rptg_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "vatamount_approx_amount_in_base_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "vatamount_conversion_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "vatamount_curr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_headers_w_inact",
+      "column_name": "version_no"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_lines",
       "column_name": "accountings_type_line"
     },
@@ -9875,6 +10913,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_lines",
+      "column_name": "deleted_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_lines",
       "column_name": "deliver_to_line"
     },
     {
@@ -9948,6 +10992,12 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_lines",
       "column_name": "gl_field_status_group_split_line"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_lines",
+      "column_name": "is_active"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -10116,6 +11166,12 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_lines",
       "column_name": "payment_terms_line"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_lines",
+      "column_name": "pcardsupplier"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -11639,6 +12695,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_receive_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records",
       "column_name": "real_user_name"
     },
     {
@@ -11669,6 +12731,108 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_receive_records",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "action_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "approvable_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "comment_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "comment_external_comment"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "comment_text"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "comment_title"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "comment_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "real_user_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_receive_records_w_inact",
       "column_name": "user_id"
     },
     {
@@ -11735,6 +12899,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_simple_procure_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records",
       "column_name": "real_user_name"
     },
     {
@@ -11771,6 +12941,114 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_simple_procure_records",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "action_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "approvable_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "comment_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "comment_text"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "comment_title"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "comment_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "external_comment"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "real_user_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "record_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_procure_records_w_inact",
       "column_name": "user_id"
     },
     {
@@ -11837,6 +13115,12 @@
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "ariba_opt_req_simple_records",
+      "column_name": "is_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records",
       "column_name": "real_user_name"
     },
     {
@@ -11878,92 +13162,110 @@
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approval_chain_name"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "action_datetime"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approval_comment"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "approvable_id"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approval_date"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "ariba_load_mon_year"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approval_status"
-    },
-    {
-      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
-      "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approver_name"
-    },
-    {
-      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
-      "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "approver_type"
-    },
-    {
-      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
-      "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
       "column_name": "audit_create_date"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "created_by"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "comment_datetime"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "created_date"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "comment_text"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "document_type"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "comment_title"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "last_reminder_date"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "comment_user_id"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "po_number"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "created_datetime"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "position_in_flow"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "external_comment"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "requisition_id"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "is_active"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
       "dbname": "procurement_transactions_sen_trn_ext",
-      "elementname": "coupa_approvals",
-      "column_name": "supplier_invoice_id"
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "real_user_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "record_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "req_id_initial"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "req_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "ariba_opt_req_simple_records_w_inact",
+      "column_name": "user_id"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -13098,6 +14400,42 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "sap_po_acct_assignment_ekkn",
       "column_name": "zzvin"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "doc_no_textobjectcategory"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "item_no_textobjecttype"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "language"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "txt_header_textobjectkey"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_comments",
+      "column_name": "txt_line_plainlongtext"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
@@ -16788,6 +18126,246 @@
       "dbname": "procurement_transactions_sen_trn_ext",
       "elementname": "sap_po_line_ekpo",
       "column_name": "work_time_hr_enh_numc1"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "allocated_stock_quantity_fsh_salloc_qty"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "batch_charg"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "confirm_category_ebtyp"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "creation_date_erdat"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "creation_indicator_estkz"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "creation_time_ezeit"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "data_aging_filter_dataaging"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "deletion_indicator_loekz"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "delivery_date_category_lpein"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "delivery_date_eindt"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "delivery_vbeln"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "delivery_vbeln_st"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "end_date_period_of_performance"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "handover_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "handover_time"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "higherlevelitembatch_uecha"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "in_plant_imwrk"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "item_ebelp"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "item_vbelp"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "item_vbelp_st"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "mfr_part_profile_mprof"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "mpn_material_ematn"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "mrp_reduced_quantity_dabmg_cw"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "mrp_relevant_kzdis"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "no_rem_expediters_mahnz"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "original_quantity_ormng"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "purchasing_document_ebeln"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "qty_in_order_confirmation_menge_cw"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "qty_reduced_dabmg"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "quantity_menge"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "ref_uuid_of_transportation_mgmt_tms_ref_uuid"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "reference_xblnr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "sequential_number_etens"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "sequential_number_ref_etens"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "service_performer"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "start_dt_period_of_performance"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "stock_segment_sgt_scat"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "time_uzeit"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-transactions-sensitive",
+      "dbname": "procurement_transactions_sen_trn_ext",
+      "elementname": "sap_po_vendor_confirmations_ekes",
+      "column_name": "utc_timestamp_msgtstmp"
     },
     {
       "userrolename": "tbdp-tmna-procurement-transactions-sensitive",

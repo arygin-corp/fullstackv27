@@ -3236,12 +3236,12 @@
 								  </div>
 
 								  <!--FORM SUBMISSION-->
-								  <div class="form-group row">
+								  <div class="form-group row" *ngIf="form.valid">
 									<div class="col-sm-10">
-									  <button class="btn btn-primary" type="button"
-									  [disabled]="!form.valid || isProcessing"
+									  <button class="btn btn-primary btn-success" type="button"
+									  [disabled]="isProcessing"
 									  (click)="addToCart()"
-									  [ngClass]="{'btn-disabled': isLoading || !form.valid, 'btn-success': !isLoading && form.valid, 'disabled': isProcessing}">{{button}}</button>
+									  [ngClass]="{'btn-disabled': isLoading, 'disabled': isProcessing}">{{button}}</button>
 									</div>
 								  </div>
 
@@ -5679,12 +5679,12 @@
 								  </div>
 
 								  <!--FORM SUBMISSION-->
-								  <div class="form-group row">
+								  <div class="form-group row" *ngIf="form.valid">
 									<div class="col-sm-10">
-									  <button class="btn btn-primary" type="button"
-									  [disabled]="!form.valid || isProcessing"
+									  <button class="btn btn-primary btn-success" type="button"
+									  [disabled]="isProcessing"
 									  (click)="addToCart()"
-									  [ngClass]="{'btn-disabled': isLoading || !form.valid, 'btn-success': !isLoading && form.valid, 'disabled': isProcessing}">{{button}}</button>
+									  [ngClass]="{'btn-disabled': isLoading, 'disabled': isProcessing}">{{button}}</button>
 									</div>
 								  </div>
 

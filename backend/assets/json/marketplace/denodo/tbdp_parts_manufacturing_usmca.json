@@ -401,6 +401,18 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "core_id"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "core_key"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "cost_per_vehicle"
     },
     {
@@ -420,6 +432,18 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "destination"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "drivetrain"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "engine"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -467,6 +491,12 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "ic_icn_parts"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "in_house_lvc_qualified"
     },
     {
@@ -485,13 +515,37 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "key_vnm_case"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "key_vnm_per_part"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "lvc_extended_purchase_cost"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "lvc_qualified"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "na_battery_flag"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -522,6 +576,12 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "part_qualification"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -581,6 +641,24 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "total_key_vnm_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "total_vnm_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "transmission"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "vehicle_name"
     },
     {
@@ -612,6 +690,12 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "vnm_per_vehicle_key_part"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "vnm_percent"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -1391,31 +1475,91 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_cost_total"
+      "column_name": "axstsu_cost_total"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_rvc"
+      "column_name": "axstsu_rvc"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_unit_cost"
+      "column_name": "axstsu_unit_cost"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_unit_vnm"
+      "column_name": "axstsu_unit_vnm"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_vnm_total"
+      "column_name": "axstsu_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_cost_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_rvc"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_cost_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_rvc"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_vnm_total"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -1481,13 +1625,31 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "cy"
+      "column_name": "engine_cost_total"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "cy_month"
+      "column_name": "engine_rvc"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_vnm_total"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -1547,49 +1709,43 @@
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_cost_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_rvc"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "originating_unit_cost"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_cost_total"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_rvc"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_unit_cost"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_unit_vnm"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_vnm_total"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "prtn_date"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "qualifying_period"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -1602,18 +1758,6 @@
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "region"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "scenario"
-    },
-    {
-      "userrolename": "tbdp-parts-manufacturing-usmca",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "snapshot_period"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",
@@ -1638,6 +1782,36 @@
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "total_volume"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_cost_total"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_rvc"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-parts-manufacturing-usmca",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_vnm_total"
     },
     {
       "userrolename": "tbdp-parts-manufacturing-usmca",

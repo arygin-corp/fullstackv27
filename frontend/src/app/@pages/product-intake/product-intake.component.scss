@@ -1,15 +1,29 @@
-.product-intake {
-    padding: 32px 24px 64px;
+.jumbotron {
+    position: sticky;
+    top: 0;
+    background: #ededed;
+    text-align: center;
+    color: #363636;
+    z-index: 500;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
 }
 
-.product-intake h1 {
-    margin: 0 0 8px;
+.jumbotron h1 {
+    margin: 0;
     font-size: 28px;
+    font-weight: 700;
 }
 
-.product-intake__lead {
-    margin: 0 0 24px;
-    color: #4b5563;
+.jumbotron .lead {
+    margin: 12px 0 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.product-intake {
+    padding: 0 24px 64px;
 }
 
 .product-intake__error {

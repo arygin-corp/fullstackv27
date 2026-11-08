@@ -448,6 +448,19 @@ class FulfillmentTeam(models.Model):
         verbose_name = "Fulfillment Group"
 
 
+class AlternateApprover(models.Model):
+    name = models.CharField('Name', max_length=150, blank=True, null=True)
+    sys_id = models.CharField('SYS_ID', max_length=50, blank=True, null=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = "Alternate Approver"
+        verbose_name_plural = "Alternate Approvers"
+
+    def __str__(self):
+        return self.name or "Unnamed Alternate Approver"
+
+
 class ProductQuerySet(models.QuerySet):
     """Shared publication rules for every public marketplace surface."""
 
@@ -460,6 +473,8 @@ class Product(models.Model):
     name = models.CharField(verbose_name='Product Name', max_length=400, blank=True, null=True)
     slug = models.SlugField(verbose_name='Product Slug', max_length=800, unique=True, blank=True)
     brief_desc = CKEditor5Field(verbose_name='Brief Description', config_name='extends', max_length=4000, blank=True, null=True)
+    whats_included = CKEditor5Field(verbose_name="What's Included", config_name='extends', max_length=4000, blank=True, null=True)
+    intended_use_desc = CKEditor5Field(verbose_name='Intended Use Description', config_name='extends', max_length=4000, blank=True, null=True)
     short_desc = CKEditor5Field(verbose_name='Short Description', config_name='extends', max_length=1000, blank=True, null=True)
     domain = models.ForeignKey(Domain, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Domain Level 1', related_name='product_domain')
     subdomain_2 = models.ForeignKey(SubDomain_1, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Domain Level 2', related_name='product_subdomain_2')
@@ -468,6 +483,7 @@ class Product(models.Model):
     classification = models.ForeignKey(Classification, on_delete=models.PROTECT, blank=False, null=True, verbose_name='Product Classification')
     intended_use = CKEditor5Field(verbose_name='Intended Use', config_name='extends', max_length=800, blank=True, null=True, default='Not required for products with a Data Classification of Public or Protected')
     data_steward = models.ForeignKey(DataSteward, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Data Steward', related_name='data_steward')
+    alt_approver = models.ForeignKey(AlternateApprover, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Alternate Approver', related_name='products')
     poc_name = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Point of Contact', related_name='poc')
     business_contact_name = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Business Contact', related_name='business_contact')
     business_sme = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Business SME', related_name='business_sme')
@@ -561,7 +577,7 @@ class Product(models.Model):
     def get_absolute_url(self):
         # You had two get_absolute_url methods. This one was last, so I'm keeping it.
         # If you need both, they need different names.
-        return reverse('products:product_edit', kwargs={'pk': self.pk})
+        return reverse('marketplace_admin:product_detail', kwargs={'pk': self.pk})
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
@@ -755,10 +771,20 @@ class SearchProductEmbedding(models.Model):
         return f"Embedding for {self.product.name}"
 
 class Review(models.Model):
+    STAR_CHOICES = [(i, str(i)) for i in range(1, 6)]
     product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='reviews', on_delete=models.CASCADE)
-    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 6)]) # 1 to 5 stars
+    rating = models.IntegerField(choices=STAR_CHOICES)
+    title = models.CharField(max_length=150, blank=True, default="")
     comment = models.TextField(blank=True, null=True)
+    quality = models.PositiveSmallIntegerField(choices=STAR_CHOICES, null=True, blank=True)
+    value_for_money = models.PositiveSmallIntegerField(choices=STAR_CHOICES, null=True, blank=True)
+    ease_of_use = models.PositiveSmallIntegerField(choices=STAR_CHOICES, null=True, blank=True)
+    durability = models.PositiveSmallIntegerField(choices=STAR_CHOICES, null=True, blank=True)
+    would_recommend = models.BooleanField(null=True, blank=True)
+    met_expectations = models.BooleanField(null=True, blank=True)
+    verified_purchaser = models.BooleanField(default=False)
+    status = models.CharField(max_length=20, choices=REVIEW_STATUS_CHOICES, default='pending')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

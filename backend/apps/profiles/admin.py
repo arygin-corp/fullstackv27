@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
+from apps.profiles.access import actor_can_edit_employee_type
 from apps.profiles.models import Profile
 
 # Define an inline admin descriptor for Profile model
@@ -16,9 +17,12 @@ class ProfileInline(admin.StackedInline):
 
     # Only superadmins can toggle the verified checkbox
     def get_readonly_fields(self, request, obj=None):
+        readonly = []
         if not request.user.is_superuser:
-            return ('is_verified',)
-        return ()
+            readonly.append("is_verified")
+        if not actor_can_edit_employee_type(request.user):
+            readonly.append("employee_type")
+        return tuple(readonly)
 
 # Define a new User admin
 class UserAdmin(BaseUserAdmin):

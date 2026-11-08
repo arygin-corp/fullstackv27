@@ -1,0 +1,15 @@
+---
+description: Staff HTML pages use the purple header card and the title block under it.
+globs: backend/templates/gdx_admin/**/*.html
+alwaysApply: false
+---
+
+# Staff page header
+
+Every new staff page that extends `gdx_admin/base.html` uses this header: the purple module card, then the title block (breadcrumb, heading, description).
+
+The default is `{% block page_header %}` in `gdx_admin/base.html`, which includes `gdx_admin/partials/page_hero.html`. Leave that block alone when the page has no header of its own.
+
+When a page supplies its own card, include `gdx_admin/apps/third_party_apis/partials/_module_hero.html`. That partial renders the card and the title block. Pass `hero_kicker`, `hero_title`, `hero_description`, `hero_metric_label`, `hero_metric_value`, `hero_metric_caption`, and `hero_icon`. Optional title overrides are `title_parent`, `title_parent_url`, `title_label`, `title_heading`, and `title_text`.
+
+Set `hero_show_title="0"` only when the page already renders its own title block directly under the card. Also set `{% block page_header %}{% endblock %}` so the default header is not shown a second time.

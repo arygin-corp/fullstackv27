@@ -759,7 +759,7 @@
    // ----------------------------------------
       $product-image-width:  1                                              !default;
       $product-image-height: 1                                              !default;
-      $product-image-ratio:  ($product-image-width / $product-image-height) !default;
+      $product-image-ratio:  math.div($product-image-width, $product-image-height) !default;
 
    // ----------------------------------------
    // -- .rating

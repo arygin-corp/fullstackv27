@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .product-image
 */
@@ -9,7 +10,7 @@
 .product-image__body {
     display: block;
     position: relative;
-    padding-bottom: #{57% * (1 / $product-image-ratio)};
+    padding-bottom: #{57% * math.div(1, $product-image-ratio)};
     width: 100%;
 }
 .product-image__img {

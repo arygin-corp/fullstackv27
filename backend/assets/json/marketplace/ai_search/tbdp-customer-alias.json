@@ -1,0 +1,20 @@
+{
+  "adgroup": "tbdp-customer-alias",
+  "slugs": [
+    "customer-alias"
+  ],
+  "databases": [
+    "cuds_cust_alias_ing_ext"
+  ],
+  "tables": [
+    "customer_alias"
+  ],
+  "columns": [
+    "customer_id",
+    "ds_customer_alias_id",
+    "load_type",
+    "record_create_dt",
+    "source",
+    "source_create_dt"
+  ]
+}

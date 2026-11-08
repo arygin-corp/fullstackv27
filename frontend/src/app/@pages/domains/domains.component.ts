@@ -43,21 +43,7 @@ export class DomainsComponent implements OnInit {
     return (domain as any).desc || (domain as any).description || `Explore products in ${domain.name}`;
   }
 
-  resolveNavigation(domain: Domain): any[] {
-    // 1. Single Product Redirect logic
-    if (domain.product_count === 1 && domain.products?.length > 0) {
-      const product = domain.products[0];
-      // Ensure we use the slug from the product object
-      const productSlug = product.slug || product.name.toLowerCase().replace(/ /g, '-');
-      
-      // FIX: Changed 'products' to 'product' to match MarketplaceRoutingModule
-      return ['/marketplace/product', productSlug];
-    }
-    
-    // 2. Domain/Subdomain Navigation logic
-    const slug = domain.slug || domain.name.toLowerCase().replace(/ /g, '-');
-    
-    // Using an absolute path is safer to ensure it always maps back to your root :type route
-    return ['/', slug];
+  catalogLink(domain: Domain) {
+    return this.domainsService.catalogLink(domain, 'domain');
   }
 }

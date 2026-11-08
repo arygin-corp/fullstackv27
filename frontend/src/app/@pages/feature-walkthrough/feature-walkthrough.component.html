@@ -1,0 +1,63 @@
+<div class="tour" *ngIf="open" role="dialog" aria-modal="true" aria-labelledby="tour-title">
+  <button type="button" class="tour__backdrop" aria-label="Close walkthrough" (click)="close()"></button>
+  <div class="tour__dialog">
+    <header class="tour__header">
+      <div>
+        <p class="tour__kicker">What's New</p>
+        <h2 id="tour-title">{{ step.title }}</h2>
+      </div>
+      <button type="button" class="tour__close" (click)="close()" aria-label="Close">×</button>
+    </header>
+
+    <div class="tour__progress" aria-hidden="true">
+      <span [style.width.%]="progress"></span>
+    </div>
+
+    <div class="tour__body">
+      <div class="tour__frame">
+        <img [src]="step.image" [alt]="step.title + ' on the Data Marketplace'">
+        <button
+          type="button"
+          class="tour__hotspot"
+          *ngFor="let spot of spots"
+          [class.is-active]="spot.id === active?.id"
+          [style.left.%]="spot.x"
+          [style.top.%]="spot.y"
+          [attr.aria-label]="spot.label"
+          (click)="select(spot)">
+          <span></span>
+        </button>
+        <div
+          class="tour__callout"
+          *ngIf="active"
+          [class.is-above]="active.y > 68"
+          [class.is-left]="active.x > 62"
+          [style.left.%]="active.x"
+          [style.top.%]="active.y">
+          <strong>{{ active.label }}</strong>
+          <p>{{ active.text }}</p>
+        </div>
+      </div>
+
+      <aside class="tour__copy">
+        <p class="tour__count">Step {{ index + 1 }} of {{ steps.length }}</p>
+        <p class="tour__summary">{{ step.summary }}</p>
+        <p class="tour__hint">Click a marker on the screenshot.</p>
+        <div class="tour__chips">
+          <button
+            type="button"
+            *ngFor="let spot of step.hotspots"
+            [class.is-active]="spot.id === active?.id"
+            (click)="select(spot)">
+            {{ spot.label }}
+          </button>
+        </div>
+        <a class="tour__try" [routerLink]="step.link" (click)="close()">{{ step.linkLabel }}</a>
+        <div class="tour__nav">
+          <button type="button" (click)="previous()" [disabled]="index === 0">Back</button>
+          <button type="button" class="tour__next" (click)="next()" [disabled]="index === steps.length - 1">Next</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

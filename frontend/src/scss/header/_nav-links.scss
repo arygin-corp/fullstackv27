@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .nav-links
 */
@@ -128,19 +129,19 @@ $item-padding: 14px;
 
 
 .nav-links__submenu--size--xs {
-    width: 2 / 12 * 100%;
+    width: math.div(2, 12) * 100%;
 }
 .nav-links__submenu--size--sm {
-    width: 4 / 12 * 100%;
+    width: math.div(4, 12) * 100%;
 }
 .nav-links__submenu--size--nl {
     width: 50%;
 }
 .nav-links__submenu--size--md {
-    width: 8 / 12 * 100%;
+    width: math.div(8, 12) * 100%;
 }
 .nav-links__submenu--size--lg {
-    width: 10 / 12 * 100%;
+    width: math.div(10, 12) * 100%;
 }
 .nav-links__submenu--size--xl {
     width: 100%;

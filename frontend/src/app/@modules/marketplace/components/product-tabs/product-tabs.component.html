@@ -4,7 +4,7 @@
            [ngClass]="{'product-tabs__item--active': tab === 'resource'}"
            (click)="$event.preventDefault(); tab = 'resource'">Resources</a>
 
-        <a href="#tab-tables" class="product-tabs__item"
+        <a href="#tab-tables" class="product-tabs__item" *ngIf="isDataset()"
            [ngClass]="{'product-tabs__item--active': tab === 'tables'}"
            (click)="$event.preventDefault(); tab = 'tables'">Tables & Columns</a>
 
@@ -12,17 +12,17 @@
            [ngClass]="{'product-tabs__item--active': tab === 'description'}"
            (click)="$event.preventDefault(); tab = 'description'">Description</a>
 
-        <a href="#tab-included" class="product-tabs__item"
+        <a href="#tab-included" class="product-tabs__item" *ngIf="hasRichText(product?.whats_included)"
            [ngClass]="{'product-tabs__item--active': tab === 'included'}"
            (click)="$event.preventDefault(); tab = 'included'">What's Included</a>
 
-        <a href="#tab-intended" class="product-tabs__item"
+        <a href="#tab-intended" class="product-tabs__item" *ngIf="hasRichText(product?.intended_use_desc)"
            [ngClass]="{'product-tabs__item--active': tab === 'intended'}"
            (click)="$event.preventDefault(); tab = 'intended'">Intended Use</a>
 
-        <!-- <a href="#tab-reviews" class="product-tabs__item"
+        <a href="#tab-reviews" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'reviews'}"
-           (click)="$event.preventDefault(); tab = 'reviews'">Reviews</a> -->
+           (click)="$event.preventDefault(); tab = 'reviews'">Reviews</a>
 
         <!-- <a href="#tab-documentation" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'documentation'}"
@@ -32,7 +32,7 @@
         <div class="product-tabs__pane" id="tab-description" [ngClass]="{'product-tabs__pane--active': tab === 'description'}">
             <div class="typography">
                 <h3>Brief Description</h3>
-                <p style="font-size: 18px;">{{product.brief_desc}}</p>
+                <div class="product-tabs__rich" [innerHTML]="product.brief_desc"></div>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="product-tabs__pane" id="tab-tables" [ngClass]="{'product-tabs__pane--active': tab === 'tables'}">
+        <div class="product-tabs__pane" id="tab-tables" *ngIf="isDataset()" [ngClass]="{'product-tabs__pane--active': tab === 'tables'}">
             <!-- Wrapped in col-lg-12 for full width -->
             <div class="row">
                 <div class="col-lg-12">
@@ -65,88 +65,158 @@
         </div>
 
         <div class="product-tabs__pane" id="tab-reviews" [ngClass]="{'product-tabs__pane--active': tab === 'reviews'}">
-            <div class="reviews-view">
-                <!-- Wrap reviews row in col-lg-12 as requested -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row mb-4">
-                            <div class="col-lg-5 mb-4">
-                                <div class="ratings-wrapper">
-                                    <div class="avg-rating-container">
-                                        <h4 class="avg-mark font-weight-bolder ls-50">0.0</h4>
-                                        <div class="avg-rating">
-                                            <p class="text-dark mb-1">Average Rating</p>
-                                            <div class="ratings-container">
-                                                <app-rating></app-rating>&nbsp;&nbsp;/&nbsp;&nbsp;
-                                                <a href="#" class="rating-reviews">(0)Reviews</a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ratings-value d-flex align-items-center text-dark ls-25"> 
-                                        <span class="text-dark font-weight-bold">0%</span>&nbsp;Recommended
-                                        <span class="count">&nbsp;(0 of 0)</span> 
-                                    </div>
-                                    <div class="ratings-list">
-                                        <!-- Star distribution bars -->
-                                        <div class="ratings-container" *ngFor="let i of [5,4,3,2,1]">
-                                            <div class="ratings-full-value avg-rating2"> 
-                                                <app-rating></app-rating>
-                                            </div>
-                                            <div class="progress-bar progress-bar-sm"> 
-                                                <span style="width: 0%;"></span> 
-                                            </div>
-                                            <div class="progress-value">
-                                                <mark>0%</mark>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="product-reviews">
+                <div class="row product-reviews__top">
+                    <div class="col-lg-5">
+                    <section class="product-reviews__summary">
+                        <div class="product-reviews__summary-main">
+                            <div class="product-reviews__score">
+                                <strong>{{ summary.average_rating | number:'1.1-1' }}</strong>
+                                <app-rating [value]="summary.average_rating"></app-rating>
+                                <span class="product-reviews__count">{{ reviewCountLabel() }}</span>
+                                <p class="product-reviews__recommend">{{ summary.recommended_percentage }}% recommend</p>
                             </div>
-                            <div class="col-lg-7 mb-4">
-                                <div class="review-form-wrapper">
-                                    <h3 class="title tab-pane-title font-weight-bold mb-1">Submit Your Product Review</h3>
-                                    <p class="mb-3">Your email address will not be published. Required fields are marked *</p>
-                                    <form action="#" method="POST" class="review-form">
-                                        <div class="rating-form mb-3">
-                                            <label for="rating">Overall Rating: </label>
-                                            <span class="rating-stars ml-2">
-                                                <app-rating></app-rating>
-                                            </span>
-                                        </div>
-                                        <textarea cols="30" rows="6" placeholder="Write Your Review Here..." class="form-control mb-3" id="review"></textarea>
-                                        <button type="submit" class="btn btn-dark">Submit Review</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <ul class="product-reviews__bars">
+                                <li *ngFor="let star of [5,4,3,2,1]">
+                                    <span>{{ star }}</span>
+                                    <div class="product-reviews__track">
+                                        <span [style.width.%]="distributionPercent(star)"></span>
+                                    </div>
+                                    <span>{{ distributionPercent(star) }}%</span>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <div class="reviews-view__list">
-                    <h5 class="typography">Customer Reviews</h5>
-                    <div class="reviews-list">
-                        <ol class="reviews-list__content">
-                            <li *ngFor="let review of reviews" class="reviews-list__item">
-                                <div class="review">
-                                    <div class="review__avatar">
-                                        <img [src]="review.avatar" alt="">
-                                    </div>
-                                    <div class="review__content">
-                                        <div class="review__author">{{ review.author }}</div>
-                                        <div class="review__rating">
-                                            <app-rating [value]="review.rating"></app-rating>
-                                        </div>
-                                        <div class="review__text">{{ review.text }}</div>
-                                        <div class="review__date">{{ review.date }}</div>
-                                    </div>
+                        <ul class="product-reviews__category-bars">
+                            <li *ngFor="let item of categoryScores()">
+                                <span>{{ item.label }}</span>
+                                <div class="product-reviews__track">
+                                    <span [style.width.%]="item.percent"></span>
                                 </div>
+                                <span>{{ item.percent }}%</span>
                             </li>
-                        </ol>
-                        <div class="reviews-list__pagination">
-                            <app-pagination [current]="1" [siblings]="2" [total]="12"></app-pagination>
+                        </ul>
+                    </section>
+                    </div>
+                    <div class="col-lg-7">
+                    <section class="product-reviews__form" *ngIf="hasReviewed; else reviewForm">
+                        <h3>You already reviewed this product.</h3>
+                        <p class="product-reviews__pending" *ngIf="myReview?.status === 'pending'">This review is waiting for the Content Manager Group to approve it.</p>
+                        <p class="product-reviews__pending" *ngIf="myReview?.status === 'rejected'">The Content Manager Group did not approve this review.</p>
+                        <article class="product-reviews__card product-reviews__card--own" *ngIf="myReview">
+                            <div class="product-reviews__headline">
+                                <strong class="product-reviews__title" *ngIf="myReview.title">{{ myReview.title }}</strong>
+                                <app-rating [value]="myReview.rating"></app-rating>
+                            </div>
+                            <p>{{ myReview.comment }}</p>
+                            <ul class="product-reviews__scores" *ngIf="myReview.quality || myReview.value_for_money || myReview.ease_of_use || myReview.durability">
+                                <li *ngIf="myReview.quality">Quality <app-rating [value]="myReview.quality"></app-rating></li>
+                                <li *ngIf="myReview.value_for_money">Value <app-rating [value]="myReview.value_for_money"></app-rating></li>
+                                <li *ngIf="myReview.ease_of_use">Ease of use <app-rating [value]="myReview.ease_of_use"></app-rating></li>
+                                <li *ngIf="myReview.durability">Durability <app-rating [value]="myReview.durability"></app-rating></li>
+                            </ul>
+                            <ul class="product-reviews__answers" *ngIf="yesNo(myReview.would_recommend) || yesNo(myReview.met_expectations)">
+                                <li *ngIf="yesNo(myReview.would_recommend)"><span>Recommend</span><strong>{{ yesNo(myReview.would_recommend) }}</strong></li>
+                                <li *ngIf="yesNo(myReview.met_expectations)"><span>Met expectations</span><strong>{{ yesNo(myReview.met_expectations) }}</strong></li>
+                            </ul>
+                        </article>
+                    </section>
+                    <ng-template #reviewForm>
+                    <section class="product-reviews__form">
+                        <div class="product-reviews__form-head">
+                            <h3>Review This Product</h3>
                         </div>
+                        <form (ngSubmit)="submitReview()">
+                            <div class="product-reviews__ratings">
+                                <div class="product-reviews__rating-tile">
+                                    <label>Rating</label>
+                                    <app-rating [interactive]="true" [value]="selectedRating" (valueChange)="selectedRating = $event"></app-rating>
+                                </div>
+                                <div class="product-reviews__rating-tile">
+                                    <label>Quality</label>
+                                    <app-rating [interactive]="true" [value]="qualityRating" (valueChange)="qualityRating = $event"></app-rating>
+                                </div>
+                                <div class="product-reviews__rating-tile">
+                                    <label>Value</label>
+                                    <app-rating [interactive]="true" [value]="valueRating" (valueChange)="valueRating = $event"></app-rating>
+                                </div>
+                                <div class="product-reviews__rating-tile">
+                                    <label>Ease of use</label>
+                                    <app-rating [interactive]="true" [value]="easeRating" (valueChange)="easeRating = $event"></app-rating>
+                                </div>
+                                <div class="product-reviews__rating-tile">
+                                    <label>Durability</label>
+                                    <app-rating [interactive]="true" [value]="durabilityRating" (valueChange)="durabilityRating = $event"></app-rating>
+                                </div>
+                            </div>
+                            <div class="product-reviews__questions">
+                                <div>
+                                    <span>Would you recommend this product?</span>
+                                    <div class="product-reviews__choice" role="radiogroup" aria-label="Would you recommend this product?">
+                                        <input type="radio" name="recommend" aria-label="Yes" [checked]="wouldRecommend === true" (change)="wouldRecommend = true">
+                                        <input type="radio" name="recommend" aria-label="No" [checked]="wouldRecommend === false" (change)="wouldRecommend = false">
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Did the product meet your expectations?</span>
+                                    <div class="product-reviews__choice" role="radiogroup" aria-label="Did the product meet your expectations?">
+                                        <input type="radio" name="expectations" aria-label="Yes" [checked]="metExpectations === true" (change)="metExpectations = true">
+                                        <input type="radio" name="expectations" aria-label="No" [checked]="metExpectations === false" (change)="metExpectations = false">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-reviews__fields">
+                                <div>
+                                    <label for="review-title">Review title</label>
+                                    <input id="review-title" name="title" maxlength="150" [(ngModel)]="reviewTitle" placeholder="Summarize your review">
+                                </div>
+                                <div>
+                                    <label for="review-comment">Review comment</label>
+                                    <textarea id="review-comment" rows="4" placeholder="What should other people know about this product?" name="review" [(ngModel)]="reviewComment"></textarea>
+                                </div>
+                            </div>
+                            <p class="product-reviews__error" *ngIf="reviewError">{{ reviewError }}</p>
+                            <p class="product-reviews__saved" *ngIf="reviewSaved">{{ reviewSaved }}</p>
+                            <button type="submit" [disabled]="submittingReview">{{ submittingReview ? 'Saving...' : (hasReviewed ? 'Update review' : 'Submit review') }}</button>
+                        </form>
+                    </section>
+                    </ng-template>
                     </div>
                 </div>
+                <section class="product-reviews__list">
+                    <h3>Reviews</h3>
+                    <p class="product-reviews__empty" *ngIf="!reviews.length">No reviews yet.</p>
+                    <article class="product-reviews__card" *ngFor="let review of reviews">
+                        <header class="product-reviews__card-head">
+                            <img *ngIf="avatarFor(review) as avatar; else reviewInitials" class="product-reviews__photo" [src]="avatar" [alt]="review.author.display_name" (error)="hideAvatar(review.id)">
+                            <ng-template #reviewInitials>
+                                <div class="product-reviews__avatar" aria-hidden="true">{{ initials(review.author.display_name) }}</div>
+                            </ng-template>
+                            <div class="product-reviews__identity">
+                                <strong>{{ review.author.display_name }}</strong>
+                                <span class="product-reviews__badge" *ngIf="review.verified_purchaser">Verified purchaser</span>
+                            </div>
+                            <time>{{ review.created_at | date:'mediumDate' }}</time>
+                        </header>
+                        <div class="product-reviews__headline">
+                            <strong class="product-reviews__title" *ngIf="review.title">{{ review.title }}</strong>
+                            <app-rating [value]="review.rating"></app-rating>
+                        </div>
+                        <p>{{ review.comment }}</p>
+                        <ul class="product-reviews__scores" *ngIf="review.quality || review.value_for_money || review.ease_of_use || review.durability">
+                            <li *ngIf="review.quality">Quality <app-rating [value]="review.quality"></app-rating></li>
+                            <li *ngIf="review.value_for_money">Value <app-rating [value]="review.value_for_money"></app-rating></li>
+                            <li *ngIf="review.ease_of_use">Ease of use <app-rating [value]="review.ease_of_use"></app-rating></li>
+                            <li *ngIf="review.durability">Durability <app-rating [value]="review.durability"></app-rating></li>
+                        </ul>
+                        <ul class="product-reviews__answers" *ngIf="yesNo(review.would_recommend) || yesNo(review.met_expectations)">
+                            <li *ngIf="yesNo(review.would_recommend)"><span>Recommend</span><strong>{{ yesNo(review.would_recommend) }}</strong></li>
+                            <li *ngIf="yesNo(review.met_expectations)"><span>Met expectations</span><strong>{{ yesNo(review.met_expectations) }}</strong></li>
+                        </ul>
+                    </article>
+                    <div class="product-reviews__pages" *ngIf="reviewPages > 1">
+                        <app-pagination [current]="reviewPage" [siblings]="2" [total]="reviewPages" (pageChange)="reviewPage = $event; loadReviews()"></app-pagination>
+                    </div>
+                </section>
             </div>
         </div>
 
@@ -164,12 +234,12 @@
             </div>
         </div>
 
-        <div class="product-tabs__pane" id="tab-included" [ngClass]="{'product-tabs__pane--active': tab === 'included'}">
+        <div class="product-tabs__pane" id="tab-included" *ngIf="hasRichText(product?.whats_included)" [ngClass]="{'product-tabs__pane--active': tab === 'included'}">
             <div class="spec">
                 <div  class="spec__section">
                     <h3 class="typography">What's Included</h3>
                     <div class="spec__row">
-                        <p>This the documentation section</p>
+                        <div class="product-tabs__rich" [innerHTML]="product.whats_included"></div>
                     </div>
                 </div>
                 <div class="spec__disclaimer">
@@ -178,12 +248,12 @@
             </div>
         </div>
 
-        <div class="product-tabs__pane" id="tab-intended" [ngClass]="{'product-tabs__pane--active': tab === 'intended'}">
+        <div class="product-tabs__pane" id="tab-intended" *ngIf="hasRichText(product?.intended_use_desc)" [ngClass]="{'product-tabs__pane--active': tab === 'intended'}">
             <div class="spec">
                 <div  class="spec__section">
                     <h3 class="typography">Intended Use</h3>
                     <div class="spec__row">
-                        <p>This the documentation section</p>
+                        <div class="product-tabs__rich" [innerHTML]="product.intended_use_desc"></div>
                     </div>
                 </div>
                 <div class="spec__disclaimer">

@@ -16,6 +16,7 @@ import { OffcanvasRequestService } from '../../services/offcanvas-request.servic
 import { DropcartType } from '../../../@modules/header/components/dropcart/dropcart.component';
 import { ProductAssociation } from '../../interfaces/product-associations';
 import {EndToEndSolution, MarketplaceProduct} from '../../../../@models/end-to-end-solution.model';
+import { AiSuggestedProductService } from '../../services/ai-suggested-product.service';
 
 export type ProductLayout = 'standard' | 'sidebar' | 'columnar' | 'quickview';
 
@@ -58,6 +59,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     selectedAssociationIds = new Set<number>();
     private readonly destroy$ = new Subject<void>();
 
+    showAiSuggested = false;
     cartProductIds: Array<string | number> = [];
     addingSolutionProducts = false;
 
@@ -71,7 +73,8 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
         private readonly compare: CompareService,
         private readonly quickview: QuickviewService,
         public root: RootService,
-        public appSvc: AppService
+        public appSvc: AppService,
+        private aiSuggestions: AiSuggestedProductService
     ) {
         this.route.data.pipe(takeUntil(this.destroy$)).subscribe((data: RouterData) => {
             this.headerLayout = data.headerLayout ?? 'classic';
@@ -82,13 +85,26 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     ngOnInit(): void {
         this.resetAssociationState();
         this.refreshSolutionCartProductIds();
+        this.syncAiSuggestion();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['product']) {
             this.resetAssociationState();
             this.refreshSolutionCartProductIds();
+            this.syncAiSuggestion();
         }
+    }
+
+    private syncAiSuggestion(): void {
+        if (this.layout === 'quickview' || !this.product) {
+            this.showAiSuggested = false;
+            return;
+        }
+        if (this.route.snapshot.queryParamMap.get('ai') === '1') {
+            this.aiSuggestions.mark(this.product);
+        }
+        this.showAiSuggested = this.aiSuggestions.isSuggested(this.product);
     }
 
     ngOnDestroy(): void { 

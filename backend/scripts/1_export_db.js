@@ -229,6 +229,7 @@ async function exportProducts() {
         hideme: row.hide_me || '',
         max: row.max || '',
         pii: row.pi || '',
+        spi: row.sensitive_pi || '',
         status: row.status || '',
         updated_at: row.updated_at || null,
       };
@@ -473,8 +474,8 @@ async function exportAndJoinOrders() {
 	console.log(`\n--- STEP 6: EXPORTING AND CLEANING ORDERS ---`);
 	try {
 		console.log(`[DB] [QUERY] Fetching requests and tasks from database...`);
-		const reqRes = await pool.query('SELECT * FROM request ORDER BY opened_at DESC');
-		const taskRes = await pool.query('SELECT * FROM task');
+		const reqRes = await pool.query('SELECT * FROM orders_request ORDER BY opened_at DESC');
+		const taskRes = await pool.query('SELECT * FROM orders_task');
 		console.log(`[DB] [FETCHED] ${reqRes.rowCount} requests and ${taskRes.rowCount} tasks retrieved.`);
 
 		fs.writeFileSync(path.join(ORDERS_PATH, 'requests.json'), JSON.stringify(reqRes.rows, null, 4));

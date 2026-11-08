@@ -54,14 +54,8 @@ export class SubdomainsOneComponent implements OnInit {
     });
   }
 
-  resolveNavigation(subdomain: any): any[] {
-    // If we have deeper sub-subdomains, go to Level 3 page
-    if (subdomain.subdomains && subdomain.subdomains.length > 0) {
-      const subSlug = subdomain.slug || subdomain.name.toLowerCase().replace(/ /g, '-');
-      return ['/', this.currentType, subSlug]; // Result: /domain/automotive/parts
-    }
-    // Otherwise, go straight to products
-    return ['/marketplace/products', subdomain.slug];
+  catalogLink(subdomain: any) {
+    return this.domainsService.catalogLink(subdomain, 'subdomain', [this.currentType]);
   }
 
   getDescription(item: any): string {

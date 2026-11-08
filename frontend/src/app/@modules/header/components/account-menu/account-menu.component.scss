@@ -1,6 +1,6 @@
 .account-menu {
     position: relative !important;
-    width: 480px;
+    width: 360px;
     z-index:999999 !important;
 }
 
@@ -37,15 +37,17 @@
 
 .account-menu__signin {
     margin: 0;
-    padding: 4px 20px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
     color: #1f2937;
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: 400;
     line-height: 1.45;
 }
 
 .account-menu__signin strong {
-    display: block;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 

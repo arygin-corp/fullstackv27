@@ -1,7 +1,7 @@
 <form method="post" id="notification-preferences">
     {% csrf_token %}
-    <div class="row g-3 mb-4">
-        <div class="col-xl-8">
+    <div class="row g-3 mb-4 preference-layout">
+        <div class="col-lg-9">
             <div class="card h-100">
                 <div class="card-header">
                     <h3 class="h5 mb-1">Delivery channels</h3>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-4">
+        <div class="col-lg-3">
             <div class="card h-100" id="digest-schedule">
                 <div class="card-header">
                     <h3 class="h5 mb-1">Digest schedule</h3>

@@ -16,6 +16,7 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
 import { OrgComponent } from './org/org.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProductIntakeComponent } from './product-intake/product-intake.component';
+import { FeatureWalkthroughComponent, OpenFeatureWalkthroughComponent } from './feature-walkthrough/feature-walkthrough.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,11 @@ import { ProductIntakeComponent } from './product-intake/product-intake.componen
     OrgComponent,
     LandingPageComponent,
     ProductIntakeComponent,
+    FeatureWalkthroughComponent,
+    OpenFeatureWalkthroughComponent,
   ],
   exports: [
+    FeatureWalkthroughComponent,
     TeamComponent,
     HackathonComponent,
     RoadmapComponent,

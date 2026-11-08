@@ -44,6 +44,15 @@ class RequestFormSchemaTests(SimpleTestCase):
         self.assertEqual(form["values"]["v_dar_objectid_createdby"], "oid-1")
         self.assertEqual(form["values"]["v_dar_dataDomainSelect"], "Vehicles")
         self.assertEqual(form["values"]["v_custom_control_group"], "CG1")
+
+    def test_alternate_approver_replaces_domain_control_group(self):
+        form = build_request_form(
+            _product(alt_approver=SimpleNamespace(name="Finance Approver", sys_id="abc123sysid")),
+            _creator(),
+        )
+        self.assertEqual(form["values"]["v_dar_dataDomainSelect"], "Vehicles")
+        self.assertEqual(form["values"]["v_custom_control_group"], "abc123sysid")
+        self.assertNotEqual(form["values"]["v_custom_control_group"], "CG1")
         self.assertEqual(form["values"]["v_custom_routing_rule_identifier"], "R1")
         self.assertEqual(form["values"]["v_dar_ad_group"], "sales-ad")
         self.assertEqual(form["values"]["v_dar_environment"], "QA")

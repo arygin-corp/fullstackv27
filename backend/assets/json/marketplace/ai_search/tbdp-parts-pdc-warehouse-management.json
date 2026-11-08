@@ -1,0 +1,51 @@
+{
+  "adgroup": "tbdp-parts-pdc-warehouse-management",
+  "slugs": [
+    "parts-distribution-center-warehouse-management"
+  ],
+  "databases": [
+    "pdc_parts_wms_trn_ext"
+  ],
+  "tables": [
+    "pdc_wms_denial_hist",
+    "pdc_wms_shipment_hist"
+  ],
+  "columns": [
+    "allocated_qty",
+    "audit_create_date",
+    "bill_to_dealer_no",
+    "carrier_cd",
+    "dealer_grp_cd",
+    "dealer_no",
+    "denial_date",
+    "denial_datetime",
+    "denial_qty",
+    "denial_time",
+    "depot_cd",
+    "facing_depot_cd",
+    "freight_chrg_amt",
+    "handling_chrg_amt",
+    "line_type_cd",
+    "location_no",
+    "order_date",
+    "order_part_no",
+    "order_qty",
+    "order_reference_no",
+    "order_status_cd",
+    "part_no",
+    "pick_from_mu_no",
+    "pick_location_no",
+    "pick_to_mu_no",
+    "processing_date",
+    "reason_cd",
+    "service_chrg_amt",
+    "ship_qty",
+    "ship_reference_no",
+    "ship_to_dealer_no",
+    "shipper_price_amt",
+    "tbdp_delete_flag",
+    "tracking_no",
+    "user_id",
+    "work_assignment_no"
+  ]
+}

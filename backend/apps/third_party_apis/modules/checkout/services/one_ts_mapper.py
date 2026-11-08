@@ -1,5 +1,5 @@
 from django.conf import settings
-from .product_requirements import product_value, requirements_for_product
+from .product_requirements import checkout_control_group, product_value, requirements_for_product
 
 def snapshot_product(product):
     def simple(value):
@@ -12,7 +12,7 @@ def snapshot_product(product):
 def build_variables(product, values, creator, requested_for, terms_accepted):
     req = requirements_for_product(product)
     one_ts_domain = product_value(product, "one_ts_domain", "domain", default="")
-    control_group = getattr(one_ts_domain, "control_group", "") if one_ts_domain else ""
+    control_group = checkout_control_group(product)
     ad_group = product_value(product, "ad_group", default="")
     route = product_value(product, "route_identifier", default="")
     variables = {
@@ -38,5 +38,7 @@ def build_variables(product, values, creator, requested_for, terms_accepted):
         "chk_dar_terms_message": bool(terms_accepted),
         **values,
     }
+    if getattr(product, "alt_approver", None) is not None:
+        variables["v_custom_control_group"] = str(control_group or "")
     if req["is_api"]: variables["v_dat_api_name"] = str(product_value(product, "name", default=""))
     return {k: v for k, v in variables.items() if v not in (None, "")}

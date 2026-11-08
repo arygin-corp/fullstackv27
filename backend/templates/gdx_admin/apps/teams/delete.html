@@ -1,0 +1,19 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Delete {{ object.name }} | Teams{% endblock %}
+{% block page_header %}{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/teams/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="TEAMS" hero_title="Delete team" hero_description="This removes the team. Profiles linked to it keep their accounts and lose the team link." hero_metric_label="Team" hero_metric_value=object.name hero_metric_caption="Confirm" hero_icon="👥" %}
+    <section class="card border-0 shadow-sm">
+        <div class="card-body">
+            <p>Delete <strong>{{ object.name }}</strong>?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button class="integration-button integration-button--primary" type="submit">Delete</button>
+                <a class="integration-button" href="{% url 'teams:detail' object.pk %}">Cancel</a>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

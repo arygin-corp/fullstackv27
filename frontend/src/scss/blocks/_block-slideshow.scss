@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
 // .block-slideshow
 */
@@ -23,7 +24,7 @@ $local-dot-size: $local-dots-height - $local-dots-padding * 2;
             background: $block-slideshow-dots-bg;
             display: flex;
             padding: $local-dots-padding;
-            border-radius: $local-dots-height / 2;
+            border-radius: math.div($local-dots-height, 2);
 
             @include direction {
                 #{$inset-inline-start}: 50%;
@@ -34,7 +35,7 @@ $local-dot-size: $local-dots-height - $local-dots-padding * 2;
         .owl-dot {
             width: $local-dot-size;
             height: $local-dot-size;
-            border-radius: $local-dot-size / 2;
+            border-radius: math.div($local-dot-size, 2);
             background: $block-slideshow-dot-default-color;
 
             &:focus {

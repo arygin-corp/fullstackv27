@@ -4846,6 +4846,600 @@
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_asset_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_dealer_group"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_dock_door"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_error_message"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_ib_ob"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_log_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_override_dock_door"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_override_route"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_override_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_overriding_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_overriding_user"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_resolved"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_route_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_route_sort_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_surgere_route_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "a_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_asset_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_dealer_group"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_dock_door"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_error_message"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_ib_ob"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_log_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_override_dock_door"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_override_route"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_override_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_overriding_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_overriding_user"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_resolved"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_route_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_route_sort_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_surgere_route_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "b_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "custom_field1"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "custom_field2"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "custom_field3"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "custom_field4"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "custom_field5"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "fastpath"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "asset_loading_log",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "confirmation_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_address1"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_address2"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_address3"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_address_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_address_zipcode"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_delivered_date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_group"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "dealer_sort_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "partition_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "pickup_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "reason"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "rn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "ship_confirmation_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_child_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_child_category"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_child_long_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_child_short_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_dock_door"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_driver_email"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_driver_first_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_driver_last_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_grandchild_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_grandchild_category"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_grandchild_long_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_grandchild_short_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_parent_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_parent_category"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_parent_long_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_parent_short_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_pdc_origin"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_route"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_ship_confirmation_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_asset_current_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_asset_route"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_asset_weight"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_change_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_current_dealer_used"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_last_scan_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_last_scan_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "wms_last_used_dealer_grp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
       "elementname": "dealer_shipping_information",
       "column_name": "audit_create_date"
     },
@@ -5100,6 +5694,318 @@
       "dbname": "p360_ing",
       "elementname": "dealer_shipping_information",
       "column_name": "wms_change_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_case_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_h_p"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_last_update_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_last_update_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_last_updated_by"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_last_updated_pgm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_quantity"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_seq_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_ship_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_ship_from"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_shipment_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_shipto"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_sub_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_tkt_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_trailer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_transp_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "a_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_case_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_h_p"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_last_update_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_last_update_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_last_updated_by"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_last_updated_pgm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_quantity"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_seq_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_ship_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_ship_from"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_shipment_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_shipto"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_sub_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_tkt_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_trailer"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_transp_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "b_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "custom1"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "custom2"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "custom3"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "fastpath"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "wms_change_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "internal_transfer_shipping_file",
+      "column_name": "wms_change_time_zone"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -5580,6 +6486,318 @@
       "dbname": "p360_ing",
       "elementname": "movable_unit_header_file",
       "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_carrier_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_case_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_created_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_destroyed_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_napo_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_old_ticket_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_overage_asn_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_overage_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_part_coc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_purchase_order_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_received_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_rejected_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_shpm_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_supplier_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_ticket_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_transportation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "a_vendor_ship_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_carrier_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_case_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_created_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_destroyed_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_napo_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_old_ticket_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_overage_asn_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_overage_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_part_coc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_purchase_order_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_received_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_rejected_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_shpm_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_supplier_damaged_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_ticket_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_transportation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "b_vendor_ship_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "custom1"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "custom2"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "custom3"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "fast_path"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "wms_change_time_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "parts_pc_receiving_asn_parts",
+      "column_name": "wms_change_ts"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -6726,6 +7944,330 @@
       "dbname": "p360_ing",
       "elementname": "route_master_detail",
       "column_name": "wms_change_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_appointment_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_avail_to_schedule_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_container_loc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_container_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_plan_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_plan_seq"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_planned_unload_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_planning_status_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_ship_est_dock_arrival_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_ship_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_transportation_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_transportation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "a_vendor_shipment_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "asn_download_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_appointment_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_avail_to_schedule_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_container_loc_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_container_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_plan_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_plan_seq"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_planned_unload_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_planning_status_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_ship_est_dock_arrival_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_ship_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_transportation_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_transportation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "b_vendor_shipment_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "custom2"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "custom3"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "entry_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "fast_path"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "job_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "job_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "program_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "table_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "time_zone"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "trans_seq_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "user_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "work_load_planning_shipment_header",
+      "column_name": "wms_change_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "adj_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "analyst"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "cat_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "create_by"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "create_time"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "part_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "rrn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
+      "column_name": "xdock_ind"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -9876,6 +11418,252 @@
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "reciveing_put_away_route",
       "column_name": "wms_change_utc_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "coc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "inspect_comp_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "inspection_indicator"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "module_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "retrofit_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "return_module_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "rrn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "scrap_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
+      "column_name": "user_0"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_ext_height"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_ext_length"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_ext_width"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_int_height"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_int_length"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "assembled_int_width"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "carrying_capacity"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "coc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "collapsed_heigth"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "collapsed_length"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "collapsed_width"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "inspection_indicator"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "last_retrofit_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "manufacturer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "mod_discontinue_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "mod_manufacture_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "mod_purchase_price"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "module_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "retrofit_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "return_module_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "rrn"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "scrap_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "sleeve_height"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "tare_wgt_lbs"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "tare_wgt_metric"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -15976,6 +17764,168 @@
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "complete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "confirm_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "depotcd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "location"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "onhand_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "scrap_reference"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_location_file",
+      "column_name": "ship_reference"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "complete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "confirm_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "depotcd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "download_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "retain_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "scrap_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "scrap_reference"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "scrap_type"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "ship_reference"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
+      "elementname": "plan_scrap_master_file",
+      "column_name": "target_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_distribution_center_supply_trn_ext",
       "elementname": "shift_detail_file",
       "column_name": "a_last_maintained_by_program"
     },
@@ -18612,6 +20562,930 @@
       "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
       "elementname": "ndw_data_load_time_metric",
       "column_name": "load_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "abnormal_order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "accessory_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "all_time_buy_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_accessory_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_last_part_in_chain_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_no_reorder_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_stop_sales_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_sub_generation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "aps_traffic_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "cif_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "commodity_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "commodity_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "core_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "core_value_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "country_of_origin_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "cubic_measurement_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "current_purchase_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dealer_direct_ship_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dealer_exclusion_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dealer_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dealer_quantity_unit_pack_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "discontinued_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "discount_program_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_exclusion_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_order_unit_1_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_order_unit_2_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_order_unit_3_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "distributor_price_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dlr_whlsl_retail_price_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "dot_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "drop_ship_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "effective_end_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "effective_start_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "engineering_control_info_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "exp_cntl_class_nbr"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "federal_excise_tax_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "federal_excise_tax_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "forward_substitution_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "fractional_order_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "free_on_board_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "free_on_board_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "general_motor_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "gsps_part_categorization_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "gsps_vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "harmonized_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "hazardous_material_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "height_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "high_level_package_spec_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "history_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "import_dimension_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "in_or_out_manufacturing_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "inspection_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "inspection_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "interchangeable_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "introduction_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "inventory_class_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "japan_classification_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "japan_product_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "key_product_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "kit_part_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "length_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "lexus_dealer_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "major_inventory_class_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "major_moving_volume_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "manual_allocation_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "maximum_order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "minimum_order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "miscellaneous_goods_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "moving_volume_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "multiple_routing_code_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "national_parts_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "new_part_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "new_tmc_supplier_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "nhtsa_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "non_cancel_part_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "order_cycle_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "original_purchase_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "package_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "package_label_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "package_required_ind_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_age_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_description_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_history_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_name_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_name_code_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_no_activity_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_supply_status_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "part_type_ind_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "past_model_at_part_level_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "past_model_at_prod_level_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "planning_control_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "port_installed_option_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "price_class_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "price_formula_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "procurement_analyst_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "procurement_order_method_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "procurement_order_unit_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "procurement_stock_indicator_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "product_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "production_begin_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "production_end_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "purchase_price_skip_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "rebate_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "receiving_warehouse_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "reg_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "review_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "routing_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "royalty_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "rust_proofing_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "sales_start_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "schedule_b_parm_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "service_campaign_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "service_determination_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "set_kit_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "source_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "source_system_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "special_control_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "special_interest_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "special_treatment_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "standard_quantity_limit_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "std_selling_price_skip_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "stocking_warehouse_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "substitution_backward_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "substitution_forward_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "suggested_retail_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "supply_stock_ind_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tentative_price_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tmc_part_center_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tmc_procurement_company_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tmd_referral_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tms_procure_requirement_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tms_quantity_unit_pack_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tpna_last_part_in_chain_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tpna_no_reorder_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tpna_stop_sales_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "tpna_sub_generation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "traffic_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "traffic_code_bypass_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "unit_of_issue_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "us_product_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "us_weight_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "vendor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "vor_standard_qty_limit_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "wh_control_pkg_spec_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "wholesale_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "part",
+      "column_name": "width_qty"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -30432,6 +33306,12 @@
       "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
       "elementname": "tpdtl",
       "column_name": "part_num_proc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "tpdtl",
+      "column_name": "po_ddd"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -45010,6 +47890,156 @@
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "case_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "cif_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "container_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "daily_extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "daily_extract_dt_part"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "inventory_receipt_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "part_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "pc_site_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_creation_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_method_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_transportation_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "po_type_indicator_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "received_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "seq_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "shipment_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "shipment_received_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "source_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "supplier_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "transportation_no"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
+      "elementname": "vendor_lead_time_shipment",
+      "column_name": "vendor_ship_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
       "elementname": "ydc2dx",
       "column_name": "anlst"
     },
@@ -45180,6 +48210,150 @@
       "dbname": "parts_indirectparts_serviceparts_procurement_pdc_trn_ext",
       "elementname": "ydc2dx",
       "column_name": "xd_wh_alloc_lin"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "back_order_quantity"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "dealer_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "inquiry_reason"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "inquiry_resolved_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "inquiry_status"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "inquiry_submitted_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "last_updated_at"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "napo_order_reference_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "no_reference_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "number_of_days_open"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "order_reference_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "original_estimated_time_of_arrival"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "original_estimated_time_of_departure"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "procurement_analyst"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "returned_inquiries"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "revised_estimated_time_of_arrival"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "ship_depot"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "stage"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "status_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "system_note"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "dealer_daily_bo_eta_pra",
+      "column_name": "tracking"
     }
   ],
   "links": [

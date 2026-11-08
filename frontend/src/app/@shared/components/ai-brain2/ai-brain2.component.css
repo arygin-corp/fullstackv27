@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100,200,300;400;500;600;700,800&display=swap');
+
+.site-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Transparent background - no background-color set */
+  background: transparent;
+  padding: 20px;
+  position: relative;  /* Ensure proper stacking */
+  z-index: 1000;    
+}
+
+#loader-canvas {
+  display: block;
+  width: 144px;
+  height: 144px;
+  background: transparent;
+}
+
+#loader-canvas {
+  display: block;
+  width: 144px;
+  height: 144px;
+  background: transparent;
+}
+
+#loader-text {
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px; /* Reduced font size for smaller loader */
+  font-weight: bold;
+  color: #1EECB2;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(30, 236, 178, 0.5);
+  min-height: 16px;
+  background: transparent;
+}
+
+h1 {
+  font-family: 'Poppins', serif;
+	font-size: clamp(1rem, 1vw, 1rem);
+	background: linear-gradient(45deg, #f8b55f, #c95792, #b078b9, #1EECB2);
+	background-size: 300%;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: whitesmoke;
+	font-weight: 100;
+	text-transform: uppercase;
+	animation: gradient 10s linear infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.loader-message {
+  position: relative;
+  top: 80px;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: opacity 250ms ease-in-out;
+}
+
