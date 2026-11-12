@@ -84,6 +84,7 @@ urlpatterns = [
     path("sa/marketplace/", include("apps.marketplace.admin_urls")),
     path("sa/workflow/", include(("apps.workflow_engine.urls_v2", "workflow"), namespace="workflow",)),
     path("sa/workflow/", include(("apps.workflow_engine.template_urls", "workflow_templates"), namespace="workflow_templates",)),
+    path("sa/pages/", include(("gdx.theme_pages_urls", "theme_pages"), namespace="theme_pages")),
     path("sa/pages/", include("apps.pages.urls")),
     path("sa/modules/", include("apps.third_party_apis.page_urls"),),
     path("sa/modules/", include(("apps.third_party_apis.page_urls", "third_party_api_pages"), namespace="third_party_api_pages"),),
@@ -98,8 +99,8 @@ urlpatterns = [
     path("sa/templates/default_charts.html", views.default_template, name="default_charts"),
     path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
     path("sa/command-center/", include(("apps.third_party_apis.modules.command_center.urls", "command_center"), namespace="command_center")),
-    # Vexlora-shaped theme pages (mirrors http://127.0.0.1:3000/pages/dashboard/.../index.html)
-    path("pages/", include(("gdx.theme_pages_urls", "theme_pages"), namespace="theme_pages")),
+    # Theme-shaped aliases (static theme used /pages/...; SuperAdmin canonical URLs are under sa/)
+    path("pages/", include(("gdx.theme_pages_urls", "theme_pages_alias"), namespace="theme_pages_alias")),
     path("sa/microsoft-teams/", include(("apps.third_party_apis.modules.microsoft_teams.urls", "microsoft_teams"), namespace="microsoft_teams")),
     path("sa/microsoft-email/", include(("apps.third_party_apis.modules.microsoft_email.urls", "microsoft_email"), namespace="microsoft_email")),
     path("sa/google-analytics/", include(("apps.third_party_apis.modules.google_analytics.urls", "google_analytics"), namespace="google_analytics")),
