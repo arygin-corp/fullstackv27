@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from apps.notifications.monitoring.views import alerts_view, health_view, live_view, ready_view, startup_view, metrics_view
 from . import views
+from . import theme_pages as theme_pages_views
 from .theme_preview import snapshot as theme_preview_snapshot
 from .forms import GDXPasswordResetForm, GDXSetPasswordForm
 
@@ -73,6 +74,31 @@ urlpatterns = [
 
     # SUPER ADMINISTRATORS - GDX ADMIN
     path("sa/", views.staff_home, name="staff_home"),
+    # Exact Vexlora theme static trees (paired with data-base-path="/sa")
+    path(
+        "sa/assets/<path:asset_path>",
+        theme_pages_views.theme_asset,
+        {"kind": "assets"},
+        name="vexlora_assets",
+    ),
+    path(
+        "sa/brand/<path:asset_path>",
+        theme_pages_views.theme_asset,
+        {"kind": "brand"},
+        name="vexlora_brand",
+    ),
+    path(
+        "sa/images/<path:asset_path>",
+        theme_pages_views.theme_asset,
+        {"kind": "images"},
+        name="vexlora_images",
+    ),
+    path(
+        "sa/data/<path:asset_path>",
+        theme_pages_views.theme_asset,
+        {"kind": "data"},
+        name="vexlora_data",
+    ),
     path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
     path("sa/checkout/", include("apps.third_party_apis.modules.checkout.page_urls", namespace="checkout_pages")),
     path("changelog/", include(("apps.changelog.admin_urls", "changelog"), namespace="changelog_staff")),
@@ -86,6 +112,12 @@ urlpatterns = [
     path("sa/workflow/", include(("apps.workflow_engine.template_urls", "workflow_templates"), namespace="workflow_templates",)),
     path("sa/pages/", include(("gdx.theme_pages_urls", "theme_pages"), namespace="theme_pages")),
     path("sa/pages/", include("apps.pages.urls")),
+    # Fallback: any remaining /sa/pages/* path serves the Vexlora HTML package
+    path(
+        "sa/pages/<path:page_path>",
+        theme_pages_views.theme_page,
+        name="vexlora_theme_page",
+    ),
     path("sa/modules/", include("apps.third_party_apis.page_urls"),),
     path("sa/modules/", include(("apps.third_party_apis.page_urls", "third_party_api_pages"), namespace="third_party_api_pages"),),
     path("sa/integrations/", include(("apps.third_party_apis.operations_urls", "third_party_api_ops"), namespace="third_party_api_ops"),),
