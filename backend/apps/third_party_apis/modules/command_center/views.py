@@ -411,7 +411,9 @@ def executive(request):
     return _shell(
         request,
         "executive",
-        "gdx_admin/pages/command_center/executive.html",
+        "gdx_admin/pages/dashboard/executive/index.html",
+        dashboard_slug="executive",
+        dashboard_title="Executive",
         greeting=greeting,
         headline=headline,
         summary=(
