@@ -28,6 +28,22 @@ class ProfileInline(admin.StackedInline):
 class UserAdmin(BaseUserAdmin):
     inlines = (ProfileInline,)
 
+    def save_formset(self, request, form, formset, change):
+        # post_save already created this user's profile. Reuse that row so the
+        # inline updates it instead of inserting a second one.
+        if formset.model is Profile and form.instance.pk:
+            existing = Profile.objects.filter(user_id=form.instance.pk).first()
+            if existing is not None:
+                for inline_form in formset.forms:
+                    if not getattr(inline_form, "cleaned_data", None):
+                        continue
+                    if inline_form.cleaned_data.get("DELETE"):
+                        continue
+                    if not inline_form.instance.pk:
+                        inline_form.instance.pk = existing.pk
+                        break
+        super().save_formset(request, form, formset, change)
+
 # Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)

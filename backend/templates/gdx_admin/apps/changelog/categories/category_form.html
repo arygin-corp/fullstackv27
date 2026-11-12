@@ -1,8 +1,16 @@
 {% extends "gdx_admin/base.html" %}
 {% block page_header %}{% endblock %}
+{% block extra_css %}
+<style>
+  .category-field-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; }
+  .category-field-row .is-wide { grid-column: 1 / -1; }
+  .category-field-row .col-md-4, .category-field-row .col-12 { width: auto; max-width: none; flex: none; }
+  @media (max-width: 767px) { .category-field-row { grid-template-columns: 1fr; } }
+</style>
+{% endblock %}
 {% block title %}{% if object %}Update {{ object.name }}{% else %}Create Category{% endif %}{% endblock %}
 {% block content %}<div class="container-fluid px-3 px-lg-4 py-4">
   {% if object %}{% include "gdx_admin/apps/changelog/categories/includes/_category_hero.html" with hero_title="Update Category" hero_description="Refine the category identity, routing slug, status, and descriptive guidance." hero_metric_label="Current category" hero_metric=object.name hero_metric_help=object.slug hero_icon="ti ti-edit" %}{% else %}{% include "gdx_admin/apps/changelog/categories/includes/_category_hero.html" with hero_title="Create Category" hero_description="Add a reusable classification for organizing changelog release-note content." hero_metric_label="Workflow" hero_metric="New" hero_metric_help="Category configuration" hero_icon="ti ti-folder-plus" %}{% endif %}
   {{ form.media }}
-  <div class="row g-4"><div class="col-12 col-xl-8"><div class="card"><div class="card-header"><div><h2 class="h5 mb-1">{% if object %}Update category{% else %}Category details{% endif %}</h2><p class="text-muted mb-0">Complete the fields below and resolve validation errors before saving.</p></div><span class="badge bg-primary-subtle text-primary">{% if object %}Editing{% else %}New{% endif %}</span></div><div class="card-body"><form method="post" novalidate>{% csrf_token %}{% include "gdx_admin/apps/changelog/categories/partials/_category_form_fields.html" %}<div class="d-flex justify-content-end flex-wrap gap-2 border-top pt-3 mt-4"><a class="btn btn-light border" href="{% url 'changelog:category-list' %}">Cancel</a><button class="btn btn-primary" type="submit"><i class="ti ti-device-floppy me-1"></i>Save category</button></div></form></div></div></div><div class="col-12 col-xl-4">{% include "gdx_admin/apps/changelog/categories/partials/_category_form_help.html" %}</div></div>
+  <div class="row g-4"><div class="col-12 col-xl-8"><div class="card"><div class="card-header"><div><h2 class="h5 mb-1">{% if object %}Update category{% else %}Category details{% endif %}</h2><p class="text-muted mb-0">Complete the fields below and resolve validation errors before saving.</p></div><span class="badge bg-primary-subtle text-primary">{% if object %}Editing{% else %}New{% endif %}</span></div><div class="card-body"><form method="post" novalidate>{% csrf_token %}{% include "gdx_admin/apps/changelog/categories/partials/_category_form_fields.html" %}<div class="d-flex justify-content-end flex-wrap gap-2 border-top pt-3 mt-4"><a class="btn btn-light border" href="{% url 'changelog_staff:category-list' %}">Cancel</a><button class="btn btn-primary" type="submit"><i class="ti ti-device-floppy me-1"></i>Save category</button></div></form></div></div></div><div class="col-12 col-xl-4">{% include "gdx_admin/apps/changelog/categories/partials/_category_form_help.html" %}</div></div>
 </div>{% endblock %}

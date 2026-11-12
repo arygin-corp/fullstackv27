@@ -1,11 +1,17 @@
 import {
+    AfterViewChecked,
+    AfterViewInit,
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
+    ElementRef,
     EventEmitter,
     Input,
     OnChanges,
+    OnDestroy,
     Output,
-    SimpleChanges
+    SimpleChanges,
+    ViewChild
 } from '@angular/core';
 
 import {
@@ -22,7 +28,7 @@ import {
     styleUrls: ['./end-to-end.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EndToEndSolutionComponent implements OnChanges {
+export class EndToEndSolutionComponent implements AfterViewChecked, AfterViewInit, OnChanges, OnDestroy {
     @Input() solution: EndToEndSolution | null = null;
     @Input() cartProductIds: ReadonlyArray<number | string> = [];
     @Input() addingProducts = false;
@@ -37,9 +43,28 @@ export class EndToEndSolutionComponent implements OnChanges {
     @Output() readonly quickView =
         new EventEmitter<MarketplaceProduct>();
 
+    @ViewChild('productGrid')
+    productGrid?: ElementRef<HTMLElement>;
+
     showAllProducts = false;
+    rowSize = 3;
     private selectedIds = new Set<string>();
     private cartIds = new Set<string>();
+    private rowObserver?: ResizeObserver;
+
+    constructor(private readonly changeDetectorRef: ChangeDetectorRef) {}
+
+    ngAfterViewInit(): void {
+        this.watchRowSize();
+    }
+
+    ngAfterViewChecked(): void {
+        this.watchRowSize();
+    }
+
+    ngOnDestroy(): void {
+        this.rowObserver?.disconnect();
+    }
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['initialDisplayLimit']) {
@@ -104,7 +129,7 @@ export class EndToEndSolutionComponent implements OnChanges {
     get displayedProducts(): EndToEndSolutionProduct[] {
         return this.showAllProducts
             ? this.solutionProducts
-            : this.solutionProducts.slice(0, this.initialDisplayLimit);
+            : this.solutionProducts.slice(0, this.rowSize);
     }
 
     get selectableProducts(): EndToEndSolutionProduct[] {
@@ -129,14 +154,11 @@ export class EndToEndSolutionComponent implements OnChanges {
     }
 
     get hasMoreProducts(): boolean {
-        return this.solutionProducts.length > this.initialDisplayLimit;
+        return this.solutionProducts.length > this.rowSize;
     }
 
     get hiddenProductCount(): number {
-        return Math.max(
-            this.solutionProducts.length - this.initialDisplayLimit,
-            0
-        );
+        return Math.max(this.solutionProducts.length - this.rowSize, 0);
     }
 
     toggleProductsView(): void {
@@ -247,6 +269,40 @@ export class EndToEndSolutionComponent implements OnChanges {
         return Number.isInteger(normalized) && normalized > 0
             ? normalized
             : fallback;
+    }
+
+    private watchRowSize(): void {
+        const element = this.productGrid?.nativeElement;
+        if (!element || this.rowObserver) {
+            return;
+        }
+
+        this.updateRowSize();
+        if (typeof ResizeObserver === 'undefined') {
+            return;
+        }
+
+        this.rowObserver = new ResizeObserver(() => this.updateRowSize());
+        this.rowObserver.observe(element);
+    }
+
+    private updateRowSize(): void {
+        const element = this.productGrid?.nativeElement;
+        if (!element) {
+            return;
+        }
+
+        const columns = getComputedStyle(element)
+            .gridTemplateColumns
+            .split(' ')
+            .filter(Boolean).length;
+        const next = Math.max(columns, 1);
+        if (next === this.rowSize) {
+            return;
+        }
+
+        this.rowSize = next;
+        this.changeDetectorRef.markForCheck();
     }
 
     private removeCartItemsFromSelection(): void {

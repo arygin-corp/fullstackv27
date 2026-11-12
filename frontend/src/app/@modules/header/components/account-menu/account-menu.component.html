@@ -2,10 +2,11 @@
     <div class="account-menu__divider"></div>
     <a routerLink="/marketplace/user/dashboard" class="account-menu__user" (click)="closeMenu.emit()" style="text-decoration: none;">
         <div class="account-menu__user-avatar">
-            <img *ngIf="photo; else noImageFound" [src]="photo" style="width: 150%;max-width: 64px;">
+            <img *ngIf="photo; else noImageFound" [src]="photo" alt="">
             <ng-template #noImageFound>
-                <ngx-avatar size="50" bgColor="#222" fgColor="#04fdff" name="{{profile?.givenName}} {{profile?.surname}}"></ngx-avatar>
+                <ngx-avatar size="64" bgColor="#222" fgColor="#04fdff" name="{{profile?.givenName}} {{profile?.surname}}"></ngx-avatar>
             </ng-template>
+            <span class="account-menu__status-dot account-menu__status-dot--avatar" [attr.data-status]="profileStatus.current$ | async" aria-hidden="true"></span>
         </div>
 
         <div class="account-menu__user-info" style="margin-left: 20px;">
@@ -14,6 +15,22 @@
             <div class="account-menu__user-email"><small>{{profile?.mail}}</small></div>
         </div>
     </a>
+    <div class="account-menu__divider"></div>
+    <div class="account-menu__status" *ngIf="profileStatus.current$ | async as status">
+        <button type="button" class="account-menu__status-toggle" (click)="toggleStatus($event)" [attr.aria-expanded]="statusOpen" aria-haspopup="listbox">
+            <span class="account-menu__status-dot" [attr.data-status]="status" aria-hidden="true"></span>
+            <span>{{ profileStatus.labelFor(status) }}</span>
+            <i class="ri-arrow-down-s-line" [class.is-open]="statusOpen" aria-hidden="true"></i>
+        </button>
+        <ul class="account-menu__status-panel" *ngIf="statusOpen" role="listbox" aria-label="Set your status">
+            <li *ngFor="let option of profileStatus.options">
+                <button type="button" class="account-menu__status-option" role="option" [attr.aria-selected]="option.id === status" [class.is-current]="option.id === status" (click)="setStatus(option.id, $event)">
+                    <span class="account-menu__status-dot" [attr.data-status]="option.id" aria-hidden="true"></span>
+                    {{ option.label }}
+                </button>
+            </li>
+        </ul>
+    </div>
     <div class="account-menu__divider"></div>
     <ul class="account-menu__links">
         <li><a routerLink="/marketplace/user/profile" (click)="closeMenu.emit()">My Profile</a></li>

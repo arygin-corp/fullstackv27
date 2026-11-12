@@ -75,8 +75,9 @@ class ProductListView(AdminAccessMixin, ListView):
     context_object_name = "products"
     paginate_by = 25
     def get_queryset(self):
-        qs = Product.objects.select_related("domain","datatype","classification","org","created_by").prefetch_related("images").order_by("-updated_at")
-        q=self.request.GET.get("q","").strip(); status=self.request.GET.get("status",""); domain=self.request.GET.get("domain","")
+        status=self.request.GET.get("status",""); domain=self.request.GET.get("domain","")
+        qs = Product.objects.hide_archived(status).select_related("domain","datatype","classification","org","created_by").prefetch_related("images").order_by("-updated_at")
+        q=self.request.GET.get("q","").strip()
         if q: qs=qs.filter(Q(name__icontains=q)|Q(sku__icontains=q)|Q(short_desc__icontains=q))
         if status: qs=qs.filter(status=status)
         if domain: qs=qs.filter(domain_id=domain)

@@ -5,6 +5,7 @@
  * 2) export_requestData.js
  * 3) export_formData.js
  * 4) join_combineData.js
+ * 5) 7_all_order.js
  */
 
 const path = require("path");
@@ -17,6 +18,7 @@ const scripts = [
   { name: "STEP 4 - Export approved request data", file: "3_export_requestData.js" },
   { name: "STEP 5 - Export historical form data", file: "4_export_formData.js" },
   { name: "STEP 6 - Join enriched historical orders", file: "5_join_enrichedOrders.js" },
+  { name: "STEP 7 - Export ServiceNow orders with tasks", file: "7_all_order.js" },
 ];
 
 function runNodeScript(scriptPath, stepName, extraEnv = {}) {

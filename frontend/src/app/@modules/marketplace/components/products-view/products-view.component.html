@@ -53,10 +53,7 @@
                     <label for="view-options-limit">Show</label>
                     <div>
                         <select class="form-control form-control-sm" id="view-options-limit" formControlName="limit">
-                            <option value="12">12</option>
-                            <option value="24">24</option>
-                            <option value="48">48</option>
-                            <option value="96">96</option>
+                            <option *ngFor="let size of limitChoices" [ngValue]="size">{{ size }}</option>
                         </select>
                     </div>
                 </div>

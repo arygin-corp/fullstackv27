@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { forkJoin, of, Subject } from 'rxjs';
@@ -58,10 +58,25 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
     showAllAssociatedProducts = false;
     selectedAssociationIds = new Set<number>();
     private readonly destroy$ = new Subject<void>();
+    private detailViewStarted = 0;
+    private detailViewTimer: ReturnType<typeof setTimeout> | null = null;
+    private detailViewSent = false;
 
     showAiSuggested = false;
     cartProductIds: Array<string | number> = [];
     addingSolutionProducts = false;
+    showApiNotice = false;
+    showDataReviewNotice = false;
+
+    get productLead(): string {
+        if (this.layout === 'quickview') {
+            return String(this.product?.short_desc || '');
+        }
+        const html = String(this.product?.brief_desc || '');
+        const paragraphs = html.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || [];
+        const first = paragraphs.find(paragraph => paragraph.replace(/<[^>]+>/g, '').trim());
+        return first || html;
+    }
 
     constructor(
         public route: ActivatedRoute,
@@ -86,6 +101,8 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
         this.resetAssociationState();
         this.refreshSolutionCartProductIds();
         this.syncAiSuggestion();
+        this.openApiNotice();
+        this.watchDetailView();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -93,6 +110,10 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
             this.resetAssociationState();
             this.refreshSolutionCartProductIds();
             this.syncAiSuggestion();
+            if (!changes['product'].firstChange) {
+                this.openApiNotice();
+                this.watchDetailView();
+            }
         }
     }
 
@@ -107,8 +128,93 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
         this.showAiSuggested = this.aiSuggestions.isSuggested(this.product);
     }
 
-    ngOnDestroy(): void { 
-        this.destroy$.next(); this.destroy$.complete(); 
+    ngOnDestroy(): void {
+        this.clearDetailViewTimer();
+        this.lockPageScroll(false);
+        this.destroy$.next(); this.destroy$.complete();
+    }
+
+    private watchDetailView(): void {
+        this.clearDetailViewTimer();
+        this.detailViewSent = false;
+        if (this.layout === 'quickview' || !this.product || (!this.product.slug && !this.product.id)) {
+            return;
+        }
+        this.detailViewStarted = Date.now();
+        this.detailViewTimer = setTimeout(() => this.sendDetailView(), 5000);
+    }
+
+    private clearDetailViewTimer(): void {
+        if (this.detailViewTimer) {
+            clearTimeout(this.detailViewTimer);
+            this.detailViewTimer = null;
+        }
+    }
+
+    private sendDetailView(): void {
+        if (this.detailViewSent || this.layout === 'quickview' || !this.product) {
+            return;
+        }
+        const seconds = Math.round((Date.now() - this.detailViewStarted) / 1000);
+        if (seconds < 5) {
+            return;
+        }
+        this.detailViewSent = true;
+        const id = this.product.slug || this.product.id;
+        this.productService.recordDetailView(id, seconds).pipe(takeUntil(this.destroy$)).subscribe({
+            error: () => undefined
+        });
+    }
+
+    @HostListener('document:keydown.escape')
+    onEscape(): void {
+        this.closeApiNotice();
+    }
+
+    closeApiNotice(): void {
+        this.showApiNotice = false;
+        this.showDataReviewNotice = false;
+        this.lockPageScroll(false);
+    }
+
+    private openApiNotice(): void {
+        const onDetailPage = this.layout !== 'quickview' && !!this.product;
+        this.showDataReviewNotice = onDetailPage && this.isDataReviewBoard(this.product);
+        this.showApiNotice = onDetailPage && this.isApiProduct(this.product);
+        this.lockPageScroll(this.showDataReviewNotice || this.showApiNotice);
+    }
+
+    private isApiProduct(product: any): boolean {
+        const datatype = String(product?.datatype || product?.resource?.type || '').toLowerCase();
+        return datatype.includes('api') || datatype.includes('webservice');
+    }
+
+    private isDataReviewBoard(product: any): boolean {
+        const value = product?.data_review_required ?? product?.data_review_board;
+        return value === true || value === 1 || value === 'true' || value === 'Yes';
+    }
+
+    private lockPageScroll(locked: boolean): void {
+        if (typeof document === 'undefined') {
+            return;
+        }
+        document.body.style.overflow = locked ? 'hidden' : '';
+    }
+
+    get customBadges(): string[] {
+        if (this.layout === 'quickview') {
+            return [];
+        }
+        const badges = this.product?.badges || [];
+        const names = [];
+        for (const badge of badges) {
+            if (typeof badge === 'string') {
+                names.push(badge);
+            } else if (badge && !badge.is_system && badge.name) {
+                names.push(badge.name);
+            }
+        }
+        return names;
     }
 
     get endToEndSolution(): EndToEndSolution | null {

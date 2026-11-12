@@ -2,7 +2,7 @@
   <div>
     <nav aria-label="breadcrumb"><ol class="breadcrumb breadcrumb-arrow mb-2">
       <li class="breadcrumb-item"><a href="{% url 'changelog:dashboard' %}">Changelog</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'changelog:category-list' %}">Categories</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'changelog_staff:category-list' %}">Categories</a></li>
       {% if breadcrumb_current %}<li class="breadcrumb-item active" aria-current="page">{{ breadcrumb_current }}</li>{% endif %}
     </ol></nav>
     <h2 class="h4 mb-1">{{ page_heading }}</h2>

@@ -32862,3 +32862,9 @@ a .disabled {
         padding: 1rem;
     }
 }
+
+.profile-status-dot[data-status='online'] { background: #22c55e; }
+.profile-status-dot[data-status='away'] { background: #eab308; }
+.profile-status-dot[data-status='busy'] { background: #ef4444; }
+.profile-status-dot[data-status='unavailable'] { background: #a855f7; }
+.profile-status-dot[data-status='offline'] { background: #9ca3af; }

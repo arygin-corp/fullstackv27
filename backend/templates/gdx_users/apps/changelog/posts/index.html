@@ -1,0 +1,91 @@
+{% extends "gdx_users/partials/base.html" %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ paginator.count }} Release{{ paginator.count|pluralize }}</h5>
+                    <form method="get" class="d-flex gap-2" role="search">
+                        <input class="form-control" type="search" name="q" value="{{ request.GET.q }}" placeholder="Search versions and release content" aria-label="Search releases">
+                        <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                    {% if perms.changelog.add_post %}
+                        <a class="btn btn-primary" href="{% url 'changelog_staff:post-create' %}">Add Release</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle w-100">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Title</th>
+                                <th>Release date</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for post in posts %}
+                                <tr>
+                                    <td>{{ post.version }}</td>
+                                    <td>{{ post.title }}</td>
+                                    <td>{{ post.release_date|date:"j F, Y" }}</td>
+                                    <td class="text-center">
+                                        {% if post.status == "PUBLISHED" %}
+                                            <span class="badge-soft-success me-1 badge badge-soft-success-custom" style="font-size: 12px !important; padding: 4px 12px !important;">{{ post.get_status_display }}</span>
+                                        {% elif post.status == "ARCHIVED" %}
+                                            <span class="badge-soft-dark me-1 badge badge-soft-dark-custom" style="font-size: 12px !important; padding: 4px 12px !important;">{{ post.get_status_display }}</span>
+                                        {% else %}
+                                            <span class="badge-soft-dark me-1 badge badge-soft-dark-custom" style="font-size: 12px !important; padding: 4px 12px !important;">{{ post.get_status_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center">
+                                            <a href="{% url 'changelog_staff:post-detail' post.pk %}" title="View"><i class="bx bx-show align-bottom" style="font-size: 20px;"></i></a>
+                                            {% if perms.changelog.change_post %}
+                                                <a href="{% url 'changelog_staff:post-update' post.pk %}" title="Edit"><i class="bx bxs-edit-alt align-bottom text-primary" style="font-size: 20px; line-height: 2;"></i></a>
+                                            {% endif %}
+                                            {% if perms.changelog.delete_post %}
+                                                <a href="{% url 'changelog_staff:post-delete' post.pk %}" title="Delete"><i class="bx bx-trash align-bottom text-danger" style="font-size: 20px;"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-muted">No release notes found.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% if is_paginated %}
+                    <nav class="mt-3">
+                        <ul class="pagination mb-0">
+                            <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+                                {% if page_obj.has_previous %}
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q|urlencode }}{% endif %}">Previous</a>
+                                {% else %}
+                                    <span class="page-link">Previous</span>
+                                {% endif %}
+                            </li>
+                            <li class="page-item disabled"><span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+                            <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+                                {% if page_obj.has_next %}
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q|urlencode }}{% endif %}">Next</a>
+                                {% else %}
+                                    <span class="page-link">Next</span>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

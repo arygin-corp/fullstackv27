@@ -151,6 +151,50 @@ def get_refined_score(query, product_name, p_datatype, preferred_type):
 
     return min(100, (base_score + adjustment) - word_penalty)
 
+def _catalog_assets():
+    from .node_engine.engine import get_engine
+
+    assets = []
+    for product in get_engine().products:
+        denodo = product.get("denodo") or {}
+        for asset in denodo.get("assets") or []:
+            if isinstance(asset, dict):
+                assets.append(asset)
+    return assets
+
+
+@csrf_exempt
+def database_catalog(request):
+    """Database names for the data-access form, from the same catalog the suggestions use."""
+    names = sorted({
+        str(asset.get("dbname") or "").strip()
+        for asset in _catalog_assets()
+        if str(asset.get("dbname") or "").strip()
+    }, key=str.lower)
+    return JsonResponse([{"dbname": name, "label": name} for name in names], safe=False)
+
+
+@csrf_exempt
+def database_tables(request):
+    """Tables for one database, matching the form's table dropdown."""
+    dbname = (request.GET.get("dbname") or "").strip()
+    seen = {}
+    for asset in _catalog_assets():
+        if str(asset.get("dbname") or "").strip() != dbname:
+            continue
+        table = str(asset.get("elementname") or "").strip()
+        if not table or table.lower() in seen:
+            continue
+        columns = asset.get("column_names") or []
+        seen[table.lower()] = {
+            "dbname": dbname,
+            "elementname": table,
+            "column_name": columns[0] if columns else "",
+        }
+    rows = sorted(seen.values(), key=lambda row: row["elementname"].lower())
+    return JsonResponse(rows, safe=False)
+
+
 # --- 3. VIEWS ---
 @csrf_exempt
 def suggest_products_by_role(request):

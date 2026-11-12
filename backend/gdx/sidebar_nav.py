@@ -140,7 +140,9 @@ def sidebar_sections(request):
             "title": "Command Center",
             "items": [
                 _group("Command Center", "isax-command", [
+                    _link("command_center_executive", "Executive"),
                     _link("command_center", "Dashboard"),
+                    _link("integration_catalog", "Catalog"),
                     _link("command_center_analytics", "Analytics"),
                     _link("command_center_health", "Health"),
                     _link("command_center_workflow", "Workflow Approvals"),
@@ -195,13 +197,13 @@ def sidebar_sections(request):
                 _group("Changelog", "isax-clock", [
                     _link("changelog_dashboard", "Dashboard"),
                     _link("changelog_releases", "Releases"),
-                    _path("Timeline", "/sa/changelog/timeline/"),
+                    _path("Timeline", "/changelog/timeline/"),
                     _link("changelog_categories", "Categories"),
                     _link("changelog_compare", "Compare"),
                     _link("changelog_notifications", "Notifications"),
                     _link("changelog_audit", "Audit"),
-                    _path("New Release", "/sa/changelog/posts/create/"),
-                    _path("New Category", "/sa/changelog/categories/create/"),
+                    _path("New Release", "/changelog/posts/create/"),
+                    _path("New Category", "/changelog/categories/create/"),
                 ]),
                 _group("Notification Operations", "isax-notification", [
                     _path("Analytics", "/sa/notifications/master/advanced-analytics/"),
@@ -265,10 +267,7 @@ def sidebar_sections(request):
                 _group("Notifications", "isax-notification", [
                     *_pages("notifications_inbox", "notifications_preferences"),
                 ]),
-                _group("Teams", "isax-people", [
-                    _link("teams", "Teams"),
-                    _path("New Team", "/sa/teams/new/"),
-                ]),
+                _link("teams", "Teams", "isax-people"),
                 _group("Workflow", "isax-hierarchy-square-3", _workflow_pages()),
             ],
         },
@@ -278,8 +277,8 @@ def sidebar_sections(request):
                 _link("teams", "Team", "isax-people"),
                 _marketplace_crud(),
                 _group("Changelog", "isax-clock", [
-                    _path("Releases", "/sa/changelog/posts/"),
-                    _path("Categories", "/sa/changelog/categories/"),
+                    _path("Releases", "/changelog/posts/"),
+                    _path("Categories", "/changelog/categories/"),
                 ]),
                 _group("Pages", "isax-document", [
                     _path("Pages", "/sa/pages/pages/"),

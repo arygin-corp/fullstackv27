@@ -13,7 +13,7 @@ $local-transition-duration: .1s;
 
 
 .btn {
-    border-radius: 2px;
+    border-radius: 4px;
     transition: all $local-transition-duration ease-in-out;
 
     @include btn-nl();
@@ -206,4 +206,27 @@ $local-transition-duration: .1s;
     &.btn-xs:after {
         @include preloader-size(14px);
     }
+}
+
+.btn.view-details-btn,
+.btn.view-details-btn:hover,
+.btn.view-details-btn:focus,
+.btn.view-details-btn:active,
+.btn.view-details-btn:not(:disabled):not(.disabled):active,
+.btn.view-details-btn:not(:disabled):not(.disabled).active {
+    border: 1px solid #121826 !important;
+    border-radius: 4px !important;
+    background: #121826 !important;
+    background-color: #121826 !important;
+    color: #04fdff !important;
+}
+
+.btn.view-details-btn:hover,
+.btn.view-details-btn:focus,
+.btn.view-details-btn:active,
+.btn.view-details-btn:not(:disabled):not(.disabled):active {
+    border-color: #000 !important;
+    background: #000 !important;
+    background-color: #000 !important;
+    color: #04fdff !important;
 }

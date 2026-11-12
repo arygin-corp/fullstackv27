@@ -67,7 +67,7 @@ export class PageMarketplaceService {
 
     private optionsState: ListOptions = {
         page: 1,
-        limit: 12,
+        limit: 16,
         sort: 'default',
         filterValues: {}
     };
@@ -104,7 +104,7 @@ export class PageMarketplaceService {
     }
 
     get limit(): number {
-        return this.listState?.limit || 12;
+        return this.listState?.limit || 16;
     }
 
     get sort(): string {

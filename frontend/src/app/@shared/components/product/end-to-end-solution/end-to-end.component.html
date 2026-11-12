@@ -10,10 +10,8 @@
                 {{ solution?.name }}
             </h2>
 
-            <p
-                *ngIf="solution?.description"
-                class="e2e-solution__description">
-                {{ solution?.description }}
+            <p class="e2e-solution__description">
+                These products work together as one solution. Select any you need and add them to your cart.
             </p>
         </div>
 
@@ -38,8 +36,8 @@
         </div>
     </div>
 
-    <div class="e2e-product-grid">
-        <div *ngFor="let entry of solution?.products" class="e2e-product-card" (click)="openQuickView(entry.product)">
+    <div #productGrid class="e2e-product-grid">
+        <div *ngFor="let entry of displayedProducts" class="e2e-product-card" (click)="openQuickView(entry.product)">
             <div class="e2e-product-card__image-wrap">
                 <img *ngIf="entry.product.images?.length" [src]="entry.product.images?.[0]" [alt]="entry.product.name" class="e2e-product-card__image" loading="lazy">
             </div>
@@ -52,8 +50,6 @@
                 </div>
 
                 <h3 class="e2e-product-card__title">{{ entry.product.name }}</h3>
-
-                <div *ngIf="entry.product.sku" class="e2e-product-card__sku">SKU: {{ entry.product.sku }}</div>
 
                 <p class="e2e-product-card__description">
                     {{ entry.product.short_desc || entry.reason || 'No description available.'}}
@@ -75,8 +71,8 @@
             (click)="toggleProductsView()">
             {{
                 showAllProducts
-                    ? 'View Less'
-                    : 'View ' + hiddenProductCount + ' More'
+                    ? 'Show Less'
+                    : 'Show More (' + hiddenProductCount + ')'
             }}
         </button>
     </div>

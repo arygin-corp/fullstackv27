@@ -1,24 +1,133 @@
-{% extends 'gdx_users/base.html' %}
-{% load static %}
+{% extends "gdx_users/base.html" %}
 
 {% block extra_css %}
-<!-- Targeted CSS for the Home Page -->
-<link href="{% static 'css/pages/home.css' %}" rel="stylesheet" type="text/css" />
+    {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+    <style>
+        .dash-range .btn { border: 1px solid #d9dee8; color: #3d4d63; background: #fff; }
+        .dash-range .btn.is-on { background: #583fc9; border-color: #583fc9; color: #fff; }
+        .dash-tile { align-items: flex-start; min-height: 96px; }
+        .dash-tile strong { display: block; font-size: 28px; line-height: 1.1; color: #121826; }
+        .dash-tile small { color: #64758b; }
+        .dash-tile:hover strong { color: #583fc9; }
+    </style>
+{% endblock %}
+
+{% block page_actions %}
+    <div class="btn-group btn-group-sm dash-range" role="group" aria-label="Date range">
+        {% for item in ranges %}
+            <a class="btn {% if item.key == active_range %}is-on{% endif %}" href="?range={{ item.key }}">{{ item.label }}</a>
+        {% endfor %}
+    </div>
 {% endblock %}
 
 {% block contents %}
-
-<div id="content">
-	<h3 class="page-header mb-3"> Hi, {{user.first_name}}. <small class="text-muted fs-5">This is what is happening in Data Marketplace.</small></h3>
-	<div class="row">
-		
-	</div>
+<div class="record-view">
+    <div class="card record-hero mb-3">
+        <div class="card-body">
+            <div class="record-kicker">Dashboard</div>
+            <h3 class="mb-1">{% if user.first_name %}Hi, {{ user.first_name }}.{% else %}Data Marketplace{% endif %}</h3>
+            <p class="record-copy mb-0">This is what is happening in Data Marketplace{% if active_range != "all" %} over the last {{ range_label }}{% endif %}.</p>
+        </div>
+    </div>
+    <div class="record-tiles mb-3">
+        {% for card in cards %}
+            <a class="record-tile dash-tile" href="{{ card.href }}">
+                <span>
+                    <span class="record-kicker">{{ card.label }}</span>
+                    <strong>{{ card.value }}</strong>
+                    <small>{{ card.caption }}</small>
+                </span>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <h5 class="mb-0 card-title">Recent products</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in recent_products %}
+                                    <tr>
+                                        <td><a href="{% url 'marketplace:product-detail' product.pk %}">{{ product.name }}</a></td>
+                                        <td>{{ product.get_status_display }}</td>
+                                    </tr>
+                                {% empty %}
+                                    <tr><td colspan="2" class="text-muted">No products yet.</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <h5 class="mb-0 card-title">Recent releases</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Version</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in recent_releases %}
+                                    <tr>
+                                        <td><a href="{% url 'changelog_staff:post-detail' post.pk %}">{{ post.version }}</a></td>
+                                        <td>{{ post.release_date|date:"j F, Y" }}</td>
+                                    </tr>
+                                {% empty %}
+                                    <tr><td colspan="2" class="text-muted">No releases yet.</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <h5 class="mb-0 card-title">Recent requests</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Request</th>
+                                    <th>Stage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in recent_requests %}
+                                    <tr>
+                                        <td>{{ item.number|default:item.ritm_number }}</td>
+                                        <td>{{ item.stage|default:"—" }}</td>
+                                    </tr>
+                                {% empty %}
+                                    <tr><td colspan="2" class="text-muted">No requests yet.</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-{% endblock %}
-{% block extra_javascript %}
-<!-- apexcharts -->
-<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
-<!-- Saas dashboard init -->
-<script src="{% static 'js/pages/dashboard-job.init.js' %}"></script>
 {% endblock %}

@@ -28,21 +28,22 @@ export class TotopComponent implements OnInit, OnDestroy {
         }
 
         const showFrom = 300;
+        const scrolled = () => Math.max(
+            window.pageYOffset || 0,
+            document.documentElement.scrollTop || 0,
+            document.body.scrollTop || 0,
+        );
+        const update = () => {
+            const next = scrolled() >= showFrom;
+            if (next !== this.show) {
+                this.zone.run(() => this.show = next);
+            }
+        };
 
         this.zone.runOutsideAngular(() => {
-            fromEvent(window, 'scroll', {passive: true}).pipe(
-                takeUntil(this.destroy$),
-            ).subscribe(() => {
-                if (window.pageYOffset >= showFrom) {
-                    if (!this.show) {
-                        this.zone.run(() => this.show = true);
-                    }
-                } else {
-                    if (this.show) {
-                        this.zone.run(() => this.show = false);
-                    }
-                }
-            });
+            fromEvent(window, 'scroll', {passive: true}).pipe(takeUntil(this.destroy$)).subscribe(update);
+            fromEvent(document.body, 'scroll', {passive: true}).pipe(takeUntil(this.destroy$)).subscribe(update);
+            update();
         });
     }
 
@@ -54,8 +55,12 @@ export class TotopComponent implements OnInit, OnDestroy {
     onClick(): void {
         try {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+            document.documentElement.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+            document.body.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         } catch {
             window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         }
     }
 }

@@ -57,8 +57,24 @@ def notify_approval(intake):
     create_notification(intake=intake, email=intake.requester_email,
         first_name=intake.requester_first_name, last_name=intake.requester_last_name,
         event="intake_approved", severity="success", title="Intake approved",
-        message=f"Intake #{intake.pk} was approved. The Marketplace product is being prepared.")
+        message=f"Intake #{intake.pk} was approved. It can now be added as a draft Marketplace product.")
     queue_email(intake=intake, email=intake.requester_email, event="intake_approved", template="approval")
+
+
+def notify_draft_product(intake):
+    create_notification(intake=intake, email=intake.requester_email,
+        first_name=intake.requester_first_name, last_name=intake.requester_last_name,
+        event="product_drafted", severity="info", title="Draft product created",
+        message=f"Intake #{intake.pk} was added as a draft Marketplace product. It is not published.")
+    queue_email(intake=intake, email=intake.requester_email, event="product_drafted", template="product_drafted")
+
+
+def notify_curated(intake):
+    create_notification(intake=intake, email=intake.requester_email,
+        first_name=intake.requester_first_name, last_name=intake.requester_last_name,
+        event="product_curated", severity="info", title="Product curated",
+        message=f"{intake.product_name} has been curated and is ready to activate on Data Marketplace.")
+    queue_email(intake=intake, email=intake.requester_email, event="product_curated", template="product_curated")
 
 
 def notify_resubmission(intake):

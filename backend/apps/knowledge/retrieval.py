@@ -1,6 +1,7 @@
 from dataclasses import dataclass, replace
 from django.conf import settings
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.db.models import Q
 from pgvector.django import CosineDistance
 from ai_providers.factory import get_embedding_provider
 from .models import DocumentChunk
@@ -28,13 +29,19 @@ def _row_to_chunk(row, **scores):
     return RetrievedChunk(row.id, row.document_id, row.document.title, row.content, row.position, **scores)
 
 
+def _visible_chunks(user):
+    return DocumentChunk.objects.filter(
+        Q(document__owner=user) | Q(document__shared=True)
+    ).select_related("document")
+
+
 def _vector_results(query, user, candidate_k):
     vector = get_embedding_provider().embed(query)
     if settings.RAG_RETRIEVAL_PROVIDER == "azure_ai_search":
         from .azure_search import vector_search
         rows = vector_search(vector, user.id, candidate_k)
         return [RetrievedChunk(int(r["id"]), int(r["document_id"]), r["document_title"], r["content"], int(r["position"]), distance=1.0-float(r.get("@search.score", 0.0)), vector_score=float(r.get("@search.score", 0.0))) for r in rows]
-    rows = (DocumentChunk.objects.filter(document__owner=user).select_related("document")
+    rows = (_visible_chunks(user)
             .annotate(distance=CosineDistance("embedding", vector)).order_by("distance")[:candidate_k])
     return [_row_to_chunk(r, distance=float(r.distance), vector_score=max(0.0, 1.0-float(r.distance))) for r in rows]
 
@@ -42,7 +49,7 @@ def _vector_results(query, user, candidate_k):
 def _keyword_results(query, user, candidate_k):
     search_query = SearchQuery(query, search_type="websearch")
     vector = SearchVector("content", weight="A") + SearchVector("document__title", weight="B")
-    rows = (DocumentChunk.objects.filter(document__owner=user).select_related("document")
+    rows = (_visible_chunks(user)
             .annotate(search=vector, rank=SearchRank(vector, search_query))
             .filter(search=search_query).order_by("-rank")[:candidate_k])
     return [_row_to_chunk(r, keyword_score=float(r.rank)) for r in rows]

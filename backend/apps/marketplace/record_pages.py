@@ -80,6 +80,12 @@ class RecordPageMixin(AdminAccessMixin):
         self.model = self.spec["model"]
         action = getattr(self, "permission_action", "view")
         self.permission_required = f"marketplace.{action}_{self.model._meta.model_name}"
+        if self.model is Badge and action in {"change", "delete"} and kwargs.get("pk"):
+            from apps.marketplace.system_badges import user_is_superadmin
+            badge = Badge.objects.filter(pk=kwargs["pk"]).only("is_system").first()
+            if badge is not None and badge.is_system and not user_is_superadmin(request.user):
+                messages.error(request, "System badges can only be edited or deleted by a superadmin.")
+                return redirect("marketplace_admin:record_detail", slug=self.spec["slug"], pk=kwargs["pk"])
         return super().dispatch(request, *args, **kwargs)
 
     def get_template_names(self):
@@ -97,6 +103,7 @@ class RecordPageMixin(AdminAccessMixin):
             "staff_page_icon": "▦",
             "staff_page_heading": self.spec["label"],
             "staff_page_heading_text": f"Open a {self.spec['singular'].lower()} to edit or delete it.",
+            "record_mutable": True,
         }
         if count is not None:
             context["staff_page_metric_label"] = "Records"
@@ -176,6 +183,10 @@ class RecordDetailView(RecordPageMixin, DetailView):
                 if value and getattr(value, "name", "") and value.name != "default.jpg":
                     images.append({"label": field.verbose_name, "url": value.url})
                 continue
+            if field.name == "image" and isinstance(value, str) and value:
+                from django.templatetags.static import static
+                images.append({"label": field.verbose_name, "url": static(value)})
+                continue
             if field.name == "is_active":
                 facts.append({"kind": "badge", "label": field.verbose_name, "value": "Active" if value else "Inactive"})
                 continue
@@ -190,9 +201,12 @@ class RecordDetailView(RecordPageMixin, DetailView):
             else:
                 shown = value
             facts.append({"kind": "text", "label": field.verbose_name, "value": shown})
+        from apps.marketplace.system_badges import user_is_superadmin
+        record_mutable = not (getattr(self.object, "is_system", False) and not user_is_superadmin(self.request.user))
         context.update(self.page_context(
             facts=facts,
             images=images,
+            record_mutable=record_mutable,
             staff_page_title=str(self.object),
             staff_page_heading=str(self.object),
             staff_page_description=self.spec["singular"],
@@ -240,6 +254,12 @@ class RecordFormMixin(RecordPageMixin):
             return self.form_invalid(form)
         messages.success(self.request, f"{self.spec['singular']} saved.")
         return redirect("marketplace_admin:record_detail", slug=self.spec["slug"], pk=record.pk)
+
+    def form_invalid(self, form):
+        if self.model is Badge:
+            for error in form.errors.get("name", []):
+                messages.warning(self.request, error)
+        return super().form_invalid(form)
 
 
 class RecordCreateView(RecordFormMixin, CreateView):

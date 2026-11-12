@@ -1,0 +1,121 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block extra_css %}
+    {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+    <style>
+        .approval-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+        .approval-step {
+            background: #fff;
+            border: 1px solid #d9dee8;
+            border-radius: 8px;
+            border-top: 3px solid #d9dee8;
+            padding: 14px 16px;
+        }
+        .approval-step span { display: block; color: #64758b; font-size: 12px; margin-bottom: 4px; }
+        .approval-step strong { display: block; color: #121826; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+        .approval-step p { margin: 0; color: #64758b; }
+        .approval-step.is-done { border-top-color: #27ae60; }
+        .approval-step.is-current { border-top-color: #583fc9; }
+        .approval-step.is-stopped { border-top-color: #ef1e1e; }
+        .record-view .workflow-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        @media (max-width: 991px) {
+            .approval-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+{% endblock %}
+
+{% block contents %}
+<div class="record-view">
+    <div class="card record-hero mb-3">
+        <div class="card-body">
+            <div class="d-flex flex-wrap gap-4">
+                {% if product_image_url %}
+                    <div class="record-media">
+                        <img src="{{ product_image_url }}" alt="{{ review.product.name }}">
+                    </div>
+                {% endif %}
+                <div class="flex-grow-1">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                <div>
+                    <div class="record-kicker">Approval workflow</div>
+                    <h3 class="mb-2">{{ review.title|default:"Review" }}</h3>
+                    {% if review.status == "approved" %}
+                        <span class="badge-soft-success me-1 badge badge-soft-success-custom">{{ review.get_status_display }}</span>
+                    {% elif review.status == "rejected" %}
+                        <span class="badge-soft-danger me-1 badge badge-soft-danger-custom">{{ review.get_status_display }}</span>
+                    {% else %}
+                        <span class="badge-soft-info me-1 badge badge-soft-info-custom">{{ review.get_status_display }}</span>
+                    {% endif %}
+                    {% if review.comment %}
+                        <div class="record-copy mt-3 mb-0">{{ review.comment }}</div>
+                    {% endif %}
+                </div>
+                {% if can_decide %}
+                    <form method="post" class="d-flex gap-2">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" name="decision" value="approved" type="submit">Approve</button>
+                        <button class="btn btn-danger" name="decision" value="rejected" type="submit">Reject</button>
+                    </form>
+                {% endif %}
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="approval-steps mb-3">
+        <div class="approval-step is-done">
+            <span>Step 1</span>
+            <strong>Submitted</strong>
+            <p>Submitted on {{ review.created_at|date:"j F, Y" }}.</p>
+        </div>
+        <div class="approval-step {% if review.status == 'pending' %}is-current{% elif review.status == 'approved' %}is-done{% else %}is-stopped{% endif %}">
+            <span>Step 2</span>
+            <strong>Content Manager Group</strong>
+            {% if review.status == "pending" %}
+                <p>Waiting for approval. The review stays unpublished until this step is decided.</p>
+            {% elif review.status == "approved" %}
+                <p>Approved by the Content Manager Group.</p>
+            {% else %}
+                <p>The Content Manager Group did not approve this review.</p>
+            {% endif %}
+        </div>
+        <div class="approval-step {% if review.status == 'approved' %}is-done{% elif review.status == 'rejected' %}is-stopped{% endif %}">
+            <span>Step 3</span>
+            <strong>Published</strong>
+            {% if review.status == "approved" %}
+                <p>The review is published.</p>
+            {% elif review.status == "rejected" %}
+                <p>The review stays unpublished.</p>
+            {% else %}
+                <p>Publishing happens after approval.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col-lg-8">
+            <div class="record-facts workflow-facts">
+                <div class="record-fact">
+                    <span>Product</span>
+                    <strong class="fs-6">{% if review.product_id %}<a href="{% url 'marketplace:product-detail' review.product_id %}">{{ review.product.name }}</a>{% else %}—{% endif %}</strong>
+                </div>
+                <div class="record-fact"><span>Rating</span><strong class="fs-6">{{ review.rating }}</strong></div>
+                <div class="record-fact"><span>Recommend</span><strong class="fs-6">{% if review.would_recommend is True %}Yes{% elif review.would_recommend is False %}No{% else %}—{% endif %}</strong></div>
+                <div class="record-fact"><span>Expectations</span><strong class="fs-6">{% if review.met_expectations is True %}Yes{% elif review.met_expectations is False %}No{% else %}—{% endif %}</strong></div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Record</h5>
+                    <dl class="record-meta mb-0">
+                        <dt>Created</dt>
+                        <dd>{{ review.created_at|date:"j F, Y" }}</dd>
+                        <dt>Status</dt>
+                        <dd>{{ review.get_status_display }}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

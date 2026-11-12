@@ -8,6 +8,7 @@ from rest_framework import status
 from apps.orders.authentication import MarketplaceSignInAuthentication
 from apps.profiles.access import (
     actor_can_edit_employee_type,
+    can_access_backend,
     can_edit_employee_type,
     can_edit_roadmap,
     on_data_marketplace_team,
@@ -45,6 +46,7 @@ def _payload(user):
             "on_data_marketplace_team": False,
             "can_edit_roadmap": False,
             "can_edit_employee_type": False,
+            "can_access_backend": False,
         }
     on_team = on_data_marketplace_team(user)
     employee_type = profile_employee_type(user)
@@ -57,6 +59,7 @@ def _payload(user):
             employee_type,
             is_superuser=bool(user.is_superuser),
         ),
+        "can_access_backend": can_access_backend(user),
     }
 
 

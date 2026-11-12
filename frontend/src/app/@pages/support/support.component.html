@@ -1,137 +1,78 @@
 <!-- <p>support works!</p> -->
 
 <div class="body_wrapper">
-	<section class="kbDoc-banner-support">
-		<div class="banner-content text-center">
-			<div class="banner-content-wrapper">
-				<h1 class="banner-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;" style="color: #363636;">Documentation & Support Community</h1>
-				<p class="banner-description wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;" style="color: #fff;"> Find answers, ask questions, and connect with our community of DMDoc users <br> from around the world. </p>
-				<div class="banner-search-form-wrapper wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-					<form action="" class="banner-search-form">
-						<input type="text" placeholder="Search or ask a question..">
-						<button type="submit">
-							<i class="icon_search"></i>
-						</button>
-					</form>
+	<section class="kb-hero">
+		<div class="kb-hero-inner">
+			<div class="kb-hero-copy">
+				<p class="kb-hero-kicker">Need Help</p>
+				<h1>Knowledge &amp; Support</h1>
+				<p>Search guides for finding a product, requesting access, and using your Data Marketplace account.</p>
+			</div>
+			<div class="kb-faces-stage" #kbFaces>
+				<ul class="kb-faces" [class.is-paused]="chatPaused">
+					<li class="kb-face-center" [class.is-answering]="answerShown"><img src="assets/images/support/avatars/1.png" alt=""></li>
+					<li class="kb-orbit" *ngFor="let src of orbitFaces; let i = index" [attr.style]="'--i: ' + i" [class.is-asking]="shownAskIndex === i">
+						<span class="kb-face-disc"><img [src]="src" alt=""></span>
+						<p class="kb-bubble kb-bubble-ask" *ngIf="shownAskIndex === i" [class.is-in]="askShown">{{ heroQuestion }}</p>
+					</li>
+				</ul>
+				<div class="kb-hero-chat" aria-live="polite">
+					<p class="kb-bubble kb-bubble-answer" *ngIf="answerMounted" [class.is-in]="answerShown">{{ heroAnswer }}</p>
 				</div>
 			</div>
-		</div>
-		<ul class="people-image wow fadeIn" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeIn;">
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/1.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/2.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/3.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/4.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/5.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/6.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/7.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/8.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;" style="width: 100%; max-width: 64px;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/9.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-			<li>
-				<img class="wow zoomIn" data-wow-delay="0.4s" src="assets/images/support/avatars/10.png" alt="people" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
-			</li>
-		</ul>
-		<ul class="partical-animation wow fadeIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeIn;">
-			<li class="partical">
-				<img data-parallax="{&quot;x&quot;: -180, &quot;y&quot;: 80, &quot;rotateY&quot;:2000}" src="assets/images/support/particles/bnp1.png" alt="partical" style="transform:translate3d(0px, 0.029px, 0px) rotateX(0deg) rotateY(0.029deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0.029px, 0px) rotateX(0deg) rotateY(0.029deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); ">
-			</li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical"></li>
-			<li class="partical">
-				<img src="assets/images/support/particles/bnp2.png" data-parallax="{&quot;x&quot;: -250, &quot;y&quot;: -160, &quot;rotateZ&quot;:200}" alt="partical" style="transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0.029deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0.029deg) scaleX(1) scaleY(1) scaleZ(1); ">
-			</li>
-		</ul>
-		<div class="bottom-shape">
-			<img src="assets/images/support/banner-bottom-shape.png" alt="banner">
 		</div>
 	</section>
-	<section class="related-communities">
-		<div class="container">
-			<div class="section_title text-center">
-				<h2 class="h_title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"> Select your product to find <br> Related communities </h2>
+	<section class="kb-library" id="knowledge-base" [class.is-open]="showResults">
+		<div class="kb-wrap" #kbWrap [class.is-open]="showResults" [class.is-docked]="docked" [class.is-topics-collapsed]="topicsCollapsed" role="tablist" aria-label="Knowledge base topics">
+			<div class="kb-dock-bar" *ngIf="showResults" [class.is-in]="docked"></div>
+			<form class="kb-dock-search" *ngIf="showResults" (submit)="$event.preventDefault()">
+				<label class="kb-search-label" for="kb-dock-search">Search the knowledge base</label>
+				<i class="ri-search-line" aria-hidden="true"></i>
+				<input id="kb-dock-search" type="search" [value]="query" (input)="onDockQuery($any($event.target).value)" placeholder="Search the knowledge base" autocomplete="off">
+			</form>
+			<button type="button" class="kb-collapse" *ngIf="showResults" (click)="collapse()" aria-label="Close and return to topics">
+				<i class="ri-menu-fold-line" aria-hidden="true"></i>
+			</button>
+			<ng-container *ngTemplateOutlet="topicButton; context: { $implicit: allTopic }"></ng-container>
+			<div class="kb-topics">
+				<ng-container *ngFor="let topic of sideTopics">
+					<ng-container *ngTemplateOutlet="topicButton; context: { $implicit: topic }"></ng-container>
+				</ng-container>
 			</div>
-			<div class="communities-boxes">
-				<div class="kbDoc-com-box wow fadeInRight" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-					<div class="icon-container">
-						<img src="assets/images/support/icons/folder.svg" alt="communinity-box" width="64">
-					</div>
-					<div class="kbDoc-com-box-content">
-						<h3 class="title">
-							<a routerLink="support/getting-started"> Getting Started</a>
-						</h3>
-						<p class="total-post">0 Posts</p>
-					</div>
+
+			<div class="kb-results" #kbResults [class.is-visible]="showResults" [attr.aria-hidden]="showResults ? null : true">
+				<ng-container *ngIf="showResults">
+				<div class="kb-grid" *ngIf="pagedArticles.length > 0">
+					<a class="kb-card" *ngFor="let article of pagedArticles; trackBy: trackArticle" [routerLink]="['/pages/support', article.id]">
+						<img *ngIf="article.image" class="kb-card-image" [src]="article.image" alt="">
+						<span class="kb-card-topic">{{ categoryLabel(article.category) }}</span>
+						<strong>{{ article.title }}</strong>
+						<span>{{ article.summary }}</span>
+					</a>
 				</div>
-				<div class="kbDoc-com-box wow fadeInRight" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInRight;">
-					<div class="icon-container">
-						<img src="assets/images/support/icons/code.svg" alt="communinity-box" width="64">
-					</div>
-					<div class="kbDoc-com-box-content">
-						<h3 class="title">
-							<a routerLink="support/integrations"> Integrations</a>
-						</h3>
-						<p class="total-post">0 Posts</p>
-					</div>
+				<nav class="kb-pager" *ngIf="showPager" aria-label="Article pages">
+					<button type="button" (click)="setPage(page - 1)" [disabled]="page === 1">Previous</button>
+					<button type="button" *ngFor="let n of pageNumbers" [class.is-current]="n === page" (click)="setPage(n)">{{ n }}</button>
+					<button type="button" (click)="setPage(page + 1)" [disabled]="page === pageCount">Next</button>
+				</nav>
+
+				<div class="kb-empty" *ngIf="visibleArticles.length === 0">
+					<strong>No articles match that search.</strong>
+					<p>Try the question you have, such as “how do I search”, “AI suggestions”, “compare”, or “no products found”.</p>
 				</div>
-				<div class="kbDoc-com-box wow fadeInRight" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
-					<div class="icon-container">
-						<img src="assets/images/support/icons/aws.svg" alt="communinity-box" width="64">
-					</div>
-					<div class="kbDoc-com-box-content">
-						<h3 class="title">
-							<a routerLink="support/aws"> AWS System</a>
-						</h3>
-						<p class="total-post">0 Posts</p>
-					</div>
-				</div>
-				<div class="kbDoc-com-box wow fadeInRight" data-wow-delay="1.1s" style="visibility: visible; animation-delay: 1.1s; animation-name: fadeInRight;">
-					<div class="icon-container">
-						<img src="assets/images/support/icons/cloud-server.svg" alt="communinity-box" width="64">
-					</div>
-					<div class="kbDoc-com-box-content">
-						<h3 class="title">
-							<a routerLink="support/cloud-server"> Cloud Server</a>
-						</h3>
-						<p class="total-post">0 Posts</p>
-					</div>
-				</div>
-				<div class="kbDoc-com-box wow fadeInRight" data-wow-delay="1.3s" style="visibility: visible; animation-delay: 1.3s; animation-name: fadeInRight;">
-					<div class="icon-container">
-						<img src="assets/images/support/icons/netlify.svg" alt="communinity-box" width="64">
-					</div>
-					<div class="kbDoc-com-box-content">
-						<h3 class="title">
-							<a routerLink="support/quick-integrations"> Integrate Quickly</a>
-						</h3>
-						<p class="total-post">0 Posts</p>
-					</div>
-				</div>
+				</ng-container>
 			</div>
 		</div>
 	</section>
 </div>
+
+<ng-template #topicButton let-topic>
+	<button type="button" class="kb-topic" role="tab" [attr.aria-selected]="category === topic.id" [class.is-active]="category === topic.id" [class.kb-topic-all]="topic.id === 'all'" (click)="selectCategory(topic.id)">
+		<i [class]="topic.icon" aria-hidden="true"></i>
+		<span class="kb-topic-copy">
+			<strong>{{ topic.label }}</strong>
+			<small>{{ topic.description }}</small>
+		</span>
+		<em>{{ countFor(topic.id) }}</em>
+	</button>
+</ng-template>

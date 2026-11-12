@@ -1,0 +1,62 @@
+{% extends "gdx_users/partials/base.html" %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ categories|length }} Categories</h5>
+                    {% if perms.changelog.add_categorie %}
+                        <a class="btn btn-primary" href="{% url 'changelog_staff:category-create' %}">Add Category</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle w-100">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in categories %}
+                                <tr>
+                                    <td>{{ category.name }}</td>
+                                    <td>{{ category.slug }}</td>
+                                    <td class="text-center">
+                                        {% if category.is_active %}
+                                            <span class="badge-soft-success me-1 badge badge-soft-success-custom" style="font-size: 12px !important; padding: 4px 12px !important;">Active</span>
+                                        {% else %}
+                                            <span class="badge-soft-dark me-1 badge badge-soft-dark-custom" style="font-size: 12px !important; padding: 4px 12px !important;">Inactive</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center">
+                                            <a href="{% url 'changelog_staff:category-detail' category.pk %}" title="View"><i class="bx bx-show align-bottom" style="font-size: 20px;"></i></a>
+                                            {% if perms.changelog.change_categorie %}
+                                                <a href="{% url 'changelog_staff:category-update' category.pk %}" title="Edit"><i class="bx bxs-edit-alt align-bottom text-primary" style="font-size: 20px; line-height: 2;"></i></a>
+                                            {% endif %}
+                                            {% if perms.changelog.delete_categorie %}
+                                                <a href="{% url 'changelog_staff:category-delete' category.pk %}" title="Delete"><i class="bx bx-trash align-bottom text-danger" style="font-size: 20px;"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-muted">No categories yet.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

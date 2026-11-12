@@ -1,7 +1,0 @@
-<div class="d-flex flex-wrap gap-1">
-  <span class="badge bg-light text-dark border">{{ field.get_field_type_display }}</span>
-  {% if field.required %}<span class="badge bg-danger-subtle text-danger">Required</span>{% endif %}
-  {% if field.hidden %}<span class="badge bg-secondary-subtle text-secondary">Hidden</span>{% endif %}
-  {% if field.disabled %}<span class="badge bg-warning-subtle text-warning">Disabled</span>{% endif %}
-  {% if not field.is_active %}<span class="badge bg-dark-subtle text-dark">Inactive</span>{% endif %}
-</div>

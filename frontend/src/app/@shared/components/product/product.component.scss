@@ -1,3 +1,102 @@
+.api-notice {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.api-notice__backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(18, 24, 38, 0.55);
+}
+
+.api-notice__dialog {
+    position: relative;
+    width: min(560px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 36px 32px 28px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(18, 24, 38, 0.28);
+    text-align: center;
+}
+
+.api-notice__mark {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    border: 2px solid #04fdff;
+    border-radius: 50%;
+    background: #121826;
+    color: #04fdff;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.api-notice__dialog h2 {
+    margin: 0 0 12px;
+    color: #121826;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.api-notice__dialog section + section {
+    margin-top: 22px;
+}
+
+.api-notice__dialog p {
+    margin: 0 auto;
+    max-width: 46ch;
+    color: #3d4654;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.api-notice__dialog a {
+    color: #1a66ff;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.api-notice__dialog a:hover,
+.api-notice__dialog a:focus {
+    text-decoration: underline;
+}
+
+.api-notice__ok {
+    margin-top: 24px;
+}
+
+.api-notice__ok {
+    min-width: 112px;
+    height: 40px;
+    padding: 0 22px;
+    border: 1px solid #121826;
+    border-radius: 4px;
+    background: #121826;
+    color: #04fdff;
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.api-notice__ok:hover,
+.api-notice__ok:focus {
+    background: #000;
+    border-color: #000;
+    color: #04fdff;
+    outline: none;
+}
+
 .product__ai-pill {
     display: inline-flex;
     align-items: center;
@@ -475,12 +574,12 @@
     margin: auto 0 0;
     padding: 7px 12px;
 
-    border: 1px solid #00d9dd;
-    border-radius: 2px;
+    border: 1px solid #121826;
+    border-radius: 4px;
 
-    background-color: #00e1e5;
+    background-color: #121826;
 
-    color: #000;
+    color: #04fdff;
 
     font-size: 14px;
     font-weight: 600;
@@ -498,11 +597,11 @@
 
 .product-association__details:hover,
 .product-association__details:focus {
-    border-color: #00c8cc;
+    border-color: #000;
 
-    background-color: #00cfd3;
+    background-color: #000;
 
-    color: #000;
+    color: #04fdff;
 
     text-decoration: none;
 }
@@ -934,6 +1033,12 @@
 // =========================================================
 // Main Product Badges
 // =========================================================
+
+.badge.badge-custom {
+    color: #04fdff !important;
+    background-color: #121826 !important;
+    border-color: #121826 !important;
+}
 
 .badge {
     display: inline-flex !important;

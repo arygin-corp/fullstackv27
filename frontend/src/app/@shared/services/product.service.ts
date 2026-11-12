@@ -86,6 +86,9 @@ export class ProductService {
 
   getAllProducts(): Observable<Product[]> { return this.http.get<Product[]>(this.products); }
   getProduct(id: string | number): Observable<Product> { return this.http.get<Product>(`${this.products}${id}/`); }
+  recordDetailView(id: string | number, durationSeconds: number): Observable<{ counted: boolean }> {
+    return this.http.post<{ counted: boolean }>(`${this.products}${id}/view/`, { duration_seconds: durationSeconds });
+  }
   createProduct(data: any): Observable<any> { return this.http.post(this.products, data); }
   updateProduct(id: string | number, data: any): Observable<any> { return this.http.put(`${this.products}${id}/`, data); }
   deleteProduct(id: string | number): Observable<any> { return this.http.delete(`${this.products}${id}/`); }

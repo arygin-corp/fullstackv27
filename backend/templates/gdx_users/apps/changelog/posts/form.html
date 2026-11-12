@@ -1,0 +1,42 @@
+{% extends "gdx_users/partials/base.html" %}
+
+{% block extra_css %}
+    {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+{% endblock %}
+
+{% block contents %}
+<form method="post" class="record-view record-form" novalidate>
+    {% csrf_token %}
+    <div class="card record-hero mb-3">
+        <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+                <div class="record-kicker">Release</div>
+                <h3 class="mb-0">{% if object %}Edit {{ object.version }}{% else %}Add Release{% endif %}</h3>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <a class="btn btn-light" href="{% url 'changelog_staff:post-list' %}">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            {{ form.media }}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                <div class="mb-3">
+                    {% if field.field.widget.input_type == "checkbox" %}
+                        <div class="form-check">{{ field }} {{ field.label_tag }}</div>
+                    {% else %}
+                        {{ field.label_tag }}
+                        {{ field }}
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</form>
+{% endblock %}

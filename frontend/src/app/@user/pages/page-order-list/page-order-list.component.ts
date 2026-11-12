@@ -26,7 +26,7 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
     pageNo: number = 1;
     request: any;
     todaysDate: Date = new Date();
-    filterDuration: string = '3_MONTHS';
+    filterDuration: string = 'ALL';
     isShow = false;
     noOrder = false;
     loader = false;
@@ -97,6 +97,7 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
       if (this.searchText) {
         this.FilterOrderList(this.searchText, false);
       }
+      this.ShowEmpty();
     }
 
     putApiRequestEvent(requestId){
@@ -117,15 +118,15 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
       }
       
       SortOrderList(order: string){
+        const stamp = (row) => {
+          const value = new Date(row && (row.openedAt || row.createdAt)).getTime();
+          return Number.isFinite(value) ? value : 0;
+        };
         if(order === 'ASC'){
-          this.masterOrderList = this.masterOrderList.sort((a, b) =>{
-            return <any>new Date(a.createdAt) - <any>new Date(b.createdAt);
-          });
+          this.masterOrderList = this.masterOrderList.sort((a, b) => stamp(a) - stamp(b));
         }
         else if(order === 'DESC'){
-          this.masterOrderList = this.masterOrderList.sort((a, b) =>{
-            return <any>new Date(b.createdAt) - <any>new Date(a.createdAt);
-          });
+          this.masterOrderList = this.masterOrderList.sort((a, b) => stamp(b) - stamp(a));
         }
       }
 
@@ -203,6 +204,7 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
         if(actionChange){
             this.filterItem = "days";
         }
+        this.ShowEmpty();
     }
     
     ShowEmpty(){
@@ -212,10 +214,15 @@ export class PageOrderListComponent implements OnInit, OnDestroy {
         else
           this.noDataFoundMessage = null;
         } else {
-        if(this.orderList.length == 0)
-          this.noDataFoundMessage = `No orders have been placed in the last <b><i>${this.sortDurationDays}</i></b> days`;
-        else
-        this.noDataFoundMessage = null;
+        if(this.orderList.length == 0) {
+          if (this.filterDuration === OrderListDuration.ALL || !this.sortDurationDays) {
+            this.noDataFoundMessage = 'No Orders Found';
+          } else {
+            this.noDataFoundMessage = `No orders have been placed in the last <b><i>${this.sortDurationDays}</i></b> days`;
+          }
+        } else {
+          this.noDataFoundMessage = null;
+        }
       }
     }
 

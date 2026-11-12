@@ -1,0 +1,60 @@
+<div class="kb-detail" *ngIf="article; else missing">
+	<div class="kb-detail-bar">
+		<a class="kb-back-button" routerLink="/pages/support">Back to Knowledge Base</a>
+		<a routerLink="/pages/support">Knowledge Base</a>
+		<span aria-hidden="true">/</span>
+		<span>{{ categoryName }}</span>
+	</div>
+
+	<article class="kb-detail-sheet">
+		<p class="kb-card-topic">{{ categoryName }}</p>
+		<h1>{{ article.title }}</h1>
+		<p class="kb-lead">{{ article.summary }}</p>
+
+		<section class="kb-detail-walk" *ngIf="article.walkthrough?.length">
+			<h2>Walk through</h2>
+			<p>These screens are from the Data Marketplace. Follow them in order, then use the detail below if you need the rules behind each step.</p>
+			<figure *ngFor="let shot of article.walkthrough; let i = index">
+				<img [src]="shot.src" [alt]="shot.caption">
+				<figcaption><strong>Step {{ i + 1 }}.</strong> {{ shot.caption }}</figcaption>
+			</figure>
+		</section>
+
+		<figure class="kb-detail-shot" *ngIf="!article.walkthrough?.length && article.image">
+			<img [src]="article.image" [alt]="article.title">
+		</figure>
+
+		<section class="kb-detail-body" *ngFor="let block of article.blocks">
+			<h2 *ngIf="block.heading">{{ block.heading }}</h2>
+			<p *ngFor="let paragraph of block.paragraphs">{{ paragraph }}</p>
+			<ol *ngIf="block.steps">
+				<li *ngFor="let step of block.steps">{{ step }}</li>
+			</ol>
+			<p class="kb-links" *ngIf="block.links">
+				<a *ngFor="let link of block.links" [routerLink]="link.path">{{ link.label }}</a>
+			</p>
+		</section>
+
+		<section class="kb-related" *ngIf="related.length">
+			<h2>Related articles</h2>
+			<div class="kb-related-grid">
+				<a *ngFor="let item of related; trackBy: trackArticle" [routerLink]="['/pages/support', item.id]">
+					<img *ngIf="item.image" [src]="item.image" alt="">
+					<strong>{{ item.title }}</strong>
+					<span>{{ item.summary }}</span>
+				</a>
+			</div>
+		</section>
+	</article>
+</div>
+
+<ng-template #missing>
+	<div class="kb-detail">
+		<a class="kb-back-button" routerLink="/pages/support">Back to Knowledge Base</a>
+		<div class="kb-detail-sheet">
+			<h1>That article is not in the knowledge base.</h1>
+			<p class="kb-lead">Go back to the list and search for the question.</p>
+			<p class="kb-links"><a routerLink="/pages/support">Knowledge Base</a></p>
+		</div>
+	</div>
+</ng-template>

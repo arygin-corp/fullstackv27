@@ -212,7 +212,7 @@
     border: 1px solid #d1d5db;
     background: #fff;
     color: #222;
-    border-radius: 999px;
+    border-radius: 4px;
     padding: 4px 12px;
     font-size: 13px;
     font-weight: 600;
@@ -309,6 +309,40 @@
     padding: 16px 20px;
     color: #3d464d;
     font-size: 14px;
+}
+
+.search__chat-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(60deg, #ff00cc, #3333ff, #00ffcc, #ffcc00, #ff00cc);
+    background-size: 300% 300%;
+    animation: search-chat-gradient 5s ease infinite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    img {
+        position: relative;
+        z-index: 1;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@keyframes search-chat-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .search--location--header .search__button {

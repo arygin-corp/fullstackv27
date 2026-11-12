@@ -108,6 +108,22 @@ export class SuggestedAiComponent implements OnInit {
 
   ngOnInit() {}
 
+  productImage(product: any): string {
+    const image = String(product?.image || '').trim();
+    if (!image) {
+      return 'assets/images/product-placeholder.png';
+    }
+    if (/^https?:\/\//i.test(image) || image.startsWith('assets/')) {
+      return image;
+    }
+    return `${environment.apiUrl.replace(/\/$/, '')}/media/${image.replace(/^\/+/, '')}`;
+  }
+
+  productImageFallback(event: Event): void {
+    const image = event.target as HTMLImageElement;
+    image.src = 'assets/images/product-placeholder.png';
+  }
+
   // ============================================================================
   // MODE CONTROL METHODS - ADD THESE
   // ============================================================================
@@ -319,6 +335,21 @@ export class SuggestedAiComponent implements OnInit {
 
   isAPlusGrade(grade: string, modifier: string): boolean {
     return grade?.toLowerCase() === 'a' && modifier === '+';
+  }
+
+  usesDatasetCard(product: any): boolean {
+    const type = String(product?.type || product?.datatype || '').toLowerCase();
+    return type.includes('dataset')
+      || !!product?.manual_verified
+      || (!!product?.verified && this.isAPlusGrade(product?.grade, product?.modifier));
+  }
+
+  suggestionDatatype(product: any): string {
+    const type = String(product?.type || product?.datatype || '').trim();
+    if (type === 'Webservices (APIs)') {
+      return 'APIs';
+    }
+    return type || 'Not set';
   }
 
   getSafeMatchPercentage(product: any): number | string {

@@ -37,7 +37,7 @@ def submit_intake(*, intake_id, actor, request=None):
     before = snapshot(intake); old = intake.status
     intake.status = ProductIntake.Status.SUBMITTED
     intake.submitted_at = timezone.now()
-    intake.sla_due_at = intake.submitted_at + timedelta(hours=120)
+    intake.sla_due_at = intake.submitted_at + timedelta(hours=160)
     intake.updated_by = actor
     intake.save()
     _event(intake, IntakeApprovalEvent.Action.SUBMITTED, old, actor, "Submitted for review.")
@@ -140,24 +140,43 @@ def approve_intake(*, intake_id, reason, actor, request=None):
         raise PermissionDenied("Only approved workflow groups can approve submissions.")
     reason=(reason or "").strip()
     if not reason: raise ValidationError({"reason":"An approval reason is required."})
-    intake=(ProductIntake.objects.select_for_update().select_related(
-        "marketplace_domain","marketplace_datatype","marketplace_classification"
-    ).get(pk=intake_id))
+    intake=ProductIntake.objects.select_for_update().get(pk=intake_id)
     if intake.status != ProductIntake.Status.UNDER_REVIEW:
         raise ValidationError({"status":"Only an intake under review can be approved."})
+    if intake.marketplace_product_id:
+        raise ValidationError({"marketplace_product":"A Marketplace product already exists for this intake."})
+    before=snapshot(intake); old=intake.status
+    intake.status=ProductIntake.Status.APPROVED; intake.approval_reason=reason
+    intake.decision_at=timezone.now(); intake.decided_by=actor; intake.updated_by=actor; intake.save()
+    _event(intake, IntakeApprovalEvent.Action.APPROVED, old, actor, reason)
+    write_audit(intake=intake, action="approved", actor=actor, request=request, before=before)
+    notify_approval(intake)
+    return intake
+
+
+@transaction.atomic
+def create_draft_product(*, intake_id, reason, actor, request=None):
+    if not can_approve_or_reject(actor):
+        raise PermissionDenied("Only approved workflow groups can add a draft product.")
+    reason=(reason or "").strip()
+    if not reason: raise ValidationError({"reason":"A reason is required."})
+    intake=(ProductIntake.objects.select_for_update().select_related(
+        "marketplace_domain","marketplace_datatype","marketplace_classification","marketplace_product"
+    ).get(pk=intake_id))
+    if intake.status != ProductIntake.Status.APPROVED:
+        raise ValidationError({"status":"Only an approved intake can be added as a draft product."})
     if intake.marketplace_product_id:
         raise ValidationError({"marketplace_product":"A Marketplace product already exists for this intake."})
     missing=[]
     if not intake.marketplace_domain_id: missing.append("marketplace_domain")
     if not intake.marketplace_datatype_id: missing.append("marketplace_datatype")
     if not intake.marketplace_classification_id: missing.append("marketplace_classification")
-    if missing: raise ValidationError({field:"Required before approval." for field in missing})
+    if missing: raise ValidationError({field:"Required before a draft product can be created." for field in missing})
     before=snapshot(intake); old=intake.status
     product=Product.objects.create(
         name=intake.product_name,
         brief_desc=intake.product_desc,
         short_desc=strip_tags(intake.product_desc or "")[:1000],
-        resource_url=intake.product_url or "",
         domain=intake.marketplace_domain,
         datatype=intake.marketplace_datatype,
         classification=intake.marketplace_classification,
@@ -168,11 +187,40 @@ def approve_intake(*, intake_id, reason, actor, request=None):
         poc_name=None, business_contact_name=None, business_sme=None,
         created_by=actor, updated_by=actor,
     )
-    intake.status=ProductIntake.Status.APPROVED; intake.approval_reason=reason
-    intake.decision_at=timezone.now(); intake.decided_by=actor; intake.marketplace_product=product; intake.updated_by=actor; intake.save()
-    _event(intake, IntakeApprovalEvent.Action.APPROVED, old, actor, reason)
-    write_audit(intake=intake, action="approved", actor=actor, request=request, before=before)
-    notify_approval(intake)
+    intake.status=ProductIntake.Status.PRODUCT_DRAFT
+    intake.marketplace_product=product
+    intake.updated_by=actor
+    intake.save()
+    _event(intake, IntakeApprovalEvent.Action.PRODUCT_DRAFTED, old, actor, reason)
+    write_audit(intake=intake, action="product_drafted", actor=actor, request=request, before=before)
+    from .notifications import notify_draft_product
+    notify_draft_product(intake)
+    return intake
+
+
+@transaction.atomic
+def curate_product(*, intake_id, reason, actor, request=None):
+    if not can_approve_or_reject(actor):
+        raise PermissionDenied("Only approved workflow groups can curate products.")
+    reason=(reason or "").strip()
+    if not reason: raise ValidationError({"reason":"A curation reason is required."})
+    intake=ProductIntake.objects.select_for_update().select_related("marketplace_product").get(pk=intake_id)
+    if intake.status != ProductIntake.Status.PRODUCT_DRAFT or not intake.marketplace_product_id:
+        raise ValidationError({"status":"Only a draft Marketplace product can be curated."})
+    product=Product.objects.select_for_update().get(pk=intake.marketplace_product_id)
+    if product.status != "draft" or product.is_active:
+        raise ValidationError({"marketplace_product":"Curation is only for an unpublished draft product."})
+    before=snapshot(intake); old=intake.status
+    product.cwpg_status="approved"
+    product.updated_by=actor
+    product.save()
+    intake.status=ProductIntake.Status.CURATED
+    intake.updated_by=actor
+    intake.save()
+    _event(intake, IntakeApprovalEvent.Action.CURATED, old, actor, reason)
+    write_audit(intake=intake, action="curated", actor=actor, request=request, before=before)
+    from .notifications import notify_curated
+    notify_curated(intake)
     return intake
 
 
@@ -183,16 +231,16 @@ def activate_marketplace_product(*, intake_id, reason, actor, request=None):
     reason=(reason or "").strip()
     if not reason: raise ValidationError({"reason":"An activation reason is required."})
     intake=ProductIntake.objects.select_for_update().select_related("marketplace_product").get(pk=intake_id)
-    if intake.status != ProductIntake.Status.APPROVED or not intake.marketplace_product_id:
-        raise ValidationError({"status":"Only an approved intake with a linked Marketplace product can be activated."})
+    if intake.status != ProductIntake.Status.CURATED or not intake.marketplace_product_id:
+        raise ValidationError({"status":"Only a curated product can be activated."})
     product=Product.objects.select_for_update().get(pk=intake.marketplace_product_id)
     if product.is_active:
         return intake
     before=snapshot(intake); old=intake.status; now=timezone.now()
     product.status="approved"; product.cwpg_status="cwpg_approved"; product.is_active=True
     product.approved_by=actor; product.approved_at=now; product.updated_by=actor; product.save()
-    intake.status=ProductIntake.Status.IMPLEMENTED; intake.implemented_at=now; intake.updated_by=actor; intake.save()
-    _event(intake, IntakeApprovalEvent.Action.IMPLEMENTED, old, actor, reason)
+    intake.status=ProductIntake.Status.ARCHIVED; intake.is_active=False; intake.implemented_at=now; intake.updated_by=actor; intake.save()
+    _event(intake, IntakeApprovalEvent.Action.ARCHIVED, old, actor, reason)
     write_audit(intake=intake, action="marketplace_product_activated", actor=actor, request=request, before=before)
     notify_product_available(intake)
     return intake

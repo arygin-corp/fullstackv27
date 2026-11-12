@@ -16,6 +16,7 @@
                                 <ngx-avatar size="118" bgColor="#222" fgColor="#04fdff" name="{{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }} "></ngx-avatar>
                             </ng-template>
                         </div>
+                        <span class="avatar-status profile-status-dot" [attr.data-status]="profileStatus.current$ | async" aria-hidden="true"></span>
 					</label>
 					<h1 class="page-header-title">{{ appSvc?.userData?.givenName }} {{ appSvc?.userData?.surname }}
 						<i class="bi-patch-check-fill fs-2 text-primary" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Top endorsed" data-bs-original-title="Top endorsed"></i><br>

@@ -47,7 +47,7 @@ _RESOURCES = (
     ("classifications", "api-classifications", models.Classification, ("id", "name", "value", "is_active", "created_at", "updated_at"), ("name", "value")),
     ("contacts", "api-contacts", models.Contact, ("id", "avatar", "name", "email", "is_active", "created_at", "updated_at"), ("name", "email")),
     ("catalogs", "api-catalogs", models.Catalog, ("id", "image", "name", "is_active", "created_at", "updated_at"), ("name",)),
-    ("badges", "api-badges", models.Badge, ("id", "name", "is_active", "created_at", "updated_at"), ("name",)),
+    ("badges", "api-badges", models.Badge, ("id", "name", "image", "is_system", "is_active", "created_at", "updated_at"), ("name",)),
     ("platforms", "api-platforms", models.Platform, ("id", "name", "image", "is_active", "created_at", "updated_at"), ("name",)),
     ("organizations", "api-organizations", models.Organization, ("id", "name", "abbrev", "slug", "image", "is_active", "created_at", "updated_at"), ("name", "abbrev", "slug")),
     ("companies", "api-companies", models.Company, ("id", "name", "abbrev", "is_active", "org", "created_at", "updated_at"), ("name", "abbrev")),

@@ -4,7 +4,6 @@
   <div data-simplebar class="h-100">
     <div id="sidebar-menu">
       <ul class="metismenu list-unstyled" id="side-menu">
-        </li>
         <li class="menu-title" key="t-dashboards">Dashboards</li>
         <li>
           <a href="{% url 'home' %}" class="waves-effect">
@@ -14,6 +13,7 @@
           </a>
         </li>
 
+        {% if "apps" in staff_menu %}
         <li class="menu-title" key="t-integrations">Integrations</li>
 
         <li>
@@ -23,313 +23,45 @@
             <span key="t-apps">Apps</span>
           </a>
         </li>
+        {% endif %}
 
+        {% if "marketplace" in staff_menu %}
         <li class="menu-title" key="t-marketplace">Marketplace</li>
-
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-store"></i>
             <span key="t-marketplace">Marketplace</span>
           </a>
           <ul class="sub-menu" aria-expanded="false">
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-domains">Domains</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-domains">Domains</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-domain">Create Domain</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-subdomains-menu">Subdomains Level 1</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-subdomains">Subdomains Level 1</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-subdomain">Create Subdomain Level 1</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-subdomains-level-3-menu">Subdomains Level 2</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-subdomains-l3">Subdomains Level 2</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-subdomain-l3">Create Subdomain Level 2</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-products">Products</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-products">Products</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-product">Create Product</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-classification">Classifications</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-classifications">Classifications</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-classification">Create Classification</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-attributes">Attributes</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-attributes">Attributes</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-attribute">Create Attribute</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-badges">Badge</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-badges">Badges</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-badge">Create Badge</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-keywords">Keywords</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-keywords">Keywords</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-keyword">Create Keyword</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-datatypes">Datatypes</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-datatypes">Datatypes</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-datatype">Create Datatype</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-platforms">Platforms</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-platforms">Platforms</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-platform">Create Platform</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-1ts-domains">1TS Domains</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-1ts-domains">1TS Domains</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-1ts-domain">Create 1TS Domain</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-fulfillment-groups">Fulfillment Groups</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-fulfillment-groups">Fulfillment Groups</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-fulfillment-group">Create Fulfillment Group</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-stewards">Data Stewards</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-stewards">Data Stewards</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-steward">Create Data Steward</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-contacts">Contacts</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-contacts">Contacts</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-contact">Create Contact</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-catalogs">Catalogs</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-catalogs">Catalogs</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-catalog">Create Catalog</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-resources">Resources</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-resources">Resources</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-resource">Create Resource</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-organizations">Organizations</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-organizations">Organizations</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-organization">Create Organization</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" class="has-arrow" key="t-companies">Companies</a>
-              <ul class="sub-menu" aria-expanded="true">
-                <li>
-                  <a href="javascript: void(0);" key="t-companies">Companies</a>
-                </li>
-                 <li>
-                  <a href="javascript: void(0);" key="t-create-company">Create Company</a>
-                </li>
-              </ul>
-            </li>
+            <li><a href="{% url 'marketplace:domain-index' %}">Domains</a></li>
+            <li><a href="{% url 'marketplace:subdomain1-index' %}">Subdomains Level 1</a></li>
+            <li><a href="{% url 'marketplace:subdomain2-index' %}">Subdomains Level 2</a></li>
+            <li><a href="{% url 'marketplace:product-index' %}">Products</a></li>
+            <li><a href="{% url 'marketplace:review-index' %}">Reviews</a></li>
+            <li><a href="{% url 'marketplace:classification-index' %}">Classifications</a></li>
+            <li><a href="{% url 'marketplace:badge-index' %}">Badges</a></li>
+            <li><a href="{% url 'marketplace:keyword-index' %}">Keywords</a></li>
+            <li><a href="{% url 'marketplace:datatype-index' %}">Datatypes</a></li>
+            <li><a href="{% url 'marketplace:platform-index' %}">Platforms</a></li>
+            <li><a href="{% url 'marketplace:onetsdomain-index' %}">1TS Domains</a></li>
+            <li><a href="{% url 'marketplace:datasteward-index' %}">Data Stewards</a></li>
+            <li><a href="{% url 'marketplace:contact-index' %}">Contacts</a></li>
+            <li><a href="{% url 'marketplace:catalog-index' %}">Catalogs</a></li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "notifications" in staff_menu %}
+        <li class="menu-title" key="t-notifications">Notifications</li>
         <li>
-          <a href="javascript: void(0);" class="has-arrow waves-effect">
-            <i class="bx bx-store"></i>
-            <span key="t-marketplace">Marketplace</span>
+          <a href="{% url 'marketplace:notification-index' %}" class="waves-effect">
+            <i class="bx bx-bell"></i>
+            <span>Notifications</span>
           </a>
-          <ul class="sub-menu" aria-expanded="false">
-            <li>
-              <a href="javascript: void(0);" key="t-domains">Domains</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-subdomains-level-2">Subdomains Level 1</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-subdomains-level-3">Subdomains Level 2</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-products">Products</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-classification">Classifications</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-attributes">Attributes</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-badges">Badge</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-keywords">Keywords</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-datatypes">Datatypes</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-platforms">Platforms</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-1ts-domains">1TS Domains</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-fulfillment-groups">Fulfillment Groups</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-stewards">Data Stewards</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-contacts">Contacts</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-catalogs">Catalogs</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-resources">Resources</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-organizations">Organizations</a>
-            </li>
-
-            <li>
-              <a href="javascript: void(0);" key="t-companies">Companies</a>
-            </li>
-          </ul>
         </li>
+        {% endif %}
 
+        {% if "orders" in staff_menu %}
         <li class="menu-title" key="t-request">Orders</li>
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -338,30 +70,26 @@
           </a>
           <ul class="sub-menu" aria-expanded="false">
             <li>
-              <a href="javascript: void(0);" key="t-request">View Requests</a>
+              <a href="{% url 'marketplace:request-index' %}" key="t-request">View Requests</a>
             </li>
             <li>
-              <a href="javascript: void(0);" key="t-task">View Tasks</a>
+              <a href="{% url 'marketplace:task-index' %}" key="t-task">View Tasks</a>
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "teams" in staff_menu %}
         <li class="menu-title" key="t-teams">Teams</li>
         <li>
-          <a href="javascript: void(0);" class="has-arrow waves-effect">
+          <a href="{% url 'teams:list' %}" class="waves-effect">
             <i class="mdi mdi-account-group"></i>
             <span key="t-teams">Teams</span>
           </a>
-          <ul class="sub-menu" aria-expanded="true">
-            <li>
-              <a href="javascript: void(0);" key="t-teams">Teams</a>
-            </li>
-              <li>
-              <a href="javascript: void(0);" key="t-create-team">Create Team</a>
-            </li>
-          </ul>
         </li>
+        {% endif %}
 
+        {% if "changelog" in staff_menu %}
         <li class="menu-title" key="t-changelog">Changelog</li>
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -370,20 +98,16 @@
           </a>
           <ul class="sub-menu" aria-expanded="false">
             <li>
-              <a href="javascript: void(0);"  key="t-manage-categories">Categories</a>
+              <a href="{% url 'changelog_staff:category-list' %}" key="t-manage-categories">Categories</a>
             </li>
             <li>
-              <a href="javascript: void(0);"  key="t-manage-create-category">Create Category</a>
-            </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-release-notes">Release Notes</a>
-            </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-create-release-note">Create Release Note</a>
+              <a href="{% url 'changelog_staff:post-list' %}" key="t-release-notes">Releases</a>
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "pages" in staff_menu %}
         <li class="menu-title" key="t-pages">Pages</li>
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -411,8 +135,12 @@
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "email" in staff_menu or "utilities" in staff_menu or "settings" in staff_menu %}
         <li class="menu-title" key="t-global-settings">Global Settings</li>
+        {% endif %}
+        {% if "email" in staff_menu %}
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="mdi mdi-email"></i>
@@ -430,7 +158,9 @@
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "utilities" in staff_menu %}
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bxs-buoy"></i>
@@ -445,7 +175,9 @@
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "settings" in staff_menu %}
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bxs-cog"></i>
@@ -463,7 +195,9 @@
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "help" in staff_menu %}
         <li class="menu-title" key="t-help-center">Support Center</li>
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -471,7 +205,7 @@
             <span key="t-help-desk">Help Desk</span>
           </a>
           <ul class="sub-menu" aria-expanded="false">
-            <li><a href="#"span key="t-support-hub">Support Hub</span></a></li>
+            <li><a href="#" key="t-support-hub"><span>Support Hub</span></a></li>
             <li>
               <a href="javascript: void(0);" class="has-arrow" key="t-domain-section">Articles</a>
               <ul class="sub-menu" aria-expanded="true">
@@ -496,7 +230,9 @@
             </li>
           </ul>
         </li>
+        {% endif %}
 
+        {% if "guide" in staff_menu %}
         <div style="position: relative; top: 32px;">
           <li class="menu-title" key="t-guide" style="color: #7252d3 !important; font-size:14px !important;">Guide
             <span>
@@ -525,6 +261,7 @@
             </a>
           </li>
         </div>
+        {% endif %}
       </ul>
     </div>
     <!-- Sidebar -->

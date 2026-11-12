@@ -7,6 +7,7 @@ import { SafeUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
+import { ProfileStatusService } from '../../../@modules/header/services/profile-status.service';
 
 interface ProfileActivity {
     id: string;
@@ -39,6 +40,7 @@ export class PageProfileComponent implements OnInit {
         public appSvc: AppService,
         private picService: PicService,
         private http: HttpClient,
+        public profileStatus: ProfileStatusService,
     ) {
 
     }

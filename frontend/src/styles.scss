@@ -93,8 +93,10 @@ a:hover {
 }
 
 .btn:not(.btn-icon):not(.rounded-circle):not(.btn-close),
-button.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close) {
-    border-radius: 10px !important;
+button.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close),
+a.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close),
+span.btn:not(.btn-icon):not(.rounded-circle):not(.btn-close) {
+    border-radius: 4px !important;
 }
 
 .btn-primary {

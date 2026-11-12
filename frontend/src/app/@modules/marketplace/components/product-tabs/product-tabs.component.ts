@@ -61,9 +61,15 @@ export class ProductTabsComponent implements OnChanges {
     documentation: Documentation[] = documentation;
     codec = new HttpUrlEncodingCodec();
     denodos: any = [];
+    schemaTables: SchemaTable[] = [];
+    schemaLoading = false;
+    schemaSource: 'denodo' | 'sample' | '' = '';
+    schemaError = '';
     clicked = false;
     errorMessage = `No definition available.`;
     tableUrl: string = "";
+    private schemaRequest = 0;
+    private schemaProductId: number | null = null;
 
     public dataSetFilters = {
         showHideProps: {
@@ -95,15 +101,67 @@ export class ProductTabsComponent implements OnChanges {
             this.reviewPage = 1;
             this.loadReviews();
             this.loadMyReview();
+            this.schemaProductId = null;
+            if (this.isLocalHost()) {
+                this.loadTablesAndColumns();
+            } else {
+                this.resetSchema();
+            }
         }
+        if (!this.isLocalHost() && this.tab === 'tables') {
+            this.loadTablesAndColumns();
+        }
+        if (this.product && this.tab === 'resource' && !this.showsResources()) {
+            this.tab = 'description';
+        }
+    }
+
+    openReviews(): void {
+        this.tab = 'reviews';
     }
 
     isDataset(): boolean {
         return (this.product?.datatype || '') === 'Datasets';
     }
 
+    showsResources(): boolean {
+        const datatype = this.product?.datatype || '';
+        return datatype === 'Datasets' || datatype === 'Webservices (APIs)';
+    }
+
+    resourceLabel(): string {
+        const original = (this.product?.resource?.original_name || '').trim();
+        if (this.product?.resource?.type === 'API' && original) {
+            return original;
+        }
+        return this.product?.name || '';
+    }
+
     hasRichText(value: string): boolean {
         return !!(value || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/gi, ' ').trim();
+    }
+
+    displayRichText(value: string): string {
+        const html = value || '';
+        if (/<\s*(ul|ol)\b/i.test(html)) {
+            return html;
+        }
+        const lines = html
+            .replace(/<br\s*\/?>/gi, '\n')
+            .replace(/<\/(?:p|div|li|h[1-6])>/gi, '\n')
+            .replace(/<[^>]*>/g, '')
+            .replace(/&nbsp;/gi, ' ')
+            .split(/\n+/)
+            .map(line => line.replace(/^[-•*]+\s*/, '').trim())
+            .filter(Boolean);
+        const shortLines = lines.filter(line => line.length <= 180);
+        if (lines.length < 2 || shortLines.length < lines.length) {
+            return html;
+        }
+        const items = lines
+            .map(line => `<li>${line.replace(/[&<>]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[char]))}</li>`)
+            .join('');
+        return `<ul>${items}</ul>`;
     }
 
     reviewCountLabel(): string {
@@ -177,17 +235,6 @@ export class ProductTabsComponent implements OnChanges {
                 this.hasReviewed = response.has_reviewed;
                 this.myReviewId = response.review?.id || null;
                 this.myReview = response.review;
-                if (response.review) {
-                    this.selectedRating = response.review.rating;
-                    this.reviewTitle = response.review.title || '';
-                    this.reviewComment = response.review.comment || '';
-                    this.qualityRating = response.review.quality || 0;
-                    this.valueRating = response.review.value_for_money || 0;
-                    this.easeRating = response.review.ease_of_use || 0;
-                    this.durabilityRating = response.review.durability || 0;
-                    this.wouldRecommend = response.review.would_recommend;
-                    this.metExpectations = response.review.met_expectations;
-                }
             },
             error: () => {
                 this.hasReviewed = false;
@@ -240,6 +287,10 @@ export class ProductTabsComponent implements OnChanges {
         if (!this.product?.id) {
             return;
         }
+        if (this.hasReviewed) {
+            this.reviewError = 'You can only submit one review for this product.';
+            return;
+        }
         const missing = this.missingReviewFields();
         if (missing.length) {
             this.reviewError = 'Required: ' + missing.join(', ') + '.';
@@ -278,20 +329,135 @@ export class ProductTabsComponent implements OnChanges {
         });
     }
 
-    showTablesAndColumns(currentState: boolean) {
-        if (currentState) {
+    openTables(): void {
+        this.tab = 'tables';
+        if (!this.isLocalHost()) {
+            this.loadTablesAndColumns();
+        }
+    }
+
+    loadTablesAndColumns(): void {
+        if (!this.isDataset() || this.schemaProductId === this.product?.id) {
             return;
         }
+        const requestId = ++this.schemaRequest;
+        this.schemaProductId = this.product.id;
+        this.resetSchema();
+
         const role = this.product?.ad_group || (this.product as any).adGroup || (this.product as any).adgroup;
         if (!role) {
-            this.denodos = [];
+            this.useLocalSchemaSample(requestId);
             return;
         }
+
+        this.schemaLoading = true;
         const url = `${environment.gdx.denodoTables}?userrolename=${encodeURIComponent(role)}`;
-        this.httpClient.get<any>(url).subscribe(
-            data => this.denodos = data?.elements || data?.value || data || [],
-            () => this.denodos = []
-        );
+        this.httpClient.get<any>(url).subscribe({
+            next: data => {
+                if (requestId !== this.schemaRequest) {
+                    return;
+                }
+                const rows = this.schemaRows(data);
+                this.denodos = rows;
+                this.schemaLoading = false;
+                if (!rows.length) {
+                    this.useLocalSchemaSample(requestId);
+                    return;
+                }
+                this.schemaSource = 'denodo';
+                this.schemaTables = this.groupSchemaRows(rows);
+            },
+            error: () => {
+                if (requestId !== this.schemaRequest) {
+                    return;
+                }
+                this.schemaLoading = false;
+                this.useLocalSchemaSample(requestId);
+            }
+        });
+    }
+
+    private resetSchema(): void {
+        this.schemaTables = [];
+        this.schemaError = '';
+        this.schemaSource = '';
+        this.schemaLoading = false;
+        this.denodos = [];
+    }
+
+    private useLocalSchemaSample(requestId: number): void {
+        if (requestId !== this.schemaRequest) {
+            return;
+        }
+        if (!this.isLocalHost()) {
+            this.schemaTables = [];
+            this.schemaSource = '';
+            this.schemaError = 'Tables and columns are not available for this product.';
+            return;
+        }
+        this.schemaSource = 'sample';
+        this.schemaTables = this.groupSchemaRows(LOCAL_SCHEMA_SAMPLE);
+        this.schemaError = '';
+    }
+
+    private isLocalHost(): boolean {
+        const host = window.location.hostname;
+        return host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
+    }
+
+    private schemaRows(data: any): SchemaColumn[] {
+        const rows = Array.isArray(data) ? data : data?.value || data?.elements || [];
+        if (!Array.isArray(rows)) {
+            return [];
+        }
+        return rows
+            .map((row: any) => ({
+                dbname: String(row?.dbname || '').trim(),
+                elementname: String(row?.elementname || row?.table_name || row?.tableName || '').trim(),
+                column_name: String(row?.column_name || row?.columnName || '').trim()
+            }))
+            .filter(row => row.elementname && row.column_name);
+    }
+
+    private groupSchemaRows(rows: SchemaColumn[]): SchemaTable[] {
+        const tables = new Map<string, SchemaTable>();
+        rows.forEach(row => {
+            const key = `${row.dbname}\u0000${row.elementname}`;
+            const table = tables.get(key) || {
+                dbname: row.dbname,
+                elementname: row.elementname,
+                columns: []
+            };
+            if (!table.columns.includes(row.column_name)) {
+                table.columns.push(row.column_name);
+            }
+            tables.set(key, table);
+        });
+        return Array.from(tables.values());
     }
 
 }
+
+interface SchemaColumn {
+    dbname: string;
+    elementname: string;
+    column_name: string;
+}
+
+interface SchemaTable {
+    dbname: string;
+    elementname: string;
+    columns: string[];
+}
+
+const LOCAL_SCHEMA_SAMPLE: SchemaColumn[] = [
+    { dbname: 'tdp_finance', elementname: 'accounting_calendar', column_name: 'calendar_month' },
+    { dbname: 'tdp_finance', elementname: 'accounting_calendar', column_name: 'fiscal_period' },
+    { dbname: 'tdp_finance', elementname: 'accounting_calendar', column_name: 'quarter_name' },
+    { dbname: 'tdp_finance', elementname: 'accounting_calendar', column_name: 'gas_price_avg' },
+    { dbname: 'tdp_finance', elementname: 'accounting_calendar', column_name: 'created_at' },
+    { dbname: 'tdp_finance', elementname: 'reference_calendar', column_name: 'calendar_date' },
+    { dbname: 'tdp_finance', elementname: 'reference_calendar', column_name: 'month_name' },
+    { dbname: 'tdp_finance', elementname: 'reference_calendar', column_name: 'quarter_number' },
+    { dbname: 'tdp_finance', elementname: 'reference_calendar', column_name: 'year_number' }
+];

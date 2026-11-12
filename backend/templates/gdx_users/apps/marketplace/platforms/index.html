@@ -1,0 +1,106 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+
+{% block extra_javascript %}
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function() {
+            var platformsTable = $('#platforms-list').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "{% url 'marketplace:platform-index' %}",
+                    "type": "GET",
+                    "data": function (d) {
+                        d.q = $('#searchTableList').val();
+                        d.status = $('#idStatus').val();
+                    }
+                },
+                "columns": [
+                    { "data": "id", "className": "text-center" },
+                    { "data": "name" },
+                    { "data": "status", "className": "text-center" },
+                    { "data": "actions", "orderable": false, "searchable": false, "className": "text-center" }
+                ],
+                "pageLength": {{ current_per_page }},
+                "lengthChange": false,
+                "searching": false,
+                "info": true,
+                "paging": true,
+                "responsive": true
+            });
+
+            $('#searchTableList').on('input', function() {
+                platformsTable.ajax.reload();
+            });
+            $('#idStatus').on('change', function() {
+                platformsTable.ajax.reload();
+            });
+            $('#idPerPage').on('change', function() {
+                platformsTable.page.len($(this).val()).draw();
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ total_platforms_count }} Platforms</h5>
+                    <div class="flex-shrink-0">
+                        {% if is_content_manager or is_super_admin %}
+                        <a href="{% url 'marketplace:platform-create' %}" class="btn btn-primary">Add New Platform</a>
+                        {% endif %}
+                        <a href="javascript:void(0);" class="btn btn-light" onclick="$('#platforms-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-bottom">
+                <div class="row g-3">
+                    <div class="col-xxl-6 col-lg-6">
+                        <input type="search" class="form-control" id="searchTableList" placeholder="Search for ..." value="">
+                    </div>
+                    <div class="col-xxl-3 col-lg-3">
+                        <select class="form-select" id="idStatus" aria-label="Default select example">
+                            <option value="all" selected>Select Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="col-xxl-1 col-lg-1">
+                        <select class="form-select" id="idPerPage" aria-label="Platforms per page">
+                            <option value="25" {% if current_per_page == 25 %}selected{% endif %}>25</option>
+                            <option value="50" {% if current_per_page == 50 %}selected{% endif %}>50</option>
+                            <option value="100" {% if current_per_page == 100 %}selected{% endif %}>100</option>
+                            <option value="150" {% if current_per_page == 150 %}selected{% endif %}>150</option>
+                            <option value="200" {% if current_per_page == 200 %}selected{% endif %}>200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle dt-responsive nowrap w-100 table-check" id="platforms-list">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

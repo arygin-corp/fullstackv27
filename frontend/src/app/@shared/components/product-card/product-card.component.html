@@ -9,13 +9,10 @@
         <span class="fake-svg-icon"></span>
     </button>
 
-    <div *ngIf="product.badges.length" class="product-card__badges-list">
-        <div *ngIf="product.badges.includes('sale')" class="product-card__badge product-card__badge--sale">Sale</div>
-        <div *ngIf="product.badges.includes('hot')" class="product-card__badge product-card__badge--hot">Hot</div>
-        <div *ngIf="product.badges.includes('new')" class="product-card__badge product-card__badge--new">New</div>
-    </div>
-
     <div class="product-card__image product-image">
+        <div *ngIf="systemBadges.length" class="product-card__system-badges">
+            <img *ngFor="let badge of systemBadges" class="product-card__system-badge" [src]="badge.image" [alt]="badge.name">
+        </div>
         <a appClick [routerLink]="root.product(product)" *ngIf="product.images?.length" class="product-image__body">
             <img class="product-image__img" [src]="product.images?.[0] || 'assets/images/product-placeholder.png'" [alt]="product.name">
         </a>
@@ -30,8 +27,8 @@
             <p class="product-card__text">{{ product.short_desc }}</p>
         </div>
         <!-- <div class="product-card__buttons">
-            <button class="btn btn-primary product-card__addtocart" type="button" appClick [routerLink]="'../' + root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
-            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button" appClick [routerLink]="'../' + root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
+            <button class="btn btn-primary product-card__addtocart view-details-btn" type="button" appClick [routerLink]="root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
+            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list view-details-btn" type="button" appClick [routerLink]="root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
             <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button" appClick (click)="addToWishlist()" [ngClass]="{'btn-loading': addingToWishlist}">
                 <app-icon name="wishlist-16" size="16"></app-icon>
                 <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
@@ -75,8 +72,8 @@
             </ng-container>
         </div> -->
         <div class="product-card__buttons">
-            <button class="btn btn-primary product-card__addtocart" type="button" appClick [routerLink]="'../' + root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
-            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button" appClick [routerLink]="'../' + root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
+            <button class="btn btn-primary product-card__addtocart view-details-btn" type="button" appClick [routerLink]="root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
+            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list view-details-btn" type="button" appClick [routerLink]="root.product(product)" [ngClass]="{'btn-loading': addingToCart}">View Details</button>
             <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button" appClick (click)="addToWishlist()" [ngClass]="{'btn-loading': addingToWishlist}">
                 <app-icon name="wishlist-16" size="16"></app-icon>
                 <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>

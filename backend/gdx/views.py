@@ -50,12 +50,108 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 def home_for(user):
-    """SuperAdmin opens the staff site. Every other account opens the marketplace."""
+    """Staff open the dashboard. Every other account opens the marketplace."""
     from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
 
-    if access_type_for(user) == ACCESS_SUPERADMIN:
-        return "/sa/command-center/"
+    if getattr(user, "is_staff", False) or getattr(user, "is_superuser", False) or access_type_for(user) == ACCESS_SUPERADMIN:
+        return "/"
     return "/marketplace/"
+
+
+_DASHBOARD_RANGES = (
+    ("all", "All", None),
+    ("7d", "7 days", 7),
+    ("30d", "30 days", 30),
+    ("90d", "90 days", 90),
+    ("12m", "12 months", 365),
+)
+
+
+def _dashboard_range(request):
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    selected = (request.GET.get("range") or "all").strip()
+    ranges = {key: (label, days) for key, label, days in _DASHBOARD_RANGES}
+    if selected not in ranges:
+        selected = "all"
+    label, days = ranges[selected]
+    start = None if days is None else timezone.now() - timedelta(days=days)
+    return selected, label, start
+
+
+def _since(queryset, field, start):
+    if start is None:
+        return queryset
+    kind = queryset.model._meta.get_field(field).get_internal_type()
+    cutoff = start.date() if kind == "DateField" else start
+    return queryset.filter(**{f"{field}__gte": cutoff})
+
+
+def _staff_dashboard(request):
+    from django.db.models import Count
+    from django.urls import reverse
+
+    from apps.changelog.models import Categorie, Post
+    from apps.marketplace.models import Domain, Product, Review, SubDomain_1, SubDomain_2
+    from apps.orders.models import Request
+    from apps.teams.models import Team
+
+    selected, range_label, start = _dashboard_range(request)
+    products = _since(Product.objects.all(), "created_at", start)
+    domains = _since(Domain.objects.all(), "created_at", start)
+    subdomains = _since(SubDomain_1.objects.all(), "created_at", start)
+    subdomains_2 = _since(SubDomain_2.objects.all(), "created_at", start)
+    reviews = _since(Review.objects.all(), "created_at", start)
+    requests = _since(Request.objects.all(), "opened_at", start)
+    teams = _since(Team.objects.all(), "created_at", start)
+    releases = _since(Post.objects.all(), "release_date", start)
+    categories = _since(Categorie.objects.all(), "published_date", start)
+
+    product_counts = {
+        row["status"]: row["total"]
+        for row in products.values("status").annotate(total=Count("id"))
+    }
+    review_counts = {
+        row["status"]: row["total"]
+        for row in reviews.values("status").annotate(total=Count("id"))
+    }
+    release_counts = {
+        row["status"]: row["total"]
+        for row in releases.values("status").annotate(total=Count("id"))
+    }
+    approval_counts = {
+        (row["approval_stage"] or "").strip().lower(): row["total"]
+        for row in requests.values("approval_stage").annotate(total=Count("id"))
+    }
+    request_href = reverse("marketplace:request-index")
+    cards = [
+        {"label": "Products", "value": sum(product_counts.values()), "caption": f"{product_counts.get('approved', 0)} approved", "href": reverse("marketplace:product-index")},
+        {"label": "Domains", "value": domains.count(), "caption": "Level 1", "href": reverse("marketplace:domain-index")},
+        {"label": "Subdomains", "value": subdomains.count(), "caption": "Level 1", "href": reverse("marketplace:subdomain1-index")},
+        {"label": "Subdomains", "value": subdomains_2.count(), "caption": "Level 2", "href": reverse("marketplace:subdomain2-index")},
+        {"label": "Reviews", "value": sum(review_counts.values()), "caption": f"{review_counts.get('pending', 0)} pending", "href": reverse("marketplace:review-index")},
+        {"label": "Requests", "value": requests.count(), "caption": "ServiceNow requests", "href": request_href},
+        {"label": "Pending", "value": approval_counts.get("requested", 0) + approval_counts.get("not yet requested", 0), "caption": "Requests", "href": request_href},
+        {"label": "Approved", "value": approval_counts.get("approved", 0), "caption": "Requests", "href": request_href},
+        {"label": "Rejected", "value": approval_counts.get("rejected", 0), "caption": "Requests", "href": request_href},
+        {"label": "Teams", "value": teams.count(), "caption": "Ownership", "href": reverse("teams:list")},
+        {"label": "Releases", "value": sum(release_counts.values()), "caption": f"{release_counts.get('PUBLISHED', 0)} published", "href": reverse("changelog_staff:post-list")},
+        {"label": "Categories", "value": categories.count(), "caption": "Changelog", "href": reverse("changelog_staff:category-list")},
+    ]
+    return {
+        "heading": "Dashboard",
+        "heading2": "Dashboard",
+        "pageview": "Dashboards",
+        "ranges": [{"key": key, "label": label} for key, label, _days in _DASHBOARD_RANGES],
+        "active_range": selected,
+        "range_label": range_label,
+        "cards": cards,
+        "recent_products": products.order_by("-created_at", "-id")[:8],
+        "recent_releases": releases.order_by("-release_date", "-id")[:8],
+        "recent_requests": requests.order_by("-opened_at", "-id")[:8],
+    }
 
 
 def _safe_next_url(request, candidate):
@@ -80,7 +176,10 @@ def _safe_next_url(request, candidate):
 
 class HomeView(LoginRequiredMixin, View):
     def get(self, request):
-        return redirect(home_for(request.user))
+        destination = home_for(request.user)
+        if destination != "/":
+            return redirect(destination)
+        return render(request, "gdx_users/apps/pages/pages/home.html", _staff_dashboard(request))
 
 
 @login_required
@@ -354,6 +453,83 @@ def _settings_redirect(tab, request=None):
             if value:
                 query[key] = value
     return redirect(f"{reverse('platform_settings')}?{urlencode(query)}")
+
+
+_PLATFORM_TEMPLATES = {
+    "default_template": "gdx_admin/default.html",
+    "default_page_header": "gdx_admin/default.html",
+    "default_color_theme": "gdx_admin/default_color_theme.html",
+    "default_ui_theme": "gdx_admin/default_ui_theme.html",
+    "default_cards": "gdx_admin/default_cards.html",
+    "default_charts": "gdx_admin/default_charts.html",
+}
+
+_THEME_GROUPS = (
+    ("Surfaces", (
+        {"name": "Canvas", "token": "--gdx-canvas"},
+        {"name": "Surface", "token": "--gdx-surface"},
+        {"name": "Chip", "token": "--gdx-chip"},
+    )),
+    ("Ink", (
+        {"name": "Ink", "token": "--gdx-ink"},
+        {"name": "Text", "token": "--gdx-text"},
+        {"name": "Soft text", "token": "--gdx-text-soft"},
+        {"name": "Muted", "token": "--gdx-muted"},
+        {"name": "Chip text", "token": "--gdx-chip-text"},
+    )),
+    ("Accent", (
+        {"name": "Accent", "token": "--gdx-accent"},
+    )),
+    ("Lines", (
+        {"name": "Line", "token": "--gdx-line"},
+        {"name": "Line strong", "token": "--gdx-line-strong"},
+    )),
+    ("On ink", (
+        {"name": "On ink", "token": "--gdx-on-ink"},
+        {"name": "On ink soft", "token": "--gdx-on-ink-soft"},
+        {"name": "Clock", "token": "--gdx-clock-soft"},
+        {"name": "Metric", "token": "--gdx-metric"},
+    )),
+    ("Status", (
+        {"name": "Success", "token": "--gdx-success"},
+        {"name": "Warning", "token": "--gdx-warning"},
+        {"name": "Danger", "token": "--gdx-danger"},
+        {"name": "Info", "token": "--gdx-info"},
+    )),
+)
+
+
+@staff_member_required
+def default_template(request):
+    url_name = getattr(getattr(request, "resolver_match", None), "url_name", "") or "default_template"
+    template = _PLATFORM_TEMPLATES.get(url_name, "gdx_admin/default.html")
+    context = {}
+    if url_name == "default_color_theme":
+        context = {
+            "theme_groups": _THEME_GROUPS,
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Color theme",
+            "staff_page_description": "Platform colors for surfaces, ink, accent, and status.",
+        }
+    elif url_name == "default_ui_theme":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "UI theme",
+            "staff_page_description": "Platform interface for type, actions, fields, data, and notifications.",
+        }
+    elif url_name == "default_cards":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Cards",
+            "staff_page_description": "Surface, metric, link, ink, list, form, table, chart, and person cards.",
+        }
+    elif url_name == "default_charts":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Charts",
+            "staff_page_description": "Area, line, column, bar, donut, pie, stacked, radial, grouped, range, floating, combo, scatter, bubble, candle, waterfall, histogram, box, radar, heatmap, treemap, polar, sunburst, sankey, funnel, and bullet charts.",
+        }
+    return render(request, template, context)
 
 
 @staff_member_required

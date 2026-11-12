@@ -94,6 +94,17 @@ export class ProductCardComponent implements OnInit, OnDestroy, OnChanges {
         });
     }
 
+    get systemBadges(): Array<{ name: string; image: string }> {
+        const badges = this.product?.badges || [];
+        const images = [];
+        for (const badge of badges) {
+            if (badge && typeof badge === 'object' && badge.is_system && badge.image) {
+                images.push({ name: badge.name, image: badge.image });
+            }
+        }
+        return images.slice(0, 3);
+    }
+
     showQuickview(): void {
         if (!this.product) {
             return;

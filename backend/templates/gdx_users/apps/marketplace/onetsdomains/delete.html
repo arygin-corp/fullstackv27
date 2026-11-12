@@ -1,21 +1,5 @@
-{% extends 'partials/base.html' %}
-
+{% extends 'gdx_users/partials/base.html' %}
 {% block contents %}
-<div class="row">
-    <div class="col-lg-8">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title text-danger">Delete One TS Domain: {{ object.name }}</h4>
-                <p>Are you sure you want to delete the onetsdomain "<strong>{{ object.name }}</strong>"?</p>
-                <p class="text-muted">This action cannot be undone.</p>
-
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Confirm Delete</button>
-                    <a href="{% url 'marketplace:onetsdomain-detail' object.pk %}" class="btn btn-light">Cancel</a>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+{% url 'marketplace:onetsdomain-detail' object.pk as cancel_url %}
+{% include "gdx_users/apps/marketplace/partials/delete_confirm.html" with kicker="1TS Domain" cancel_url=cancel_url %}
 {% endblock %}

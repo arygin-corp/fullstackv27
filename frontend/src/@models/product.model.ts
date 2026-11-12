@@ -10,8 +10,16 @@ export interface Product {
   sku: string;
   short_desc: string;
   brief_desc: string;
-  catalog: string; 
-  resource_url: string;
+  catalog: string;
+  resource?: {
+    id: number;
+    catalog: string;
+    image: string;
+    type: string;
+    name: string;
+    original_name: string;
+    url: string;
+  } | null;
   original_name: string | null;
   price: string;
   pi: string;

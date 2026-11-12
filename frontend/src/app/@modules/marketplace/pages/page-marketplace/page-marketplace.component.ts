@@ -41,7 +41,7 @@ export class PageMarketplaceComponent implements OnDestroy {
     currentGrid:
         | 'grid-3-sidebar'
         | 'grid-4-full'
-        | 'grid-5-full' = 'grid-3-sidebar';
+        | 'grid-5-full' = 'grid-4-full';
 
     columns: 3 | 4 | 5 = 3;
 
@@ -157,7 +157,7 @@ export class PageMarketplaceComponent implements OnDestroy {
                 this.pageService.setOptions(
                     {
                         page: parsed.page || 1,
-                        limit: parsed.limit || 12,
+                        limit: parsed.limit || 16,
                         sort: parsed.sort || 'default',
                         ...(parsed.filterValues ? { filterValues: parsed.filterValues } : {}),
                         domainId: queryParams.domain_id || '',
@@ -202,7 +202,7 @@ export class PageMarketplaceComponent implements OnDestroy {
 
         if (
             'limit' in options &&
-            options.limit !== 12
+            options.limit !== 16
         ) {
             params.limit = options.limit;
         }

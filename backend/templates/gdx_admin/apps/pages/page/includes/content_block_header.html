@@ -1,4 +1,0 @@
-<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-  <div><h3 class="mb-1">Content blocks</h3><p class="text-muted mb-0">{{ page.title }} · Version {{ version.number }}</p></div>
-  {% if version.status == "draft" %}<a class="btn btn-primary" href="{% url 'pages_admin:block-create' page.slug version.number %}">Add content block</a>{% endif %}
-</div>

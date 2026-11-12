@@ -2,6 +2,7 @@ import json
 import os
 import tempfile
 import uuid
+from datetime import datetime
 from pathlib import Path
 
 from django.conf import settings
@@ -12,27 +13,72 @@ from django.utils.dateparse import parse_datetime
 from .models import MarketplaceOrder, Request, ServiceNowSyncAudit, Task
 
 
+def _text(value):
+    if isinstance(value, dict):
+        value = value.get("display_value") or value.get("value") or ""
+    return str(value or "").strip()
+
+
 def _datetime(value):
     if value in (None, ""):
         return None
     if hasattr(value, "tzinfo"):
         return value
-    parsed = parse_datetime(str(value))
+    raw = _text(value)
+    parsed = parse_datetime(raw)
+    if parsed is None:
+        for fmt in ("%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %H:%M:%S"):
+            try:
+                parsed = datetime.strptime(raw, fmt)
+                break
+            except ValueError:
+                parsed = None
     if parsed is None:
         raise ValueError(f"Invalid datetime value: {value}")
     return timezone.make_aware(parsed, timezone.get_current_timezone()) if timezone.is_naive(parsed) else parsed
 
 
+# sc_request.stage is the approval word on in-flight requests. The catalog
+# stage the table shows lives on sc_req_item.stage.
+_APPROVAL_VALUES = {"requested", "approved", "rejected", "not yet requested"}
+
+
+def _ritm_record(payload):
+    ritms = payload.get("ritms")
+    if not isinstance(ritms, list) or not ritms or not isinstance(ritms[0], dict):
+        return {}
+    return ritms[0]
+
+
 def request_defaults(payload):
+    ritm = _ritm_record(payload)
+    approval = _text(
+        payload.get("approvalStage")
+        or payload.get("approval_stage")
+        or payload.get("approval")
+        or ritm.get("approval_stage")
+        or ritm.get("approval")
+    )
+    request_stage = _text(payload.get("stage"))
+    if not approval and ritm and request_stage.lower() in _APPROVAL_VALUES:
+        approval = request_stage
+    ritm_state = _text(
+        payload.get("ritmState")
+        or payload.get("ritm_state")
+        or ritm.get("ritm_state")
+        or ritm.get("state")
+        or ("" if ritm else payload.get("state") or payload.get("request_state"))
+    )
+    stage = _text(ritm.get("stage") or ("" if ritm else request_stage))
     return {
-        "number": str(payload.get("requestNum") or payload.get("number") or "").strip(),
-        "ritm_id": str(payload.get("ritmID") or payload.get("ritm_id") or "").strip(),
-        "ritm_number": str(payload.get("ritm") or payload.get("ritm_number") or "").strip(),
-        "object_id": str(payload.get("objectId") or payload.get("object_id") or "").strip(),
-        "product_id": str(payload.get("product_id") or "").strip(),
-        "approval_stage": str(payload.get("approvalStage") or payload.get("approval_stage") or "").strip(),
-        "ritm_state": str(payload.get("ritmState") or payload.get("ritm_state") or payload.get("state") or "").strip(),
-        "stage": str(payload.get("stage") or "").strip(),
+        "number": _text(payload.get("requestNum") or payload.get("number") or payload.get("request_number")),
+        "ritm_id": _text(payload.get("ritmID") or payload.get("ritm_id") or ritm.get("ritm_id")),
+        "ritm_number": _text(payload.get("ritm") or payload.get("ritm_number") or ritm.get("ritm_number")),
+        "object_id": _text(payload.get("objectId") or payload.get("object_id")),
+        "product_id": _text(payload.get("product_id")),
+        "approval_stage": approval,
+        "ritm_state": ritm_state,
+        "stage": stage,
         "opened_at": _datetime(payload.get("openedAt") or payload.get("opened_at")),
         "closed_at": _datetime(payload.get("closedAt") or payload.get("closed_at")),
         "requested_for": str(payload.get("requested_for") or "").strip(),

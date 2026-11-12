@@ -17,6 +17,8 @@ import { OrgComponent } from './org/org.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProductIntakeComponent } from './product-intake/product-intake.component';
 import { FeatureWalkthroughComponent, OpenFeatureWalkthroughComponent } from './feature-walkthrough/feature-walkthrough.component';
+import { SupportComponent } from './support/support.component';
+import { SupportArticleComponent } from './support/support-article.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FeatureWalkthroughComponent, OpenFeatureWalkthroughComponent } from './
     ProductIntakeComponent,
     FeatureWalkthroughComponent,
     OpenFeatureWalkthroughComponent,
+    SupportComponent,
+    SupportArticleComponent,
   ],
   exports: [
     FeatureWalkthroughComponent,
