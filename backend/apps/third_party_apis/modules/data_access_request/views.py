@@ -91,7 +91,7 @@ class FormSubmitView(APIView):
 
 
 class RequestSourceAnalyticsView(LoginRequiredMixin, TemplateView):
-    template_name = "gdx_admin/apps/dar/analytics/dashboard.html"
+    template_name = "gdx_admin/pages/dar/analytics/dashboard.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

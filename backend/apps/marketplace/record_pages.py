@@ -89,7 +89,7 @@ class RecordPageMixin(AdminAccessMixin):
         return super().dispatch(request, *args, **kwargs)
 
     def get_template_names(self):
-        return [f"gdx_admin/apps/marketplace/records/{self.spec['slug']}/{self.template_kind}.html"]
+        return [f"gdx_admin/pages/marketplace/records/{self.spec['slug']}/{self.template_kind}.html"]
 
     def page_context(self, **extra):
         count = extra.get("count")

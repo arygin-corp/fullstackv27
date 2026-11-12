@@ -1,0 +1,13 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Microsoft Email{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+
+<section class="deploy-panel">
+    <h2>Campaigns</h2>
+    <p>Email campaigns are managed with notification settings.</p>
+    <p><a href="{% url 'notifications:campaign_manager' %}">Open email campaigns</a></p>
+</section>
+</main>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Theme Dashboards{% endblock %}
+{% block page_header %}{% endblock %}
+{% block content %}
+{% include "gdx_admin/pages/dashboard/partials/_dashboard_shell_start.html" %}
+{% include "gdx_admin/pages/dashboard/includes/_theme_path.html" %}
+<div class="row g-3">
+{% for item in dashboards %}
+    <div class="col-md-6 col-xl-4">
+        <a class="card border-0 text-decoration-none" href="{% url 'theme_pages:dashboard' item.slug %}">
+            <div class="card-body">
+                <h3 class="fs-18 text-dark">{{ item.title }}</h3>
+                <p class="text-muted mb-2">{{ item.blurb }}</p>
+                <code class="small">pages/dashboard/{{ item.slug }}/index.html</code>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

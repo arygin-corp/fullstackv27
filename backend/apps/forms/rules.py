@@ -299,7 +299,7 @@ def rule_detail(request, pk):
 
     return render(
         request,
-        "gdx_admin/apps/dar/rules/rule_detail.html",
+        "gdx_admin/pages/dar/rules/rule_detail.html",
         {
             "rule": rule,
         },

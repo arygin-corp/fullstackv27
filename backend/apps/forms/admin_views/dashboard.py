@@ -38,4 +38,4 @@ def dashboard(request):
     forms_without_fields = FormDefinition.objects.annotate(field_count=Count('fields')).filter(field_count=0).count()
     health_checks = [{'label': 'Database', 'status': 'Healthy', 'level': 'success'}, {'label': 'Unpublished Forms', 'status': unpublished_forms, 'level': 'warning' if unpublished_forms else 'success'}, {'label': 'Forms Without Fields', 'status': forms_without_fields, 'level': 'warning' if forms_without_fields else 'success'}]
     context = {'stats': stats, 'status_chart': status_chart, 'submissions_by_day': submissions_by_day, 'aging_buckets': aging_buckets, 'audit_stats': audit_stats, 'health_checks': health_checks, 'top_forms': top_forms, 'recent_submissions': recent_submissions, 'recent_changes': recent_changes, 'top_aging_requests': top_aging_requests, 'requests_near_breach': requests_near_breach, 'sla_breached': sla_breached, 'sla_compliance': sla_compliance, 'average_age': average_age, 'oldest_request': oldest_request}
-    return render(request, 'gdx_admin/apps/dar/dashboard/dashboard.html', context)
+    return render(request, 'gdx_admin/pages/dar/dashboard/dashboard.html', context)

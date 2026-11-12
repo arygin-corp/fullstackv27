@@ -1,9 +1,0 @@
-{% extends "gdx_admin/base.html" %}
-{% block page_header %}{% endblock %}
-{% block title %}Changelog Categories{% endblock %}
-{% block content %}<div class="container-fluid px-3 px-lg-4 py-4">
-  {% include "gdx_admin/apps/changelog/categories/includes/_category_hero.html" with hero_title="Changelog Categories" hero_description="Organize release-note content with a governed, reusable category taxonomy." hero_metric_label="Categories" hero_metric=page_obj.paginator.count|default:categories|length hero_metric_help="Available classifications" hero_icon="ti ti-folders" %}
-  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4"><div><h2 class="h4 mb-1">Category directory</h2><p class="text-muted mb-0">Browse and maintain release-note classifications.</p></div>{% if perms.changelog.add_categorie %}<a class="btn btn-primary" href="{% url 'changelog_staff:category-create' %}"><i class="ti ti-plus me-1"></i>Add category</a>{% endif %}</div>
-  {% include "gdx_admin/apps/changelog/categories/partials/_category_table.html" %}
-  {% include "gdx_admin/apps/changelog/categories/partials/_category_pagination.html" %}
-</div>{% endblock %}

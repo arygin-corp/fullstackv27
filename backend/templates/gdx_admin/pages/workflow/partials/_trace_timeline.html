@@ -1,0 +1,1 @@
+{% for span in spans %}<div class="border-start border-primary ps-3 pb-3"><strong>{{ span.operation }}</strong><div class="small text-muted">{{ span.service }} · {{ span.duration_ms }} ms</div></div>{% empty %}<p class="text-muted">No spans.</p>{% endfor %}

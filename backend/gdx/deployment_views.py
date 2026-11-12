@@ -64,7 +64,7 @@ def dashboard(request):
     counts = deployment_analytics()["counts"]
     return _page(
         request,
-        "gdx_admin/apps/deployment/dashboard.html",
+        "gdx_admin/pages/deployment/dashboard.html",
         section="dashboard",
         deployment=deployment,
         config=config,
@@ -92,7 +92,7 @@ def analytics(request):
     counts = deployment_analytics()
     return _page(
         request,
-        "gdx_admin/apps/deployment/analytics.html",
+        "gdx_admin/pages/deployment/analytics.html",
         section="analytics",
         analytics=counts,
         staff_page_kicker="DEPLOYMENT",
@@ -116,7 +116,7 @@ def activity(request):
         current = {**running, "state": "running"}
     return _page(
         request,
-        "gdx_admin/apps/deployment/activity.html",
+        "gdx_admin/pages/deployment/activity.html",
         section="activity",
         history=history,
         current=current,
@@ -173,7 +173,7 @@ def releases(request):
         }
     return _page(
         request,
-        "gdx_admin/apps/deployment/releases.html",
+        "gdx_admin/pages/deployment/releases.html",
         section=section,
         releases=deployment_releases(),
         versions=versions,
@@ -313,7 +313,7 @@ def health(request):
     report = deployment_health()
     return _page(
         request,
-        "gdx_admin/apps/deployment/health.html",
+        "gdx_admin/pages/deployment/health.html",
         section="health",
         report=report,
         staff_page_kicker="DEPLOYMENT",

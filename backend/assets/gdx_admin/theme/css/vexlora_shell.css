@@ -1,0 +1,108 @@
+/* Executive layout on the original light palette. */
+body,
+.page-wrapper,
+.page-wrapper .content {
+  background: var(--gdx-canvas);
+  color: var(--gdx-text);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.header {
+  background: var(--gdx-surface);
+  border-bottom: 1px solid var(--gdx-line);
+  color: var(--gdx-text);
+}
+
+.header a,
+.header .header-left,
+.header .nav-link {
+  color: var(--gdx-text);
+}
+
+.page-wrapper .card,
+.page-wrapper .card-header,
+.page-wrapper .card-footer,
+.page-wrapper .modal-content,
+.page-wrapper .dropdown-menu,
+.page-wrapper .list-group-item {
+  background: var(--gdx-surface);
+  color: var(--gdx-text);
+  border-color: var(--gdx-line);
+}
+
+.page-wrapper .text-muted,
+.page-wrapper .text-secondary {
+  color: var(--gdx-text-soft) !important;
+}
+
+.page-wrapper .form-control,
+.page-wrapper .form-select,
+.header .form-control,
+.header .form-select {
+  background: var(--gdx-surface);
+  border-color: var(--gdx-line);
+  color: var(--gdx-text);
+}
+
+.page-wrapper .form-control::placeholder,
+.header .form-control::placeholder {
+  color: var(--gdx-muted);
+}
+
+.page-wrapper .table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--gdx-text);
+  --bs-table-border-color: var(--gdx-line);
+  color: var(--gdx-text);
+}
+
+.page-wrapper .btn-primary,
+.header .btn-primary {
+  background: var(--gdx-primary);
+  border-color: var(--gdx-primary);
+  color: var(--gdx-on-ink);
+  border-radius: 10px;
+}
+
+.page-wrapper .btn-light,
+.page-wrapper .btn-white,
+.header .btn-light {
+  background: var(--gdx-chip);
+  border-color: var(--gdx-line);
+  color: var(--gdx-text);
+}
+
+.footer.bg-white {
+  background: var(--gdx-surface) !important;
+  color: var(--gdx-text-soft);
+  border-top: 1px solid var(--gdx-line);
+}
+
+.dash-nav {
+  margin: 0 0 16px;
+}
+
+.dash-nav__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dash-nav__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid var(--gdx-line);
+  border-radius: 999px;
+  background: var(--gdx-surface);
+  color: var(--gdx-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dash-nav__link.is-current,
+.dash-nav__link:hover {
+  border-color: var(--gdx-primary, #5547ff);
+  color: var(--gdx-primary, #5547ff);
+}

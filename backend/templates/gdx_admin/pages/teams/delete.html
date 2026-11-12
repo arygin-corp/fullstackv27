@@ -1,0 +1,18 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Delete {{ object.name }} | Teams{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/teams/partials/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+    
+    <section class="card border-0 shadow-sm">
+        <div class="card-body">
+            <p>Delete <strong>{{ object.name }}</strong>?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button class="integration-button integration-button--primary" type="submit">Delete</button>
+                <a class="integration-button" href="{% url 'teams:detail' object.pk %}">Cancel</a>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

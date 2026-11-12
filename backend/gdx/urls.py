@@ -98,6 +98,8 @@ urlpatterns = [
     path("sa/templates/default_charts.html", views.default_template, name="default_charts"),
     path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
     path("sa/command-center/", include(("apps.third_party_apis.modules.command_center.urls", "command_center"), namespace="command_center")),
+    # Vexlora-shaped theme pages (mirrors http://127.0.0.1:3000/pages/dashboard/.../index.html)
+    path("pages/", include(("gdx.theme_pages_urls", "theme_pages"), namespace="theme_pages")),
     path("sa/microsoft-teams/", include(("apps.third_party_apis.modules.microsoft_teams.urls", "microsoft_teams"), namespace="microsoft_teams")),
     path("sa/microsoft-email/", include(("apps.third_party_apis.modules.microsoft_email.urls", "microsoft_email"), namespace="microsoft_email")),
     path("sa/google-analytics/", include(("apps.third_party_apis.modules.google_analytics.urls", "google_analytics"), namespace="google_analytics")),

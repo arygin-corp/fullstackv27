@@ -13,7 +13,7 @@ from apps.knowledge.services import ingest_document
 
 def _page(request, upload_form, text_form):
     documents = Document.objects.filter(Q(shared=True) | Q(owner=request.user)).distinct()
-    return render(request, "gdx_admin/apps/third_party_apis/vikki_learning.html", {
+    return render(request, "gdx_admin/pages/third_party_apis/vikki_learning.html", {
         "upload_form": upload_form,
         "text_form": text_form,
         "documents": documents,

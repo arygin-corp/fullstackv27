@@ -34,7 +34,7 @@ def analytics_export(request):
     return response
 
 def analytics_export_page(request):
-    return render(request, 'gdx_admin/apps/dar/analytics/export.html', {'breadcrumbs': _breadcrumbs(('DAR', None), ('Analytics', '../'), ('Export', None))})
+    return render(request, 'gdx_admin/pages/dar/analytics/export.html', {'breadcrumbs': _breadcrumbs(('DAR', None), ('Analytics', '../'), ('Export', None))})
 
 def _first_value(mapping, *paths, default=''):
     """Return the first non-empty value found in nested dictionaries."""
@@ -112,4 +112,4 @@ def analytics_dashboard(request):
     rejected = next((row['total'] for row in status_counts if row['status'] == SubmissionStatus.REJECTED), 0)
     open_requests = submissions.exclude(status__in=[SubmissionStatus.COMPLETED, SubmissionStatus.REJECTED, SubmissionStatus.CANCELLED]).count()
     context = {'days': days, 'analytics_cards': [{'label': 'Requests', 'value': total_requests, 'icon': 'ti ti-file-text'}, {'label': 'Open', 'value': open_requests, 'icon': 'ti ti-clock'}, {'label': 'Completed', 'value': completed, 'icon': 'ti ti-check'}, {'label': 'Rejected', 'value': rejected, 'icon': 'ti ti-x'}, {'label': 'Published Forms', 'value': FormDefinition.objects.filter(is_active=True, is_published=True).count(), 'icon': 'ti ti-layout-list'}, {'label': 'Active Routing Rules', 'value': RoutingRule.objects.filter(is_active=True).count(), 'icon': 'ti ti-route'}, {'label': 'Active Validation Rules', 'value': ValidationRule.objects.filter(is_active=True).count(), 'icon': 'ti ti-shield-check'}, {'label': 'Unique Requestors', 'value': submissions.exclude(submitted_by__isnull=True).values('submitted_by_id').distinct().count(), 'icon': 'ti ti-users'}], 'status_counts': status_counts, 'submissions_by_day': submissions_by_day, 'top_forms': top_forms, 'top_requestors': top_requestors, 'route_distribution': rows(dimensions['route']), 'platform_distribution': rows(dimensions['platform']), 'domain_distribution': rows(dimensions['domain']), 'environment_distribution': rows(dimensions['environment']), 'organization_distribution': rows(dimensions['organization']), 'fulfillment_distribution': rows(dimensions['fulfillment_group']), 'control_distribution': rows(dimensions['control_group']), 'location_distribution': rows(dimensions['location'], limit=25), 'map_points': map_points, 'has_map_points': bool(map_points), 'breadcrumbs': [{'label': 'DAR', 'url': None}, {'label': 'Analytics', 'url': None}]}
-    return render(request, 'gdx_admin/apps/dar/analytics/dashboard.html', context)
+    return render(request, 'gdx_admin/pages/dar/analytics/dashboard.html', context)

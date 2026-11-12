@@ -40,13 +40,13 @@ class TeamListView(LoginRequiredMixin, ListView):
 
 class TeamDetailView(DetailView):
     model = Team
-    template_name = "gdx_admin/apps/teams/detail.html"
+    template_name = "gdx_admin/pages/teams/detail.html"
     context_object_name = "team"
 
 class TeamCreateView(LoginRequiredMixin, CreateView):
     model = Team
     form_class = TeamForm
-    template_name = "gdx_admin/apps/teams/form.html"
+    template_name = "gdx_admin/pages/teams/form.html"
     success_url = reverse_lazy("teams:list")
 
     def form_valid(self, form):
@@ -60,7 +60,7 @@ class TeamCreateView(LoginRequiredMixin, CreateView):
 class TeamUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Team
     form_class = TeamForm
-    template_name = "gdx_admin/apps/teams/form.html"
+    template_name = "gdx_admin/pages/teams/form.html"
 
     def get_success_url(self):
         return reverse("teams:detail", kwargs={"pk": self.object.pk})
@@ -91,7 +91,7 @@ class TeamImageUploadView(LoginRequiredMixin, UserPassesTestMixin, View):
 
 class TeamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Team
-    template_name = "gdx_admin/apps/teams/delete.html"
+    template_name = "gdx_admin/pages/teams/delete.html"
     success_url = reverse_lazy("teams:list")
 
     def test_func(self):

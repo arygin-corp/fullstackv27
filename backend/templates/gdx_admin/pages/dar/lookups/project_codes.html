@@ -1,0 +1,11 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Project Codes | DAR Administration{% endblock %}
+{% block content %}
+<div class="container-fluid px-3 px-lg-4 py-4">
+  
+  {% include "gdx_admin/pages/dar/lookups/includes/_lookup_header.html" with current_label="Project Codes" page_heading="Project-code lookup values" page_description="Review project identifiers and their display names." %}
+  {% include "gdx_admin/pages/dar/lookups/partials/_lookup_scope.html" with scope_description="Project-code records provide reusable project and area identifiers for DAR processes." %}
+  {% include "gdx_admin/pages/dar/lookups/partials/_project_code_table.html" %}
+  {% include "gdx_admin/pages/dar/lookups/partials/_lookup_pagination.html" %}
+</div>
+{% endblock %}

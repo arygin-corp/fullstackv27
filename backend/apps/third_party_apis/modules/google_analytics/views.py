@@ -26,6 +26,6 @@ def dashboard(request):
             _, message = save_connection(request.POST.get("property_id"), raw)
     return render(
         request,
-        "gdx_admin/apps/google_analytics/dashboard.html",
+        "gdx_admin/pages/google_analytics/dashboard.html",
         {"connection": public_connection(), "message": message},
     )

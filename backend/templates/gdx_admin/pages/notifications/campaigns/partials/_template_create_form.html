@@ -1,0 +1,23 @@
+<form method="post" id="templateBuilderForm" novalidate>
+    {% csrf_token %} 
+    <input type="hidden" name="action" value="create">
+	<input type="hidden" name="builder_schema" id="builderSchema" value="{{ builder_schema|default:'[]' }}">
+    {% if template_form.non_field_errors or version_form.non_field_errors %} 
+    <div class="alert alert-danger" role="alert">
+		<h3 class="h6">The template could not be saved</h3>
+        {{ template_form.non_field_errors }}
+        {{ version_form.non_field_errors }}
+	</div>
+    {% endif %} 
+    <div class="row g-4">
+		<div class="col-12 col-xxl-3">{% include "gdx_admin/pages/notifications/campaigns/partials/_template_metadata_panel.html" %}</div>
+		<div class="col-12 col-xxl-6">
+            {% include "gdx_admin/pages/notifications/campaigns/partials/_template_canvas.html" %}
+            {% include "gdx_admin/pages/notifications/campaigns/partials/_template_preview.html" %}
+        </div>
+		<div class="col-12 col-xxl-3">
+            {% include "gdx_admin/pages/notifications/campaigns/partials/_template_block_palette.html" %}
+            {% include "gdx_admin/pages/notifications/campaigns/partials/_template_validation_panel.html" %}
+        </div>
+	</div>
+</form>

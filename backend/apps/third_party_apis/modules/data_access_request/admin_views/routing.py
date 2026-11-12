@@ -9,11 +9,11 @@ def _breadcrumbs(*items):
 
 def routing_rules(request):
     queryset = RoutingRule.objects.select_related('form').order_by('form__name', '-priority', 'id')
-    return render(request, 'gdx_admin/apps/dar/routing/routing_rules.html', {'routing_rules': queryset, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', None))})
+    return render(request, 'gdx_admin/pages/dar/routing/routing_rules.html', {'routing_rules': queryset, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', None))})
 
 def routing_detail(request, pk):
     rule = get_object_or_404(RoutingRule.objects.select_related('form'), pk=pk)
-    return render(request, 'gdx_admin/apps/dar/routing/routing_rule_detail.html', {'rule': rule, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', '../'), (rule.name, None))})
+    return render(request, 'gdx_admin/pages/dar/routing/routing_rule_detail.html', {'rule': rule, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', '../'), (rule.name, None))})
 
 def routing_simulator(request):
     form = JsonPayloadForm(request.POST or None)
@@ -23,7 +23,7 @@ def routing_simulator(request):
             result = RoutingEngine.resolve(form.cleaned_data['form'], form.cleaned_data['payload'])
         except RuleConfigurationError as exc:
             form.add_error(None, str(exc))
-    return render(request, 'gdx_admin/apps/dar/routing/routing_simulator.html', {'form': form, 'result': result, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', '../'), ('Simulator', None))})
+    return render(request, 'gdx_admin/pages/dar/routing/routing_simulator.html', {'form': form, 'result': result, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Routing', '../'), ('Simulator', None))})
 
 
 class RoutingListView:

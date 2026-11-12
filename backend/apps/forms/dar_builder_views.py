@@ -34,7 +34,7 @@ def dar_form_builder(request):
     field_count = sum(len(section.get("fields") or []) for section in document.get("sections") or [])
     return render(
         request,
-        "gdx_admin/apps/dar/forms/dar_form_builder.html",
+        "gdx_admin/pages/dar/forms/dar_form_builder.html",
         {
             "initial_document": document,
             "field_count": field_count,
