@@ -1,0 +1,128 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}{{ form.name }} | DAR Forms{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    
+    <div class="team-detail-bar">
+        <div class="team-detail-actions">
+            <a class="integration-button integration-button--primary" href="{% url 'dar-admin:form-preview' form.pk %}">Preview</a>
+        </div>
+    </div>
+    <section class="team-panel">
+        <h2>Form</h2>
+        <div class="team-facts">
+            <div class="team-fact"><span>Name</span><strong>{{ form.name }}</strong></div>
+            <div class="team-fact"><span>Slug</span><strong>{{ form.slug }}</strong></div>
+            <div class="team-fact"><span>Version</span><strong>{{ form.version }}</strong></div>
+            <div class="team-fact"><span>State</span><strong>{% if form.is_published %}{% status_badge "Published" %}{% else %}{% status_badge "Draft" %}{% endif %}</strong></div>
+        </div>
+        <h2>Description</h2>
+        <p class="team-description">{{ form.description|default:"No description yet." }}</p>
+    </section>
+
+    <h2 class="h5" style="margin:22px 0 12px">Sections</h2>
+    {% for section in form.sections.all %}
+    <section class="team-panel team-directory" style="margin-bottom:14px">
+        <div style="padding:18px 18px 0">
+            <h2 style="margin-bottom:4px">{{ section.title }}</h2>
+            {% if section.description %}<p class="team-description">{{ section.description }}</p>{% endif %}
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for field in section.fields.all %}
+                    <tr>
+                        <td>
+                            <a class="team-directory__name" href="#field-{{ field.pk }}">{{ field.label }}</a>
+                            <div class="team-directory__slug" id="field-{{ field.pk }}">{{ field.key }}{% if field.help_text %} · {{ field.help_text }}{% endif %}</div>
+                        </td>
+                        <td>
+                            {% status_badge field.get_field_type_display %}
+                            {% if field.required %}{% status_badge "Required" %}{% endif %}
+                            {% if field.hidden %}{% status_badge "Hidden" %}{% endif %}
+                            {% if field.disabled %}{% status_badge "Disabled" %}{% endif %}
+                            {% if not field.is_active %}{% status_badge "Inactive" %}{% endif %}
+                        </td>
+                        <td>
+                            {% for option in field.options.all %}{% if option.is_active %}<span class="team-directory__slug">{{ option.value }}</span>{% endif %}{% endfor %}
+                            {% for validation in field.validation_rules.all %}{% if validation.is_active %}{% status_badge validation.get_validation_type_display %}{% endif %}{% endfor %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="3">No fields in this section.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% empty %}
+    <section class="team-panel"><p class="team-empty">No sections yet.</p></section>
+    {% endfor %}
+
+    <section class="team-panel team-directory" style="margin-bottom:14px">
+        <div style="padding:18px 18px 0"><h2>Fields outside a section</h2></div>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Field</th><th>Type</th><th>Rules</th></tr></thead>
+                <tbody>
+                    {% for field in form.fields.all %}
+                    {% if not field.section_id %}
+                    <tr>
+                        <td>
+                            <strong class="team-directory__name">{{ field.label }}</strong>
+                            <div class="team-directory__slug">{{ field.key }}</div>
+                        </td>
+                        <td>{% status_badge field.get_field_type_display %}{% if field.required %} {% status_badge "Required" %}{% endif %}</td>
+                        <td>{% for validation in field.validation_rules.all %}{% if validation.is_active %}{% status_badge validation.get_validation_type_display %}{% endif %}{% endfor %}</td>
+                    </tr>
+                    {% endif %}
+                    {% empty %}
+                    <tr><td colspan="3">No fields outside a section.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="team-detail-grid">
+        <section class="team-panel">
+            <h2>Rule groups</h2>
+            <div class="team-facts">
+                {% for item in form.rule_groups.all %}
+                <div class="team-fact">
+                    <span>{{ item.get_evaluation_mode_display }}</span>
+                    <strong><a href="{% url 'dar-admin:rule-detail' item.pk %}">{{ item.name }}</a></strong>
+                </div>
+                {% empty %}
+                <p class="team-empty">No rule groups.</p>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="team-panel">
+            <h2>Routing rules</h2>
+            <div class="team-facts">
+                {% for item in form.routing_rules.all %}
+                <div class="team-fact">
+                    <span>Priority {{ item.priority }}</span>
+                    <strong><a href="{% url 'dar-admin:routing-detail' item.pk %}">{{ item.name }}</a></strong>
+                </div>
+                {% empty %}
+                <p class="team-empty">No routing rules.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

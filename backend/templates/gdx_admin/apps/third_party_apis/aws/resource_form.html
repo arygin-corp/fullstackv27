@@ -1,0 +1,5 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS Resource Configuration{% endblock %}
+{% block content %}
+<div class="container py-4"><div class="mb-4"><a href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">← AWS {{ environment.get_environment_display }}</a><p class="text-muted">Environment: {{ environment.get_environment_display }} · Default region: {{ environment.region }}</p></div><form method="post" class="card"><div class="card-body">{% csrf_token %}{{ form.as_p }}</div><div class="card-footer d-flex justify-content-end gap-2"><a class="btn btn-light" href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">Cancel</a><button class="btn btn-primary" type="submit">Save Resource</button></div></form></div>
+{% endblock %}

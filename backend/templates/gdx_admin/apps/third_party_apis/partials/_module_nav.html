@@ -1,0 +1,7 @@
+<nav class="module-context-header" aria-label="Module pages">
+  <div class="module-context-header__actions module-context-header__menu">
+    {% for page in pages %}
+      <a href="{{ page.url }}"{% if page.key == page_key %} aria-current="page"{% endif %}>{{ page.label }}</a>
+    {% endfor %}
+  </div>
+</nav>

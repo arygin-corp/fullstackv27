@@ -1,0 +1,64 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}{{ product.name }} | Products{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:product_list' as list_url %}
+    
+    <div class="team-detail-bar">
+        <div class="team-detail-actions">
+            <a class="integration-button" href="{% url 'marketplace_admin:product_update' product.pk %}">Edit</a>
+            <a class="integration-button" href="{% url 'marketplace_admin:product_delete' product.pk %}">Delete</a>
+        </div>
+    </div>
+    <div class="team-detail-grid">
+        <section class="team-panel">
+            <h2>Product</h2>
+            <div class="team-facts">
+                <div class="team-fact"><span>SKU</span><strong>{{ product.sku|default:"—" }}</strong></div>
+                <div class="team-fact"><span>Domain</span><strong>{{ product.domain|default:"—" }}</strong></div>
+                <div class="team-fact"><span>Datatype</span><strong>{{ product.datatype|default:"—" }}</strong></div>
+                <div class="team-fact"><span>Classification</span><strong>{{ product.classification|default:"—" }}</strong></div>
+                <div class="team-fact"><span>Organization</span><strong>{{ product.org|default:"—" }}</strong></div>
+                <div class="team-fact"><span>Team</span><strong>{{ product.team|default:"—" }}</strong></div>
+            </div>
+            <h2>Description</h2>
+            <p class="team-description">{{ product.brief_desc|striptags|default:"No description yet." }}</p>
+        </section>
+        <div class="team-side">
+            <section class="team-panel">
+                <h2>Status</h2>
+                <div class="team-facts">
+                    <div class="team-fact"><span>Status</span><strong>{% status_badge product.get_status_display %}</strong></div>
+                    <div class="team-fact"><span>Active</span><strong>{% if product.is_active %}{% status_badge "Active" %}{% else %}{% status_badge "Inactive" %}{% endif %}</strong></div>
+                    <div class="team-fact"><span>Content</span><strong>{% status_badge product.get_cwpg_status_display %}</strong></div>
+                    <div class="team-fact"><span>Data review</span><strong>{% status_badge product.get_data_review_status_display %}</strong></div>
+                    {% if product.badge.all %}
+                    <div class="team-fact"><span>Badges</span><strong>{% for badge in product.badge.all %}{% status_badge badge.name %} {% endfor %}</strong></div>
+                    {% endif %}
+                    <div class="team-fact"><span>Updated</span><strong>{{ product.updated_at|date:"M j, Y" }}</strong></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% if product.images.all %}
+    <section class="team-panel" style="margin-top:18px">
+        <h2>Images</h2>
+        <div class="team-images">
+            {% for image in product.images.all %}
+            {% if image.image %}
+            <div class="team-image-card">
+                <span class="team-label">{{ image.alt_text|default:"Product image" }}</span>
+                <img src="{{ image.image.url }}" alt="">
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}

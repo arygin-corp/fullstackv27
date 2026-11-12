@@ -1,0 +1,11 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}System Health | DAR Administration{% endblock %}
+{% block content %}
+<div class="container-fluid px-3 px-lg-4 py-4">
+  
+  {% include "gdx_admin/apps/dar/health/includes/_health_header.html" %}
+  {% include "gdx_admin/apps/dar/health/partials/_health_scope.html" %}
+  {% include "gdx_admin/apps/dar/health/partials/_health_legend.html" %}
+  {% include "gdx_admin/apps/dar/health/partials/_health_check_grid.html" %}
+</div>
+{% endblock %}

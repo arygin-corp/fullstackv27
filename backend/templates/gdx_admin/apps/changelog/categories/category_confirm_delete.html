@@ -1,7 +1,6 @@
 {% extends "gdx_admin/base.html" %}
-{% block page_header %}{% endblock %}
 {% block title %}Delete {{ object.name }}{% endblock %}
 {% block content %}<div class="container-fluid px-3 px-lg-4 py-4">
-  {% include "gdx_admin/apps/changelog/categories/includes/_category_hero.html" with hero_badge="RESTRICTED ACTION" hero_title="Delete Category" hero_description="Review category dependencies before attempting permanent deletion." hero_metric_label="Category" hero_metric=object.name hero_metric_help=object.slug hero_icon="ti ti-trash" %}
+  
   <div class="row justify-content-center"><div class="col-12 col-xl-8">{% include "gdx_admin/apps/changelog/categories/partials/_category_delete_warning.html" %}</div></div>
 </div>{% endblock %}

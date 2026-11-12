@@ -1,0 +1,1 @@
+{% extends "gdx_admin/base.html" %}{% block title %}Page Types{% endblock %}{% block content %}<a class="btn btn-primary" href="{% url 'pages_admin:page-type-create' %}">New page type</a>{% for item in page_types %}<a class="list-group-item" href="{% url 'pages_admin:page-type-edit' item.pk %}">{{ item.name }}</a>{% endfor %}{% endblock %}

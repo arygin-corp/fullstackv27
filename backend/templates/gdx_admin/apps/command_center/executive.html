@@ -1,0 +1,297 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Executive{% endblock %}
+{% block extra_css %}
+<link href="{% static 'gdx_admin/theme/css/default_cards.css' %}?v=trend" rel="stylesheet">
+<link href="{% static 'gdx_admin/theme/css/executive.css' %}?v=10" rel="stylesheet">
+{% endblock %}
+{% block content %}
+{{ chart|json_script:"ex-chart" }}
+<div class="ex">
+	{% if stewards %}
+	<section class="card-grid ex-stewards" aria-label="Data stewards">
+		{% for person in stewards %}
+		<article class="card card-person">
+			<span class="card-avatar" aria-hidden="true">{{ person.initial }}</span>
+			<div>
+				<h3>{{ person.name }}</h3>
+				<p>{{ person.status }} products</p>
+			</div>
+			<span class="ui-badge {% if person.active %}ui-badge-success{% endif %}">{% if person.active %}Active{% else %}Inactive{% endif %}</span>
+		</article>
+		{% endfor %}
+	</section>
+	{% endif %}
+	<section class="ex-grid">
+		<article class="ex-card ex-hero">
+			<div class="ex-hero-head">
+				<ul class="ex-pills">
+					<li>{{ greeting.role }}</li>
+					<li>{{ greeting.environment }}</li>
+					<li>{% if ahead %}Ahead of last week{% else %}Behind last week{% endif %}</li>
+					<li class="is-quiet">{{ range_label }}</li>
+				</ul>
+			</div>
+			<p class="ex-focus">Marketplace focus</p>
+			<h2>{{ headline }}</h2>
+			<div class="ex-minis">
+				<div class="ex-mini">
+					<p class="ex-kicker">Requests</p>
+					<strong>{{ request_total }}</strong>
+					<span>{% if request_change >= 0 %}+{% endif %}{{ request_change }}% vs prior week</span>
+					<div class="ex-spark" aria-hidden="true">
+						{% for point in spark %}<i style="height: {{ point.height }}%"></i>{% endfor %}
+					</div>
+				</div>
+				<div class="ex-mini">
+					<p class="ex-kicker">What changed</p>
+					<strong>{% if request_change >= 0 %}+{% endif %}{{ request_change }}%</strong>
+					<span>Later 7 days against the earlier 7</span>
+				</div>
+				<div class="ex-mini">
+					<p class="ex-kicker">Active now</p>
+					<strong>{{ active_now }}</strong>
+					<span>Signed in during the last 30 minutes</span>
+				</div>
+			</div>
+			<div class="ex-stats">
+				<div class="ex-stat"><strong>{{ modules }}</strong><span>Modules</span></div>
+				<div class="ex-stat"><strong>{{ people }}</strong><span>People</span></div>
+				<div class="ex-stat"><strong>{{ builds.total|default:0 }}</strong><span>Builds</span></div>
+			</div>
+			<div class="ex-plans">
+				{% for plan in plans %}
+				<div class="ex-plan">
+					<span>{{ plan.label }}</span>
+					<strong>{{ plan.value }}%</strong>
+					<b><i style="width: {{ plan.value }}%"></i></b>
+				</div>
+				{% endfor %}
+			</div>
+		</article>
+
+		<article class="ex-card">
+			<div class="ex-card-head">
+				<div>
+					<h3>Platform spotlight</h3>
+					<p>The current marketplace read for this environment.</p>
+				</div>
+				<span class="ex-live">Live</span>
+			</div>
+			<div class="ex-feature">
+				<span>{% if request_change >= 0 %}+{% endif %}{{ request_change }}% week over week</span>
+				<strong>{{ request_total }}</strong>
+				<span>Requests</span>
+				<p>{{ summary }}</p>
+			</div>
+			<div class="ex-quad">
+				<article><strong>{{ enabled }}</strong><span>Modules enabled</span><small>of {{ modules }}</small></article>
+				<article><strong>{{ people }}</strong><span>People</span><small>on the platform</small></article>
+				<article><strong>{{ builds.succeeded|default:0 }}</strong><span>Builds succeeded</span><small>{{ builds.failed|default:0 }} failed</small></article>
+				<article><strong>{{ active_now }}</strong><span>Active now</span><small>last 30 minutes</small></article>
+			</div>
+		</article>
+	</section>
+
+	<section class="ex-lower">
+		<article class="ex-card">
+			<div class="ex-card-head">
+				<div>
+					<h3>Request curve</h3>
+					<p>Opened requests across the latest 14 days.</p>
+				</div>
+				<strong>{{ request_total }}</strong>
+			</div>
+			<div id="ex-requests" class="ex-chart"></div>
+		</article>
+		<article class="ex-card">
+			<div class="ex-card-head">
+				<div>
+					<h3>Modules enabled</h3>
+					<p>Enabled modules against the full catalog.</p>
+				</div>
+			</div>
+			<div id="ex-confidence" class="ex-chart"></div>
+		</article>
+	</section>
+
+	<section class="ex-split">
+		<article class="ex-card">
+			<div class="ex-score-top">
+				<h3>Request stages</h3>
+				<span>{{ stages|length }} stages</span>
+			</div>
+			<div class="ex-score">
+				{% for stage in stages %}
+				<div class="ex-row">
+					<strong>{{ stage.label }}</strong>
+					<small>{{ stage.value }}</small>
+					<b><i style="width: {{ stage.share }}%"></i></b>
+				</div>
+				{% empty %}
+				<p>No request stages yet.</p>
+				{% endfor %}
+			</div>
+		</article>
+		<article class="ex-card">
+			<div class="ex-score-top">
+				<h3>Build mix</h3>
+				<span>{{ builds.total|default:0 }} builds</span>
+			</div>
+			<div class="ex-score">
+				{% for row in build_rows %}
+				<div class="ex-row">
+					<strong>{{ row.label }}</strong>
+					<small>{{ row.value }}</small>
+					<b><i style="width: {{ row.share }}%"></i></b>
+				</div>
+				{% endfor %}
+			</div>
+		</article>
+	</section>
+
+	<section class="ex-lens">
+		<article>
+			<h3>Coverage</h3>
+			<p>{{ enabled }} modules are enabled out of {{ modules }} in the catalog.</p>
+		</article>
+		<article>
+			<h3>People</h3>
+			<p>{{ people }} people are on the platform, and {{ active_now }} were signed in during the last 30 minutes.</p>
+		</article>
+		<article>
+			<h3>Delivery</h3>
+			<p>{{ builds.succeeded|default:0 }} builds succeeded, {{ builds.failed|default:0 }} failed, and {{ builds.running|default:0 }} are running.</p>
+		</article>
+	</section>
+
+	<section class="card-grid" aria-label="Platform counts">
+		<article class="card card-metric card-metric-flat">
+			<div class="card-metric-top">
+				<p>Content pages</p>
+			</div>
+			<strong>{{ content_pages }}</strong>
+			<small>Published content pages</small>
+		</article>
+		<article class="card card-metric card-metric-flat">
+			<div class="card-metric-top">
+				<p>Staff pages</p>
+			</div>
+			<strong>{{ staff_pages }}</strong>
+			<small>Registered staff pages</small>
+		</article>
+		<article class="card card-metric {% if builds.failed %}card-metric-down{% else %}card-metric-flat{% endif %}">
+			<div class="card-metric-top">
+				<p>Failed builds</p>
+				{% if builds.failed %}<span class="card-delta card-delta-down">Needs attention</span>{% endif %}
+			</div>
+			<strong>{{ builds.failed|default:0 }}</strong>
+			<small>Of {{ builds.total|default:0 }} builds</small>
+		</article>
+		<article class="card card-metric {% if builds.running %}card-metric-new{% else %}card-metric-flat{% endif %}">
+			<div class="card-metric-top">
+				<p>Running builds</p>
+				{% if builds.running %}<span class="card-delta card-delta-new">In progress</span>{% endif %}
+			</div>
+			<strong>{{ builds.running|default:0 }}</strong>
+			<small>Currently running</small>
+		</article>
+	</section>
+
+	<section class="ex-split">
+		<div class="card ex-requests">
+			<header>
+				<h3>Recent requests</h3>
+				<a href="/sa/orders/orders/">View all</a>
+			</header>
+			<ul>
+				{% for item in recent_requests %}
+				<li>
+					<strong>{{ item.number }}</strong>
+					<time>{% if item.opened %}{{ item.opened|date:"M j" }}{% else %}—{% endif %}</time>
+					<p>{% if item.product and item.product != "999999999" and item.product != "0" %}{{ item.product }}{% else %}Data Access Request{% endif %}</p>
+					<span>{{ item.stage }}</span>
+				</li>
+				{% empty %}
+				<li class="ex-requests-empty">No requests yet.</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="card ex-requests ex-builds">
+			<header>
+				<h3>Recent builds</h3>
+				<a href="{% url 'deployment:activity' %}">View all</a>
+			</header>
+			<ul>
+				{% for item in recent_builds %}
+				<li class="{% if item.detail == 'succeeded' %}is-ok{% elif item.detail == 'failed' %}is-bad{% elif item.detail == 'running' %}is-run{% endif %}">
+					<strong title="{{ item.label }}">{{ item.label }}</strong>
+					<span>{{ item.detail|default:"Recorded" }}</span>
+				</li>
+				{% empty %}
+				<li class="ex-requests-empty">No builds yet.</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+
+	<section class="card-grid card-grid-3" aria-label="Open">
+		<a class="card card-link" href="/sa/marketplace/admin/dashboard/">
+			<p class="card-kicker">Marketplace</p>
+			<h3>Catalog</h3>
+			<p>Products, domains, and the current catalog view.</p>
+			<span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+		</a>
+		<a class="card card-link" href="/sa/orders/orders/">
+			<p class="card-kicker">Requests</p>
+			<h3>Orders</h3>
+			<p>Open marketplace requests and their current stage.</p>
+			<span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+		</a>
+		<a class="card card-link" href="{% url 'deployment:dashboard' %}">
+			<p class="card-kicker">Delivery</p>
+			<h3>Deployment</h3>
+			<p>Build results for this environment.</p>
+			<span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+		</a>
+	</section>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'gdx_admin/theme/plugins/apexchart/apexcharts.min.js' %}"></script>
+<script>
+(function () {
+  var node = document.getElementById("ex-chart");
+  if (!node || !window.ApexCharts) return;
+  var data = JSON.parse(node.textContent);
+  var purple = "#583fc9";
+  new ApexCharts(document.querySelector("#ex-requests"), {
+    chart: { type: "area", height: 260, toolbar: { show: false }, fontFamily: "inherit" },
+    series: [{ name: "Requests", data: data.values }],
+    colors: [purple],
+    stroke: { curve: "smooth", width: 2 },
+    fill: { type: "gradient", gradient: { opacityFrom: 0.28, opacityTo: 0.02 } },
+    dataLabels: { enabled: false },
+    xaxis: { categories: data.days, labels: { style: { colors: "#8b97a8" } } },
+    yaxis: { labels: { style: { colors: "#8b97a8" } } },
+    grid: { borderColor: "#d9dee8" },
+    legend: { show: false }
+  }).render();
+  new ApexCharts(document.querySelector("#ex-confidence"), {
+    chart: { type: "radialBar", height: 260, fontFamily: "inherit" },
+    series: [data.confidence],
+    colors: [purple],
+    plotOptions: {
+      radialBar: {
+        hollow: { size: "62%" },
+        dataLabels: {
+          name: { show: true, color: "#64758b", fontSize: "13px" },
+          value: { color: "#121826", fontSize: "28px", fontWeight: 650 }
+        }
+      }
+    },
+    labels: ["Enabled"]
+  }).render();
+})();
+</script>
+{% endblock %}

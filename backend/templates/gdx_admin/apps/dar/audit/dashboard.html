@@ -1,0 +1,10 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Audit Dashboard | DAR Administration{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+    
+    {% block page_actions %}
+    {% endblock %}
+</div>
+{% include "admin/partials/stats_cards.html" %}<div class="card"><div class="card-header fw-semibold">Recent changes</div><div class="list-group list-group-flush">{% for item in recent_changes %}<a class="list-group-item list-group-item-action" href="{% url 'dar-admin:audit-detail' item.pk %}"><strong>{{ item.action|title }}</strong> {{ item.object_model }} {{ item.object_pk }}<div class="small text-muted">{{ item.created_at }} by {{ item.actor_label|default:'System' }}</div></a>{% empty %}<div class="list-group-item text-muted">No audit events.</div>{% endfor %}</div></div>
+{% endblock %}

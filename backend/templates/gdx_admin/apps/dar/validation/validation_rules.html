@@ -1,0 +1,12 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Validation Rules | DAR Administration{% endblock %}
+{% block content %}
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+    
+    {% include "gdx_admin/apps/dar/validation/includes/_validation_header.html" with current_label="Rules" page_heading="Validation-rule directory" page_description="Review fields, validation types, messages, and active states." show_simulator=True %}
+    {% include "gdx_admin/apps/dar/validation/partials/_validation_scope.html" %}
+    {% include "gdx_admin/apps/dar/validation/partials/_validation_table.html" %}
+    {% include "gdx_admin/apps/dar/validation/partials/_validation_pagination.html" %}
+</div>
+{% endblock %}

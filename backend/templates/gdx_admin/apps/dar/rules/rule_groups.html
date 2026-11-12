@@ -1,0 +1,12 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Rule Groups | DAR Administration{% endblock %}
+{% block content %}
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+    
+    {% include "gdx_admin/apps/dar/rules/includes/_rules_header.html" with page_heading="Form rule groups" page_description="Review evaluation modes and their associated Django form definitions." %}
+    {% include "gdx_admin/apps/dar/rules/partials/_rules_scope.html" %}
+    {% include "gdx_admin/apps/dar/rules/partials/_rule_group_list.html" %}
+    {% include "gdx_admin/apps/dar/rules/partials/_rules_pagination.html" %}
+</div>
+{% endblock %}

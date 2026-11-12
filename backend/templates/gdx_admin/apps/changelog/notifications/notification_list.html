@@ -1,0 +1,11 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Changelog Notifications{% endblock %}
+{% block content %}
+<div class="container-fluid px-3 px-lg-4 py-4">
+  
+  {% include "gdx_admin/apps/changelog/notifications/includes/_notification_header.html" %}
+  {% include "gdx_admin/apps/changelog/notifications/partials/_notification_preferences.html" %}
+  {% include "gdx_admin/apps/changelog/notifications/partials/_notification_feed.html" %}
+  {% include "gdx_admin/apps/changelog/notifications/partials/_notification_pagination.html" %}
+</div>
+{% endblock %}

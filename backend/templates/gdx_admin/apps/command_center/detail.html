@@ -1,0 +1,42 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}{{ item.name }} | Command Center{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/apps/deployment/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+
+{% include "gdx_admin/apps/command_center/_nav.html" %}
+<form class="cc-add" method="post" action="{% url 'command_center:add_element' item.id %}">
+    {% csrf_token %}
+    <select name="element" aria-label="Add a chart or widget">
+        {% for group in element_groups %}
+        <optgroup label="{{ group.label }}">
+            {% for element in group.elements %}
+            <option value="{{ element.id }}">{{ element.label }}</option>
+            {% endfor %}
+        </optgroup>
+        {% endfor %}
+    </select>
+    <button type="submit">Add</button>
+</form>
+{{ dataset|json_script:"cc-dataset" }}
+<div class="cc-widgets">
+    {% for element in item.elements %}
+    <article class="cc-widget" data-element="{{ element.type }}">
+        <header>
+            <h3>{{ element.label }}</h3>
+            <form method="post" action="{% url 'command_center:remove_element' item.id element.id %}">{% csrf_token %}<button type="submit">Remove</button></form>
+        </header>
+        <div class="cc-widget-body"></div>
+    </article>
+    {% empty %}
+    <section class="deploy-panel"><p>This view has no charts yet. Add one above.</p></section>
+    {% endfor %}
+</div>
+<form method="post" action="{% url 'command_center:remove' item.id %}" style="margin-top:12px">{% csrf_token %}<button type="submit" class="btn btn-link">Delete this {{ item.kind }}</button></form>
+</main>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'gdx_admin/theme/plugins/apexchart/apexcharts.min.js' %}"></script>
+<script src="{% static 'gdx_admin/command_center/widgets.js' %}?v=5"></script>
+{% endblock %}

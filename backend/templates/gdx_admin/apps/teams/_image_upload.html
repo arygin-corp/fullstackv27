@@ -1,0 +1,8 @@
+<div class="team-image-card">
+    <span class="team-label">{{ label }}</span>
+    {% if image %}
+    <img src="{{ image.url }}" alt="{{ label }}">
+    {% else %}
+    <div class="empty-image">No {{ label|lower }}</div>
+    {% endif %}
+</div>
