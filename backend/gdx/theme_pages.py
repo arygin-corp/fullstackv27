@@ -1,4 +1,4 @@
-"""Serve Vexlora-shaped theme pages under pages/dashboard/<slug>/index.html."""
+"""Serve Vexlora-shaped theme pages under sa/pages/dashboard/<slug>/index.html."""
 
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import Http404
@@ -64,10 +64,10 @@ def dashboard_index(request):
         {
             "dashboard_slug": "",
             "dashboard_title": "Theme Dashboards",
-            "dashboard_blurb": "Vexlora-shaped dashboards mirrored from pages/dashboard/*/index.html.",
+            "dashboard_blurb": "Vexlora-shaped dashboards mirrored under sa/pages/dashboard/*/index.html.",
             "staff_page_kicker": "THEME",
             "staff_page_title": "Dashboards",
-            "staff_page_description": "Open a dashboard to see live platform data in the theme page path.",
+            "staff_page_description": "Open a dashboard to see live platform data on the SuperAdmin sa/ route.",
             "staff_page_metric_label": "Dashboards",
             "staff_page_metric_value": len(DASHBOARDS),
             "staff_page_metric_caption": "registered",
