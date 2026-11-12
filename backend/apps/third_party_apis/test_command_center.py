@@ -189,7 +189,7 @@ class CommandCenterViewTests(SimpleTestCase):
         self.assertEqual(series_chart("12m"), "column")
         self.assertNotIn("donut", {kind for kind, _wide in CHARTS.values()})
 
-    def test_landing_routes_superadmin_to_staff_and_others_to_marketplace(self):
+    def test_landing_routes_staff_to_the_dashboard_and_others_to_marketplace(self):
         from gdx.views import home_for
 
         class Account:
@@ -198,8 +198,8 @@ class CommandCenterViewTests(SimpleTestCase):
                 self.is_staff = staff
                 self.profile = type("Profile", (), {"access_type": access_type})()
 
-        self.assertEqual(home_for(Account(True, True, "user")), "/sa/command-center/")
-        self.assertEqual(home_for(Account(False, True, "admin")), "/marketplace/")
+        self.assertEqual(home_for(Account(True, True, "user")), "/")
+        self.assertEqual(home_for(Account(False, True, "admin")), "/")
         self.assertEqual(home_for(Account(False, False, "user")), "/marketplace/")
         from pathlib import Path
 

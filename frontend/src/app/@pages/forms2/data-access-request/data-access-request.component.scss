@@ -70,6 +70,16 @@
     align-self: stretch;
 }
 
+:host ::ng-deep .ng-dropdown-panel {
+    z-index: 30;
+}
+
+:host ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items {
+    max-height: 240px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
 :host .form-check {
     position: relative;
     display: flex;

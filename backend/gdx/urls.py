@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from apps.notifications.monitoring.views import alerts_view, health_view, live_view, ready_view, startup_view, metrics_view
 from . import views
+from .theme_preview import snapshot as theme_preview_snapshot
 from .forms import GDXPasswordResetForm, GDXSetPasswordForm
 
 urlpatterns = [
@@ -38,6 +39,7 @@ urlpatterns = [
 
     # GLOBAL API URLS
     path('api/', include('apps.api.urls')),
+    path("api/theme-preview/snapshot/", theme_preview_snapshot, name="theme_preview_snapshot"),
     path("api/changelog/", include("apps.changelog.urls")),
     path("api/new/product/intake/", include("apps.third_party_apis.modules.product_intake.urls", namespace="intake")),
     path("api/marketplace/", include("apps.marketplace.admin_urls")),
@@ -73,7 +75,7 @@ urlpatterns = [
     path("sa/", views.staff_home, name="staff_home"),
     path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
     path("sa/checkout/", include("apps.third_party_apis.modules.checkout.page_urls", namespace="checkout_pages")),
-    path("sa/changelog/", include("apps.changelog.admin_urls")),
+    path("changelog/", include(("apps.changelog.admin_urls", "changelog"), namespace="changelog_staff")),
     path("sa/intake/", include("apps.third_party_apis.modules.product_intake.admin_urls", namespace="intake")),
     path("sa/orders/", include("apps.orders.urls")),
     path('sa/teams/', include("apps.teams.urls")),
@@ -88,6 +90,12 @@ urlpatterns = [
     path("sa/integrations/", include(("apps.third_party_apis.operations_urls", "third_party_api_ops"), namespace="third_party_api_ops"),),
     path("maintenance/", views.maintenance, name="maintenance"),
     path("sa/settings/", views.platform_settings, name="platform_settings"),
+    path("sa/templates/default.html", views.default_template, name="default_template"),
+    path("sa/templates/default_page_header.html", views.default_template, name="default_page_header"),
+    path("sa/templates/default_color_theme.html", views.default_template, name="default_color_theme"),
+    path("sa/templates/default_ui_theme.html", views.default_template, name="default_ui_theme"),
+    path("sa/templates/default_cards.html", views.default_template, name="default_cards"),
+    path("sa/templates/default_charts.html", views.default_template, name="default_charts"),
     path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
     path("sa/command-center/", include(("apps.third_party_apis.modules.command_center.urls", "command_center"), namespace="command_center")),
     path("sa/microsoft-teams/", include(("apps.third_party_apis.modules.microsoft_teams.urls", "microsoft_teams"), namespace="microsoft_teams")),

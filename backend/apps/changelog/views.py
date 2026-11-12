@@ -45,7 +45,7 @@ class ReadAuditMixin:
 
 
 class PublicTimelineView(ListView):
-    template_name = "gdx_admin/apps/changelog/public/timeline.html"
+    template_name = "changelog/public/timeline.html"
     context_object_name = "posts"
     paginate_by = 20
 
@@ -108,7 +108,7 @@ class PublicTimelineFragmentView(View):
 class DashboardView(LoginRequiredMixin, PermissionRequiredMixin, TemplateView):
     permission_required = "changelog.view_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/dashboard.html"
+    template_name = "changelog/dashboard.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -119,7 +119,7 @@ class DashboardView(LoginRequiredMixin, PermissionRequiredMixin, TemplateView):
 class ReleaseCompareView(LoginRequiredMixin, PermissionRequiredMixin, TemplateView):
     permission_required = "changelog.view_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_compare.html"
+    template_name = "changelog/posts/post_compare.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -138,7 +138,7 @@ class PostListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Post
     permission_required = "changelog.view_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_list.html"
+    template_name = "changelog/posts/post_list.html"
     context_object_name = "posts"
     paginate_by = 25
 
@@ -153,7 +153,7 @@ class PostDetailView(LoginRequiredMixin, PermissionRequiredMixin, ReadAuditMixin
     model = Post
     permission_required = "changelog.view_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_detail.html"
+    template_name = "changelog/posts/post_detail.html"
     context_object_name = "post"
 
 
@@ -162,7 +162,7 @@ class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, AuditUserMixin
     form_class = PostForm
     permission_required = "changelog.add_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_form.html"
+    template_name = "changelog/posts/post_form.html"
     success_url = reverse_lazy("changelog:post-list")
 
 
@@ -171,7 +171,7 @@ class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, AuditUserMixin
     form_class = PostForm
     permission_required = "changelog.change_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_form.html"
+    template_name = "changelog/posts/post_form.html"
     success_url = reverse_lazy("changelog:post-list")
 
 
@@ -179,7 +179,7 @@ class PostDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Post
     permission_required = "changelog.delete_post"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/posts/post_confirm_delete.html"
+    template_name = "changelog/posts/post_confirm_delete.html"
     success_url = reverse_lazy("changelog:post-list")
 
 
@@ -208,7 +208,9 @@ class WorkflowActionView(LoginRequiredMixin, PermissionRequiredMixin, View):
             messages.success(request, f"Release workflow updated: {post.get_status_display()}.")
         except ValidationError as exc:
             messages.error(request, "; ".join(exc.messages))
-        return redirect("changelog:post-detail", pk=post.pk)
+        namespace = getattr(request.resolver_match, "namespace", "")
+        detail_name = "changelog_staff:post-detail" if namespace == "changelog_staff" else "changelog:post-detail"
+        return redirect(detail_name, pk=post.pk)
 
 
 class SubmitReleaseView(WorkflowActionView):
@@ -228,7 +230,7 @@ class ArchiveReleaseView(WorkflowActionView):
 
 
 class NotificationListView(LoginRequiredMixin, ListView):
-    template_name = "gdx_admin/apps/changelog/notifications/notification_list.html"
+    template_name = "changelog/notifications/notification_list.html"
     context_object_name = "notifications"
     paginate_by = 25
 
@@ -263,7 +265,7 @@ class CategoryListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Categorie
     permission_required = "changelog.view_categorie"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/categories/category_list.html"
+    template_name = "changelog/categories/category_list.html"
     context_object_name = "categories"
     paginate_by = 25
 
@@ -272,7 +274,7 @@ class CategoryDetailView(LoginRequiredMixin, PermissionRequiredMixin, ReadAuditM
     model = Categorie
     permission_required = "changelog.view_categorie"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/categories/category_detail.html"
+    template_name = "changelog/categories/category_detail.html"
     context_object_name = "category"
 
 
@@ -281,7 +283,7 @@ class CategoryCreateView(LoginRequiredMixin, PermissionRequiredMixin, AuditUserM
     form_class = CategorieForm
     permission_required = "changelog.add_categorie"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/categories/category_form.html"
+    template_name = "changelog/categories/category_form.html"
     success_url = reverse_lazy("changelog:category-list")
 
 
@@ -290,7 +292,7 @@ class CategoryUpdateView(LoginRequiredMixin, PermissionRequiredMixin, AuditUserM
     form_class = CategorieForm
     permission_required = "changelog.change_categorie"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/categories/category_form.html"
+    template_name = "changelog/categories/category_form.html"
     success_url = reverse_lazy("changelog:category-list")
 
 
@@ -298,7 +300,7 @@ class CategoryDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView
     model = Categorie
     permission_required = "changelog.delete_categorie"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/categories/category_confirm_delete.html"
+    template_name = "changelog/categories/category_confirm_delete.html"
     success_url = reverse_lazy("changelog:category-list")
 
     def form_valid(self, form):
@@ -308,6 +310,106 @@ class CategoryDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView
         except ProtectedError:
             messages.error(self.request, "This category is used by a release note and cannot be deleted.")
             return HttpResponseRedirect(reverse("changelog:category-detail", kwargs={"pk": self.object.pk}))
+
+
+def _staff_changelog_page(context, heading):
+    context["heading"] = heading
+    context["heading2"] = heading
+    context["pageview"] = "Changelog"
+    return context
+
+
+class StaffCategoryListView(CategoryListView):
+    template_name = "gdx_users/apps/changelog/categories/index.html"
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Categories")
+
+
+class StaffCategoryDetailView(CategoryDetailView):
+    template_name = "gdx_users/apps/changelog/categories/detail.html"
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), self.object.name)
+
+
+class StaffCategoryCreateView(CategoryCreateView):
+    template_name = "gdx_users/apps/changelog/categories/form.html"
+    success_url = reverse_lazy("changelog_staff:category-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Add Category")
+
+
+class StaffCategoryUpdateView(CategoryUpdateView):
+    template_name = "gdx_users/apps/changelog/categories/form.html"
+    success_url = reverse_lazy("changelog_staff:category-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Edit Category")
+
+
+class StaffCategoryDeleteView(CategoryDeleteView):
+    template_name = "gdx_users/apps/changelog/categories/delete.html"
+    success_url = reverse_lazy("changelog_staff:category-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Delete Category")
+
+    def form_valid(self, form):
+        try:
+            with transaction.atomic():
+                return DeleteView.form_valid(self, form)
+        except ProtectedError:
+            messages.error(self.request, "This category is used by a release note and cannot be deleted.")
+            return HttpResponseRedirect(reverse("changelog_staff:category-detail", kwargs={"pk": self.object.pk}))
+
+
+class StaffPostListView(PostListView):
+    template_name = "gdx_users/apps/changelog/posts/index.html"
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Releases")
+
+
+class StaffPostDetailView(PostDetailView):
+    template_name = "gdx_users/apps/changelog/posts/detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = _staff_changelog_page(super().get_context_data(**kwargs), self.object.version)
+        context["sections"] = [
+            {
+                "subtitle": getattr(self.object, f"subTitle{letter}"),
+                "category": getattr(self.object, f"type{letter}"),
+                "body": getattr(self.object, f"post{letter}"),
+            }
+            for letter in "ABCDEFGHIJ"
+        ]
+        return context
+
+
+class StaffPostCreateView(PostCreateView):
+    template_name = "gdx_users/apps/changelog/posts/form.html"
+    success_url = reverse_lazy("changelog_staff:post-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Add Release")
+
+
+class StaffPostUpdateView(PostUpdateView):
+    template_name = "gdx_users/apps/changelog/posts/form.html"
+    success_url = reverse_lazy("changelog_staff:post-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Edit Release")
+
+
+class StaffPostDeleteView(PostDeleteView):
+    template_name = "gdx_users/apps/changelog/posts/delete.html"
+    success_url = reverse_lazy("changelog_staff:post-list")
+
+    def get_context_data(self, **kwargs):
+        return _staff_changelog_page(super().get_context_data(**kwargs), "Delete Release")
 
 
 class CategorieViewSet(viewsets.ModelViewSet):
@@ -547,7 +649,7 @@ class ChangelogTimelineApi(APIView):
 
 
 class AuditListView(TemplateView):
-    template_name = "gdx_admin/apps/changelog/audit/audit_list.html"
+    template_name = "changelog/audit/audit_list.html"
     paginate_by = 25
 
     def get_queryset(self):

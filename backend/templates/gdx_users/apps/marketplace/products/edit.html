@@ -1,8 +1,8 @@
-{% extends 'partials/base.html' %}
+{% extends 'gdx_users/partials/base.html' %}
 {% load static %}
 {% load web_tags %}
 
-{% block title %}Edit Product{% endblock %}
+{% block title %}{% if product.pk %}Edit Product{% else %}New Product{% endif %}{% endblock %}
 
 {% block extra_css %}
     {{ block.super }}
@@ -13,7 +13,8 @@
     <link href="{% static 'css/select2.tag.css' %}" rel="stylesheet" type="text/css" />
     <style>
         .form-floating{position:relative;margin-bottom:1rem}
-        .form-floating>.form-control,.form-floating>.form-select{height:calc(3.5rem + 2px);line-height:1.25;padding:1rem .75rem}
+        .form-floating>.form-control,.form-floating>.form-select{height:68px;line-height:1.25;padding:1rem .75rem}
+        #product-edit-form .row>div[class*="col-"]>.form-floating,#product-edit-form .steward-field>.form-floating,#product-edit-form .image-meta-row .form-floating{margin-bottom:0 !important}
         .form-floating>label{position:absolute;top:0;left:0;height:100%;padding:1rem .75rem;pointer-events:none;border:1px solid transparent;transform-origin:0 0;transition:opacity .1s ease-in-out,transform .1s ease-in-out;color:#6b7280;font-size:1rem;font-weight:400;line-height:1.5;margin:0}
         .form-floating>.form-control:focus~label,.form-floating>.form-control:not(:placeholder-shown)~label,.form-floating>.form-select~label{opacity:.65;transform:scale(.85) translateY(-.5rem) translateX(.15rem);background-color:#fff;padding:.25rem .5rem;height:auto;top:.6rem;left:0;font-size:.75rem;color:#374151;font-weight:500}
         label[for="id_status"]{opacity:1;transform:scale(.85) translateY(-.5rem) translateX(.15rem);background-color:#fff;padding:.25rem .5rem;height:auto;top:2.2rem;left:0;font-size:.75rem;color:#374151;font-weight:500;z-index:3}
@@ -39,7 +40,7 @@
         .form-check-input:disabled:focus{box-shadow:none!important;outline:none!important}
         .form-floating>.form-control:disabled,.form-floating>.form-select:disabled,.form-floating .select2-container--disabled .select2-selection--single{background-color:#f8f9fa;opacity:1;cursor:not-allowed}
         .form-floating>.form-control[readonly]{background-color:#f8f9fa;opacity:1;cursor:not-allowed}
-        .ckeditor-field{margin-bottom:1.5rem}
+        .ckeditor-field{margin-bottom:0}
         .ckeditor-field .form-label{font-weight:600;color:#374151;margin-bottom:.5rem;display:block;font-size:.875rem}
         .ckeditor-field .ck-editor{margin-top:0}
         .ckeditor-field.ck-disabled{opacity:.6;cursor:not-allowed}
@@ -50,6 +51,35 @@
         .form-check-input{width:1.2em;height:1.2em;margin-top:.2em}
         .form-check-label{font-weight:600;color:#374151;margin-left:.5rem}
         .data-review-board-section{display:none}
+        #image-sort-list{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;width:100%}
+        .product-image-card{margin-bottom:0;min-width:0}
+        .product-image-card.is-main{flex:0 0 100%;max-width:100%}
+        .product-image-card.is-extra{flex:0 0 calc(25% - 6px);max-width:calc(25% - 6px);overflow:hidden}
+        #image-sort-list.is-sortable .product-image-card{cursor:grab}
+        #image-sort-list .product-image-card.is-dragging{opacity:.55}
+        .product-image-frame{position:relative}
+        .product-image-card .img-preview{width:100%;height:72px;object-fit:cover;border-radius:8px;border:1px solid #d9dee8;background:#f3f5f8;display:block}
+        .product-image-card.is-main .img-preview{width:100%;height:auto;object-fit:contain;margin-bottom:8px}
+        .image-controls{display:none !important}
+        .image-meta-row{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:24px;margin-left:0;margin-right:0}
+        .image-meta-row>.image-meta-slug,.image-meta-row>.image-meta-price,.image-meta-row>.image-meta-sku{padding-left:0;padding-right:0;width:auto;max-width:none}
+        .image-meta-row>.image-meta-slug{flex:1 1 auto;min-width:0}
+        .image-meta-row>.image-meta-price{flex:0 0 72px;width:72px}
+        .image-meta-row>.image-meta-sku{flex:0 0 104px;width:104px}
+        .steward-row{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:24px;margin-left:0;margin-right:0}
+        .steward-row>.steward-field{flex:1 1 0;min-width:0;width:auto;max-width:none;padding-left:0;padding-right:0;margin-bottom:1rem}
+        .resource-row>.steward-field{flex:0 0 auto;width:auto}
+        .resource-row>#field-resource_identifier{flex:0 0 148px;width:148px}
+        .resource-row>#field-resource-url{flex:1 1 auto;width:auto;min-width:160px}
+        .resource-row .form-floating>label{white-space:nowrap;overflow:visible;width:auto;max-width:none}
+        .review-row{gap:12px}
+        .review-row>.steward-field{flex:0 0 auto;width:auto}
+        .review-row>#field-data_review_status,.review-row>#field-data_review_team{flex:0 0 260px;width:260px}
+        #product-edit-form .row>.col-12:has(>.row){margin-bottom:0}
+        .image-icon-btn{position:absolute;top:6px;right:6px;z-index:2;width:28px;height:28px;border:0;border-radius:50%;background:#fff;color:#ef1e1e;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(18,24,38,.2);cursor:pointer;padding:0}
+        .image-icon-btn i{font-size:16px;line-height:1;pointer-events:none}
+        .image-icon-btn input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+        .product-image-card .image-controls{display:none}
         .image-form-item{border:1px solid #e2e8f0;padding:1.5rem;border-radius:.5rem;background-color:#f9fafb;margin-bottom:1rem}
         .image-preview-container{display:flex;flex-wrap:wrap;gap:15px;margin-top:10px}
         .image-preview-item{width:120px;height:120px;border:1px solid #ddd;border-radius:8px;overflow:hidden;position:relative;background:#f8f9fa}
@@ -96,18 +126,180 @@
         .collibra-id-input {width: 90% !important;}
         .axon-id-input {width: 90% !important;}
         .select2-container--default .select2-selection--single .select2-selection__rendered {line-height: 36px !important;}
+        #product-edit-form .form-floating .select2-container--default .select2-selection--single {
+            display: flex;
+            align-items: flex-end;
+            height: 68px;
+            overflow: hidden;
+            padding: 0 2rem 10px 0.65rem;
+        }
+        #product-edit-form .select2-container--default .select2-selection--single .select2-selection__rendered:has(.select2-selection__clear) {
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 6px;
+            width: auto;
+            max-width: 100%;
+            min-width: 0;
+            margin: 0;
+            padding: 1px 8px 1px 10px;
+            background: #583fc9;
+            color: #fff;
+            border-radius: 999px;
+            line-height: 20px !important;
+            font-size: 12px;
+            font-weight: 400;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        #product-edit-form .select2-container--default .select2-selection--single .select2-selection__clear {
+            color: #fff;
+            flex: 0 0 auto;
+            margin: 0;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1;
+        }
+        #product-edit-form .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 100%;
+        }
+        #product-edit-form .relation-card .select2-container--default .select2-selection--single .select2-selection__rendered:has(.select2-selection__clear) {
+            display: block;
+            width: auto;
+            max-width: calc(100% - 36px);
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #product-edit-form .relation-card .select2-container--default .select2-selection--single .select2-selection__clear {
+            float: left;
+            margin: 0 6px 0 0;
+        }
+        #product-edit-form .form-floating .select2-container--default .select2-selection--multiple {
+            display: flex;
+            align-items: flex-end;
+            box-sizing: border-box;
+            min-height: 68px;
+            height: 68px;
+            padding: 0 0.75rem 10px 0.65rem;
+        }
+        #product-edit-form .form-floating .select2-container--default .select2-selection--multiple:has(.select2-selection__choice) {
+            height: auto;
+        }
+        #product-edit-form .form-floating .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #product-edit-form .form-floating .select2-container--default .select2-selection--multiple .select2-search--inline .select2-search__field {
+            margin: 0;
+            height: 22px;
+        }
+        #product-edit-form .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 6px;
+            float: none;
+            background-color: #583fc9 !important;
+            border: none;
+            color: #fff !important;
+            border-radius: 999px;
+            padding: 2px 8px 2px 12px;
+            margin: 6px 6px 0 0;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 22px;
+        }
+        #product-edit-form .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: #fff;
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1;
+            position: static;
+        }
+        #product-edit-form .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #fff;
+            background: transparent;
+        }
+        .relation-card{background:#fff;border:1px solid #d9dee8;border-radius:16px;padding:20px 24px 8px;margin:0 0 24px}
+        .relation-card header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:8px}
+        .relation-card h5{margin:0 0 4px;color:#121826;font-size:18px;font-weight:600}
+        .relation-card header p{margin:0;color:#64758b;font-size:13px;line-height:1.4}
+        .relation-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+        .relation-count{color:#64758b;font-size:12px;white-space:nowrap}
+        .relation-add{height:36px;padding:0 14px;border:0;border-radius:10px;background:#583fc9;color:#fff;font-size:13px;font-weight:500;white-space:nowrap;cursor:pointer}
+        .relation-add:disabled{opacity:.4;cursor:not-allowed}
+        .relation-discard{border:0;background:transparent;font:inherit;color:inherit}
+        .relation-row,.relation-row.is-solution{display:flex;align-items:center;gap:12px;padding:16px 0;border-top:1px solid #eef1f6}
+        .relation-row.is-new{background:#f7f8f9;margin:8px 0 12px;padding:16px;border:1px dashed #d9dee8;border-radius:12px}
+        .relation-position{flex:0 0 42px;width:42px;min-height:42px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#f3f5f8;color:#3d4d63;font-size:13px;font-weight:600}
+        .relation-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:row;align-items:stretch;gap:12px}
+        .relation-preview{display:flex;flex-direction:row;flex-wrap:nowrap;gap:12px;align-items:center;flex:1 1 calc(50% - 6px);max-width:calc(50% - 6px);min-width:0;background:#fff;border:1px solid #d9dee8;border-radius:12px;padding:10px 12px}
+        .relation-preview[hidden]{display:none}
+        .relation-preview-media{flex:0 0 150px;width:150px;max-width:150px;height:98px;min-width:0;overflow:hidden}
+        .relation-preview img{width:100%;height:100%;object-fit:cover;border-radius:10px;background:#f3f5f8;display:block}
+        .relation-preview-copy{flex:1 1 0;min-width:0}
+        .relation-preview-name{color:#121826;font-size:14px;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .relation-preview-desc{margin:2px 0 0;color:#64758b;font-size:12px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .relation-preview-meta{display:flex;flex-wrap:nowrap;gap:12px;margin-top:4px}
+        .relation-preview-meta div{display:flex;flex-direction:column;gap:1px;min-width:0}
+        .relation-preview-meta span{color:#8b97a8;font-size:11px;font-weight:400}
+        .relation-preview-meta strong{color:#121826;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .relation-select-line{display:flex;gap:12px;align-items:center;flex:1 1 calc(50% - 6px);max-width:calc(50% - 6px);min-width:0}
+        .relation-select-line .relation-field{flex:1 1 auto;min-width:160px}
+        .relation-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;align-content:center;flex:1 1 calc(50% - 6px);max-width:calc(50% - 6px);min-width:0;width:auto}
+        .relation-flags{grid-column:1 / -1;grid-row:1;display:flex;flex-direction:row;gap:8px;align-items:stretch}
+        .relation-flags .relation-check{flex:1 1 0;min-width:0;padding:0 8px}
+        .relation-product-field{grid-column:1 / -1;grid-row:2;min-width:0}
+        .relation-reason-field{grid-column:1;grid-row:3;min-width:0;width:100%}
+        .relation-controls>.relation-remove{grid-column:2;grid-row:3}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-controls,.relation-main:not(:has(.relation-preview:not([hidden]))) .relation-select-line{flex:1 1 auto;max-width:none;width:auto}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-controls{grid-template-columns:auto minmax(0,1fr) auto}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-flags{grid-column:1;grid-row:1 / span 2;flex-direction:column}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-flags .relation-check{flex:0 0 auto;padding:0 12px}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-product-field{grid-column:2;grid-row:1}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-reason-field{grid-column:2;grid-row:2}
+        .relation-main:not(:has(.relation-preview:not([hidden]))) .relation-controls>.relation-remove{grid-column:3;grid-row:2}
+        .relation-field label{display:block;margin:0 0 6px;color:#64758b;font-size:12px;font-weight:400}
+        .relation-card .form-control,.relation-card .form-select{width:100%;height:42px;border:1px solid #d9dee8;border-radius:10px;background:#fff;color:#121826}
+        .relation-card .select2-container{width:100% !important}
+        .relation-card .select2-container--default .select2-selection--single{height:42px;border:1px solid #d9dee8;border-radius:10px;display:flex;align-items:center}
+        .relation-card .select2-container--default .select2-selection--single .select2-selection__rendered{line-height:40px !important;padding-left:12px;color:#121826}
+        .relation-card .select2-container--default .select2-selection--single .select2-selection__rendered:has(.select2-selection__clear){display:block;width:auto;max-width:calc(100% - 36px);min-width:0;margin:0 8px;padding:1px 10px;background:#583fc9;color:#fff !important;border-radius:999px;line-height:22px !important;font-size:12px;font-weight:400;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+        .relation-card .select2-container--default .select2-selection--single .select2-selection__rendered:has(.select2-selection__clear) .select2-selection__clear{float:left;margin:1px 6px 0 0}
+        .relation-card .select2-container--default .select2-selection--single .select2-selection__clear{color:#fff;margin:0;font-weight:500;font-size:14px;line-height:1}
+        .relation-card .select2-container--default .select2-selection--single .select2-selection__arrow{height:40px}
+        .relation-check{display:flex;align-items:center;gap:8px;height:42px;margin:0;padding:0 12px;border:1px solid #d9dee8;border-radius:10px;background:#fff;color:#121826;font-size:13px;font-weight:400;cursor:pointer}
+        .relation-check input{margin:0;accent-color:#583fc9}
+        .relation-remove{display:inline-flex;align-items:center;justify-content:center;height:42px;margin:0;padding:0 14px;border:1px solid #d9dee8;border-radius:10px;background:#fff;color:#ef1e1e;font-size:13px;font-weight:400;cursor:pointer}
+        .relation-remove input{position:absolute;opacity:0;pointer-events:none}
+        .relation-remove:has(input:checked){background:#fff1f1;border-color:#ef1e1e}
+        @media (max-width: 1100px){
+            .relation-row,.relation-row.is-solution,.relation-main,.relation-details,.relation-select-line{flex-wrap:wrap}
+            .relation-preview,.relation-controls,.relation-select-line{flex:1 1 100%;max-width:none}
+        }
     </style>
 {% endblock %}
 
 {% block contents %}
 <div class="container-fluid mx-auto px-4 py-8" style="margin-bottom: 10px;">
     <div class="bg-white shadow-md rounded-lg p-6">
-        <form method="post" enctype="multipart/form-data" style="padding: 40px 40px;">
+        <form id="product-edit-form" method="post" enctype="multipart/form-data" style="padding: 40px 40px;">
             {% csrf_token %}
+            {{ catalog_resources|json_script:"catalog-resources" }}
+            {{ relation_products|json_script:"relation-products" }}
             {% if form.errors or form.non_field_errors %}
                 <div class="alert alert-danger">
                     <h5 class="alert-heading">
-                        Product could not be updated
+                        {% if product.pk %}Product could not be updated{% else %}Product could not be created{% endif %}
                     </h5>
 
                     {% for field in form %}
@@ -157,183 +349,382 @@
             {{ form.media }}
             {{ image_formset.media }}
 
-            <!-- Image Upload Section -->
-            <label class="block text-gray-700 text-sm font-bold mb-2" style="font-size: 14px;">
-                Product Images <small class="text-muted">(Max 5)</small>
-            </label>
-            {{ image_formset.management_form }}
-            <div id="image-formset-container">
-                {% for iform in image_formset %}
-                    <div class="image-form-row">
-                        {{ iform.id }}
-                        <div class="row align-items-center">
-                            <div class="col-md-6 image-preview-container">
-                                {% if iform.instance.image %}
-                                    <img src="{{ iform.instance.image.url }}" class="img-thumbnail img-preview">
-                                {% else %}
-                                    <img src="{% static 'images/placeholder.png' %}" class="img-thumbnail img-preview">
-                                {% endif %}
-                            </div>
-                            <div class="col-md-2">
-                                {{ iform.image }}
-                            </div>
-                            <div class="col-md-3">
-                                {{ iform.alt_text }}
-                            </div>
-                            {% if iform.instance.pk %}
-                                <div class="col-md-1 text-danger">
-                                    {{ iform.DELETE }} <small>Remove</small>
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <div style="margin: 24px 0px;">
-                <button type="button" class="btn btn-primary mt-2" id="add-image-btn">
-                    <i class="bx bx-plus"></i> Add Image
-                </button>
-            </div>
-
-            <hr class="my-6">
-
             <div class="row">
                 {% for field in form %}
-                    {% if field.name == 'sample_data' %}
-                        <!-- Skip sample_data field - will be handled separately -->
-                    {% elif field.name == 'brief_desc' or field.name == 'short_desc' or field.name == 'intended_use' %}
-                        {# CKEditor fields WITHOUT floating labels #}
-                        <div class="col-12">
-                            <div class="ckeditor-field">
-                                <label for="{{ field.id_for_label }}" class="form-label">
-                                    {{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}
-                                </label>
-                                {{ field }}
-                                {% if field.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ field.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                {% if field.help_text %}
-                                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% elif field.name == 'data_review_required' or field.name == 'is_active' %}
-                        {# Boolean/checkbox fields - styled like screenshot #}
-                        <div class="col-md-6">
-                            <div class="field-wrapper">
-                                <label class="form-label">
-                                    {{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}
-                                </label>
-                                <div class="form-check">
-                                    <input type="checkbox"
-                                        class="form-check-input{% if field.errors %} is-invalid{% endif %}"
-                                        id="{{ field.id_for_label }}"
-                                        name="{{ field.name }}"
-                                        value="true"
-                                        {% if field.value %}checked{% endif %}>
-                                    <label class="form-check-label" for="{{ field.id_for_label }}" id="{{ field.name }}-status-label">
-                                        {% if field.name == 'is_active' %}
-                                            {% if field.value %}Active{% else %}Inactive{% endif %}
-                                        {% else %}
-                                            {{ field.label }}
-                                        {% endif %}
-                                    </label>
-                                    {% if field.errors %}
-                                        <div class="invalid-feedback">
-                                            {{ field.errors.0 }}
-                                        </div>
-                                    {% endif %}
-                                    {% if field.help_text %}
-                                        <small class="form-text text-muted">{{ field.help_text }}</small>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    {% elif field.name == 'slug' or field.name == 'sku' or field.name == 'price' %}
-                        {# Your existing disabled floating fields #}
-                        <div class="{% if field.name == 'slug' %}col-12{% else %}col-md-6{% endif %}">
-                            <div class="form-floating mb-3">
-                                {% if field.name == 'price' %}
-                                    <input type="number"
-                                        step="0.01"
-                                        min="0"
-                                        class="form-control field-disabled{% if field.errors %} is-invalid{% endif %}"
-                                        id="{{ field.id_for_label }}"
-                                        name="{{ field.name }}"
-                                        value="{{ field.value|default:'0.00' }}"
-                                        placeholder="Price"
-                                        readonly
-                                        disabled>
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
-                                {% else %}
-                                    <input type="{{ field.field.widget.input_type }}"
-                                        class="form-control field-disabled{% if field.errors %} is-invalid{% endif %}"
-                                        id="{{ field.id_for_label }}"
-                                        name="{{ field.name }}"
-                                        value="{{ field.value|default:'' }}"
-                                        placeholder="{{ field.label }}"
-                                        readonly
-                                        disabled>
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
-                                {% endif %}
-
-                                {% if field.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ field.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                {% if field.help_text %}
-                                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% else %}
-                        {# Other floating fields #}
-                        <div class="{% if field.name == 'status' or field.name == 'category' or field.name == 'priority' or field.name == 'classification' %}col-md-6{% else %}col-12{% endif %}">
-                            <div class="form-floating mb-3">
-                                {% if field.field.widget.input_type == 'select' or field.name == 'status' %}
-                                    {{ field }}
-
-                                    <label for="{{ field.id_for_label }}">
-                                        {{ field.label }}
-                                        {% if field.field.required %}
-                                            <span class="required-indicator">*</span>
-                                        {% endif %}
-                                    </label>
-                                {% elif field.field.widget.input_type == 'textarea' %}
-                                    <textarea class="form-control{% if field.errors %} is-invalid{% endif %}"
-                                            id="{{ field.id_for_label }}"
-                                            name="{{ field.name }}"
-                                            rows="4"
-                                            placeholder="Enter {{ field.label|lower }}">{{ field.value|default:'' }}</textarea>
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
-                                {% else %}
-                                    <input type="{{ field.field.widget.input_type }}"
-                                        class="form-control{% if field.errors %} is-invalid{% endif %}"
-                                        id="{{ field.id_for_label }}"
-                                        name="{{ field.name }}"
-                                        value="{{ field.value|default:'' }}"
-                                        placeholder="Enter {{ field.label|lower }}">
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="required-indicator">*</span>{% endif %}</label>
-                                {% endif %}
-
-                                {% if field.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ field.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </div>
+                    {% if field.name == 'name' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" with stack=True %}
                     {% endif %}
                 {% endfor %}
             </div>
 
+            <div class="row align-items-start">
+                <div class="col-lg-6">
+                    {{ image_formset.management_form }}
+                    <div id="image-formset-container">
+                        <div id="image-sort-list">
+                            {% for iform in image_formset %}
+                                <div class="image-form-row product-image-card {% if forloop.first %}is-main{% else %}is-extra{% endif %}">
+                                    {{ iform.id }}
+                                    <div class="product-image-frame">
+                                        {% if iform.instance.image %}
+                                            <img src="{{ iform.instance.image.url }}" class="img-preview" alt="">
+                                        {% else %}
+                                            <img src="{% static 'images/placeholder.png' %}" class="img-preview" alt="">
+                                        {% endif %}
+                                        {% if iform.instance.pk %}
+                                            <label class="image-icon-btn" title="Remove">
+                                                {{ iform.DELETE }}
+                                                <i class="bx bx-trash"></i>
+                                            </label>
+                                        {% endif %}
+                                    </div>
+                                    <div class="image-controls" hidden>
+                                        {{ iform.image }}
+                                        {{ iform.alt_text }}
+                                        {{ iform.position }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <input type="file" id="add-image-picker" accept="image/*" multiple hidden>
+                    <button type="button" class="btn btn-primary mt-2" id="add-image-btn">
+                        <i class="bx bx-plus"></i> Add Image
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        {% for field in form %}
+                            {% if field.name == 'slug' or field.name == 'status' or field.name == 'datatype' or field.name == 'classification' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with stack=True %}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="col-12">
+                            <div class="row image-meta-row">
+                                {% for field in form %}
+                                    {% if field.name == 'org' %}
+                                        {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="image-meta-slug" %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for field in form %}
+                                    {% if field.name == 'price' %}
+                                        {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="image-meta-price" %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for field in form %}
+                                    {% if field.name == 'sku' %}
+                                        {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="image-meta-sku" %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% for field in form %}
+                            {% if field.name == 'is_active' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with stack=True %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="row">
+                        {% for field in form %}
+                            {% if field.name == 'domain' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="col-md-4" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'subdomain_2' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="col-md-4" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'subdomain_3' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="col-md-4" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row steward-row">
+                        {% for field in form %}
+                            {% if field.name == 'data_steward' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'poc_name' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'business_sme' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'business_contact_name' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'alt_approver' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row steward-row">
+                        {% for field in form %}
+                            {% if field.name == 'platform' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'one_ts_domain' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'ad_group' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'pi' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'sensitive_pi' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row steward-row resource-row">
+                        {% for field in form %}
+                            {% if field.name == 'catalog' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'resource' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'resource_identifier' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="steward-field" id="field-resource-url">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="id_resource_url" readonly tabindex="-1">
+                                <label for="id_resource_url">Resource URL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row steward-row review-row">
+                        {% for field in form %}
+                            {% if field.name == 'data_review_required' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'data_review_status' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.name == 'data_review_team' %}
+                                {% include "gdx_users/apps/marketplace/partials/product_field.html" with column_class="steward-field" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% for field in form %}
+                    {% if field.name == 'short_desc' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" %}
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name == 'brief_desc' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" %}
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name == 'whats_included' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" %}
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name == 'intended_use_desc' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" %}
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name != 'sample_data' and field.name != 'name' and field.name != 'status' and field.name != 'domain' and field.name != 'subdomain_2' and field.name != 'subdomain_3' and field.name != 'datatype' and field.name != 'classification' and field.name != 'is_active' and field.name != 'slug' and field.name != 'sku' and field.name != 'price' and field.name != 'data_steward' and field.name != 'alt_approver' and field.name != 'poc_name' and field.name != 'business_sme' and field.name != 'business_contact_name' and field.name != 'platform' and field.name != 'one_ts_domain' and field.name != 'ad_group' and field.name != 'pi' and field.name != 'sensitive_pi' and field.name != 'short_desc' and field.name != 'brief_desc' and field.name != 'whats_included' and field.name != 'intended_use_desc' and field.name != 'catalog' and field.name != 'resource' and field.name != 'resource_identifier' and field.name != 'org' and field.name != 'data_review_required' and field.name != 'data_review_status' and field.name != 'data_review_team' %}
+                        {% include "gdx_users/apps/marketplace/partials/product_field.html" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="col-12">
+                <section class="relation-card" data-prefix="associations" data-max="10">
+                    <header>
+                        <div>
+                            <h5>Product Association</h5>
+                            <p>Choose a product, mark it Related, Similar, or both, and add a short reason. You can add up to 10. Numbers show the saved order.</p>
+                        </div>
+                        <div class="relation-actions">
+                            <span class="relation-count"></span>
+                            <button type="button" class="relation-add">Add product</button>
+                        </div>
+                    </header>
+                    {{ association_formset.management_form }}
+                    {% if association_formset.non_form_errors %}
+                        <div class="alert alert-danger">{{ association_formset.non_form_errors }}</div>
+                    {% endif %}
+                    <div class="relation-rows">
+                    {% for row in association_formset %}
+                        <div class="relation-row{% if not row.instance.pk %} is-new{% endif %}">
+                            {{ row.id }}
+                            <div class="relation-position" title="Position">{{ forloop.counter }}</div>
+                            <div class="relation-main">
+                            <div class="relation-preview" hidden></div>
+                            <div class="relation-controls">
+                                <div class="relation-flags">
+                                    <label class="relation-check" for="{{ row.is_related.id_for_label }}">
+                                        {{ row.is_related }}
+                                        <span>Related</span>
+                                    </label>
+                                    <label class="relation-check" for="{{ row.is_additional.id_for_label }}">
+                                        {{ row.is_additional }}
+                                        <span>Similar</span>
+                                    </label>
+                                    {% if row.is_related.errors %}<div class="invalid-feedback d-block">{{ row.is_related.errors.0 }}</div>{% endif %}
+                                </div>
+                                <div class="relation-field relation-product-field">
+                                    {{ row.associated_product }}
+                                    {% if row.associated_product.errors %}<div class="invalid-feedback d-block">{{ row.associated_product.errors.0 }}</div>{% endif %}
+                                </div>
+                                <div class="relation-field relation-reason-field">
+                                    {{ row.reason }}
+                                </div>
+                                {% if row.instance.pk %}
+                                    <label class="relation-remove" for="{{ row.DELETE.id_for_label }}">
+                                        {{ row.DELETE }}
+                                        <span>Remove</span>
+                                    </label>
+                                {% else %}
+                                    <button type="button" class="relation-remove relation-discard">Remove</button>
+                                {% endif %}
+                            </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <template class="relation-empty">
+                        <div class="relation-row is-new">
+                            {{ association_formset.empty_form.id }}
+                            <div class="relation-position" title="Position"></div>
+                            <div class="relation-main">
+                            <div class="relation-preview" hidden></div>
+                            <div class="relation-controls">
+                                <div class="relation-flags">
+                                    <label class="relation-check" for="{{ association_formset.empty_form.is_related.id_for_label }}">
+                                        {{ association_formset.empty_form.is_related }}
+                                        <span>Related</span>
+                                    </label>
+                                    <label class="relation-check" for="{{ association_formset.empty_form.is_additional.id_for_label }}">
+                                        {{ association_formset.empty_form.is_additional }}
+                                        <span>Similar</span>
+                                    </label>
+                                </div>
+                                <div class="relation-field relation-product-field">
+                                    {{ association_formset.empty_form.associated_product }}
+                                </div>
+                                <div class="relation-field relation-reason-field">
+                                    {{ association_formset.empty_form.reason }}
+                                </div>
+                                <button type="button" class="relation-remove relation-discard">Remove</button>
+                            </div>
+                            </div>
+                        </div>
+                    </template>
+                </section>
+            </div>
+
+            <div class="col-12">
+                <section class="relation-card" data-prefix="solutions" data-max="10">
+                    <header>
+                        <div>
+                            <h5>End-to-End Solution</h5>
+                            <p>Add the products that make up this solution, in the order they should appear. You can add up to 10. Numbers show the saved order.</p>
+                        </div>
+                        <div class="relation-actions">
+                            <span class="relation-count"></span>
+                            <button type="button" class="relation-add">Add product</button>
+                        </div>
+                    </header>
+                    {{ solution_formset.management_form }}
+                    {% if solution_formset.non_form_errors %}
+                        <div class="alert alert-danger">{{ solution_formset.non_form_errors }}</div>
+                    {% endif %}
+                    <div class="relation-rows">
+                    {% for row in solution_formset %}
+                        <div class="relation-row is-solution{% if not row.instance.pk %} is-new{% endif %}">
+                            {{ row.id }}
+                            <div class="relation-position" title="Position">{{ forloop.counter }}</div>
+                            <div class="relation-main">
+                            <div class="relation-preview" hidden></div>
+                            <div class="relation-select-line">
+                            <div class="relation-field">
+                                <label for="{{ row.solution_product.id_for_label }}">Solution Product</label>
+                                {{ row.solution_product }}
+                                {% if row.solution_product.errors %}<div class="invalid-feedback d-block">{{ row.solution_product.errors.0 }}</div>{% endif %}
+                            </div>
+                            {% if row.instance.pk %}
+                                <label class="relation-remove" for="{{ row.DELETE.id_for_label }}">
+                                    {{ row.DELETE }}
+                                    <span>Remove</span>
+                                </label>
+                            {% else %}
+                                <button type="button" class="relation-remove relation-discard">Remove</button>
+                            {% endif %}
+                            </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <template class="relation-empty">
+                        <div class="relation-row is-solution is-new">
+                            {{ solution_formset.empty_form.id }}
+                            <div class="relation-position" title="Position"></div>
+                            <div class="relation-main">
+                            <div class="relation-preview" hidden></div>
+                            <div class="relation-select-line">
+                            <div class="relation-field">
+                                <label for="{{ solution_formset.empty_form.solution_product.id_for_label }}">Solution Product</label>
+                                {{ solution_formset.empty_form.solution_product }}
+                            </div>
+                            <button type="button" class="relation-remove relation-discard">Remove</button>
+                            </div>
+                            </div>
+                        </div>
+                    </template>
+                </section>
+            </div>
+
             <!-- Sample Data Section - Smart Sort Order Management -->
             <div class="col-12">
-                <div class="row">
                     <div class="sample-data-section" style="margin-bottom: 2rem;">
                         <div class="section-title mb-3 d-flex justify-content-between align-items-center mb-6" style="padding-bottom: 22px !important;">
                             <h5 class="mb-0 col-8">Sample Data</h5>
@@ -390,39 +781,49 @@
                                 </button>
                             </div>
                         </div>
-                    </div>       
-                </div>
+                    </div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-6">
                 <div>
-                    <button type="submit" class="btn btn-soft-success waves-effect waves-light">Update Product</button>
+                    <button type="submit" class="btn btn-soft-success waves-effect waves-light">{% if product.pk %}Update Product{% else %}Create Product{% endif %}</button>
+                    {% if product.pk %}
                     <a href="{% url 'marketplace:product-detail' product.pk %}" class="btn btn-soft-secondary waves-effect waves-light">Cancel</a>
+                    {% if product.status == "archived" %}
+                        <button type="submit" class="btn btn-light" form="product-unarchive-form">Unarchive</button>
+                    {% endif %}
+                    {% else %}
+                    <a href="{% url 'marketplace:product-index' %}" class="btn btn-soft-secondary waves-effect waves-light">Cancel</a>
+                    {% endif %}
                 </div>
                 <div>
+                    {% if product.pk %}
                     <a href="{% url 'marketplace:product-delete' product.pk %}" class="btn btn-danger waves-effect waves-light">Delete</a>
+                    {% endif %}
                 </div>
             </div>
         </form>
+        {% if product.pk and product.status == "archived" %}
+            <form id="product-unarchive-form" method="post" action="{% url 'marketplace:product-unarchive' product.pk %}">
+                {% csrf_token %}
+            </form>
+        {% endif %}
     </div>
 </div>
 
 <!-- Template hidden in a JS variable to avoid cluttering HTML -->
 <script type="text/template" id="image-form-template">
-    <div class="image-form-row new-image-form">
-        <div class="row align-items-center">
-            <div class="col-md-2 image-preview-container">
-                <img src="{% static 'images/placeholder.png' %}" class="img-thumbnail img-preview">
-            </div>
-            <div class="col-md-4">
-                <input type="file" name="productimage_set-__prefix__-image" class="form-control image-input" accept="image/*" id="id_productimage_set-__prefix__-image">
-            </div>
-            <div class="col-md-4">
-                <input type="text" name="productimage_set-__prefix__-alt_text" class="form-control" placeholder="Alt text" id="id_productimage_set-__prefix__-alt_text">
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-link text-danger remove-form-btn">Cancel</button>
-            </div>
+    <div class="image-form-row product-image-card is-extra new-image-form">
+        <div class="product-image-frame">
+            <img src="{% static 'images/placeholder.png' %}" class="img-preview" alt="">
+            <button type="button" class="image-icon-btn remove-form-btn" title="Cancel" aria-label="Cancel">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+        <div class="image-controls" hidden>
+            <input type="file" name="productimage_set-__prefix__-image" class="form-control image-input" accept="image/*" id="id_productimage_set-__prefix__-image">
+            <input type="text" name="productimage_set-__prefix__-alt_text" class="form-control image-alt-text" placeholder="Alt text" readonly id="id_productimage_set-__prefix__-alt_text">
+            <input type="hidden" name="productimage_set-__prefix__-position" class="image-position" value="0" id="id_productimage_set-__prefix__-position">
         </div>
     </div>
 </script>
@@ -457,7 +858,7 @@
                 var $floatingContainer = $select.closest('.form-floating');
 
                 $select.select2({
-                    placeholder: '-- Select an option --',
+                    placeholder: $select.data('placeholder') || '-- Select an option --',
                     allowClear: true,
                     width: '100%',
                     dropdownParent: $floatingContainer.length ? $floatingContainer : $(document.body),
@@ -517,6 +918,236 @@
                 }
             });
 
+            function relationSelect($select) {
+                $select.select2({
+                    placeholder: $select.data('placeholder') || '-- Select an option --',
+                    allowClear: true,
+                    width: '100%',
+                    dropdownParent: $(document.body)
+                });
+            }
+
+            const relationCatalog = JSON.parse(document.getElementById('relation-products').textContent);
+            const relationById = {};
+            (relationCatalog.items || []).forEach(function (item) {
+                relationById[String(item.id)] = item;
+            });
+
+            function renderRelationPreview(row) {
+                const select = row.querySelector('select');
+                const preview = row.querySelector('.relation-preview');
+                if (!select || !preview) return;
+                const product = relationById[select.value];
+                preview.replaceChildren();
+                if (!product) {
+                    preview.hidden = true;
+                    return;
+                }
+                preview.hidden = false;
+                const img = document.createElement('img');
+                img.src = product.image || relationCatalog.placeholder;
+                img.alt = '';
+                const media = document.createElement('div');
+                media.className = 'relation-preview-media';
+                media.appendChild(img);
+                const copy = document.createElement('div');
+                copy.className = 'relation-preview-copy';
+                const name = document.createElement('div');
+                name.className = 'relation-preview-name';
+                name.textContent = product.name;
+                copy.appendChild(name);
+                if (product.short_desc) {
+                    const desc = document.createElement('p');
+                    desc.className = 'relation-preview-desc';
+                    desc.textContent = product.short_desc;
+                    copy.appendChild(desc);
+                }
+                const meta = document.createElement('div');
+                meta.className = 'relation-preview-meta';
+                [['Datatype', product.datatype], ['Classification', product.classification]].forEach(function (pair) {
+                    if (!pair[1]) return;
+                    const item = document.createElement('div');
+                    const label = document.createElement('span');
+                    label.textContent = pair[0];
+                    const value = document.createElement('strong');
+                    value.textContent = pair[1];
+                    item.appendChild(label);
+                    item.appendChild(value);
+                    meta.appendChild(item);
+                });
+                if (meta.childNodes.length) copy.appendChild(meta);
+                preview.appendChild(media);
+                preview.appendChild(copy);
+            }
+
+            document.querySelectorAll('.relation-card[data-prefix]').forEach(function (card) {
+                const prefix = card.dataset.prefix;
+                const max = Number(card.dataset.max || 10);
+                const totalInput = card.querySelector('[name="' + prefix + '-TOTAL_FORMS"]');
+                const list = card.querySelector('.relation-rows');
+                const addBtn = card.querySelector('.relation-add');
+                const empty = card.querySelector('template.relation-empty');
+                const indexPattern = new RegExp(prefix + '-(?:\\d+|__prefix__)-', 'g');
+
+                function activeCount() {
+                    return Array.from(list.querySelectorAll('.relation-row')).filter(function (row) {
+                        const del = row.querySelector('input[name$="-DELETE"]');
+                        return !(del && del.checked);
+                    }).length;
+                }
+
+                function refresh() {
+                    const count = activeCount();
+                    addBtn.disabled = count >= max;
+                    const note = card.querySelector('.relation-count');
+                    if (note) note.textContent = count + ' of ' + max;
+                    let number = 0;
+                    list.querySelectorAll('.relation-row').forEach(function (row) {
+                        const badge = row.querySelector('.relation-position');
+                        const del = row.querySelector('input[name$="-DELETE"]');
+                        if (!badge) return;
+                        if (del && del.checked) {
+                            badge.textContent = '';
+                            return;
+                        }
+                        number += 1;
+                        badge.textContent = String(number);
+                    });
+                }
+
+                function reindex() {
+                    list.querySelectorAll('select').forEach(function (select) {
+                        const $select = $(select);
+                        if ($select.data('select2')) $select.select2('destroy');
+                    });
+                    list.querySelectorAll('.relation-row').forEach(function (row, index) {
+                        row.querySelectorAll('[name],[id],[for]').forEach(function (el) {
+                            ['name', 'id', 'for'].forEach(function (attr) {
+                                const value = el.getAttribute(attr);
+                                if (!value || value.indexOf(prefix + '-') === -1) return;
+                                el.setAttribute(attr, value.replace(indexPattern, prefix + '-' + index + '-'));
+                            });
+                        });
+                    });
+                    totalInput.value = list.querySelectorAll('.relation-row').length;
+                    list.querySelectorAll('select').forEach(function (select) {
+                        relationSelect($(select));
+                    });
+                    list.querySelectorAll('.relation-row').forEach(renderRelationPreview);
+                    refresh();
+                }
+
+                addBtn.addEventListener('click', function () {
+                    if (activeCount() >= max) return;
+                    const next = list.querySelectorAll('.relation-row').length;
+                    list.insertAdjacentHTML('beforeend', empty.innerHTML.replaceAll('__prefix__', String(next)));
+                    relationSelect($(list.lastElementChild).find('select'));
+                    totalInput.value = next + 1;
+                    refresh();
+                });
+
+                list.addEventListener('click', function (event) {
+                    const discard = event.target.closest('.relation-discard');
+                    if (!discard || !list.contains(discard)) return;
+                    discard.closest('.relation-row').remove();
+                    reindex();
+                });
+
+                list.addEventListener('change', function (event) {
+                    if (event.target.name && event.target.name.endsWith('-DELETE')) refresh();
+                });
+                $(list).on('change select2:select select2:clear', 'select', function () {
+                    renderRelationPreview(this.closest('.relation-row'));
+                });
+
+                list.querySelectorAll('.relation-row').forEach(renderRelationPreview);
+                refresh();
+            });
+
+            function fitSelectToOptions(selectId, labels) {
+                const select = document.getElementById(selectId);
+                const field = select && select.closest('.steward-field');
+                if (!select || !field) return;
+                const probe = document.createElement('span');
+                probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:13px;font-weight:400;';
+                document.body.appendChild(probe);
+                let longest = 0;
+                (labels || []).forEach(function (text) {
+                    probe.textContent = text || '';
+                    longest = Math.max(longest, probe.offsetWidth);
+                });
+                const label = field.querySelector('label');
+                if (label) {
+                    probe.style.fontSize = '12px';
+                    probe.textContent = label.textContent.replace(/\s+/g, ' ').trim();
+                    longest = Math.max(longest, probe.offsetWidth);
+                }
+                probe.remove();
+                const width = Math.ceil(longest + 64);
+                field.style.flex = '0 0 ' + width + 'px';
+                field.style.width = width + 'px';
+                const container = field.querySelector('.select2-container');
+                if (container) container.style.width = '100%';
+            }
+            function sizeResourceFields() {
+                const catalogLabels = Array.from(document.querySelectorAll('#id_catalog option')).map(function (option) {
+                    return option.value ? option.text : '';
+                });
+                const resourceLabels = catalogResources.map(function (row) {
+                    return row.resource_type_name || row.name || '';
+                });
+                fitSelectToOptions('id_catalog', catalogLabels);
+                fitSelectToOptions('id_resource', resourceLabels);
+            }
+            const catalogResources = JSON.parse(document.getElementById('catalog-resources').textContent || '[]');
+            function syncCatalogResource() {
+                const catalogId = String($('#id_catalog').val() || '');
+                const selected = catalogResources.find(function (row) { return String(row.id) === catalogId; });
+                const matches = selected ? [selected] : [];
+                const $resource = $('#id_resource');
+                const current = String($resource.val() || '');
+                $resource.empty();
+                $resource.append(new Option('---------', ''));
+                matches.forEach(function (row) {
+                    const text = row.resource_type_name || row.name;
+                    $resource.append(new Option(text, String(row.id), false, String(row.id) === current));
+                });
+                if (matches.length === 1) {
+                    $resource.val(String(matches[0].id));
+                } else if (!matches.some(function (row) { return String(row.id) === current; })) {
+                    $resource.val('');
+                }
+                $resource.trigger('change.select2');
+                const kind = (function () {
+                    const typeName = String((selected && selected.resource_type_name) || '').toLowerCase();
+                    const catalogName = String((selected && selected.name) || '').trim();
+                    if (catalogName === 'Collibra' || typeName === 'collibra') return 'collibra';
+                    if (catalogName === 'EIG API Catalog' || catalogName.toLowerCase().indexOf('vapi') === 0 || typeName === 'api') return 'api';
+                    return '';
+                })();
+                const idInput = document.getElementById('id_resource_identifier');
+                const catalogChanged = catalogId !== syncCatalogResource.lastCatalogId;
+                syncCatalogResource.lastCatalogId = catalogId;
+                if (idInput && catalogChanged) {
+                    if (kind === 'collibra') idInput.value = idInput.getAttribute('data-collibra-id') || '';
+                    else if (kind === 'api') idInput.value = idInput.getAttribute('data-api-id') || '';
+                    else idInput.value = '';
+                }
+                $('#field-resource_identifier').prop('hidden', !kind);
+                const base = selected ? (selected.url || '') : '';
+                const token = String((idInput && idInput.value) || '').trim().replace(/^\/+|\/+$/g, '');
+                $('#id_resource_url').val(base && token ? base.replace(/\/+$/, '') + '/' + token : base);
+                sizeResourceFields();
+            }
+            syncCatalogResource.lastCatalogId = null;
+            $('#id_resource_identifier').on('input', function () {
+                syncCatalogResource.lastCatalogId = String($('#id_catalog').val() || '');
+                syncCatalogResource();
+            });
+            $('#id_catalog').on('change select2:select select2:clear', syncCatalogResource);
+            syncCatalogResource();
+            sizeResourceFields();
+
             // 2. Classification field logic for intended_use field only
             const classificationField = $('#id_classification');
             const defaultText = "Not required for products with a data classification of Public or Protected";
@@ -535,28 +1166,27 @@
                 // Handle ONLY intended use field as requested
                 const intendedUseField = $('#id_intended_use');
                 const intendedUseEditor = intendedUseField.parent().find('.ck-editor__editable').get(0);
+                const editorInstance = (intendedUseEditor && intendedUseEditor.ckeditorInstance) || intendedUseField.get(0).ckeditorInstance;
+                intendedUseField.closest('.col-12').prop('hidden', isExcluded);
 
                 if (isExcluded) {
-                    // Disable intended use field and set default text
-                    if (intendedUseEditor && intendedUseEditor.ckeditorInstance) {
-                        intendedUseEditor.ckeditorInstance.setData(`<p>${defaultText}</p>`);
-                        intendedUseEditor.ckeditorInstance.setReadOnly(true);
-                        $(intendedUseEditor).css('background-color', '#eff2f7').css('opacity', '1');
+                    if (editorInstance) {
+                        editorInstance.enableReadOnlyMode('classification-lock');
+                        if (!editorInstance.getData() || !editorInstance.getData().includes('Not required for products')) {
+                            editorInstance.setData(`<p>${defaultText}</p>`);
+                        }
                     } else {
                         intendedUseField.val(defaultText).prop('readonly', true);
                     }
                     intendedUseField.closest('.ckeditor-field').addClass('ck-disabled');
                 } else {
                     // Enable intended use field and clear default text
-                    if (intendedUseEditor && intendedUseEditor.ckeditorInstance) {
-                        const currentContent = intendedUseEditor.ckeditorInstance.getData();
-                        const shouldClear = currentContent.includes("Not required for products");
-
-                        if (shouldClear) {
-                            intendedUseEditor.ckeditorInstance.setData('');
+                    if (editorInstance) {
+                        editorInstance.disableReadOnlyMode('classification-lock');
+                        const currentContent = editorInstance.getData();
+                        if (currentContent.includes('Not required for products')) {
+                            editorInstance.setData('');
                         }
-                        intendedUseEditor.ckeditorInstance.setReadOnly(false);
-                        $(intendedUseEditor).css('background-color', '#fff').css('opacity', '1');
                     } else {
                         const currentContent = intendedUseField.val();
                         const shouldClear = currentContent.includes("Not required for products");
@@ -580,6 +1210,7 @@
             });
 
             // Multiple timeouts to ensure it runs after Select2 initialization
+            toggleIntendedUse();
             setTimeout(function() {
                 toggleIntendedUse();
             }, 500);
@@ -596,23 +1227,15 @@
             const drRequired = $('#id_data_review_required');
             const drStatus = $('#id_data_review_status');
             const drTeam = $('#id_data_review_team');
-            const drTeamId = "{{ data_review_board_team_id }}";
 
             function toggleDRLogic() {
                 const drRequired = $('#id_data_review_required');
                 const drStatus = $('#id_data_review_status');
                 const drTeam = $('#id_data_review_team');
-                
-                // Select the wrapper div based on the column layout in your edit.html
-                const drTeamContainer = drTeam.closest('.col-12, .col-md-6'); 
                 const drStatusLabel = $('label[for="id_data_review_status"]');
-                
-                const DR_BOARD_ID = "13";
-                const DR_BOARD_NAME = "Data Review Board Team";
 
                 if (drRequired.is(':checked')) {
                     // --- REQUIRED: ON ---
-                    drTeamContainer.show(); // Show the team field
                     drStatusLabel.text('Data Review Board Status');
 
                     // Allow changes to set logic values
@@ -621,21 +1244,10 @@
 
                     drStatus.val('pending').trigger('change');
 
-                    // Logic to ensure "Data Review Board Team (13)" is selected
-                    if (drTeam.find(`option[value="${DR_BOARD_ID}"]`).length === 0) {
-                        const newOption = new Option(DR_BOARD_NAME, DR_BOARD_ID, true, true);
-                        drTeam.append(newOption).trigger('change');
-                    } else {
-                        drTeam.val(DR_BOARD_ID).trigger('change');
-                    }
-
-                    // Lock fields back
                     drStatus.prop('disabled', true);
-                    drTeam.prop('disabled', true);
 
                 } else {
                     // --- REQUIRED: OFF ---
-                    drTeamContainer.hide(); // Hide the team field completely
                     drStatusLabel.text('Note Required'); // Update status label
 
                     // Set status value to not_required
@@ -667,42 +1279,112 @@
 
             // 4. Image form logic
             const maxImages = 5;
-            const imageContainer = $('#image-formset-container');
+            const imageContainer = $('#image-sort-list');
             const imageAddButton = $('#add-image-btn');
             const totalImageForms = $('#id_productimage_set-TOTAL_FORMS');
             const imageTemplate = $('#image-form-template').html();
+            let dragCard = null;
+
+            function productAltText() {
+                return ($('#id_name').val() || '').trim().slice(0, 255);
+            }
+
+            function syncImageAltText() {
+                const alt = productAltText();
+                $('.image-alt-text').val(alt);
+            }
+
+            function layoutProductImages() {
+                const cards = imageContainer.children('.product-image-card');
+                const sortable = cards.length > 1;
+                imageContainer.toggleClass('is-sortable', sortable);
+                cards.each(function(index) {
+                    $(this)
+                        .toggleClass('is-main', index === 0)
+                        .toggleClass('is-extra', index !== 0)
+                        .attr('draggable', sortable ? 'true' : 'false');
+                    $(this).find('.image-position').val(index);
+                });
+            }
 
             function updateImageButtonVisibility() {
                 const currentCount = $('.image-form-row').length;
                 if (currentCount >= maxImages) imageAddButton.hide();
                 else imageAddButton.show();
+                layoutProductImages();
             }
 
+            syncImageAltText();
+            $('#id_name').on('input', syncImageAltText);
+
+            const imagePicker = $('#add-image-picker');
+
             imageAddButton.click(function() {
-                const formIdx = parseInt(totalImageForms.val());
-                const newFormHtml = imageTemplate.replace(/__prefix__/g, formIdx);
-                imageContainer.append(newFormHtml);
-                totalImageForms.val(formIdx + 1);
-                imageContainer.find('.new-image-form').last().find('.image-input').click();
-                updateImageButtonVisibility();
+                if ($('.image-form-row').length >= maxImages) return;
+                imagePicker.val('');
+                imagePicker.trigger('click');
             });
 
-            $(document).on('change', '.image-input, input[type="file"]', function(e) {
-                const file = e.target.files[0];
-                const preview = $(this).closest('.image-form-row').find('.img-preview');
-                if (file) {
+            imagePicker.on('change', function() {
+                Array.from(this.files || []).forEach(function(file) {
+                    if ($('.image-form-row').length >= maxImages) return;
+                    const formIdx = parseInt(totalImageForms.val(), 10);
+                    imageContainer.append(imageTemplate.replace(/__prefix__/g, formIdx));
+                    totalImageForms.val(formIdx + 1);
+                    const row = imageContainer.find('.new-image-form').last();
+                    const input = row.find('.image-input').get(0);
+                    const transfer = new DataTransfer();
+                    transfer.items.add(file);
+                    input.files = transfer.files;
+                    row.find('.image-alt-text').val(productAltText());
                     const reader = new FileReader();
                     reader.onload = function(event) {
-                        preview.attr('src', event.target.result);
+                        row.find('.img-preview').attr('src', event.target.result);
                     };
                     reader.readAsDataURL(file);
-                }
+                });
+                updateImageButtonVisibility();
             });
 
             $(document).on('click', '.remove-form-btn', function() {
                 $(this).closest('.image-form-row').remove();
                 updateImageButtonVisibility();
             });
+
+            $(document).on('dragstart', '.product-image-card', function(e) {
+                if ($(e.target).closest('.image-icon-btn, .remove-form-btn').length) {
+                    e.preventDefault();
+                    return;
+                }
+                if (imageContainer.children('.product-image-card').length < 2) {
+                    e.preventDefault();
+                    return;
+                }
+                dragCard = this;
+                $(this).addClass('is-dragging');
+                e.originalEvent.dataTransfer.effectAllowed = 'move';
+                e.originalEvent.dataTransfer.setData('text/plain', 'image');
+            });
+
+            $(document).on('dragover', '.product-image-card', function(e) {
+                if (!dragCard || dragCard === this) return;
+                e.preventDefault();
+                const rect = this.getBoundingClientRect();
+                const horizontal = rect.width >= rect.height;
+                const after = horizontal
+                    ? e.originalEvent.clientX > rect.left + rect.width / 2
+                    : e.originalEvent.clientY > rect.top + rect.height / 2;
+                this.parentNode.insertBefore(dragCard, after ? this.nextSibling : this);
+            });
+
+            $(document).on('drop dragend', '.product-image-card', function(e) {
+                e.preventDefault();
+                $(this).removeClass('is-dragging');
+                dragCard = null;
+                layoutProductImages();
+            });
+
+            $('#product-edit-form').on('submit', layoutProductImages);
 
             updateImageButtonVisibility();
 
@@ -1233,6 +1915,8 @@
 
             // Use logic: Disable for Public/Protected, Enable/Clear for others
             const shouldDisable = (classificationText === "Public" || classificationText === "Protected");
+            const wrapper = textarea ? textarea.closest('.col-12') : null;
+            if (wrapper) wrapper.hidden = shouldDisable;
 
             if (editor) {
                 if (shouldDisable) {

@@ -1,0 +1,309 @@
+{% load static %}
+<div class="two-col-sidebar" id="two-col-sidebar">
+	<!-- ========================================================= MINI SIDEBAR ========================================================= -->
+	<div class="twocol-mini">
+		<div class="dropdown">
+			<a href="#" class=" btn btn-primary bg-gradient btn-sm btn-icon rounded-circle d-flex align-items-center justify-content-center " data-bs-toggle="dropdown" data-bs-display="static" data-bs-reference="parent" aria-expanded="false" aria-label="Add" role="button">
+				<i class="sidebar-icon isax isax-add" aria-hidden="true">
+				</i>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-start">
+				<li>
+					<h6 class="dropdown-header">
+						Create
+					</h6>
+				</li>
+				<li>
+					<a class="dropdown-item d-flex align-items-center" href="{% url 'workflow:builder_new' %}">
+						<i class=" sidebar-icon isax isax-hierarchy-square-3 me-2 " aria-hidden="true">
+						</i>
+						New Workflow
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item d-flex align-items-center" href="{% url 'workflow_templates:forms_form_builder' %}">
+						<i class=" sidebar-icon isax isax-document-text me-2 " aria-hidden="true">
+						</i>
+						New Workflow Form
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item d-flex align-items-center" href="{% url 'workflow_templates:rules_rule_builder' %}">
+						<i class=" sidebar-icon isax isax-setting-4 me-2 " aria-hidden="true">
+						</i>
+						New Decision Rule
+					</a>
+				</li>
+				<li>
+					<hr class="dropdown-divider">
+				</li>
+				<li>
+					<a class="dropdown-item d-flex align-items-center" href="/sa/dar/forms/definitions/">
+						<i class=" sidebar-icon isax isax-document-text-1 me-2 " aria-hidden="true">
+						</i>
+						Forms
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item d-flex align-items-center" href="/sa/dar/forms/submissions/">
+						<i class=" sidebar-icon isax isax-document-text-1 me-2 " aria-hidden="true">
+						</i>
+						Submissions
+					</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="menu-list">
+			<li class="{% if request.resolver_match.app_name == 'command_center' %}active{% endif %}">
+				<a href="{% url 'command_center:dashboard' %}" data-bs-placement="right" data-bs-title="Command Center" data-bs-toggle="tooltip" aria-label="Command Center">
+					<i class="sidebar-icon isax isax-command" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'marketplace_admin' or request.resolver_match.app_name == 'checkout_pages' %}active{% endif %}">
+				<a href="/sa/marketplace/admin/dashboard/" data-bs-placement="right" data-bs-title="Marketplace" data-bs-toggle="tooltip" aria-label="Marketplace">
+					<i class="sidebar-icon isax isax-box" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'orders-admin' %}active{% endif %}">
+				<a href="/sa/orders/dashboard" data-bs-placement="right" data-bs-title="Orders" data-bs-toggle="tooltip" aria-label="Orders">
+					<i class="sidebar-icon isax isax-menu-board" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'dar-admin' or request.resolver_match.url_name == 'dar-form-builder' %}active{% endif %}">
+				<a href="/sa/dar/forms/" data-bs-placement="right" data-bs-title="Data Access" data-bs-toggle="tooltip" aria-label="Data Access">
+					<i class="sidebar-icon isax isax-document-text-1" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'notifications' %}active{% endif %}">
+				<a href="{% url 'notifications:list' %}" data-bs-placement="right" data-bs-title="Notifications" data-bs-toggle="tooltip" aria-label="Notifications">
+					<i class="sidebar-icon isax isax-notification-bing" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'workflow' or request.resolver_match.app_name == 'workflow_templates' %}active{% endif %}">
+				<a href="{% url 'workflow:dashboard' %}" data-bs-placement="right" data-bs-title="Workflow" data-bs-toggle="tooltip" aria-label="Workflow">
+					<i class="sidebar-icon isax isax-hierarchy-square-3" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.app_name == 'deployment' %}active{% endif %}">
+				<a href="{% url 'deployment:dashboard' %}" data-bs-placement="right" data-bs-title="Deployment" data-bs-toggle="tooltip" aria-label="Deployment">
+					<i class="sidebar-icon isax isax-send-2" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li class="{% if request.resolver_match.url_name == 'platform_settings' %}active{% endif %}">
+				<a href="{% url 'platform_settings' %}" data-bs-placement="right" data-bs-title="Settings" data-bs-toggle="tooltip" aria-label="Settings">
+					<i class="sidebar-icon isax isax-setting-25" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'logout' %}" data-bs-placement="right" data-bs-title="Logout" data-bs-toggle="tooltip" aria-label="Logout">
+					<i class="sidebar-icon isax isax-login-15" aria-hidden="true">
+					</i>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- ========================================================= FULL SIDEBAR ========================================================= -->
+	<div class="sidebar" id="sidebar-two">
+		<!-- Logo -->
+		<div class="sidebar-logo">
+			<a class="logo logo-normal" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" src="{% static 'assets/img/logo.svg' %}" alt="Marketplace Administration" style=" width: 100%; max-width: 150px; position: relative; bottom: 12px; ">
+			</a>
+			<a class="logo-small" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" src="{% static 'assets/img/logo-small.svg' %}" alt="Marketplace Administration">
+			</a>
+			<a class="dark-logo" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" src="{% static 'assets/img/logo-white.svg' %}" alt="Marketplace Administration">
+			</a>
+			<a class="dark-small" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" src="{% static 'assets/img/logo-small-white.svg' %}" alt="Marketplace Administration">
+			</a>
+			<a href="#" id="toggle_btn" aria-label="Toggle sidebar" role="button">
+				<i class=" sidebar-icon isax isax-menu-1 " aria-hidden="true">
+				</i>
+			</a>
+		</div>
+		<!-- Search -->
+		<div class="sidebar-search">
+			<div class="input-icon-end position-relative">
+				<label for="sidebarSearch" class="visually-hidden">
+					Search Navigation
+				</label>
+				<input class="form-control" type="search" id="sidebarSearch" placeholder="Search" autocomplete="off" aria-controls="sidebar-menu">
+				<span class="input-icon-addon">
+					<i class=" sidebar-icon isax isax-search-normal " aria-hidden="true">
+					</i>
+				</span>
+			</div>
+		</div>
+		<div class="sidebar-inner" data-simplebar>
+			<div class="sidebar-menu" id="sidebar-menu">
+				<ul>
+					{% for section in sidebar_sections %}
+						<li class="menu-title"><span>{{ section.title }}</span></li>
+						{% include "gdx_admin/partials/sidebar_nodes.html" with nodes=section.items %}
+					{% endfor %}
+					<li class="menu-title"><span>Templates</span></li>
+					<li class="submenu">
+						<a href="#" class="submenu-toggle" role="button" aria-expanded="false">
+							<i class="sidebar-icon isax isax-document" aria-hidden="true"></i>
+							<span>Templates</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<ul>
+							<li><a href="/sa/checkout/form-builder/"><span>Checkout Form</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/"><span>Walkthrough</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/getting-started/"><span>Getting Started</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/create-workflow/"><span>Create Workflow</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/form-builder/"><span>Form Builder</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/rule-builder/"><span>Rule Builder</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/publish-workflow/"><span>Publish Workflow</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/run-monitoring/"><span>Run Monitoring</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/approvals/"><span>Approvals</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/marketplace/"><span>Marketplace</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/connectors/"><span>Connectors</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/governance/"><span>Governance</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/observability/"><span>Observability</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/operations/"><span>Operations</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/workflow-vikki/"><span>Workflow Vikki</span></a></li>
+							<li><a href="/sa/workflow/walkthrough/administration/"><span>Administration</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- =============================================================
+     ACTIVE SIDEBAR SYNCHRONIZATION
+     ============================================================= -->
+<script>
+(function () {
+	"use strict";
+
+	function normalizedPath(value) {
+		try {
+			var path = new URL(value, window.location.origin).pathname.replace(/\/+$/, "");
+			return path || "/";
+		} catch (error) {
+			return "";
+		}
+	}
+
+	function expandActiveBranch(link) {
+		link.classList.add("active");
+		link.setAttribute("aria-current", "page");
+		var item = link.closest("li");
+		while (item) {
+			var list = item.parentElement;
+			if (!list || !list.closest("#sidebar-menu")) {
+				break;
+			}
+			list.style.display = "block";
+			var parent = list.closest("li.submenu");
+			if (!parent) {
+				break;
+			}
+			parent.classList.add("active");
+			var toggle = parent.querySelector(":scope > a");
+			if(toggle) {
+				toggle.classList.add("subdrop");
+				toggle.setAttribute("aria-expanded", "true");
+			}
+			item = parent;
+		}
+	}
+
+	function syncSidebarState() {
+		var sidebar = document.getElementById("sidebar-menu");
+		if (!sidebar) {
+			return;
+		}
+		var current = normalizedPath(window.location.href);
+		var links = Array.from(sidebar.querySelectorAll('a:not([href="#"]):not([href=""])'));
+		var matches = links.filter(function (link) {
+			return (normalizedPath(link.href) === current);
+		});
+		if (!matches.length) {
+			matches = links.filter(function (link) {
+				var candidate = normalizedPath(link.href);
+				return (candidate !== "/" && current.indexOf(candidate + "/") === 0);
+			}).sort(function (left, right) {
+				return (normalizedPath(right.href).length - normalizedPath(left.href).length);
+			}).slice(0, 1);
+		}
+		matches.forEach(expandActiveBranch);
+	}
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", syncSidebarState);
+	} else {
+		syncSidebarState();
+	}
+
+	function filterSidebar() {
+		var sidebar = document.getElementById("sidebar-menu");
+		var input = document.getElementById("sidebarSearch");
+		if (!sidebar || !input) {
+			return;
+		}
+		var query = input.value.trim().toLowerCase();
+		sidebar.querySelectorAll("li").forEach(function (item) {
+			item.classList.remove("is-filter-hidden");
+		});
+		if (!query) {
+			return;
+		}
+		sidebar.querySelectorAll("li").forEach(function (item) {
+			if (item.classList.contains("menu-title")) {
+				return;
+			}
+			var text = (item.textContent || "").toLowerCase();
+			if (text.indexOf(query) === -1) {
+				item.classList.add("is-filter-hidden");
+			}
+		});
+		sidebar.querySelectorAll("li.submenu").forEach(function (item) {
+			if (item.classList.contains("is-filter-hidden")) {
+				return;
+			}
+			var list = item.querySelector(":scope > ul");
+			var toggle = item.querySelector(":scope > a");
+			if (list) {
+				list.style.display = "block";
+			}
+			if (toggle) {
+				toggle.classList.add("subdrop");
+				toggle.setAttribute("aria-expanded", "true");
+			}
+		});
+		var titles = Array.from(sidebar.querySelectorAll("li.menu-title"));
+		titles.forEach(function (title, index) {
+			var next = titles[index + 1];
+			var node = title.nextElementSibling;
+			var visible = false;
+			while (node && node !== next) {
+				if (!node.classList.contains("is-filter-hidden")) {
+					visible = true;
+					break;
+				}
+				node = node.nextElementSibling;
+			}
+			title.classList.toggle("is-filter-hidden", !visible);
+		});
+	}
+
+	var search = document.getElementById("sidebarSearch");
+	if (search) {
+		search.addEventListener("input", filterSidebar);
+	}
+})();
+</script>

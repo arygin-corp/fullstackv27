@@ -5,6 +5,7 @@ from django.utils import timezone
 from rest_framework import mixins, status, viewsets
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.decorators import action
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,8 +15,8 @@ from apps.orders.authentication import MarketplaceSignInAuthentication
 from .access import can_manage_protected_membership, can_manage_workflow, can_view_audit, normalized_email
 from .audit import snapshot, write_audit
 from .models import IntakeSecurityEvent, ProductIntake, ProductIntakeAuditLog, UserNotification
-from .serializers import AuditSerializer, IntakeApprovalEventSerializer, NotificationSerializer, ProductIntakeReadSerializer, ProductIntakeWriteSerializer, ReasonSerializer, RejectSerializer, SecurityEventSerializer, AssignmentSerializer, MembershipSerializer
-from .services import activate_marketplace_product, approve_intake, assign_intake, reject_intake, request_information, resubmit_intake, start_review, submit_intake
+from .serializers import AuditSerializer, IntakeApprovalEventSerializer, NotificationSerializer, ProductIntakeListSerializer, ProductIntakeReadSerializer, ProductIntakeWriteSerializer, ReasonSerializer, RejectSerializer, SecurityEventSerializer, AssignmentSerializer, MembershipSerializer
+from .services import activate_marketplace_product, approve_intake, assign_intake, create_draft_product, curate_product, reject_intake, request_information, resubmit_intake, start_review, submit_intake
 
 
 def signed_in_email(request):
@@ -31,12 +32,22 @@ def signed_in_email(request):
 class ProductIntakeViewSet(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,mixins.UpdateModelMixin,viewsets.GenericViewSet):
     authentication_classes = [SessionAuthentication, BasicAuthentication, MarketplaceSignInAuthentication]
     permission_classes=[IsAuthenticated]
+    pagination_class = None
 
     def get_serializer_class(self):
+        if self.action == "list":
+            return ProductIntakeListSerializer
         return ProductIntakeWriteSerializer if self.action in {"create","update","partial_update"} else ProductIntakeReadSerializer
 
     def get_queryset(self):
         qs=ProductIntake.objects.select_related("marketplace_product","marketplace_domain","marketplace_datatype","marketplace_classification").prefetch_related("product_tags")
+        listing = self.action == "list" or (self.request.method == "GET" and not self.kwargs.get("pk"))
+        if listing:
+            from apps.profiles.access import can_access_backend
+            from apps.profiles.api import _django_user
+            if not can_access_backend(_django_user(self.request)):
+                raise PermissionDenied("Backend access is required.")
+            return qs.exclude(status=ProductIntake.Status.DRAFT).order_by("-submitted_at", "-created_at", "-id")
         if can_manage_workflow(self.request.user): return qs
         email=signed_in_email(self.request)
         if not email:
@@ -75,6 +86,16 @@ class ProductIntakeViewSet(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.
     def approve(self,request,pk=None):
         data=ReasonSerializer(data=request.data); data.is_valid(raise_exception=True)
         obj=approve_intake(intake_id=pk,reason=data.validated_data["reason"],actor=request.user,request=request); return Response(ProductIntakeReadSerializer(obj).data)
+
+    @action(detail=True,methods=["post"],url_path="create-draft-product",url_name="create-draft-product")
+    def create_draft(self,request,pk=None):
+        data=ReasonSerializer(data=request.data); data.is_valid(raise_exception=True)
+        obj=create_draft_product(intake_id=pk,reason=data.validated_data["reason"],actor=request.user,request=request); return Response(ProductIntakeReadSerializer(obj).data)
+
+    @action(detail=True,methods=["post"],url_path="curate-product",url_name="curate-product")
+    def curate(self,request,pk=None):
+        data=ReasonSerializer(data=request.data); data.is_valid(raise_exception=True)
+        obj=curate_product(intake_id=pk,reason=data.validated_data["reason"],actor=request.user,request=request); return Response(ProductIntakeReadSerializer(obj).data)
 
     @action(detail=True,methods=["post"])
     def reject(self,request,pk=None):

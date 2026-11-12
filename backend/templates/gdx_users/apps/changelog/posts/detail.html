@@ -1,0 +1,61 @@
+{% extends "gdx_users/partials/base.html" %}
+{% load changelog_extras %}
+
+{% block extra_css %}
+    {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+{% endblock %}
+
+{% block contents %}
+<div class="record-view">
+    <div class="card record-hero mb-3">
+        <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                <div>
+                    <div class="record-kicker">Release</div>
+                    <h3 class="mb-2">{{ post.version }}</h3>
+                    <span class="badge-soft-dark me-1 badge badge-soft-dark-custom">{{ post.get_status_display }}</span>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    {% if perms.changelog.change_post %}
+                        <a class="btn btn-primary" href="{% url 'changelog_staff:post-update' post.pk %}">Edit</a>
+                    {% endif %}
+                    <a class="btn btn-light" href="{% url 'changelog_staff:post-list' %}">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="record-facts mb-3">
+        <div class="record-fact"><span>Title</span><strong>{{ post.title }}</strong></div>
+        <div class="record-fact"><span>Release date</span><strong>{{ post.release_date|date:"j F, Y" }}</strong></div>
+        <div class="record-fact"><span>Scheduled</span><strong>{{ post.publish_at|date:"j F, Y"|default:"Not scheduled" }}</strong></div>
+    </div>
+    <div class="d-flex gap-2 flex-wrap mb-3">
+        {% if post.status == "DRAFT" and perms.changelog.change_post %}
+            <form method="post" action="{% url 'changelog_staff:post-submit' post.pk %}">{% csrf_token %}<button class="btn btn-light" type="submit">Submit for review</button></form>
+        {% endif %}
+        {% if post.status == "REVIEW" and perms.changelog.approve_post %}
+            <form method="post" action="{% url 'changelog_staff:post-approve' post.pk %}">{% csrf_token %}<button class="btn btn-primary" type="submit">Approve</button></form>
+        {% endif %}
+        {% if post.status == "APPROVED" and perms.changelog.publish_post %}
+            <form method="post" action="{% url 'changelog_staff:post-publish' post.pk %}">{% csrf_token %}<button class="btn btn-primary" type="submit">Publish now</button></form>
+        {% endif %}
+        {% if post.status == "PUBLISHED" and perms.changelog.publish_post %}
+            <form method="post" action="{% url 'changelog_staff:post-archive' post.pk %}">{% csrf_token %}<button class="btn btn-light" type="submit">Archive</button></form>
+        {% endif %}
+    </div>
+    <div class="card mb-3">
+        <div class="card-body record-copy">{{ post.desc }}</div>
+    </div>
+    {% for section in sections %}
+        {% if section.body|has_meaningful_content %}
+            <div class="card mb-3">
+                <div class="card-body record-copy">
+                    {% if section.category %}<div class="record-kicker">{{ section.category.name }}</div>{% endif %}
+                    {% if section.subtitle %}<h4 class="mb-2">{{ section.subtitle }}</h4>{% endif %}
+                    {{ section.body|sanitized_html }}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

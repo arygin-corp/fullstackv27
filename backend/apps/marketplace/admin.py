@@ -1,4 +1,5 @@
 from django.contrib import admin, messages
+from django import forms
 from django.core.exceptions import ValidationError
 from django.forms.models import BaseInlineFormSet
 from .models import (
@@ -8,6 +9,9 @@ from .models import (
     Badge,
     Catalog,
     Classification,
+    ResourceKind,
+    ResourceType,
+    ResourceUrlTemplate,
     Company,
     Contact,
     AlternateApprover,
@@ -550,11 +554,48 @@ class ContactAdmin(admin.ModelAdmin):
 # Catalog
 # =============================================================
 
+@admin.register(ResourceKind)
+class ResourceKindAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(ResourceUrlTemplate)
+class ResourceUrlTemplateAdmin(admin.ModelAdmin):
+    list_display = ("pattern",)
+    search_fields = ("pattern",)
+
+
+class ResourceTypeAdminForm(forms.ModelForm):
+    class Meta:
+        model = ResourceType
+        fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        query = self.fields.get("query")
+        if query is not None:
+            query.disabled = True
+            query.initial = "session=true"
+            query.help_text = "Applied only when the type is API. This value cannot be edited."
+
+    class Media:
+        js = ("gdx_admin/theme/js/resource_type_admin.js",)
+
+
+@admin.register(ResourceType)
+class ResourceTypeAdmin(admin.ModelAdmin):
+    form = ResourceTypeAdminForm
+    list_display = ("name", "type", "url", "api_id", "collibra_id")
+    readonly_fields = ("query",)
+
+
 @admin.register(Catalog)
 class CatalogAdmin(admin.ModelAdmin):
 
     list_display = (
         "name",
+        "resourcetype",
         "is_active",
     )
 
@@ -576,14 +617,39 @@ class BadgeAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "is_active",
+        "is_system",
     )
 
     readonly_fields = (
+        "is_system",
+        "system_key",
+        "image",
         "created_by",
         "created_at",
         "updated_by",
         "updated_at",
     )
+
+    def has_change_permission(self, request, obj=None):
+        if obj is not None and obj.is_system and not self._superadmin(request):
+            return False
+        return super().has_change_permission(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        if obj is not None and obj.is_system and not self._superadmin(request):
+            return False
+        return super().has_delete_permission(request, obj)
+
+    def delete_queryset(self, request, queryset):
+        if queryset.filter(is_system=True).exists() and not self._superadmin(request):
+            from django.contrib import messages
+            self.message_user(request, "System badges can only be deleted by a superadmin.", level=messages.ERROR)
+            queryset = queryset.filter(is_system=False)
+        super().delete_queryset(request, queryset)
+
+    def _superadmin(self, request):
+        from apps.marketplace.system_badges import user_is_superadmin
+        return user_is_superadmin(request.user)
 
 
 # =============================================================
@@ -862,7 +928,7 @@ class ProductAdmin(admin.ModelAdmin):
             "Resources & Organization",
             {
                 "fields": (
-                    "resource_url",
+                    "resource",
                     "org",
                     "pi",
                     "sensitive_pi",

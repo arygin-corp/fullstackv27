@@ -454,6 +454,11 @@ class ProductQuerySet(models.QuerySet):
     def published(self):
         return self.filter(is_active=True, status="approved")
 
+    def hide_archived(self, status=""):
+        if (status or "").strip() == "archived":
+            return self
+        return self.exclude(status="archived")
+
 
 class Product(models.Model):
     objects = ProductQuerySet.as_manager()

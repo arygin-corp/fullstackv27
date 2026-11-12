@@ -10,7 +10,7 @@
 
 {% block content %}
 <main class="module-page">
-    {% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" with hero_kicker="DOCUMENTATION" hero_title="Documentation" hero_description="Documentation sites published from the GitHub repository." hero_metric_label="Sites" hero_metric_value=sites|length hero_metric_caption="Ready to open" hero_icon="▤" %}
+    
     <section class="module-portfolio-grid">
         {% for site in sites %}
         <article class="module-portfolio-card">
@@ -31,4 +31,3 @@
 </main>
 {% endblock %}
 
-{% block page_header %}{% endblock %}

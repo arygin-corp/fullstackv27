@@ -113,9 +113,12 @@ export class AppComponent implements OnInit {
       console.error('MSAL Redirect Error:', err);
     }
 
-    this.router.events.subscribe((event) => {
-      if ((event instanceof NavigationEnd)) {
-        this.scroller.scrollToPosition([0, 0]);
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe(event => {
+      const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
+      if (!fragment) {
+        this.scrollPageToTop();
       }
     });
     // this.cart.onAdding$.subscribe(product => {
@@ -196,6 +199,21 @@ export class AppComponent implements OnInit {
       prompt: "select_account" 
     };
     this.msalService.loginRedirect(loginRequestOpts);
+  }
+
+  private scrollPageToTop(): void {
+    const reset = () => {
+      this.scroller.scrollToPosition([0, 0]);
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      document.querySelectorAll<HTMLElement>('.site__body').forEach(node => {
+        node.scrollTop = 0;
+      });
+    };
+
+    reset();
+    setTimeout(reset);
   }
 
   public isCallbackOrIframe(): boolean {

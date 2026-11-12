@@ -6,6 +6,20 @@ from apps.profiles.models import EmployeeType
 DATA_MARKETPLACE_TEAM_NAME = "Data Marketplace Team"
 
 
+def can_access_backend(user):
+    """True when this account can sign in to the staff backend."""
+    if not getattr(user, "is_authenticated", False) or not getattr(user, "pk", None):
+        return False
+    if not (getattr(user, "is_staff", False) or getattr(user, "is_superuser", False)):
+        return False
+    if getattr(user, "is_superuser", False):
+        return True
+    try:
+        return bool(user.profile.is_verified)
+    except ObjectDoesNotExist:
+        return False
+
+
 def can_edit_roadmap(on_team):
     return bool(on_team)
 

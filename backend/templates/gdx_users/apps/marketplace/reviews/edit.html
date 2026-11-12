@@ -1,0 +1,89 @@
+{% extends "gdx_users/partials/base.html" %}
+{% block extra_css %}
+{% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+<style>
+    .review-edit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+    .review-edit-grid .mb-3 input,
+    .review-edit-grid .mb-3 select,
+    .review-edit-grid .mb-3 textarea,
+    .record-form .review-edit-wide textarea { max-width: none; }
+    .record-form .review-edit-wide textarea { height: 96px; }
+    .review-scores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 16px; }
+    .review-flags { display: flex; flex-wrap: wrap; gap: 18px; }
+    .review-flags .mb-3 { margin-bottom: 0; }
+    @media (max-width: 991px) {
+        .review-edit-grid, .review-scores { grid-template-columns: 1fr; }
+    }
+</style>
+{% endblock %}
+{% block contents %}
+<form method="post" class="record-view record-form">
+    {% csrf_token %}
+    {{ form.author.as_hidden }}
+    <div class="card record-hero mb-3">
+        <div class="card-body">
+            <div class="d-flex flex-wrap gap-4">
+                {% if product_image_url %}
+                    <div class="record-media">
+                        <img src="{{ product_image_url }}" alt="{{ object.product.name }}">
+                    </div>
+                {% endif %}
+                <div class="flex-grow-1">
+                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                        <div>
+                            <div class="record-kicker">Edit review</div>
+                            <h3 class="mb-2">{{ object.title|default:"Review" }}</h3>
+                            {% if object.status == "approved" %}
+                                <span class="badge-soft-success me-1 badge badge-soft-success-custom">{{ object.get_status_display }}</span>
+                            {% elif object.status == "rejected" %}
+                                <span class="badge-soft-danger me-1 badge badge-soft-danger-custom">{{ object.get_status_display }}</span>
+                            {% else %}
+                                <span class="badge-soft-info me-1 badge badge-soft-info-custom">{{ object.get_status_display }}</span>
+                            {% endif %}
+                            {% if object.product_id %}
+                                <div class="record-copy mt-3 mb-0">{{ object.product.name }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="{{ cancel_url }}" class="btn btn-light">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+    {% endif %}
+    <div class="card">
+        <div class="card-body">
+            <div class="review-edit-grid">
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.title %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.product %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.rating %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.status %}
+            </div>
+            <div class="review-edit-wide">
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.comment %}
+            </div>
+            <div class="review-scores">
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.quality %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.value_for_money %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.ease_of_use %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.durability %}
+            </div>
+            <div class="review-flags">
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.would_recommend %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.met_expectations %}
+                {% include "gdx_users/apps/marketplace/partials/record_field.html" with field=form.verified_purchaser %}
+            </div>
+            {% if is_super_admin and delete_url %}
+                <div class="d-flex mt-4">
+                    <a href="{{ delete_url }}" class="btn btn-danger ms-auto">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</form>
+{% endblock %}

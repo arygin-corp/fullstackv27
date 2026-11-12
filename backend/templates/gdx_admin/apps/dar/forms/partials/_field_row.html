@@ -1,8 +1,0 @@
-<div class="list-group-item py-3">
-  <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
-    <div class="min-w-0"><strong class="text-break">{{ field.label }}</strong> <code class="small">{{ field.key }}</code>{% if field.help_text %}<small class="d-block text-muted mt-1">{{ field.help_text }}</small>{% endif %}</div>
-    {% include "gdx_admin/apps/dar/forms/partials/_field_badges.html" with field=field %}
-  </div>
-  {% if field.options.all %}<div class="small text-muted mt-2">Options: {% for option in field.options.all %}{% if option.is_active %}<code>{{ option.value }}</code>{% if not forloop.last %}, {% endif %}{% endif %}{% endfor %}</div>{% endif %}
-  {% if field.validation_rules.all %}<div class="small text-muted mt-1">Validation: {% for validation in field.validation_rules.all %}{% if validation.is_active %}{{ validation.get_validation_type_display }}{% if not forloop.last %}, {% endif %}{% endif %}{% endfor %}</div>{% endif %}
-</div>

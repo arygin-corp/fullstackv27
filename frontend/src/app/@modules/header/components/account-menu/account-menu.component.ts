@@ -1,4 +1,5 @@
 import { Injectable, Component, EventEmitter, Output } from '@angular/core';
+import { ProfileStatus, ProfileStatusService } from '../../services/profile-status.service';
 import { HttpClient } from '@angular/common/http';
 import { MsalService } from '@azure/msal-angular';
 import { PicService } from '../../../../@shared/services/pic.service';
@@ -23,11 +24,13 @@ export class AccountMenuComponent {
     
     @Output() closeMenu: EventEmitter<void> = new EventEmitter<void>();
     photo: SafeUrl;
+    statusOpen = false;
 
     constructor(
         private msalService: MsalService,
         private http: HttpClient,
-        private picService: PicService
+        private picService: PicService,
+        public profileStatus: ProfileStatusService
     ) { }
 
     ngOnInit() {
@@ -67,6 +70,19 @@ export class AccountMenuComponent {
     logout() {
         this.msalService.logout();
         sessionStorage.clear();
+    }
+
+    toggleStatus(event: Event): void {
+        event.preventDefault();
+        event.stopPropagation();
+        this.statusOpen = !this.statusOpen;
+    }
+
+    setStatus(status: ProfileStatus, event: Event): void {
+        event.preventDefault();
+        event.stopPropagation();
+        this.profileStatus.set(status);
+        this.statusOpen = false;
     }
 
     get jobTitleLabel(): string {

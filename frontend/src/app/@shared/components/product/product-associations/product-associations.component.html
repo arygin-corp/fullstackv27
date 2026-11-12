@@ -31,7 +31,7 @@
     <!-- ===================================================== -->
     <!-- Associated Product Cards                              -->
     <!-- ===================================================== -->
-    <div id="product-associations-list" class="
+    <div #associationList id="product-associations-list" class="
             product-associations__list
         ">
         <article *ngFor="
@@ -49,123 +49,48 @@
                     association
                 )
             ">
-            <div class="
-                    product-association__content
-                ">
-                <!-- ========================================= -->
-                <!-- Checkbox + Association Badges            -->
-                <!-- ========================================= -->
-                <div class="
-                        product-association__badge-row
-                    ">
-                    <!--
-                        Individual checkbox.
-
-                        IMPORTANT:
-                        The checkbox is the FIRST item
-                        in this flex row, so it appears
-                        before Related / Similar.
-                    -->
-                    <input #associationCheckbox type="checkbox" class="
-                            product-association__checkbox
-                        " [id]="
-                            'product-association-' +
-                            association.id
-                        " [attr.aria-label]="
-                            getAssociationCheckboxLabel(
-                                association
-                            )
-                        " [checked]="
-                            isAssociationSelected(
-                                association
-                            )
-                        " [disabled]="
-                            addingAssociatedProducts ||
-                            isAssociatedProductInCart(
-                                association
-                            )
-                        " (change)="
-                            toggleAssociation(
-                                association,
-                                associationCheckbox.checked
-                            )
-                        ">
-                    <!-- Association Type -->
-                    <span class="
-                            association-badge
-                        " [ngClass]="
-                            getAssociationBadgeClass(
-                                association
-                            )
-                        ">
-                        {{ getAssociationBadgeLabel(
-                                association
-                            )
-                        }}
-                    </span>
-                    <!-- Already in Cart -->
-                    <span *ngIf="
-                            isAssociatedProductInCart(
-                                association
-                            )
-                        " class="
-                            association-badge
-                            association-badge--in-cart
-                        "> Already in Cart </span>
+            <div class="product-association__content">
+                <div class="product-association__body">
+                    <div class="product-association__image-wrap">
+                        <div class="product-association__overlay">
+                            <input #associationCheckbox type="checkbox" class="product-association__checkbox" [id]="'product-association-' + association.id" [attr.aria-label]="getAssociationCheckboxLabel(association)" [checked]="isAssociationSelected(association)" [disabled]="addingAssociatedProducts || isAssociatedProductInCart(association)" (change)="toggleAssociation(association, associationCheckbox.checked)">
+                            <span class="association-badge" [ngClass]="getAssociationBadgeClass(association)">
+                                {{ getAssociationBadgeLabel(association) }}
+                            </span>
+                            <span *ngIf="isAssociatedProductInCart(association)" class="association-badge association-badge--in-cart">
+                                Already in Cart
+                            </span>
+                        </div>
+                        <a class="product-association__image" [routerLink]="['/marketplace/product', association.associated_product.slug]">
+                            <img [src]="association.associated_product.images?.length ? association.associated_product.images[0] : 'assets/images/product_images/default-product.png'" [alt]="association.associated_product.name">
+                        </a>
+                    </div>
+                    <div class="product-association__main">
+                        <div class="product-association__top">
+                            <span *ngIf="association.associated_product.datatype" class="product-association__datatype">
+                                {{ association.associated_product.datatype }}
+                            </span>
+                            <span *ngIf="association.associated_product.classification" class="product-association__classification">
+                                {{ association.associated_product.classification }}
+                            </span>
+                        </div>
+                        <h4 class="product-association__name">
+                            {{ association.associated_product.name }}
+                        </h4>
+                        <p class="product-association__summary-text">
+                            {{ association.associated_product.short_desc || 'No description available.' }}
+                        </p>
+                        <div class="product-association__meta">
+                            <span *ngIf="association.associated_product.domain">
+                                {{ association.associated_product.domain }}
+                            </span>
+                            <a class="product-association__details" [routerLink]="[
+                                    '/marketplace/product',
+                                    association.associated_product.slug
+                                ]">View Details</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- ========================================= -->
-                <!-- Product Image                             -->
-                <!-- ========================================= -->
-                <a class="
-                        product-association__image
-                    " [routerLink]="[
-                        '/marketplace/product',
-                        association
-                            .associated_product
-                            .slug
-                    ]">
-                    <img [src]="
-                            association
-                                .associated_product
-                                .images?.length
-                                ?
-                                association
-                                    .associated_product
-                                    .images[0]
-                                :
-                                'assets/images/product_images/default-product.png'
-                        " [alt]="
-                            association
-                                .associated_product
-                                .name
-                        ">
-                </a>
-                <!-- ========================================= -->
-                <!-- Product Name                              -->
-                <!-- ========================================= -->
-                <div class="
-                        product-association__name
-                    ">
-                    {{ association
-                            .associated_product
-                            .name
-                    }}
-                </div>
-                <!-- ========================================= -->
-                <!-- View Details                              -->
-                <!-- ========================================= -->
-                <a class="
-                        product-association__details
-                        btn
-                        btn-sm
-                        btn-primary
-                        product-card__addtocart
-                    " [routerLink]="[
-                        '/marketplace/product',
-                        association
-                            .associated_product
-                            .slug
-                    ]"> View Details </a>
             </div>
         </article>
     </div>
@@ -189,7 +114,7 @@
             ">
             <ng-container *ngIf="
                     !showAllAssociatedProducts
-                "> View More <span aria-hidden="true"> ({{ hiddenAssociatedProductCount
+                "> Show More <span aria-hidden="true"> ({{ hiddenAssociatedProductCount
                     }}) </span>
             </ng-container>
             <ng-container *ngIf="

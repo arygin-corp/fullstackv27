@@ -1,4 +1,4 @@
-{% extends 'partials/base.html' %}
+{% extends 'gdx_users/partials/base.html' %}
 {% load static %}
 
 {% block extra_javascript %}
@@ -37,6 +37,7 @@
                 },
                 "columns": [
                     { "data": "id", "className": "text-center" },
+                    { "data": "image", "orderable": false, "searchable": false, "className": "text-center" },
                     { "data": "subdomain" },
                     { "data": "domain" },
                     { "data": "level", "className": "text-center" },
@@ -115,6 +116,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">ID</th>
+                                <th scope="col" class="text-center">Image</th>
                                 <th scope="col">Subdomain</th>
                                 <th scope="col">Domain</th>
                                 <th scope="col" class="text-center">Level</th>

@@ -1,12 +1,12 @@
 <div class="product-tabs" [ngClass]="{'product-tabs--layout--sidebar': withSidebar}">
     <div class="product-tabs__list">
-        <a href="#tab-resourceurl" class="product-tabs__item"
+        <a href="#tab-resourceurl" class="product-tabs__item" *ngIf="showsResources()"
            [ngClass]="{'product-tabs__item--active': tab === 'resource'}"
            (click)="$event.preventDefault(); tab = 'resource'">Resources</a>
 
         <a href="#tab-tables" class="product-tabs__item" *ngIf="isDataset()"
            [ngClass]="{'product-tabs__item--active': tab === 'tables'}"
-           (click)="$event.preventDefault(); tab = 'tables'">Tables & Columns</a>
+           (click)="$event.preventDefault(); openTables()">Tables & Columns</a>
 
         <a href="#tab-description" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'description'}"
@@ -22,7 +22,7 @@
 
         <a href="#tab-reviews" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'reviews'}"
-           (click)="$event.preventDefault(); tab = 'reviews'">Reviews</a>
+           (click)="$event.preventDefault(); openReviews()">Reviews</a>
 
         <!-- <a href="#tab-documentation" class="product-tabs__item"
            [ngClass]="{'product-tabs__item--active': tab === 'documentation'}"
@@ -36,10 +36,15 @@
             </div>
         </div>
 
-        <div class="product-tabs__pane" id="tab-resource" [ngClass]="{'product-tabs__pane--active': tab === 'resource'}">
+        <div class="product-tabs__pane" id="tab-resource" *ngIf="showsResources()" [ngClass]="{'product-tabs__pane--active': tab === 'resource'}">
             <div class="typography">
                 <h3>Resources</h3>
-                <p style="font-size: 18px;"><strong>{{product.catalog}}: </strong><span><a class="product-tab-links" href="{{product.resource_url}}">{{product.name}}</a></span></p>
+                <p style="font-size: 18px;">
+                    <img *ngIf="product.resource?.image" [src]="product.resource.image" [alt]="product.resource.catalog" style="height: 28px; width: auto; margin-right: 8px; vertical-align: middle;">
+                    <strong>{{ product.resource?.catalog || product.catalog }}: </strong>
+                    <a *ngIf="product.resource?.url; else resourceName" class="product-tab-links" [href]="product.resource.url">{{ resourceLabel() }}</a>
+                    <ng-template #resourceName><span>{{ resourceLabel() }}</span></ng-template>
+                </p>
             </div>
         </div>
 
@@ -49,14 +54,25 @@
                 <div class="col-lg-12">
                     <div class="spec">
                         <div class="spec__section">
-                            <h3 class="typography">Database Scehma</h3>
+                            <h3 class="typography">Tables & Columns</h3>
                             <div class="spec__disclaimer text-danger mt-3" style="font-size: 16px; font-weight: normal; line-height: 1.5;">
                                 <strong>Note: </strong> Listed below is the <strong>authoritative technical schema</strong> for this data product. These entries represent the actual <strong>Table Names</strong> and <strong>Column Headers</strong> you will interact with in the production environment. This metadata is provided to facilitate technical mapping, ETL planning, and query development. Please ensure your applications or scripts utilize these exact identifiers to maintain compatibility once access is granted.
                             </div>
-                            <!-- Header Row with 5/7 split -->
-                            <div class="row py-2" style="border-bottom: 1px solid #ebebeb;">
-                                <div class="col-lg-5" style="color:#3d464d; font-size: 18px;"><strong>Table Name</strong></div>
-                                <div class="col-lg-7" style="color:#3d464d; font-size: 18px;"><strong>Column Name</strong></div>
+                            <p *ngIf="schemaSource === 'sample'" class="schema-sample">Local sample. Denodo did not return a schema from this machine, so this is an example of how the tables and columns will appear.</p>
+                            <p *ngIf="schemaLoading" class="schema-status">Loading tables and columns...</p>
+                            <p *ngIf="schemaError" class="schema-status">{{ schemaError }}</p>
+                            <div class="row py-2 schema-header" *ngIf="schemaTables.length">
+                                <div class="col-2"><strong>Table Name</strong></div>
+                                <div class="col-10"><strong>Column Name</strong></div>
+                            </div>
+                            <div class="row py-3 schema-row" *ngFor="let table of schemaTables">
+                                <div class="col-2">
+                                    <div class="schema-database" *ngIf="table.dbname">{{ table.dbname }}</div>
+                                    <div class="schema-table">{{ table.elementname }}</div>
+                                </div>
+                                <div class="col-10 schema-columns">
+                                    <span class="schema-column" *ngFor="let column of table.columns">{{ column }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,54 +114,33 @@
                     </section>
                     </div>
                     <div class="col-lg-7">
-                    <section class="product-reviews__form" *ngIf="hasReviewed; else reviewForm">
-                        <h3>You already reviewed this product.</h3>
-                        <p class="product-reviews__pending" *ngIf="myReview?.status === 'pending'">This review is waiting for the Content Manager Group to approve it.</p>
-                        <p class="product-reviews__pending" *ngIf="myReview?.status === 'rejected'">The Content Manager Group did not approve this review.</p>
-                        <article class="product-reviews__card product-reviews__card--own" *ngIf="myReview">
-                            <div class="product-reviews__headline">
-                                <strong class="product-reviews__title" *ngIf="myReview.title">{{ myReview.title }}</strong>
-                                <app-rating [value]="myReview.rating"></app-rating>
-                            </div>
-                            <p>{{ myReview.comment }}</p>
-                            <ul class="product-reviews__scores" *ngIf="myReview.quality || myReview.value_for_money || myReview.ease_of_use || myReview.durability">
-                                <li *ngIf="myReview.quality">Quality <app-rating [value]="myReview.quality"></app-rating></li>
-                                <li *ngIf="myReview.value_for_money">Value <app-rating [value]="myReview.value_for_money"></app-rating></li>
-                                <li *ngIf="myReview.ease_of_use">Ease of use <app-rating [value]="myReview.ease_of_use"></app-rating></li>
-                                <li *ngIf="myReview.durability">Durability <app-rating [value]="myReview.durability"></app-rating></li>
-                            </ul>
-                            <ul class="product-reviews__answers" *ngIf="yesNo(myReview.would_recommend) || yesNo(myReview.met_expectations)">
-                                <li *ngIf="yesNo(myReview.would_recommend)"><span>Recommend</span><strong>{{ yesNo(myReview.would_recommend) }}</strong></li>
-                                <li *ngIf="yesNo(myReview.met_expectations)"><span>Met expectations</span><strong>{{ yesNo(myReview.met_expectations) }}</strong></li>
-                            </ul>
-                        </article>
-                    </section>
-                    <ng-template #reviewForm>
-                    <section class="product-reviews__form">
+                    <section class="product-reviews__form" [class.product-reviews__form--locked]="hasReviewed">
                         <div class="product-reviews__form-head">
                             <h3>Review This Product</h3>
                         </div>
+                        <app-alert *ngIf="hasReviewed" type="warning">You already reviewed this product. The review form is disabled.</app-alert>
                         <form (ngSubmit)="submitReview()">
+                            <fieldset [disabled]="hasReviewed">
                             <div class="product-reviews__ratings">
                                 <div class="product-reviews__rating-tile">
                                     <label>Rating</label>
-                                    <app-rating [interactive]="true" [value]="selectedRating" (valueChange)="selectedRating = $event"></app-rating>
+                                    <app-rating [interactive]="!hasReviewed" [value]="selectedRating" (valueChange)="selectedRating = $event"></app-rating>
                                 </div>
                                 <div class="product-reviews__rating-tile">
                                     <label>Quality</label>
-                                    <app-rating [interactive]="true" [value]="qualityRating" (valueChange)="qualityRating = $event"></app-rating>
+                                    <app-rating [interactive]="!hasReviewed" [value]="qualityRating" (valueChange)="qualityRating = $event"></app-rating>
                                 </div>
                                 <div class="product-reviews__rating-tile">
                                     <label>Value</label>
-                                    <app-rating [interactive]="true" [value]="valueRating" (valueChange)="valueRating = $event"></app-rating>
+                                    <app-rating [interactive]="!hasReviewed" [value]="valueRating" (valueChange)="valueRating = $event"></app-rating>
                                 </div>
                                 <div class="product-reviews__rating-tile">
                                     <label>Ease of use</label>
-                                    <app-rating [interactive]="true" [value]="easeRating" (valueChange)="easeRating = $event"></app-rating>
+                                    <app-rating [interactive]="!hasReviewed" [value]="easeRating" (valueChange)="easeRating = $event"></app-rating>
                                 </div>
                                 <div class="product-reviews__rating-tile">
                                     <label>Durability</label>
-                                    <app-rating [interactive]="true" [value]="durabilityRating" (valueChange)="durabilityRating = $event"></app-rating>
+                                    <app-rating [interactive]="!hasReviewed" [value]="durabilityRating" (valueChange)="durabilityRating = $event"></app-rating>
                                 </div>
                             </div>
                             <div class="product-reviews__questions">
@@ -174,12 +169,12 @@
                                     <textarea id="review-comment" rows="4" placeholder="What should other people know about this product?" name="review" [(ngModel)]="reviewComment"></textarea>
                                 </div>
                             </div>
+                            </fieldset>
                             <p class="product-reviews__error" *ngIf="reviewError">{{ reviewError }}</p>
                             <p class="product-reviews__saved" *ngIf="reviewSaved">{{ reviewSaved }}</p>
-                            <button type="submit" [disabled]="submittingReview">{{ submittingReview ? 'Saving...' : (hasReviewed ? 'Update review' : 'Submit review') }}</button>
+                            <button type="submit" [disabled]="submittingReview || hasReviewed">{{ submittingReview ? 'Saving...' : 'Submit review' }}</button>
                         </form>
                     </section>
-                    </ng-template>
                     </div>
                 </div>
                 <section class="product-reviews__list">
@@ -239,7 +234,7 @@
                 <div  class="spec__section">
                     <h3 class="typography">What's Included</h3>
                     <div class="spec__row">
-                        <div class="product-tabs__rich" [innerHTML]="product.whats_included"></div>
+                        <div class="product-tabs__rich" [innerHTML]="displayRichText(product.whats_included)"></div>
                     </div>
                 </div>
                 <div class="spec__disclaimer">
@@ -253,7 +248,7 @@
                 <div  class="spec__section">
                     <h3 class="typography">Intended Use</h3>
                     <div class="spec__row">
-                        <div class="product-tabs__rich" [innerHTML]="product.intended_use_desc"></div>
+                        <div class="product-tabs__rich" [innerHTML]="displayRichText(product.intended_use_desc)"></div>
                     </div>
                 </div>
                 <div class="spec__disclaimer">

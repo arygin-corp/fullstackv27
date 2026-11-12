@@ -1,0 +1,120 @@
+<style>
+    .record-view .record-hero { border: 1px solid #d9dee8; }
+    .record-view .record-media {
+        width: 240px;
+        height: 168px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #f3f5f8;
+        flex: 0 0 240px;
+    }
+    .record-view .record-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .record-view .record-media.is-round { width: 120px; height: 120px; flex-basis: 120px; border-radius: 50%; }
+    .record-view .record-media.is-badge { width: 120px; height: 120px; flex-basis: 120px; }
+    .record-view .record-media.is-badge img { object-fit: contain; padding: 12px; }
+    .record-kicker {
+        font-size: 12px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #64758b;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .record-view h3 { color: #121826; font-weight: 600; }
+    .record-copy { color: #3d4d63; max-width: 680px; }
+    .record-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .record-fact { background: #fff; border: 1px solid #d9dee8; border-radius: 8px; padding: 14px 16px; }
+    .record-fact span { display: block; color: #64758b; font-size: 12px; margin-bottom: 4px; }
+    .record-fact strong { color: #121826; font-size: 20px; font-weight: 600; overflow-wrap: anywhere; }
+    .record-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+    .record-tile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 64px;
+        padding: 10px 12px;
+        border: 1px solid #d9dee8;
+        border-radius: 8px;
+        background: #fff;
+        color: #121826;
+        text-decoration: none;
+    }
+    .record-tile:hover { border-color: #583fc9; color: #583fc9; }
+    .record-tile img { width: 42px; height: 42px; object-fit: cover; border-radius: 6px; flex: 0 0 42px; }
+    .record-meta dt { color: #8b97a8; font-size: 12px; font-weight: 500; margin-bottom: 2px; }
+    .record-meta dd { color: #121826; margin-bottom: 14px; }
+    .record-meta a { color: #583fc9; }
+    .record-delete { border: 1px solid #f5c2c2; border-left: 4px solid #ef1e1e; }
+    .record-delete .record-kicker { color: #ef1e1e; }
+    .record-warning {
+        background: #fff5f5;
+        border: 1px solid #f5c2c2;
+        border-radius: 8px;
+        color: #9f1239;
+        padding: 12px 14px;
+    }
+    .record-form label { display: block; color: #64758b; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+    .record-form input[type="text"],
+    .record-form input[type="email"],
+    .record-form input[type="url"],
+    .record-form input[type="number"],
+    .record-form input[type="file"],
+    .record-form textarea,
+    .record-form select {
+        width: 100%;
+        max-width: 720px;
+        border: 1px solid #d9dee8;
+        border-radius: 8px;
+        padding: 8px 12px;
+        color: #121826;
+        background: #fff;
+    }
+    .record-form input[type="checkbox"] { width: auto; }
+    .record-form .record-name-row input[type="text"] { max-width: none; }
+    .record-form .record-status-row { display: flex; align-items: flex-end; gap: 12px; }
+    .record-form .record-status-row > .mb-3:first-child { flex: 0 0 auto; }
+    .record-form .record-status-row > .mb-3:last-child { flex: 1 1 auto; min-width: 0; }
+    .record-form .record-status-row select { max-width: none; }
+    .record-form input[disabled] { background: #f3f5f8; color: #64758b; }
+    .record-form .cke, .record-form .django-ckeditor-widget { max-width: 720px; }
+    .record-form .image-column { align-self: flex-start; }
+    .record-form .edit-media {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        flex: 0 0 auto !important;
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+    .record-form .edit-media img {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 432px;
+    }
+    .record-form .edit-media.is-round { width: 180px; height: 180px; min-height: 180px; flex: 0 0 180px !important; }
+    .record-form .edit-media.is-round img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+    .record-media-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 12px;
+        background: linear-gradient(transparent, rgba(18, 24, 38, .72));
+    }
+    .record-media-bar .record-kicker { color: #fff; margin-bottom: 8px; }
+    .record-upload { display: flex; align-items: center; gap: 8px; }
+    .record-upload input[type="file"] { background: #fff; }
+    .record-upload input[type="file"] { flex: 1 1 auto; max-width: none; }
+    .record-upload .record-clear-btn { flex: 0 0 auto; }
+    .record-form .image-column:has(.record-add-image) .record-upload input[type="file"] { display: none; }
+    .record-form .record-add-image { align-self: flex-start; width: auto; }
+    @media (max-width: 767px) {
+        .record-view .record-media,
+        .record-view .record-media.is-round { width: 100%; height: 180px; flex-basis: auto; border-radius: 8px; }
+        .record-facts { grid-template-columns: 1fr; }
+    }
+</style>

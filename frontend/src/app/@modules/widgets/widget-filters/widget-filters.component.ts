@@ -175,10 +175,24 @@ export class WidgetFiltersComponent implements OnInit, OnDestroy {
             filterValues
         );
 
+        this.scrollPageToTop();
         this.pageDomain.updateOptions({
             page: 1,
             filterValues
         });
+    }
+
+    private scrollPageToTop(): void {
+        const reset = () => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.querySelectorAll<HTMLElement>('.site__body').forEach(node => {
+                node.scrollTop = 0;
+            });
+        };
+        reset();
+        setTimeout(reset);
     }
 
     ngOnDestroy(): void {

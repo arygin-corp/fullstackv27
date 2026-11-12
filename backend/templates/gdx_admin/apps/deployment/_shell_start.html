@@ -1,9 +1,0 @@
-{% include "gdx_admin/apps/third_party_apis/partials/_module_hero.html" %}
-<nav class="deploy-nav" aria-label="Deployment">
-    <a href="{% url 'deployment:dashboard' %}" class="{% if section == 'dashboard' %}is-current{% endif %}">Dashboard</a>
-    <a href="{% url 'deployment:analytics' %}" class="{% if section == 'analytics' %}is-current{% endif %}">Analytics</a>
-    <a href="{% url 'deployment:activity' %}" class="{% if section == 'activity' %}is-current{% endif %}">Activity</a>
-    <a href="{% url 'deployment:releases' %}" class="{% if section == 'releases' %}is-current{% endif %}">Releases</a>
-    <a href="{% url 'deployment:rollback' %}" class="{% if section == 'rollback' %}is-current{% endif %}">Rollback</a>
-    <a href="{% url 'deployment:health' %}" class="{% if section == 'health' %}is-current{% endif %}">Health</a>
-</nav>

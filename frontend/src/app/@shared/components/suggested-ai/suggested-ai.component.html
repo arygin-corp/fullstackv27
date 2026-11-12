@@ -17,13 +17,13 @@
       <div class="modal-body p-4 bg-soft-grid">
         <!-- VERIFIED SUGGESTIONS (A+ grades) -->
         <div id="verified-suggestions-list" class="col-12" *ngFor="let product of suggestions">
-          <div class="card verified-master-card border-0 mb-4" 
-               *ngIf="product.manual_verified || product.verified && isAPlusGrade(product.grade, product.modifier)">
+          <div class="card verified-master-card border-0 mb-4"
+               *ngIf="usesDatasetCard(product)">
             <div class="vmodal-grid">
               <section class="vmodal-left">
                 <div class="vmodal-kicker">
                   <span class="verified">
-                    <img src="assets/images/badges/verified_icon.svg" alt="Verified">
+                    <img src="assets/images/badges/icons/verified_icon.svg" alt="Verified">
                     <span><strong>AI VERIFIED</strong></span>
                   </span>
                 </div>
@@ -34,7 +34,7 @@
 
               <section class="vmodal-right">
                 <div class="vmodal-hero">
-                  <img [src]="product.image" class="img-fluid rounded shadow-sm" [alt]="product.name">
+                  <img [src]="productImage(product)" (error)="productImageFallback($event)" class="img-fluid rounded shadow-sm" [alt]="product.name">
                 </div>
               </section>
             </div>
@@ -53,7 +53,7 @@
                   </p> -->
                   <div class="vmodal-actions">
                     <button class="btn btn-success" (click)="onRequestAccess(product)">Request Access</button>
-                    <button class="btn btn-outline-secondary" (click)="onViewProduct(product)">View Details</button>
+                    <button class="btn btn-outline-secondary view-details-btn" (click)="onViewProduct(product)">View Details</button>
                   </div>
                 </div>
               </div>
@@ -88,180 +88,53 @@
         </div>
 
         <!-- STANDARD SUGGESTIONS -->
-        <div class="row g-4" *ngIf="suggestions && suggestions.length > 0">
-          <div id="suggested" class="col-md-12 col-lg-12" *ngFor="let product of suggestions" style="margin-bottom: 20px;">
-            <div class="card h-100 suggestion-card border-0 shadow-sm" 
-                 *ngIf="!isAPlusGrade(product.grade, product.modifier)">    
-              <div class="card-body p-3">
-                <div class="row align-items-center">
-                  
-                  <!-- Grade Column -->
-                  <div class="col-2 text-center">
-                    <h6 class="grade-label">Grade</h6>
-                    <h1 [ngClass]="getGradeClass(product.grade, product.modifier)" class="grade-display" style="font-size: 72px;">
-                      {{ product.grade || 'N/A' }}<sup class="grade-modifier">{{ product.modifier }}</sup>
-                    </h1>
-                    <span class="badge score-badge"
-                          [style.background-color]="getGradeColor(product.grade, product.modifier) + '20'"
-                          [style.color]="getGradeColor(product.grade, product.modifier)">
-                      <h6>{{ getSafeMatchPercentage(product) }}%</h6>
-                    </span>
-                    <h6 class="match-label">Match</h6>
-                  </div>
-
-                  <!-- Image Column -->
-                  <div class="col-2">
-                    <img [src]="product.image" [alt]="product.name" class="product-image rounded shadow-sm" style="width: 100px;">
-                  </div>
-
-                  <!-- Info Column -->
-                  <div class="col-6">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.short_desc || 'No description provided.' }}</p>
-                    
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="info-row">
-                          <span class="label">Datatype</span>
-                          <span class="value">{{ product.type || 'N/A' }}</span>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="info-row">
-                          <span class="label">Classification</span>
-                          <span class="value">{{ product.classification || 'N/A' }}</span>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="info-row">
-                          <span class="label">AD Group</span>
-                          <span class="value">{{ product.adgroup || 'N/A' }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Actions Column -->
-                  <div class="col-2">
-                    <div class="reason-tooltip mb-3">
-                      <span class="badge bg-light text-dark border" style="padding: 9px 25px;">
-                        <i class="ri-information-line me-1 text-primary"></i> Why this match?
-                      </span>
-                      <div class="tooltip-text">
-                        <p (click)="onReasonClick($event, product)">
-                          <strong>Reason:</strong>
-                          <span [innerHTML]="product.reason || 'AI Suggestion'"></span>
-                        </p>
-                        <!-- <p><strong>Reason:</strong> {{ product.reason || 'AI Suggestion' }}</p> -->
-                        <p><strong>Justification:</strong> {{ product.business_justification || 'Standard pattern match.' }}</p>
-                      </div>
-                    </div>
-
-                    <button class="btn btn-primary btn-sm w-100 mb-2" (click)="onRequestAccess(product)">
-                      Request Access
-                    </button>
-                    <button class="btn btn-outline-secondary btn-sm w-100" (click)="onViewProduct(product)">
-                      View Details
-                    </button>
-
-                    <div class="info-tooltip-wrapper">
-                      <button type="button" class="info-btn" aria-label="More information">
-                        <i class="fa fa-info" aria-hidden="true"></i>
-                      </button>
-
-                      <div class="tooltip-left">
-                        <div class="recommendation-card">
-                          <!-- Header -->
-                          <div class="card-header">
-                            <div class="header-label">AI Recommendation</div>
-
-                            <div class="header-title">Strong Match for Your Business Need</div>
-
-                            <div class="header-badges">
-                              <span class="badge badge-primary">✅ {{verification_badge}}</span>
-                              <span class="badge badge-primary">⭐ {{confidence_level}}</span>
-                          </div>
-                        </div>
-
-                        <!-- Body -->
-                        <div class="card-body">
-                          <!-- Summary -->
-                          <div class="summary-panel">
-                            <div class="section-title">Why This Product?</div>
-                            <div class="summary-text">{{business_summary}}</div>
-                          </div>
-
-                          <!-- Trust & Governance -->
-                          <div class="governance-card">
-                            <div class="governance-title">Trust & Governance</div>
-                              <div class="governance-row">
-                                <div class="classification-section">
-                                  <div class="metadata-label">Data Classification</div>
-                                    <span class="classification-badge {{classification_class}}">{{classification}}</span>
-                                  </div>
-
-                                  <div class="divider"></div>
-                                  <div class="steward-section">
-                                    <div class="metadata-label">Data Steward</div>
-                                      <div class="steward">
-                                        <div class="avatar">{{steward_initials}}</div>
-                                        <div class="steward-name">{{steward_name}}</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <!-- Benefits -->
-                                <div class="benefits-card">
-                                  <div class="section-title-dark">Key Benefits</div>
-                                    <div class="benefit-item">✅ {{benefit_1}}</div>
-                                    <div class="benefit-item">✅ {{benefit_2}}</div>
-                                    <div class="benefit-item">✅ {{benefit_3}}</div>
-                                  </div>
-
-                                  <!-- Trust Badges -->
-                                  <div class="trust-badges">
-                                    <span class="badge-success">🏢 Trusted by {{peer_usage_count}} teams</span>
-                                    <span class="badge-info">🛡 Governed Enterprise Data</span>
-                                  </div>
-
-                                  <!-- Transparency -->
-                                  <details class="transparency-panel">
-                                    <summary>Why am I seeing this recommendation?</summary>
-
-                                    <div class="transparency-content">This recommendation was generated using business metadata, governance information, and relevance signals to identify a trusted
-                                      data product that supports the requested business objective.
-                                    </div>
-                                  </details>
-                                </div>
-
-                                <!-- Footer -->
-                                <div class="card-footer">
-                                  <div class="footer-title">Recommended Action</div>
-
-                                  <div class="footer-text">Review the product details and request access if it supports your reporting, analysis, or decision-making objectives.</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Badges -->
-                      <div class="row mt-3">
-                        <div class="col-12">
-                          <div class="d-flex flex-wrap gap-2">
-                            <span *ngFor="let badge of product.badges" class="custom-data-badge" [ngClass]="getBadgeClass(badge)" style="position: relative; left: 20px;">
-                              <i class="ri-price-tag-3-line me-1"></i> {{ badge }}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="ai-product-list" *ngIf="suggestions && suggestions.length > 0">
+          <article class="ai-product" *ngFor="let product of suggestions" [hidden]="usesDatasetCard(product)">
+            <img class="ai-product__image" [src]="productImage(product)" [alt]="product.name" (error)="productImageFallback($event)">
+            <div class="ai-product__body">
+              <div class="ai-product__title">
+                <h3>{{ product.name }}</h3>
+                <span class="ai-product__pill" *ngFor="let badge of product.badges" [ngClass]="getBadgeClass(badge)">{{ badge }}</span>
               </div>
+              <p class="ai-product__desc">{{ product.short_desc || 'No description provided.' }}</p>
+              <ul class="ai-product__facts">
+                <li>
+                  <span>Datatype</span>
+                  <b>{{ suggestionDatatype(product) }}</b>
+                </li>
+                <li>
+                  <span>Classification</span>
+                  <b>{{ product.classification || 'Not set' }}</b>
+                </li>
+                <li>
+                  <span>Domain</span>
+                  <b>{{ product.domain || 'Not set' }}</b>
+                </li>
+                <li>
+                  <span>Data Steward</span>
+                  <b>{{ product.steward_name || 'Not assigned' }}</b>
+                </li>
+                <li>
+                  <span>AD Group</span>
+                  <b>{{ product.adgroup || 'Not set' }}</b>
+                </li>
+              </ul>
+              <p class="ai-product__reason" (click)="onReasonClick($event, product)">
+                <strong>Reason</strong>
+                <span [innerHTML]="product.reason || 'AI Suggestion'"></span>
+              </p>
             </div>
+            <div class="ai-product__side">
+              <div class="ai-product__grade" [ngClass]="getGradeClass(product.grade, product.modifier)">
+                <strong>{{ product.grade || 'N/A' }}<sup>{{ product.modifier }}</sup></strong>
+                <small>{{ getSafeMatchPercentage(product) }}% match</small>
+              </div>
+              <button class="btn btn-primary btn-sm" type="button" (click)="onRequestAccess(product)">Request Access</button>
+              <button class="btn btn-outline-secondary btn-sm view-details-btn" type="button" (click)="onViewProduct(product)">View Details</button>
+            </div>
+          </article>
+        </div>
+      </div>
 
       <!-- Footer -->
       <div class="modal-footer bg-light border-top-0 py-3">
@@ -275,71 +148,68 @@
 </div>
 
 <!-- Backdrop (only for results mode) -->
-<div *ngIf="fieldModalOpen" class="modal fade show d-block fields-modal" tabindex="-1" role="dialog" aria-modal="true" (keydown.escape)="closeFieldModal()">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <div class="modal-header">
-        <div>
-          <h5 class="modal-title">Available Tables and Fields</h5>
-
-          <small class="text-muted">{{ fieldModalProductName }}
-            <span *ngIf="fieldModalSelectedTables.length > 0">· {{ fieldModalSelectedTables.join(', ') }}</span>
-          </small>
+<div *ngIf="fieldModalOpen" class="fields-modal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="fields-modal-title" (keydown.escape)="closeFieldModal()">
+  <div class="fields-dialog" role="document" (click)="$event.stopPropagation()">
+    <header class="fields-header">
+      <div class="fields-heading">
+        <p class="fields-kicker">Catalog metadata</p>
+        <h5 id="fields-modal-title">Available Tables and Fields</h5>
+        <p class="fields-product" *ngIf="fieldModalProductName">{{ fieldModalProductName }}</p>
+        <div class="fields-selected" *ngIf="fieldModalSelectedTables.length > 0">
+          <span>Selected</span>
+          <em *ngFor="let table of fieldModalSelectedTables">{{ table }}</em>
         </div>
+      </div>
+      <button type="button" class="fields-close" aria-label="Close available tables and fields" (click)="closeFieldModal()">×</button>
+    </header>
 
-        <button type="button" class="btn btn-sm btn-primary" style="border-radius:100px;" aria-label="Close available tables and fields" (click)="closeFieldModal()">
-          <i class="fa fa-times" aria-hidden="true"></i>
+    <div class="fields-toolbar">
+      <div class="fields-tabs" role="tablist">
+        <button type="button" role="tab" [class.active]="modalTab === 'tables'" [attr.aria-selected]="modalTab === 'tables'" (click)="setModalTab('tables')">
+          Tables
+          <em>{{ fieldModalTables.length }}</em>
+        </button>
+        <button type="button" role="tab" [class.active]="modalTab === 'fields'" [attr.aria-selected]="modalTab === 'fields'" (click)="setModalTab('fields')">
+          Fields
+          <em>{{ fieldModalColumns.length }}</em>
         </button>
       </div>
 
-      <div class="modal-body">
-        <ul class="nav nav-tabs modal-data-tabs mb-3" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button type="button" class="nav-link" [class.active]="modalTab === 'tables'" [attr.aria-selected]="modalTab === 'tables'" (click)="setModalTab('tables')">Tables
-              <span class="badge ms-1">{{ fieldModalTables.length }}</span>
-            </button>
-          </li>
-
-          <li class="nav-item" role="presentation">
-            <button type="button" class="nav-link" [class.active]="modalTab === 'fields'" [attr.aria-selected]="modalTab === 'fields'" (click)="setModalTab('fields')">Fields
-              <span class="badge ms-1">{{ fieldModalColumns.length }}</span>
-            </button>
-          </li>
-        </ul>
-
-        <div *ngIf="modalTab === 'tables'">
-          <input type="search" class="form-control mb-3" placeholder="Search tables..." [(ngModel)]="tableSearch" autocomplete="off">
-
-          <div class="text-muted small mb-3">Showing {{ filteredFieldModalTables.length }} of {{ fieldModalTables.length }} tables</div>
-
-          <div class="modal-data-list">
-            <div *ngFor="let table of filteredFieldModalTables" class="modal-data-list-item">
-              <code>{{ table }}</code>
-            </div>
-
-            <div *ngIf="filteredFieldModalTables.length === 0" class="text-muted text-center p-4">No matching tables found.</div>
-          </div>
-        </div>
-
-        <div *ngIf="modalTab === 'fields'">
-          <input type="search" class="form-control mb-3" placeholder="Search fields..." [(ngModel)]="fieldSearch" autocomplete="off">
-
-          <div class="text-muted small mb-3">Showing {{ filteredFieldModalColumns.length }} of {{ fieldModalColumns.length }} fields</div>
-
-          <div class="modal-data-list">
-            <div *ngFor="let field of filteredFieldModalColumns" class="modal-data-list-item">
-              <code>{{ field }}</code>
-            </div>
-
-            <div *ngIf="filteredFieldModalColumns.length === 0" class="text-muted text-center p-4">No matching fields found.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closeFieldModal()">Close</button>
-      </div>
+      <label class="fields-search">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5"></circle>
+          <path d="M12.5 12.5 L17 17"></path>
+        </svg>
+        <input *ngIf="modalTab === 'tables'" type="search" placeholder="Search tables" [(ngModel)]="tableSearch" autocomplete="off" aria-label="Search tables">
+        <input *ngIf="modalTab === 'fields'" type="search" placeholder="Search fields" [(ngModel)]="fieldSearch" autocomplete="off" aria-label="Search fields">
+      </label>
     </div>
+
+    <div class="fields-meta" *ngIf="modalTab === 'tables'">
+      Showing {{ filteredFieldModalTables.length }} of {{ fieldModalTables.length }} tables
+    </div>
+    <div class="fields-meta" *ngIf="modalTab === 'fields'">
+      Showing {{ filteredFieldModalColumns.length }} of {{ fieldModalColumns.length }} fields
+    </div>
+
+    <div class="fields-scroll" *ngIf="modalTab === 'tables'">
+      <div class="fields-grid" *ngIf="filteredFieldModalTables.length > 0">
+        <span *ngFor="let table of filteredFieldModalTables" class="fields-chip" [class.is-selected]="fieldModalSelectedTables.includes(table)">{{ table }}</span>
+      </div>
+      <p class="fields-empty" *ngIf="filteredFieldModalTables.length === 0">No matching tables.</p>
+    </div>
+
+    <div class="fields-scroll" *ngIf="modalTab === 'fields'">
+      <div class="fields-grid" *ngIf="filteredFieldModalColumns.length > 0">
+        <span *ngFor="let field of filteredFieldModalColumns" class="fields-chip">{{ field }}</span>
+      </div>
+      <p class="fields-empty" *ngIf="filteredFieldModalColumns.length === 0">No matching fields.</p>
+    </div>
+
+    <footer class="fields-footer">
+      <span>Names from the selected dataset</span>
+      <button type="button" (click)="closeFieldModal()">Close</button>
+    </footer>
   </div>
 </div>
 

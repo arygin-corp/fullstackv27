@@ -56,6 +56,7 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
     destroy$ = new Subject<void>();
     listOptionsForm!: FormGroup;
     filtersCount = 0;
+    private readonly standardPageSizes = [12, 24, 48, 96];
 
     constructor(
         private fb: FormBuilder,
@@ -84,7 +85,7 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
                 limit:
                     this.fb.control(
                         this.pageService.options.limit ||
-                        12
+                        16
                     ),
 
                 sort:
@@ -106,14 +107,14 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
             )
             .subscribe(value => {
                 const page = Number(value.page || 1);
-                const limit = Number(value.limit || 12);
+                const limit = Number(value.limit || 16);
                 const sort = value.sort || 'default';
 
                 this.router.navigate([], {
                     relativeTo: this.route,
                     queryParams: {
                         page: page > 1 ? page : null,
-                        limit: limit !== 12 ? limit : null,
+                        limit: limit !== 16 ? limit : null,
                         sort: sort !== 'default' ? sort : null,
                     },
                     queryParamsHandling: 'merge',
@@ -166,7 +167,7 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
                             list.page || 1,
 
                         limit:
-                            list.limit || 12,
+                            list.limit || 16,
 
                         sort:
                             list.sort || 'default'
@@ -197,11 +198,16 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
     // Layout
     // =====================================================
 
+    get limitChoices(): number[] {
+        return this.pageSizesFor(this.layout, this.grid);
+    }
+
     setLayout(
         value: Layout
     ): void {
 
         this.layout = value;
+        this.syncPageSize();
     }
 
 
@@ -245,6 +251,46 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
         this.gridChange.emit(
             this.grid
         );
+        this.syncPageSize();
+    }
+
+    private pageSizesFor(
+        layout: Layout,
+        grid: 'grid-3-sidebar' | 'grid-4-full' | 'grid-5-full'
+    ): number[] {
+        if (layout === 'grid-with-features') {
+            return [9, 18, 26, 36];
+        }
+        if (layout === 'list') {
+            return this.steppedPageSizes(6, 6, 16);
+        }
+        if (grid === 'grid-4-full') {
+            return this.steppedPageSizes(16, 4, 28);
+        }
+        return this.standardPageSizes;
+    }
+
+    private steppedPageSizes(start: number, step: number, max: number): number[] {
+        const sizes: number[] = [];
+        for (let size = start; size <= max; size += step) {
+            sizes.push(size);
+        }
+        return sizes;
+    }
+
+    private syncPageSize(): void {
+        if (!this.listOptionsForm) {
+            return;
+        }
+        const allowed = this.pageSizesFor(this.layout, this.grid);
+        const start = allowed[0];
+        if (Number(this.listOptionsForm.value.limit) === start) {
+            return;
+        }
+        this.listOptionsForm.patchValue({
+            page: 1,
+            limit: start,
+        });
     }
 
 

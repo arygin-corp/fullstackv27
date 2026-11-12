@@ -18,7 +18,7 @@ import { ProductResolverService } from './resolvers/product-resolver.service';
 
 const marketplacePageData: Data = { 
     columns: 3, 
-    viewMode: 'list', 
+    viewMode: 'grid', 
     sidebarPosition: 'start' 
 };
 

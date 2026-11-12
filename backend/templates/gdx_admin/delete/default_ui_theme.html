@@ -1,0 +1,331 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}default_ui_theme.html | {{ app_name }}{% endblock %}
+{% block content %}
+<div class="ui-theme">
+    <section class="ui-section">
+        <h2>Type</h2>
+        <div class="ui-card">
+            <p class="ui-caption">{{ app_name }}</p>
+            <h3 class="ui-display">Platform interface</h3>
+            <p class="ui-title">Section title</p>
+            <p class="ui-body">Body copy stays on the soft text color. Use it for descriptions, help, and notification text.</p>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Button</h2>
+        <div class="ui-btn-layout">
+            <div>
+                <h3>Solid</h3>
+                <div class="ui-row">
+                    <button class="ui-btn" type="button">Primary</button>
+                    <button class="ui-btn ui-btn-ink" type="button">Ink</button>
+                    <button class="ui-btn ui-btn-success" type="button">Success</button>
+                    <button class="ui-btn ui-btn-warning" type="button">Warning</button>
+                    <button class="ui-btn ui-btn-danger" type="button">Danger</button>
+                    <button class="ui-btn ui-btn-info" type="button">Info</button>
+                    <button class="ui-btn ui-btn-surface" type="button">Surface</button>
+                    <button class="ui-btn ui-btn-sm" type="button">Small</button>
+                </div>
+            </div>
+            <div>
+                <h3>Outline</h3>
+                <div class="ui-row">
+                    <button class="ui-btn ui-btn-outline" type="button">Primary</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-ink" type="button">Ink</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-success" type="button">Success</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-warning" type="button">Warning</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-danger" type="button">Danger</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-info" type="button">Info</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-surface" type="button">Surface</button>
+                    <button class="ui-btn ui-btn-outline ui-btn-sm" type="button">Small</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Status</h2>
+        <div class="ui-row">
+            <span class="ui-badge">Neutral</span>
+            <span class="ui-badge ui-badge-success">Approved</span>
+            <span class="ui-badge ui-badge-warning">Pending</span>
+            <span class="ui-badge ui-badge-danger">Rejected</span>
+            <span class="ui-badge ui-badge-info">Open</span>
+        </div>
+    </section>
+
+    <div class="ui-split">
+        <section class="ui-section">
+            <h2>Fields</h2>
+            <form class="ui-card ui-form" action="#" method="get" onsubmit="return false;">
+                <h3>Record</h3>
+                <label class="ui-field">
+                    <span>Name</span>
+                    <input class="ui-input" type="text" name="name" value="Data Access Request">
+                </label>
+                <label class="ui-field">
+                    <span>Status</span>
+                    <select class="ui-select" name="status">
+                        <option>Pending</option>
+                        <option>Approved</option>
+                        <option>Rejected</option>
+                    </select>
+                </label>
+                <label class="ui-field">
+                    <span>Note</span>
+                    <textarea class="ui-textarea" name="note">Review the request and take the next action.</textarea>
+                </label>
+                <label class="ui-check">
+                    <input type="checkbox" checked>
+                    Send an in-app notification
+                </label>
+                <p class="ui-help">Notifications can be text, an icon with text, or an image with text.</p>
+                <div class="ui-row">
+                    <button class="ui-btn" type="submit">Save</button>
+                    <button class="ui-btn ui-btn-surface" type="button">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="ui-section">
+            <h2>Data</h2>
+            <div class="ui-card">
+                <h3>Current view</h3>
+                <table class="ui-table">
+                    <thead>
+                        <tr>
+                            <th>Record</th>
+                            <th>Status</th>
+                            <th>Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Access Request</td>
+                            <td><span class="ui-badge ui-badge-warning">Pending</span></td>
+                            <td>Nov 8</td>
+                        </tr>
+                        <tr>
+                            <td>Marketplace product</td>
+                            <td><span class="ui-badge ui-badge-success">Approved</span></td>
+                            <td>Nov 3</td>
+                        </tr>
+                        <tr>
+                            <td>Command Center</td>
+                            <td><span class="ui-badge ui-badge-info">Open</span></td>
+                            <td>Nov 8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <section class="ui-section">
+        <h2>Empty</h2>
+        <div class="ui-card ui-empty">
+            <strong>No records in this view</strong>
+            <p>When a list has nothing to show, keep the title and one line of direction.</p>
+            <button class="ui-btn ui-btn-surface ui-btn-sm" type="button">Clear filters</button>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Notifications</h2>
+        <div class="row g-3 ui-note-columns">
+            <div class="col-4">
+                <h3 class="ui-note-column-title">Notification</h3>
+                <ul class="ui-notes">
+            <li>
+                <article class="ui-note ui-note-tint ui-note-success">
+                    <span class="ui-note-mark" aria-hidden="true"><i class="isax isax-tick-circle"></i></span>
+                    <div class="ui-note-copy">
+                        <div class="ui-note-top">
+                            <h3>Request approved</h3>
+                        </div>
+                        <p>The data access request was approved.</p>
+                    </div>
+                    <time>Nov 8, 1:13 AM</time>
+                </article>
+            </li>
+            <li>
+                <article class="ui-note ui-note-tint ui-note-warning is-unread">
+                    <span class="ui-note-mark" aria-hidden="true"><i class="isax isax-warning-2"></i></span>
+                    <div class="ui-note-copy">
+                        <div class="ui-note-top">
+                            <h3>Review waiting</h3>
+                        </div>
+                        <p>A data access request is waiting for review.</p>
+                    </div>
+                    <time>Nov 8, 1:13 AM</time>
+                </article>
+            </li>
+            <li>
+                <article class="ui-note ui-note-tint ui-note-danger">
+                    <span class="ui-note-mark" aria-hidden="true"><i class="isax isax-close-circle"></i></span>
+                    <div class="ui-note-copy">
+                        <div class="ui-note-top">
+                            <h3>Access denied</h3>
+                        </div>
+                        <p>The request was rejected and needs a change before it can continue.</p>
+                    </div>
+                    <time>Nov 8, 1:13 AM</time>
+                </article>
+            </li>
+            <li>
+                <article class="ui-note ui-note-tint ui-note-info">
+                    <span class="ui-note-mark" aria-hidden="true"><i class="isax isax-info-circle"></i></span>
+                    <div class="ui-note-copy">
+                        <div class="ui-note-top">
+                            <h3>Catalog note</h3>
+                        </div>
+                        <p>The platform posted a system notice for this account.</p>
+                    </div>
+                    <time>Nov 8, 1:13 AM</time>
+                </article>
+            </li>
+                </ul>
+            </div>
+            <div class="col-4 ui-note-group-system">
+                <h3 class="ui-note-column-title">System Notification</h3>
+                <ul class="ui-notes">
+                    <li>
+                        <article class="ui-note ui-note-success">
+                            <img class="ui-note-photo ui-note-photo-system" src="{% static 'assets/img/logo-small.svg' %}" alt="System">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Catalog update</h3>
+                                </div>
+                                <p>{{ app_name }} published a catalog update.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-success">
+                            <img class="ui-note-photo ui-note-photo-system" src="{% static 'assets/img/logo-small.svg' %}" alt="System">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Intake submitted</h3>
+                                </div>
+                                <p>The product intake was submitted successfully.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-success">
+                            <img class="ui-note-photo ui-note-photo-system" src="{% static 'assets/img/logo-small.svg' %}" alt="System">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Product available</h3>
+                                </div>
+                                <p>Data Access Request is now active and available in Marketplace.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-info">
+                            <img class="ui-note-photo ui-note-photo-system" src="{% static 'assets/img/logo-small.svg' %}" alt="System">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Changelog published</h3>
+                                </div>
+                                <p>A changelog release was published.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3 class="ui-note-column-title">User Notification</h3>
+                <ul class="ui-notes">
+                    <li>
+                        <article class="ui-note ui-note-info">
+                            <img class="ui-note-photo ui-note-photo-user" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" alt="User">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Access request</h3>
+                                </div>
+                                <p>A user requested access to a catalog product.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-success">
+                            <img class="ui-note-photo ui-note-photo-team" src="{% static 'assets/img/brands/toyota.svg' %}" alt="Team">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Access approved</h3>
+                                </div>
+                                <p>Your catalog subscription is active.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-danger">
+                            <img class="ui-note-photo ui-note-photo-team" src="{% static 'assets/img/brands/toyota.svg' %}" alt="Team">
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Access declined</h3>
+                                </div>
+                                <p>The owning team declined this request.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="ui-note ui-note-danger">
+                            <span class="ui-note-photo ui-note-photo-initials" aria-hidden="true">U</span>
+                            <div class="ui-note-copy">
+                                <div class="ui-note-top">
+                                    <h3>Intake rejected</h3>
+                                </div>
+                                <p>A reviewer rejected the intake and left comments about what to correct.</p>
+                            </div>
+                            <time>Nov 8, 1:13 AM</time>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+(function () {
+  var stack = document.createElement("div");
+  stack.className = "ui-note-live";
+  stack.setAttribute("aria-live", "polite");
+  document.body.appendChild(stack);
+
+  document.querySelectorAll(".ui-note").forEach(function (note) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "ui-btn ui-btn-sm ui-btn-surface";
+    button.textContent = "Test";
+    note.parentElement.insertBefore(button, note);
+    button.addEventListener("click", function () {
+      var copy = note.cloneNode(true);
+      if (note.closest(".ui-note-group-system")) {
+        copy.classList.add("ui-note-system");
+      }
+      stack.prepend(copy);
+      window.setTimeout(function () {
+        copy.classList.add("is-leaving");
+        copy.addEventListener("animationend", function () {
+          copy.remove();
+        });
+      }, 5000);
+    });
+  });
+})();
+</script>
+{% endblock %}

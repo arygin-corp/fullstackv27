@@ -116,12 +116,14 @@ class SuggestedAIEngine:
         tbl_raw = user_context.get("tbl_raw") or ""
         history = user_context.get("history") or []
         intent = self._classify_intent(cleaned, user_context)
+        api_search = user_context.get("suggestion_kind") == "api"
+        pool = self.products if api_search else self._suggestion_pool(user_context)
         if db_raw and tbl_raw:
             candidates = self._priority_retrieval(db_raw, tbl_raw)
             if not candidates:
-                candidates = self._vector_retrieval(cleaned, self.products, 50)
+                candidates = self._vector_retrieval(cleaned, pool, 50)
         else:
-            candidates = self._vector_retrieval(cleaned, self.products, 50)
+            candidates = self._vector_retrieval(cleaned, pool, len(pool) if api_search else 50)
         form_values = {
             "v_dar_dataDomainSelect": user_context.get("v_dar_dataDomainSelect") or selected_domain,
             "v_dar_platform": user_context.get("v_dar_platform") or "",
@@ -165,6 +167,26 @@ class SuggestedAIEngine:
                 "applied_penalties": penalties,
                 "rankingMode": ranking_mode,
             })
+        if api_search:
+            for candidate in scored:
+                tier, platform_match, domain_match = self._api_priority(user_context, candidate)
+                candidate["api_priority"] = tier
+                candidate["api_platform_match"] = platform_match
+                candidate["api_domain_match"] = domain_match
+            ranked = sorted(
+                scored,
+                key=lambda item: (
+                    item.get("api_priority", 2),
+                    -(item.get("similarity") or 0),
+                    -(item.get("finalScore") or 0),
+                ),
+            )
+            suggestions = [self._flat_result(item, cleaned, user_context, index, intent) for index, item in enumerate(ranked[:5])]
+            return {
+                "suggestions": suggestions,
+                "input_grading": self._grades(user_context),
+                "ranking_mode": ranking_mode,
+            }
         if ranking_mode == "hybrid":
             ranked = []
             for candidate in scored:
@@ -235,12 +257,33 @@ class SuggestedAIEngine:
             })
         return matches
 
+    def _suggestion_pool(self, user_context):
+        platform = str(user_context.get("v_dar_platform") or "")
+        if not re.search(r"\bapi\b", platform, re.I):
+            return self.products
+        api_products = [
+            product for product in self.products
+            if "api" in str(product.get("datatype") or product.get("type") or "").lower()
+        ]
+        return api_products or self.products
+
+    def _name_similarity(self, needle, value):
+        text = str(value or "").lower()
+        if not needle or not text:
+            return 0
+        if needle in text:
+            return 1.0
+        return clamp01(compare_strings(needle, text))
+
     def _vector_retrieval(self, query, products, top_k):
         rows = []
         needle = str(query or "").lower()
         for product in products:
-            name = str(product.get("name") or "").lower()
-            similarity = 1.0 if needle and needle in name else clamp01(compare_strings(needle, name))
+            similarity = max(
+                self._name_similarity(needle, product.get("name")),
+                self._name_similarity(needle, product.get("original_name")),
+                self._name_similarity(needle, product.get("resourcename")),
+            )
             if similarity > 0.15:
                 rows.append({**product, "similarity": similarity})
         rows.sort(key=lambda item: item["similarity"], reverse=True)
@@ -360,6 +403,66 @@ class SuggestedAIEngine:
         if product.get("domain_id"):
             return self.domain_id_to_name.get(str(product["domain_id"]).lower(), "")
         return ""
+
+    def _api_priority(self, context, product):
+        selected_platform = str(context.get("v_dar_platform") or "").strip().lower()
+        product_platform = str(product.get("platform") or "").strip().lower()
+        platform_match = bool(selected_platform) and selected_platform == product_platform
+        selected_domain = context.get("selectedDomain") or context.get("v_dar_dataDomainSelect") or ""
+        domain_match = self._api_domain_match(selected_domain, product)
+        if platform_match and domain_match:
+            return 0, platform_match, domain_match
+        if platform_match or domain_match:
+            return 1, platform_match, domain_match
+        return 2, platform_match, domain_match
+
+    def _api_domain_match(self, selected, product):
+        if not str(selected or "").strip():
+            return False
+        if self._matches_domain(selected, product).get("match") is True:
+            return True
+        onets = str(product.get("onetsdomain") or "").strip()
+        if not onets:
+            return False
+        return calculate_domain_match_score(
+            normalize_domain_name(onets),
+            normalize_domain_name(str(selected)),
+        ) >= 0.8
+
+    def _api_match_reason(self, product, query, context, platform_match, domain_match):
+        platform = escape_html(context.get("v_dar_platform") or "API")
+        domain = str(context.get("selectedDomain") or context.get("v_dar_dataDomainSelect") or "").strip()
+        domain_text = escape_html(domain) if domain else "not selected"
+        api_name = escape_html(query or "the API name")
+        datatype = str(product.get("datatype") or product.get("type") or "")
+        subject = "This API" if "api" in datatype.lower() else "This product"
+        if platform_match and domain_match:
+            return (
+                f"{subject} is listed first because it matches both the selected platform <strong>{platform}</strong> "
+                f"and the selected domain <strong>{domain_text}</strong>. "
+                f"The API name <strong>{api_name}</strong> matches this product."
+            )
+        if domain_match:
+            return (
+                f"{subject} matches the selected domain <strong>{domain_text}</strong>, "
+                f"but it does not match the selected platform <strong>{platform}</strong>. "
+                f"It was suggested from the API name <strong>{api_name}</strong>."
+            )
+        if platform_match:
+            domain_clause = (
+                f"It does not match the selected domain <strong>{domain_text}</strong>."
+                if domain else
+                "No domain was selected."
+            )
+            return (
+                f"{subject} matches the selected platform <strong>{platform}</strong>. "
+                f"{domain_clause} It was suggested from the API name <strong>{api_name}</strong>."
+            )
+        return (
+            f"{subject} was suggested from the API name <strong>{api_name}</strong>. "
+            f"It does not match the selected platform <strong>{platform}</strong> "
+            f"or the selected domain <strong>{domain_text}</strong>."
+        )
 
     def _matches_domain(self, selected, product):
         raw = str(selected or "").strip()
@@ -500,10 +603,19 @@ class SuggestedAIEngine:
         grading = {"grade": "A", "modifier": "+", "class": "success", "fullGrade": "A+"} if direct else grade_and_color(match_percentage)
         is_denodo_verified = candidate.get("manual_verified") is True or direct
         verified = is_denodo_verified or candidate.get("is_steward_verified") is True or bool(candidate.get("isVerified"))
-        reason = self._match_reason(
-            requested_database, direct, database_matched, matched_tables, matched_columns,
-            missing, selected_tables, selected_columns,
-        )
+        if context.get("suggestion_kind") == "api":
+            reason = self._api_match_reason(
+                candidate,
+                query,
+                context,
+                candidate.get("api_platform_match") is True,
+                candidate.get("api_domain_match") is True,
+            )
+        else:
+            reason = self._match_reason(
+                requested_database, direct, database_matched, matched_tables, matched_columns,
+                missing, selected_tables, selected_columns,
+            )
         justification = self._business_justification(candidate, context, selected_tables, matched_columns)
         explanation = self._nlg_explanation(candidate, query, context, {
             "semantic": to_unit_score(candidate.get("semanticScore") if candidate.get("semanticScore") is not None else candidate.get("similarity") or 0),
@@ -528,6 +640,7 @@ class SuggestedAIEngine:
         return {
             "sku": candidate.get("sku") or f"PROD-{candidate.get('id') or index}",
             "name": candidate.get("name"),
+            "original_name": candidate.get("original_name") or candidate.get("resourcename") or "",
             "identifier": identifier,
             "short_desc": candidate.get("short_desc") or candidate.get("description") or candidate.get("listdetail") or candidate.get("brief_desc") or "No description provided.",
             "domain_id": candidate.get("domain_id"),
@@ -603,6 +716,10 @@ class SuggestedAIEngine:
             },
         }
 
+    def _overflow_link(self, remaining, noun):
+        suffix = "" if remaining == 1 else "s"
+        return f"+{remaining} more {noun}{suffix}"
+
     def _format_tables(self, tables):
         unique = list(dict.fromkeys(str(table).strip() for table in tables if str(table).strip()))
         if not unique:
@@ -612,8 +729,7 @@ class SuggestedAIEngine:
         if len(unique) <= 3:
             return markup
         remaining = len(unique) - 3
-        suffix = "" if remaining == 1 else "s"
-        return markup + f' <span class="table-overflow" style="color:#0d6efd;font-weight:600;cursor:pointer;">+{remaining} more table{suffix}</span>'
+        return markup + f' <a class="table-overflow" href="#">{self._overflow_link(remaining, "table")}</a>'
 
     def _format_columns(self, columns):
         unique = list(dict.fromkeys(str(column).strip() for column in columns if str(column).strip()))
@@ -623,13 +739,7 @@ class SuggestedAIEngine:
         if len(unique) <= 3:
             return markup
         remaining = len(unique) - 3
-        suffix = "" if remaining == 1 else "s"
-        return (
-            markup
-            + ' <a class="column-overflow" href="javascript:void(0)" '
-            + 'style="color:#0d6efd;font-weight:700;text-decoration:underline;">'
-            + f"+{remaining} more field{suffix}</a>"
-        )
+        return markup + f' <a class="column-overflow" href="#">{self._overflow_link(remaining, "field")}.</a>'
 
     def _match_reason(self, database, direct, database_matched, matched_tables, matched_columns, missing, selected_tables, selected_columns):
         if not direct:
@@ -641,9 +751,10 @@ class SuggestedAIEngine:
         column_text = self._format_columns([escape_html(column) for column in selected_columns]) if selected_columns else "<strong>N/A</strong>"
         table_label = "the selected table name is" if len(selected_tables) == 1 else "the selected table names are"
         column_label = "the available column field within the selected table is" if len(selected_columns) == 1 else "the available column fields within the selected table(s) are"
+        closer = "" if 'class="column-overflow"' in column_text else "."
         return (
             f"This dataset was recommended because it contains the database <strong>{escape_html(database)}</strong>, "
-            f"{table_label} {table_text}, and {column_label} {column_text}."
+            f"{table_label} {table_text}, and {column_label} {column_text}{closer}"
         )
 
     def _requester_use(self, product_type):
@@ -1026,11 +1137,16 @@ def suggest_from_request(request):
         return ""
 
     platform = first("v_dar_platform", "platform")
-    database = first("database-schema", "databaseSchema") or "tdp_finance"
-    tables = first("tablenames", "tableNames") or "customer_master, vehicle_sales"
+    explicit_query = first("query")
+    database = first("database-schema", "databaseSchema")
+    tables = first("tablenames", "tableNames")
+    if not explicit_query:
+        database = database or "tdp_finance"
+        tables = tables or "customer_master, vehicle_sales"
     description = first("v_dar_DataReqDescription", "description")
     justification = first("v_dar_businessJustification", "justification")
     domain = first("selectedDomain", "v_dar_dataDomainSelect", "domain")
+    suggestion_kind = "api" if explicit_query and re.search(r"\bapi\b", platform or "", re.I) and not database and not tables else ""
     context = {
         "v_dar_platform": platform,
         "db_raw": database,
@@ -1039,11 +1155,12 @@ def suggest_from_request(request):
         "justification_raw": justification,
         "selectedDomain": domain,
         "v_dar_dataDomainSelect": domain,
+        "suggestion_kind": suggestion_kind,
         "ranking_mode": first("ranking_mode", "rankingMode") or "default",
         "allowSensitive": first("allowSensitive").lower() == "true",
         "history": [],
     }
-    query = first("query") or expand_query(f"{database} {tables}")
+    query = explicit_query or expand_query(f"{database} {tables}")
     result = get_engine().get_suggestions(query, context)
     return {
         "product": result["suggestions"],

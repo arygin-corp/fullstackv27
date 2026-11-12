@@ -947,7 +947,7 @@ export class ShopService {
             poc_name: p.poc_name?.name || (typeof p.poc_name === 'string' ? p.poc_name : '') || '',
             poc_email: p.poc_name?.email || p.poc_email || '',
             // common fields normalized
-            short_desc: p.short_desc || p.brief_desc || p.summary || '',
+            short_desc: this.plainText(p.short_desc || p.brief_desc || p.summary || ''),
             sku: p.sku || p.product_sku || '',
             slug: p.slug || p.product_slug || '',
             domain: p.domain || p.domain_name || '',
@@ -1143,7 +1143,7 @@ export class ShopService {
     ): Observable<any> {
         const normalizedQuery = (query || '').trim();
         const page = opts.page || 1;
-        const cacheKey = `ai::${normalizedQuery}::${limit}::${page}`;
+        const cacheKey = `header::${normalizedQuery}::${limit}::${page}`;
         const cached = this.suggestionsCache.get(cacheKey);
         if (cached && (Date.now() - cached.ts) < this.cacheTTL) {
             return of(cached.value);
@@ -1152,7 +1152,7 @@ export class ShopService {
             .set('q', normalizedQuery)
             .set('limit', String(limit))
             .set('page', String(page))
-            .set('source', 'catalog');
+            .set('source', 'header');
 
         return this.http.get<any>(`${this.apiBase}/search/`, { params }).pipe(
             map(res => {

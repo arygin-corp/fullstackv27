@@ -1,5 +1,0 @@
-{% extends "gdx_admin/base.html" %}
-{% block title %}AWS {{ environment.get_environment_display }} Settings{% endblock %}
-{% block content %}
-<div class="container py-4"><div class="mb-4"><a href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">← AWS Integrations</a><h1 class="h3 mt-2">{{ environment.get_environment_display }} AWS Account</h1></div><form method="post" class="card"><div class="card-body">{% csrf_token %}{{ form.as_p }}<div class="alert alert-info mb-0">Use an AWS IAM role ARN for runtime access. This form does not collect AWS access-key secrets.</div></div><div class="card-footer d-flex justify-content-end gap-2"><a class="btn btn-light" href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">Cancel</a><button class="btn btn-primary" type="submit">Save Environment</button></div></form></div>
-{% endblock %}

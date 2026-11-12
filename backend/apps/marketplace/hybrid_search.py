@@ -1096,6 +1096,226 @@ def fast_suggestion_search(request):
     return _page_from_bundle(bundle, page)
 
 
+_API_NAME_CACHE = {}
+_API_NAME_LIMIT = 80
+_API_NAME_SIMILARITY = 0.55
+_API_DATATYPE = "Webservices (APIs)"
+
+
+def _original_api_name(product):
+    names = []
+    if product.original_name and product.original_name.strip():
+        names.append(product.original_name.strip())
+    for source in (product.resource, product.catalog):
+        resource_type = source.resourcetype if source is not None and source.resourcetype_id else None
+        original = resource_type.original_name.strip() if resource_type and resource_type.original_name else ""
+        if original and original not in names:
+            names.append(original)
+    return names[0] if names else ""
+
+
+def _api_name_queryset(query):
+    """Webservice products whose API name or original API name matches the typed text."""
+    name_similarity = Coalesce(TrigramSimilarity("name", query), Value(0.0), output_field=FloatField())
+    original_similarity = Greatest(
+        Coalesce(TrigramSimilarity("original_name", query), Value(0.0), output_field=FloatField()),
+        Coalesce(
+            TrigramSimilarity("resource__resourcetype__original_name", query),
+            Value(0.0),
+            output_field=FloatField(),
+        ),
+        Coalesce(
+            TrigramSimilarity("catalog__resourcetype__original_name", query),
+            Value(0.0),
+            output_field=FloatField(),
+        ),
+    )
+    typed = (
+        Q(name__icontains=query)
+        | Q(original_name__icontains=query)
+        | Q(resource__resourcetype__original_name__icontains=query)
+        | Q(catalog__resourcetype__original_name__icontains=query)
+    )
+    original_exact = (
+        Q(original_name__iexact=query)
+        | Q(resource__resourcetype__original_name__iexact=query)
+        | Q(catalog__resourcetype__original_name__iexact=query)
+    )
+    original_starts = (
+        Q(original_name__istartswith=query)
+        | Q(resource__resourcetype__original_name__istartswith=query)
+        | Q(catalog__resourcetype__original_name__istartswith=query)
+    )
+    original_contains = (
+        Q(original_name__icontains=query)
+        | Q(resource__resourcetype__original_name__icontains=query)
+        | Q(catalog__resourcetype__original_name__icontains=query)
+    )
+    close_enough = typed
+    if len(query) >= 4:
+        close_enough = typed | Q(api_name_similarity__gte=_API_NAME_SIMILARITY) | Q(
+            original_name_similarity__gte=_API_NAME_SIMILARITY
+        )
+    return (
+        visible_products()
+        .filter(datatype__name=_API_DATATYPE)
+        .annotate(
+            api_name_similarity=name_similarity,
+            original_name_similarity=original_similarity,
+        )
+        .filter(close_enough)
+        .annotate(
+            match_tier=Case(
+                When(name__iexact=query, then=Value(0)),
+                When(original_exact, then=Value(0)),
+                When(name__istartswith=query, then=Value(1)),
+                When(original_starts, then=Value(1)),
+                When(name__icontains=query, then=Value(2)),
+                When(original_contains, then=Value(2)),
+                default=Value(3),
+                output_field=IntegerField(),
+            )
+        )
+        .select_related(
+            "domain",
+            "subdomain_2",
+            "subdomain_3",
+            "datatype",
+            "classification",
+            "data_steward",
+            "poc_name",
+            "business_contact_name",
+            "business_sme",
+            "org",
+            "resource",
+            "resource__resourcetype",
+            "catalog",
+            "catalog__resourcetype",
+        )
+        .prefetch_related("images")
+        .order_by("match_tier", "-api_name_similarity", "-original_name_similarity", "name")
+    )
+
+
+def _api_match_label(product, query):
+    folded = query.casefold()
+    name = (product.name or "").casefold()
+    original = _original_api_name(product).casefold()
+    name_hit = folded in name
+    original_hit = bool(original) and folded in original
+    if original_hit and not name_hit:
+        return "Original API name"
+    name_score = float(getattr(product, "api_name_similarity", 0) or 0)
+    original_score = float(getattr(product, "original_name_similarity", 0) or 0)
+    if not name_hit and original_score > name_score:
+        return "Original API name"
+    return "API name"
+
+
+def _api_name_vocabulary():
+    rows = (
+        visible_products()
+        .filter(datatype__name=_API_DATATYPE)
+        .values_list(
+            "name",
+            "original_name",
+            "resource__resourcetype__original_name",
+            "catalog__resourcetype__original_name",
+        )
+    )
+    words = []
+    for row in rows:
+        for value in row:
+            if value:
+                words.extend(normalize_query(value).split())
+    return words
+
+
+def api_name_search(request):
+    """AI suggestions for the names a person types against API products."""
+    raw_query = request.query_params.get("q", "").strip()
+    normalized_query = normalize_query(raw_query)
+    now = time.time()
+    cached = _API_NAME_CACHE.get(normalized_query)
+    if cached and now - cached[0] < _SUGGESTION_TTL:
+        bundle = cached[1]
+    else:
+        bundle = _api_name_bundle(request, raw_query, normalized_query)
+        if len(normalized_query) >= 2:
+            _API_NAME_CACHE[normalized_query] = (now, bundle)
+            if len(_API_NAME_CACHE) > 40:
+                oldest = min(_API_NAME_CACHE, key=lambda key: _API_NAME_CACHE[key][0])
+                _API_NAME_CACHE.pop(oldest, None)
+    return {
+        **bundle,
+        "count": len(bundle["results"]),
+        "page": 1,
+        "page_size": _API_NAME_LIMIT,
+        "total_pages": 1 if bundle["results"] else 0,
+        "has_previous": False,
+        "has_next": False,
+    }
+
+
+def _api_name_bundle(request, raw_query, normalized_query):
+    empty = {
+        "query": raw_query,
+        "normalized_query": normalized_query,
+        "search_query_used": normalized_query,
+        "intent": "api-name",
+        "applied_filters": {"datatype": _API_DATATYPE},
+        "inferred_filters": {},
+        "did_you_mean": None,
+        "spelling_confidence": None,
+        "correction_applied": False,
+        "results": [],
+    }
+    if len(normalized_query) < 2:
+        return empty
+
+    search_query_used = normalized_query
+    correction_applied = False
+    did_you_mean = None
+    spelling_confidence = None
+    products = list(_api_name_queryset(normalized_query)[:_API_NAME_LIMIT])
+    if not products and len(normalized_query) >= 3:
+        spelling = build_did_you_mean(normalized_query, _api_name_vocabulary())
+        if spelling and spelling["query"] != normalized_query:
+            corrected = spelling["query"]
+            products = list(_api_name_queryset(corrected)[:_API_NAME_LIMIT])
+            if products:
+                search_query_used = corrected
+                correction_applied = True
+                did_you_mean = corrected[:1].upper() + corrected[1:]
+                spelling_confidence = spelling["confidence"]
+
+    results = []
+    for product in products:
+        score = max(
+            float(getattr(product, "api_name_similarity", 0) or 0),
+            float(getattr(product, "original_name_similarity", 0) or 0),
+        )
+        label = _api_match_label(product, search_query_used)
+        result = product_to_result(
+            product,
+            request=request,
+            matched_on=[label],
+            relevance_score=score,
+        )
+        result["original_name"] = _original_api_name(product)
+        result["matched_label"] = label
+        results.append(result)
+
+    return {
+        **empty,
+        "search_query_used": search_query_used,
+        "did_you_mean": did_you_mean,
+        "spelling_confidence": spelling_confidence,
+        "correction_applied": correction_applied,
+        "results": results,
+    }
+
+
 def hybrid_product_search(request):
     raw_query = request.query_params.get("q", "").strip()
     normalized_query = normalize_query(raw_query)

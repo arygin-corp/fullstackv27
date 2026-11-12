@@ -12,7 +12,10 @@
             (focus)="openSuggestion()"
             #input>
         <button class="search__button search__button--type--submit" type="submit" aria-label="Search">
-            <app-icon name="search-20" size="20"></app-icon>
+            <span *ngIf="location === 'header'" class="search__chat-icon" aria-hidden="true">
+                <img src="assets/images/chat/ai-spark.png" alt="">
+            </span>
+            <app-icon *ngIf="location !== 'header'" name="search-20" size="20"></app-icon>
         </button>
         <button
             *ngIf="location === 'mobile-header'"
@@ -33,7 +36,9 @@
                         {{ suggestionLabel(didYouMean) }}
                     </span>?
                 </p>
+                <ng-container *ngIf="hasAiResults">
                 <button
+                    *ngIf="hasUserResults"
                     type="button"
                     class="search__mode"
                     [class.is-active]="resultMode === 'user'"
@@ -47,9 +52,10 @@
                     (click)="selectMode('ai', $event)">
                     AI Suggested Products
                 </button>
+                </ng-container>
             </div>
             <div class="col-12">
-                <p *ngIf="resultMode === 'ai' && aiLoading" class="search__status">Looking for AI suggested products...</p>
+                <p *ngIf="aiLoading && (resultMode === 'ai' || !hasUserResults)" class="search__status">Looking for AI suggested products...</p>
                 <p *ngIf="!isLoading && !aiLoading && suggestedProducts.length === 0" class="search__status">No products found.</p>
                 <ul *ngIf="suggestedProducts.length > 0" class="suggestions__list" style="padding: 12px 0px;">
                     <li *ngFor="let product of suggestedProducts; trackBy: trackByProductId" class="suggestions__item">

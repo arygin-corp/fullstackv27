@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { fromEvent, Observable, of, Subject, timer } from 'rxjs';
+import { forkJoin, fromEvent, Observable, of, Subject, timer } from 'rxjs';
 import { catchError, debounce, debounceTime, distinctUntilChanged, filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { Product } from '../../interfaces/product';
@@ -66,9 +66,12 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
   expandedMatches = new Set<number | string>();
   resultMode: 'user' | 'ai' = 'user';
   aiLoading = false;
+  hasUserResults = false;
+  hasAiResults = false;
   private userResult: any = null;
   private aiResult: any = null;
   private aiQuery = '';
+  private modeChosen = false;
   private aiSearch$ = new Subject<{ query: string; page: number; immediate: boolean }>();
 
   get inputElement(): HTMLInputElement {
@@ -123,11 +126,11 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe(response => {
       this.aiLoading = false;
-      this.aiResult = response;
+      this.aiResult = this.location === 'header'
+        ? this.recommendationsOnly(response, this.userResult)
+        : response;
       this.aiQuery = response?.query || '';
-      if (this.resultMode === 'ai') {
-        this.showResult(response);
-      }
+      this.syncResultMode();
     });
   }
 
@@ -143,19 +146,23 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
 
       tap(query => {
         this.currentPage = 1;
-        this.aiResult = null;
         this.expandedMatches = new Set();
-        if (this.resultMode === 'ai') {
-          this.suggestedProducts = [];
-        } else {
-          this.isLoading = true;
+        this.modeChosen = false;
+        this.resultMode = 'user';
+        if (this.location === 'header') {
+          this.userResult = null;
+          this.hasUserResults = false;
+          this.aiResult = null;
+          this.hasAiResults = false;
+          this.aiLoading = query.length >= 2;
         }
-        this.loadAi(query);
+        this.isLoading = query.length >= 2;
       }),
 
       switchMap(query => {
         if (query.length < 2) {
           this.isLoading = false;
+          this.aiLoading = false;
 
           return of({
             suggestions: [],
@@ -167,13 +174,14 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
           });
         }
 
-        return this.shop.getSuggestions(
-          query,
-          8,
-          {
-            page: this.currentPage
-          }
-        ).pipe(
+        const request = this.location === 'header'
+          ? forkJoin({
+              user: this.shop.getSuggestions(query, 8, { page: this.currentPage }),
+              ai: this.shop.getAiSuggestions(query, 8, { page: this.currentPage }),
+            })
+          : this.shop.getSuggestions(query, 8, { page: this.currentPage });
+
+        return request.pipe(
           catchError(error => {
             console.error(
               'SEARCH API ERROR:',
@@ -195,10 +203,18 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe({
       next: response => {
-        this.userResult = response;
-        if (this.resultMode === 'user') {
-          this.handleResults(response);
+        if (this.location === 'header' && response?.user && response?.ai) {
+          this.isLoading = false;
+          this.aiLoading = false;
+          this.userResult = response.user;
+          this.aiResult = this.recommendationsOnly(response.ai, response.user);
+          this.aiQuery = response.ai?.query || (this.form.value.query || '').trim();
+          this.syncResultMode();
+          return;
         }
+        this.isLoading = false;
+        this.userResult = response;
+        this.handleResults(response);
       },
 
       error: error => {
@@ -210,6 +226,36 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
         this.isLoading = false;
       }
     });
+  }
+
+  private recommendationsOnly(ai: any, user: any): any {
+    const seen = new Set((user?.suggestions || []).map((product: { id?: number | string }) => product.id));
+    const suggestions = (ai?.suggestions || []).filter((product: { id?: number | string; highlights?: Array<{ kind?: string }> }) => {
+      if (seen.has(product.id)) {
+        return false;
+      }
+      const highlights = product.highlights || [];
+      return highlights.some(tag => tag.kind && tag.kind !== 'product');
+    });
+    return { ...ai, suggestions, count: suggestions.length };
+  }
+
+  private syncResultMode(): void {
+    const userCount = Number(this.userResult?.count || this.userResult?.suggestions?.length || 0);
+    const aiCount = Array.isArray(this.aiResult?.suggestions) ? this.aiResult.suggestions.length : 0;
+    this.hasUserResults = userCount > 0;
+    this.hasAiResults = !this.aiLoading && aiCount > 0;
+    if (!this.modeChosen) {
+      this.resultMode = this.hasUserResults || !this.hasAiResults ? 'user' : 'ai';
+    } else if (!this.hasAiResults && this.resultMode === 'ai') {
+      this.resultMode = 'user';
+    } else if (this.hasAiResults && !this.hasUserResults) {
+      this.resultMode = 'ai';
+    }
+    const source = this.resultMode === 'ai' ? this.aiResult : this.userResult;
+    if (source) {
+      this.showResult(source);
+    }
   }
 
   onPageChange(page: number): void {
@@ -225,6 +271,7 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
   selectMode(mode: 'user' | 'ai', event: Event): void {
     event.preventDefault();
     event.stopPropagation();
+    this.modeChosen = true;
     this.resultMode = mode;
     const query = (this.form.value.query || '').trim();
     if (mode === 'user') {
@@ -320,6 +367,7 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
 
   handleResults(res: any): void {
     this.isLoading = false;
+    this.userResult = res;
     this.showResult(res);
   }
 
@@ -437,6 +485,10 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
     const query = (this.form.value.query || '').trim();
     if (query) {
       this.currentPage = 1;
+      if (this.location === 'header') {
+        this.openSuggestion();
+        return;
+      }
       this.runSearch();
     }
   }

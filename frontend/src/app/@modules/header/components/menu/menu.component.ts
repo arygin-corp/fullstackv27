@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { NestedLink } from '../../../../@shared/interfaces/nested-link';
 import { DirectionService } from '../../../../@shared/services/direction.service';
+import { BackendAccessService } from '../../../../@shared/services/backend-access.service';
 
 @Component({
     selector: 'app-header-menu',
@@ -28,6 +29,7 @@ export class MenuComponent implements AfterViewChecked {
     @ViewChildren('itemElement') itemElements!: QueryList<ElementRef>;
 
     readonly hackathonYear = new Date().getFullYear();
+    canViewProductRequests = false;
     hoveredItem: NestedLink|null = null;
     reCalcSubmenuPosition = false;
 
@@ -36,8 +38,13 @@ export class MenuComponent implements AfterViewChecked {
     }
 
     constructor(
-        private direction: DirectionService
-    ) { }
+        private direction: DirectionService,
+        private backendAccess: BackendAccessService,
+    ) {
+        this.backendAccess.load().then(allowed => {
+            this.canViewProductRequests = allowed;
+        });
+    }
 
     onItemMouseEnter(item: NestedLink): void {
         if (this.hoveredItem !== item) {

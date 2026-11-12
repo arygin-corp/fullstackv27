@@ -81,12 +81,55 @@ PRODUCT_STATUS_CHOICES = [
 ]
 
 # DOMAINS
+def _undouble_slug(slug):
+    words = []
+    for word in (slug or "").split("-"):
+        if word and (not words or words[-1] != word):
+            words.append(word)
+    return "-".join(words)
+
+
+def sequenced_slug(name, parent_slug="", domain_slug=""):
+    """Build a slug from the name, then the parent path.
+
+    Vehicle is vehicle. Vehicle Master Data stays vehicle-master-data because
+    the name already starts with the domain slug. Tune-Up does not, so it
+    becomes vehicle-master-data-tune-up. A repeated word at the join is kept
+    once: vehicle-sales plus Sales Performance Financial Insights becomes
+    vehicle-sales-performance-financial-insights.
+    """
+    own = _undouble_slug(slugify(name or "") or "item")
+    parent_slug = _undouble_slug((parent_slug or "").strip("-"))
+    if not parent_slug:
+        return own[:150]
+    if own == parent_slug or own.startswith(parent_slug + "-"):
+        return own[:150]
+    parent_words = parent_slug.split("-")
+    own_words = own.split("-")
+    overlap = 0
+    for size in range(min(len(parent_words), len(own_words)), 0, -1):
+        if parent_words[-size:] == own_words[:size]:
+            overlap = size
+            break
+    remainder = own_words[overlap:]
+    if not remainder:
+        return parent_slug[:150]
+    return _undouble_slug(f"{parent_slug}-{'-'.join(remainder)}")[:150]
+
+
+LEVEL_CHOICES = (
+    (0, "0"),
+    (1, "1"),
+    (2, "2"),
+)
+
+
 class Domain(models.Model):
     sku = models.PositiveIntegerField(unique=True, editable=False)
     image = models.ImageField(upload_to=domain_upload_path, validators=[validate_image_extension], max_length=150, default='default.jpg', blank=True, null=True)
     name = models.CharField(max_length=150)
     description = CKEditor5Field('Domain Description', config_name='extends', blank=True, null=True)
-    level = models.IntegerField(default=0)
+    level = models.IntegerField(choices=LEVEL_CHOICES, default=0)
     slug = models.CharField(max_length=150, blank=True, null=True)
     is_active = models.BooleanField('Active', default=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='domain_author_create')
@@ -104,11 +147,18 @@ class Domain(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.sku:
-            # This line might cause an error if Product is not yet defined or imported correctly
-            # Assuming Product is defined later in this file or imported.
-            last_sku = Product.objects.aggregate(models.Max('sku'))['sku__max']
-            self.sku = (last_sku + 5) if last_sku is not None else 100
+            last_sku = Domain.objects.aggregate(models.Max("sku"))["sku__max"]
+            self.sku = last_sku + 10 if last_sku is not None else 100
+        self.slug = slugify(self.name or "")[:150] or "domain"
         super().save(*args, **kwargs)
+        domain_slug = self.slug
+        for child in self.domain.all():
+            child_slug = sequenced_slug(child.name, domain_slug, domain_slug)
+            type(child).objects.filter(pk=child.pk).update(slug=child_slug)
+            for grand in child.subdomain_1.all():
+                type(grand).objects.filter(pk=grand.pk).update(
+                    slug=sequenced_slug(grand.name, child_slug, domain_slug)
+                )
 
 
 # SUBDOMAINS LEVEL 2
@@ -118,7 +168,7 @@ class SubDomain_1(models.Model):
     name = models.CharField(max_length=150)
     description = CKEditor5Field('Subdomain Description', config_name='extends', blank=True, null=True)
     slug = models.CharField(max_length=150, blank=True, null=True)
-    level = models.IntegerField(blank=True, null=True)
+    level = models.IntegerField(choices=LEVEL_CHOICES, default=1)
     is_active = models.BooleanField('Active', default=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='subdomain_author_create')
     created_at = models.DateField(auto_now_add=True)
@@ -137,10 +187,18 @@ class SubDomain_1(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.sku:
-            # This line might cause an error if Product is not yet defined or imported correctly
-            last_sku = Product.objects.aggregate(models.Max('sku'))['sku__max']
-            self.sku = (last_sku + 2) if last_sku is not None else 100
+            last_sku = SubDomain_1.objects.aggregate(models.Max("sku"))["sku__max"]
+            self.sku = last_sku + 5 if last_sku is not None else 105
+        domain = self.domain if self.domain_id else None
+        domain_slug = ""
+        if domain is not None:
+            domain_slug = domain.slug or slugify(domain.name or "")[:150]
+        self.slug = sequenced_slug(self.name, domain_slug, domain_slug)
         super().save(*args, **kwargs)
+        for grand in self.subdomain_1.all():
+            type(grand).objects.filter(pk=grand.pk).update(
+                slug=sequenced_slug(grand.name, self.slug, domain_slug)
+            )
 
 
 # SUBDOMAINS LEVEL 3
@@ -150,7 +208,7 @@ class SubDomain_2(models.Model):
     name = models.CharField(max_length=150)
     description = CKEditor5Field('Subdomain Description', config_name='extends', blank=True, null=True)
     slug = models.CharField(max_length=150, blank=True, null=True)
-    level = models.IntegerField(blank=True, null=True)
+    level = models.IntegerField(choices=LEVEL_CHOICES, default=2)
     is_active = models.BooleanField('Active', default=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='subdomains2_author_create')
     created_at = models.DateField(auto_now_add=True)
@@ -169,9 +227,17 @@ class SubDomain_2(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.sku:
-            # This line might cause an error if Product is not yet defined or imported correctly
-            last_sku = Product.objects.aggregate(models.Max('sku'))['sku__max']
-            self.sku = (last_sku + 3) if last_sku is not None else 100
+            last_sku = SubDomain_2.objects.aggregate(models.Max("sku"))["sku__max"]
+            self.sku = last_sku + 2 if last_sku is not None else 102
+        parent = self.subdomain_1 if self.subdomain_1_id else None
+        domain = parent.domain if parent is not None and parent.domain_id else None
+        domain_slug = ""
+        parent_slug = ""
+        if domain is not None:
+            domain_slug = domain.slug or slugify(domain.name or "")[:150]
+        if parent is not None:
+            parent_slug = parent.slug or sequenced_slug(parent.name, domain_slug, domain_slug)
+        self.slug = sequenced_slug(self.name, parent_slug, domain_slug)
         super().save(*args, **kwargs)
 
 
@@ -228,10 +294,94 @@ class Contact(models.Model):
         ordering = ['id']
 
 
+class ResourceKind(models.Model):
+    """Dataset, API, and any other kind an admin adds."""
+    name = models.CharField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Resource kind"
+
+    def __str__(self):
+        return self.name
+
+
+class ResourceUrlTemplate(models.Model):
+    """URL pattern an admin can extend."""
+    pattern = models.CharField(max_length=500, unique=True)
+
+    class Meta:
+        ordering = ["pattern"]
+        verbose_name = "Resource URL template"
+
+    def __str__(self):
+        return self.pattern
+
+
+class ResourceType(models.Model):
+    type = models.ForeignKey(ResourceKind, on_delete=models.PROTECT, related_name="resource_types")
+    name = models.CharField(max_length=200)
+    original_name = models.CharField("Original API catalog name", max_length=400, blank=True)
+    url = models.ForeignKey(ResourceUrlTemplate, on_delete=models.PROTECT, related_name="resource_types")
+    api_id = models.IntegerField(blank=True, null=True)
+    collibra_id = models.UUIDField(blank=True, null=True)
+    query = models.CharField(max_length=100, default="session=true")
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Resource type"
+
+    def __str__(self):
+        kind = self.type.name if self.type_id else ""
+        return f"{self.name} ({kind})" if kind else self.name
+
+    def is_api(self):
+        return bool(self.type_id and (self.type.name or "").strip().lower() == "api")
+
+    def resolved_url(self):
+        pattern = self.url.pattern if self.url_id else ""
+        if not pattern:
+            return ""
+        api_value = "" if self.api_id is None else str(self.api_id)
+        collibra_value = "" if not self.collibra_id else str(self.collibra_id)
+        url = pattern.replace("<app_id>", api_value).replace("<collibra_id>", collibra_value)
+        if self.is_api() and self.query:
+            url = f"{url}&{self.query}" if "?" in url else f"{url}?{self.query}"
+        return url
+
+    def save(self, *args, **kwargs):
+        self.query = "session=true"
+        if self.type_id and not self.is_api():
+            self.original_name = ""
+        super().save(*args, **kwargs)
+
+
+def catalog_resource_id_field(catalog):
+    """Product column that stores the resource id for this catalog."""
+    if catalog is None:
+        return ""
+    name = (getattr(catalog, "name", None) or "").strip()
+    type_name = ""
+    resource_type = getattr(catalog, "resourcetype", None)
+    if getattr(catalog, "resourcetype_id", None) and resource_type is not None:
+        type_name = (resource_type.name or "").strip().lower()
+    if name == "Collibra" or type_name == "collibra":
+        return "collibra_id"
+    if name == "EIG API Catalog" or name.lower().startswith("vapi") or type_name == "api":
+        return "api_id"
+    return ""
+
+
+COLLIBRA_ASSET_URL = "https://tmna.collibra.com/assets/"
+EIG_API_URL = "https://developer.eig.toyota.com/api/"
+VAPI_URL = "https://docs.ms.nonprod.vapi.tms.aws.toyota.com/vapims/query/index.html"
+
+
 class Catalog(models.Model):
     image = models.FileField('Resource Logo', upload_to='marketplace/catalog/logos',
                              validators=[validate_image_extension], max_length=150, blank=True, null=True)
-    name = models.CharField('Catalog Type', max_length=50, null=True)
+    name = models.CharField('Catalog Type', max_length=50, null=True, help_text="EIG API Catalog, VAPI Microservices, Collibra, or another catalog an admin adds.")
+    resourcetype = models.ForeignKey(ResourceType, on_delete=models.SET_NULL, blank=True, null=True, related_name="catalogs", verbose_name="Resource type")
     is_active = models.BooleanField('Active', default=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='catalog_author_create')
     created_at = models.DateField(auto_now_add=True)
@@ -240,7 +390,47 @@ class Catalog(models.Model):
     readonly_fields = ('created_by', 'created_at', 'updated_by', 'updated_at')
 
     def __str__(self):
-        return self.name
+        return self.name or ""
+
+    def resource_base_url(self):
+        name = (self.name or "").strip()
+        if name == "Collibra":
+            return COLLIBRA_ASSET_URL
+        if name == "EIG API Catalog":
+            return EIG_API_URL
+        if name.lower().startswith("vapi"):
+            return VAPI_URL
+        resource_type = self.resourcetype
+        return resource_type.resolved_url() if resource_type is not None else ""
+
+    def resource_payload(self, request=None, collibra_id=None, api_id=None):
+        image = ""
+        if self.image:
+            image = self.image.url
+            if request is not None:
+                image = request.build_absolute_uri(image)
+        resource_type = self.resourcetype
+        kind = ""
+        original_name = ""
+        url = self.resource_base_url()
+        if resource_type is not None:
+            kind = resource_type.type.name if resource_type.type_id else ""
+            original_name = resource_type.original_name if resource_type.is_api() else ""
+        field = catalog_resource_id_field(self)
+        raw = collibra_id if field == "collibra_id" else api_id if field == "api_id" else ""
+        token = str(raw or "").strip().strip("/")
+        if token and url:
+            url = url.rstrip("/") + "/" + token
+        return {
+            "id": self.id,
+            "catalog": self.name or "",
+            "image": image,
+            "type": kind,
+            "name": resource_type.name if resource_type else "",
+            "original_name": original_name,
+            "url": url,
+            "collibra_id": str(collibra_id or (resource_type.collibra_id if resource_type else "") or ""),
+        }
 
     class Meta:
         ordering = ['id']
@@ -248,6 +438,9 @@ class Catalog(models.Model):
 class Badge(models.Model):
     name = models.CharField('Name', max_length=50, null=True)
     is_active = models.BooleanField('Active', default=False)
+    is_system = models.BooleanField('System badge', default=False, editable=False)
+    system_key = models.SlugField('System key', max_length=80, unique=True, null=True, blank=True, editable=False)
+    image = models.CharField('Image', max_length=255, blank=True, default='', editable=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='badge_author_create')
     created_at = models.DateField(auto_now_add=True)
     updated_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=True, related_name='badge_author_update')
@@ -256,6 +449,22 @@ class Badge(models.Model):
 
     def __str__(self):
         return self.name
+
+    def clean(self):
+        super().clean()
+        if self.is_system:
+            return
+        from apps.marketplace.system_badges import similar_system_badge
+
+        match = similar_system_badge(self.name, exclude_pk=self.pk)
+        if match is None:
+            return
+        raise ValidationError({
+            "name": (
+                f'This badge was not saved because "{self.name}" is too similar to the system badge "{match.name}". '
+                "System badges are already available and cannot be created again."
+            )
+        })
 
     class Meta:
         ordering = ['id']
@@ -467,6 +676,11 @@ class ProductQuerySet(models.QuerySet):
     def published(self):
         return self.filter(is_active=True, status="approved")
 
+    def hide_archived(self, status=""):
+        if (status or "").strip() == "archived":
+            return self
+        return self.exclude(status="archived")
+
 
 class Product(models.Model):
     objects = ProductQuerySet.as_manager()
@@ -488,7 +702,9 @@ class Product(models.Model):
     business_contact_name = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Business Contact', related_name='business_contact')
     business_sme = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Business SME', related_name='business_sme')
     catalog = models.ForeignKey(Catalog, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Catalog Name', related_name='catalog_name')
-    resource_url = models.CharField(verbose_name='Resource URL', max_length=1400, blank=True, null=True)
+    resource = models.ForeignKey(Catalog, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Resource', related_name='resource_products')
+    collibra_id = models.CharField('Collibra ID', max_length=100, blank=True, null=True)
+    api_id = models.CharField('API ID', max_length=100, blank=True, null=True)
     original_name = models.CharField('Catalog Original Name', max_length=400, blank=True, null=True)
     route_identifier = models.ForeignKey(FulfillmentTeam, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Route Identifier', related_name='route_identifier')
     price = models.DecimalField(verbose_name='Price', decimal_places=2, max_digits=8, default='0.00')
@@ -556,7 +772,39 @@ class Product(models.Model):
         product_id = str(self.pk or 0).zfill(3)
         return f"{domain_sku}{subdomain_sku}{product_id}"
 
+    def clean(self):
+        super().clean()
+        self._sync_resource(strict=True)
+
+    def _datatype_name(self):
+        if not self.datatype_id:
+            return ""
+        datatype = getattr(self, "datatype", None)
+        if datatype is not None and getattr(datatype, "name", None):
+            return datatype.name
+        return Datatype.objects.filter(pk=self.datatype_id).values_list("name", flat=True).first() or ""
+
+    def _sync_resource(self, strict=False):
+        datatype_name = self._datatype_name()
+        if datatype_name == "Datasets":
+            if not self.catalog_id:
+                collibra = Catalog.objects.filter(name="Collibra").order_by("id").first()
+                if collibra:
+                    self.catalog = collibra
+                    self.resource = collibra
+            elif not self.resource_id:
+                self.resource_id = self.catalog_id
+            return
+        if datatype_name != "Webservices (APIs)" or not self.resource_id or not strict:
+            return
+        resource = self.resource
+        resource_type = resource.resourcetype if resource else None
+        kind = resource_type.type.name if resource_type and resource_type.type_id else ""
+        if kind and kind.strip().lower() != "api":
+            raise ValidationError({"resource": "Webservices products use a catalog whose resource type is API."})
+
     def save(self, *args, **kwargs):
+        self._sync_resource(strict=False)
         if not self.slug and self.name:
             self.slug = self._build_unique_slug()
 
@@ -574,6 +822,9 @@ class Product(models.Model):
             Product.objects.filter(pk=self.pk).update(sku=calculated_sku)
             self.sku = calculated_sku
 
+        if self.name:
+            self.images.exclude(alt_text=self.name[:255]).update(alt_text=self.name[:255])
+
     def get_absolute_url(self):
         # You had two get_absolute_url methods. This one was last, so I'm keeping it.
         # If you need both, they need different names.
@@ -583,24 +834,29 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField('Product Image', upload_to=product_image_upload_path, validators=[validate_image_extension], max_length=2000, blank=True, null=True)
     alt_text = models.CharField(max_length=255, blank=True)
+    position = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['position', 'id']
 
     def save(self, *args, **kwargs):
-        if not self.alt_text and self.image:
-            # FIX: changed 'filename' to 'self.image.name'
+        product_name = ""
+        if self.product_id:
+            product_name = (getattr(self.product, "name", None) or "").strip()
+        if product_name:
+            self.alt_text = product_name[:255]
+        elif not self.alt_text and self.image:
             import os
-            self.alt_text = os.path.splitext(self.image.name)[0]
+            self.alt_text = os.path.splitext(os.path.basename(self.image.name))[0][:255]
         super().save(*args, **kwargs)
 
 class ProductAssociation(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_associations")
     associated_product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="associated_product_links")
     is_related = models.BooleanField(default=False)
-    is_additional = models.BooleanField(default=False)
+    is_additional = models.BooleanField("Similar", default=False)
     reason = models.CharField(max_length=255, blank=True)
-    position = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    position = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(15)])
 
     class Meta:
         ordering = ["position"]
@@ -618,7 +874,7 @@ class ProductAssociation(models.Model):
         if self.product_id and self.associated_product_id and self.product_id == self.associated_product_id:
             errors["associated_product"] = "A product cannot be associated with itself."
         if not self.is_related and not self.is_additional:
-            errors["is_related"] = "Select Related, Additional, or both."
+            errors["is_related"] = "Select Related, Similar, or both."
         if errors:
             raise ValidationError(errors)
 
@@ -629,8 +885,8 @@ class ProductAssociation(models.Model):
 
     @property
     def badge_label(self):
-        if self.is_related and self.is_additional: return "Related + Additional"
-        return "Related Product" if self.is_related else "Additional Product"
+        if self.is_related and self.is_additional: return "Related + Similar"
+        return "Related Product" if self.is_related else "Similar Product"
 
 
 class EndToEndSolutionProduct(models.Model):
@@ -769,6 +1025,25 @@ class SearchProductEmbedding(models.Model):
 
     def __str__(self):
         return f"Embedding for {self.product.name}"
+
+
+class ProductDetailVisit(models.Model):
+    """A product detail view that stayed on the page for at least five seconds."""
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="detail_visits")
+    visitor = models.CharField(max_length=255, blank=True)
+    duration_seconds = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["product", "duration_seconds"], name="mkt_visit_product_duration"),
+            models.Index(fields=["created_at"], name="mkt_visit_created"),
+        ]
+
+    def __str__(self):
+        return f"{self.product_id} viewed for {self.duration_seconds}s"
+
 
 class Review(models.Model):
     STAR_CHOICES = [(i, str(i)) for i in range(1, 6)]

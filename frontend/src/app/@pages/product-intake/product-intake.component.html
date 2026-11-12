@@ -15,24 +15,107 @@
     <p class="product-intake__error" *ngIf="error">{{ error }}</p>
     <p *ngIf="!loading && !error && !items.length">No product requests yet. Use Add New Product in the header to submit one.</p>
 
-    <table *ngIf="items.length">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Domain</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Submitted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of items">
-                <td>{{ item.product_name || 'Untitled product' }}</td>
-                <td>{{ item.product_domain || '—' }}</td>
-                <td>{{ item.product_type || '—' }}</td>
-                <td><span class="product-intake__status">{{ statusLabel(item.status) }}</span></td>
-                <td>{{ (item.submitted_at || item.created_at) | date:'mediumDate' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="intake-table" *ngIf="!loading && !error && items.length">
+        <div class="intake-table__toolbar">
+            <label class="intake-table__search">
+                <span>Search</span>
+                <input type="search" [(ngModel)]="search" (ngModelChange)="onFiltersChange()" placeholder="Search product, domain, type, or status" aria-label="Search product requests">
+            </label>
+            <label>
+                <span>From</span>
+                <input type="date" [(ngModel)]="dateFrom" (ngModelChange)="onFiltersChange()" aria-label="Submitted from">
+            </label>
+            <label>
+                <span>To</span>
+                <input type="date" [(ngModel)]="dateTo" (ngModelChange)="onFiltersChange()" aria-label="Submitted to">
+            </label>
+            <label>
+                <span>Domain</span>
+                <select [(ngModel)]="domainFilter" (ngModelChange)="onFiltersChange()" aria-label="Filter by domain">
+                    <option value="">All domains</option>
+                    <option *ngFor="let domain of domainOptions" [value]="domain">{{ domain }}</option>
+                </select>
+            </label>
+            <label>
+                <span>Type</span>
+                <select [(ngModel)]="typeFilter" (ngModelChange)="onFiltersChange()" aria-label="Filter by type">
+                    <option value="">All types</option>
+                    <option *ngFor="let type of typeOptions" [value]="type">{{ type }}</option>
+                </select>
+            </label>
+            <label>
+                <span>Status</span>
+                <select [(ngModel)]="statusFilter" (ngModelChange)="onFiltersChange()" aria-label="Filter by status">
+                    <option value="">All statuses</option>
+                    <option *ngFor="let status of statusOptions" [value]="status">{{ statusLabel(status) }}</option>
+                </select>
+            </label>
+            <label>
+                <span>Work Status</span>
+                <select [(ngModel)]="workStatusFilter" (ngModelChange)="onFiltersChange()" aria-label="Filter by work status">
+                    <option value="">All work statuses</option>
+                    <option *ngFor="let status of workStatusOptions" [value]="status">{{ status }}</option>
+                </select>
+            </label>
+            <div class="intake-table__columns" (click)="$event.stopPropagation()">
+                <button type="button" (click)="columnsOpen = !columnsOpen" [attr.aria-expanded]="columnsOpen">Columns</button>
+                <div class="intake-table__column-menu" *ngIf="columnsOpen">
+                    <label *ngFor="let column of columns">
+                        <input type="checkbox" [checked]="column.visible" (change)="toggleColumn(column)">
+                        {{ column.label }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <p class="intake-table__meta">Showing {{ rangeStart }}–{{ rangeEnd }} of {{ filteredItems.length }}</p>
+
+        <div class="intake-table__scroll">
+            <table [style.minWidth.px]="visibleColumns.length * 140">
+                <colgroup>
+                    <col *ngFor="let column of visibleColumns" [style.width.px]="column.width">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th *ngFor="let column of visibleColumns" [style.width.px]="column.width">
+                            <button type="button" (click)="sort(column.key)" [attr.aria-sort]="sortKey === column.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'">
+                                {{ column.label }}
+                                <span aria-hidden="true">{{ sortMark(column.key) }}</span>
+                            </button>
+                            <span class="intake-table__resize" (mousedown)="startResize($event, column)" role="separator" aria-orientation="vertical" [attr.aria-label]="'Resize ' + column.label"></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of pagedItems">
+                        <td *ngFor="let column of visibleColumns">
+                            <ng-container *ngIf="column.key === 'submitted'; else textCell">
+                                {{ submitted(item) | date:'mediumDate' }}
+                            </ng-container>
+                            <ng-template #textCell>
+                                <span [ngClass]="pillClass(column.key, item)">{{ cell(item, column.key) }}</span>
+                            </ng-template>
+                        </td>
+                    </tr>
+                    <tr *ngIf="!pagedItems.length">
+                        <td [attr.colspan]="visibleColumns.length">No product requests match these filters.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="intake-table__pager">
+            <label>
+                Rows
+                <select [(ngModel)]="pageSize" (ngModelChange)="onFiltersChange()" aria-label="Rows per page">
+                    <option *ngFor="let size of pageSizes" [ngValue]="size">{{ size }}</option>
+                </select>
+            </label>
+            <div class="intake-table__pages">
+                <button type="button" (click)="setPage(page - 1)" [disabled]="page <= 1">Previous</button>
+                <span>Page {{ page > totalPages ? totalPages : page }} of {{ totalPages }}</span>
+                <button type="button" (click)="setPage(page + 1)" [disabled]="page >= totalPages">Next</button>
+            </div>
+        </div>
+    </div>
 </section>

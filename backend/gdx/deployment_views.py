@@ -61,6 +61,7 @@ def dashboard(request):
         return redirect(reverse("deployment:dashboard"))
     config = deployment_config()
     deployment = deployment_status()
+    counts = deployment_analytics()["counts"]
     return _page(
         request,
         "gdx_admin/apps/deployment/dashboard.html",
@@ -69,7 +70,7 @@ def dashboard(request):
         config=config,
         environments=ENVIRONMENT_CHOICES,
         can_build=request.user.is_superuser,
-        analytics=deployment_analytics()["counts"],
+        analytics=counts,
         ai_analytics=ai_engine_analytics(),
         steps=log_steps(
             deployment.get("step_log") or deployment.get("log"),
@@ -77,16 +78,29 @@ def dashboard(request):
             deployment.get("target"),
             deployment.get("environment"),
         ),
+        staff_page_kicker="DEPLOYMENT",
+        staff_page_title="Deployment",
+        staff_page_description="Start a Python build, a frontend build, or both. Configuration stays in Settings.",
+        staff_page_metric_label="Succeeded",
+        staff_page_metric_value=counts["succeeded"],
+        staff_page_metric_caption="Finished builds",
     )
 
 
 @staff_member_required
 def analytics(request):
+    counts = deployment_analytics()
     return _page(
         request,
         "gdx_admin/apps/deployment/analytics.html",
         section="analytics",
-        analytics=deployment_analytics(),
+        analytics=counts,
+        staff_page_kicker="DEPLOYMENT",
+        staff_page_title="Analytics",
+        staff_page_description="Counts from recorded builds, grouped by target and environment.",
+        staff_page_metric_label="Builds",
+        staff_page_metric_value=counts["counts"]["total"],
+        staff_page_metric_caption="Recorded",
     )
 
 
@@ -113,6 +127,12 @@ def activity(request):
             current.get("target") or running.get("target"),
             current.get("environment") or running.get("environment"),
         ),
+        staff_page_kicker="DEPLOYMENT",
+        staff_page_title="Activity",
+        staff_page_description="Recent builds, who started them, and the build log.",
+        staff_page_metric_label="Latest",
+        staff_page_metric_value=running.get("state") or "Idle",
+        staff_page_metric_caption=running.get("message") or "Current build",
     )
 
 
@@ -133,15 +153,34 @@ def releases(request):
                 messages.error(request, message)
         return redirect(reverse("deployment:releases"))
     status = deployment_status()
+    versions = rollback_versions()
     section = "rollback" if getattr(request.resolver_match, "url_name", "") == "rollback" else "releases"
+    if section == "rollback":
+        header = {
+            "staff_page_title": "Rollback",
+            "staff_page_description": "Restore a saved version of the Python application, the Angular application, or both.",
+            "staff_page_metric_label": "Versions",
+            "staff_page_metric_value": len(versions),
+            "staff_page_metric_caption": "Saved versions",
+        }
+    else:
+        header = {
+            "staff_page_title": "Releases",
+            "staff_page_description": "Python and frontend artifacts written by the latest build.",
+            "staff_page_metric_label": "Artifacts",
+            "staff_page_metric_value": 2,
+            "staff_page_metric_caption": "Release folders",
+        }
     return _page(
         request,
         "gdx_admin/apps/deployment/releases.html",
         section=section,
         releases=deployment_releases(),
-        versions=rollback_versions(),
+        versions=versions,
         can_rollback=request.user.is_superuser,
         running=status.get("state") == "running",
+        staff_page_kicker="DEPLOYMENT",
+        **header,
     )
 
 
@@ -277,4 +316,10 @@ def health(request):
         "gdx_admin/apps/deployment/health.html",
         section="health",
         report=report,
+        staff_page_kicker="DEPLOYMENT",
+        staff_page_title="Health",
+        staff_page_description="Checks the build script, Node, Python, and the folders a build writes to.",
+        staff_page_metric_label="Status",
+        staff_page_metric_value="Ready" if report.get("ready") else "Blocked",
+        staff_page_metric_caption="Build prerequisites",
     )

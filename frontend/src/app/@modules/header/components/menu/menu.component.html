@@ -12,7 +12,7 @@
                 <li>
                     <a routerLink="/pages/roadmap">Roadmap</a>
                 </li>
-                <li>
+                <li *ngIf="canViewProductRequests">
                     <a routerLink="/pages/product-intake">View Product Request</a>
                 </li>
             </ul>

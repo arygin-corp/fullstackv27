@@ -40,7 +40,9 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
   suggestions: any[] = [];
   isSearching: boolean = false;
   private lastTriggerState: 'none' | 'standard' | 'verified' = 'none';
-  private lastQueryKey = '';
+  private lastApiQueryKey = '';
+  private apiNameSearching = false;
+  private apiNameRequest = 0;
 
   // ============================================================================
   // EXISTING PROPERTIES (PRESERVED)
@@ -375,8 +377,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       v_dar_mnfr_project_area_group: [''],
     });
 
-    this.form.get('v_dar_ad_group').valueChanges.subscribe(() => this.loadDenodoTables());
-    this.loadDenodoTables();
+    this.loadDatabases();
 
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -416,9 +417,135 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     ).subscribe(() => {
       this.openAiDiscovery();
     });
+
+    this.form.get('v_dar_platform').valueChanges.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(value => {
+      this.tryApiNameDiscovery();
+      if (value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)') {
+        this.loadDatabases();
+      }
+    });
+
+    this.form.get('v_dar_dataDomainSelect').valueChanges.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(() => this.tryApiNameDiscovery());
+
+    this.form.get('v_dar_post_database_schema').valueChanges.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(value => {
+      if (this.form.get('v_dar_platform')?.value !== 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)') {
+        return;
+      }
+      this.onDbChange(value);
+    });
+  }
+
+  onApiNameBlur(): void {
+    this.tryApiNameDiscovery();
+  }
+
+  private tryApiNameDiscovery(): void {
+    const platform = this.form.get('v_dar_platform')?.value;
+    const domain = String(this.form.get('v_dar_dataDomainSelect')?.value || '').trim();
+    const query = String(this.form.get('v_dat_api_name')?.value || '').trim();
+    if (platform !== 'API (EIG Application Support)' || !domain || query.length < 2) {
+      return;
+    }
+    this.openApiNameDiscovery(query);
+  }
+
+  openApiNameDiscovery(query: string): void {
+    const platform = this.form.get('v_dar_platform')?.value;
+    const domain = this.form.get('v_dar_dataDomainSelect')?.value || '';
+    const description = this.form.get('v_dar_DataReqDescription')?.value || '';
+    const justification = this.form.get('v_dar_businessJustification')?.value || '';
+    const hasBasicFields = !!(platform && domain && query);
+    if (platform !== 'API (EIG Application Support)' || !domain || query.length < 2) {
+      return;
+    }
+    const hasNarrativeFields = description.length >= 10 && justification.length >= 10;
+    let currentTier: 'none' | 'standard' | 'verified' = 'none';
+    if (hasBasicFields && hasNarrativeFields) currentTier = 'verified';
+    else if (hasBasicFields) currentTier = 'standard';
+
+    const queryKey = JSON.stringify({
+      platform, domain, query, description, justification, currentTier
+    });
+    if (currentTier === 'none' || queryKey === this.lastApiQueryKey) {
+      return;
+    }
+    this.lastApiQueryKey = queryKey;
+    this.apiNameSearching = true;
+    const requestId = ++this.apiNameRequest;
+
+    const callApi = (tier: 'standard' | 'verified') => this.aiService.getSuggestions({
+      query,
+      platform,
+      domain,
+      description,
+      justification
+    });
+
+    this.ngZone.run(() => {
+      callApi('standard').subscribe({
+        next: (response: any) => {
+          this.ngZone.run(() => {
+            if (requestId !== this.apiNameRequest) {
+              return;
+            }
+            const results = this.suggestionRows(response);
+            if (!results || results.length === 0) {
+              this.apiNameSearching = false;
+              return;
+            }
+            this.suggestions = results;
+            if (this.suggestedAiModal) {
+              this.suggestedAiModal.inputGrading = response?.input_grading || {};
+            }
+            if (currentTier === 'verified') {
+              callApi('verified').subscribe({
+                next: (verifiedResponse: any) => {
+                  this.ngZone.run(() => {
+                    if (requestId !== this.apiNameRequest) {
+                      return;
+                    }
+                    const verifiedResults = this.suggestionRows(verifiedResponse);
+                    if (verifiedResults && verifiedResults.length > 0) {
+                      this.suggestions = verifiedResults;
+                    }
+                    this.apiNameSearching = false;
+                    this.finalizeUiFlow();
+                  });
+                },
+                error: () => {
+                  if (requestId !== this.apiNameRequest) {
+                    return;
+                  }
+                  this.apiNameSearching = false;
+                  this.finalizeUiFlow();
+                }
+              });
+            } else {
+              this.apiNameSearching = false;
+              this.finalizeUiFlow();
+            }
+          });
+        },
+        error: () => {
+          this.ngZone.run(() => {
+            if (requestId !== this.apiNameRequest) {
+              return;
+            }
+            this.apiNameSearching = false;
+          });
+        }
+      });
+    });
   }
 
   ngOnDestroy(): void {
+    this.setDatabaseMenuOpen(false);
     document.body.classList.remove('dar-form-scroll');
     // Set the flag first
     this.componentIsDestroyed = true;
@@ -468,21 +595,17 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     if (hasBasicFields && hasNarrativeFields) currentTier = 'verified';
     else if (hasBasicFields) currentTier = 'standard';
 
-    const queryKey = JSON.stringify({
-      platform, dbValue, tables, description, justification, currentTier
-    });
     console.log("Tier check:", { currentTier, lastState: this.lastTriggerState, isSearching: this.isSearching });
 
     // ---- Guards ----
     if (
       currentTier === 'none' ||
-      queryKey === this.lastQueryKey ||
+      currentTier === this.lastTriggerState ||
       this.isSearching
     ) {
       console.log("GUARD BLOCKED - returning early");
       return;
     }
-    this.lastQueryKey = queryKey;
 
     this.isSearching = true;
     console.log("Starting API call...");
@@ -497,8 +620,7 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
         databaseSchema: dbValue,
         tableNames: tables,
         description,
-        justification,
-        tier
+        justification
       });
     };
 
@@ -586,33 +708,21 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     return Array.isArray(rows) ? rows : [];
   }
 
-  private denodoRole(): string {
-    return String(this.form?.get('v_dar_ad_group')?.value || '').trim();
-  }
-
-  private loadDenodoTables(): void {
-    if (environment.useMockServiceNow || !environment.production) {
-      this.useMockDatabases();
-      return;
-    }
-    const role = this.denodoRole();
-    if (!role) {
-      this.denodoRows = [];
-      this.dbnames = [];
-      this.elements = [];
-      return;
-    }
-    const url = `${environment.gdx.denodoTables}?userrolename=${encodeURIComponent(role)}`;
-    this.http.get<any>(url).subscribe({
+  private loadDatabases(): void {
+    this.http.get<DbNameOption[]>(`${environment.apiUrl}/ai/databases/`).subscribe({
       next: data => {
-        const rows = Array.isArray(data) ? data : (data?.value || data?.elements || []);
-        const named = rows.filter((row: ElementInfo) => String(row?.dbname || '').trim());
-        if (!named.length) {
+        const rows = Array.isArray(data) ? data : [];
+        if (!rows.length) {
           this.useMockDatabases();
           return;
         }
-        this.denodoRows = named;
-        this.dbnames = this.databaseOptions(named);
+        this.dbnames = rows
+          .map(row => ({
+            dbname: String(row?.dbname || '').trim(),
+            label: String(row?.label || row?.dbname || '').trim()
+          }))
+          .filter(row => row.dbname)
+          .sort((a, b) => a.dbname.localeCompare(b.dbname));
       },
       error: () => this.useMockDatabases()
     });
@@ -654,11 +764,17 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
       this.elements = [];
       return;
     }
+    this.form.get('v_dar_post_table_names')?.setValue(null, { emitEvent: false });
+    const url = `${environment.apiUrl}/ai/databases/tables/?dbname=${encodeURIComponent(dbname)}`;
+    this.http.get<ElementInfo[]>(url).subscribe({
+      next: data => this.setTableOptions(Array.isArray(data) && data.length ? data : this.denodoRows.filter(item => item.dbname === dbname)),
+      error: () => this.setTableOptions(this.denodoRows.filter(item => item.dbname === dbname))
+    });
+  }
+
+  private setTableOptions(data: ElementInfo[]): void {
     const uniqueTables = new Map<string, ElementInfo>();
-    for (const item of this.denodoRows) {
-      if (String(item?.dbname || '').trim() !== dbname) {
-        continue;
-      }
+    for (const item of data ?? []) {
       const tableName = item.elementname?.trim();
       if (!tableName) {
         continue;
@@ -671,6 +787,37 @@ export class DataAccessRequestComponent implements OnInit, OnDestroy {
     this.elements = Array.from(uniqueTables.values()).sort((a, b) =>
       a.elementname.localeCompare(b.elementname, undefined, { sensitivity: 'base' })
     );
+  }
+
+  private formScrollLock?: EventListener;
+
+  setDatabaseMenuOpen(open: boolean): void {
+    const scrollers = document.querySelectorAll(
+      'app-data-access-request .right-panel form > .col-lg-9, app-data-access-request .right-panel form > .tablet-dar'
+    );
+    if (!open) {
+      if (this.formScrollLock) {
+        scrollers.forEach(node => node.removeEventListener('wheel', this.formScrollLock as EventListener));
+        this.formScrollLock = undefined;
+      }
+      return;
+    }
+    if (this.formScrollLock) {
+      return;
+    }
+    this.formScrollLock = (event: Event) => {
+      const target = event.target;
+      if (target instanceof Element && target.closest('.ng-dropdown-panel')) {
+        return;
+      }
+      event.preventDefault();
+    };
+    scrollers.forEach(node => node.addEventListener('wheel', this.formScrollLock as EventListener, { passive: false }));
+  }
+
+  onDatabaseMenuClose(): void {
+    this.setDatabaseMenuOpen(false);
+    this.onTableSelectClose();
   }
 
   onTableSelectClose(): void {

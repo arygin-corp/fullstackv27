@@ -33,7 +33,7 @@ def _on_changelog_notification(sender, instance, created, **kwargs):
         recipient=instance.user,
         title=instance.title,
         body=instance.message,
-        url="/sa/changelog/notifications/",
+        url="/changelog/notifications/",
         notification_type=NotificationType.SYSTEM,
         source="changelog",
         source_object_type="Post",
@@ -91,7 +91,7 @@ def notify_review_pending(review):
             idempotency_key=f"review-pending:{review.pk}:user:{user.pk}",
         )
         if notification is not None:
-            detail_url = "/sa/command-center/workflow/"
+            detail_url = f"/marketplace/reviews/{review.pk}/workflow/"
             if notification.url != detail_url:
                 notification.url = detail_url
                 notification.save(update_fields=["url"])

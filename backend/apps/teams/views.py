@@ -11,10 +11,17 @@ from .forms import TeamForm
 
 IMAGE_FIELDS = ("icon", "logo", "cover_image")
 
-class TeamListView(ListView):
+class TeamListView(LoginRequiredMixin, ListView):
     model = Team
-    template_name = "gdx_admin/apps/teams/teams.html"
+    template_name = "gdx_users/apps/teams/index.html"
     context_object_name = "teams"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["heading"] = "Teams"
+        context["heading2"] = "Teams"
+        context["pageview"] = "Teams"
+        return context
 
     def get_queryset(self):
         qs = (

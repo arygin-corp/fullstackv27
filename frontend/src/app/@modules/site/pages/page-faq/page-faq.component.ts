@@ -167,7 +167,7 @@ export class PageFaqComponent {
                 {
                     question: 'What is in the account menu?',
                     answer: [
-                        'The person icon opens your name, title, and email, then My Profile, My Dashboard, Order History, and Log Out. Under Log Out, the menu shows when this Microsoft sign-in started.'
+                        'The person icon opens your name, title, and email, then a status control, My Profile, My Dashboard, Order History, and Log Out. The status control sets Online, Away, Busy, Unavailable, or Offline, and that color shows as a dot on the profile photo. Under Log Out, the menu shows when this Microsoft sign-in started.'
                     ]
                 },
                 {

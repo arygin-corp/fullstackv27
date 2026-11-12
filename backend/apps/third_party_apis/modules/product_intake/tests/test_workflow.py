@@ -29,19 +29,33 @@ class WorkflowTests(TestCase):
         self.assertTrue(UserNotification.objects.filter(intake=self.intake,event="intake_rejected").exists())
         self.assertTrue(NotificationOutbox.objects.filter(intake=self.intake,event_type="intake_rejected").exists())
 
-    def test_approval_creates_inactive_marketplace_product(self):
+    def test_approval_does_not_create_a_product(self):
         c=APIClient(); c.force_authenticate(self.actor)
         response=c.post(f"/api/new/product/intake/{self.intake.pk}/approve/",{"reason":"Ready for product preparation."},format="json")
         self.assertEqual(response.status_code,200)
-        self.intake.refresh_from_db(); product=self.intake.marketplace_product
-        self.assertEqual(product.status,"draft"); self.assertEqual(product.cwpg_status,"draft"); self.assertFalse(product.is_active)
-        self.assertIsNone(product.fulfillment_group)
+        self.intake.refresh_from_db()
+        self.assertEqual(self.intake.status,"approved")
+        self.assertFalse(Product.objects.filter(source_intake=self.intake).exists())
 
-    def test_activation_publishes_and_notifies(self):
+    def test_draft_then_curate_then_activate(self):
         c=APIClient(); c.force_authenticate(self.actor)
         c.post(f"/api/new/product/intake/{self.intake.pk}/approve/",{"reason":"Ready."},format="json")
-        response=c.post(f"/api/new/product/intake/{self.intake.pk}/activate-product/",{"reason":"Manual product setup completed."},format="json")
+        blocked=c.post(f"/api/new/product/intake/{self.intake.pk}/activate-product/",{"reason":"Too early."},format="json")
+        self.assertEqual(blocked.status_code,400)
+        drafted=c.post(f"/api/new/product/intake/{self.intake.pk}/create-draft-product/",{"reason":"Add as draft."},format="json")
+        self.assertEqual(drafted.status_code,200)
+        self.intake.refresh_from_db(); product=self.intake.marketplace_product
+        self.assertEqual(self.intake.status,"product_draft")
+        self.assertEqual(product.status,"draft"); self.assertFalse(product.is_active)
+        still_blocked=c.post(f"/api/new/product/intake/{self.intake.pk}/activate-product/",{"reason":"Still too early."},format="json")
+        self.assertEqual(still_blocked.status_code,400)
+        curated=c.post(f"/api/new/product/intake/{self.intake.pk}/curate-product/",{"reason":"Catalog content is ready to publish."},format="json")
+        self.assertEqual(curated.status_code,200)
+        self.intake.refresh_from_db(); product.refresh_from_db()
+        self.assertEqual(self.intake.status,"curated")
+        self.assertEqual(product.status,"draft"); self.assertFalse(product.is_active)
+        response=c.post(f"/api/new/product/intake/{self.intake.pk}/activate-product/",{"reason":"Publish on Data Marketplace."},format="json")
         self.assertEqual(response.status_code,200)
-        self.intake.refresh_from_db(); product=self.intake.marketplace_product; product.refresh_from_db()
-        self.assertEqual(self.intake.status,"implemented"); self.assertEqual(product.status,"approved"); self.assertTrue(product.is_active)
+        self.intake.refresh_from_db(); product.refresh_from_db()
+        self.assertEqual(self.intake.status,"archived"); self.assertFalse(self.intake.is_active); self.assertEqual(product.status,"approved"); self.assertTrue(product.is_active)
         self.assertTrue(UserNotification.objects.filter(intake=self.intake,event="product_available").exists())

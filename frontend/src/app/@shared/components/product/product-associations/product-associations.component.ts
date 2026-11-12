@@ -1,11 +1,15 @@
 import {
+    AfterViewChecked,
+    AfterViewInit,
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
+    ElementRef,
     Input,
     OnChanges,
     OnDestroy,
-    SimpleChanges
+    SimpleChanges,
+    ViewChild
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
@@ -27,7 +31,7 @@ interface AssociationCartResult {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductAssociationsComponent
-    implements OnChanges, OnDestroy {
+    implements AfterViewChecked, AfterViewInit, OnChanges, OnDestroy {
 
     /**
      * Primary product displayed by the product page.
@@ -47,12 +51,17 @@ export class ProductAssociationsComponent
      */
     @Input() initialProductsToShow = 5;
 
+    @ViewChild('associationList')
+    associationList?: ElementRef<HTMLElement>;
+
     addingAssociatedProducts = false;
     showAllAssociatedProducts = false;
+    rowSize = 3;
 
     selectedAssociationIds = new Set<number>();
 
     private readonly destroy$ = new Subject<void>();
+    private rowObserver?: ResizeObserver;
 
     constructor(
         private readonly cart: CartService,
@@ -81,7 +90,16 @@ export class ProductAssociationsComponent
         }
     }
 
+    ngAfterViewInit(): void {
+        this.watchRowSize();
+    }
+
+    ngAfterViewChecked(): void {
+        this.watchRowSize();
+    }
+
     ngOnDestroy(): void {
+        this.rowObserver?.disconnect();
         this.destroy$.next();
         this.destroy$.complete();
     }
@@ -112,10 +130,7 @@ export class ProductAssociationsComponent
             return this.associatedProducts;
         }
 
-        return this.associatedProducts.slice(
-            0,
-            this.initialProductsToShow
-        );
+        return this.associatedProducts.slice(0, this.rowSize);
     }
 
     get selectableAssociatedProducts(): ProductAssociation[] {
@@ -162,16 +177,12 @@ export class ProductAssociationsComponent
     }
 
     get hasMoreAssociatedProducts(): boolean {
-        return (
-            this.associatedProducts.length >
-            this.initialProductsToShow
-        );
+        return this.associatedProducts.length > this.rowSize;
     }
 
     get hiddenAssociatedProductCount(): number {
         return Math.max(
-            this.associatedProducts.length -
-                this.initialProductsToShow,
+            this.associatedProducts.length - this.rowSize,
             0
         );
     }
@@ -316,6 +327,40 @@ export class ProductAssociationsComponent
     private resetAssociationState(): void {
         this.selectedAssociationIds = new Set<number>();
         this.showAllAssociatedProducts = false;
+    }
+
+    private watchRowSize(): void {
+        const element = this.associationList?.nativeElement;
+        if (!element || this.rowObserver) {
+            return;
+        }
+
+        this.updateRowSize();
+        if (typeof ResizeObserver === 'undefined') {
+            return;
+        }
+
+        this.rowObserver = new ResizeObserver(() => this.updateRowSize());
+        this.rowObserver.observe(element);
+    }
+
+    private updateRowSize(): void {
+        const element = this.associationList?.nativeElement;
+        if (!element) {
+            return;
+        }
+
+        const columns = getComputedStyle(element)
+            .gridTemplateColumns
+            .split(' ')
+            .filter(Boolean).length;
+        const next = Math.max(columns, 1);
+        if (next === this.rowSize) {
+            return;
+        }
+
+        this.rowSize = next;
+        this.changeDetectorRef.markForCheck();
     }
 
     // =========================================================

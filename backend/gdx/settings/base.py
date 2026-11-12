@@ -214,6 +214,13 @@ INSTALLED_APPS = [
     "apps.third_party_apis.modules.aws.apps.AWSConfig",
     "apps.third_party_apis.modules.checkout",
     "apps.pages",
+    "apps.third_party_apis.modules.faqs.apps.FaqsConfig",
+    "apps.third_party_apis.modules.blog_news.apps.BlogNewsConfig",
+    "apps.third_party_apis.modules.support_help_platform.apps.SupportHelpConfig",
+    "apps.third_party_apis.modules.campaign_page.apps.CampaignPageConfig",
+    "apps.third_party_apis.modules.roadmap.apps.RoadmapConfig",
+    "apps.third_party_apis.modules.hackathon.apps.HackathonConfig",
+    "apps.third_party_apis.modules.internal_teams.apps.InternalTeamConfig",
 ]
 
 MIDDLEWARE = [
@@ -227,6 +234,7 @@ MIDDLEWARE = [
     "gdx.maintenance.MaintenanceModeMiddleware",
     "apps.profiles.middleware.VerifiedStaffAccessMiddleware",
     "gdx.page_access.PageAccessMiddleware",
+    "gdx.staff_menu.StaffMenuMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",

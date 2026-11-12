@@ -10,7 +10,7 @@
                 <div class="block">
                     <app-products-view
                         [layout]="viewMode"
-                        grid="grid-3-sidebar"
+                        [grid]="currentGrid"
                         [offcanvas]="offcanvasMode"
                         (gridChange)="onGridChange($event)">
                     </app-products-view>

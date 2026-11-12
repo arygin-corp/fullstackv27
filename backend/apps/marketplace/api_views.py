@@ -1,9 +1,31 @@
+import hashlib
 import re
 from difflib import SequenceMatcher
 
+from django.conf import settings
+from django.core.cache import cache
 from django.core.paginator import Paginator
 from django.contrib.postgres.search import TrigramSimilarity
-from django.db.models import Avg, Case, Count, F, Func, Prefetch, Q, Value, When
+from django.db.models import (
+    Avg,
+    Case,
+    CharField,
+    Count,
+    F,
+    Func,
+    IntegerField,
+    OuterRef,
+    Prefetch,
+    Q,
+    Subquery,
+    Value,
+    When,
+    Window,
+)
+from django.db.models.functions import Coalesce, JSONObject
+from django.contrib.postgres.aggregates import ArrayAgg
+from django.contrib.postgres.fields import ArrayField
+from django.db.models import JSONField
 
 from .campaign_ranking import most_requested_product_ids
 from django.shortcuts import get_object_or_404
@@ -16,11 +38,16 @@ from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 
 from apps.resources.models import Brand
 
-from .hybrid_search import fast_suggestion_search, hybrid_product_search
+from .hybrid_search import api_name_search, fast_suggestion_search, hybrid_product_search
 from .models import (
+    Classification,
     Datatype,
     Domain,
+    Organization,
+    Platform,
     Product,
+    ProductImage,
+    Review,
     SearchProductEmbedding,
     SubDomain_1,
     SubDomain_2,
@@ -49,6 +76,26 @@ class SearchUserRateThrottle(UserRateThrottle):
 
 class SearchAnonRateThrottle(AnonRateThrottle):
     rate = "30/min"
+
+
+def system_badge_url(request, image):
+    filename = str(image or "").rsplit("/", 1)[-1]
+    if not filename:
+        return None
+    return request.build_absolute_uri(f"/marketplace/system-badges/{filename}")
+
+
+def badge_payload(request, badge):
+    image = badge.get("image") if isinstance(badge, dict) else badge.image
+    is_system = badge.get("is_system") if isinstance(badge, dict) else badge.is_system
+    name = badge.get("name") if isinstance(badge, dict) else badge.name
+    if not name:
+        return None
+    return {
+        "name": name,
+        "is_system": bool(is_system),
+        "image": system_badge_url(request, image) if is_system and image else None,
+    }
 
 
 # ============================================================
@@ -1184,16 +1231,36 @@ class ProductJsonViewSet(viewsets.ViewSet):
         """Published products for counting, filtering, and paging."""
         return Product.objects.published().filter(is_active=True)
 
-    def get_list_card_queryset(self):
+    def get_list_card_queryset(self, page_ids=None):
         """Fields the marketplace cards render, for one page of products."""
+        approved_reviews = Review.objects.filter(
+            product_id=OuterRef("pk"),
+            status="approved",
+        )
+        queryset = Product.objects.filter(pk__in=page_ids) if page_ids is not None else self.get_catalog_queryset()
         return (
-            self.get_catalog_queryset()
+            queryset
             .annotate(
-                review_count=Count("reviews", filter=Q(reviews__status="approved"), distinct=True),
-                review_average=Avg("reviews__rating", filter=Q(reviews__status="approved")),
+                review_count=Coalesce(
+                    Subquery(
+                        approved_reviews.values("product_id").annotate(total=Count("pk")).values("total")[:1],
+                        output_field=IntegerField(),
+                    ),
+                    0,
+                ),
+                review_average=Subquery(
+                    approved_reviews.values("product_id").annotate(average=Avg("rating")).values("average")[:1]
+                ),
             )
             .select_related("domain", "platform")
             .prefetch_related("badge", "images", "attribute")
+            .defer(
+                "brief_desc",
+                "whats_included",
+                "intended_use_desc",
+                "intended_use",
+                "alt_approver",
+            )
         )
 
     def get_base_queryset(self):
@@ -1225,6 +1292,10 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 "business_contact_name",
                 "business_sme",
                 "catalog",
+                "resource",
+                "resource__resourcetype",
+                "resource__resourcetype__type",
+                "resource__resourcetype__url",
                 "platform",
                 "one_ts_domain",
                 "ad_group",
@@ -1422,11 +1493,15 @@ class ProductJsonViewSet(viewsets.ViewSet):
         self,
         queryset,
         request,
+        exclude=(),
     ):
+        skipped = set(exclude)
         for definition in (
             self.FILTER_DEFINITIONS
         ):
             slug = definition["slug"]
+            if slug in skipped:
+                continue
             field = definition["field"]
 
             selected_values = (
@@ -1446,7 +1521,25 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 }
             )
 
+        if "privacy" not in skipped:
+            queryset = self.apply_privacy_filter(queryset, request)
         return queryset
+
+    def apply_privacy_filter(self, queryset, request):
+        selected = {
+            value.casefold()
+            for value in self.get_selected_values(request, "privacy")
+        }
+        if not selected:
+            return queryset
+        query = Q()
+        if "pi" in selected:
+            query |= Q(pi__iexact="yes")
+        if "spi" in selected:
+            query |= Q(sensitive_pi__iexact="yes")
+        if not query:
+            return queryset
+        return queryset.filter(query)
 
     # -----------------------------------------------------
     # Sorting
@@ -1485,25 +1578,10 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "privacy",
         )
 
-        pi_count = (
-            queryset
-            .filter(
-                pi__iexact="yes"
-            )
-            .values("id")
-            .distinct()
-            .count()
-        )
-
-        spi_count = (
-            queryset
-            .filter(
-                sensitive_pi__iexact="yes"
-            )
-            .values("id")
-            .distinct()
-            .count()
-        )
+        pi_count, spi_count = queryset.aggregate(
+            pi_count=Count("id", filter=Q(pi__iexact="yes"), distinct=True),
+            spi_count=Count("id", filter=Q(sensitive_pi__iexact="yes"), distinct=True),
+        ).values()
 
         return {
             "type": "check",
@@ -1603,39 +1681,182 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "items": items,
         }
 
+    def _facet_row_cache_key(self, request):
+        parts = [
+            request.query_params.get("q") or request.query_params.get("query") or "",
+            request.query_params.get("domain_id") or "",
+            request.query_params.get("subdomain_id") or "",
+            request.query_params.get("subdomain2_id") or "",
+        ]
+        digest = hashlib.md5("|".join(parts).encode()).hexdigest()
+        return f"marketplace-facet-rows:{digest}"
+
+    def _facet_cache_key(self, request):
+        parts = [
+            request.query_params.get("q") or request.query_params.get("query") or "",
+            request.query_params.get("domain_id") or "",
+            request.query_params.get("subdomain_id") or "",
+            request.query_params.get("subdomain2_id") or "",
+        ]
+        for definition in self.FILTER_DEFINITIONS:
+            selected = ",".join(self.get_selected_values(request, definition["slug"]))
+            parts.append(f"{definition['slug']}={selected}")
+        parts.append("privacy=" + ",".join(self.get_selected_values(request, "privacy")))
+        digest = hashlib.md5("|".join(parts).encode()).hexdigest()
+        return f"marketplace-product-facets-v2:{digest}"
+
+    def _stamp_selected_filters(self, filters, request):
+        stamped = []
+        for item in filters:
+            copy = dict(item)
+            copy["items"] = list(item.get("items") or [])
+            copy["value"] = self.get_selected_values(request, item["slug"])
+            stamped.append(copy)
+        return stamped
+
     def build_filters(
             self,
             queryset,
             request,
     ):
-        filters = []
+        cache_key = self._facet_cache_key(request)
+        try:
+            cached = cache.get(cache_key)
+        except Exception:
+            cached = None
+        if cached is not None:
+            return self._stamp_selected_filters(cached, request)
 
+        row_key = self._facet_row_cache_key(request)
+        try:
+            rows = cache.get(row_key)
+        except Exception:
+            rows = None
+        if rows is None:
+            rows = self._facet_rows(queryset)
+            try:
+                cache.set(row_key, rows, 120)
+            except Exception:
+                pass
+        filters = self._filters_from_rows(rows, request)
+        try:
+            cache.set(cache_key, filters, 60)
+        except Exception:
+            pass
+        return self._stamp_selected_filters(filters, request)
+
+    def _facet_lookups(self):
+        cache_key = "marketplace-facet-lookups"
+        try:
+            cached = cache.get(cache_key)
+        except Exception:
+            cached = None
+        if cached is not None:
+            return cached
+        lookups = {
+            "domain": dict(Domain.objects.values_list("id", "name")),
+            "datatype": dict(Datatype.objects.values_list("id", "name")),
+            "classification": dict(Classification.objects.values_list("id", "name")),
+            "org": dict(Organization.objects.values_list("id", "abbrev")),
+        }
+        try:
+            cache.set(cache_key, lookups, 300)
+        except Exception:
+            pass
+        return lookups
+
+    def _facet_rows(self, queryset):
+        lookups = self._facet_lookups()
+        rows = {}
+        for row in queryset.values(
+            "id",
+            "domain_id",
+            "datatype_id",
+            "classification_id",
+            "org_id",
+            "pi",
+            "sensitive_pi",
+        ):
+            rows[row["id"]] = {
+                "id": row["id"],
+                "domain__name": lookups["domain"].get(row["domain_id"]),
+                "datatype__name": lookups["datatype"].get(row["datatype_id"]),
+                "classification__name": lookups["classification"].get(row["classification_id"]),
+                "org__abbrev": lookups["org"].get(row["org_id"]),
+                "pi": row["pi"],
+                "sensitive_pi": row["sensitive_pi"],
+            }
+        return list(rows.values())
+
+    def _row_matches(self, row, request, skip_slug):
         for definition in self.FILTER_DEFINITIONS:
             slug = definition["slug"]
+            if slug == skip_slug:
+                continue
+            selected = self.get_selected_values(request, slug)
+            if not selected:
+                continue
+            value = str(row.get(definition["field"]) or "").strip()
+            if value not in selected:
+                return False
+        if skip_slug == "privacy":
+            return True
+        selected = {value.casefold() for value in self.get_selected_values(request, "privacy")}
+        if not selected:
+            return True
+        pi = str(row.get("pi") or "").casefold() == "yes"
+        spi = str(row.get("sensitive_pi") or "").casefold() == "yes"
+        if "pi" in selected and "spi" in selected:
+            return pi or spi
+        if "pi" in selected:
+            return pi
+        if "spi" in selected:
+            return spi
+        return True
 
-            filters.append(
-                self.build_check_filter(
-                    queryset=queryset,
-                    slug=slug,
-                    name=definition["name"],
-                    field=definition["field"],
-                    selected_values=(
-                        self.get_selected_values(
-                            request,
-                            slug,
-                        )
-                    ),
-                )
-            )
-
-        # Add virtual Privacy filter
-        filters.append(
-            self.build_privacy_filter(
-                queryset=queryset,
-                request=request,
-            )
-        )
-
+    def _filters_from_rows(self, rows, request):
+        filters = []
+        for definition in self.FILTER_DEFINITIONS:
+            counts = {}
+            field = definition["field"]
+            for row in rows:
+                if not self._row_matches(row, request, definition["slug"]):
+                    continue
+                value = str(row.get(field) or "").strip()
+                if value:
+                    counts[value] = counts.get(value, 0) + 1
+            filters.append({
+                "type": "check",
+                "slug": definition["slug"],
+                "name": definition["name"],
+                "value": [],
+                "items": [
+                    {"slug": name, "name": name, "count": count}
+                    for name, count in sorted(counts.items(), key=lambda item: (-item[1], item[0].lower()))
+                ],
+            })
+        pi_count = 0
+        spi_count = 0
+        for row in rows:
+            if not self._row_matches(row, request, "privacy"):
+                continue
+            if str(row.get("pi") or "").casefold() == "yes":
+                pi_count += 1
+            if str(row.get("sensitive_pi") or "").casefold() == "yes":
+                spi_count += 1
+        filters.append({
+            "type": "check",
+            "slug": "privacy",
+            "name": "Privacy",
+            "value": [],
+            "items": sorted(
+                [
+                    {"slug": "pi", "name": "PI", "count": pi_count},
+                    {"slug": "spi", "name": "SPI", "count": spi_count},
+                ],
+                key=lambda item: (-item["count"], item["name"].lower()),
+            ),
+        })
         return filters
 
     # -----------------------------------------------------
@@ -1759,20 +1980,16 @@ class ProductJsonViewSet(viewsets.ViewSet):
             "name": product.name,
             "slug": product.slug,
             "sku": product.sku,
-            "brief_desc": product.brief_desc,
-            "whats_included": product.whats_included,
-            "intended_use_desc": product.intended_use_desc,
             "short_desc": product.short_desc,
-            "intended_use": product.intended_use,
             "domain": product.domain.name if product.domain else None,
             "platform": product.platform.name if product.platform else None,
-            "badges": [badge.name for badge in product.badge.all()],
+            "badges": [item for item in (badge_payload(request, badge) for badge in product.badge.all()) if item],
             "attributes": [attribute.name for attribute in product.attribute.all()],
             "images": [
                 request.build_absolute_uri(image.image.url)
                 for image in product.images.all()
                 if image.image
-            ],
+            ][:1],
             "price": str(product.price) if product.price is not None else None,
             "rating": round(float(getattr(product, "review_average", 0) or 0), 1),
             "reviews": int(getattr(product, "review_count", 0) or 0),
@@ -1928,8 +2145,15 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 else None
             ),
 
-            "resource_url":
-                product.resource_url,
+            "resource": (
+                (product.resource or product.catalog).resource_payload(
+                    request,
+                    collibra_id=product.collibra_id,
+                    api_id=product.api_id,
+                )
+                if (product.resource_id or product.catalog_id)
+                else None
+            ),
 
             "original_name":
                 product.original_name,
@@ -1971,9 +2195,10 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 product.sensitive_pi,
 
             "badges": [
-                badge.name
-                for badge
-                in product.badge.all()
+                item
+                for item
+                in (badge_payload(request, badge) for badge in product.badge.all())
+                if item
             ],
 
             "keywords": [
@@ -2099,9 +2324,10 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 else None
             ),
             "badges": [
-                badge.name
-                for badge
-                in product.badge.all()
+                item
+                for item
+                in (badge_payload(request, badge) for badge in product.badge.all())
+                if item
             ],
             "images": [
                 request.build_absolute_uri(
@@ -2121,6 +2347,25 @@ class ProductJsonViewSet(viewsets.ViewSet):
     # IMPORTANT:
     # This belongs in ProductJsonViewSet.
     # -----------------------------------------------------
+
+    def record_detail_view(self, request, pk=None):
+        from .badge_rules import record_qualified_view
+
+        lookup_value = str(pk or "").strip()
+        if not lookup_value:
+            return Response({"counted": False}, status=status.HTTP_400_BAD_REQUEST)
+        queryset = Product.objects.all()
+        if lookup_value.isdigit():
+            product = get_object_or_404(queryset, pk=int(lookup_value))
+        else:
+            product = get_object_or_404(queryset, slug=lookup_value)
+        counted = record_qualified_view(product, request, request.data.get("duration_seconds"))
+        return Response({"counted": counted}, status=status.HTTP_201_CREATED if counted else status.HTTP_200_OK)
+
+    def get_authenticators(self):
+        if getattr(self, "action", None) == "record_detail_view":
+            return []
+        return super().get_authenticators()
 
     def retrieve(
         self,
@@ -2209,6 +2454,214 @@ class ProductJsonViewSet(viewsets.ViewSet):
     # LIST ENDPOINT
     # -----------------------------------------------------
 
+    def _card_page(self, queryset, offset, limit):
+        approved_reviews = Review.objects.filter(
+            product_id=OuterRef("pk"),
+            status="approved",
+        )
+        image_path = ProductImage.objects.filter(
+            product_id=OuterRef("pk"),
+        ).exclude(image="").exclude(image__isnull=True).order_by("id").values("image")[:1]
+        badge_rows = Product.objects.filter(pk=OuterRef("pk")).annotate(
+            rows=ArrayAgg(
+                JSONObject(
+                    name=F("badge__name"),
+                    image=F("badge__image"),
+                    is_system=F("badge__is_system"),
+                ),
+                filter=Q(badge__isnull=False),
+                distinct=True,
+            )
+        ).values("rows")[:1]
+        attribute_names = Product.objects.filter(pk=OuterRef("pk")).annotate(
+            names=ArrayAgg("attribute__name", distinct=True)
+        ).values("names")[:1]
+        return list(
+            queryset.annotate(
+                total=Window(expression=Count("id")),
+                review_count=Coalesce(
+                    Subquery(
+                        approved_reviews.values("product_id").annotate(total=Count("pk")).values("total")[:1],
+                        output_field=IntegerField(),
+                    ),
+                    0,
+                ),
+                review_average=Subquery(
+                    approved_reviews.values("product_id").annotate(average=Avg("rating")).values("average")[:1]
+                ),
+                image_path=Subquery(image_path),
+                badge_rows=Subquery(badge_rows, output_field=ArrayField(JSONField())),
+                attribute_names=Subquery(attribute_names),
+                domain_name=F("domain__name"),
+                platform_name=F("platform__name"),
+            ).values(
+                "id",
+                "name",
+                "slug",
+                "sku",
+                "short_desc",
+                "price",
+                "total",
+                "review_count",
+                "review_average",
+                "image_path",
+                "badge_rows",
+                "attribute_names",
+                "domain_name",
+                "platform_name",
+            )[offset:offset + limit]
+        )
+
+    def _serialize_card_row(self, request, row):
+        image = row.get("image_path")
+        images = []
+        if image:
+            url = image if str(image).startswith(("http://", "https://")) else f"{settings.MEDIA_URL}{image}"
+            if not str(url).startswith(("http://", "https://")):
+                url = request.build_absolute_uri(url)
+            images = [url]
+        return {
+            "id": row["id"],
+            "name": row["name"],
+            "slug": row["slug"],
+            "sku": row["sku"],
+            "short_desc": row["short_desc"],
+            "domain": row["domain_name"],
+            "platform": row["platform_name"],
+            "badges": [
+                item
+                for item in (
+                    badge_payload(request, badge)
+                    for badge in (row.get("badge_rows") or [])
+                    if isinstance(badge, dict)
+                )
+                if item
+            ],
+            "attributes": [name for name in (row.get("attribute_names") or []) if name],
+            "images": images,
+            "price": str(row["price"]) if row["price"] is not None else None,
+            "rating": round(float(row["review_average"] or 0), 1),
+            "reviews": int(row["review_count"] or 0),
+        }
+
+    def _catalog_cache_key(self, request):
+        sort_value = request.query_params.get("sort") or "default"
+        if sort_value not in self.SORT_DEFINITIONS and sort_value != "most_requested":
+            sort_value = "default"
+        parts = [
+            request.query_params.get("q") or request.query_params.get("query") or "",
+            request.query_params.get("domain_id") or "",
+            request.query_params.get("subdomain_id") or "",
+            request.query_params.get("subdomain2_id") or "",
+            sort_value,
+        ]
+        digest = hashlib.md5("|".join(parts).encode()).hexdigest()
+        return f"marketplace-catalog-cards:{digest}"
+
+    def _catalog_rows(self, request, queryset):
+        cache_key = self._catalog_cache_key(request)
+        try:
+            cached = cache.get(cache_key)
+        except Exception:
+            cached = None
+        if cached is not None:
+            return cached
+
+        lookups = self._facet_lookups()
+        platforms = dict(Platform.objects.values_list("id", "name"))
+        product_rows = list(queryset.values(
+            "id",
+            "name",
+            "slug",
+            "sku",
+            "short_desc",
+            "price",
+            "domain_id",
+            "datatype_id",
+            "classification_id",
+            "org_id",
+            "platform_id",
+            "pi",
+            "sensitive_pi",
+        ))
+        ids = [row["id"] for row in product_rows]
+        reviews = {}
+        images = {}
+        badges = {}
+        attributes = {}
+        if ids:
+            for review in (
+                Review.objects.filter(status="approved", product_id__in=ids)
+                .values("product_id")
+                .annotate(total=Count("pk"), average=Avg("rating"))
+            ):
+                reviews[review["product_id"]] = review
+            for image in (
+                ProductImage.objects.filter(product_id__in=ids)
+                .exclude(image="")
+                .exclude(image__isnull=True)
+                .order_by("id")
+                .values("product_id", "image")
+            ):
+                images.setdefault(image["product_id"], image["image"])
+            seen_badges = set()
+            for badge in Product.badge.through.objects.filter(product_id__in=ids).values(
+                "product_id",
+                "badge__name",
+                "badge__image",
+                "badge__is_system",
+            ):
+                badge_key = (badge["product_id"], badge["badge__name"])
+                if not badge["badge__name"] or badge_key in seen_badges:
+                    continue
+                seen_badges.add(badge_key)
+                badges.setdefault(badge["product_id"], []).append({
+                    "name": badge["badge__name"],
+                    "image": badge["badge__image"],
+                    "is_system": badge["badge__is_system"],
+                })
+            for attribute in Product.attribute.through.objects.filter(product_id__in=ids).values(
+                "product_id",
+                "attribute__name",
+            ):
+                if attribute["attribute__name"]:
+                    attributes.setdefault(attribute["product_id"], []).append(attribute["attribute__name"])
+
+        rows = []
+        for row in product_rows:
+            review = reviews.get(row["id"]) or {}
+            rows.append({
+                "id": row["id"],
+                "name": row["name"],
+                "slug": row["slug"],
+                "sku": row["sku"],
+                "short_desc": row["short_desc"],
+                "price": row["price"],
+                "domain__name": lookups["domain"].get(row["domain_id"]),
+                "datatype__name": lookups["datatype"].get(row["datatype_id"]),
+                "classification__name": lookups["classification"].get(row["classification_id"]),
+                "org__abbrev": lookups["org"].get(row["org_id"]),
+                "pi": row["pi"],
+                "sensitive_pi": row["sensitive_pi"],
+                "domain_name": lookups["domain"].get(row["domain_id"]),
+                "platform_name": platforms.get(row["platform_id"]),
+                "image_path": images.get(row["id"]),
+                "badge_rows": badges.get(row["id"]) or [],
+                "attribute_names": attributes.get(row["id"]) or [],
+                "review_count": review.get("total") or 0,
+                "review_average": review.get("average"),
+            })
+        try:
+            cache.set(cache_key, rows, 60)
+        except Exception:
+            pass
+        return rows
+
+    def _list_cache_key(self, request):
+        raw = request.META.get("QUERY_STRING", "")
+        digest = hashlib.md5(raw.encode()).hexdigest()
+        return f"marketplace-product-list-badges:{digest}"
+
     def list(
         self,
         request,
@@ -2216,6 +2669,14 @@ class ProductJsonViewSet(viewsets.ViewSet):
         try:
             if request.query_params.get("sort") == "most_requested":
                 return self.most_requested_list(request)
+
+            cache_key = self._list_cache_key(request)
+            try:
+                cached = cache.get(cache_key)
+            except Exception:
+                cached = None
+            if cached is not None:
+                return Response(cached)
 
             campaign = self.campaign_request(
                 request
@@ -2233,68 +2694,66 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 )
             )
 
-            filters = (
-                []
-                if campaign
-                else self.build_filters(
-                    searched_queryset,
-                    request,
-                )
-            )
-
-            filtered_queryset = (
-                self.apply_filters(
-                    searched_queryset,
-                    request,
-                )
-            )
-
-            filtered_queryset = (
-                self.apply_sorting(
-                    filtered_queryset,
-                    request,
-                )
-            )
-
             requested_page, limit = (
                 self.get_pagination(
                     request
                 )
             )
-
-            paginator = Paginator(
-                filtered_queryset,
-                limit,
-            )
-
-            page_object = (
-                paginator.get_page(
-                    requested_page
+            if campaign:
+                filtered_queryset = self.apply_sorting(
+                    self.apply_filters(searched_queryset, request),
+                    request,
                 )
-            )
-
-            page_ids = list(
-                page_object.object_list.values_list("pk", flat=True)
-            )
-            card_queryset = (
-                self.get_campaign_queryset()
-                if campaign
-                else self.get_list_card_queryset()
-            )
-            cards = {
-                product.pk: product
-                for product in card_queryset.filter(pk__in=page_ids)
-            }
-            serialize = (
-                self.serialize_campaign_product
-                if campaign
-                else self.serialize_list_product
-            )
-            products = [
-                serialize(request, cards[product_id])
-                for product_id in page_ids
-                if product_id in cards
-            ]
+                filters = []
+                paginator = Paginator(
+                    filtered_queryset,
+                    limit,
+                )
+                page_object = paginator.get_page(requested_page)
+                page_ids = list(page_object.object_list.values_list("pk", flat=True))
+                cards = {
+                    product.pk: product
+                    for product in self.get_campaign_queryset().filter(pk__in=page_ids)
+                }
+                products = [
+                    self.serialize_campaign_product(request, cards[product_id])
+                    for product_id in page_ids
+                    if product_id in cards
+                ]
+                total = paginator.count
+                page_number = page_object.number
+                pages = paginator.num_pages
+                has_previous = page_object.has_previous()
+                has_next = page_object.has_next()
+                start_index = page_object.start_index() if total else 0
+                end_index = page_object.end_index() if total else 0
+            else:
+                catalog = self._catalog_rows(
+                    request,
+                    self.apply_sorting(searched_queryset, request),
+                )
+                filters = self._stamp_selected_filters(
+                    self._filters_from_rows(catalog, request),
+                    request,
+                )
+                matched = [
+                    row for row in catalog
+                    if self._row_matches(row, request, None)
+                ]
+                total = len(matched)
+                if requested_page < 1:
+                    requested_page = 1
+                if total and (requested_page - 1) * limit >= total:
+                    requested_page = max(1, (total + limit - 1) // limit)
+                offset = (requested_page - 1) * limit
+                rows = matched[offset:offset + limit]
+                products = [self._serialize_card_row(request, row) for row in rows]
+                pages = (total + limit - 1) // limit if total else 0
+                page_number = requested_page if total else 1
+                has_previous = page_number > 1
+                has_next = page_number < pages
+                start_index = offset + 1 if products else 0
+                end_index = offset + len(products)
 
             filter_values = (
                 {}
@@ -2311,40 +2770,33 @@ class ProductJsonViewSet(viewsets.ViewSet):
                 }
             )
 
-            return Response(
-                {
+            payload = {
                     "debug_version":
                         "FILTER_API_V2",
 
                     "count":
-                        paginator.count,
+                        total,
 
                     "page":
-                        page_object.number,
+                        page_number,
 
                     "limit":
                         limit,
 
                     "pages":
-                        paginator.num_pages,
+                        pages,
 
                     "has_previous":
-                        page_object.has_previous(),
+                        has_previous,
 
                     "has_next":
-                        page_object.has_next(),
+                        has_next,
 
-                    "from": (
-                        page_object.start_index()
-                        if paginator.count
-                        else 0
-                    ),
+                    "from":
+                        start_index,
 
-                    "to": (
-                        page_object.end_index()
-                        if paginator.count
-                        else 0
-                    ),
+                    "to":
+                        end_index,
 
                     "products":
                         products,
@@ -2354,7 +2806,13 @@ class ProductJsonViewSet(viewsets.ViewSet):
 
                     "filterValues":
                         filter_values,
-                },
+                }
+            try:
+                cache.set(cache_key, payload, 45)
+            except Exception:
+                pass
+            return Response(
+                payload,
                 status=(
                     status.HTTP_200_OK
                 ),
@@ -2966,7 +3424,13 @@ class HybridProductSearchViewSet(
         request,
     ):
         try:
-            if request.query_params.get("source") == "catalog":
+            source = request.query_params.get("source")
+            if source == "api-name":
+                data = api_name_search(request)
+            elif source == "header":
+                from .ai_catalog import header_product_search
+                data = header_product_search(request)
+            elif source == "catalog":
                 from .ai_catalog import catalog_product_search
                 data = catalog_product_search(request)
             else:

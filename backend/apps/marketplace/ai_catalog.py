@@ -885,3 +885,252 @@ def _catalog_bundle(request, raw_query, normalized_query):
         "correction_applied": correction_applied,
         "results": [_result(product) for product in ordered],
     }
+
+
+_HEADER_CACHE = {}
+_HEADER_INDEX = {"stamp": None, "entries": [], "vocabulary": []}
+_HEADER_CLOSE = 0.78
+
+
+def header_product_search(request):
+    """Header search bar only. Match AD groups, databases, tables, columns, and product names."""
+    raw_query = request.query_params.get("q", "").strip()
+    normalized_query = normalize_query(raw_query)
+    page = parse_page(request.query_params.get("page", 1))
+    now = time.time()
+    cached = _HEADER_CACHE.get(normalized_query)
+    if cached and now - cached[0] < _RESULT_TTL:
+        return {**cached[1], **slice_results(cached[1]["results"], page)}
+
+    bundle = _header_bundle(request, raw_query, normalized_query)
+    _HEADER_CACHE[normalized_query] = (now, bundle)
+    if len(_HEADER_CACHE) > 40:
+        oldest = min(_HEADER_CACHE, key=lambda key: _HEADER_CACHE[key][0])
+        _HEADER_CACHE.pop(oldest, None)
+    return {**bundle, **slice_results(bundle["results"], page)}
+
+
+def _header_bundle(request, raw_query, normalized_query):
+    empty = {
+        "query": raw_query,
+        "normalized_query": normalized_query,
+        "search_query_used": normalized_query,
+        "intent": "header",
+        "applied_filters": {},
+        "inferred_filters": {},
+        "did_you_mean": None,
+        "spelling_confidence": None,
+        "correction_applied": False,
+        "results": [],
+    }
+    if len(normalized_query) < 2:
+        return empty
+
+    index = _header_index()
+    found = _header_matches(normalized_query, index)
+    spelling = build_did_you_mean(normalized_query, index["vocabulary"])
+    search_query = normalized_query
+    correction_applied = False
+    if not found and spelling and spelling["query"] != normalized_query:
+        found = _header_matches(spelling["query"], index)
+        if found:
+            search_query = spelling["query"]
+            correction_applied = True
+    did_you_mean = None
+    confidence = None
+    if spelling and spelling["query"] != normalized_query:
+        corrected = spelling["query"]
+        did_you_mean = corrected[:1].upper() + corrected[1:]
+        confidence = spelling["confidence"]
+
+    products = _products_for_header(found)
+    by_slug = {product.slug: product for product in products if product.slug}
+    by_group = {}
+    by_id = {product.id: product for product in products}
+    for product in products:
+        group = product.ad_group
+        if not group:
+            continue
+        if group.name:
+            by_group.setdefault(group.name.lower(), product)
+        if group.value:
+            by_group.setdefault(group.value.lower(), product)
+
+    ranked = []
+    for product_key, score, tags in found:
+        product = by_id.get(product_key) if isinstance(product_key, int) else None
+        if product is None and isinstance(product_key, str):
+            product = by_slug.get(product_key) or by_group.get(product_key.lower())
+        if product is None:
+            continue
+        ranked.append((product, score, tags))
+    ranked.sort(key=lambda item: (-item[1], item[0].name or ""))
+    seen = set()
+    results = []
+    for product, score, tags in ranked:
+        if product.id in seen:
+            continue
+        seen.add(product.id)
+        result = product_to_result(
+            product,
+            request=request,
+            matched_on=[f"{tag['kind']}:{tag['value']}" for tag in tags],
+            relevance_score=round(score, 4),
+        )
+        result["highlights"] = tags
+        kinds = {tag.get("kind") for tag in tags}
+        if not kinds.difference(("product",)):
+            continue
+        results.append(result)
+        if len(results) >= 96:
+            break
+
+    return {
+        **empty,
+        "search_query_used": search_query,
+        "did_you_mean": did_you_mean,
+        "spelling_confidence": confidence,
+        "correction_applied": correction_applied,
+        "results": results,
+    }
+
+
+def _header_index():
+    records = load_ai_catalog()
+    stamp = _CATALOG_CACHE.get("stamp")
+    if _HEADER_INDEX["stamp"] == stamp and _HEADER_INDEX["entries"]:
+        return _HEADER_INDEX
+
+    entries = []
+    words = set()
+
+    def add(kind, value, slug, adgroup, product_id=None):
+        text = normalize_query(value)
+        if len(text) < 3:
+            return
+        entries.append((kind, str(value).strip(), text, slug or "", adgroup or "", product_id))
+        for part in re.split(r"[^a-z0-9]+", text):
+            if len(part) >= 3:
+                words.add(part)
+
+    for record in records:
+        slugs = record["slugs"] or [""]
+        for slug in slugs:
+            if record["adgroup"]:
+                add("adgroup", record["adgroup"], slug, record["adgroup"])
+            for value in record["databases"]:
+                add("database", value, slug, record["adgroup"])
+            for value in record["tables"]:
+                add("table", value, slug, record["adgroup"])
+            for value in record["columns"]:
+                add("column", value, slug, record["adgroup"])
+
+    for product in visible_products().select_related("ad_group"):
+        add("product", product.name or "", product.slug, "", product.id)
+        if product.sku:
+            add("product", product.sku, product.slug, "", product.id)
+        group = product.ad_group
+        if group and group.name:
+            add("adgroup", group.name, product.slug, group.name, product.id)
+        if group and group.value and group.value != getattr(group, "name", None):
+            add("adgroup", group.value, product.slug, group.value, product.id)
+
+    _HEADER_INDEX["stamp"] = stamp
+    _HEADER_INDEX["entries"] = entries
+    _HEADER_INDEX["vocabulary"] = sorted(words)
+    return _HEADER_INDEX
+
+
+def _header_matches(query, index):
+    from difflib import SequenceMatcher
+
+    labels = {
+        "adgroup": "Ad Group",
+        "database": "Database",
+        "table": "Table",
+        "column": "Column",
+        "product": "Suggested product",
+    }
+    grouped = {}
+    for kind, value, text, slug, adgroup, product_id in index["entries"]:
+        score = _header_closeness(query, text, SequenceMatcher)
+        if score < _HEADER_CLOSE:
+            continue
+        key = product_id or slug or adgroup
+        if not key:
+            continue
+        row = grouped.setdefault(key, {"score": 0.0, "tags": [], "seen": set()})
+        if score > row["score"]:
+            row["score"] = score
+        tag_key = (kind, value.casefold())
+        if tag_key in row["seen"] or len(row["tags"]) >= 6:
+            continue
+        row["seen"].add(tag_key)
+        row["tags"].append({
+            "kind": kind,
+            "label": labels[kind],
+            "value": value,
+            "score": round(score, 4),
+        })
+    matches = []
+    for key, row in grouped.items():
+        row["tags"].sort(key=lambda tag: (-tag["score"], tag["label"]))
+        for tag in row["tags"]:
+            tag.pop("score", None)
+        matches.append((key, row["score"], row["tags"]))
+    matches.sort(key=lambda item: -item[1])
+    return matches[:96]
+
+
+def _header_closeness(query, text, matcher):
+    if text == query:
+        return 1.0
+    if len(query) >= 3 and query in text:
+        return 0.9
+    if len(text) >= 3 and text in query:
+        return 0.86
+    best = 0.0
+    parts = [text]
+    parts.extend(part for part in re.split(r"[^a-z0-9]+", text) if len(part) >= 3 and part != text)
+    for part in parts:
+        if abs(len(part) - len(query)) > 3:
+            continue
+        score = matcher(None, query, part).ratio()
+        if score > best:
+            best = score
+    return best
+
+
+def _products_for_header(found):
+    ids = [key for key, _, _ in found if isinstance(key, int)]
+    slugs = [key for key, _, _ in found if isinstance(key, str) and key]
+    groups = [key for key, _, _ in found if isinstance(key, str) and key]
+    if not ids and not slugs and not groups:
+        return []
+    query = Q()
+    if ids:
+        query |= Q(id__in=ids)
+    if slugs:
+        query |= Q(slug__in=slugs)
+    if groups:
+        query |= Q(ad_group__name__in=groups) | Q(ad_group__value__in=groups)
+    return list(
+        visible_products()
+        .filter(query)
+        .select_related(
+            "domain",
+            "subdomain_2",
+            "subdomain_3",
+            "datatype",
+            "classification",
+            "data_steward",
+            "poc_name",
+            "business_contact_name",
+            "business_sme",
+            "org",
+            "ad_group",
+        )
+        .prefetch_related("images")
+        .distinct()
+    )
+

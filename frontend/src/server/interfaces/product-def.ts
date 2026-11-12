@@ -84,8 +84,15 @@ export interface Product {
     poc_name: string;
     business_contact_name: string;
     business_sme: string;
-    resource: string;
-    resource_url: string;
+    resource?: {
+        id: number;
+        catalog: string;
+        image: string;
+        type: string;
+        name: string;
+        original_name: string;
+        url: string;
+    } | null;
     original_name: string;
     route_identifier: string;
     price: number;

@@ -1,0 +1,7 @@
+<div class="record-upload">
+    <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    {% if widget.is_initial %}
+        <button type="button" class="btn btn-light record-clear-btn">Clear</button>
+        <input type="checkbox" class="d-none" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+    {% endif %}
+</div>

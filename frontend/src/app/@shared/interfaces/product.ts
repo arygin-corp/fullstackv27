@@ -75,6 +75,15 @@ export interface Product {
     datatype: string;
     classification: string;
     catalog: string;
+    resource?: {
+        id: number;
+        catalog: string;
+        image: string;
+        type: string;
+        name: string;
+        original_name: string;
+        url: string;
+    } | null;
     intended_use: string;
 
     // ProductSerializer uses ContactSerializer for these values.
@@ -85,14 +94,13 @@ export interface Product {
     business_sme?: ProductContact | null;
 
     business_contact_name?: string;
-    resource: string;
-    resource_url: string;
     original_name: string;
+    matched_label?: string;
     route_identifier: string;
     price: number;
     compareAtPrice: number | null;
     sku: string;
-    badges: string[];
+    badges: Array<string | { name: string; image?: string | null; is_system?: boolean }>;
     org: Organization | null;
     keywords: Keyword[];
     attributes: ProductAttribute[];

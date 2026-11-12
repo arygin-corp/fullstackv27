@@ -1,18 +1,14 @@
-{% extends 'partials/base.html' %}
+{% extends 'gdx_users/partials/base.html' %}
 {% load static %}
 
 {% block extra_javascript %}
 
     <!-- Make sure jQuery loads first -->
-    <script src="{% static 'gdx_theme/libs/jquery/dist/jquery.min.js' %}" async></script>
-
-    <!-- DataTables core -->
-    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}" async></script>
-    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}" async></script>
-    
-    <!-- Responsive extension -->
-    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}" async></script>
-    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}" async></script>
+    <script src="{% static 'gdx_theme/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
 
     <script>
         $(document).ready(function() {
@@ -36,7 +32,9 @@
                 },
                 "columns": [
                     { "data": "id", "className": "text-center" },
+                    { "data": "image", "orderable": false, "searchable": false, "className": "text-center" },
                     { "data": "products" },
+                    { "data": "data_steward" },
                     { "data": "domains", "className": "text-center", "width": "280px" }, 
                     { "data": "datatypes", "className": "text-center" },
                     // { "data": "classifications", "className": "text-center" },
@@ -153,7 +151,9 @@
                         <thead>
                             <tr>
                                <th scope="col" class="text-center">ID</th>
-                                <th scope="col">Products</th>
+                                <th scope="col" class="text-center">Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Data Steward</th>
                                 <th scope="col" class="text-center">Domains</th>
                                 <th scope="col" class="text-center">Datatypes</th>
                                 <!-- <th scope="col" class="text-center">Classifications</th> -->

@@ -1389,7 +1389,7 @@
 				                <!--API NAME-->
 				                <div [ngClass]="displayFieldCss('v_dat_api_name')" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="form-group col-12" id="api_name" style="margin-top: 12px;">
 				                  <label for="exampleFormControlTextarea1" class="control-label required"><span class="text-danger">*</span>API Name</label>
-				                  <input class="form-control" formControlName="v_dat_api_name">
+				                  <input class="form-control" formControlName="v_dat_api_name" autocomplete="off" (blur)="onApiNameBlur()">
 				                  <!--API NAME ERROR-->
 				                  <app-field-error-display [displayError]="isFieldValid('v_dat_api_name')" errorMsg="API name is required."></app-field-error-display>
 				                </div>
@@ -2718,30 +2718,8 @@
 				                  <app-field-error-display [displayError]="isFieldValid('v_dar_post_table_names')" errorMsg="Table Name(s) is required."></app-field-error-display>
 				                </div>
 
-								<!-- SUGGESTED AI NON-TRIGGER -->
-								<div [ngClass]="displayFieldCss('v_dar_post_database_schema')" *ngIf="
-									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'" [hidden]="
-									form.get('v_dar_environment').value === 'Prod' || form.get('v_dar_environment').value === 'All'" class="form-group col-12" id="database_schema" style="margin-top: 12px;">
-									<label for="exampleFormControlTextarea1" class="control-label required">
-										<span class="text-danger">*</span>Database/Schema
-									</label>
-									<input class="form-control" formControlName="v_dar_post_database_schema">
-									<app-field-error-display [displayError]="isFieldValid('v_dar_post_database_schema')" errorMsg="Database/Schema is required."></app-field-error-display>
-								</div>
-
-								<div [ngClass]="displayFieldCss('v_dar_post_table_names')" *ngIf="
-									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'" [hidden]="
-									form.get('v_dar_environment').value === 'Prod'|| form.get('v_dar_environment').value === 'All'" class="form-group col-12" id="table_names" style="margin-top: 12px;">
-									<label for="exampleFormControlTextarea1" class="control-label required"><span class="text-danger">*</span>Table Name(s)</label>
-									<input class="form-control" formControlName="v_dar_post_table_names">
-									<app-field-error-display [displayError]="isFieldValid('v_dar_post_table_names')" errorMsg="Table Name(s) is required."></app-field-error-display>
-								</div>
-								<!-- SUGGESTED AI NON-TRIGGER END -->
-
 								<!-- SUGGESTED AI TRIGGER -->
-								<div class="form-group" *ngIf="
-									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)' && 
-									(form.get('v_dar_environment').value === 'Prod' || form.get('v_dar_environment').value === 'All')">
+								<div class="form-group" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
 									<div class="col-sm-12">
 										<label for="databaseSchemaSelect" class="control-label required">
 											<span class="text-danger">*</span>Database/Schema
@@ -2753,8 +2731,9 @@
 											bindValue="dbname"
 											placeholder="Select a database"
 											formControlName="v_dar_post_database_schema"
+											(open)="setDatabaseMenuOpen(true)"
 											(change)="onDbChange($event)"
-											(close)="onTableSelectClose()">
+											(close)="onDatabaseMenuClose()">
 											<ng-template ng-option-tmp let-item="item">
 												<span>
 													<strong class="notranslate">Database</strong>: {{ item.dbname }}
@@ -2766,8 +2745,7 @@
 
 								<div class="form-group" *ngIf="
 									elements.length > 0 && 
-									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)' && 
-									(form.get('v_dar_environment').value === 'Prod' || form.get('v_dar_environment').value === 'All')">
+									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
 									<div class="col-sm-12">
 										<label for="exampleFormControlTextarea1" class="control-label required">
 											<span class="text-danger">*</span>Table Name(s)
@@ -3960,7 +3938,7 @@
 				                <!--API NAME-->
 				                <div [ngClass]="displayFieldCss('v_dat_api_name')" *ngIf="form.get('v_dar_platform').value === 'API (EIG Application Support)'" class="form-group col-12" id="api_name" style="margin-top: 12px;">
 				                  <label for="exampleFormControlTextarea1" class="control-label required"><span class="text-danger">*</span>API Name</label>
-				                  <input class="form-control" formControlName="v_dat_api_name">
+				                  <input class="form-control" formControlName="v_dat_api_name" autocomplete="off" (blur)="onApiNameBlur()">
 				                  <!--API NAME ERROR-->
 				                  <app-field-error-display [displayError]="isFieldValid('v_dat_api_name')" errorMsg="API name is required."></app-field-error-display>
 				                </div>
@@ -5273,6 +5251,54 @@
 				                  </select>
 				                  <app-field-error-display [displayError]="isFieldValid('v_dar_environment')" errorMsg="Environment is required."></app-field-error-display>
 				                </div>
+
+								<div class="form-group" *ngIf="form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+									<div class="col-sm-12">
+										<label class="control-label required">
+											<span class="text-danger">*</span>Database/Schema
+										</label>
+										<ng-select
+											[dropdownPosition]="'bottom'"
+											[items]="dbnames"
+											bindLabel="label"
+											bindValue="dbname"
+											placeholder="Select a database"
+											formControlName="v_dar_post_database_schema"
+											(open)="setDatabaseMenuOpen(true)"
+											(change)="onDbChange($event)"
+											(close)="onDatabaseMenuClose()">
+											<ng-template ng-option-tmp let-item="item">
+												<span><strong class="notranslate">Database</strong>: {{ item.dbname }}</span>
+											</ng-template>
+										</ng-select>
+									</div>
+								</div>
+
+								<div class="form-group" *ngIf="
+									elements.length > 0 &&
+									form.get('v_dar_platform').value === 'TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)'">
+									<div class="col-sm-12">
+										<label class="control-label required">
+											<span class="text-danger">*</span>Table Name(s)
+										</label>
+										<ng-select
+											[dropdownPosition]="'bottom'"
+											[items]="elements"
+											bindLabel="elementname"
+											bindValue="elementname"
+											placeholder="Select up to 50 tables/columns"
+											formControlName="v_dar_post_table_names"
+											[multiple]="true"
+											[maxSelectedItems]="50"
+											[closeOnSelect]="false"
+											[clearable]="true"
+											(close)="onTableSelectClose()">
+											<ng-template ng-option-tmp let-item="item">
+												<span><strong>Table</strong>: <span class="highlighted notranslate">{{ item.elementname }}</span></span>
+											</ng-template>
+										</ng-select>
+									</div>
+								</div>
 
 				                <div class="form-group col-12" [ngClass]="displayFieldCss('v_dar_environment')" *ngIf="
 				                	form.get('v_dar_mainframe_access_type').value === 'CICS Access'" id="environment" style="margin-top: 12px;">

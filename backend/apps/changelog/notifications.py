@@ -31,7 +31,7 @@ def notify_release_published(post_id):
             recipient=item.user,
             title=item.title,
             body=item.message,
-            url="/sa/changelog/notifications/",
+            url="/changelog/notifications/",
             notification_type=NotificationType.SYSTEM,
             source="changelog",
             source_object_type="Post",

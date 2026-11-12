@@ -1,4 +1,0 @@
-<div class="card h-100">
-  <div class="card-header"><h3 class="h5 mb-0"><i class="{{ panel_icon }} me-2 {{ panel_color }}"></i>{{ panel_title }}</h3></div>
-  <div class="list-group list-group-flush">{% for item in items %}<a class="list-group-item list-group-item-action d-flex justify-content-between gap-3" href="{% if item.priority != None %}{% url 'dar-admin:routing-detail' item.pk %}{% else %}{% url 'dar-admin:rule-detail' item.pk %}{% endif %}"><span class="fw-medium text-break">{{ item.name }}</span><small class="text-muted flex-shrink-0">{% if item.priority != None %}Priority {{ item.priority }}{% else %}{{ item.get_evaluation_mode_display }}{% endif %}</small></a>{% empty %}<div class="list-group-item text-muted py-4">{{ empty_text }}</div>{% endfor %}</div>
-</div>

@@ -129,7 +129,20 @@ async function exportProducts() {
         p.short_desc,
         p.intended_use,
         p.is_active,
-        p.resource_url,
+        CASE
+          WHEN tpl.pattern IS NULL OR btrim(tpl.pattern) = '' THEN ''
+          ELSE (
+            CASE
+              WHEN lower(btrim(COALESCE(kind.name, ''))) = 'api'
+                AND btrim(COALESCE(rt.query, '')) <> '' THEN
+                CASE
+                  WHEN position('?' IN built.url) > 0 THEN built.url || '&' || rt.query
+                  ELSE built.url || '?' || rt.query
+                END
+              ELSE built.url
+            END
+          )
+        END AS resource_url,
         p.original_name,
         p.usertype,
         p.access_type,
@@ -182,6 +195,17 @@ async function exportProducts() {
       LEFT JOIN marketplace_datasteward steward ON steward.id = p.data_steward_id
       LEFT JOIN marketplace_contact poc ON poc.id = p.poc_name_id
       LEFT JOIN marketplace_organization org ON org.id = p.org_id
+      LEFT JOIN marketplace_catalog catalog ON catalog.id = p.resource_id
+      LEFT JOIN marketplace_resourcetype rt ON rt.id = catalog.resourcetype_id
+      LEFT JOIN marketplace_resourcekind kind ON kind.id = rt.type_id
+      LEFT JOIN marketplace_resourceurltemplate tpl ON tpl.id = rt.url_id
+      LEFT JOIN LATERAL (
+        SELECT replace(
+          replace(tpl.pattern, '<app_id>', COALESCE(rt.api_id::text, '')),
+          '<collibra_id>',
+          COALESCE(rt.collibra_id::text, '')
+        ) AS url
+      ) built ON true
       ORDER BY p.updated_at DESC NULLS LAST, p.id
     `);
 
@@ -467,6 +491,58 @@ async function exportPlatforms(products) {
   }
 }
 
+function loadServiceNowRitmCatalog() {
+	const filePath = path.join(STATIC_PATH, 'historical', 'all_orders.json');
+	const catalog = new Map();
+	if (!fs.existsSync(filePath)) return catalog;
+	const orders = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+	for (const order of orders) {
+		for (const ritm of order.ritms || []) {
+			if (!ritm.ritm_number) continue;
+			catalog.set(ritm.ritm_number, {
+				request_number: order.request_number || '',
+				ritm_id: ritm.ritm_id || ''
+			});
+		}
+	}
+	return catalog;
+}
+
+// orders_request.number was stored as a 5-character fragment. The task row
+// still has the full RITM, and all_orders.json has the matching REQ number.
+function restoreStoredOrderNumbers(requests, tasks) {
+	const catalog = loadServiceNowRitmCatalog();
+	const ritmsByRequest = new Map();
+	for (const task of tasks) {
+		const requestId = String(task.request_id);
+		if (!ritmsByRequest.has(requestId)) ritmsByRequest.set(requestId, new Set());
+		if (task.ritm) ritmsByRequest.get(requestId).add(task.ritm);
+	}
+	for (const request of requests) {
+		const ritms = [...(ritmsByRequest.get(String(request.id)) || [])];
+		if (ritms.length === 1) {
+			const [ritm] = ritms;
+			request.ritm_number = ritm;
+			const info = catalog.get(ritm);
+			if (info) {
+				if (info.ritm_id && !request.ritm_id) request.ritm_id = info.ritm_id;
+				if (info.request_number) request.number = info.request_number;
+			}
+		} else {
+			const requestNumbers = new Set(
+				ritms.map((ritm) => catalog.get(ritm)?.request_number).filter(Boolean)
+			);
+			if (requestNumbers.size === 1) request.number = [...requestNumbers][0];
+		}
+		if (/^RITM/i.test(String(request.number || ""))) {
+			if (/^RITM\d{4,}$/.test(String(request.number)) && !/^RITM\d{4,}$/.test(String(request.ritm_number || ""))) {
+				request.ritm_number = request.number;
+			}
+			request.number = "";
+		}
+	}
+}
+
 /**
  * 6. Export and Join Orders
  */
@@ -477,6 +553,7 @@ async function exportAndJoinOrders() {
 		const reqRes = await pool.query('SELECT * FROM orders_request ORDER BY opened_at DESC');
 		const taskRes = await pool.query('SELECT * FROM orders_task');
 		console.log(`[DB] [FETCHED] ${reqRes.rowCount} requests and ${taskRes.rowCount} tasks retrieved.`);
+		restoreStoredOrderNumbers(reqRes.rows, taskRes.rows);
 
 		fs.writeFileSync(path.join(ORDERS_PATH, 'requests.json'), JSON.stringify(reqRes.rows, null, 4));
 		fs.writeFileSync(path.join(ORDERS_PATH, 'tasks.json'), JSON.stringify(taskRes.rows, null, 4));
@@ -502,6 +579,7 @@ async function exportAndJoinOrders() {
 				request_info: {
 					id: req.id,
 					number: req.number,
+					ritm_number: req.ritm_number || "",
 					status: req.ritm_state || "Unknown",
 					submitted_by: req.opened_by || req.submittedByName,
 					opened_at: req.opened_at,
@@ -509,6 +587,7 @@ async function exportAndJoinOrders() {
 				},
 				tasks: matchedTasks.map(t => ({
 					task_number: t.number,
+					ritm: t.ritm || "",
 					state: t.state,
 					created_at: t.created || t.createdAt
 				}))

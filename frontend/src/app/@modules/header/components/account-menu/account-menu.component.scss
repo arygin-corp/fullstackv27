@@ -50,4 +50,99 @@
     font-weight: 400;
 }
 
+.account-menu__user-avatar {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.account-menu__user-avatar img,
+.account-menu__user-avatar ngx-avatar {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-menu__status {
+    padding: 4px 0;
+}
+
+.account-menu__status-toggle,
+.account-menu__status-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 8px 8px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+}
+
+.account-menu__status-toggle {
+    width: 100%;
+    padding: 8px 20px;
+    justify-content: flex-start;
+}
+
+.account-menu__status-toggle i {
+    margin-left: auto;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.account-menu__status-toggle i.is-open {
+    transform: rotate(180deg);
+}
+
+.account-menu__status-toggle:hover,
+.account-menu__status-option:hover,
+.account-menu__status-option.is-current {
+    background: #f3f5f8;
+}
+
+.account-menu__status-panel {
+    list-style: none;
+    width: auto;
+    margin: 6px 20px 0;
+    padding: 6px;
+    border: 1px solid #e6ebf2;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 24, 38, 0.12);
+}
+
+.account-menu__status-dot {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    border-radius: 50%;
+    background: #9ca3af;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.account-menu__status-dot[data-status='online'] { background: #22c55e; }
+.account-menu__status-dot[data-status='away'] { background: #eab308; }
+.account-menu__status-dot[data-status='busy'] { background: #ef4444; }
+.account-menu__status-dot[data-status='unavailable'] { background: #a855f7; }
+.account-menu__status-dot[data-status='offline'] { background: #9ca3af; }
+
+.account-menu__status-dot--avatar {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 12px;
+    height: 12px;
+    flex-basis: 12px;
+}
+
 

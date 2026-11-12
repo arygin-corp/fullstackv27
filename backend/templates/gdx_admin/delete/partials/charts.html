@@ -1,0 +1,283 @@
+{% load static %}
+<div class="row">
+<div class="col-xxl-8 col-xl-12 d-flex flex-column">
+<!-- start row -->
+<div class="row">
+<div class="col-xl-12 d-flex">
+<div class="card w-100">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h4 class="mb-0 fs-18">Revenue &amp; Expenses</h4>
+<div class="d-flex align-items-center flex-wrap gap-3">
+<p class="mb-0 d-flex align-items-center text-dark"><i class="ti ti-circle-filled fs-6 text-primary me-1"></i>Revenue</p>
+<p class="mb-0 d-flex align-items-center text-dark"><i class="ti ti-circle-filled fs-6 text-success me-1"></i>Expenses</p>
+<div class="dropdown flex-shrink-0">
+<a aria-expanded="false" class="btn btn-white fw-normal d-inline-flex align-items-center border" data-bs-toggle="dropdown" href="javascript:void(0);"><i class="isax isax-calendar-2 me-1 text-gray-9"></i>2026<i class="isax isax-arrow-down-1 ms-1 text-gray-9"></i></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2026</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2025</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2024</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="revenue-expense-chart"></div>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="border rounded-3 p-2 position-relative overflow-hidden z-1">
+<p class="mb-2">Total Revenue this year</p>
+<div class="d-flex align-items-center gap-1">
+<h4 class="mb-0 fs-18">$45,897.01</h4>
+<p class="fs-13 mb-0 d-flex align-items-center gap-1"><span class="text-success d-flex align-items-center"><i class="isax isax-arrow-up-24 me-1"></i>12%</span>From Last Year</p>
+</div>
+<img alt="bg" class="img-fluid position-absolute top-0 end-0 z-n1" src="{% static 'assets/img/bg/revenue-bg.png' %}"/>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-2 position-relative overflow-hidden z-1">
+<p class="mb-2">Total Expense this year</p>
+<div class="d-flex align-items-center gap-1">
+<h4 class="mb-0 fs-18">$10,210</h4>
+<p class="fs-13 mb-0 d-flex align-items-center gap-1"><span class="text-danger d-flex align-items-center"><i class="isax isax-arrow-down-1 me-1"></i>12%</span>From Last Year</p>
+</div>
+<img alt="bg" class="img-fluid position-absolute top-0 end-0 z-n1" src="{% static 'assets/img/bg/expense-bg.png' %}"/>
+</div>
+</div>
+</div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+</div> <!-- end col -->
+<div class="col-xl-6 d-flex">
+<div class="card w-100">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h4 class="mb-0 fs-18">Weekly Sales</h4>
+<a class="btn btn-icon btn-white rounded-circle" href="sales-report.html">
+<i class="ti ti-arrow-narrow-right"></i>
+</a>
+</div>
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+<div>
+<h3 class="mb-1">$12,610</h3>
+<p class="mb-0">This week</p>
+</div>
+<div class="d-flex align-items-center gap-3">
+<span class="badge bg-light text-dark d-inline-flex align-items-center fs-14"><i class="ti ti-circle-filled text-primary fs-6 me-2"></i>Sales</span>
+<span class="badge bg-light text-dark d-inline-flex align-items-center fs-14"><i class="ti ti-circle-filled text-primary-200 fs-6 me-2"></i>Target</span>
+</div>
+</div>
+<div id="sales-chart"></div>
+<div class="border p-2 rounded-pill d-flex align-items-center gap-1">
+<span class="badge bg-success rounded-pill d-inline-flex align-items-center"><i class="isax isax-arrow-up-24 me-1"></i>12%</span>
+<p class="fs-13 mb-0">Increased From Last Week</p>
+</div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+</div> <!-- end col -->
+<div class="col-xl-6 d-flex">
+<div class="card w-100">
+<div class="card-body pb-0">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h3 class="mb-0 fs-18">Top 3 Products</h3>
+<a class="btn btn-icon btn-white rounded-circle" href="products.html">
+<i class="ti ti-arrow-narrow-right"></i>
+</a>
+</div>
+<div id="products-chart"></div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+</div> <!-- end col -->
+</div>
+<!-- end row -->
+</div>
+<div class="col-xxl-4 col-xl-12 d-flex flex-column">
+<div class="card flex-fill">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<div>
+<h3 class="mb-1 fs-18">Payment Method</h3>
+<p class="mb-0">Distribution by payment type</p>
+</div>
+<a class="btn btn-icon btn-white rounded-circle" href="payment-methods.html">
+<i class="ti ti-arrow-narrow-right"></i>
+</a>
+</div>
+<div id="payment-chart"></div>
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+<div>
+<p class="fs-16 fw-semibold text-dark d-flex align-items-center mb-1"><i class="ti ti-circle-filled text-primary-300 fs-8 me-2"></i>Credit Card</p>
+<p class="fs-12 mb-0">542 transactions</p>
+</div>
+<div class="avatar bg-light rounded-circle text-dark fs-13 fw-medium">52%</div>
+</div>
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+<div>
+<p class="fs-16 fw-semibold text-dark d-flex align-items-center mb-1"><i class="ti ti-circle-filled text-primary-500 fs-8 me-2"></i>Bank Transfer</p>
+<p class="fs-12 mb-0">318 transactions</p>
+</div>
+<div class="avatar bg-light rounded-circle text-dark fs-13 fw-medium">34%</div>
+</div>
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+<div>
+<p class="fs-16 fw-semibold text-dark d-flex align-items-center mb-1"><i class="ti ti-circle-filled text-primary-700 fs-8 me-2"></i>Digital Wallet</p>
+<p class="fs-12 mb-0">156 transactions</p>
+</div>
+<div class="avatar bg-light rounded-circle text-dark fs-13 fw-medium">11%</div>
+</div>
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-0">
+<div>
+<p class="fs-16 fw-semibold text-dark d-flex align-items-center mb-1"><i class="ti ti-circle-filled text-primary fs-8 me-2"></i>Cash</p>
+<p class="fs-12 mb-0">89 transactions</p>
+</div>
+<div class="avatar bg-light rounded-circle text-dark fs-13 fw-medium">4%</div>
+</div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+<div class="card flex-fill">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h3 class="mb-0 fs-18">Cash Flow</h3>
+<a class="btn btn-icon btn-white rounded-circle" href="cash-flow.html">
+<i class="ti ti-arrow-narrow-right"></i>
+</a>
+</div>
+<div class="row g-2">
+<div class="col-sm-4">
+<div class="p-3 rounded-3 bg-success-200 position-relative overflow-hidden z-1">
+<i class="isax isax-received text-dark mb-1"></i>
+<p class="text-dark mb-2">Inflow</p>
+<h3 class="mb-0 fs-18">$835k</h3>
+<img alt="bg" class="img-fluid position-absolute top-0 end-0 z-n1" src="{% static 'assets/img/bg/blur-bg-01.png' %}"/>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="p-3 rounded-3 bg-danger-200 position-relative overflow-hidden z-1">
+<i class="isax isax-logout text-dark mb-1"></i>
+<p class="text-dark mb-2">Outflow</p>
+<h3 class="mb-0 fs-18">$433k</h3>
+<img alt="bg" class="img-fluid position-absolute top-0 end-0 z-n1" src="{% static 'assets/img/bg/blur-bg-02.png' %}"/>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="p-3 rounded-3 bg-orange-200 position-relative overflow-hidden z-1">
+<i class="isax isax-lovely text-dark mb-1"></i>
+<p class="text-dark mb-2">Net</p>
+<h3 class="mb-0 fs-18">$402k</h3>
+<img alt="bg" class="img-fluid position-absolute top-0 end-0 z-n1" src="{% static 'assets/img/bg/blur-bg-03.png' %}"/>
+</div>
+</div>
+</div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+</div> <!-- end col -->
+</div>
+<div class="row">
+<div class="col-xxl-5 d-flex">
+<div class="card flex-fill">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h3 class="mb-0 fs-18">Profit Margin</h3>
+<div class="dropdown flex-shrink-0">
+<a aria-expanded="false" class="btn btn-white fw-normal d-inline-flex align-items-center border" data-bs-toggle="dropdown" href="javascript:void(0);"><i class="isax isax-calendar-2 me-1 text-gray-9"></i>2026<i class="isax isax-arrow-down-1 ms-1 text-gray-9"></i></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2026</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2025</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">2024</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-flex align-items-center justify-content-between gap-4 flex-sm-row flex-column">
+<div>
+<div>
+<h3 class="mb-2 fs-18 d-flex align-items-center"><i class="isax isax-export-2 me-2"></i>57.4%</h3>
+<p class="fs-13 mb-4">Avg. Margin</p>
+<div>
+<div class="chart-wrapper mb-2">
+<canvas id="target-margin"></canvas>
+</div>
+<p class="text-dark mb-0">Target Margin</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<h3 class="mb-2 fs-18 d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>54.7%</h3>
+<p class="fs-13 mb-4">Best Month</p>
+<div>
+<div class="chart-wrapper mb-2">
+<canvas id="monthly-profit"></canvas>
+</div>
+<p class="text-dark mb-0">Monthly Profit</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<h3 class="mb-2 fs-18 d-flex align-items-center"><i class="isax isax-arrow-3 me-2"></i>+8.5%</h3>
+<p class="fs-13 mb-4">Growth</p>
+<div>
+<div class="chart-wrapper mb-2">
+<canvas id="revenue-growth"></canvas>
+</div>
+<p class="text-dark mb-0">Revenue Growth</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-7 d-flex">
+<div class="card flex-fill">
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<h3 class="mb-0 fs-18">Expense Breakdown</h3>
+<div class="dropdown flex-shrink-0">
+<a aria-expanded="false" class="btn btn-white fw-normal d-inline-flex align-items-center border" data-bs-toggle="dropdown" href="javascript:void(0);"><i class="isax isax-calendar-2 me-1 text-gray-9"></i>Weekly<i class="isax isax-arrow-down-1 ms-1 text-gray-9"></i></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+</li>
+<li>
+<a class="dropdown-item" href="javascript:void(0);">Yearly</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="d-flex align-items-sm-center justify-content-between gap-2 flex-sm-row flex-column">
+<div class="w-100">
+<div id="breakdown-chart"></div>
+</div>
+<div class="flex-shrink-0">
+<div class="text-sm-end">
+<h3 class="mb-1">$38,400</h3>
+<p class="mb-4">Total Expenses Weekly</p>
+</div>
+<div class="d-inline-flex flex-column float-sm-end">
+<span class="badge border bg-light text-dark d-inline-flex align-items-center fs-14 mb-2"><i class="ti ti-circle-filled text-primary-600 fs-6 me-2"></i>Operating</span>
+<span class="badge border bg-light text-dark d-inline-flex align-items-center fs-14 mb-2"><i class="ti ti-circle-filled text-secondary-600 fs-6 me-2"></i>Payroll</span>
+<span class="badge border bg-light text-dark d-inline-flex align-items-center fs-14"><i class="ti ti-circle-filled text-primary-700 fs-6 me-2"></i>Marketing</span>
+</div>
+</div>
+</div>
+</div> <!-- end card body -->
+</div> <!-- end card -->
+</div> <!-- end col -->
+</div>
+
+{% block dashboard_chart_content %}{% endblock %}

@@ -18,7 +18,12 @@ def ingest_document(document):
     if not text.strip():
         raise ValueError("No extractable text was found in this file")
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    duplicate = Document.objects.exclude(pk=document.pk).filter(owner=document.owner, content_hash=digest).first()
+    duplicates = Document.objects.exclude(pk=document.pk).filter(content_hash=digest)
+    if document.shared:
+        duplicates = duplicates.filter(shared=True)
+    else:
+        duplicates = duplicates.filter(owner=document.owner, shared=False)
+    duplicate = duplicates.first()
     if duplicate:
         raise ValueError(f"This content is already indexed as '{duplicate.title}'")
     chunks = chunk_text(text, settings.RAG_CHUNK_SIZE, settings.RAG_CHUNK_OVERLAP)

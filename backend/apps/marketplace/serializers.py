@@ -420,7 +420,7 @@ class ProductSerializer(
 
     brief_desc = serializers.SerializerMethodField()
 
-    resource_url = serializers.SerializerMethodField()
+    resource = serializers.SerializerMethodField()
 
     catalog = serializers.SerializerMethodField()
 
@@ -556,7 +556,7 @@ class ProductSerializer(
             "brief_desc",
             "whats_included",
             "intended_use_desc",
-            "resource_url",
+            "resource",
             "original_name",
             "price",
             "pi",
@@ -684,8 +684,15 @@ class ProductSerializer(
             obj.catalog
         )
 
-    def get_resource_url(self, obj):
-        return obj.resource_url or ""
+    def get_resource(self, obj):
+        catalog = obj.resource or obj.catalog
+        if catalog is None:
+            return None
+        return catalog.resource_payload(
+            self.context.get("request"),
+            collibra_id=getattr(obj, "collibra_id", None),
+            api_id=getattr(obj, "api_id", None),
+        )
 
     def get_images(self, obj):
         return get_product_images(
