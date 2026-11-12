@@ -1,0 +1,169 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}{% if object %}Edit {{ object.name }}{% else %}New team{% endif %} | Teams{% endblock %}
+{% block extra_css %}
+{{ block.super }}
+{% include "gdx_admin/pages/teams/partials/_styles.html" %}
+<style>
+.team-form{display:grid;gap:18px}
+.team-form-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:18px;align-items:start}
+.team-panel{padding:22px;border:1px solid #e6ebf2;border-radius:16px;background:#fff;box-shadow:0 4px 10px rgba(24,46,70,.04)}
+.team-panel h2{margin:0 0 4px;font-size:1.05rem}
+.team-panel > p{margin:0 0 18px;color:#64758b;font-size:.86rem}
+.team-field{margin-bottom:16px}
+.team-field:last-child{margin-bottom:0}
+.team-field label,.team-label{display:block;margin-bottom:6px;color:#24344d;font-size:.84rem;font-weight:700}
+.team-field .form-control,.team-field .form-select{border-color:#d7dee8;border-radius:10px}
+.team-field .helptext,.team-field .text-muted{display:block;margin-top:6px;color:#7b8798;font-size:.78rem}
+.team-field .errorlist{margin:6px 0 0;padding:0;list-style:none;color:#b42318;font-size:.8rem}
+.team-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.team-image-card{display:flex;flex-direction:column;gap:10px;min-height:180px;padding:14px;border:1px dashed #d7dee8;border-radius:14px;background:#fbfcfe}
+.team-image-card img{width:100%;height:140px;object-fit:contain;border-radius:10px;background:#eef2f6}
+.team-image-card .empty-image{display:grid;place-items:center;height:140px;border-radius:10px;background:#eef2f6;color:#7b8798;font-size:.78rem}
+.team-image-card .errorlist{margin:0;padding:0;list-style:none;color:#b42318;font-size:.8rem}
+.team-members{max-height:360px;overflow:auto;border:1px solid #e6ebf2;border-radius:12px;background:#fff}
+.team-members > div{display:grid}
+.team-members label{display:flex;align-items:flex-start;gap:10px;margin:0;padding:10px 14px;border-bottom:1px solid #eef2f6;font-weight:500;color:#1c2740}
+.team-members label:last-child{border-bottom:0}
+.team-members input{margin-top:3px;accent-color:var(--c-primary,#5547ff)}
+.team-members label.is-hidden{display:none}
+.team-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:4px}
+@media (max-width:991.98px){
+  .team-form-grid,.team-images{grid-template-columns:1fr}
+}
+</style>
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'teams:list' as teams_home %}
+    
+    <form class="team-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+        {% endif %}
+        <div class="team-form-grid">
+            <section class="team-panel">
+                <h2>Team</h2>
+                <p>Name and description used across the marketplace.</p>
+                <div class="team-field">
+                    <label for="{{ form.tenant.id_for_label }}">Tenant</label>
+                    {{ form.tenant }}
+                    {{ form.tenant.errors }}
+                </div>
+                <div class="team-field">
+                    <label for="{{ form.name.id_for_label }}">Name</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                </div>
+                <div class="team-field">
+                    <label for="{{ form.slug.id_for_label }}">Slug</label>
+                    {{ form.slug }}
+                    {% if form.slug.help_text %}<span class="text-muted">{{ form.slug.help_text }}</span>{% endif %}
+                    {{ form.slug.errors }}
+                </div>
+                <div class="team-field">
+                    <label for="{{ form.description.id_for_label }}">Description</label>
+                    {{ form.description }}
+                    {{ form.description.errors }}
+                </div>
+            </section>
+            <section class="team-panel">
+                <h2>People</h2>
+                <p>The owner manages the team. Members can be linked from their profiles.</p>
+                <div class="team-field">
+                    <label for="{{ form.owner.id_for_label }}">Owner</label>
+                    {{ form.owner }}
+                    {{ form.owner.errors }}
+                </div>
+                <div class="team-field">
+                    <label for="member-search">Members</label>
+                    <input class="form-control mb-2" id="member-search" type="search" placeholder="Search by name or email" autocomplete="off">
+                    <div class="team-members" id="team-members">{{ form.members }}</div>
+                    {% if form.members.help_text %}<span class="text-muted">{{ form.members.help_text }}</span>{% endif %}
+                    {{ form.members.errors }}
+                </div>
+            </section>
+        </div>
+        <section class="team-panel">
+            <h2>Images</h2>
+            <p>Optional icon, logo, and cover. PNG, JPG, GIF, WebP, SVG, and other image files are accepted. Choosing a file updates the preview.</p>
+            <div class="team-images">
+                <div class="team-image-card">
+                    <span class="team-label">Icon</span>
+                    {% if object and object.icon %}
+                    <img src="{{ object.icon.url }}" alt="">
+                    {% else %}
+                    <div class="empty-image">No icon</div>
+                    {% endif %}
+                    {{ form.icon }}
+                    {{ form.icon.errors }}
+                </div>
+                <div class="team-image-card">
+                    <span class="team-label">Logo</span>
+                    {% if object and object.logo %}
+                    <img src="{{ object.logo.url }}" alt="">
+                    {% else %}
+                    <div class="empty-image">No logo</div>
+                    {% endif %}
+                    {{ form.logo }}
+                    {{ form.logo.errors }}
+                </div>
+                <div class="team-image-card">
+                    <span class="team-label">Cover image</span>
+                    {% if object and object.cover_image %}
+                    <img src="{{ object.cover_image.url }}" alt="">
+                    {% else %}
+                    <div class="empty-image">No cover</div>
+                    {% endif %}
+                    {{ form.cover_image }}
+                    {{ form.cover_image.errors }}
+                </div>
+            </div>
+        </section>
+        <div class="team-actions">
+            <a class="integration-button" href="{% if object %}{% url 'teams:detail' object.pk %}{% else %}{% url 'teams:list' %}{% endif %}">Cancel</a>
+            <button class="integration-button integration-button--primary" type="submit">Save team</button>
+        </div>
+    </form>
+</main>
+{% endblock %}
+{% block extra_js %}
+{{ block.super }}
+<script>
+(function () {
+    var search = document.getElementById("member-search");
+    var list = document.getElementById("team-members");
+    if (!search || !list) return;
+    var labels = list.querySelectorAll("label");
+    search.addEventListener("input", function () {
+        var query = search.value.trim().toLowerCase();
+        labels.forEach(function (label) {
+            var text = label.textContent.toLowerCase();
+            label.classList.toggle("is-hidden", query && text.indexOf(query) === -1);
+        });
+    });
+}());
+(function () {
+    document.querySelectorAll(".team-image-card input[type='file']").forEach(function (input) {
+        input.addEventListener("change", function () {
+            var file = input.files && input.files[0];
+            var card = input.closest(".team-image-card");
+            if (!file || !card) return;
+            var reader = new FileReader();
+            reader.onload = function () {
+                var image = card.querySelector("img");
+                if (!image) {
+                    image = document.createElement("img");
+                    image.alt = "";
+                    var empty = card.querySelector(".empty-image");
+                    if (empty) empty.replaceWith(image);
+                    else card.insertBefore(image, input);
+                }
+                image.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+}());
+</script>
+{% endblock %}

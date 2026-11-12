@@ -11,7 +11,7 @@ from .forms import ContentBlockForm, ContentBlockReorderForm
 from .models import ContentBlock, Page, PageVersion
 from .permissions import require_version_edit, require_version_view
 
-BASE = "gdx_admin/apps/pages/page/"
+BASE = "gdx_admin/pages/pages/page/"
 
 def _version(slug, number):
     return get_object_or_404(PageVersion.objects.select_related("page", "page__page_type"), page__slug=slug, number=number)
@@ -89,22 +89,22 @@ from .forms import PageTypeForm,PageForm,VersionForm,DecisionForm,LifecycleReque
 from .models import PageType,WorkflowTask,Approval,AuditEvent,NotificationDelivery,LifecycleRequest
 from .services import create_version,submit,decide,publish,audit
 @login_required
-def dashboard(request): return render(request,"gdx_admin/apps/pages/dashboard/dashboard.html",{"pages":Page.objects.all()[:20],"tasks":WorkflowTask.objects.filter(status="open")[:10]})
+def dashboard(request): return render(request,"gdx_admin/pages/pages/dashboard/dashboard.html",{"pages":Page.objects.all()[:20],"tasks":WorkflowTask.objects.filter(status="open")[:10]})
 @login_required
 def page_list(request):
     from gdx.removal import purge_due
     purge_due()
-    return render(request,"gdx_admin/apps/pages/page/page_list.html",{"pages":Page.objects.filter(is_deleted=False)})
+    return render(request,"gdx_admin/pages/pages/page/page_list.html",{"pages":Page.objects.filter(is_deleted=False)})
 @login_required
 @transaction.atomic
 def page_create(request):
     pf=PageForm(request.POST or None);vf=VersionForm(request.POST or None)
     if request.method=="POST" and pf.is_valid() and vf.is_valid():
         page=pf.save(commit=False);page.created_by=request.user;page.save();create_version(page,request.user,**vf.cleaned_data);messages.success(request,"Page created.");return redirect("pages_admin:page-detail",slug=page.slug)
-    return render(request,"gdx_admin/apps/pages/page/page_form.html",{"page_form":pf,"version_form":vf})
+    return render(request,"gdx_admin/pages/pages/page/page_form.html",{"page_form":pf,"version_form":vf})
 @login_required
 def page_detail(request,slug):
-    page=get_object_or_404(Page,slug=slug);return render(request,"gdx_admin/apps/pages/page/page_detail.html",{"page":page,"version":page.working_version or page.published_version})
+    page=get_object_or_404(Page,slug=slug);return render(request,"gdx_admin/pages/pages/page/page_detail.html",{"page":page,"version":page.working_version or page.published_version})
 @login_required
 @require_POST
 def page_delete(request, slug):
@@ -123,17 +123,17 @@ def page_delete(request, slug):
         messages.success(request, "Page hidden. It will be permanently removed in 7 days.")
     return redirect("pages_admin:page-list")
 @login_required
-def page_type_list(request): return render(request,"gdx_admin/apps/pages/governance/page_type_list.html",{"page_types":PageType.objects.all()})
+def page_type_list(request): return render(request,"gdx_admin/pages/pages/governance/page_type_list.html",{"page_types":PageType.objects.all()})
 @login_required
 def page_type_create(request):
     form=PageTypeForm(request.POST or None)
     if request.method=="POST" and form.is_valid():form.save();messages.success(request,"Page type created.");return redirect("pages_admin:page-type-list")
-    return render(request,"gdx_admin/apps/pages/governance/page_type_form.html",{"form":form})
+    return render(request,"gdx_admin/pages/pages/governance/page_type_form.html",{"form":form})
 @login_required
 def page_type_edit(request,pk):
     item=get_object_or_404(PageType,pk=pk);form=PageTypeForm(request.POST or None,instance=item)
     if request.method=="POST" and form.is_valid():form.save();messages.success(request,"Page type updated.");return redirect("pages_admin:page-type-list")
-    return render(request,"gdx_admin/apps/pages/governance/page_type_form.html",{"form":form,"item":item})
+    return render(request,"gdx_admin/pages/pages/governance/page_type_form.html",{"form":form,"item":item})
 @login_required
 @require_POST
 def submit_version(request,slug,number):submit(require_version_edit(request.user,_version(slug,number)),request.user);return redirect("pages_admin:page-detail",slug=slug)
@@ -141,18 +141,18 @@ def submit_version(request,slug,number):submit(require_version_edit(request.user
 @require_POST
 def publish_version(request,slug,number):publish(require_version_view(request.user,_version(slug,number)),request.user);return redirect("pages_admin:page-detail",slug=slug)
 @login_required
-def workflow_list(request):return render(request,"gdx_admin/apps/pages/workflow/workflow_dashboard.html",{"tasks":WorkflowTask.objects.select_related("page","version")})
+def workflow_list(request):return render(request,"gdx_admin/pages/pages/workflow/workflow_dashboard.html",{"tasks":WorkflowTask.objects.select_related("page","version")})
 @login_required
 def task_detail(request,pk):
     task=get_object_or_404(WorkflowTask,pk=pk);form=DecisionForm(request.POST or None)
     if request.method=="POST" and form.is_valid():decide(task,request.user,**form.cleaned_data);return redirect("pages_admin:workflow")
-    return render(request,"gdx_admin/apps/pages/tasks/task_detail.html",{"task":task,"form":form})
+    return render(request,"gdx_admin/pages/pages/tasks/task_detail.html",{"task":task,"form":form})
 @login_required
-def audit_list(request):return render(request,"gdx_admin/apps/pages/audit/audit_list.html",{"events":AuditEvent.objects.select_related("actor","page")[:200]})
+def audit_list(request):return render(request,"gdx_admin/pages/pages/audit/audit_list.html",{"events":AuditEvent.objects.select_related("actor","page")[:200]})
 @login_required
-def notification_list(request):return render(request,"gdx_admin/apps/pages/notifications/notification_list.html",{"items":NotificationDelivery.objects.filter(recipient=request.user)})
+def notification_list(request):return render(request,"gdx_admin/pages/pages/notifications/notification_list.html",{"items":NotificationDelivery.objects.filter(recipient=request.user)})
 @login_required
 def lifecycle_request(request,slug):
     page=get_object_or_404(Page,slug=slug);form=LifecycleRequestForm(request.POST or None)
     if request.method=="POST" and form.is_valid():item=form.save(commit=False);item.page=page;item.requested_by=request.user;item.save();audit(page,request.user,item.request_type+"-requested");return redirect("pages_admin:page-detail",slug=slug)
-    return render(request,"gdx_admin/apps/pages/retention/lifecycle_request.html",{"page":page,"form":form})
+    return render(request,"gdx_admin/pages/pages/retention/lifecycle_request.html",{"page":page,"form":form})

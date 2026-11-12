@@ -1,0 +1,144 @@
+{% extends "gdx_admin/base.html" %}
+{% load static web_tags %}
+{% block title %}Workflow approvals{% endblock %}
+{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}?v=1">{% include "gdx_admin/pages/deployment/partials/_styles.html" %}
+<style>
+.wf-list{list-style:none;margin:0;padding:0;border:1px solid #e6ebf2;border-radius:12px;background:#fff;overflow:hidden}
+.wf-row{display:flex;align-items:center;gap:16px;padding:10px 14px;border-top:1px solid #eef2f6}
+.wf-row:first-child{border-top:0}
+.wf-copy{min-width:0;flex:1}
+.wf-title{display:flex;align-items:center;gap:8px;min-width:0}
+.wf-title h3{margin:0;overflow:hidden;font-size:.92rem;font-weight:700;color:#1c2740;text-overflow:ellipsis;white-space:nowrap}
+.wf-meta{margin:2px 0 0;overflow:hidden;color:#64758b;font-size:.75rem;line-height:1.35;text-overflow:ellipsis;white-space:nowrap}
+.wf-actions{display:flex;align-items:center;gap:8px;flex:none}
+.wf-actions input,.wf-review-panel textarea{width:100%;max-width:420px;margin:0;padding:8px;border:1px solid #d7deea;border-radius:8px}
+.wf-review{border-top:1px solid #eef2f6}
+.wf-review:first-child{border-top:0}
+.wf-review summary{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;list-style:none}
+.wf-review summary::-webkit-details-marker{display:none}
+.wf-review summary::before{content:"";width:8px;height:8px;border-right:2px solid #64758b;border-bottom:2px solid #64758b;transform:rotate(-45deg);flex:none}
+.wf-review[open] summary::before{transform:rotate(45deg)}
+.wf-review summary .wf-copy{display:grid;gap:2px}
+.wf-review-head{display:flex;align-items:center;gap:8px}
+.wf-review summary .wf-meta{margin:0}
+.wf-review summary h3{margin:0;font-size:.92rem;font-weight:700;color:#1c2740}
+.wf-review-panel{padding:4px 14px 14px 36px}
+.wf-review-card{display:grid;gap:14px;padding:16px;border:1px solid #e6ebf2;border-radius:12px;background:#f8fafc}
+.wf-kicker{margin:0;color:#64758b;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.wf-review-card h4{margin:2px 0 0;font-size:1rem;color:#1c2740}
+.wf-headline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.wf-headline strong{color:#1c2740;font-size:.95rem}
+.wf-stars{color:#e2a100;letter-spacing:1px;font-size:.95rem}
+.wf-by{margin:4px 0 0;color:#64758b;font-size:.78rem}
+.wf-body{margin:0;color:#1c2740;font-size:.9rem;line-height:1.45}
+.wf-scores,.wf-answers{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.wf-scores li{display:flex;flex-direction:column;gap:2px;min-width:108px;padding:8px 10px;border:1px solid #e6ebf2;border-radius:8px;background:#fff}
+.wf-scores span{color:#64758b;font-size:.68rem;font-weight:700}
+.wf-answers li{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #e6ebf2;color:#1c2740;font-size:.78rem}
+.wf-answers b{color:#64758b;font-weight:700}
+.wf-decision{display:grid;gap:8px;padding-top:12px;border-top:1px solid #e6ebf2}
+.wf-decision label{display:grid;gap:6px;color:#64758b;font-size:.75rem;font-weight:700}
+.wf-decision textarea{width:100%;max-width:none;min-height:72px;background:#fff}
+.wf-decision .wf-actions{justify-content:flex-end}
+@media(max-width:860px){.wf-row{flex-wrap:wrap}.wf-actions{width:100%}.wf-title h3,.wf-meta{white-space:normal}}
+</style>
+{% endblock %}
+{% block content %}
+<main class="mp-page">
+{% url 'command_center:dashboard' as command_center_home %}
+
+{% include "gdx_admin/pages/command_center/partials/_nav.html" with hide_tabs=True %}
+<section class="deploy-panel">
+    <h2>Approvals</h2>
+    {% if approvals %}
+    <ul class="wf-list">
+        {% for item in approvals %}
+        {% if item.review %}
+        <li class="wf-review" id="{{ item.anchor }}">
+            <details>
+                <summary>
+                    <div class="wf-copy">
+                        <div class="wf-review-head">
+                            <h3>Product Review</h3>
+                            {% status_badge item.status %}
+                        </div>
+                        {% if item.when %}<p class="wf-meta">{{ item.when }}</p>{% endif %}
+                    </div>
+                </summary>
+                <div class="wf-review-panel">
+                    <article class="wf-review-card">
+                        <header>
+                            <p class="wf-kicker">Product</p>
+                            <h4>{{ item.review.product }}</h4>
+                            <div class="wf-headline">
+                                {% if item.review.title %}<strong>{{ item.review.title }}</strong>{% endif %}
+                                <span class="wf-stars" aria-label="{{ item.review.rating }} out of 5">{% for star in "12345" %}{% if forloop.counter <= item.review.rating %}★{% else %}☆{% endif %}{% endfor %}</span>
+                            </div>
+                            <p class="wf-by">{{ item.review.author }}</p>
+                        </header>
+                        <p class="wf-body">{{ item.review.comment|default:"No comment" }}</p>
+                        {% if item.review.quality or item.review.value_for_money or item.review.ease_of_use or item.review.durability %}
+                        <ul class="wf-scores">
+                            {% if item.review.quality %}<li><span>Quality</span><span class="wf-stars" aria-hidden="true">{% for star in "12345" %}{% if forloop.counter <= item.review.quality %}★{% else %}☆{% endif %}{% endfor %}</span></li>{% endif %}
+                            {% if item.review.value_for_money %}<li><span>Value</span><span class="wf-stars" aria-hidden="true">{% for star in "12345" %}{% if forloop.counter <= item.review.value_for_money %}★{% else %}☆{% endif %}{% endfor %}</span></li>{% endif %}
+                            {% if item.review.ease_of_use %}<li><span>Ease of use</span><span class="wf-stars" aria-hidden="true">{% for star in "12345" %}{% if forloop.counter <= item.review.ease_of_use %}★{% else %}☆{% endif %}{% endfor %}</span></li>{% endif %}
+                            {% if item.review.durability %}<li><span>Durability</span><span class="wf-stars" aria-hidden="true">{% for star in "12345" %}{% if forloop.counter <= item.review.durability %}★{% else %}☆{% endif %}{% endfor %}</span></li>{% endif %}
+                        </ul>
+                        {% endif %}
+                        {% if item.review.would_recommend != None or item.review.met_expectations != None %}
+                        <ul class="wf-answers">
+                            {% if item.review.would_recommend != None %}<li><b>Recommend</b> {% if item.review.would_recommend %}Yes{% else %}No{% endif %}</li>{% endif %}
+                            {% if item.review.met_expectations != None %}<li><b>Met expectations</b> {% if item.review.met_expectations %}Yes{% else %}No{% endif %}</li>{% endif %}
+                        </ul>
+                        {% endif %}
+                        {% if item.can_decide %}
+                        <form class="wf-decision" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="kind" value="{{ item.kind }}">
+                            <input type="hidden" name="object_id" value="{{ item.object_id }}">
+                            <label>Decision comment<textarea name="comment" rows="3"></textarea></label>
+                            <div class="wf-actions">
+                                <button class="status-button status-dark status-approved" type="submit" name="decision" value="approved">Approve</button>
+                                <button class="status-button status-dark status-rejected" type="submit" name="decision" value="rejected">Reject</button>
+                            </div>
+                        </form>
+                        {% endif %}
+                    </article>
+                </div>
+            </details>
+        </li>
+        {% else %}
+        <li class="wf-row" id="{{ item.anchor }}">
+            <div class="wf-copy">
+                <div class="wf-title">
+                    <h3>{{ item.title }}</h3>
+                    {% status_badge item.status %}
+                </div>
+                <p class="wf-meta">{{ item.source }}{% if item.detail %} · {{ item.detail }}{% endif %}{% if item.when %} · {{ item.when }}{% endif %}</p>
+            </div>
+            {% if item.can_decide and item.action %}
+            <form class="wf-actions" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="kind" value="{{ item.kind }}">
+                <input type="hidden" name="object_id" value="{{ item.object_id }}">
+                <button class="status-button status-dark {{ item.action_label|status_class }}" type="submit" name="decision" value="{{ item.action }}">{{ item.action_label }}</button>
+            </form>
+            {% elif item.can_decide %}
+            <form class="wf-actions" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="kind" value="{{ item.kind }}">
+                <input type="hidden" name="object_id" value="{{ item.object_id }}">
+                <button class="status-button status-dark status-approved" type="submit" name="decision" value="approved">Approve</button>
+                <button class="status-button status-dark status-rejected" type="submit" name="decision" value="rejected">Reject</button>
+            </form>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No approvals are waiting.</p>
+    {% endif %}
+</section>
+</main>
+{% endblock %}

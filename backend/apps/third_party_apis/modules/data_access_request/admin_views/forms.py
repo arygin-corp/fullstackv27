@@ -18,12 +18,12 @@ def form_list(request):
     if request.GET.get('q'):
         queryset = queryset.filter(Q(name__icontains=request.GET['q']) | Q(slug__icontains=request.GET['q']))
     page = _page(request, queryset)
-    return render(request, 'gdx_admin/apps/dar/forms/form_list.html', {'forms': page.object_list, 'page_obj': page, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', None))})
+    return render(request, 'gdx_admin/pages/dar/forms/form_list.html', {'forms': page.object_list, 'page_obj': page, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', None))})
 
 def form_detail(request, pk):
     form = get_object_or_404(FormDefinition.objects.prefetch_related('sections__fields__options', 'sections__fields__validation_rules', 'rule_groups__rules', 'rule_groups__actions', 'routing_rules'), pk=pk)
-    return render(request, 'gdx_admin/apps/dar/forms/form_detail.html', {'form': form, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', '../'), (form.name, None))})
+    return render(request, 'gdx_admin/pages/dar/forms/form_detail.html', {'form': form, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', '../'), (form.name, None))})
 
 def form_preview(request, pk):
     form = get_object_or_404(FormDefinition.objects.prefetch_related('sections__fields__options', 'fields__options'), pk=pk)
-    return render(request, 'gdx_admin/apps/dar/forms/form_preview.html', {'form': form, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', '../../'), (form.name, '../'), ('Preview', None))})
+    return render(request, 'gdx_admin/pages/dar/forms/form_preview.html', {'form': form, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Forms', '../../'), (form.name, '../'), ('Preview', None))})

@@ -27,7 +27,7 @@ class AdminAccessMixin(LoginRequiredMixin, PermissionRequiredMixin):
 
 class DashboardView(AdminAccessMixin, TemplateView):
     permission_required = "marketplace.view_product"
-    template_name = "gdx_admin/apps/marketplace/products/dashboard.html"
+    template_name = "gdx_admin/pages/marketplace/products/dashboard.html"
 
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
@@ -55,7 +55,7 @@ class DashboardView(AdminAccessMixin, TemplateView):
 
 class AnalyticsView(AdminAccessMixin, TemplateView):
     permission_required = "marketplace.view_product"
-    template_name = "gdx_admin/apps/marketplace/products/analytics.html"
+    template_name = "gdx_admin/pages/marketplace/products/analytics.html"
 
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
@@ -71,7 +71,7 @@ class AnalyticsView(AdminAccessMixin, TemplateView):
 class ProductListView(AdminAccessMixin, ListView):
     permission_required = "marketplace.view_product"
     model = Product
-    template_name = "gdx_admin/apps/marketplace/products/products/list.html"
+    template_name = "gdx_admin/pages/marketplace/products/products/list.html"
     context_object_name = "products"
     paginate_by = 25
     def get_queryset(self):
@@ -87,12 +87,12 @@ class ProductListView(AdminAccessMixin, ListView):
 
 class ProductDetailView(AdminAccessMixin, DetailView):
     permission_required = "marketplace.view_product"
-    model=Product; template_name="gdx_admin/apps/marketplace/products/products/detail.html"; context_object_name="product"
+    model=Product; template_name="gdx_admin/pages/marketplace/products/products/detail.html"; context_object_name="product"
     def get_queryset(self):
         return Product.objects.select_related("domain","subdomain_2","subdomain_3","datatype","classification","org","team","created_by","updated_by","approved_by").prefetch_related("images","badge","keyword","attribute","reviews")
 
 class ProductFormMixin(AdminAccessMixin):
-    model=Product; form_class=ProductForm; template_name="gdx_admin/apps/marketplace/products/products/form.html"; success_url=reverse_lazy("marketplace_admin:product_list")
+    model=Product; form_class=ProductForm; template_name="gdx_admin/pages/marketplace/products/products/form.html"; success_url=reverse_lazy("marketplace_admin:product_list")
     def get_form_kwargs(self):
         k=super().get_form_kwargs(); k["request"]=self.request; return k
     def get_context_data(self, **kwargs):
@@ -113,11 +113,11 @@ class ProductFormMixin(AdminAccessMixin):
 class ProductCreateView(ProductFormMixin, CreateView): permission_required="marketplace.add_product"
 class ProductUpdateView(ProductFormMixin, UpdateView): permission_required="marketplace.change_product"
 class ProductDeleteView(AdminAccessMixin, DeleteView):
-    permission_required="marketplace.delete_product"; model=Product; template_name="gdx_admin/apps/marketplace/products/products/delete.html"; success_url=reverse_lazy("marketplace_admin:product_list")
+    permission_required="marketplace.delete_product"; model=Product; template_name="gdx_admin/pages/marketplace/products/products/delete.html"; success_url=reverse_lazy("marketplace_admin:product_list")
     def form_valid(self, form): messages.success(self.request,"Product deleted."); return super().form_valid(form)
 
 class PendingApprovalView(AdminAccessMixin, ListView):
-    permission_required="marketplace.change_product"; model=Product; template_name="gdx_admin/apps/marketplace/products/governance/pending.html"; context_object_name="products"; paginate_by=25
+    permission_required="marketplace.change_product"; model=Product; template_name="gdx_admin/pages/marketplace/products/governance/pending.html"; context_object_name="products"; paginate_by=25
     def get_queryset(self): return Product.objects.filter(status="pending").select_related("domain","created_by","data_review_team").order_by("-created_at")
 
 @login_required
@@ -136,38 +136,38 @@ def product_action(request, pk, action):
     return redirect(request.POST.get("next") or "marketplace_admin:product_detail",pk=pk)
 
 class TaxonomyView(AdminAccessMixin, TemplateView):
-    permission_required="marketplace.view_domain"; template_name="gdx_admin/apps/marketplace/products/taxonomy/index.html"
+    permission_required="marketplace.view_domain"; template_name="gdx_admin/pages/marketplace/products/taxonomy/index.html"
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c.update({"page_title":"Taxonomy","domains":Domain.objects.annotate(product_total=Count("product_domain")).prefetch_related("domain__subdomain_1").order_by("name"),"datatypes":Datatype.objects.annotate(product_total=Count("product")).order_by("name"),"classifications":Classification.objects.annotate(product_total=Count("product")).order_by("name")}); return c
 
 class GovernanceView(AdminAccessMixin, TemplateView):
-    permission_required="marketplace.view_product"; template_name="gdx_admin/apps/marketplace/products/governance/overview.html"
+    permission_required="marketplace.view_product"; template_name="gdx_admin/pages/marketplace/products/governance/overview.html"
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); qs=Product.objects.all(); c.update({"page_title":"Governance","review_required":qs.filter(data_review_required=True).count(),"review_pending":qs.filter(data_review_status="pending").count(),"pi_products":qs.filter(pi="Yes").count(),"spi_products":qs.filter(sensitive_pi="Yes").count(),"unclassified":qs.filter(classification__isnull=True).select_related("domain")[:20],"without_steward":qs.filter(data_steward__isnull=True).select_related("domain")[:20]}); return c
 
 class PeopleView(AdminAccessMixin, TemplateView):
-    permission_required="marketplace.view_contact"; template_name="gdx_admin/apps/marketplace/products/people/index.html"
+    permission_required="marketplace.view_contact"; template_name="gdx_admin/pages/marketplace/products/people/index.html"
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c.update({"page_title":"People & Ownership","contacts":Contact.objects.annotate(poc_total=Count("poc"),business_total=Count("business_contact")).order_by("name"),"stewards":DataSteward.objects.select_related("company_id").order_by("name"),"organizations":Organization.objects.annotate(product_total=Count("product")).order_by("name")}); return c
 
 class ReviewListView(AdminAccessMixin, ListView):
-    permission_required="marketplace.view_review"; model=Review; template_name="gdx_admin/apps/marketplace/products/reviews/list.html"; context_object_name="reviews"; paginate_by=25
+    permission_required="marketplace.view_review"; model=Review; template_name="gdx_admin/pages/marketplace/products/reviews/list.html"; context_object_name="reviews"; paginate_by=25
     def get_queryset(self): return Review.objects.select_related("product","author").order_by("-created_at")
 
 class SearchAnalyticsView(AdminAccessMixin, ListView):
-    permission_required="marketplace.view_searchquerylog"; model=SearchQueryLog; template_name="gdx_admin/apps/marketplace/products/search/index.html"; context_object_name="search_logs"; paginate_by=50
+    permission_required="marketplace.view_searchquerylog"; model=SearchQueryLog; template_name="gdx_admin/pages/marketplace/products/search/index.html"; context_object_name="search_logs"; paginate_by=50
     def get_queryset(self):
         qs=SearchQueryLog.objects.select_related("user").order_by("-created_at"); q=self.request.GET.get("q","").strip(); return qs.filter(query__icontains=q) if q else qs
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c["top_queries"]=SearchQueryLog.objects.values("query").annotate(total=Count("id"),avg_results=Avg("results_count")).order_by("-total")[:15]; return c
 
 class ReferenceDataView(AdminAccessMixin, TemplateView):
-    permission_required="marketplace.view_product"; template_name="gdx_admin/apps/marketplace/products/reference/index.html"
+    permission_required="marketplace.view_product"; template_name="gdx_admin/pages/marketplace/products/reference/index.html"
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c.update({"page_title":"Reference Data","catalogs":Catalog.objects.order_by("name"),"platforms":Platform.objects.order_by("name"),"badges":Badge.objects.order_by("name"),"attributes":Attribute.objects.order_by("type","name"),"ad_groups":ADGroup.objects.order_by("name")}); return c
 
 class ExportCenterView(AdminAccessMixin, TemplateView):
-    permission_required="marketplace.view_product"; template_name="gdx_admin/apps/marketplace/products/exports/index.html"
+    permission_required="marketplace.view_product"; template_name="gdx_admin/pages/marketplace/products/exports/index.html"
 
 @login_required
 @permission_required("marketplace.view_product", raise_exception=True)
@@ -189,7 +189,7 @@ class DomainListView(AdminAccessMixin, ListView):
     permission_required = "marketplace.view_domain"
     model = Domain
     template_name = (
-        "gdx_admin/apps/marketplace/domains/domains/list.html"
+        "gdx_admin/pages/marketplace/domains/domains/list.html"
     )
     context_object_name = "domains"
     paginate_by = 25
@@ -212,7 +212,7 @@ class DomainDetailView(
     permission_required = "marketplace.view_domain"
     model = Domain
     template_name = (
-        "gdx_admin/apps/marketplace/domains/domains/detail.html"
+        "gdx_admin/pages/marketplace/domains/domains/detail.html"
     )
     context_object_name = "domain"
 
@@ -225,7 +225,7 @@ class DomainCreateView(
     model = Domain
     fields = ["name"]
     template_name = (
-        "gdx_admin/apps/marketplace/domains/domains/form.html"
+        "gdx_admin/pages/marketplace/domains/domains/form.html"
     )
 
     def get_success_url(self):
@@ -242,7 +242,7 @@ class DomainUpdateView(
     model = Domain
     fields = ["name"]
     template_name = (
-        "gdx_admin/apps/marketplace/domains/domains/form.html"
+        "gdx_admin/pages/marketplace/domains/domains/form.html"
     )
 
     def get_success_url(self):
@@ -259,7 +259,7 @@ class DomainDeleteView(
     permission_required = "marketplace.delete_domain"
     model = Domain
     template_name = (
-        "gdx_admin/apps/marketplace/domains/domains/delete.html"
+        "gdx_admin/pages/marketplace/domains/domains/delete.html"
     )
 
     def get_success_url(self):
@@ -279,7 +279,7 @@ class SubDomainListView(
     permission_required = "marketplace.view_subdomain_1"
     model = SubDomain_1
     template_name = (
-        "gdx_admin/apps/marketplace/subdomains/subdomains/list.html"
+        "gdx_admin/pages/marketplace/subdomains/subdomains/list.html"
     )
     context_object_name = "subdomains"
     paginate_by = 25
@@ -316,7 +316,7 @@ class SubDomainDetailView(
     permission_required = "marketplace.view_subdomain_1"
     model = SubDomain_1
     template_name = (
-        "gdx_admin/apps/marketplace/subdomains/subdomains/detail.html"
+        "gdx_admin/pages/marketplace/subdomains/subdomains/detail.html"
     )
     context_object_name = "subdomain"
 
@@ -332,7 +332,7 @@ class SubDomainCreateView(
         "name"
     ]
     template_name = (
-        "gdx_admin/apps/marketplace/subdomains/subdomains/form.html"
+        "gdx_admin/pages/marketplace/subdomains/subdomains/form.html"
     )
 
     def get_success_url(self):
@@ -352,7 +352,7 @@ class SubDomainUpdateView(
         "name"
     ]
     template_name = (
-        "gdx_admin/apps/marketplace/subdomains/subdomains/form.html"
+        "gdx_admin/pages/marketplace/subdomains/subdomains/form.html"
     )
 
     def get_success_url(self):
@@ -371,7 +371,7 @@ class SubDomainDeleteView(
     permission_required = "marketplace.delete_subdomain_1"
     model = SubDomain_1
     template_name = (
-        "gdx_admin/apps/marketplace/subdomains/subdomains/delete.html"
+        "gdx_admin/pages/marketplace/subdomains/subdomains/delete.html"
     )
 
     def get_success_url(self):
@@ -533,7 +533,7 @@ class MarketplaceAuditBase(AdminAccessMixin, ListView):
 def _module_classes(name, model, permission_model, folder, object_name, objects_name):
     """Build the standard view suite used by generated module templates."""
     prefix = f"marketplace.{permission_model}"
-    templates = f"gdx_admin/apps/marketplace/{folder}"
+    templates = f"gdx_admin/pages/marketplace/{folder}"
     entity_folder = folder
     return {
         f"{name}DashboardView": type(f"{name}DashboardView", (MarketplaceDashboardBase,), {
@@ -689,7 +689,7 @@ class MarketplaceListBase(MarketplaceModelQueryMixin, AdminAccessMixin, ListView
 
 class DomainDashboardView(AdminAccessMixin, TemplateView):
     permission_required = "marketplace.view_domain"
-    template_name = "gdx_admin/apps/marketplace/domains/dashboard.html"
+    template_name = "gdx_admin/pages/marketplace/domains/dashboard.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -731,7 +731,7 @@ class DomainDashboardView(AdminAccessMixin, TemplateView):
 
 class DomainAnalyticsView(AdminAccessMixin, TemplateView):
     permission_required = "marketplace.view_domain"
-    template_name = "gdx_admin/apps/marketplace/domains/analytics.html"
+    template_name = "gdx_admin/pages/marketplace/domains/analytics.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

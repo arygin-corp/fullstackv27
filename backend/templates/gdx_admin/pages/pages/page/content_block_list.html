@@ -1,0 +1,6 @@
+{% extends "gdx_admin/base.html" %}{% block title %}Content Blocks · {{ page.title }}{% endblock %}{% block content %}
+
+{% include "gdx_admin/pages/pages/page/includes/content_block_header.html" %}
+<form method="post" action="{% url 'pages_admin:block-reorder' page.slug version.number %}">{% csrf_token %}<input type="hidden" name="ordered_ids" id="ordered_ids" value="[{% for block in blocks %}&quot;{{ block.pk }}&quot;{% if not forloop.last %},{% endif %}{% endfor %}]">
+{% for block in blocks %}{% include "gdx_admin/pages/pages/page/partials/content_block_card.html" %}{% empty %}{% include "gdx_admin/pages/pages/page/partials/empty_state.html" %}{% endfor %}
+{% if version.status == "draft" and blocks %}<button class="btn btn-outline-primary" type="submit">Save current order</button>{% endif %}</form>{% endblock %}

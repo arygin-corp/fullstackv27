@@ -1,0 +1,6 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Delete {{ object.name }}{% endblock %}
+{% block content %}<div class="container-fluid px-3 px-lg-4 py-4">
+  
+  <div class="row justify-content-center"><div class="col-12 col-xl-8">{% include "gdx_admin/pages/changelog/categories/partials/_category_delete_warning.html" %}</div></div>
+</div>{% endblock %}

@@ -22,6 +22,6 @@ def _photo_url(user):
     return photo.url
 
 
-@register.inclusion_tag("gdx_admin/apps/teams/_avatar.html")
+@register.inclusion_tag("gdx_admin/pages/teams/_avatar.html")
 def user_avatar(user):
     return {"image": _photo_url(user), "initials": _initials(user)}

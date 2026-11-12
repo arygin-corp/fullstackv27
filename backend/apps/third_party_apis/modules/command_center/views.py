@@ -320,7 +320,7 @@ def dashboard(request):
     return _shell(
         request,
         "dashboard",
-        "gdx_admin/apps/command_center/dashboard.html",
+        "gdx_admin/pages/command_center/dashboard.html",
         dataset=dataset,
         greeting=greeting,
         metrics=metrics,
@@ -411,7 +411,7 @@ def executive(request):
     return _shell(
         request,
         "executive",
-        "gdx_admin/apps/command_center/executive.html",
+        "gdx_admin/pages/command_center/executive.html",
         greeting=greeting,
         headline=headline,
         summary=(
@@ -462,7 +462,7 @@ def analytics(request):
     return _shell(
         request,
         "analytics",
-        "gdx_admin/apps/command_center/analytics.html",
+        "gdx_admin/pages/command_center/analytics.html",
         dataset=dataset,
         realtime=realtime,
         greeting=_greeting_header(request, dataset, realtime),
@@ -503,7 +503,7 @@ def my_dashboards(request):
     return _shell(
         request,
         "my_dashboards",
-        "gdx_admin/apps/command_center/mine.html",
+        "gdx_admin/pages/command_center/mine.html",
         page_title="My Dashboards",
         page_description="Dashboards you created.",
         views=saved_views("dashboard", owner=request.user),
@@ -516,7 +516,7 @@ def my_reports(request):
     return _shell(
         request,
         "my_reports",
-        "gdx_admin/apps/command_center/mine.html",
+        "gdx_admin/pages/command_center/mine.html",
         page_title="My Reports",
         page_description="Reports you created.",
         views=saved_views("report", owner=request.user),
@@ -529,7 +529,7 @@ def reports(request):
     return _shell(
         request,
         "reports",
-        "gdx_admin/apps/command_center/reports.html",
+        "gdx_admin/pages/command_center/reports.html",
         views=saved_views("report"),
     )
 
@@ -539,7 +539,7 @@ def health(request):
     return _shell(
         request,
         "health",
-        "gdx_admin/apps/command_center/health.html",
+        "gdx_admin/pages/command_center/health.html",
         checks=health_checks(),
     )
 
@@ -559,12 +559,12 @@ def builder(request):
             return _shell(
                 request,
                 "create",
-                "gdx_admin/apps/command_center/create.html",
+                "gdx_admin/pages/command_center/create.html",
                 error=message,
                 selected=request.POST.getlist("elements"),
             )
         return redirect("command_center:view", view_id=item["id"])
-    return _shell(request, "create", "gdx_admin/apps/command_center/create.html", selected=[])
+    return _shell(request, "create", "gdx_admin/pages/command_center/create.html", selected=[])
 
 
 @staff_member_required
@@ -590,7 +590,7 @@ def workflow(request):
     return _shell(
         request,
         "workflow",
-        "gdx_admin/apps/command_center/workflow.html",
+        "gdx_admin/pages/command_center/workflow.html",
         approvals=items,
         approval_count=len(waiting),
     )
@@ -605,7 +605,7 @@ def view_detail(request, view_id):
     return _shell(
         request,
         item.get("kind") or "dashboard",
-        "gdx_admin/apps/command_center/detail.html",
+        "gdx_admin/pages/command_center/detail.html",
         item=item,
         snapshot=snapshot,
         dataset=widget_dataset(snapshot, _activity(), health_checks()),

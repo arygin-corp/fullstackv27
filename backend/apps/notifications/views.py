@@ -143,7 +143,7 @@ def audiences(request):
             "campaign_linked": sum(1 for a in page_obj.object_list for s in a.snapshots.all() if s.campaign_id),
         },
     }
-    return render(request, "gdx_admin/apps/notifications/audiences/audiences.html", context)
+    return render(request, "gdx_admin/pages/notifications/audiences/audiences.html", context)
 
 
 @_staff_required
@@ -162,7 +162,7 @@ def audience_detail(request, pk):
         "snapshots": audience.snapshots.select_related("campaign").order_by("-created_at"),
         "condition_form": form,
     }
-    return render(request, "gdx_admin/apps/notifications/audiences/audience_detail.html", context)
+    return render(request, "gdx_admin/pages/notifications/audiences/audience_detail.html", context)
 
 
 @login_required
@@ -189,7 +189,7 @@ def rules(request):
     page_obj = _page(request, queryset)
     return render(
         request,
-        "gdx_admin/apps/notifications/governance/rules.html",
+        "gdx_admin/pages/notifications/governance/rules.html",
         {
             "active_nav": "rules",
             "rules": page_obj.object_list,
@@ -217,7 +217,7 @@ def rule_edit(request, pk):
             return redirect("notifications:rules")
     return render(
         request,
-        "gdx_admin/apps/notifications/governance/rule_form.html",
+        "gdx_admin/pages/notifications/governance/rule_form.html",
         {"active_nav": "rules", "rule": rule, "rule_form": form},
     )
 
@@ -263,7 +263,7 @@ def deliveries(request):
     page_obj = _page(request, queryset)
     return render(
         request,
-        "gdx_admin/apps/notifications/deliveries/deliveries.html",
+        "gdx_admin/pages/notifications/deliveries/deliveries.html",
         {
             "active_nav": "deliveries",
             "deliveries": page_obj.object_list,
@@ -283,7 +283,7 @@ def delivery_detail(request, pk):
     )
     return render(
         request,
-        "gdx_admin/apps/notifications/deliveries/delivery_detail.html",
+        "gdx_admin/pages/notifications/deliveries/delivery_detail.html",
         {"active_nav": "deliveries", "delivery": delivery},
     )
 
@@ -320,7 +320,7 @@ def admin_operations(request):
         "alerts": report["alerts"],
         "ledger_verification": verification,
     }
-    return render(request, "gdx_admin/apps/notifications/governance/admin_operations.html", context)
+    return render(request, "gdx_admin/pages/notifications/governance/admin_operations.html", context)
 
 
 @_staff_required
@@ -341,7 +341,7 @@ def dead_letters(request):
     page_obj = _page(request, queryset)
     return render(
         request,
-        "gdx_admin/apps/notifications/deliveries/dead_letters.html",
+        "gdx_admin/pages/notifications/deliveries/dead_letters.html",
         {
             "active_nav": "admin_operations",
             "dead_letters": page_obj.object_list,
@@ -375,7 +375,7 @@ def audit_ledger(request):
     verification = AuditLedgerVerification.objects.order_by("-completed_at", "-id").first()
     return render(
         request,
-        "gdx_admin/apps/notifications/governance/audit_ledger.html",
+        "gdx_admin/pages/notifications/governance/audit_ledger.html",
         {
             "active_nav": "admin_operations",
             "entries": page_obj.object_list,
@@ -429,12 +429,12 @@ def _list_page(request, unread_only=False):
 
 @login_required
 def notification_list(request):
-    return render(request, "gdx_admin/apps/notifications/settings/notification_list.html", _list_page(request))
+    return render(request, "gdx_admin/pages/notifications/settings/notification_list.html", _list_page(request))
 
 
 @login_required
 def unread_notifications(request):
-    return render(request, "gdx_admin/apps/notifications/settings/notification_list.html", _list_page(request, unread_only=True))
+    return render(request, "gdx_admin/pages/notifications/settings/notification_list.html", _list_page(request, unread_only=True))
 
 
 @login_required
@@ -511,7 +511,7 @@ def notification_detail(request, notification_id):
         from apps.notifications.services.work import _product_name
         product_name = _product_name(review)
     by_channel = {delivery.channel: delivery for delivery in notification.deliveries.all()}
-    return render(request, "gdx_admin/apps/notifications/settings/notification_detail.html", {
+    return render(request, "gdx_admin/pages/notifications/settings/notification_detail.html", {
         "notification": notification,
         "review": review,
         "product_name": product_name,
@@ -621,7 +621,7 @@ def preferences(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/settings/preferences.html",
+        "gdx_admin/pages/notifications/settings/preferences.html",
         {
             "preference_form": form,
             "active_nav": "settings",
@@ -673,7 +673,7 @@ def campaign_manager(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/campaigns.html",
+        "gdx_admin/pages/notifications/campaigns/campaigns.html",
         {
             "campaign_form": form,
             "campaigns": campaigns,
@@ -691,7 +691,7 @@ def campaign_schedules(request):
     )
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/schedules.html",
+        "gdx_admin/pages/notifications/campaigns/schedules.html",
         {
             "scheduled_campaigns": scheduled,
             "recurring_jobs": [],
@@ -712,7 +712,7 @@ def teams_destination(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/settings/teams.html",
+        "gdx_admin/pages/notifications/settings/teams.html",
         {
             "destination": destination,
             "active_nav": "settings",
@@ -731,7 +731,7 @@ def template_manager(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/templates.html",
+        "gdx_admin/pages/notifications/campaigns/templates.html",
         {
             "templates": templates,
             "active_nav": "templates",
@@ -750,7 +750,7 @@ def summaries(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/summaries.html",
+        "gdx_admin/pages/notifications/campaigns/summaries.html",
         {
             "summaries": summaries,
             "active_nav": "summaries",
@@ -769,7 +769,7 @@ def push_devices(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/deliveries/push_devices.html",
+        "gdx_admin/pages/notifications/deliveries/push_devices.html",
         {
             "devices": devices,
             "active_nav": "devices",
@@ -790,7 +790,7 @@ def fatigue_bundles(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/fatigue_bundles.html",
+        "gdx_admin/pages/notifications/campaigns/fatigue_bundles.html",
         {
             "bundles": bundles,
             "active_nav": "bundles",
@@ -899,7 +899,7 @@ def template_create(request):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/template_create.html",
+        "gdx_admin/pages/notifications/campaigns/template_create.html",
         {
             "template_form": template_form,
             "version_form": version_form,
@@ -1044,7 +1044,7 @@ def template_detail(request, pk):
 
     return render(
         request,
-        "gdx_admin/apps/notifications/campaigns/template_detail.html",
+        "gdx_admin/pages/notifications/campaigns/template_detail.html",
         {
             "template": template,
             "active_nav": "templates",
@@ -1100,7 +1100,7 @@ def correlation_explorer(request):
     data = explore(value, user=request.user) if value else None
     return render(
         request,
-        "gdx_admin/apps/notifications/master/correlation.html",
+        "gdx_admin/pages/notifications/master/correlation.html",
         {"title": "Correlation Explorer", "data": data, "correlation_id": value},
     )
 
@@ -1109,7 +1109,7 @@ def correlation_explorer(request):
 def object_timeline(request, object_type, object_id):
     return render(
         request,
-        "gdx_admin/apps/notifications/master/object_timeline.html",
+        "gdx_admin/pages/notifications/master/object_timeline.html",
         {
             "title": "Object Activity Timeline",
             "object_type": object_type,
@@ -1125,7 +1125,7 @@ def object_timeline(request, object_type, object_id):
 def advanced_analytics(request):
     return render(
         request,
-        "gdx_admin/apps/notifications/master/advanced_analytics.html",
+        "gdx_admin/pages/notifications/master/advanced_analytics.html",
         {
             "title": "Advanced Notification Analytics",
             "campaigns": campaign_analytics(),
@@ -1148,7 +1148,7 @@ def explain(request, pk):
     n = get_object_or_404(Notification.objects.for_user(request.user).active(), pk=pk)
     return render(
         request,
-        "gdx_admin/apps/notifications/master/explain.html",
+        "gdx_admin/pages/notifications/master/explain.html",
         {
             "title": "Notification Explanation",
             "notification": n,

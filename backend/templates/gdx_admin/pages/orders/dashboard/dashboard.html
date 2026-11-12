@@ -1,0 +1,37 @@
+{% extends 'gdx_admin/base.html' %}
+{% block title %}Orders Dashboard | GDX Admin{% endblock %}
+{% block content %}
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+  
+  {% include 'gdx_admin/pages/orders/dashboard/includes/_header.html' %}
+  {% include 'gdx_admin/partials/messages.html' %}
+  {% include 'gdx_admin/pages/orders/dashboard/partials/_content.html' %}
+</div>
+{% endblock %}
+{% block extra_js %}
+{{ block.super }}
+<script>
+(function () {
+  const activity = {{ activity_chart_json|default:'[]'|safe }};
+  const statusData = {{ status_chart_json|default:'[]'|safe }};
+  const activityTarget = document.querySelector('#orders-activity-chart');
+  const statusTarget = document.querySelector('#orders-status-chart');
+  if (window.ApexCharts && activityTarget) {
+    new ApexCharts(activityTarget, {
+      chart: {type: 'area', height: 300, toolbar: {show: false}},
+      series: [{name: 'Orders', data: activity.map(item => item.value)}],
+      xaxis: {categories: activity.map(item => item.label)},
+      dataLabels: {enabled: false}, stroke: {curve: 'smooth'}, colors: ['#0d6efd']
+    }).render();
+  }
+  if (window.ApexCharts && statusTarget) {
+    new ApexCharts(statusTarget, {
+      chart: {type: 'donut', height: 300},
+      series: statusData.map(item => item.value),
+      labels: statusData.map(item => item.label), legend: {position: 'bottom'}
+    }).render();
+  }
+})();
+</script>
+{% endblock %}

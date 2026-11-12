@@ -25,8 +25,8 @@ def submission_list(request):
     if status:
         queryset = queryset.filter(status=status)
     page = _page(request, queryset)
-    return render(request, 'gdx_admin/apps/dar/submissions/submission_history.html', {'submissions': page.object_list, 'page_obj': page, 'status_choices': _status_choices(), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Submissions', None))})
+    return render(request, 'gdx_admin/pages/dar/submissions/submission_history.html', {'submissions': page.object_list, 'page_obj': page, 'status_choices': _status_choices(), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Submissions', None))})
 
 def submission_detail(request, pk):
     submission = get_object_or_404(FormSubmission.objects.select_related('form', 'submitted_by').prefetch_related('values__field'), pk=pk)
-    return render(request, 'gdx_admin/apps/dar/submissions/submission_detail.html', {'submission': submission, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Submissions', '../'), (submission.request_number or str(submission.pk), None))})
+    return render(request, 'gdx_admin/pages/dar/submissions/submission_detail.html', {'submission': submission, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Submissions', '../'), (submission.request_number or str(submission.pk), None))})

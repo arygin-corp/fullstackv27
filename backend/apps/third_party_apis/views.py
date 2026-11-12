@@ -11,7 +11,7 @@ from .sync import sync_installed_modules
 
 @login_required
 def catalog_page(request):
-    return render(request,"gdx_admin/apps/third_party_apis/integration_catalog.html")
+    return render(request,"gdx_admin/pages/third_party_apis/integration_catalog.html")
 
 @login_required
 def catalog_api(request):
