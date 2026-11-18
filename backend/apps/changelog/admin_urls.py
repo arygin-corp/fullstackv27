@@ -22,6 +22,7 @@ urlpatterns = [
     path("compare/", views.ReleaseCompareView.as_view(), name="post-compare"),
     path("posts/create/", views.StaffPostCreateView.as_view(), name="post-create"),
     path("posts/<int:pk>/", views.StaffPostDetailView.as_view(), name="post-detail"),
+    path("posts/<int:pk>/workflow/", views.StaffReleaseWorkflowView.as_view(), name="post-workflow"),
     path("posts/<int:pk>/update/", views.StaffPostUpdateView.as_view(), name="post-update"),
     path("posts/<int:pk>/delete/", views.StaffPostDeleteView.as_view(), name="post-delete"),
     path("posts/<int:pk>/submit/", views.SubmitReleaseView.as_view(), name="post-submit"),

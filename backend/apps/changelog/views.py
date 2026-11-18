@@ -388,6 +388,44 @@ class StaffPostDetailView(PostDetailView):
         return context
 
 
+class StaffReleaseWorkflowView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
+    model = Post
+    permission_required = "changelog.view_post"
+    raise_exception = True
+    template_name = "gdx_users/apps/changelog/posts/workflow.html"
+    context_object_name = "post"
+
+    def get_context_data(self, **kwargs):
+        context = _staff_changelog_page(super().get_context_data(**kwargs), "Approval")
+        post = self.object
+        user = self.request.user
+        context["can_submit"] = post.status == ReleaseStatus.DRAFT and user.has_perm("changelog.change_post")
+        context["can_approve"] = post.status == ReleaseStatus.REVIEW and user.has_perm("changelog.approve_post")
+        context["can_publish"] = post.status == ReleaseStatus.APPROVED and user.has_perm("changelog.publish_post")
+        context["can_archive"] = post.status == ReleaseStatus.PUBLISHED and user.has_perm("changelog.publish_post")
+        return context
+
+    def post(self, request, pk):
+        release = self.get_object()
+        action = request.POST.get("action")
+        try:
+            if action == "submit" and request.user.has_perm("changelog.change_post"):
+                submit_for_review(release, request.user)
+            elif action == "approve" and request.user.has_perm("changelog.approve_post"):
+                approve_release(release, request.user)
+            elif action == "publish" and request.user.has_perm("changelog.publish_post"):
+                publish_release(release, request.user)
+            elif action == "archive" and request.user.has_perm("changelog.publish_post"):
+                archive_release(release, request.user)
+            else:
+                messages.error(request, "You cannot take that workflow action.")
+                return redirect("changelog_staff:post-workflow", pk=release.pk)
+            messages.success(request, f"Release workflow updated: {release.get_status_display()}.")
+        except ValidationError as exc:
+            messages.error(request, "; ".join(exc.messages))
+        return redirect("changelog_staff:post-workflow", pk=release.pk)
+
+
 class StaffPostCreateView(PostCreateView):
     template_name = "gdx_users/apps/changelog/posts/form.html"
     success_url = reverse_lazy("changelog_staff:post-list")

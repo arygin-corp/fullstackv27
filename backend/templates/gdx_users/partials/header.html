@@ -1,6 +1,12 @@
 {% load static %}
 {% block header%}
         <header id="page-topbar">
+            <style>
+                .header-profile-user { object-fit: cover; object-position: center; padding: 0; }
+                .header-profile-initials { display: inline-flex; align-items: center; justify-content: center; background: #e9ecef; color: #343a40; font-size: 12px; font-weight: 600; line-height: 1; }
+                .header-superadmin { align-self: center; display: inline-flex; align-items: center; height: 34px; margin-left: 8px; padding: 0 16px; border-radius: 999px; background: #583fc9; color: #fff !important; font-size: 13px; font-weight: 600; line-height: 1; white-space: nowrap; }
+                .header-superadmin:hover { background: #4b34b0; color: #fff !important; }
+            </style>
             {% if user.is_authenticated %}
             <div class="navbar-header">
                 <div class="d-flex">
@@ -89,6 +95,9 @@
 
                         </div>
                     </div>
+                    {% if header_is_superadmin %}
+                    <a href="{% url 'staff_home' %}" class="header-superadmin">Super Admin</a>
+                    {% endif %}
                 </div>
 
                 <div class="d-flex">
@@ -233,19 +242,20 @@
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="/{{ request.user.profile.image }}" alt="{{ user.first_name }} {{ user.last_name }}">
-                            <!-- {% if images %}
-                                {% for img in images %}
-                                    <img class="rounded-circle header-profile-user" src="../media/{{ request.user.profile.image }}" alt="{{ user.first_name }} {{ user.last_name }}">
-                                {% endfor %}
+                            {% if header_user_image %}
+                            <img class="rounded-circle header-profile-user" src="{{ header_user_image }}" alt="" style="object-fit: cover; object-position: center; padding: 0;">
                             {% else %}
-                            <img class="rounded-circle header-profile-user" src="media/users/avatar/default.gif" alt="{{ image }}">
-                            {% endif %} -->
+                            <span class="rounded-circle header-profile-user header-profile-initials">{{ header_user_initials }}</span>
+                            {% endif %}
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
                             <div class="dropdown-item">
-                                <img class="rounded-circle header-profile-user" src="/{{ request.user.profile.image }}" alt="{{ user.first_name }} {{ user.last_name }}" style="float:left;margin-right: 12px; height: 42px; width: 42px;">
+                                {% if header_user_image %}
+                                <img class="rounded-circle header-profile-user" src="{{ header_user_image }}" alt="" style="float:left;margin-right: 12px; height: 42px; width: 42px; object-fit: cover; object-position: center; padding: 0;">
+                                {% else %}
+                                <span class="rounded-circle header-profile-user header-profile-initials" style="float:left;margin-right: 12px; height: 42px; width: 42px; font-size: 14px;">{{ header_user_initials }}</span>
+                                {% endif %}
                                 <p style="position: relative; top: 4px; margin-bottom: -2px; font-size: 14px;">
                                     <strong>{{user.first_name}} {{user.last_name}}<br>
                                         {{ profiles.state }}

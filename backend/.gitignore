@@ -33,3 +33,7 @@ media/
 data/
 model_cache/
 *.log
+infra/terraform/secrets.nonprod.tfvars
+infra/terraform/secrets.prod.tfvars
+infra/terraform/.terraform/
+assets/Archive.zip

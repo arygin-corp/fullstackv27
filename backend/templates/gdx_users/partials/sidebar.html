@@ -47,6 +47,9 @@
             <li><a href="{% url 'marketplace:datasteward-index' %}">Data Stewards</a></li>
             <li><a href="{% url 'marketplace:contact-index' %}">Contacts</a></li>
             <li><a href="{% url 'marketplace:catalog-index' %}">Catalogs</a></li>
+            <li><a href="{% url 'marketplace:organization-index' %}">Organizations</a></li>
+            <li><a href="{% url 'marketplace:company-index' %}">Companies</a></li>
+            <li><a href="{% url 'marketplace:attribute-index' %}">Attributes</a></li>
           </ul>
         </li>
         {% endif %}
@@ -115,24 +118,16 @@
             <span key="t-pages">Pages</span>
           </a>
           <ul class="sub-menu" aria-expanded="false">
+            {% for item in site_pages %}
             <li>
-              <a href="javascript: void(0);"  key="t-products">Leadership</a>
+              <a href="{{ item.url }}">{{ item.title }}</a>
             </li>
+            {% endfor %}
+            {% for page in frontend_pages %}
             <li>
-              <a href="javascript: void(0);"  key="t-products">Disclaimer</a>
+              <a href="{% url 'pages_staff:frontend-page' page.slug %}">{{ page.title }}</a>
             </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-products">Terms of Use</a>
-            </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-products">Org Chart</a>
-            </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-products">Roadmap</a>
-            </li>
-            <li>
-              <a href="javascript: void(0);"  key="t-products">Hackathon</a>
-            </li>
+            {% endfor %}
           </ul>
         </li>
         {% endif %}
@@ -205,15 +200,15 @@
             <span key="t-help-desk">Help Desk</span>
           </a>
           <ul class="sub-menu" aria-expanded="false">
-            <li><a href="#" key="t-support-hub"><span>Support Hub</span></a></li>
+            <li><a href="{% url 'pages_staff:support-hub' %}" key="t-support-hub"><span>Support Hub</span></a></li>
             <li>
               <a href="javascript: void(0);" class="has-arrow" key="t-domain-section">Articles</a>
               <ul class="sub-menu" aria-expanded="true">
                 <li>
-                  <a href="javascript: void(0);"  key="t-manage-categories">Categories</a>
+                  <a href="{% url 'pages_staff:support-categories' %}" key="t-manage-categories">Categories</a>
                 </li>
                 <li>
-                  <a href="javascript: void(0);"  key="t-create-articles">Articls</a>
+                  <a href="{% url 'pages_staff:support-articles' %}" key="t-create-articles">Articles</a>
                 </li>
               </ul>
             </li>
@@ -221,10 +216,10 @@
               <a href="javascript: void(0);" class="has-arrow" key="t-documentation">Documentation</a>
               <ul class="sub-menu" aria-expanded="true">
                 <li>
-                  <a href="javascript: void(0);"  key="t-manage-documents">Documents</a>
+                  <a href="{% url 'pages_staff:support-documents' %}" key="t-manage-documents">Documents</a>
                 </li>
                  <li>
-                  <a href="javascript: void(0);"  key="t-manage-faqs">FAQs</a>
+                  <a href="{% url 'pages_staff:support-faqs' %}" key="t-manage-faqs">FAQs</a>
                 </li>
               </ul>
             </li>

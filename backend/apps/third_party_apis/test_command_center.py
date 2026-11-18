@@ -198,8 +198,8 @@ class CommandCenterViewTests(SimpleTestCase):
                 self.is_staff = staff
                 self.profile = type("Profile", (), {"access_type": access_type})()
 
-        self.assertEqual(home_for(Account(True, True, "user")), "/")
-        self.assertEqual(home_for(Account(False, True, "admin")), "/")
+        self.assertEqual(home_for(Account(True, True, "user")), "/marketplace/")
+        self.assertEqual(home_for(Account(False, True, "admin")), "/marketplace/")
         self.assertEqual(home_for(Account(False, False, "user")), "/marketplace/")
         from pathlib import Path
 

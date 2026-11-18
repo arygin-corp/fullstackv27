@@ -221,6 +221,7 @@ INSTALLED_APPS = [
     "apps.third_party_apis.modules.roadmap.apps.RoadmapConfig",
     "apps.third_party_apis.modules.hackathon.apps.HackathonConfig",
     "apps.third_party_apis.modules.internal_teams.apps.InternalTeamConfig",
+    "apps.third_party_apis.modules.whats_new.apps.WhatsNewConfig",
 ]
 
 MIDDLEWARE = [

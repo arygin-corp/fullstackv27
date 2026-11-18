@@ -52,6 +52,7 @@
                                             {% if perms.changelog.delete_post %}
                                                 <a href="{% url 'changelog_staff:post-delete' post.pk %}" title="Delete"><i class="bx bx-trash align-bottom text-danger" style="font-size: 20px;"></i></a>
                                             {% endif %}
+                                            <a href="{% url 'changelog_staff:post-workflow' post.pk %}" title="Workflow"><i class="bx bx-git-branch align-bottom" style="font-size: 20px;"></i></a>
                                         </div>
                                     </td>
                                 </tr>

@@ -1,0 +1,52 @@
+{% extends "gdx_users/partials/base.html" %}
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ rows|length }} {{ collection.title }}</h5>
+                    <a class="btn btn-primary" href="{% url 'pages_staff:site-record-create' collection.key %}">Add</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle w-100">
+                        <thead>
+                            <tr>
+                                {% for label, name in collection.columns %}<th>{{ label }}</th>{% endfor %}
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in rows %}
+                                <tr>
+                                    {% for value in row.cells %}
+                                        <td>
+                                            {% if value is True %}
+                                                <span class="badge-soft-success badge">Active</span>
+                                            {% elif value is False %}
+                                                <span class="badge-soft-dark badge">Inactive</span>
+                                            {% else %}
+                                                {{ value }}
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                    <td>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center">
+                                            <a href="{% url 'pages_staff:site-record-edit' collection.key row.object.pk %}" title="Edit"><i class="bx bxs-edit-alt align-bottom text-primary" style="font-size: 20px;"></i></a>
+                                            <a href="{% url 'pages_staff:site-record-delete' collection.key row.object.pk %}" title="Delete"><i class="bx bx-trash align-bottom text-danger" style="font-size: 20px;"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="{{ collection.columns|length|add:1 }}" class="text-muted">No records yet.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

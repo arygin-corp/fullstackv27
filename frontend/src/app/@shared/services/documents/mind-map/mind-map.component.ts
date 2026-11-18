@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mind-map.component.css']
 })
 export class MindMapComponent implements OnInit {
-  docURL = 'assets/docs/protected/MindMap_Security_Roles--Data_And_Functions_0.pdf';
+  docURL = 'assets/docs/protected/Mind_Map.pdf';
   constructor() { }
 
   ngOnInit(): void {

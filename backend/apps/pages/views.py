@@ -106,6 +106,329 @@ def page_create(request):
 def page_detail(request,slug):
     page=get_object_or_404(Page,slug=slug);return render(request,"gdx_admin/pages/pages/page/page_detail.html",{"page":page,"version":page.working_version or page.published_version})
 @login_required
+def frontend_page(request, slug):
+    page = get_object_or_404(
+        Page.objects.select_related("published_version", "page_type").prefetch_related("published_version__blocks"),
+        slug=slug,
+        is_archived=False,
+        is_deleted=False,
+        published_version__isnull=False,
+    )
+    version = page.published_version
+    blocks = version.blocks.filter(is_enabled=True).order_by("position")
+    return render(request, "gdx_users/apps/pages/frontend_page.html", {
+        "page": page,
+        "version": version,
+        "blocks": blocks,
+        "heading": page.title,
+        "heading2": page.title,
+        "pageview": "Pages",
+    })
+@login_required
+def site_page(request, slug):
+    import json
+    from django.http import Http404
+    from gdx.site_api import PAGE_VIEWS, SITE_MENU
+
+    builder = PAGE_VIEWS.get(slug)
+    if builder is None:
+        raise Http404
+    payload = json.loads(builder(request).content)
+    titles = dict(SITE_MENU)
+    title = titles[slug]
+    return render(request, "gdx_users/apps/pages/site_page.html", {
+        "slug": slug,
+        "data": payload,
+        "heading": title,
+        "heading2": title,
+        "pageview": "Pages",
+    })
+
+
+def _library_asset(url):
+    from django.templatetags.static import static
+
+    path = url or ""
+    if path.startswith("/media/"):
+        path = path[len("/media/"):]
+    if path.startswith("assets/"):
+        return static(f"gdx_users/frontend/{path}")
+    return url or ""
+
+
+def _json_payload(builder, request):
+    import json
+
+    return json.loads(builder(request).content)
+
+
+def _support_payload(request):
+    from gdx.site_api import support
+
+    data = _json_payload(support, request)
+    labels = {row["id"]: row["label"] for row in data["categories"]}
+    for article in data["articles"]:
+        article["categoryLabel"] = labels.get(article["category"], article["category"])
+    return data, labels
+
+
+@login_required
+def support_hub(request):
+    data, _labels = _support_payload(request)
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "hub",
+        "data": data,
+        "heading": "Support Hub",
+        "heading2": "Support Hub",
+        "pageview": "Support Center",
+    })
+
+
+@login_required
+def support_categories(request):
+    data, _labels = _support_payload(request)
+    counts = {}
+    for article in data["articles"]:
+        counts[article["category"]] = counts.get(article["category"], 0) + 1
+    for row in data["categories"]:
+        row["count"] = len(data["articles"]) if row["id"] == "all" else counts.get(row["id"], 0)
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "categories",
+        "data": data,
+        "heading": "Categories",
+        "heading2": "Categories",
+        "pageview": "Support Center",
+    })
+
+
+@login_required
+def support_articles(request):
+    data, labels = _support_payload(request)
+    category = (request.GET.get("category") or "").strip()
+    heading = labels.get(category, "Articles") if category and category != "all" else "Articles"
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "articles",
+        "data": data,
+        "active_category": category,
+        "heading": heading,
+        "heading2": heading,
+        "pageview": "Support Center",
+    })
+
+
+@login_required
+def support_article_page(request, source_id):
+    from django.http import Http404
+    from gdx.site_api import support_article
+
+    data, labels = _support_payload(request)
+    response = support_article(request, source_id)
+    if response.status_code == 404:
+        raise Http404
+    article = _json_payload(lambda _request: response, request)
+    article["categoryLabel"] = labels.get(article["category"], article["category"])
+    related = [
+        row for row in data["articles"]
+        if row["category"] == article["category"] and row["id"] != article["id"]
+    ][:4]
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "article",
+        "data": data,
+        "article": article,
+        "related": related,
+        "heading": article["title"],
+        "heading2": article["title"],
+        "pageview": "Support Center",
+    })
+
+
+@login_required
+def support_documents(request):
+    from datetime import datetime
+
+    from gdx.site_api import resources
+
+    library = _json_payload(resources, request)
+    posters = {
+        "Promo Video": "assets/resources/thumbnails/video1.png",
+        "Promo Video 2": "assets/resources/thumbnails/video2.png",
+    }
+    for group in ("documents", "policies", "processes"):
+        for item in library[group]:
+            item["imageUrl"] = _library_asset(item.get("imageUrl"))
+            item["icon"] = _library_asset(item.get("icon"))
+    for item in library["brands"]:
+        item["image"] = _library_asset(item.get("image"))
+    videos = []
+    for item in library["media"]:
+        download = item.get("downloadUrl") or ""
+        posted = item.get("date") or ""
+        if posted:
+            posted = datetime.fromisoformat(posted).strftime("%B %-d, %Y")
+        file_url = item.get("file") or ""
+        if "default.mp4" in file_url:
+            file_url = ""
+        videos.append({
+            "id": item["id"],
+            "name": item["name"],
+            "format": item.get("format") or "",
+            "size": item.get("size") or "",
+            "date": posted,
+            "poster": _library_asset(posters.get(item["name"], "")),
+            "playUrl": download if download.startswith("http") else _library_asset(file_url),
+        })
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "documents",
+        "documents": library["documents"],
+        "policies": library["policies"],
+        "processes": library["processes"],
+        "images": library["brands"],
+        "videos": videos,
+        "heading": "Documents",
+        "heading2": "Documents",
+        "pageview": "Support Center",
+    })
+
+
+def _library_when(value):
+    from datetime import datetime
+
+    from django.utils import timezone
+
+    if not value:
+        return ""
+    if isinstance(value, datetime):
+        if timezone.is_aware(value):
+            value = timezone.localtime(value)
+        return value.strftime("%B %-d, %Y, %-I:%M %p")
+    return value.strftime("%B %-d, %Y")
+
+
+def _library_actor(user, when):
+    name = getattr(user, "username", "") or ""
+    stamp = _library_when(when)
+    return " · ".join(part for part in (name, stamp) if part)
+
+
+def _library_facts(*pairs):
+    facts = []
+    for label, value, kind in pairs:
+        if value in (None, ""):
+            continue
+        facts.append({"label": label, "value": value, "kind": kind})
+    return facts
+
+
+@login_required
+def support_library_detail(request, pk, kind):
+    from django.http import Http404
+    from django.shortcuts import get_object_or_404
+
+    from apps.resources.models import Brand, Document, Media, Policie, Processe
+
+    preview = {"image": "", "video": "", "icon": "", "portrait": False, "dark": False}
+    if kind in {"document", "policy", "process"}:
+        models = {"document": Document, "policy": Policie, "process": Processe}
+        labels = {"document": "Document", "policy": "Policy", "process": "Process"}
+        keys = {
+            "document": "resources-documents",
+            "policy": "resources-policies",
+            "process": "resources-processes",
+        }
+        record = get_object_or_404(models[kind], pk=pk, is_active=True, is_archived=False)
+        kicker = labels[kind]
+        manage_key = keys[kind]
+        preview["portrait"] = True
+        preview["image"] = _library_asset(getattr(record.cover, "url", ""))
+        preview["icon"] = _library_asset(getattr(record.platform, "url", ""))
+        view_url = record.view_url or getattr(record, "external_url", "")
+        facts = _library_facts(
+            ("Falls under", labels[kind], "text"),
+            ("Name", record.name, "text"),
+            ("Classification", record.classification, "text"),
+            ("File format", record.file_format, "text"),
+            ("Size", record.size, "text"),
+            ("Description", record.desc, "text"),
+            ("Kind", record.get_resource_kind_display() if hasattr(record, "get_resource_kind_display") else "", "text"),
+            ("View URL", view_url, "link"),
+            ("Download URL", record.download_url, "link"),
+            ("Active", "Yes" if record.is_active else "No", "text"),
+            ("Published at", _library_when(record.publish_at), "text"),
+            ("Expired at", _library_when(record.expire_at), "text"),
+            ("Created", _library_actor(record.created_by, record.created_at), "text"),
+            ("Updated", _library_actor(record.updated_by, record.updated_at), "text"),
+        )
+    elif kind == "image":
+        record = get_object_or_404(Brand, pk=pk, is_active=True, is_archived=False)
+        kicker = "Image"
+        manage_key = "resources-brands"
+        preview["image"] = _library_asset(getattr(record.image, "url", ""))
+        preview["dark"] = "Light" in (record.name or "")
+        facts = _library_facts(
+            ("Name", record.name, "text"),
+            ("Size", record.size, "text"),
+            ("Description", record.desc, "text"),
+            ("Download URL", record.download_url, "link"),
+            ("Active", "Yes" if record.is_active else "No", "text"),
+            ("Published at", _library_when(record.publish_at), "text"),
+            ("Expired at", _library_when(record.expire_at), "text"),
+            ("Created", _library_actor(record.created_by, record.created_at), "text"),
+            ("Updated", _library_actor(record.updated_by, record.updated_at), "text"),
+        )
+    elif kind == "media":
+        record = get_object_or_404(Media, pk=pk, is_active=True, is_archived=False)
+        kicker = "Media"
+        manage_key = "resources-media"
+        posters = {
+            "Promo Video": "assets/resources/thumbnails/video1.png",
+            "Promo Video 2": "assets/resources/thumbnails/video2.png",
+        }
+        file_url = getattr(record.media, "url", "") or ""
+        if "default.mp4" in file_url:
+            file_url = ""
+        download = record.download_url or ""
+        preview["image"] = _library_asset(posters.get(record.name, ""))
+        preview["icon"] = _library_asset(getattr(record.icon, "url", ""))
+        preview["video"] = download if str(download).startswith("http") else _library_asset(file_url)
+        facts = _library_facts(
+            ("Name", record.name, "text"),
+            ("File format", record.file_format, "text"),
+            ("Size", record.size, "text"),
+            ("Date", _library_when(record.date), "text"),
+            ("Download URL", download, "link"),
+            ("Active", "Yes" if record.is_active else "No", "text"),
+            ("Published at", _library_when(record.publish_at), "text"),
+            ("Expired at", _library_when(record.expire_at), "text"),
+            ("Created", _library_actor(record.created_by, record.created_at), "text"),
+            ("Updated", _library_actor(record.updated_by, record.updated_at), "text"),
+        )
+    else:
+        raise Http404
+    return render(request, "gdx_users/apps/pages/library_detail.html", {
+        "kicker": kicker,
+        "kind": kind,
+        "preview": preview,
+        "facts": facts,
+        "record": record,
+        "manage_key": manage_key,
+        "heading": record.name,
+        "heading2": record.name,
+        "pageview": "Documents",
+    })
+
+
+@login_required
+def support_faqs(request):
+    from gdx.site_api import faqs
+
+    return render(request, "gdx_users/apps/pages/support_center.html", {
+        "section": "faqs",
+        "faqs": _json_payload(faqs, request),
+        "heading": "FAQs",
+        "heading2": "FAQs",
+        "pageview": "Support Center",
+    })
+@login_required
 @require_POST
 def page_delete(request, slug):
     from django.core.exceptions import PermissionDenied

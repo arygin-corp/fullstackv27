@@ -30,6 +30,8 @@ def stamp_model_times(sender, instance, raw=False, **kwargs):
         if field.name in STAMP_EVERY_SAVE:
             setattr(instance, field.attname, moment)
         elif field.name in STAMP_IF_EMPTY and current is None and (field.name != "created_at" or creating):
+            if field.name == "publish_at" and instance._meta.app_label == "resources" and not getattr(instance, "is_active", False):
+                continue
             setattr(instance, field.attname, moment)
 
 

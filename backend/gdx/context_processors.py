@@ -128,6 +128,7 @@ def header_account(request):
         "header_user_initials": initials,
         "header_user_name": name,
         "header_user_role": role,
+        "header_is_superadmin": user.groups.filter(name="Super Administrator Group").exists(),
     }
 
 
@@ -151,12 +152,36 @@ def header_notifications(request):
 
 
 def staff_sidebar(request):
+    from django.db import DatabaseError, OperationalError, ProgrammingError
     from gdx.sidebar_nav import sidebar_sections
     from gdx.staff_menu import allowed_sections
 
+    pages = []
+    user = getattr(request, "user", None)
+    if user is not None and getattr(user, "is_authenticated", False):
+        try:
+            from apps.pages.models import Page
+            pages = list(
+                Page.objects.filter(
+                    published_version__isnull=False,
+                    is_archived=False,
+                    is_deleted=False,
+                ).order_by("title")
+            )
+        except (DatabaseError, OperationalError, ProgrammingError):
+            pages = []
+    from django.urls import reverse
+    from gdx.site_api import SITE_MENU
+
+    site_pages = [
+        {"title": title, "url": reverse("pages_staff:site-page", kwargs={"slug": slug})}
+        for slug, title in SITE_MENU
+    ]
     return {
         "sidebar_sections": sidebar_sections(request),
-        "staff_menu": allowed_sections(getattr(request, "user", None)),
+        "staff_menu": allowed_sections(user),
+        "frontend_pages": pages,
+        "site_pages": site_pages,
     }
 
 

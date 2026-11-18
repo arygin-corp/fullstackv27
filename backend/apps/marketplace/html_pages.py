@@ -27,6 +27,9 @@ ACTION_LABELS = {
     "review": "Review",
     "datasteward": "Data Steward",
     "onetsdomain": "1TS Domain",
+    "organization": "Organization",
+    "company": "Company",
+    "attribute": "Attribute",
 }
 
 

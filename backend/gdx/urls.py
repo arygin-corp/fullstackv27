@@ -10,6 +10,18 @@ from django.views.generic import TemplateView
 from apps.notifications.monitoring.views import alerts_view, health_view, live_view, ready_view, startup_view, metrics_view
 from . import views
 from . import theme_pages as theme_pages_views
+from .theme_preview import command_center as theme_preview_command
+from .theme_preview import commerce_dashboard as theme_preview_commerce
+from .theme_preview import product_approvals as theme_preview_approvals
+from .theme_preview import product_reviews as theme_preview_reviews
+from .theme_preview import catalog_domains as theme_preview_domains
+from .theme_preview import directory_records as theme_preview_directory
+from .theme_preview import marketplace_surfaces as theme_preview_surfaces
+from .theme_preview import product_record as theme_preview_product
+from .theme_preview import product_catalog as theme_preview_products
+from .theme_preview import executive_kpis as theme_preview_kpis
+from .theme_preview import module_catalog as theme_preview_modules
+from .theme_preview import signed_in_profile as theme_preview_profile
 from .theme_preview import snapshot as theme_preview_snapshot
 from .forms import GDXPasswordResetForm, GDXSetPasswordForm
 
@@ -41,10 +53,23 @@ urlpatterns = [
     # GLOBAL API URLS
     path('api/', include('apps.api.urls')),
     path("api/theme-preview/snapshot/", theme_preview_snapshot, name="theme_preview_snapshot"),
+    path("api/theme-preview/profile/", theme_preview_profile, name="theme_preview_profile"),
+    path("api/theme-preview/kpis/", theme_preview_kpis, name="theme_preview_kpis"),
+    path("api/theme-preview/command/", theme_preview_command, name="theme_preview_command"),
+    path("api/theme-preview/modules/", theme_preview_modules, name="theme_preview_modules"),
+    path("api/theme-preview/products/", theme_preview_products, name="theme_preview_products"),
+    path("api/theme-preview/commerce/", theme_preview_commerce, name="theme_preview_commerce"),
+    path("api/theme-preview/approvals/", theme_preview_approvals, name="theme_preview_approvals"),
+    path("api/theme-preview/reviews/", theme_preview_reviews, name="theme_preview_reviews"),
+    path("api/theme-preview/domains/", theme_preview_domains, name="theme_preview_domains"),
+    path("api/theme-preview/surfaces/", theme_preview_surfaces, name="theme_preview_surfaces"),
+    path("api/theme-preview/directory/", theme_preview_directory, name="theme_preview_directory"),
+    path("api/theme-preview/product/", theme_preview_product, name="theme_preview_product"),
     path("api/changelog/", include("apps.changelog.urls")),
     path("api/new/product/intake/", include("apps.third_party_apis.modules.product_intake.urls", namespace="intake")),
     path("api/marketplace/", include("apps.marketplace.admin_urls")),
     path("api/pages/", include("apps.pages.api_urls")),
+    path("api/site/", include("gdx.site_urls")),
     path("api/people/", include("apps.people.urls")),
     path("api/forms/", include("apps.forms.urls")),
     path("api/integrations/data-access-request/", include("apps.third_party_apis.modules.data_access_request.urls", namespace="data_access_request")),
@@ -74,6 +99,7 @@ urlpatterns = [
 
     # SUPER ADMINISTRATORS - GDX ADMIN
     path("sa/", views.staff_home, name="staff_home"),
+    path("sa/", include("gdx.theme_pages_urls", namespace="theme_sa")),
     # Exact Vexlora theme static trees (paired with data-base-path="/sa")
     path(
         "sa/assets/<path:asset_path>",
@@ -102,6 +128,7 @@ urlpatterns = [
     path("sa/dar/", include(("apps.forms.admin_urls", "dar-admin"), namespace="dar-admin")),
     path("sa/checkout/", include("apps.third_party_apis.modules.checkout.page_urls", namespace="checkout_pages")),
     path("changelog/", include(("apps.changelog.admin_urls", "changelog"), namespace="changelog_staff")),
+    path("pages/", include("apps.pages.user_urls")),
     path("sa/intake/", include("apps.third_party_apis.modules.product_intake.admin_urls", namespace="intake")),
     path("sa/orders/", include("apps.orders.urls")),
     path('sa/teams/', include("apps.teams.urls")),
@@ -156,6 +183,7 @@ urlpatterns = [
     # THIRD PARTY
     path('select2/', include('django_select2.urls')),
     path('ckeditor/', include('django_ckeditor_5.urls')),
+    path("sa/<path:page_path>", theme_pages_views.theme_page, name="vexlora_sa_page"),
 ]
 
 urlpatterns += [

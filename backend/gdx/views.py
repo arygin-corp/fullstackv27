@@ -50,11 +50,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 def home_for(user):
-    """Staff open the dashboard. Every other account opens the marketplace."""
-    from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
-
-    if getattr(user, "is_staff", False) or getattr(user, "is_superuser", False) or access_type_for(user) == ACCESS_SUPERADMIN:
-        return "/"
+    """Every signed-in account opens the user theme."""
     return "/marketplace/"
 
 
@@ -186,9 +182,10 @@ class HomeView(LoginRequiredMixin, View):
 def staff_home(request):
     from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
 
-    if access_type_for(request.user) != ACCESS_SUPERADMIN:
+    in_group = request.user.groups.filter(name="Super Administrator Group").exists()
+    if access_type_for(request.user) != ACCESS_SUPERADMIN and not in_group:
         return redirect("/marketplace/")
-    return redirect("command_center:dashboard")
+    return redirect("theme_sa:dashboard", slug="executive")
 
 
 class ChangelogView(LoginRequiredMixin, View):

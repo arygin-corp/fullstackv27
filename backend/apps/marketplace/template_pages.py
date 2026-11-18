@@ -56,7 +56,7 @@ def _image(file_field, alt, wide=False):
 
 def _product_image(record):
     for item in record.images.all():
-        markup = _image(item.image, record.name)
+        markup = _image(item.image, record.name, wide=True)
         if markup:
             return markup
     return ""
@@ -143,6 +143,10 @@ class MarketplaceTemplatePage(LoginRequiredMixin, TemplateView):
             from apps.marketplace.models import Datatype
 
             context["datatypes"] = Datatype.objects.order_by("name")
+        if self.row_kind == "attribute":
+            from apps.marketplace.models import ATTRIBUTE_TYPE
+
+            context["attribute_categories"] = ATTRIBUTE_TYPE
         if self.row_kind == "review" and self.record_model is not None:
             base = self.record_model.objects.all()
             context["review_counts"] = {
@@ -181,6 +185,10 @@ class MarketplaceTemplatePage(LoginRequiredMixin, TemplateView):
         datatype = (self.request.GET.get("type") or "").strip()
         if datatype and datatype != "all" and self.row_kind == "product":
             records = records.filter(datatype__name=datatype)
+        if self.row_kind == "attribute":
+            category = (self.request.GET.get("category") or "").strip()
+            if category and category != "all":
+                records = records.filter(type=category)
         if self.row_kind == "review":
             return records.order_by("-created_at", "-id")
         return records.order_by("id")
@@ -292,6 +300,31 @@ class MarketplaceTemplatePage(LoginRequiredMixin, TemplateView):
                 "email": _text(record.email),
                 "status": _status(record),
                 "actions": _actions("contact", record.pk),
+            }
+        if kind == "organization":
+            return {
+                "id": record.id,
+                "name": _text(record.name),
+                "abbrev": _text(record.abbrev),
+                "status": _status(record),
+                "actions": _actions("organization", record.pk),
+            }
+        if kind == "company":
+            return {
+                "id": record.id,
+                "name": _text(record.name),
+                "abbrev": _text(record.abbrev),
+                "organization": _text(record.org.name if record.org_id else ""),
+                "status": _status(record),
+                "actions": _actions("company", record.pk),
+            }
+        if kind == "attribute":
+            return {
+                "id": record.id,
+                "name": _text(record.name),
+                "category": _text(record.get_type_display()),
+                "status": _status(record),
+                "actions": _actions("attribute", record.pk),
             }
         payload = {
             "id": record.id,
