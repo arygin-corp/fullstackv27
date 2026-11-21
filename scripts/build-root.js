@@ -109,17 +109,17 @@ function buildBackend() {
   console.log(`Backend artifact: ${destination}`);
   saveVersion("backend", destination);
 }
+const liveFrontendOutput = path.resolve(frontend, "dist", "edmp-gdx-client-app", "browser");
 function angularOutputPath() {
   const angularJsonPath = path.join(frontend, "angular.json");
-  if (!existsSync(angularJsonPath)) return path.join(frontend, "dist");
+  if (!existsSync(angularJsonPath)) return "";
   try {
     const angular = JSON.parse(readFileSync(angularJsonPath, "utf8"));
-    const defaultProject = angular.defaultProject || Object.keys(angular.projects || {})[0];
-    const project = angular.projects?.[defaultProject];
+    const project = angular.projects?.gdx;
     const outputPath = project?.architect?.build?.options?.outputPath || project?.targets?.build?.options?.outputPath;
-    return outputPath ? path.resolve(frontend, outputPath) : path.join(frontend, "dist");
+    return outputPath ? path.resolve(frontend, outputPath) : "";
   } catch {
-    return path.join(frontend, "dist");
+    return "";
   }
 }
 function buildFrontend() {
@@ -127,9 +127,16 @@ function buildFrontend() {
   if (!engineer) throw new Error('Engineer required. Use --engineer="Name" or BUILD_ENGINEER.');
   if (!existsSync(path.join(frontend, "package.json"))) throw new Error("Missing frontend/package.json.");
   if (!existsSync(path.join(frontend, "build", "build.js"))) throw new Error("Missing frontend/build/build.js.");
+  const configured = angularOutputPath();
+  if (configured !== liveFrontendOutput) {
+    throw new Error(`Angular outputPath must be dist/edmp-gdx-client-app/browser. Found ${configured || "no outputPath"}.`);
+  }
   run("npm", ["run", `build:${environment}`], frontend, { BUILD_ENGINEER: engineer });
-  const output = angularOutputPath();
-  if (!existsSync(output)) throw new Error(`Angular output not found at ${output}. Verify angular.json outputPath.`);
+  const output = liveFrontendOutput;
+  if (!existsSync(path.join(output, "index.html"))) {
+    throw new Error(`Angular build was not found at ${output}.`);
+  }
+  console.log(`Publishing live frontend from ${output}`);
   publishFrontend(output);
   const destination = prepare("frontend");
   cpSync(output, destination, { recursive: true });

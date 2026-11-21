@@ -1,0 +1,75 @@
+<div class="row g-3 mb-4">
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Total Requests</div>
+                <h2 class="mb-0 fw-bold">{{ total_requests|default:0 }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Open Requests</div>
+                <h2 class="mb-0 fw-bold text-primary">{{ open_requests|default:0 }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Overdue Requests</div>
+                <h2 class="mb-0 fw-bold text-danger">{{ overdue_requests|default:0 }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">SLA Compliance</div>
+                <h2 class="mb-0 fw-bold text-success">{{ sla_compliance|default:0 }}%</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Total Tasks</div>
+                <h4 class="mb-0">{{ total_tasks|default:0 }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Active Tasks</div>
+                <h4 class="mb-0">{{ active_tasks|default:0 }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Completed Tasks</div>
+                <h4 class="mb-0 text-success">{{ completed_tasks|default:0 }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small text-uppercase mb-1">Overdue Tasks</div>
+                <h4 class="mb-0 text-danger">{{ overdue_tasks|default:0 }}</h4>
+            </div>
+        </div>
+    </div>
+</div>

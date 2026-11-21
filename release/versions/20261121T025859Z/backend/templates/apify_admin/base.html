@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="{% block color_scheme %}light{% endblock %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>{% block title %}Apify Admin{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/bootstrap.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/base/base.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/colors.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/base/typography.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/components.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/layout/header.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/layout/sider.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/layout/page-content.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/app.css' %}?v=logo-red">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/responsive.css' %}?v=1">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/icons/iconly/index.css' %}">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/icons/remix-icon/index.css' %}">
+  {% block vendor_css %}
+  {% endblock %}
+  <!-- <link rel="stylesheet" href="{% static 'apify_admin/theme/css/colors-dark.css' %}" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="{% static 'apify_admin/theme/css/theme-dark.css' %}" media="(prefers-color-scheme: dark)"> -->
+  {% block extra_css %}
+  {% endblock %}
+</head>
+<body class="{% block body_class %}vertical-layout{% endblock %}">
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-white" href="#main-content">Skip to content</a>
+  <div class="d-flex min-vh-100">
+    {% if request.user.is_authenticated %}{% include 'apify_admin/includes/sidebar.html' %}
+    {% endif %}
+    <div class="hp-main-layout flex-grow-1">
+      {% if request.user.is_authenticated %}{% include 'apify_admin/includes/topbar.html' %}
+      {% endif %}
+      <main id="main-content" class="hp-page-content px-16 px-sm-32 pb-32" tabindex="-1">
+        {% include 'apify_admin/includes/breadcrumbs.html' %}
+        {% include 'apify_admin/includes/notifications.html' %}
+        {% block content %}
+        {% endblock %}
+      </main>
+      {% include 'apify_admin/includes/footer.html' %}
+    </div>
+  </div>
+  {% block modals %}
+  {% endblock %}
+  <script src="{% static 'apify_admin/theme/js/plugin/jquery.min.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/plugin/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/plugin/autocomplete.min.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/layouts/sider.min.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/layouts/header-search.min.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/app.js' %}"></script>
+  <script src="{% static 'apify_admin/theme/js/base/index.js' %}"></script>
+  {% block vendor_js %}
+  {% endblock %}
+  {% block extra_js %}
+  {% endblock %}
+</body>
+</html>

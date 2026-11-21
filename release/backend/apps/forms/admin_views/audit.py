@@ -18,7 +18,7 @@ def _breadcrumbs(*items):
 def audit_dashboard(request):
     queryset = FormChangeLog.objects.select_related('actor')
     since = timezone.now() - timedelta(days=7)
-    return render(request, 'gdx_admin/apps/dar/dashboard/dashboard.html', {'stats': [{'label': 'All changes', 'value': queryset.count()}, {'label': 'Last 7 days', 'value': queryset.filter(created_at__gte=since).count()}, {'label': 'Creates', 'value': queryset.filter(action='create').count()}, {'label': 'Deletes', 'value': queryset.filter(action='delete').count()}], 'recent_changes': queryset.order_by('-created_at')[:20], 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', None))})
+    return render(request, 'gdx_admin/pages/dar/dashboard/dashboard.html', {'stats': [{'label': 'All changes', 'value': queryset.count()}, {'label': 'Last 7 days', 'value': queryset.filter(created_at__gte=since).count()}, {'label': 'Creates', 'value': queryset.filter(action='create').count()}, {'label': 'Deletes', 'value': queryset.filter(action='delete').count()}], 'recent_changes': queryset.order_by('-created_at')[:20], 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', None))})
 
 def audit_log(request):
     queryset = FormChangeLog.objects.select_related('actor').order_by('-created_at')
@@ -29,8 +29,8 @@ def audit_log(request):
     if action:
         queryset = queryset.filter(action=action)
     page = _page(request, queryset, AUDIT_PAGE_SIZE)
-    return render(request, 'gdx_admin/apps/dar/audit/audit_log.html', {'events': page.object_list, 'page_obj': page, 'status_choices': (('create', 'Create'), ('update', 'Update'), ('delete', 'Delete')), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', '../'), ('Log', None))})
+    return render(request, 'gdx_admin/pages/dar/audit/audit_log.html', {'events': page.object_list, 'page_obj': page, 'status_choices': (('create', 'Create'), ('update', 'Update'), ('delete', 'Delete')), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', '../'), ('Log', None))})
 
 def audit_detail(request, pk):
     event = get_object_or_404(FormChangeLog.objects.select_related('actor'), pk=pk)
-    return render(request, 'gdx_admin/apps/dar/audit/change_detail.html', {'event': event, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', '../'), (str(event.pk), None))})
+    return render(request, 'gdx_admin/pages/dar/audit/change_detail.html', {'event': event, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Audit', '../'), (str(event.pk), None))})

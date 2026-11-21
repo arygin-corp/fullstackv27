@@ -1,0 +1,96 @@
+:root {
+  --status-draft-fg: #475467;
+  --status-draft-bg: #f2f4f7;
+  --status-submitted-fg: #175cd3;
+  --status-submitted-bg: #eff4ff;
+  --status-review-fg: #3538cd;
+  --status-review-bg: #eef0ff;
+  --status-pending-fg: #b54708;
+  --status-pending-bg: #fff4e5;
+  --status-approved-fg: #067647;
+  --status-approved-bg: #e7f6ee;
+  --status-published-fg: #0e7490;
+  --status-published-bg: #e6f6f8;
+  --status-open-fg: #175cd3;
+  --status-open-bg: #eff4ff;
+  --status-rejected-fg: #b42318;
+  --status-rejected-bg: #fdecea;
+  --status-archived-fg: #344054;
+  --status-archived-bg: #f8f9fb;
+  --status-neutral-fg: #475467;
+  --status-neutral-bg: #f2f4f7;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  flex: none;
+}
+
+.status-draft { color: var(--status-draft-fg); background: var(--status-draft-bg); }
+.status-submitted { color: var(--status-submitted-fg); background: var(--status-submitted-bg); }
+.status-review { color: var(--status-review-fg); background: var(--status-review-bg); }
+.status-pending { color: var(--status-pending-fg); background: var(--status-pending-bg); }
+.status-approved { color: var(--status-approved-fg); background: var(--status-approved-bg); }
+.status-published { color: var(--status-published-fg); background: var(--status-published-bg); }
+.status-open { color: var(--status-open-fg); background: var(--status-open-bg); }
+.status-rejected { color: var(--status-rejected-fg); background: var(--status-rejected-bg); }
+.status-archived { color: var(--status-archived-fg); background: var(--status-archived-bg); border-color: #e4e7ec; }
+.status-neutral { color: var(--status-neutral-fg); background: var(--status-neutral-bg); }
+
+button.status-button,
+a.status-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button.status-button.status-archived,
+a.status-button.status-archived { border-color: #e4e7ec; }
+
+.status-dark.status-draft { color: #fff; background: var(--status-draft-fg); }
+.status-dark.status-submitted { color: #fff; background: var(--status-submitted-fg); }
+.status-dark.status-review { color: #fff; background: var(--status-review-fg); }
+.status-dark.status-pending { color: #fff; background: var(--status-pending-fg); }
+.status-dark.status-approved { color: #fff; background: var(--status-approved-fg); }
+.status-dark.status-published { color: #fff; background: var(--status-published-fg); }
+.status-dark.status-open { color: #fff; background: var(--status-open-fg); }
+.status-dark.status-rejected { color: #fff; background: var(--status-rejected-fg); }
+.status-dark.status-archived { color: #fff; background: var(--status-archived-fg); border-color: transparent; }
+.status-dark.status-neutral { color: #fff; background: var(--status-neutral-fg); }
+
+.page-wrapper :is(.btn-success, .btn-danger, .btn-outline-danger, .btn-warning, .btn-info, .btn-dark, .mp-button--danger) {
+  border-radius: 10px;
+  border-color: transparent;
+  font-weight: 700;
+  color: #fff;
+}
+.page-wrapper :is(.btn-success, .btn-danger, .btn-outline-danger, .btn-warning, .btn-info, .btn-dark, .mp-button--danger):is(:hover, :focus, :active) {
+  color: #fff;
+}
+.page-wrapper .btn-success { background: var(--status-approved-fg); }
+.page-wrapper .btn-danger,
+.page-wrapper .btn-outline-danger,
+.page-wrapper .mp-button--danger { background: var(--status-rejected-fg); }
+.page-wrapper .btn-warning { background: var(--status-pending-fg); }
+.page-wrapper .btn-info { background: var(--status-review-fg); }
+.page-wrapper .btn-dark { background: var(--status-archived-fg); }

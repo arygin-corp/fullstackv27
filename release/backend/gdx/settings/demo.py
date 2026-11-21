@@ -2,6 +2,10 @@
 
 import os
 
+from .redis import configure_nonprod_redis
+
+configure_nonprod_redis("demo")
+
 from .base import *
 from .runtime import *
 from .storage import *
@@ -14,22 +18,24 @@ DEBUG = os.getenv(
     "true",
 ).lower() == "true"
 
-ALLOWED_HOSTS = [
-    "admin.demo.data.toyota.com",
-]
+ALLOWED_HOSTS = merge_env_csv(
+    ["admin.demo.data.toyota.com"],
+    "DJANGO_ALLOWED_HOSTS",
+)
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://admin.demo.data.toyota.com",
-]
+CSRF_TRUSTED_ORIGINS = merge_env_csv(
+    ["https://admin.demo.data.toyota.com"],
+    "DJANGO_CSRF_TRUSTED_ORIGINS",
+)
 
 CORS_ALLOWED_ORIGINS = [
     "https://demo.data.toyota.com",
 ]
 
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = env_bool("DJANGO_SECURE_SSL_REDIRECT", False)
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = env_bool("DJANGO_SESSION_COOKIE_SECURE", True)
+CSRF_COOKIE_SECURE = env_bool("DJANGO_CSRF_COOKIE_SECURE", True)
 
 MICROSOFT["logout_uri"] = (
     "https://admin.demo.data.toyota.com/logout"

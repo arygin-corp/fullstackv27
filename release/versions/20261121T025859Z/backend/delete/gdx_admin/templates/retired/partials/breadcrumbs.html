@@ -1,0 +1,16 @@
+<!-- Breadcrumb -->
+<div class="content-header">
+    <div class="breadcrumb-wrapper">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'changelog:dashboard' %}">
+                        <i class="isax isax-home-2 me-1"></i>Home
+                    </a>
+                </li>
+                {% block breadcrumbs %}
+                {% endblock %}
+            </ol>
+        </nav>
+    </div>
+</div>

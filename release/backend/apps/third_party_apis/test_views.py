@@ -24,7 +24,7 @@ def integration_test_dashboard(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "integration_test_dashboard.html"
         ),
@@ -59,7 +59,7 @@ def integration_test(request, module_key):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "integration_test.html"
         ),

@@ -1,0 +1,24 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Command Center Health{% endblock %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+
+{% include "gdx_admin/pages/command_center/partials/_nav.html" %}
+<section class="deploy-panel">
+    <h2>Platform health</h2>
+    <table class="deploy-table">
+        <thead><tr><th>Check</th><th>State</th><th>Detail</th></tr></thead>
+        <tbody>
+        {% for check in checks %}
+        <tr>
+            <td>{{ check.name }}</td>
+            <td class="cc-{{ check.state }}">{{ check.state }}</td>
+            <td>{{ check.detail }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+{% endblock %}

@@ -5225,6 +5225,24 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "p360_ing",
       "elementname": "ctt_history",
+      "column_name": "equipment_description"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "merged_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "merged_date_minus_1"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
       "column_name": "partition_dt"
     },
     {
@@ -5238,12 +5256,6 @@
       "dbname": "p360_ing",
       "elementname": "ctt_history",
       "column_name": "reason"
-    },
-    {
-      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
-      "dbname": "p360_ing",
-      "elementname": "ctt_history",
-      "column_name": "rn"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -5304,6 +5316,18 @@
       "dbname": "p360_ing",
       "elementname": "ctt_history",
       "column_name": "tscs_driver_last_name"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_equipment_asset_id"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "p360_ing",
+      "elementname": "ctt_history",
+      "column_name": "tscs_equipment_id"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -8243,6 +8267,12 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "inventory_adjustments_host",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "inventory_adjustments_host",
       "column_name": "extract_dt"
     },
     {
@@ -8298,6 +8328,12 @@
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "label_file",
       "column_name": "default_location"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "label_file",
+      "column_name": "depot_cd"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -8502,6 +8538,12 @@
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "location_size_type",
       "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "location_size_type",
+      "column_name": "depot_cd"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
@@ -11435,6 +11477,12 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "returnable_module_complete_file",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_complete_file",
       "column_name": "extract_dt"
     },
     {
@@ -11568,6 +11616,12 @@
       "dbname": "parts_center_procurement_trn_ext",
       "elementname": "returnable_module_master_file",
       "column_name": "collapsed_width"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+      "dbname": "parts_center_procurement_trn_ext",
+      "elementname": "returnable_module_master_file",
+      "column_name": "depot_cd"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",

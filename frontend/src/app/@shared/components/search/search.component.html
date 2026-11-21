@@ -36,16 +36,17 @@
                         {{ suggestionLabel(didYouMean) }}
                     </span>?
                 </p>
-                <ng-container *ngIf="hasAiResults">
+                <ng-container *ngIf="location === 'header' ? searched : hasAiResults">
                 <button
-                    *ngIf="hasUserResults"
+                    *ngIf="location === 'header' || hasUserResults"
                     type="button"
                     class="search__mode"
                     [class.is-active]="resultMode === 'user'"
                     (click)="selectMode('user', $event)">
-                    User-Based
+                    {{ location === 'header' ? 'Regular search' : 'User-Based' }}
                 </button>
                 <button
+                    *ngIf="hasAiResults"
                     type="button"
                     class="search__mode"
                     [class.is-active]="resultMode === 'ai'"
@@ -55,9 +56,9 @@
                 </ng-container>
             </div>
             <div class="col-12">
-                <p *ngIf="aiLoading && (resultMode === 'ai' || !hasUserResults)" class="search__status">Looking for AI suggested products...</p>
-                <p *ngIf="!isLoading && !aiLoading && suggestedProducts.length === 0" class="search__status">No products found.</p>
-                <ul *ngIf="suggestedProducts.length > 0" class="suggestions__list" style="padding: 12px 0px;">
+                <app-page-loader *ngIf="location === 'header' && (isLoading || (aiLoading && resultMode === 'ai'))"></app-page-loader>
+                <p *ngIf="!(location === 'header' && (isLoading || (aiLoading && resultMode === 'ai'))) && !isLoading && suggestedProducts.length === 0" class="search__status">No products found.</p>
+                <ul *ngIf="!(location === 'header' && (isLoading || (aiLoading && resultMode === 'ai'))) && suggestedProducts.length > 0" class="suggestions__list" style="padding: 12px 0px;">
                     <li *ngFor="let product of suggestedProducts; trackBy: trackByProductId" class="suggestions__item">
                         <div class="suggestions__item-image product-image">
                             <div class="product-image__body">

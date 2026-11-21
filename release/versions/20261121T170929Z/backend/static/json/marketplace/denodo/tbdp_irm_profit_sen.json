@@ -1,0 +1,917 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_cont_mrgn_by_series",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_cont_mrgn_by_series",
+      "column_name": "est_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_cont_mrgn_by_series",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_cont_mrgn_by_series",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_cont_mrgn_by_series",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "avg_msrp_amt_chg_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "cftp_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "cftp_pin_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "change_category_cd"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "created_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "cross_impact_index"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "dealer_gross_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "dealer_gross_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "dealer_margin_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "dealer_margin_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "dph_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "enterprise_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "fleet_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "fleet_volume_target"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "gas_price_change_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "incentive_ratio"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "increasing_pin_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "increasing_pin_inctv_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "increasing_tms_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "increasing_tms_inctv_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "inctv_elasticity"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "inctv_ratio"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "latest_model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "launch_month_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "model_year_sales_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "months_after_launch_nbr"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "months_b4_next_launch"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "msrp_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "msrp_elasticity"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "negative_special_event_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "new_model_year_flag"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "pin_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "pin_inctv_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "pin_seg_share"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "positive_special_event_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "sales_target"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_non_fleet_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_1"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_10"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_11"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_12"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_2"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_3"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_4"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_5"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_6"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_7"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_8"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_seasonal_factor_month_9"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_volume"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "segment_volume_annual"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "sell_down_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "thrust_event_ind"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "tms_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "tms_inctv_budget_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "tms_inctv_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "years_since_major_change"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_ing",
+      "elementname": "trend_model_input",
+      "column_name": "years_since_minor_change"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "assumption_cd"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "built_src_type"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "destination_country"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "distributor_cd"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "enterprise_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "enterprise_mix_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "enterprise_vol_qty"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "fx_yen"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "na_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "national_inctv_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "raw_scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "sales_period_end_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "sales_period_st_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "scenario_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "team_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tmc_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_base_gp_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_cm_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_fio_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_gp_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_net_freight_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_ppo_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "tms_tac_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "usd_to_jpy_exchange_rt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "vehicle_mix_pct"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "ircm_trn",
+      "elementname": "contrib_mrgn_by_series",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "cal_code"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "cal_file_name"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "cif"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "cif_duty"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "cmbs_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "dealer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "dealer_margin"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "dealer_margin_percent"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "distributor_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "distributor_margin"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "distributor_margin_percent"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "dockside_preparation"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "extracted_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "fob"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "import_duty"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "import_duty_percent"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "importer_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "inland_freight"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "local_cost"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "marine_insurance"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "marine_insurance_percent"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "ocean_freight"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "pds"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "pla"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "price_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "spec_code"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "tms_margin"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "tms_margin_percent"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "vehicle_plant_abbrv"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "vehicle_plant_id"
+    },
+    {
+      "userrolename": "tbdp-irm-profit-sen",
+      "dbname": "vehicle_pricing_trn",
+      "elementname": "cal_tms_cbu_ps",
+      "column_name": "wharfage_and_handling"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-irm-profit-sen%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

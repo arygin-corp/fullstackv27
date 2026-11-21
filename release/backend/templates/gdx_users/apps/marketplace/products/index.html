@@ -4,15 +4,11 @@
 {% block extra_javascript %}
 
     <!-- Make sure jQuery loads first -->
-    <script src="{% static 'gdx_theme/libs/jquery/dist/jquery.min.js' %}" async></script>
-
-    <!-- DataTables core -->
-    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}" async></script>
-    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}" async></script>
-    
-    <!-- Responsive extension -->
-    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}" async></script>
-    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}" async></script>
+    <script src="{% static 'gdx_theme/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
 
     <script>
         $(document).ready(function() {
@@ -20,7 +16,7 @@
                 "processing": true,       // Show processing indicator
                 "serverSide": true,       // Enable server-side processing
                 "ajax": {
-                    "url": "{% url 'marketplace:index' %}", // URL to your Django IndexView
+                    "url": "{% url 'marketplace:product-index' %}", // URL to your Django IndexView
                     "type": "GET",
                     "data": function (d) {
                         // Custom parameters to send to the server
@@ -36,7 +32,9 @@
                 },
                 "columns": [
                     { "data": "id", "className": "text-center" },
+                    { "data": "image", "orderable": false, "searchable": false, "className": "text-center" },
                     { "data": "products" },
+                    { "data": "data_steward" },
                     { "data": "domains", "className": "text-center", "width": "280px" }, 
                     { "data": "datatypes", "className": "text-center" },
                     // { "data": "classifications", "className": "text-center" },
@@ -99,7 +97,7 @@
                 <div class="d-flex align-items-center">
                     <h5 class="mb-0 card-title flex-grow-1">{{ total_products_count }} Products</h5>
                     <div class="flex-shrink-0">
-                        <a href="{% url 'marketplace:create' %}" class="btn btn-primary">Add New Product</a>
+                        <a href="{% url 'marketplace:product-create' %}" class="btn btn-primary">Add New Product</a>
                         {# Refresh button now reloads the DataTable via AJAX #}
                         <a href="javascript:void(0);" class="btn btn-light" onclick="$('#products-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
                         <!-- <div class="dropdown d-inline-block">
@@ -153,7 +151,9 @@
                         <thead>
                             <tr>
                                <th scope="col" class="text-center">ID</th>
-                                <th scope="col">Products</th>
+                                <th scope="col" class="text-center">Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Data Steward</th>
                                 <th scope="col" class="text-center">Domains</th>
                                 <th scope="col" class="text-center">Datatypes</th>
                                 <!-- <th scope="col" class="text-center">Classifications</th> -->

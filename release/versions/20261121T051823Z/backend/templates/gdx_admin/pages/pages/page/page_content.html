@@ -1,0 +1,2 @@
+{% load page_blocks %}
+{% for block in version.blocks.all %}{% render_content_block block %}{% empty %}<p>No content blocks.</p>{% endfor %}

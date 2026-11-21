@@ -1,0 +1,533 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "consumer_system_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "event_impact_cd"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "event_impact_type"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "event_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "trend_irm_event",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "consumer_system_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "param_desc"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "param_granularity"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "param_granularity_value"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "param_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "param_value"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_base_irm_parmeter_make",
+      "column_name": "start_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "consumer_system_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_desc"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_frequency"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_granularity"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_granularity_value"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_impact_cd"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_impact_type"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "event_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "file_nm_timestamp"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "irm_event_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_event",
+      "column_name": "start_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "consumer_system_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "file_nm_timestamp"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "irm_param_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "param_desc"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "param_granularity"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "param_granularity_value"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "param_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "param_value"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "irm_parameter",
+      "column_name": "start_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "irm_segment_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_segment",
+      "column_name": "source_segment_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "irm_data_src_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "map_source",
+      "column_name": "source_data_src_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "scenario_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "scenario",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_set_bus_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_set_category"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_set_entity"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_source_desc"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "data_src_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "owner_dept_nm"
+    },
+    {
+      "userrolename": "tbdp-reference-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "source",
+      "column_name": "raw_data_set_row_id"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-reference-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "adgroup": "tbdp-irm-pl-fio-sen",
+  "slugs": [
+    "profit-and-loss-factory-installed-options-sensitive"
+  ],
+  "databases": [
+    "finance_profit_trn"
+  ],
+  "tables": [
+    "profit_loss_fio",
+    "profit_loss_fio_fleet"
+  ],
+  "columns": [
+    "audit_create_date",
+    "brand",
+    "cbu_nap",
+    "description_f",
+    "ent_fio_opt_gp_usd",
+    "ent_fio_opt_gp_wo_pen_usd",
+    "exchange_rate_jpytousd",
+    "fio_opt_mix_pct",
+    "fio_option_code",
+    "fio_option_flag",
+    "fio_option_name",
+    "generated_file_name",
+    "model_number",
+    "model_plant_code",
+    "model_year",
+    "na_fio_opt_gp_usd",
+    "na_fio_opt_gp_wo_pen_usd",
+    "plant",
+    "plant_code",
+    "qty_fio_opt",
+    "qty_model_plant",
+    "qty_series_plant",
+    "region_code",
+    "region_name",
+    "sales_period",
+    "series",
+    "src_model_year",
+    "tema_fio_opt_gp_usd",
+    "tema_fio_opt_gp_wo_pen_usd",
+    "tmc_fio_opt_gp_usd",
+    "tmc_fio_opt_gp_wo_pen_usd",
+    "tms_fio_opt_gp_usd",
+    "tms_fio_opt_gp_wo_pen_usd",
+    "veh_type"
+  ]
+}

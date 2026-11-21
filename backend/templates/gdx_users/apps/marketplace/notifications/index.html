@@ -9,42 +9,37 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body border-bottom">
-                <h5 class="mb-0 card-title">{{ reviews|length }} Approval notifications</h5>
+                <h5 class="mb-0 card-title">{{ approvals|length }} waiting for approval</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table align-middle w-100">
                         <thead>
                             <tr>
-                                <th>Review</th>
-                                <th>Product</th>
+                                <th>Item</th>
+                                <th>Area</th>
                                 <th>Approval step</th>
-                                <th class="text-center">Workflow</th>
+                                <th class="text-center">Open</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for review in reviews %}
+                            {% for item in approvals %}
                                 <tr>
-                                    <td>{{ review.title|default:"Review" }}</td>
-                                    <td>{{ review.product.name|default:"—" }}</td>
                                     <td>
-                                        {% if review.status == "approved" %}
-                                            Published
-                                        {% elif review.status == "rejected" %}
-                                            Not approved
-                                        {% else %}
-                                            Waiting for the Content Manager Group
-                                        {% endif %}
+                                        <strong>{{ item.title }}</strong>
+                                        {% if item.detail %}<div class="text-muted">{{ item.detail }}</div>{% endif %}
                                     </td>
+                                    <td>{{ item.area }}</td>
+                                    <td>{{ item.step }}</td>
                                     <td class="text-center">
-                                        <a href="{% url 'marketplace:review-workflow' review.pk %}" title="Workflow">
+                                        <a href="{{ item.url }}" title="Open">
                                             <i class="bx bx-git-branch align-bottom" style="font-size: 20px;"></i>
                                         </a>
                                     </td>
                                 </tr>
                             {% empty %}
                                 <tr>
-                                    <td colspan="4" class="text-muted">No approval notifications yet.</td>
+                                    <td colspan="4" class="text-muted">Nothing is waiting for approval.</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

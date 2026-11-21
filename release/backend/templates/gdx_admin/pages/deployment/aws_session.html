@@ -1,0 +1,34 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS session{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}
+<style>
+.aws-paste{display:block;width:100%;min-height:180px;margin:0 0 8px;padding:12px 14px;border:1px solid #d7deea;border-radius:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;line-height:1.45}
+.aws-status{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;font-weight:700}
+.aws-status i{width:10px;height:10px;border-radius:50%;background:#16a34a}
+.aws-status.is-expired i{background:#dc2626}
+</style>
+{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
+<section class="deploy-panel" style="max-width:760px">
+    <h2>Britive checkout</h2>
+    <p class="aws-status{% if not summary.active %} is-expired{% endif %}"><i aria-hidden="true"></i>{% if summary.active %}Active until {{ summary.expires_at }}{% else %}No active session{% endif %}</p>
+    {% if summary.account or summary.role or summary.key_hint %}
+    <p class="deploy-note">{{ summary.account }} {{ summary.role }}{% if summary.key_hint %} · {{ summary.key_hint }}{% endif %}{% if summary.actor %} · saved by {{ summary.actor }}{% endif %}</p>
+    {% endif %}
+    <p>Check out radar-admin-nonprod in Britive, copy the credential export, and paste it here. This profile is used only for deployments. It lasts 8 hours.</p>
+    {% if can_save %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="checkout">Checkout</label>
+        <textarea class="aws-paste" id="checkout" name="checkout" autocomplete="off" spellcheck="false" placeholder="export AWS_ACCESS_KEY_ID=...&#10;export AWS_SECRET_ACCESS_KEY=...&#10;export AWS_SESSION_TOKEN=..."></textarea>
+        <div class="settings-actions" style="display:flex;justify-content:flex-end"><button class="btn btn-primary" type="submit">Save session</button></div>
+    </form>
+    {% else %}
+    <p>Only a SuperAdmin can replace the session.</p>
+    {% endif %}
+</section>
+</main>
+{% endblock %}

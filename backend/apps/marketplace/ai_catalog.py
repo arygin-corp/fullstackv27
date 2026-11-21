@@ -1087,11 +1087,15 @@ def _header_closeness(query, text, matcher):
         return 1.0
     if len(query) >= 3 and query in text:
         return 0.9
-    if len(text) >= 3 and text in query:
-        return 0.86
+    query_words = [part for part in re.split(r"[^a-z0-9]+", query) if part]
+    text_words = {part for part in re.split(r"[^a-z0-9]+", text) if part}
+    if len(query_words) > 1 and all(word in text_words for word in query_words):
+        return 0.88
+    if len(query_words) != 1:
+        return 0.0
     best = 0.0
     parts = [text]
-    parts.extend(part for part in re.split(r"[^a-z0-9]+", text) if len(part) >= 3 and part != text)
+    parts.extend(part for part in text_words if len(part) >= 3 and part != text)
     for part in parts:
         if abs(len(part) - len(query)) > 3:
             continue

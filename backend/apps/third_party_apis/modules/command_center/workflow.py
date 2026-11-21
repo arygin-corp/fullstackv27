@@ -131,21 +131,39 @@ def _releases(user):
 
 
 def _intakes(user):
+    from apps.third_party_apis.modules.product_intake.access import can_manage_workflow
     from apps.third_party_apis.modules.product_intake.models import ProductIntake
 
-    waiting = [
-        ProductIntake.Status.SUBMITTED,
-        ProductIntake.Status.ASSIGNED,
-        ProductIntake.Status.UNDER_REVIEW,
-        ProductIntake.Status.RESUBMITTED,
-    ]
-    rows = ProductIntake.objects.filter(status__in=waiting).values("id", "product_name", "status", "created_at").order_by("-created_at")[:50]
-    allowed = _content_manager(user)
+    steps = {
+        ProductIntake.Status.SUBMITTED: ("start_review", "Start review"),
+        ProductIntake.Status.ASSIGNED: ("start_review", "Start review"),
+        ProductIntake.Status.RESUBMITTED: ("start_review", "Start review"),
+        ProductIntake.Status.UNDER_REVIEW: ("", ""),
+        ProductIntake.Status.APPROVED: ("create_draft", "Add as draft"),
+        ProductIntake.Status.PRODUCT_DRAFT: ("curate", "Mark curated"),
+        ProductIntake.Status.CURATED: ("activate", "Publish"),
+    }
+    rows = ProductIntake.objects.filter(status__in=steps).values("id", "product_name", "status", "submitted_at", "created_at").order_by("-submitted_at", "-id")[:50]
+    allowed = user.is_superuser or can_manage_workflow(user)
     labels = dict(ProductIntake.Status.choices)
-    return [
-        _item("intake", row["id"], row["product_name"] or f"Intake {row['id']}", "Product intake", "Product intake", labels.get(row["status"], row["status"]), row["created_at"], allowed)
-        for row in rows
-    ]
+    items = []
+    for row in rows:
+        action, label = steps[row["status"]]
+        items.append(
+            _item(
+                "intake",
+                row["id"],
+                row["product_name"] or f"Intake {row['id']}",
+                "Product intake",
+                "Product intake",
+                labels.get(row["status"], row["status"]),
+                row["submitted_at"] or row["created_at"],
+                allowed,
+                action,
+                label,
+            )
+        )
+    return items
 
 
 def _page_tasks(user):
@@ -208,7 +226,7 @@ def pending_approvals(user):
 
 
 def decide_approval(user, kind, object_id, decision, comment):
-    allowed = {"approved", "rejected", "submit", "approve", "publish", "archive"}
+    allowed = {"approved", "rejected", "submit", "approve", "publish", "archive", "start_review", "create_draft", "curate", "activate"}
     if decision not in allowed:
         raise ValidationError("Choose a workflow action.")
     comment = (comment or "").strip()
@@ -276,12 +294,32 @@ def _decide_release(user, object_id, decision):
 
 
 def _decide_intake(user, object_id, decision, comment):
-    from apps.third_party_apis.modules.product_intake.services import approve_intake, reject_intake
+    from apps.third_party_apis.modules.product_intake.services import (
+        activate_marketplace_product,
+        approve_intake,
+        create_draft_product,
+        curate_product,
+        reject_intake,
+        start_review,
+    )
 
-    if decision == "approved":
-        approve_intake(intake_id=object_id, reason=comment or "Approved from the Command Center.", actor=user)
+    reason = comment or "Updated from the Command Center."
+    if decision == "start_review":
+        start_review(intake_id=object_id, actor=user)
         return
-    reject_intake(intake_id=object_id, reason=comment or "Rejected from the Command Center.", comments=comment or "Please correct the intake and resubmit.", actor=user)
+    if decision == "approved":
+        approve_intake(intake_id=object_id, reason=reason, actor=user)
+        return
+    if decision == "create_draft":
+        create_draft_product(intake_id=object_id, reason=reason, actor=user)
+        return
+    if decision == "curate":
+        curate_product(intake_id=object_id, reason=reason, actor=user)
+        return
+    if decision == "activate":
+        activate_marketplace_product(intake_id=object_id, reason=reason, actor=user)
+        return
+    reject_intake(intake_id=object_id, reason=reason, comments=comment or "Please correct the intake and resubmit.", actor=user)
 
 
 def _decide_page(user, object_id, decision, comment):

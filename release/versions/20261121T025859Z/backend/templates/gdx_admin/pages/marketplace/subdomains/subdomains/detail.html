@@ -1,0 +1,40 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% load web_tags %}
+{% block title %}{{ subdomain.name }} | Subdomains{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:subdomain_list' as list_url %}
+    
+    <div class="team-detail-bar">
+        <div class="team-detail-actions">
+            <a class="integration-button" href="{% url 'marketplace_admin:subdomain_update' subdomain.pk %}">Edit</a>
+            <a class="integration-button" href="{% url 'marketplace_admin:subdomain_delete' subdomain.pk %}">Delete</a>
+        </div>
+    </div>
+    <section class="team-panel">
+        <h2>Subdomain</h2>
+        <div class="team-facts">
+            <div class="team-fact"><span>Name</span><strong>{{ subdomain.name }}</strong></div>
+            <div class="team-fact"><span>Domain</span><strong>{{ subdomain.domain }}</strong></div>
+            <div class="team-fact"><span>Active</span><strong>{% if subdomain.is_active %}{% status_badge "Active" %}{% else %}{% status_badge "Inactive" %}{% endif %}</strong></div>
+        </div>
+        <h2>Description</h2>
+        <p class="team-description">{{ subdomain.description|striptags|default:"No description yet." }}</p>
+    </section>
+    {% if subdomain.image and subdomain.image.name != "default.jpg" %}
+    <section class="team-panel" style="margin-top:18px">
+        <h2>Image</h2>
+        <div class="team-images">
+            <div class="team-image-card">
+                <span class="team-label">Subdomain image</span>
+                <img src="{{ subdomain.image.url }}" alt="">
+            </div>
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}

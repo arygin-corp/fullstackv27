@@ -7835,6 +7835,12 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
       "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
       "elementname": "ppeds_nongen_pc_mapping_mse",
+      "column_name": "nlprtno"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_nongen_pc_mapping_mse",
       "column_name": "price_class_manual_mapping"
     },
     {
@@ -8561,6 +8567,18 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
       "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
       "elementname": "ppeds_price_manual_upload",
+      "column_name": "breakeven_volume"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
+      "column_name": "breakeven_volume_pd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
       "column_name": "dealer_price"
     },
     {
@@ -8597,6 +8615,18 @@
       "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
       "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
       "elementname": "ppeds_price_manual_upload",
+      "column_name": "projected_impact"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
+      "column_name": "projected_impact_pd"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
       "column_name": "reason_for_price_change"
     },
     {
@@ -8610,6 +8640,18 @@
       "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
       "elementname": "ppeds_price_manual_upload",
       "column_name": "tentative_price_code"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
+      "column_name": "volume_uplift_100_pct"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_indirectparts_serviceparts_transactions_trn_ext",
+      "elementname": "ppeds_price_manual_upload",
+      "column_name": "volume_uplift_100_pct_pd"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
@@ -11922,6 +11964,48 @@
       "dbname": "parts_transactions_trn_ext",
       "elementname": "distributor_order_analysis",
       "column_name": "trans_seq_num"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "cc"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "date"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "from_0"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "messageid"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "messagetimestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "subject"
+    },
+    {
+      "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",
+      "dbname": "parts_transactions_trn_ext",
+      "elementname": "email_messages",
+      "column_name": "to_0"
     },
     {
       "userrolename": "tbdp-parts-indirectparts-serviceparts-transactions",

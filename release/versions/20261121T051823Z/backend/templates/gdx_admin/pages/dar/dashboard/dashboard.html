@@ -1,0 +1,19 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}DAR Operations Center | DAR Administration{% endblock %}
+{% block content %}
+
+<div class="container-fluid px-3 px-lg-4 py-4 dar-dashboard-page">
+  
+  {% include "gdx_admin/pages/dar/dashboard/includes/_header.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/includes/_quick_actions.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_operations_metrics.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_health_center.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_charts.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_governance_metrics.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_top_forms.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_recent_submissions.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_aging.html" %}
+  {% include "gdx_admin/pages/dar/dashboard/partials/_activity_feed.html" %}
+</div>
+{% endblock %}

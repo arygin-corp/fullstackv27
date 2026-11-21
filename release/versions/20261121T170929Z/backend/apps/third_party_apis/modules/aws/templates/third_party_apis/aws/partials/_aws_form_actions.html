@@ -1,0 +1,4 @@
+<div class="card-footer d-flex flex-column flex-sm-row justify-content-end gap-2">
+  <a class="btn btn-light border" href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}"><i class="ti ti-arrow-left me-1"></i>Cancel</a>
+  <button class="btn btn-primary" type="submit"><i class="ti ti-device-floppy me-1"></i>{{ submit_label|default:"Save" }}</button>
+</div>

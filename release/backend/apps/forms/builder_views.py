@@ -10,7 +10,7 @@ from .services.schema_builder import export_schema, save_schema, validate_schema
 @staff_member_required
 def builder(request, pk):
     form = get_object_or_404(FormDefinition, pk=pk)
-    return render(request, "gdx_admin/apps/dar/forms/builder.html", {"form_definition": form, "initial_schema": export_schema(form)})
+    return render(request, "gdx_admin/pages/dar/forms/builder.html", {"form_definition": form, "initial_schema": export_schema(form)})
 
 @staff_member_required
 @require_http_methods(["GET", "PUT"])

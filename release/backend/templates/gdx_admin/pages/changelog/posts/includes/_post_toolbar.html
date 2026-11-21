@@ -1,0 +1,16 @@
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+	
+	<div class="d-flex flex-wrap gap-2">
+        {% if show_compare %} 
+        <a class="btn btn-light border" href="{% url 'changelog:post-compare' %}">
+			<i class="ti ti-arrows-diff me-1"></i>
+            Compare releases 
+        </a>
+        {% endif %}
+        {% if show_create and perms.changelog.add_post %} 
+        <a class="btn btn-primary" href="{% url 'changelog:post-create' %}">
+			<i class="ti ti-plus me-1"></i>New release 
+        </a>
+        {% endif %} 
+    </div>
+</div>

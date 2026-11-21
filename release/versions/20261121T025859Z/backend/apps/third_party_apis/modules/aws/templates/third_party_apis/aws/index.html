@@ -1,0 +1,8 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}AWS Integrations{% endblock %}
+{% block content %}
+{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS Integrations" hero_description="Logical AWS resources and environment-specific configurations." hero_metric_label="Selected Environment" hero_metric=selected_environment %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with page_heading="AWS resource catalog" page_description="Review and configure AWS resources by environment." selected_environment=selected_environment show_parity=True %}
+{% include "third_party_apis/aws/partials/_aws_environment_nav.html" with environments=environments selected_environment=selected_environment %}
+{% include "third_party_apis/aws/partials/_aws_resource_grid.html" with groups=groups selected_environment=selected_environment %}
+{% endblock %}

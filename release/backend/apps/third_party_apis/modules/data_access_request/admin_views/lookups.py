@@ -14,7 +14,7 @@ def _breadcrumbs(*items):
 
 def project_codes(request):
     page = _page(request, ProjectAreaCode.objects.order_by('name'))
-    return render(request, 'gdx_admin/apps/dar/lookups/project_codes.html', {'project_codes': page.object_list, 'page_obj': page, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Lookups', None), ('Project Codes', None))})
+    return render(request, 'gdx_admin/pages/dar/lookups/project_codes.html', {'project_codes': page.object_list, 'page_obj': page, 'breadcrumbs': _breadcrumbs(('DAR', None), ('Lookups', None), ('Project Codes', None))})
 
 def company_holidays(request):
-    return render(request, 'gdx_admin/apps/dar/lookups/company_holidays.html', {'holidays': CompanyHoliday.objects.order_by('month', 'day', 'name'), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Lookups', None), ('Company Holidays', None))})
+    return render(request, 'gdx_admin/pages/dar/lookups/company_holidays.html', {'holidays': CompanyHoliday.objects.order_by('month', 'day', 'name'), 'breadcrumbs': _breadcrumbs(('DAR', None), ('Lookups', None), ('Company Holidays', None))})

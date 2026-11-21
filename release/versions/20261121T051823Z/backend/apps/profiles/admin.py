@@ -1,0 +1,52 @@
+# apps/profiles/admin.py
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
+from apps.profiles.access import actor_can_edit_employee_type
+from apps.profiles.models import Profile
+
+# Define an inline admin descriptor for Profile model
+# which acts a bit like a singleton
+class ProfileInline(admin.StackedInline):
+    model = Profile
+    can_delete = False
+    verbose_name_plural = 'profile'
+    list_display = ('first_name', 'last_name', 'user_email', 'username', 'is_staff', 'is_verified')
+    list_filter = ('is_verified',)
+    search_fields = ('user__email',)
+
+    # Only superadmins can toggle the verified checkbox
+    def get_readonly_fields(self, request, obj=None):
+        readonly = []
+        if not request.user.is_superuser:
+            readonly.append("is_verified")
+        if not actor_can_edit_employee_type(request.user):
+            readonly.append("employee_type")
+        return tuple(readonly)
+
+# Define a new User admin
+class UserAdmin(BaseUserAdmin):
+    inlines = (ProfileInline,)
+
+    def save_formset(self, request, form, formset, change):
+        # post_save already created this user's profile. Reuse that row so the
+        # inline updates it instead of inserting a second one.
+        if formset.model is Profile and form.instance.pk:
+            existing = Profile.objects.filter(user_id=form.instance.pk).first()
+            if existing is not None:
+                for inline_form in formset.forms:
+                    if not getattr(inline_form, "cleaned_data", None):
+                        continue
+                    if inline_form.cleaned_data.get("DELETE"):
+                        continue
+                    if not inline_form.instance.pk:
+                        inline_form.instance.pk = existing.pk
+                        break
+        super().save_formset(request, form, formset, change)
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
+
+# Optionally, you can still register Profile separately if you want a top-level link
+# admin.site.register(Profile)

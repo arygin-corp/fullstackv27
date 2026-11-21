@@ -1,0 +1,236 @@
+{% extends 'vora/elements/layouts/admin.html' %}
+{% load static widget_tweaks %}
+
+
+{% block additional_css %}
+
+{% endblock %}
+
+{% block message %}
+{% include 'vora/elements/alert.html' %}
+{% endblock %}
+
+{% block content %}
+<form  method="post" enctype="multipart/form-data" novalidate autocomplete="off">
+   {% csrf_token %}
+   <div class="row">
+      <div class="col-xl-3 col-lg-4">
+         <div class="clearfix">
+            <div class="card card-bx author-profile m-b30">
+               <div class="card-body">
+
+                     <div class="author-profile mb-3 mt-3">
+                        
+
+                        <div class="avatar-upload">
+                           <div class="avatar-edit">
+                              {{ form.avatar|attr:"type:file" }}
+                              <label for="id_avatar"><i class="fa fa-camera"></i></label>
+                           </div>
+                           <div class="avatar-preview">
+                              <div id="imagePreview" style="background-image: url('{{ form.instance.avatar.url }}');">
+                              </div>
+                           </div>
+                        </div>
+ 
+                     </div>
+                     {%  if form.first_name.value and form.last_name %}
+                     <div class="author-info mb-3">
+                        <h6 class="title">{{form.first_name.value  }}  {{form.last_name.value}}</h6>
+                        {% comment %} <span>Developer</span> {% endcomment %}
+                     </div>
+                     {% endif %}
+
+                  <div class="info-list">
+                     <ul>
+                        <li><a href="{% url 'vora:app-profile' %}">Models</a><span>36</span></li>
+                        <li><a href="{% url 'vora:app-profile' %}">Gallery</a><span>3</span></li>
+                        <li><a href="{% url 'vora:app-profile' %}">Lessons</a><span>1</span></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  <div class="input-group mb-3">
+                     <div class="form-control rounded text-center">Portfolio</div>
+                  </div>
+                  <div class="input-group">
+                     <a href="https://www.dexignlab.com/" class="form-control text-primary rounded text-start ">https://www.dexignlab.com/</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-xl-9 col-lg-8">
+         <div class="card  card-bx m-b30">
+            <div class="card-header">
+               <h6 class="title">Account setup</h6>
+            </div>
+
+             <div  class="profile-form" >
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">First Name {% if form.first_name.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                        {{ form.first_name|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:First Name" }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.first_name.errors }}
+                        </div>
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">Last Name {% if form.last_name.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                        {{ form.last_name|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:Last Name" }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.last_name.errors }}
+                        </div>
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">Role {% if form.groups.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        {{ form.groups|attr:"class:multi-select form-control"|attr:"name:groups[]" }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.groups.errors }}
+                        </div>
+                     </div>
+                     <div class="col-sm-6  d-flex align-items-center mb-0">
+                        <div class="form-check custom-checkbox mb-0 checkbox-primary">
+                              {{ form.is_active|attr:"class:form-check-input"|attr:"type:checkbox"|attr:"checked" }}
+                              <label class="form-check-label" for="is_active">is active</label>
+                        </div>
+
+                    </div>
+                     <div class="col-sm-6 m-b30">
+                        
+                        <label class="form-label">Gender {% if form.gender.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        {{ form.gender|attr:"class:form-control default-select form-control-lg" }}
+                        <div class="text-danger w-100 d-block mt-1 ">
+                        {{ form.gender.errors }}
+                        </div>
+
+
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">Date of Birth {% if form.dob.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        {{ form.dob|attr:"class:form-control"|attr:"type:date"}} 
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.dob.errors }}
+                        </div>
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">Phone Number {% if form.phone_number.field.required %}<span class="text-danger">*</span> {% endif %} </label>
+                        {{ form.phone_number|attr:"type:text"|attr:"class:form-control"|attr:"placeholder:+123456789" }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.phone_number.errors }}
+                        </div>
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                        <label class="form-label">Email {% if form.email.field.required %}<span class="text-danger">*</span> {% endif %}</label>
+                        {{ form.email|attr:"type:email"|attr:"class:form-control"|attr:"placeholder:Email" }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.email.errors }}
+                        </div>
+                     </div>
+                    
+
+                     <div class="col-sm-12 m-b30">
+                        <label class="form-label">About {% if form.about.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        {{ form.about|attr:"class:form-control"|attr:"style:height: 144px;"|attr:"placeholder:Write About YourSelf..." }}
+                        <div class="text-danger w-100 d-block mt-1">
+                        {{ form.about.errors }}
+                        </div>
+                     </div>
+
+
+
+
+
+
+                     {% if form.password1 %}
+                     <div class="col-sm-6 m-b30">
+                       <label class="form-label">Password {% if form.password1.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        <div class="input-group transparent-append">
+                           
+                           
+                           {{ form.password1|attr:"class:form-control"|attr:"placeholder:Password"|attr:"id:dz-password"|attr:"type:password" }}
+                           <span class="input-group-text show-pass"> 
+                           <i class="fa fa-eye-slash"></i>
+                           <i class="fa fa-eye"></i>
+                           </span>
+                           <div class="text-danger w-100 d-block mt-1">
+                           {{ form.password1.errors }}
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="col-sm-6 m-b30">
+                       <label class="form-label">Confirm Password {% if form.password2.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+                        <div class="input-group transparent-append">
+                         
+                           
+                           {{ form.password2|attr:"class:form-control"|attr:"placeholder:Confirm Password"|attr:"id:dz-con-password"|attr:"type:password" }}
+                           <span class="input-group-text show-con-pass"> 
+                           <i class="fa fa-eye-slash"></i>
+                           <i class="fa fa-eye"></i>
+                           </span>
+                           <div class="text-danger w-100 d-block mt-1">
+                           {{ form.password2.errors }}
+                           </div>
+                        </div>
+                     </div>
+                     {% endif %}
+
+
+
+
+
+
+
+                  </div><!--RowEnd-->
+               </div>
+               <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <a href="{% url 'change_password' %}" class="text-primary btn-link">Change your password?</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>	
+</form>
+
+
+
+{% endblock %}
+
+
+{% block additional_js %}
+
+
+
+
+<script>
+   function readURL(input) {
+
+      if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+               $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+               $('#imagePreview').hide();
+               $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+      }
+   }
+   $("#id_avatar").change(function() {
+      readURL(this);
+   });
+</script> 
+
+
+<script>
+   $(".multi-select").select2({
+      placeholder: "Select the Role"
+  });
+</script>
+
+
+{% endblock %}
+
+

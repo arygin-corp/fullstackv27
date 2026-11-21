@@ -1,0 +1,6 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class StreamConnection(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);provider=models.CharField(max_length=60);configuration=models.JSONField(default=dict);secret_reference=models.CharField(max_length=255,blank=True);enabled=models.BooleanField(default=False)
+class StreamSubscription(TimeStampedModel):connection=models.ForeignKey(StreamConnection,related_name='subscriptions',on_delete=models.CASCADE);topic=models.CharField(max_length=255);consumer_group=models.CharField(max_length=180);filter=models.JSONField(default=dict);handler_key=models.CharField(max_length=180);enabled=models.BooleanField(default=True);checkpoint=models.JSONField(default=dict)
+class StreamPublication(TimeStampedModel):connection=models.ForeignKey(StreamConnection,on_delete=models.CASCADE);topic=models.CharField(max_length=255);key=models.CharField(max_length=255,blank=True);payload=models.JSONField(default=dict);headers=models.JSONField(default=dict);status=models.CharField(max_length=30,default='pending');attempts=models.PositiveIntegerField(default=0);error=models.TextField(blank=True)

@@ -43,6 +43,15 @@ SECTION_LABELS = {
     "data_usage": "Data Usage",
 }
 
+def checkout_control_group(product):
+    """Use the alternate approver sys_id instead of the data domain control group."""
+    approver = getattr(product, "alt_approver", None)
+    if approver is not None:
+        return str(getattr(approver, "sys_id", "") or "")
+    domain = getattr(product, "one_ts_domain", None)
+    return str(getattr(product, "control_group", None) or getattr(domain, "control_group", "") or "")
+
+
 def product_value(product, *names, default=None):
     for name in names:
         value = getattr(product, name, None)

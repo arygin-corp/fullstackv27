@@ -1,0 +1,286 @@
+	{% extends 'gdx/elements/layouts/admin.html' %}
+{% load static %}
+
+{% block additional_css %}
+ 
+{% endblock %}
+
+
+
+{% block message %}
+{% include 'gdx/elements/alert.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div id="message">
+</div>     
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Users Table</h4>
+                    
+                    <div class="d-flex">
+
+                        {% if perms.users.delete_authuser %}
+                       
+                        <button type="submit" id="delete_multiple_btn" class="btn light btn-outline-primary btn-sm me-2 ">Delete</button>
+                        
+                        {% endif %}
+
+                        {% if perms.users.add_authuser %}
+                        <a href="{% url 'add-user' %}" class="btn btn-primary btn-sm ">ADD USER  <span class="btn-icon-end">
+                            <i class="fa fa-plus"></i></span>
+                        </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th style="width:50px;">
+                                        <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+                                            <input  type="checkbox" class="form-check-input" id="checkAll" value="">
+                                            <label class="form-check-label" for="checkAll"></label>
+                                        </div>
+                                    </th>
+                                   
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>Groups</th>
+                                    <th>Mobile</th>
+                                    <th>Date of Birth</th>
+                                    <th>Status</th>
+
+
+                                    {% if perms.users.delete_authuser or perms.users.change_authuser or perms.auth.change_permission %}
+                                    <th></th>
+                                    {% endif %}
+
+
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% csrf_token %}
+                                {% for user in user_list %}
+                                <tr id="{{ user.id }}">
+                                    <td>
+                                        <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+                                            <input name="user_id[]" type="checkbox" class="form-check-input" value="{{ user.id }}">
+                                            <label class="form-check-label" for="checkbox-{{ user.id }}"></label>
+                                        </div>
+                                    </td>
+
+
+                                    <td>
+                                        <a href="{% url 'user-details' id=user.id %}">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/media/{{ user.avatar }}" class="rounded-lg me-2" width="24" alt=""> 
+                                            <span class="w-space-no">{{ user.first_name }} {{ user.last_name }}</span>
+                                        </div>
+                                    </a>
+                                    </td>
+                                    <td><strong>{{ user.email }}</strong></td>
+                                    <td>{{ user.gender }}</td>
+                                    
+                                   
+                                    <td>	
+                                        {% for g in user.groups.all %}
+                                        <span class="badge  badge-xs light badge-primary">{{ g.name }}</span>
+                                        {% endfor %}
+                                    </td>
+                                    <td>{{ user.phone_number }}</td>
+                                    <td>{{ user.dob }}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if user.is_active %}
+                                            <i class="fa fa-circle text-success me-1"></i> 
+                                            {% else %} 
+                                            <i class="fa fa-circle text-dark me-1"></i> 
+
+                                            {% endif %}
+                                        </div>
+                                    
+                                    </td>
+                                    <td>
+                                        <div class="sweetalert">
+                                            <div class="d-flex">
+
+                                                {% if perms.users.change_authuser %}
+                                                <a href="{% url 'edit-user' id=user.id %}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                {% endif %}
+                                                {% if perms.auth.change_permission %}
+                                                <a href="{% url 'assign-permissions-to-user' id=user.id %}" class="btn btn-success shadow btn-xs sharp me-1"><i class="fa fa-shield"></i></a>
+                                                {% endif %}
+                                                {% if perms.users.delete_authuser %}
+                                                <a href="{% url 'delete-user' id=user.id %}" class="btn btn-danger shadow btn-xs sharp sweet-success-cancel"><i class="fa fa-trash"></i></a>
+                                                {% endif %}
+                                            </div>
+                                    </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <nav mt-5>
+
+                        <p>
+                            <span class="current">
+                            Page {{ user_list.number }} of {{ user_list.paginator.num_pages }}.
+                           </span> 
+                           </p>
+                           
+
+                        <ul class="pagination pagination-gutter  justify-content-end">
+                            
+                                <li class="page-item page-indicator ">
+                                    <a class="page-link" href="{% if user_list.has_previous %}
+                                                                ?page={{ user_list.previous_page_number }}
+                                                                {% else %}
+                                                                javascript:void(0);
+                                                                {% endif %}">
+                                        <i class="la la-angle-left"></i></a>
+                                </li>
+
+                            {% for i in user_list.paginator.page_range|slice:":3" %}
+
+                                <li class="page-item {% if user_list.number == i %}
+                                                    active{% endif %}"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            
+                            {% endfor %}
+
+                            
+                            {% if user_list.number > 3 %}
+                            <li class="page-item active"><a class="page-link" href="?page={{ user_list.number }}">{{ user_list.number }}</a></li>
+                            {% endif %}
+                            
+                            <li class="page-item page-indicator ">
+                                <a class="page-link"  href="{% if user_list.has_next %}
+                                                            ?page={{ user_list.next_page_number }}
+                                                            {% else %}
+                                                            javascript:void(0);
+                                                            {% endif %}">
+                                    <i class="la la-angle-right"></i></a>
+                            </li>
+                            <li>
+
+                              
+
+                            </li>
+                        </ul>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+
+{% block additional_js %}
+
+<script>
+
+
+$(document).ready(function(){
+
+
+$('#delete_multiple_btn').on('click', function () {
+
+    if(confirm("Are you sure you want to delete items? ")){
+        var id = [];
+       
+        $(':checkbox:checked').each(function(i){
+            id[i]=$(this).val();
+        });
+
+        if(id.length===0){
+            alert("Please select items to delete")
+        }else{
+            console.log(id);
+            $.ajax({
+                url:"/delete-multiple-user/",
+                method:"POST",
+                dataType:'json',
+                data:{
+                    id,
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success:function(res){
+                    if(res.warning){
+                        document.getElementById("message").innerHTML += '<div class="alert alert-warning alert-dismissible alert-alt solid fade show">\
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">\
+                            </button>'+res.warning+'</div>';
+
+                    }
+                    if(res.success){
+
+                        for(var i=0; i < id.length; i++){
+                            $('tr#'+id[i]+'').css('background-color','#ccc');
+                            // $('tr#'+id[i]+'').fadeOut('slow');
+                             $('tr#'+id[i]+'').remove(); 
+
+
+                        }
+                        document.getElementById("message").innerHTML += '<div class="alert alert-success alert-dismissible alert-alt solid fade show">\
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">\
+                            </button>'+res.success+'</div>';
+
+
+
+                    }
+                    
+                }
+            })
+        }
+    }
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+    $('.sweet-success-cancel').on('click', function (event) {
+           event.preventDefault();
+           const url = $(this).attr('href');
+   
+           Swal.fire({
+               title: 'Are you sure?',
+               text: "You won't be able to revert this!",
+               type: "warning",
+               icon: 'question',
+               showCancelButton: true,
+               confirmButtonText: "Yes, delete it !!",
+               confirmButtonText: 'Delete',
+               confirmButtonColor: "#DD6B55"
+               
+           }).then((result) => {
+               if (result.value) {
+                   window.location.href = url;
+               } else if (result.dismiss === Swal.DismissReason.cancel) {
+                   event.preventDefault();
+               }
+           })
+       });
+   </script>
+   
+{% endblock %}
+

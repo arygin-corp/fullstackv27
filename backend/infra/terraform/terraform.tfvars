@@ -4,7 +4,6 @@ nonprod_account_id  = "963334842848"
 prod_account_id     = "471550468381"
 aws_region          = "us-west-2"
 target_instance_id  = "i-0c1677fe098c47416"
-db_password         = "Z2x76vU4VQes9XJ2xWmnkZJx"
 public_subnet_ids   = ["subnet-0c85c72661638ee5f"]
 private_subnet_ids  = ["subnet-0c85c72661638ee5f", "subnet-042fe53ab61be9b0b"]
 alb_certificate_arn = "arn:aws:acm:us-west-2:963334842848:certificate/82a5f077-9a3f-4356-a5b7-a949b151e5ff"

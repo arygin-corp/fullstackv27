@@ -1,0 +1,20 @@
+<section class="card designer-panel">
+	<div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+		<div>
+			<h3 class="h6 mb-1">Builder canvas</h3>
+			<p class="small text-muted mb-0">Drag, configure, and reorder blocks.</p>
+		</div>
+		<div class="d-flex gap-2">
+			<div class="btn-group btn-group-sm">
+				<button type="button" class="btn btn-outline-secondary active" data-preview-width="100%">Desktop</button>
+				<button type="button" class="btn btn-outline-secondary" data-preview-width="720px">Tablet</button>
+				<button type="button" class="btn btn-outline-secondary" data-preview-width="390px">Mobile</button>
+			</div>
+			<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#templatePreviewModal">
+				<i class="ti ti-eye me-1"></i>Large preview </button>
+		</div>
+	</div>
+	<div class="card-body bg-light p-3">
+		<div id="builderCanvas" class="designer-canvas bg-white border rounded-3 p-3 mx-auto" data-empty-text="Drag or click a content block to begin."></div>
+	</div>
+</section>

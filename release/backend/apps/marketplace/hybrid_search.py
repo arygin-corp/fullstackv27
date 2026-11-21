@@ -1,4 +1,5 @@
 import re
+import time
 import unicodedata
 from collections import Counter
 from difflib import SequenceMatcher
@@ -13,6 +14,8 @@ from django.db.models import (
     IntegerField,
     FloatField,
     ExpressionWrapper,
+    Exists,
+    OuterRef,
 )
 from django.db.models.functions import Coalesce, Greatest
 from pgvector.django import CosineDistance
@@ -35,6 +38,59 @@ SEMANTIC_WEIGHT = 0.35
 FUZZY_THRESHOLD = 0.16
 SEMANTIC_THRESHOLD = 0.20
 SPELLING_THRESHOLD = 0.68
+
+# Ordinary words a person uses in a question. A token in this set is left
+# as typed, even when a catalog word is a close string match.
+ENGLISH_WORDS = frozenset({
+    "a", "an", "the", "and", "or", "but", "nor", "of", "for", "to", "in", "on",
+    "at", "by", "with", "from", "into", "about", "over", "under", "between",
+    "within", "without", "across", "through", "during", "before", "after",
+    "above", "below", "near", "around", "than", "then", "as", "if", "so",
+    "not", "no", "yes", "this", "that", "these", "those", "it", "its", "my",
+    "our", "your", "their", "me", "we", "you", "they", "them", "who", "what",
+    "which", "where", "when", "why", "how", "whose", "whom", "show", "find",
+    "list", "looking", "look", "search", "searching", "see", "get", "give",
+    "tell", "need", "want", "have", "has", "had", "having", "is", "are", "was",
+    "were", "be", "been", "being", "do", "does", "did", "can", "could", "would",
+    "should", "will", "please", "products", "product", "data", "information",
+    "personal", "sensitive", "database", "databases", "table", "tables",
+    "column", "columns", "name", "names", "anything", "something", "everything",
+    "available", "related", "using", "used", "use", "based", "like", "such",
+    "all", "any", "some", "more", "most", "other", "only", "just", "also",
+    "there", "here", "fetch", "pull", "display", "return", "include",
+    "including", "contain", "contains", "containing", "associated", "regarding",
+    "records", "record", "details", "detail", "access", "group", "groups",
+    "where", "does", "dont", "cannot", "cant", "whats", "wheres", "heres",
+    "im", "ive", "id", "lets", "me", "us", "someone", "anyone", "everyone",
+    "kind", "type", "types", "sort", "sorted", "owned", "owner", "owners",
+    "called", "named", "known", "mean", "means", "meaning", "help", "wanted",
+    "needed", "looking", "seek", "seeking", "query", "question", "ask",
+    "asking", "tell", "describe", "described", "belong", "belongs", "belonging",
+})
+
+# Grammar and request words. These are dropped when turning a sentence into
+# the product words to search, such as "looking for customer data" -> "customer data".
+STOP_WORDS = frozenset({
+    "a", "an", "the", "and", "or", "but", "nor", "of", "for", "to", "in", "on",
+    "at", "by", "with", "from", "into", "about", "over", "under", "between",
+    "within", "without", "across", "through", "during", "before", "after",
+    "above", "below", "near", "around", "than", "then", "as", "if", "so",
+    "not", "no", "yes", "this", "that", "these", "those", "it", "its", "my",
+    "our", "your", "their", "me", "we", "you", "they", "them", "who", "what",
+    "which", "where", "when", "why", "how", "whose", "whom", "show", "find",
+    "list", "looking", "look", "search", "searching", "see", "get", "give",
+    "tell", "need", "want", "have", "has", "had", "having", "is", "are", "was",
+    "were", "be", "been", "being", "do", "does", "did", "can", "could", "would",
+    "should", "will", "please", "i", "im", "ive", "id", "lets", "us", "am",
+    "products", "product", "anything", "something", "everything", "just",
+    "also", "there", "here", "dont", "cannot", "cant", "whats", "wheres",
+    "heres", "someone", "anyone", "everyone", "some", "any", "all", "more",
+    "most", "other", "only", "using", "used", "use", "based", "like", "such",
+    "available", "related", "associated", "regarding", "called", "named",
+    "known", "mean", "means", "meaning", "help", "wanted", "needed", "seek",
+    "seeking", "query", "question", "ask", "asking", "describe", "described",
+    "belong", "belongs", "belonging", "me",
+})
 
 FIELD_WEIGHTS = {
     "name": 1.00,
@@ -233,6 +289,13 @@ def build_spelling_vocabulary(queryset):
         "datatype__name",
         "classification__name",
         "keyword__name",
+        "badge__name",
+        "org__name",
+        "org__abbrev",
+        "data_steward__name",
+        "poc_name__name",
+        "business_contact_name__name",
+        "business_sme__name",
     )
 
     for field in fields:
@@ -273,21 +336,36 @@ def find_spelling_correction(token, vocabulary):
     return best_word, best_score
 
 
+def _readable_token(token):
+    return token.strip("?.,!;:\"'`()[]{}")
+
+
 def build_did_you_mean(query, vocabulary):
     normalized = normalize_query(query)
     if len(normalized) < 3:
         return None
 
     vocabulary_set = set(vocabulary)
+    tokens = normalized.split()
+    # A phrase made of real words, or words already in the catalog, is left alone.
+    if len(tokens) >= 2 and all(
+        (bare := _readable_token(token)) in vocabulary_set
+        or bare in ENGLISH_WORDS
+        or len(bare) < 3
+        for token in tokens
+    ):
+        return None
+
     corrected = []
     changed_scores = []
 
-    for token in normalized.split():
-        if token in vocabulary_set:
+    for token in tokens:
+        bare = _readable_token(token)
+        if bare in vocabulary_set or bare in ENGLISH_WORDS or len(bare) < 3:
             corrected.append(token)
             continue
 
-        candidate, score = find_spelling_correction(token, vocabulary)
+        candidate, score = find_spelling_correction(bare, vocabulary)
         if candidate and score >= SPELLING_THRESHOLD:
             corrected.append(candidate)
             changed_scores.append(score)
@@ -305,6 +383,52 @@ def build_did_you_mean(query, vocabulary):
         "query": corrected_query,
         "confidence": round(sum(changed_scores) / len(changed_scores), 4),
     }
+
+
+def content_query(query):
+    """Product words from a sentence. A readable phrase keeps its meaning."""
+    normalized = normalize_query(query)
+    terms = []
+    for token in normalized.split():
+        bare = _readable_token(token)
+        if bare and bare not in STOP_WORDS:
+            terms.append(bare)
+    if not terms:
+        return normalized
+    return " ".join(terms)
+
+
+def term_filter(term):
+    return (
+        Q(name__icontains=term)
+        | Q(sku__icontains=term)
+        | Q(short_desc__icontains=term)
+        | Q(brief_desc__icontains=term)
+        | Q(intended_use__icontains=term)
+        | Q(datatype__name__icontains=term)
+        | Q(classification__name__icontains=term)
+        | Q(data_steward__name__icontains=term)
+        | Q(poc_name__name__icontains=term)
+        | Q(business_contact_name__name__icontains=term)
+        | Q(business_sme__name__icontains=term)
+        | Q(org__name__icontains=term)
+        | Q(org__abbrev__icontains=term)
+        | Q(domain__name__icontains=term)
+        | Q(subdomain_2__name__icontains=term)
+        | Q(subdomain_3__name__icontains=term)
+        | Q(Exists(
+            Product.keyword.through.objects.filter(
+                product_id=OuterRef("pk"),
+                keyword__name__icontains=term,
+            )
+        ))
+        | Q(Exists(
+            Product.badge.through.objects.filter(
+                product_id=OuterRef("pk"),
+                badge__name__icontains=term,
+            )
+        ))
+    )
 
 
 # ============================================================
@@ -755,6 +879,455 @@ def product_to_result(
         )
 
     return result
+
+_SUGGESTION_CACHE = {}
+_SUGGESTION_TTL = 120
+_SUGGESTION_LIMIT = 96
+
+
+def slice_results(results, page, page_size=PAGE_SIZE):
+    total = len(results)
+    total_pages = (total + page_size - 1) // page_size if total else 0
+    start = (page - 1) * page_size
+    return {
+        "count": total,
+        "page": page,
+        "page_size": page_size,
+        "total_pages": total_pages,
+        "has_previous": page > 1 and total_pages > 0,
+        "has_next": page < total_pages,
+        "results": results[start:start + page_size],
+    }
+
+
+def _page_from_bundle(bundle, page):
+    return {**bundle, **slice_results(bundle["results"], page)}
+_VOCAB_CACHE = {"at": 0.0, "words": []}
+_VOCAB_TTL = 600
+
+
+def cached_spelling_vocabulary():
+    now = time.time()
+    if _VOCAB_CACHE["words"] and now - _VOCAB_CACHE["at"] < _VOCAB_TTL:
+        return _VOCAB_CACHE["words"]
+    words = build_spelling_vocabulary(visible_products())
+    _VOCAB_CACHE["at"] = now
+    _VOCAB_CACHE["words"] = words
+    return words
+
+
+def _title_word_match(query):
+    """Product title contains the whole phrase, or the same words in another order."""
+    words = [word for word in re.split(r"[^a-z0-9]+", normalize_query(query)) if word]
+    if len(words) < 2:
+        return Q(pk__in=[])
+    match = Q()
+    for word in words:
+        match &= Q(name__icontains=word)
+    return match
+
+
+def suggestion_matches(query):
+    """Rank a typed query by the field it matches. A person name lists Data Steward products before Contact products."""
+    keyword_hit = Exists(
+        Product.keyword.through.objects.filter(
+            product_id=OuterRef("pk"),
+            keyword__name__icontains=query,
+        )
+    )
+    badge_hit = Exists(
+        Product.badge.through.objects.filter(
+            product_id=OuterRef("pk"),
+            badge__name__icontains=query,
+        )
+    )
+    contact_exact = (
+        Q(poc_name__name__iexact=query)
+        | Q(business_contact_name__name__iexact=query)
+        | Q(business_sme__name__iexact=query)
+    )
+    contact_startswith = (
+        Q(poc_name__name__istartswith=query)
+        | Q(business_contact_name__name__istartswith=query)
+        | Q(business_sme__name__istartswith=query)
+    )
+    contact_contains = (
+        Q(poc_name__name__icontains=query)
+        | Q(business_contact_name__name__icontains=query)
+        | Q(business_sme__name__icontains=query)
+    )
+    return (
+        visible_products()
+        .annotate(keyword_hit=keyword_hit, badge_hit=badge_hit)
+        .filter(
+            Q(name__icontains=query)
+            | _title_word_match(query)
+            | Q(sku__icontains=query)
+            | Q(short_desc__icontains=query)
+            | Q(brief_desc__icontains=query)
+            | Q(datatype__name__icontains=query)
+            | Q(classification__name__icontains=query)
+            | Q(data_steward__name__icontains=query)
+            | contact_contains
+            | Q(keyword_hit=True)
+            | Q(badge_hit=True)
+            | Q(org__name__icontains=query)
+            | Q(org__abbrev__icontains=query)
+        )
+        .annotate(
+            match_tier=Case(
+                When(name__iexact=query, then=Value(0)),
+                When(name__istartswith=query, then=Value(1)),
+                When(name__icontains=query, then=Value(2)),
+                When(_title_word_match(query), then=Value(2)),
+                When(sku__iexact=query, then=Value(3)),
+                When(sku__istartswith=query, then=Value(4)),
+                When(sku__icontains=query, then=Value(5)),
+                When(data_steward__name__iexact=query, then=Value(6)),
+                When(data_steward__name__istartswith=query, then=Value(7)),
+                When(data_steward__name__icontains=query, then=Value(8)),
+                When(contact_exact, then=Value(9)),
+                When(contact_startswith, then=Value(10)),
+                When(contact_contains, then=Value(11)),
+                When(datatype__name__iexact=query, then=Value(12)),
+                When(datatype__name__istartswith=query, then=Value(13)),
+                When(datatype__name__icontains=query, then=Value(14)),
+                When(classification__name__iexact=query, then=Value(15)),
+                When(classification__name__istartswith=query, then=Value(16)),
+                When(classification__name__icontains=query, then=Value(17)),
+                When(keyword_hit=True, then=Value(18)),
+                When(badge_hit=True, then=Value(19)),
+                When(Q(org__name__iexact=query) | Q(org__abbrev__iexact=query), then=Value(20)),
+                When(Q(org__name__istartswith=query) | Q(org__abbrev__istartswith=query), then=Value(21)),
+                When(Q(org__name__icontains=query) | Q(org__abbrev__icontains=query), then=Value(22)),
+                When(short_desc__icontains=query, then=Value(23)),
+                When(brief_desc__icontains=query, then=Value(24)),
+                default=Value(100),
+                output_field=IntegerField(),
+            )
+        )
+        .select_related(
+            "domain",
+            "subdomain_2",
+            "subdomain_3",
+            "datatype",
+            "classification",
+            "data_steward",
+            "poc_name",
+            "business_contact_name",
+            "business_sme",
+            "org",
+        )
+        .prefetch_related("images")
+        .order_by("match_tier", "name")
+    )
+
+
+def spoken_matches(query):
+    """Match a sentence by its product words. Every word has to appear somewhere on the product."""
+    spoken = content_query(query)
+    terms = spoken.split()
+    if len(terms) <= 1:
+        return suggestion_matches(spoken or query), spoken or query
+    matches = suggestion_matches(terms[0])
+    for term in terms[1:]:
+        matches = matches.filter(term_filter(term))
+    return matches, spoken
+
+
+def fast_suggestion_search(request):
+    """Typeahead lookup. Skips trigram scans and the embedding model."""
+    raw_query = request.query_params.get("q", "").strip()
+    normalized_query = normalize_query(raw_query)
+    page = parse_page(request.query_params.get("page", 1))
+    now = time.time()
+    cached = _SUGGESTION_CACHE.get(normalized_query)
+    if cached and now - cached[0] < _SUGGESTION_TTL:
+        return _page_from_bundle(cached[1], page)
+
+    empty = {
+        "query": raw_query,
+        "normalized_query": normalized_query,
+        "search_query_used": normalized_query,
+        "intent": "typeahead",
+        "applied_filters": {},
+        "inferred_filters": {},
+        "did_you_mean": None,
+        "spelling_confidence": None,
+        "correction_applied": False,
+        "count": 0,
+        "page": page,
+        "page_size": PAGE_SIZE,
+        "total_pages": 0,
+        "has_previous": False,
+        "has_next": False,
+        "results": [],
+    }
+    if len(normalized_query) < 2:
+        return empty
+
+    spelling_result = build_did_you_mean(
+        normalized_query,
+        cached_spelling_vocabulary(),
+    )
+    did_you_mean = spelling_result["query"] if spelling_result else None
+    spelling_confidence = spelling_result["confidence"] if spelling_result else None
+    search_query_used = normalized_query
+    correction_applied = False
+
+    matches = suggestion_matches(search_query_used)
+    products = list(matches[:_SUGGESTION_LIMIT])
+    if not products:
+        spoken_query = content_query(normalized_query)
+        if spoken_query != normalized_query:
+            matches, search_query_used = spoken_matches(normalized_query)
+            products = list(matches[:_SUGGESTION_LIMIT])
+    if not products and did_you_mean and did_you_mean != normalized_query:
+        search_query_used = did_you_mean
+        correction_applied = True
+        matches, search_query_used = spoken_matches(did_you_mean)
+        products = list(matches[:_SUGGESTION_LIMIT])
+    bundle = {
+        **empty,
+        "search_query_used": search_query_used,
+        "did_you_mean": (
+            did_you_mean[:1].upper() + did_you_mean[1:]
+            if did_you_mean
+            else None
+        ),
+        "spelling_confidence": spelling_confidence,
+        "correction_applied": correction_applied,
+        "results": [
+            product_to_result(product, request=request)
+            for product in products
+        ],
+    }
+    _SUGGESTION_CACHE[normalized_query] = (now, bundle)
+    if len(_SUGGESTION_CACHE) > 40:
+        oldest = min(_SUGGESTION_CACHE, key=lambda key: _SUGGESTION_CACHE[key][0])
+        _SUGGESTION_CACHE.pop(oldest, None)
+    return _page_from_bundle(bundle, page)
+
+
+_API_NAME_CACHE = {}
+_API_NAME_LIMIT = 80
+_API_NAME_SIMILARITY = 0.55
+_API_DATATYPE = "Webservices (APIs)"
+
+
+def _original_api_name(product):
+    names = []
+    if product.original_name and product.original_name.strip():
+        names.append(product.original_name.strip())
+    for source in (product.resource, product.catalog):
+        resource_type = source.resourcetype if source is not None and source.resourcetype_id else None
+        original = resource_type.original_name.strip() if resource_type and resource_type.original_name else ""
+        if original and original not in names:
+            names.append(original)
+    return names[0] if names else ""
+
+
+def _api_name_queryset(query):
+    """Webservice products whose API name or original API name matches the typed text."""
+    name_similarity = Coalesce(TrigramSimilarity("name", query), Value(0.0), output_field=FloatField())
+    original_similarity = Greatest(
+        Coalesce(TrigramSimilarity("original_name", query), Value(0.0), output_field=FloatField()),
+        Coalesce(
+            TrigramSimilarity("resource__resourcetype__original_name", query),
+            Value(0.0),
+            output_field=FloatField(),
+        ),
+        Coalesce(
+            TrigramSimilarity("catalog__resourcetype__original_name", query),
+            Value(0.0),
+            output_field=FloatField(),
+        ),
+    )
+    typed = (
+        Q(name__icontains=query)
+        | Q(original_name__icontains=query)
+        | Q(resource__resourcetype__original_name__icontains=query)
+        | Q(catalog__resourcetype__original_name__icontains=query)
+    )
+    original_exact = (
+        Q(original_name__iexact=query)
+        | Q(resource__resourcetype__original_name__iexact=query)
+        | Q(catalog__resourcetype__original_name__iexact=query)
+    )
+    original_starts = (
+        Q(original_name__istartswith=query)
+        | Q(resource__resourcetype__original_name__istartswith=query)
+        | Q(catalog__resourcetype__original_name__istartswith=query)
+    )
+    original_contains = (
+        Q(original_name__icontains=query)
+        | Q(resource__resourcetype__original_name__icontains=query)
+        | Q(catalog__resourcetype__original_name__icontains=query)
+    )
+    close_enough = typed
+    if len(query) >= 4:
+        close_enough = typed | Q(api_name_similarity__gte=_API_NAME_SIMILARITY) | Q(
+            original_name_similarity__gte=_API_NAME_SIMILARITY
+        )
+    return (
+        visible_products()
+        .filter(datatype__name=_API_DATATYPE)
+        .annotate(
+            api_name_similarity=name_similarity,
+            original_name_similarity=original_similarity,
+        )
+        .filter(close_enough)
+        .annotate(
+            match_tier=Case(
+                When(name__iexact=query, then=Value(0)),
+                When(original_exact, then=Value(0)),
+                When(name__istartswith=query, then=Value(1)),
+                When(original_starts, then=Value(1)),
+                When(name__icontains=query, then=Value(2)),
+                When(original_contains, then=Value(2)),
+                default=Value(3),
+                output_field=IntegerField(),
+            )
+        )
+        .select_related(
+            "domain",
+            "subdomain_2",
+            "subdomain_3",
+            "datatype",
+            "classification",
+            "data_steward",
+            "poc_name",
+            "business_contact_name",
+            "business_sme",
+            "org",
+            "resource",
+            "resource__resourcetype",
+            "catalog",
+            "catalog__resourcetype",
+        )
+        .prefetch_related("images")
+        .order_by("match_tier", "-api_name_similarity", "-original_name_similarity", "name")
+    )
+
+
+def _api_match_label(product, query):
+    folded = query.casefold()
+    name = (product.name or "").casefold()
+    original = _original_api_name(product).casefold()
+    name_hit = folded in name
+    original_hit = bool(original) and folded in original
+    if original_hit and not name_hit:
+        return "Original API name"
+    name_score = float(getattr(product, "api_name_similarity", 0) or 0)
+    original_score = float(getattr(product, "original_name_similarity", 0) or 0)
+    if not name_hit and original_score > name_score:
+        return "Original API name"
+    return "API name"
+
+
+def _api_name_vocabulary():
+    rows = (
+        visible_products()
+        .filter(datatype__name=_API_DATATYPE)
+        .values_list(
+            "name",
+            "original_name",
+            "resource__resourcetype__original_name",
+            "catalog__resourcetype__original_name",
+        )
+    )
+    words = []
+    for row in rows:
+        for value in row:
+            if value:
+                words.extend(normalize_query(value).split())
+    return words
+
+
+def api_name_search(request):
+    """AI suggestions for the names a person types against API products."""
+    raw_query = request.query_params.get("q", "").strip()
+    normalized_query = normalize_query(raw_query)
+    now = time.time()
+    cached = _API_NAME_CACHE.get(normalized_query)
+    if cached and now - cached[0] < _SUGGESTION_TTL:
+        bundle = cached[1]
+    else:
+        bundle = _api_name_bundle(request, raw_query, normalized_query)
+        if len(normalized_query) >= 2:
+            _API_NAME_CACHE[normalized_query] = (now, bundle)
+            if len(_API_NAME_CACHE) > 40:
+                oldest = min(_API_NAME_CACHE, key=lambda key: _API_NAME_CACHE[key][0])
+                _API_NAME_CACHE.pop(oldest, None)
+    return {
+        **bundle,
+        "count": len(bundle["results"]),
+        "page": 1,
+        "page_size": _API_NAME_LIMIT,
+        "total_pages": 1 if bundle["results"] else 0,
+        "has_previous": False,
+        "has_next": False,
+    }
+
+
+def _api_name_bundle(request, raw_query, normalized_query):
+    empty = {
+        "query": raw_query,
+        "normalized_query": normalized_query,
+        "search_query_used": normalized_query,
+        "intent": "api-name",
+        "applied_filters": {"datatype": _API_DATATYPE},
+        "inferred_filters": {},
+        "did_you_mean": None,
+        "spelling_confidence": None,
+        "correction_applied": False,
+        "results": [],
+    }
+    if len(normalized_query) < 2:
+        return empty
+
+    search_query_used = normalized_query
+    correction_applied = False
+    did_you_mean = None
+    spelling_confidence = None
+    products = list(_api_name_queryset(normalized_query)[:_API_NAME_LIMIT])
+    if not products and len(normalized_query) >= 3:
+        spelling = build_did_you_mean(normalized_query, _api_name_vocabulary())
+        if spelling and spelling["query"] != normalized_query:
+            corrected = spelling["query"]
+            products = list(_api_name_queryset(corrected)[:_API_NAME_LIMIT])
+            if products:
+                search_query_used = corrected
+                correction_applied = True
+                did_you_mean = corrected[:1].upper() + corrected[1:]
+                spelling_confidence = spelling["confidence"]
+
+    results = []
+    for product in products:
+        score = max(
+            float(getattr(product, "api_name_similarity", 0) or 0),
+            float(getattr(product, "original_name_similarity", 0) or 0),
+        )
+        label = _api_match_label(product, search_query_used)
+        result = product_to_result(
+            product,
+            request=request,
+            matched_on=[label],
+            relevance_score=score,
+        )
+        result["original_name"] = _original_api_name(product)
+        result["matched_label"] = label
+        results.append(result)
+
+    return {
+        **empty,
+        "search_query_used": search_query_used,
+        "did_you_mean": did_you_mean,
+        "spelling_confidence": spelling_confidence,
+        "correction_applied": correction_applied,
+        "results": results,
+    }
+
 
 def hybrid_product_search(request):
     raw_query = request.query_params.get("q", "").strip()

@@ -1,0 +1,16 @@
+<div class="border rounded-3 p-3 h-100">
+  <div class="d-flex align-items-start justify-content-between gap-3">
+    <div class="d-flex gap-3 min-w-0">
+      <span class="avatar rounded-circle {{ option_icon_class }} flex-shrink-0">
+        <i class="{{ option_icon }}"></i>
+      </span>
+      <div class="min-w-0">
+        <label class="form-label fw-semibold mb-1" for="{{ option_id }}">{{ option_label }}</label>
+        <p class="text-muted small mb-0">{{ option_description }}</p>
+      </div>
+    </div>
+    <div class="form-check form-switch m-0 flex-shrink-0">
+      <input class="form-check-input" type="checkbox" name="{{ option_name }}" id="{{ option_id }}" {% if option_checked %}checked{% endif %}>
+    </div>
+  </div>
+</div>

@@ -45,8 +45,11 @@ def main():
         raise SystemExit("Usage: deploy-frontend-s3.py <browser-dist> <environment>")
     source = Path(sys.argv[1]).resolve()
     environment = sys.argv[2]
-    if not source.is_dir():
-        raise SystemExit(f"Angular build directory was not found: {source}")
+    live = Path("frontend", "dist", "edmp-gdx-client-app", "browser").resolve()
+    if source != live:
+        raise SystemExit(f"Refusing to upload {source}. The live frontend is {live}.")
+    if not (source / "index.html").is_file():
+        raise SystemExit(f"Angular build was not found at {source}.")
 
     if environment == "local" or os.getenv("GDX_SKIP_FRONTEND_S3") == "1":
         print("Local builds stay on this machine. S3 upload skipped.")
@@ -72,8 +75,13 @@ def main():
     files = sorted(path for path in source.rglob("*") if path.is_file())
     if not files:
         raise SystemExit(f"Angular build directory is empty: {source}")
+    sizes = {path: path.stat().st_size for path in files}
+    total_bytes = sum(sizes.values())
+    destination = f"s3://{bucket}/{prefix}/" if prefix else f"s3://{bucket}/"
+    print(f"Uploading {len(files)} files, {format_size(total_bytes)} to {destination}", flush=True)
 
-    for path in files:
+    sent = 0
+    for index, path in enumerate(files, start=1):
         relative = path.relative_to(source).as_posix()
         key = f"{prefix}/{relative}" if prefix else relative
         extra = {
@@ -82,12 +90,35 @@ def main():
         }
         if must_revalidate(path.name):
             extra["Expires"] = datetime(1970, 1, 1, tzinfo=timezone.utc)
+        draw_progress(index - 1, len(files), sent, total_bytes, relative)
         client.upload_file(str(path), bucket, key, ExtraArgs=extra)
+        sent += sizes[path]
         uploaded.add(key)
+        draw_progress(index, len(files), sent, total_bytes, relative)
 
+    sys.stdout.write("\n")
+    sys.stdout.flush()
     removed = delete_stale(client, bucket, prefix, uploaded)
-    destination = f"s3://{bucket}/{prefix}/" if prefix else f"s3://{bucket}/"
-    print(f"Uploaded {len(uploaded)} files to {destination} ({region}). Removed {removed} stale files.")
+    print(f"Uploaded {len(uploaded)} files, {format_size(sent)} to {destination} ({region}). Removed {removed} stale files.")
+
+
+def format_size(size):
+    return f"{size / (1024 * 1024):.1f} MB"
+
+
+def draw_progress(done, total, sent, total_bytes, name):
+    width = 24
+    ratio = (sent / total_bytes) if total_bytes else (done / total if total else 1)
+    filled = min(width, int(round(width * ratio)))
+    bar = "█" * filled + "─" * (width - filled)
+    left = total - done
+    label = name if len(name) <= 48 else "…" + name[-47:]
+    line = (
+        f"[{bar}] {done}/{total} files  {format_size(sent)}/{format_size(total_bytes)}"
+        f"  {left} left  {label}"
+    )
+    sys.stdout.write("\r" + line)
+    sys.stdout.flush()
 
 
 def content_type(path):

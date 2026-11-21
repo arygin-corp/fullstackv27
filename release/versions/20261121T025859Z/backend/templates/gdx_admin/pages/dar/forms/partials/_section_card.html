@@ -1,0 +1,4 @@
+<section class="card mb-3">
+  <div class="card-header"><div><h3 class="h5 mb-1">{{ section.title }}</h3>{% if section.description %}<p class="text-muted mb-0">{{ section.description }}</p>{% endif %}</div><span class="badge bg-primary-subtle text-primary">{{ section.fields.all|length }} fields</span></div>
+  <div class="list-group list-group-flush">{% for field in section.fields.all %}{% include "gdx_admin/pages/dar/forms/partials/_field_row.html" with field=field %}{% empty %}<div class="list-group-item text-muted py-4">No fields in this section.</div>{% endfor %}</div>
+</section>

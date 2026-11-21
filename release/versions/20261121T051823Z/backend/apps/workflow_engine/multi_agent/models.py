@@ -1,0 +1,8 @@
+from django.db import models
+from ..models import TimeStampedModel,WorkflowInstance
+from ..platform_models import Tenant
+from ..agents.models import AgentDefinition
+class AgentTeam(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);key=models.SlugField();purpose=models.TextField();coordination_policy=models.JSONField(default=dict);enabled=models.BooleanField(default=False)
+class AgentTeamMember(TimeStampedModel):team=models.ForeignKey(AgentTeam,related_name='members',on_delete=models.CASCADE);agent=models.ForeignKey(AgentDefinition,on_delete=models.PROTECT);role=models.CharField(max_length=100);position=models.PositiveIntegerField(default=0);input_mapping=models.JSONField(default=dict);output_mapping=models.JSONField(default=dict)
+class AgentTeamRun(TimeStampedModel):team=models.ForeignKey(AgentTeam,related_name='runs',on_delete=models.PROTECT);instance=models.ForeignKey(WorkflowInstance,null=True,blank=True,on_delete=models.SET_NULL);status=models.CharField(max_length=30,default='queued');input=models.JSONField(default=dict);shared_context=models.JSONField(default=dict);requires_human_review=models.BooleanField(default=True);error=models.TextField(blank=True)
+class AgentHandoff(TimeStampedModel):run=models.ForeignKey(AgentTeamRun,related_name='handoffs',on_delete=models.CASCADE);from_member=models.ForeignKey(AgentTeamMember,related_name='+',null=True,on_delete=models.SET_NULL);to_member=models.ForeignKey(AgentTeamMember,related_name='+',on_delete=models.PROTECT);payload=models.JSONField(default=dict);status=models.CharField(max_length=30,default='pending')

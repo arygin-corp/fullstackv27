@@ -1,0 +1,181 @@
+{% extends "gdx_users/apps/account/base.html" %}
+{% load static %}
+
+{% block title %}{% block error_title %}Error{% endblock %}{% endblock title %}
+
+{% block extra_css %}
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+	html,
+	body.auth-body-bg {
+		margin: 0 !important;
+		min-height: 100% !important;
+		background: #f4f2fb !important;
+		background-image: none !important;
+		color: #17141f;
+		font-family: "Instrument Sans", "Segoe UI", sans-serif;
+	}
+	.error-cover {
+		position: relative;
+		min-height: 100vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 40px 20px 108px;
+		overflow: hidden;
+		background:
+			radial-gradient(circle at 50% 42%, rgba(88, 63, 201, 0.16), transparent 34%),
+			#f4f2fb;
+	}
+	.error-cover::before,
+	.error-cover::after {
+		content: "";
+		position: absolute;
+		border-radius: 50%;
+		pointer-events: none;
+	}
+	.error-cover::before {
+		width: 560px;
+		height: 560px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -58%);
+		border: 1px solid rgba(88, 63, 201, 0.16);
+	}
+	.error-cover::after {
+		width: 760px;
+		height: 760px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -58%);
+		border: 1px solid rgba(88, 63, 201, 0.08);
+	}
+	.error-center {
+		position: relative;
+		z-index: 1;
+		width: min(520px, 100%);
+		text-align: center;
+	}
+	.error-center .auth-logo .auth-logo-dark {
+		display: inline-block;
+		height: 52px;
+		width: auto;
+		margin: 0 auto 28px;
+	}
+	.error-center .auth-logo .auth-logo-light {
+		display: none;
+	}
+	.gate-kicker {
+		margin: 0;
+		font-size: 92px;
+		line-height: 0.9;
+		font-weight: 700;
+		letter-spacing: -0.06em;
+		text-transform: none;
+		color: #583fc9;
+	}
+	.error-title {
+		margin: 18px 0 0;
+		font-size: 28px;
+		line-height: 1.2;
+		font-weight: 650;
+		color: #17141f;
+	}
+	.error-message {
+		max-width: 420px;
+		margin: 12px auto 0;
+		font-size: 16px;
+		line-height: 1.55;
+		color: #5d5770;
+	}
+	.gate-note {
+		max-width: 420px;
+		margin: 18px auto 0;
+		padding: 12px 14px;
+		border-radius: 12px;
+		background: #fff8e8;
+		color: #7a4d00;
+		text-align: left;
+	}
+	.gate-actions {
+		margin-top: 28px;
+	}
+	.gate-actions .btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 168px;
+		min-height: 46px;
+		padding: 0 22px;
+		border: 0;
+		border-radius: 999px;
+		background: #583fc9;
+		color: #fff;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		box-shadow: 0 10px 24px rgba(88, 63, 201, 0.28);
+		text-decoration: none;
+	}
+	.gate-actions .btn:hover {
+		background: #4630a3;
+		color: #fff;
+	}
+	.error-footer {
+		position: absolute;
+		right: 0;
+		bottom: 28px;
+		left: 0;
+		z-index: 1;
+		color: #8b849c;
+		text-align: center;
+	}
+	.error-footer p {
+		margin: 8px 0 0;
+		font-size: 12px;
+	}
+	@media (max-width: 640px) {
+		.gate-kicker {
+			font-size: 72px;
+		}
+		.error-cover::before {
+			width: 340px;
+			height: 340px;
+		}
+		.error-cover::after {
+			width: 460px;
+			height: 460px;
+		}
+	}
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<body class="auth-body-bg">
+	<div class="error-cover">
+		<div class="error-center">
+			<a href="{% url 'home' %}" class="d-block auth-logo">
+				<img src="{% static 'images/gdx/gdx-logo-dark.svg' %}" alt="GDX" height="52" class="auth-logo-dark">
+				<img src="{% static 'images/gdx/gdx-logo-light.svg' %}" alt="" height="52" class="auth-logo-light">
+			</a>
+			<p class="gate-kicker">{% block error_kicker %}Error{% endblock %}</p>
+			<h1 class="error-title">{% block error_heading %}Something went wrong{% endblock %}</h1>
+			<p class="error-message">{% block error_message %}{% endblock %}</p>
+			{% block error_note %}{% endblock %}
+			<div class="gate-actions">
+				{% block error_actions %}
+				<a class="btn btn-primary" href="{% url 'home' %}">Go to home</a>
+				{% endblock %}
+			</div>
+		</div>
+		<div class="error-footer">
+			<span class="logo-sm">
+				<img src="{% static 'images/site/FullToyota-dark.svg' %}" alt="" height="16">
+			</span>
+			<span class="logo-sm">
+				<img src="{% static 'images/site/OneTech-dark.svg' %}" alt="" height="16">
+			</span>
+			<p>©<script>document.write(new Date().getFullYear())</script> {{ footer_text }}</p>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,8 @@
+branch-defaults:
+  main:
+    environment: edmp-gdxp-nonprod-admin-dev
+global:
+  application_name: edmp-gdxp-nonprod-admin
+  default_region: us-west-2
+  default_platform: Docker running on 64bit Amazon Linux 2023
+  workspace_type: Application

@@ -34,8 +34,14 @@
                                     {% endfor %}
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center align-items-center">
+                                            {% if collection.key == "newsroom-posts" %}
+                                                <a href="{% url 'pages_staff:newsroom-detail' row.object.pk %}" title="View"><i class="bx bx-show align-bottom" style="font-size: 20px;"></i></a>
+                                            {% endif %}
                                             <a href="{% url 'pages_staff:site-record-edit' collection.key row.object.pk %}" title="Edit"><i class="bx bxs-edit-alt align-bottom text-primary" style="font-size: 20px;"></i></a>
                                             <a href="{% url 'pages_staff:site-record-delete' collection.key row.object.pk %}" title="Delete"><i class="bx bx-trash align-bottom text-danger" style="font-size: 20px;"></i></a>
+                                            {% if collection.key == "newsroom-posts" and row.object.status == "pending" and can_approve_newsroom %}
+                                                <a href="{% url 'pages_staff:newsroom-approval' row.object.pk %}" title="Workflow"><i class="bx bx-git-branch align-bottom" style="font-size: 20px;"></i></a>
+                                            {% endif %}
                                         </div>
                                     </td>
                                 </tr>

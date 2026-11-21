@@ -1,0 +1,58 @@
+"""Unpublished newsroom stories for the current marketplace updates."""
+
+DRAFTS = (
+    {
+        "source_id": "9",
+        "title": "Organizations, companies, and attributes are in the marketplace",
+        "slug": "organizations-companies-and-attributes",
+        "summary": "The user marketplace now lists organizations, companies, and attributes, and each company shows the organization it belongs to.",
+        "content": "<p>The marketplace sidebar now includes Organizations, Companies, and Attributes next to the rest of the catalog lists. Each list can be opened, reviewed, and maintained from the user theme.</p><h2>Companies and organizations</h2><p>A company is tied to its organization, so the Companies list shows the organization name rather than only an abbreviation. Toyota Motor North America, Toyota Financial Services, Mazda Toyota Manufacturing USA, Woven Planet, Toyota Connected North America, and Toyota Motor Corporation are the organization names used for those company groups.</p><h2>Attributes</h2><p>Attributes keep the categories already used in the catalog. Open an attribute to see its type, name, and whether it is active.</p>",
+        "image": "assets/images/domains/hierarchy@3x.jpg",
+        "category": "updates",
+    },
+    {
+        "source_id": "10",
+        "title": "Support Center and the document library use the stored catalog",
+        "slug": "support-center-and-document-library",
+        "summary": "Support Center opens the stored support topics, and Documents lists the documents, policies, processes, images, and videos from the resource library.",
+        "content": "<p>Support Center in the sidebar opens the stored support categories, articles, and frequently asked questions. An article opens on its own page with the same sections the support guide uses.</p><h2>Documents</h2><p>The Documents page lists the resource library in portrait cards. Documents, policies, and processes each open a detail page with the classification, format, size, and the other details stored for that file. Images sit on their own row above the name. Videos open a detail page with the poster and the play link when a video file is available.</p><h2>Which group a file belongs to</h2><p>The add and edit form starts with Falls under. Choose Document, Policy, or Process so the file is saved in that group and appears in the matching section.</p>",
+        "image": "assets/images/domains/references@3x.jpg",
+        "category": "updates",
+    },
+    {
+        "source_id": "11",
+        "title": "Library files record the publish time, size, and download link",
+        "slug": "library-files-record-publish-time-and-size",
+        "summary": "Adding a document, image, or video fills the known choices, stamps the publish time, and builds the file size and download link from the upload.",
+        "content": "<p>On Documents, Manage opens Add documents, Add images, and Add media. The form uses the classifications, formats, and image paths already stored in the library, so those fields start from the current catalog instead of a blank box.</p><h2>What the form fills in</h2><ul><li>Publish at shows the date and time the file is published and stays locked.</li><li>Expired at stays locked and is stamped when the file is archived.</li><li>Size is taken from the uploaded file.</li><li>The download link is built from the site address and the stored file name.</li></ul><p>A policy can be saved from its web address. A document or process still needs the uploaded file.</p>",
+        "image": "assets/images/domains/warehouse_management@3x.jpg",
+        "category": "features",
+    },
+    {
+        "source_id": "12",
+        "title": "The mind map is a PDF, and the footer opens the interactive map",
+        "slug": "mind-map-pdf-and-footer-link",
+        "summary": "The resource mind map page shows the mind map PDF. The footer link that opened the org chart now opens the interactive mind map.",
+        "content": "<p>The Mind Map page in the resource library shows the mind map PDF. The page is the document itself, so you can read the map in the browser.</p><h2>Footer</h2><p>In News &amp; Updates, the footer link is now Mind Map. It opens the interactive mind map, where the security domains can still be explored on the page.</p>",
+        "image": "assets/images/domains/engineering@3x.jpg",
+        "category": "features",
+    },
+    {
+        "source_id": "13",
+        "title": "Product pages show the real schema and the brief description",
+        "slug": "product-schema-and-brief-description",
+        "summary": "Tables and Columns uses the schema for that product's AD group. The Description tab shows the brief description, and product cards no longer place badge images on the photo.",
+        "content": "<p>Open a dataset and choose Tables &amp; Columns. The tables and columns are the schema stored for that product's AD group. Vehicle Master uses the Vehicle Master Data schema, and Vehicle Master Sensitive uses its own schema. A dataset without an AD group still has no schema to list.</p><h2>Description</h2><p>The Description tab shows the product brief description only. The short description stays on the product summary.</p><h2>Marketplace cards</h2><p>Product cards in the marketplace show the product image, name, rating, and description. The small badge images are no longer placed on the photo.</p>",
+        "image": "assets/images/domains/vehicle@3x.jpg",
+        "category": "features",
+    },
+    {
+        "source_id": "14",
+        "title": "Super Admin opens the admin theme",
+        "slug": "super-admin-opens-the-admin-theme",
+        "summary": "Everyone who signs in lands on the user marketplace. Members of Super Administrator Group also see a Super Admin button that opens the admin theme.",
+        "content": "<p>Signing in opens the user marketplace for every account. The admin theme is a separate destination.</p><h2>Who sees the button</h2><p>Super Admin sits beside Mega Menu in the user header. It is a purple pill, centered with the header controls, and it is shown only for members of Super Administrator Group. The button opens the admin theme on the executive dashboard.</p><p>The AI suggestion window title no longer includes the red sparkle icon. The title still reads AI-Powered Discovery: Suggested Products.</p>",
+        "image": "assets/images/domains/experience_managers@3x.jpg",
+        "category": "updates",
+    },
+)

@@ -1,0 +1,1 @@
+{% for item in activities %}<article class="border-bottom py-3"><strong>{{ item.title }}</strong><p class="text-muted small mb-0">{{ item.description }}</p></article>{% empty %}<p class="text-muted">No recent activity.</p>{% endfor %}

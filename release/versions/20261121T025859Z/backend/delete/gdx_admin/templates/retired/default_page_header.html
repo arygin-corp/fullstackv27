@@ -1,0 +1,35 @@
+<div class="ph-stack">
+<aside class="ph-page">
+    <div class="ph-page-copy">
+        <p class="ph-kicker">{{ staff_page_kicker|default:"GDX ADMIN" }}</p>
+        <h2>{{ staff_page_title|default:"Page" }}</h2>
+    </div>
+    <p class="ph-lead">{{ staff_page_description|default:"Review the records on this page and take the next action." }}</p>
+    <div class="ph-metric">
+        <strong>{% if staff_page_metric_value or staff_page_metric_value == 0 %}{{ staff_page_metric_value }}{% else %}—{% endif %}</strong>
+        <span>{{ staff_page_metric_label|default:"Overview" }}</span>
+        <small>{{ staff_page_metric_caption|default:"current view" }}</small>
+    </div>
+    {% if staff_page_mark_read %}
+    <form method="post" action="{% url 'notifications:mark_all_read' %}">
+        {% csrf_token %}
+        <button type="submit">Mark all read</button>
+    </form>
+    {% endif %}
+</aside>
+<header class="ph">
+    <div class="ph-copy">
+        <p class="ph-welcome">{% if staff_page_welcome %}{{ staff_page_welcome }}{% else %}Welcome to the {{ app_name }}{% endif %}</p>
+        <h1>{{ greeting.greeting }}</h1>
+        <ul>
+            <li>{{ greeting.role }}</li>
+            <li>{{ organization_name }}</li>
+        </ul>
+    </div>
+    <div class="ph-clock">
+        <time>{{ greeting.time }}</time>
+        <span>Central · {{ greeting.environment }}</span>
+        <strong>{{ greeting.date }}</strong>
+    </div>
+</header>
+</div>

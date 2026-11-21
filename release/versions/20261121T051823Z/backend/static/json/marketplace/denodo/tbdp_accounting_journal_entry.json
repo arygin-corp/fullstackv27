@@ -1,0 +1,2459 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "ps_accounting_entry_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "ps_accounting_entry_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "ps_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_code_effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_code_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_code_long_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_code_short_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_type_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_type_effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "reference_type_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "accounting_entry_status_vw",
+      "column_name": "status_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "event_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "event_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "event_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "ftpr_event_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_event_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "ftpr_transaction_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "transaction_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "transaction_type_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_transaction_type_dim",
+      "column_name": "transaction_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "ftpr_trdng_prtnr_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "trading_partner_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "trading_partner_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_dim",
+      "column_name": "trading_partner_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "ftpr_trdng_prtnr_xtn_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "trading_partner_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "trading_partner_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "transaction_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "transaction_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_trdng_prtnr_xtn_type_dim",
+      "column_name": "transaction_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "comments_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "dealer_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "distributor_division_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "fleet_indicator_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ftpr_event_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ftpr_transaction_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ftpr_trdng_prtnr_xtn_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ftpr_xtn_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "interface_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "interface_line_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "journal_date_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "model_attribute_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "plant_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "region_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ship_to_port_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "transaction_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ttms_transaction_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "ttms_voucher_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "urn"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_fact",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "ftpr_xtn_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "ftpr_xtn_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ftpr_xtn_status_dim",
+      "column_name": "ps_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "accounting_class_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "accounting_class_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "accounting_group_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "accounting_group_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "company_code_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "cost_center_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "cost_center_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "gl_account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "gl_account_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "gl_account_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "peoplesoft_account_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "peoplesoft_department_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "gl_account_dim",
+      "column_name": "peoplesoft_product_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "ps_journal_header_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "ps_journal_header_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "ps_status_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_code_effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_code_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_code_long_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_code_short_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_type_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_type_effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "reference_type_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "journal_status_vw",
+      "column_name": "status_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "account_long_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "account_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "account_short_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "current_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "ps_account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "set_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim",
+      "column_name": "status_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "account_code_long_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "account_long_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "account_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "account_short_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "current_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "expiration_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "ps_account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "set_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_dim_vw",
+      "column_name": "status_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_ledger_dim_vw",
+      "column_name": "account_ledger_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_ledger_dim_vw",
+      "column_name": "account_ledger_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_ledger_dim_vw",
+      "column_name": "account_ledger_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_account_ledger_dim_vw",
+      "column_name": "ps_account_ledger_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "accounting_entry_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "accounting_entry_line_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "accounting_entry_price_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ap_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ap_journal_line_refrence_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "currency_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "foreign_currency_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "foreign_currency_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ftpr_trdng_prtnr_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ftpr_xtn_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "journal_line_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "journal_line_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "line_distribution_sequence_no"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "open_item_key_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "posted_date_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_account_ledger_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_accounting_entry_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_affiliate_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_debit_credit_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_department_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_journal_header_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_operating_unit_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_product_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_product_series_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_project_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "ps_voucher_dim_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "statistics_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "statistics_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "taxable_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "tms_unique_key_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_accounting_entry_fact_vw",
+      "column_name": "transaction_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "accounting_series_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "accounting_series_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim",
+      "column_name": "ps_acctg_series_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim_vw",
+      "column_name": "accounting_series_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim_vw",
+      "column_name": "accounting_series_desc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim_vw",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim_vw",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_acctg_series_dim_vw",
+      "column_name": "ps_acctg_series_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "accounting_period"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "journal_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "journal_header_text"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "journal_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "journal_reversal_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "posted_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "ps_business_unit_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "ps_journal_header_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "source_system_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "total_credit_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "total_debit_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "ps_journal_header_dim_vw",
+      "column_name": "total_journal_lines_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "altered_by_change_request_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "bos_order_cycle_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "change_request_change_type"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "change_request_system_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "cust_order_match_eligible_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "customer_request_order_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "customer_request_source_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "dealer_stock_end_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "dealer_stock_start_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "departure_date_vdc"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "first_assigned_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "first_assigned_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "first_port_stock_end_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "first_port_stock_start_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "last_allocation_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "last_allocation_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "last_allocation_pool_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "latest_port_stock_end_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "latest_port_stock_start_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "locked_in_spread_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "ps_interface_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "reserve_vehicle_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "ship_to_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "sold_to_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "special_order_donor_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "trans_hdr_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "transaction_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "transaction_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_distrib_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "transaction_group_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "transaction_group_dept_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "transaction_group_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_group_dim",
+      "column_name": "transaction_group_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accessory_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accy_cost_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accy_fob_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accy_install_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "accy_price_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "base_dealer_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "base_distributor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "base_suggested_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "base_tms_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "dealer_rebate_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ebom_rep_cost_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "evp_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "evp_spec_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "evp_spec_digit"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fast_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_dap_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_hb_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_ldmc_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_lds_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_lts_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_mcb_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_price_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_se_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_dealer_wfr_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_distributor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_retail_discount_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_suggested_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fio_tms_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "fsa_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "installation_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "katashiki_description"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "model_cost_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "model_price_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "order_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "package_content_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "parent_accessory_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "parent_accy_cost_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "parent_accy_install_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "parent_accy_price_phase_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "pd_fsa_rebate_labor_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "pd_fsa_rebate_parts_cif_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "pd_fsa_rebate_parts_irp_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "pd_rebate_indicator"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_dealer_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_dealer_hb_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_dealer_invoice_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_dealer_price_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_distributor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_fast_labor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_fast_parts_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_labor_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_parts_cif_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_parts_irp_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ppo_suggested_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "product_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "profit_detail_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "profit_group_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "ps_interface_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "source_system_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "spec_list"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "trans_hdr_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "trans_product_type_dim_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "trans_profit_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "transaction_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "transaction_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_profit_sls_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "ps_interface_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_cust_data_prot_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_cust_mode_of_contact"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_city_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_phone_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_prefix"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_state_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_street_address"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_tax_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_zip_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_customer_zip_plus"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_fleet_account_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_fleet_customer_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_rdr_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_rdr_sequence_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_region_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_reversal_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_sales_miles"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_sales_person_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_sales_person_uid"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_sales_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_tradein_flag"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_type_of_sale_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "retail_velocity"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "trans_hdr_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "transaction_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "transaction_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_retail_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "distribution_transaction_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "transaction_group_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "transaction_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "transaction_type_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "transaction_type_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "veh_acctg_transaction_detail"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_type_dim",
+      "column_name": "veh_acctg_transaction_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "accounting_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "actual_draft_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "cash_item"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_bank_aba_routing_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_bank_account_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_bank_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_bank_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_credit_check_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_credit_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_credit_issued_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_credit_payment_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dealer_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_credit_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_draft_or_wire_ind"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_region_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_release_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "distributor_sale_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dm_load_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_amt"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_deleted_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_redrafted_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_rejected_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_report_name"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "draft_settlement_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "dw_load_timestamp"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "export_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "export_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "first_estimated_draft_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "invoice_source_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "last_estimated_draft_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "mexico_customs_cleared_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "mexico_pedimento_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "mexico_reference_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "original_invoice_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "original_invoice_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "original_invoice_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "ps_interface_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "record_type_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "swift_control_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "trans_hdr_fact_id"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "transaction_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "transaction_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "vehicle_key"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "wholesale_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "wholesale_dealer_number"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "wholesale_finance_date"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "wholesale_region_code"
+    },
+    {
+      "userrolename": "tbdp-accounting-journal-entry",
+      "dbname": "vlc_ing",
+      "elementname": "trans_whlsl_fact",
+      "column_name": "wholesale_sequence_number"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-accounting-journal-entry%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

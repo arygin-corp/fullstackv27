@@ -1,0 +1,44 @@
+{% load static %} 
+
+<div class="header">
+	<div class="main-header">
+		<!-- Logo -->
+		<div class="header-left">
+			<a class="logo" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" alt="Logo" src="{% static 'assets/img/logo.svg' %}" />
+			</a>
+			<a class="dark-logo" href="{% url 'command_center:dashboard' %}">
+				<img class="sidebar-logo2" alt="Logo" src="{% static 'assets/img/logo-white.svg' %}" />
+			</a>
+		</div>
+		<!-- Sidebar Menu Toggle Button -->
+		<a class="mobile_btn" href="#sidebar" id="mobile_btn">
+			<span class="bar-icon">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</a> 
+		
+		{% include 'gdx_admin/partials/navbar.html' %}
+		<!-- Mobile Menu -->
+		<div class="dropdown mobile-user-menu profile-dropdown">
+			<a class="dropdown-toggle d-flex align-items-center" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="javascript:void(0);">
+				<span class="avatar avatar-md online">
+					<img alt="Img" class="img-fluid rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" />
+				</span>
+			</a>
+			<div class="dropdown-menu p-2 mt-0">
+				<a class="dropdown-item d-flex align-items-center" href="profile.html">
+					<i class="isax isax-profile-circle me-2"></i>Profile Settings </a>
+				<a class="dropdown-item d-flex align-items-center" href="report-preview.html">
+					<i class="isax isax-document-text me-2"></i>Reports </a>
+				<a class="dropdown-item d-flex align-items-center" href="account-settings.html">
+					<i class="isax isax-setting me-2"></i>Settings </a>
+				<a class="dropdown-item logout d-flex align-items-center" href="login.html">
+					<i class="isax isax-logout me-2"></i>Signout </a>
+			</div>
+		</div>
+		<!-- /Mobile Menu -->
+	</div>
+</div>

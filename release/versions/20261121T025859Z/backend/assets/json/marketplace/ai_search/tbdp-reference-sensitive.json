@@ -1,0 +1,62 @@
+{
+  "adgroup": "tbdp-reference-sensitive",
+  "slugs": [
+    "reference-sensitive"
+  ],
+  "databases": [
+    "ircm_ing",
+    "ircm_trn"
+  ],
+  "tables": [
+    "irm_event",
+    "irm_parameter",
+    "map_segment",
+    "map_source",
+    "scenario",
+    "source",
+    "trend_irm_event",
+    "vw_base_irm_parmeter_make"
+  ],
+  "columns": [
+    "audit_create_date",
+    "business_month",
+    "consumer_system_nm",
+    "create_src",
+    "create_ts",
+    "create_user_id",
+    "data_set_bus_nm",
+    "data_set_category",
+    "data_set_entity",
+    "data_set_id",
+    "data_source_desc",
+    "data_src_nm",
+    "effective_dt",
+    "end_dt",
+    "event_desc",
+    "event_frequency",
+    "event_granularity",
+    "event_granularity_value",
+    "event_impact_cd",
+    "event_impact_type",
+    "event_nm",
+    "file_nm_timestamp",
+    "irm_data_src_nm",
+    "irm_event_id",
+    "irm_param_id",
+    "irm_segment_nm",
+    "make_nm",
+    "owner_dept_nm",
+    "param_desc",
+    "param_granularity",
+    "param_granularity_value",
+    "param_nm",
+    "param_value",
+    "raw_data_set_row_id",
+    "scenario_id",
+    "scenario_nm",
+    "series_fuel_nm",
+    "source_data_src_nm",
+    "source_segment_nm",
+    "start_dt"
+  ]
+}

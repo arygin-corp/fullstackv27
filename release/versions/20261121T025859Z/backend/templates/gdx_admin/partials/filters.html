@@ -1,0 +1,27 @@
+{% load static %}
+<div class="card-body border-bottom">
+    <form method="get" class="row g-2 align-items-end">
+        <div class="col-lg-4 col-md-6">
+            <label class="form-label" for="filter-search">Search</label>
+            <input id="filter-search" class="form-control" type="search" name="q" value="{{ request.GET.q }}" placeholder="Search invoices or customers">
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <label class="form-label" for="filter-status">Status</label>
+            <select id="filter-status" class="form-select" name="status">
+                <option value="">All statuses</option>
+                <option value="paid" {% if request.GET.status == 'paid' %}selected{% endif %}>Paid</option>
+                <option value="pending" {% if request.GET.status == 'pending' %}selected{% endif %}>Pending</option>
+                <option value="overdue" {% if request.GET.status == 'overdue' %}selected{% endif %}>Overdue</option>
+                <option value="cancelled" {% if request.GET.status == 'cancelled' %}selected{% endif %}>Cancelled</option>
+            </select>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <label class="form-label" for="filter-date">Created date</label>
+            <input id="filter-date" class="form-control" type="date" name="date" value="{{ request.GET.date }}">
+        </div>
+        <div class="col-lg-2 col-md-6 d-flex gap-2">
+            <button class="btn btn-primary flex-fill" type="submit">Filter</button>
+            <a class="btn btn-outline-secondary" href="{{ request.path }}">Reset</a>
+        </div>
+    </form>
+</div>

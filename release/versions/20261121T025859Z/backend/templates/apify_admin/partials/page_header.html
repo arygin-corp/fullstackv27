@@ -1,0 +1,15 @@
+<div class="row align-items-center mb-24">
+    <div class="col">
+        <h2 class="mb-4">{{ page_title }}</h2>
+        {% if page_subtitle %}
+        <p class="mb-0 hp-text-color-black-60">{{ page_subtitle }}</p>
+        {% endif %}
+    </div>
+    {% if primary_action_url %}
+    <div class="col-auto">
+        <a class="btn btn-primary" href="{{ primary_action_url }}">
+            <i class="ri-add-line me-4"></i>{{ primary_action_label|default:'Create' }}
+        </a>
+    </div>
+    {% endif %}
+</div>

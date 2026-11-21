@@ -1,0 +1,323 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "company_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "gmt_offset_txt"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "row_begin_dt"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "row_end_dt"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "sup_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "sup_duns_no"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "sup_long_nm"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "sup_shrt_nm"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "tmmc_sup_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "update_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "affiliate_master_trn_ext",
+      "elementname": "pty_supplier_plant",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "mfg_plant_trn",
+      "elementname": "plant_source_code_table",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "mfg_plant_trn",
+      "elementname": "plant_source_code_table",
+      "column_name": "incoming_file_name"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "mfg_plant_trn",
+      "elementname": "plant_source_code_table",
+      "column_name": "r_factory_code"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "mfg_plant_trn",
+      "elementname": "plant_source_code_table",
+      "column_name": "r_factory_name"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "mfg_plant_trn",
+      "elementname": "plant_source_code_table",
+      "column_name": "r_psc"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "eff_dt"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "expr_dt"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "namc_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "namc_desc"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "namc_lgl_entity_sid"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "namc_nm"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "src_key_namc_lgl_entity_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "name_ref_trn",
+      "elementname": "namc_lgl_entity_dim",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "business_entity"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "business_entity_name"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "cmpny_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "receiving_company_plant"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "business_entity",
+      "column_name": "routing_code"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "bus_enty_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "bus_enty_desc"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "bus_enty_nm"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "bus_enty_sk"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "create_by_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "namc_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "ps_namc_cd"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "update_by_id"
+    },
+    {
+      "userrolename": "tbdp-affiliate-master",
+      "dbname": "party_affiliates_trn_ext",
+      "elementname": "dim_bus_enty",
+      "column_name": "update_ts"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-affiliate-master%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+<!-- templates/notifications/list.html -->
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block title %}My Notifications{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>My Notifications</h2>
+
+    <div class="mb-3">
+        <form id="mark-all-read-form" action="{% url 'notifications:mark_all_read' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Mark All as Read</button>
+        </form>
+    </div>
+
+    {% if notifications %}
+        <ul class="list-group" id="notification-list">
+            {% for notification in notifications %}
+                <li class="list-group-item d-flex justify-content-between align-items-start {% if not notification.read %}list-group-item-info{% endif %}" id="notification-{{ notification.id }}">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            {% if notification.url %}
+                                <a href="{{ notification.url }}">{{ notification.title }}</a>
+                            {% else %}
+                                {{ notification.title }}
+                            {% endif %}
+                        </div>
+                        {{ notification.body }}
+                        <div class="small text-muted">{{ notification.created_at|date:"M d, Y H:i" }}</div>
+                    </div>
+                    <button class="btn btn-sm {% if notification.read %}btn-secondary{% else %}btn-success{% endif %} toggle-read-btn" data-id="{{ notification.id }}">
+                        {% if notification.read %}Mark Unread{% else %}Mark Read{% endif %}
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no notifications.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButtons = document.querySelectorAll('.toggle-read-btn');
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const notificationId = this.dataset.id;
+                fetch(`/notifications/mark-read-unread/${notificationId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrftoken,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({}) // Empty body for POST request
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const listItem = document.getElementById(`notification-${notificationId}`);
+                        if (data.read_status) { // If it's now read
+                            listItem.classList.remove('list-group-item-info');
+                            this.classList.remove('btn-success');
+                            this.classList.add('btn-secondary');
+                            this.textContent = 'Mark Unread';
+                        } else { // If it's now unread
+                            listItem.classList.add('list-group-item-info');
+                            this.classList.remove('btn-secondary');
+                            this.classList.add('btn-success');
+                            this.textContent = 'Mark Read';
+                        }
+                        // You might also want to update the unread count displayed somewhere
+                    } else {
+                        console.error('Failed to toggle read status:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error toggling read status:', error);
+                });
+            });
+        });
+
+        // Optional: Handle "Mark All as Read" with AJAX to avoid full page reload
+        const markAllReadForm = document.getElementById('mark-all-read-form');
+        if (markAllReadForm) {
+            markAllReadForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+                fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrftoken,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update UI: mark all notifications as read
+                        document.querySelectorAll('.list-group-item-info').forEach(item => {
+                            item.classList.remove('list-group-item-info');
+                        });
+                        document.querySelectorAll('.toggle-read-btn').forEach(btn => {
+                            btn.classList.remove('btn-success');
+                            btn.classList.add('btn-secondary');
+                            btn.textContent = 'Mark Unread';
+                        });
+                        alert(`Successfully marked ${data.marked_count} notifications as read.`);
+                    } else {
+                        console.error('Failed to mark all as read:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error marking all as read:', error);
+                });
+            });
+        }
+    });
+</script>
+{% endblock %}

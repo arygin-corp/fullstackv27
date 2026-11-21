@@ -1,0 +1,15 @@
+{% extends 'gdx_admin/base.html' %}
+{% block title %}Order Audit | GDX Admin{% endblock %}
+{% block content %}
+{% include 'gdx_admin/pages/orders/shared/partials/_page_header.html' with page_title='Order Synchronization Audit' page_subtitle='Review ServiceNow synchronization, reconciliation, export, and quarantine events.' %}
+<div class="card">
+  <div class="card-body border-bottom"><form method="get" class="row g-2 align-items-end">
+    <div class="col-lg-4"><label class="form-label" for="audit-q">Search</label><input id="audit-q" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Correlation, GDX order, REQ, RITM, task"></div>
+    <div class="col-lg-3"><label class="form-label" for="audit-status">Status</label><select id="audit-status" class="form-select" name="status"><option value="">All</option>{% for value in audit_statuses %}<option value="{{ value }}" {% if request.GET.status == value %}selected{% endif %}>{{ value|title }}</option>{% endfor %}</select></div>
+    <div class="col-lg-3"><label class="form-label" for="audit-entity">Entity</label><select id="audit-entity" class="form-select" name="entity"><option value="">All</option>{% for value in audit_entities %}<option value="{{ value }}" {% if request.GET.entity == value %}selected{% endif %}>{{ value|title }}</option>{% endfor %}</select></div>
+    <div class="col-lg-2 d-flex gap-2"><button class="btn btn-primary flex-fill">Filter</button><a class="btn btn-outline-secondary" href="{% url 'orders-admin:audit-list' %}">Reset</a></div>
+  </form></div>
+  {% include 'gdx_admin/pages/orders/shared/partials/_audit_table.html' with audits=page_obj.object_list %}
+  {% include 'gdx_admin/partials/pagination.html' %}
+</div>
+{% endblock %}

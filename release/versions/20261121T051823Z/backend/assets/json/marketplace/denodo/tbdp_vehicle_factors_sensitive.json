@@ -1,0 +1,533 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_toyota_rundown",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_toyota_rundown",
+      "column_name": "calendar_mth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_toyota_rundown",
+      "column_name": "factor_pct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_toyota_rundown",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_toyota_rundown",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "rundown_seasonal_factor",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "rundown_seasonal_factor",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "rundown_seasonal_factor",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "rundown_seasonal_factor",
+      "column_name": "seasonal_factor"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "rundown_seasonal_factor",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "entity"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "fleet_indicator"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "seasonal_factor"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "source_table"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "vw_seasonal_fctr_actuals",
+      "column_name": "version_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "calendar_mth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "factor_pct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "fleet_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_segment"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_national",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "base_effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "calendar_mth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "create_src"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "extract_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "factor_pct"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "fleet_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_region"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_segment"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "raw_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "scenario_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-factors-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "rundown_toyota_seasonal_factor_regional",
+      "column_name": "version_nm"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-factors-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

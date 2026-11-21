@@ -1,0 +1,52 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block extra_css %}
+    {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+{% endblock %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <h5 class="mb-0 card-title">{{ approvals|length }} waiting for approval</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle w-100">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Area</th>
+                                <th>Approval step</th>
+                                <th class="text-center">Open</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in approvals %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ item.title }}</strong>
+                                        {% if item.detail %}<div class="text-muted">{{ item.detail }}</div>{% endif %}
+                                    </td>
+                                    <td>{{ item.area }}</td>
+                                    <td>{{ item.step }}</td>
+                                    <td class="text-center">
+                                        <a href="{{ item.url }}" title="Open">
+                                            <i class="bx bx-git-branch align-bottom" style="font-size: 20px;"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-muted">Nothing is waiting for approval.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

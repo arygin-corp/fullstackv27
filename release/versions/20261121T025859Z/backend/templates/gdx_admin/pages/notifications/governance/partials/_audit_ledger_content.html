@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div><h3 class="mb-1">Audit Ledger</h3><p class="text-muted mb-0">Review immutable notification events, integrity checks, and verification history.</p></div>
+  <a class="btn btn-outline-primary" href="{% url 'notifications:admin_operations' as u %}{{ u|default:'#' }}"><i class="isax isax-setting-2 me-1"></i>Operations Center</a>
+</div>
+{% if ledger_verification %}
+<div class="alert {% if ledger_verification.status == 'verified' or ledger_verification.status == 'success' %}alert-success{% else %}alert-warning{% endif %} d-flex flex-wrap justify-content-between gap-2">
+  <div><strong>Latest verification: {{ ledger_verification.status|title }}</strong><div>{{ ledger_verification.checked_entries|default:0 }} entries checked.</div></div>
+  <span>{{ ledger_verification.completed_at|date:'M j, Y g:i:s A'|default:'Not completed' }}</span>
+</div>
+{% endif %}
+<div class="card">
+  <div class="card-body border-bottom"><form class="row g-2" method="get"><div class="col-lg-9"><input class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Search event, aggregate, correlation ID, or actor"></div><div class="col-lg-3 d-grid"><button class="btn btn-primary">Search Ledger</button></div></form></div>
+  <div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead class="table-light"><tr><th>Sequence</th><th>Event</th><th>Aggregate</th><th>Actor</th><th>Correlation</th><th>Occurred</th><th>Hash</th></tr></thead><tbody>
+    {% for entry in entries %}<tr><td><span class="badge bg-light text-dark">#{{ entry.sequence }}</span></td><td><h6 class="mb-0">{{ entry.event_type }}</h6></td><td>{{ entry.aggregate_type }}<small class="d-block text-muted">{{ entry.aggregate_id }}</small></td><td>{{ entry.actor|default:'System' }}</td><td><code>{{ entry.correlation_id|default:'-' }}</code></td><td>{{ entry.occurred_at|date:'M j, Y g:i:s A' }}</td><td><code title="{{ entry.entry_hash }}">{{ entry.entry_hash|slice:':16' }}…</code></td></tr>
+    {% empty %}<tr><td colspan="7" class="text-center text-muted py-5">No audit ledger entries found.</td></tr>{% endfor %}
+  </tbody></table></div><div class="card-footer">{% include 'gdx_admin/partials/pagination.html' %}</div>
+</div>

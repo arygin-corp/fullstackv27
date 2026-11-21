@@ -64,6 +64,37 @@ def staff_page_header(request):
         "staff_page_heading": title,
         "staff_page_heading_text": description,
         "staff_page_mark_read": False,
+        "greeting": _platform_greeting(request),
+    }
+
+
+def _platform_greeting(request):
+    from apps.profiles.models import ACCESS_CHOICES, access_type_for
+    from apps.third_party_apis.modules.command_center.views import _chicago_now, welcome_message
+
+    now = _chicago_now()
+    user = getattr(request, "user", None)
+    signed_in = user is not None and getattr(user, "is_authenticated", False)
+    if signed_in:
+        raw = str(getattr(user, "first_name", "") or "").split("(")[0].strip()
+        name = raw.split()[0] if raw else ""
+        if not name:
+            name = (user.get_username() or "there").split("@")[0]
+        role = dict(ACCESS_CHOICES).get(access_type_for(user), "User")
+    else:
+        name = "there"
+        role = "Guest"
+    environments = {"demo": "Demo", "dev": "Dev", "stage": "Stage", "qa": "QA", "prod": "Prod"}
+    selected = request.session.get("gdx_environment")
+    if selected not in environments:
+        selected = "dev"
+    clock = now.strftime("%I:%M %p").lstrip("0")
+    return {
+        "greeting": welcome_message(now, name),
+        "date": f"{now.strftime('%A, %B')} {now.day}",
+        "time": clock,
+        "environment": environments[selected],
+        "role": role,
     }
 
 
@@ -97,6 +128,7 @@ def header_account(request):
         "header_user_initials": initials,
         "header_user_name": name,
         "header_user_role": role,
+        "header_is_superadmin": user.groups.filter(name="Super Administrator Group").exists(),
     }
 
 
@@ -120,9 +152,37 @@ def header_notifications(request):
 
 
 def staff_sidebar(request):
+    from django.db import DatabaseError, OperationalError, ProgrammingError
     from gdx.sidebar_nav import sidebar_sections
+    from gdx.staff_menu import allowed_sections
 
-    return {"sidebar_sections": sidebar_sections(request)}
+    pages = []
+    user = getattr(request, "user", None)
+    if user is not None and getattr(user, "is_authenticated", False):
+        try:
+            from apps.pages.models import Page
+            pages = list(
+                Page.objects.filter(
+                    published_version__isnull=False,
+                    is_archived=False,
+                    is_deleted=False,
+                ).order_by("title")
+            )
+        except (DatabaseError, OperationalError, ProgrammingError):
+            pages = []
+    from django.urls import reverse
+    from gdx.site_api import SITE_MENU
+
+    site_pages = [
+        {"title": title, "url": reverse("pages_staff:site-page", kwargs={"slug": slug})}
+        for slug, title in SITE_MENU
+    ]
+    return {
+        "sidebar_sections": sidebar_sections(request),
+        "staff_menu": allowed_sections(user),
+        "frontend_pages": pages,
+        "site_pages": site_pages,
+    }
 
 
 def app_display_version(request):

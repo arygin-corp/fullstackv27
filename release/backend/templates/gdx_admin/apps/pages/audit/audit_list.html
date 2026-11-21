@@ -1,1 +1,0 @@
-{% extends "gdx_admin/base.html" %}{% block title %}Audit{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/audit/includes/hero.html" %}{% for event in events %}<div class="list-group-item">{{ event.created_at }} · {{ event.action }} · {{ event.page_slug_snapshot }}</div>{% empty %}<p>No events.</p>{% endfor %}{% endblock %}

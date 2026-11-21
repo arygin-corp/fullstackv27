@@ -1,0 +1,8 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}{{ resource.name }}{% endblock %}
+{% block content %}
+{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title=resource.name hero_description=resource.description hero_metric_label="Lifecycle" hero_metric=resource.get_lifecycle_status_display %}
+{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current=resource.name page_heading="AWS resource detail" page_description="Configuration, dependencies, and audit history." show_parity=True %}
+<div class="row g-4 mb-4"><div class="col-xl-5">{% include "third_party_apis/aws/partials/_aws_resource_properties.html" with resource=resource %}</div><div class="col-xl-7">{% include "third_party_apis/aws/partials/_aws_environment_table.html" with resource=resource %}</div></div>
+<div class="row g-4"><div class="col-xl-6">{% include "third_party_apis/aws/partials/_aws_dependencies.html" with resource=resource %}</div><div class="col-xl-6">{% include "third_party_apis/aws/partials/_aws_audit_history.html" with resource=resource %}</div></div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Delete {{ object }} | Subdomains{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:subdomain_detail' object.pk as detail_url %}
+    
+    <section class="team-panel team-confirm">
+        <p>Delete <strong>{{ object }}</strong>?</p>
+        <form method="post">{% csrf_token %}<button class="integration-button integration-button--primary" type="submit">Delete</button><a class="integration-button" href="{{ detail_url }}">Cancel</a></form>
+    </section>
+</main>
+{% endblock %}

@@ -39191,6 +39191,12 @@
       "userrolename": "tbdp-vehicle-master-data",
       "dbname": "vlc_ing",
       "elementname": "veh_inventory_fact",
+      "column_name": "act_dlr_arrvl_dt_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data",
+      "dbname": "vlc_ing",
+      "elementname": "veh_inventory_fact",
       "column_name": "activity_end_date_id"
     },
     {
@@ -39372,6 +39378,12 @@
       "dbname": "vlc_ing",
       "elementname": "veh_inventory_fact",
       "column_name": "prod_order_type_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data",
+      "dbname": "vlc_ing",
+      "elementname": "veh_inventory_fact",
+      "column_name": "qc_release_date_id"
     },
     {
       "userrolename": "tbdp-vehicle-master-data",

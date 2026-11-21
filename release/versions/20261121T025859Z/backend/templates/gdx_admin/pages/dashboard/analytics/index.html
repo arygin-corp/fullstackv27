@@ -1,0 +1,36 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Analytics Dashboard{% endblock %}
+{% block extra_css %}
+<link href="{% static 'gdx_admin/theme/css/executive.css' %}?v=vexlora" rel="stylesheet">
+{% endblock %}
+{% block page_header %}{% endblock %}
+{% block content %}
+{% include "gdx_admin/pages/dashboard/partials/_dashboard_shell_start.html" %}
+{% include "gdx_admin/pages/dashboard/includes/_theme_path.html" %}
+{% include "gdx_admin/pages/dashboard/analytics/partials/_kpi_row.html" %}
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="card border-0">
+            <div class="card-body">
+                <h3 class="fs-18 mb-2">Analytics operations</h3>
+                <p class="text-muted mb-0">Acquisition, funnels, cohorts, and attribution. Wired to live platform snapshot data where available.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card border-0">
+            <div class="card-body">
+                <h3 class="fs-18 mb-3">Live counts</h3>
+                <ul class="list-unstyled mb-0 vstack gap-2">
+                    <li class="d-flex justify-content-between"><span>Products</span><strong>{{ counts.products|default:0 }}</strong></li>
+                    <li class="d-flex justify-content-between"><span>Domains</span><strong>{{ counts.domains|default:0 }}</strong></li>
+                    <li class="d-flex justify-content-between"><span>Requests</span><strong>{{ counts.requests|default:0 }}</strong></li>
+                    <li class="d-flex justify-content-between"><span>Reviews</span><strong>{{ counts.reviews|default:0 }}</strong></li>
+                    <li class="d-flex justify-content-between"><span>Teams</span><strong>{{ counts.teams|default:0 }}</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

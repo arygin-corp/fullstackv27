@@ -1,1 +1,2 @@
-<span class="badge badge-{{ status|default:'pending'|slugify }}">{{ status|default:'Pending'|title }}</span>
+{% load web_tags %}
+{% status_badge status %}

@@ -102,7 +102,7 @@ def display_changes(log):
 class AuditLogListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     permission_required = "changelog.view_all_audit_logs"
     raise_exception = True
-    template_name = "gdx_admin/apps/changelog/audit/audit_list.html"
+    template_name = "changelog/audit/audit_list.html"
     context_object_name = "audit_logs"
     paginate_by = 50
 
@@ -129,7 +129,7 @@ class AuditLogDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView
     permission_required = "changelog.view_all_audit_logs"
     raise_exception = True
     model = AuditLog
-    template_name = "gdx_admin/apps/changelog/audit/audit_detail.html"
+    template_name = "changelog/audit/audit_detail.html"
     context_object_name = "audit_log"
 
     def get_context_data(self, **kwargs):

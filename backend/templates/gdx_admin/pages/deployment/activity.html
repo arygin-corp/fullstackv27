@@ -7,7 +7,7 @@
 {% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
 <section class="deploy-panel">
     <table class="deploy-table">
-        <thead><tr><th>When</th><th>Version</th><th>Target</th><th>Environment</th><th>Started by</th><th>Result</th></tr></thead>
+        <thead><tr><th>When</th><th>Version</th><th>Target</th><th>Type</th><th>Environment</th><th>Started by</th><th>Result</th></tr></thead>
         <tbody>
         {% for item in history %}
         <tr>
@@ -21,12 +21,13 @@
                 {% endif %}
             </td>
             <td>{{ item.target_label }}</td>
+            <td>{% if item.release_kind == "bugfix" %}Bug fix{% if item.jira_key %} · {{ item.jira_key }}{% endif %}{% if item.jira_complexity %} · {{ item.jira_complexity }}{% endif %}{% else %}Regular{% endif %}</td>
             <td>{{ item.environment }}</td>
             <td>{{ item.actor|default:"—" }}</td>
             <td>{{ item.state }}</td>
         </tr>
         {% empty %}
-        <tr><td colspan="6">No builds have been recorded.</td></tr>
+        <tr><td colspan="7">No builds have been recorded.</td></tr>
         {% endfor %}
         </tbody>
     </table>

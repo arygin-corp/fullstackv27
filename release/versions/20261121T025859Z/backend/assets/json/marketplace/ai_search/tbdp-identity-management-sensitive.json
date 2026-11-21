@@ -1,0 +1,30 @@
+{
+  "adgroup": "tbdp-identity-management-sensitive",
+  "slugs": [
+    "identity-management-sensitive"
+  ],
+  "databases": [
+    "identity_management_sensitive_trn_ext"
+  ],
+  "tables": [
+    "actv_tm_vw",
+    "inc_selfrpt_vw",
+    "safety_rpt_fct"
+  ],
+  "columns": [
+    "cost_cntr_cd",
+    "data_load_ts",
+    "emp_id",
+    "envt_obs_closed_dt",
+    "envt_obs_created_dt",
+    "evnt_obs_nbr",
+    "full_nm",
+    "glbl_incd_rt",
+    "hrs_qty",
+    "incd_dt",
+    "last_updated_at",
+    "namc_nm",
+    "tot_incd_rt",
+    "wrkday_id"
+  ]
+}

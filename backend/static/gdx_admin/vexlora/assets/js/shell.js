@@ -86,7 +86,29 @@ function renderBreadcrumbs(){
   return `<nav aria-label="Breadcrumb" class="min-w-0 text-xs text-muted-foreground"><ol class="flex min-w-0 items-center gap-2"><li class="hidden sm:inline-flex"><a class="hover:text-foreground" href="${routeToHref(shellData.product.homeHref)}">${escapeHtml(shellData.product.name)}</a></li><li class="hidden sm:block">/</li><li class="hidden sm:inline-flex">${escapeHtml(group)}</li><li class="hidden sm:block">/</li><li class="truncate font-medium text-foreground">${escapeHtml(title)}</li></ol></nav>`;
 }
 
+const adminDeploymentPages = [
+  { title: "AWS Session", href: "/sa/code/aws-session/deployment", description: "Paste a Britive checkout for S3 and CRUD." },
+  { title: "Code Deploy", href: "/sa/code/deployment", description: "Run the AI engine, then the Python backend, then the frontend." },
+  { title: "AI Deploy", href: "/sa/ai/deployment", description: "Production AI deployments and the code build." },
+  { title: "Analytics", href: "/sa/deployment/analytics", description: "Build counts by target and environment." },
+  { title: "Activity", href: "/sa/deployment/activity", description: "Build history and logs." },
+  { title: "Releases", href: "/sa/deployment/releases", description: "Saved releases." },
+  { title: "Rollback", href: "/sa/deployment/rollback", description: "Roll a release back." },
+  { title: "Health", href: "/sa/deployment/health", description: "Checks the build can run." },
+];
+function useAdminDeployment(){
+  for (const group of navigationGroups) {
+    for (const item of group.items ?? []) {
+      if (item.title !== "Deployment") continue;
+      item.href = "/sa/deployment";
+      item.description = "Deploy the backend and the Angular site.";
+      item.children = adminDeploymentPages;
+    }
+  }
+}
+
 export function renderShell(){
+  useAdminDeployment();
   const sidebar=document.querySelector('#sidebar-nav'); if(sidebar) sidebar.innerHTML=renderSidebarNav('desktop');
   const mobile=document.querySelector('#mobile-sidebar-nav'); if(mobile) mobile.innerHTML=renderSidebarNav('mobile');
   document.querySelectorAll('#sidebar-nav a[data-route], #mobile-sidebar-nav a[data-route]').forEach(link=>{const label=link.querySelector('.sidebar-label')?.textContent.trim();if(label)link.setAttribute('aria-label',label);});

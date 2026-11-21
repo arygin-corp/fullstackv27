@@ -1,0 +1,2141 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "cust_facing_tran_price_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "inc_spending_per_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "gi_pin_incentive_isr",
+      "column_name": "tot_sales_estimate_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "cash_inc_pentration_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "cash_incentive"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "customer_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "customer_cash_amount_nat"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "customer_cash_amount_reg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "dealer_cash"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "dealer_cash_amount_nat"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "dealer_cash_amount_reg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "dest_processing_handling_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "dlr_cash_cash_take_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "effective_date_nat"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "effective_date_reg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "end_date_nat"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "end_date_reg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "isys_incentive_amount"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "retail_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "suggested_base_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "suggested_fio_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "suggested_ppo_retail_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "intermediate_vin_incentives",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "contract_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "fiscal_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "funding_source"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "incentive_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "incentive_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "sold_to_dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "iplus_cash_input",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "business_month"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "business_month_inctv_status"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "contract_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "grade_spec_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "model_number"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "tmna_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "tmna_report_status"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "sales_ops_incentives",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_apr_incl_cash_inctv",
+      "column_name": "apr_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_apr_incl_cash_inctv",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_apr_incl_cash_inctv",
+      "column_name": "inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_apr_incl_cash_inctv",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_lease_incl_cash_inctv",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_lease_incl_cash_inctv",
+      "column_name": "inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_lease_incl_cash_inctv",
+      "column_name": "lease_sales"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_ing",
+      "elementname": "tmna_lease_incl_cash_inctv",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "cash_inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "contest_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "contest_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "contest_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "contest_status"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "contest_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "create_ts"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "model_serial"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "objective_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "raw_dealer_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "raw_region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "rdr_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "reason_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "retail_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "type_sales_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "tms_us_cash_inctv",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "data_set_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "fuel_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "incentive_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "incentive_rt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "incentive_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "make_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "partn_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "raw_data_set_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "raw_region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "raw_segment_category"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "raw_series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "region_abbr_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "region_area_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "region_area_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "region_char_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "region_long_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "sales_geog_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "segment_category_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "segment_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "series_fuel_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "series_group_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "term_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t1"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t1_plus"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t2"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t3"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t4"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t5"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t6"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "ircm_trn",
+      "elementname": "toyota_us_inctv_prog_targets",
+      "column_name": "tier_t7"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "create_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "ftpr_intfc_acctg_tran_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "ftpr_intfc_ap_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "ftpr_intfc_bi_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "ftpr_intfc_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "hds_ftpr_intfc_acctg_tran_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "inctv_acctg_tran_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "intfc_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "oltp_archive_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_acctg_tran",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "create_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "dtl_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "etl_process_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "etl_process_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "first_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "ftpr_intfc_ap_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "ftpr_intfc_hdr_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "ftpr_program_param_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "ftpr_transmitted_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "hds_ftpr_intfc_ap_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "interface_line_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "invoice_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "invoice_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "last_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "oltp_archive_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "pay_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "state_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "transaction_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "vendor_class_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "vendor_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "vendor_persistence_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_check_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_invoice_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_jrnl_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_jrnl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_jrnl_post_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_paid_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_pmt_reference_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_pmt_status_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_ps_invoice_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "wb_received_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "zip_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_ap_dtl",
+      "column_name": "zip_extn_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "alpha_series"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "create_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "dtl_row_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "etl_process_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "etl_process_flg"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "ftpr_intfc_gl_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "ftpr_intfc_hdr_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "ftpr_program_param_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "ftpr_transmitted_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "hds_ftpr_intfc_gl_dtl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "inctv_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "interface_line_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "oltp_archive_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "rdr_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "rdr_status"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "retail_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "stat_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "transaction_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_jrnl_amt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_jrnl_cnt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_jrnl_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_jrnl_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_jrnl_post_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_pmt_status_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_intfc_gl_dtl",
+      "column_name": "wb_received_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "brand_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "create_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "export_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "ftpr_program_param_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "funding_src_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "hds_ftpr_program_param_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "model_yr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "oltp_archive_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "option_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "option_type_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "plant_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "program_end_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "program_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "program_mth"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "program_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "program_start_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "region_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "series_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ftpr_program_param",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "display_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "hds_ia_display_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "ia_display_status_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "ia_display_status_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "ia_display_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "ia_display_status_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "internal_app_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_display_status",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "artifact_trigger"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "create_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "deal_ref_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "dealer_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "dealer_inctv_opted_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "dms_ref_no"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "execption_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "final_tier_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "hds_ia_interface_data_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "ia_interface_data_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "inctv_app_sbmt_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "inctv_ia_sale_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "inctv_signed_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "inctv_type_sale_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "manual_booking_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "retail_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "rt_offer_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "sold_order_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "term_month_nbr"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "tms_inctv_offered_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "type_of_ia_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_interface_data",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "data_retention_ind"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "hds_ia_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "ia_status_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "ia_status_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "ia_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "ia_status_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "internal_app_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "ia_status",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "hds_rdr_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "internal_app_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "rdr_status_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "rdr_status_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "rdr_status_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "rdr_status_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "rdr_status",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "hds_state_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "internal_app_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "state_cd"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "state_desc"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "state_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "state_nm"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state",
+      "column_name": "update_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "create_user_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "end_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "hds_state_loc_map_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "locality_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "start_track_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "state_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "state_loc_map_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "update_dt"
+    },
+    {
+      "userrolename": "tbdp-vehicle-incentive-actuals-sensitive",
+      "dbname": "vehicle_incentive_actuals_sensitive_trn_ext",
+      "elementname": "state_loc_map",
+      "column_name": "update_user_id"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-vehicle-incentive-actuals-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

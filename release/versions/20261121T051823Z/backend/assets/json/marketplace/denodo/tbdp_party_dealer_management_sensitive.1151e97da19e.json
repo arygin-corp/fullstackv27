@@ -1,0 +1,1037 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "aact_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "acct_cd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "agrgtn_prdcd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "dlr_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "lat_data_refresh_month"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_apr"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_aug"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_dec"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_feb"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_jan"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_jul"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_jun"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_mar"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_may"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_nov"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_oct"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_sep"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "parts_dealer_mgmt_sen_trn_ext",
+      "elementname": "rmd_dealer_financial",
+      "column_name": "rdr_sales_year"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "accounts"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "bm_dealer_hierarchy_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "bm_dealer_hierarchy_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "bm_dealer_hierarchy_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "bm_month"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "bm_year"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "currency_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "dealership_class"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "dealership_type_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "mtd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "profitability_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "prtn_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "tms_division_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_composite_financial",
+      "column_name": "ytd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "accounts"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "bm_month"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "bm_year"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "currency_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "dealership_class"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "dealership_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "dealership_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "late_submission_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "mtd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "profitability_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "prtn_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "submission_count"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "tms_division_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_fact_dealership_financial",
+      "column_name": "ytd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "account_description"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "accounts"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "aggregation_product_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "aggregation_rule_ind"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "created_by"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "effective_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "expiry_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "financial_account_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "tms_division_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "unit_measurement_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "updated_by"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_account",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "accounts"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "bm_dealer_hierarchy_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "bm_dealer_hierarchy_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "bm_dealer_hierarchy_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "bm_month"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "bm_year"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "currency_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "dealership_class"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "dual_exclusive_ind"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "mtd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "profitability_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "tms_division_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "bm_financial_fact",
+      "column_name": "ytd"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_approval_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_ext_length_mos"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_length_mos"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_length_yrs"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "agrmt_renewal_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "appointed_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "bm_active_terminated_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "bm_end_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "bm_month"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "bm_start_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "bm_year"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "buysell_effective_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "buysell_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "current_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealer_principal_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealergroup_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealergroup_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_class"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_legal_entity"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_status"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dealership_type_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "district_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "district_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "dual_exclusive_ind"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "estimated_operational_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "general_manager_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "geography_change_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "lexus_plus_effective_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "lexus_plus_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "major_ownership_change_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "major_ownership_change_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "market_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "market_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "market_type"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "mr_active_terminated_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "organization_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "pma_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "previous_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "primary_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "region_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "service_marketing_effective_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "service_marketing_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "ten_plus_district_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "ten_plus_district_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "termination_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "tfs_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "tms_division_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "tms_division_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "toyota_expressmaintenance_effective_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "dealership",
+      "column_name": "toyota_expressmaintenance_flag"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "created_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "hierarchy_alias"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "hierarchy_field"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "hierarchy_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "isactive"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "parent_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "sequence_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_lexus",
+      "column_name": "updated_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "created_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "hierarchy_alias"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "hierarchy_field"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "hierarchy_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "isactive"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "parent_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "sequence_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "mr_hierarchy_toyota",
+      "column_name": "updated_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "app"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "department_description"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "email_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "end_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "entity_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "entity_value"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "first_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "last_name"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "modified_by"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "modified_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "primary_dealer_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "region_code"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "role"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "start_date"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-party-dealer-management-sensitive",
+      "dbname": "rmd_ing_ext",
+      "elementname": "rmd_user_roles",
+      "column_name": "user_type"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-party-dealer-management-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

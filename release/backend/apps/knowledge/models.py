@@ -10,6 +10,7 @@ class Document(models.Model):
         DISABLED = "disabled", "Disabled"
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="knowledge_documents")
+    shared = models.BooleanField(default=False, help_text="Staff learning files are available to every signed-in user.")
     title = models.CharField(max_length=255)
     source_file = models.FileField(upload_to="documents/%Y/%m/")
     content_hash = models.CharField(max_length=64, db_index=True, blank=True)

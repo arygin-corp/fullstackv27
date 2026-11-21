@@ -444,9 +444,9 @@ resource "aws_db_instance" "postgres" {
   engine                      = "postgres"
   engine_version              = "17"
   allow_major_version_upgrade = true
-  instance_class              = "db.t4g.medium"
-  allocated_storage           = 100
-  max_allocated_storage       = 500
+  instance_class              = local.platform.db_instance_class
+  allocated_storage           = local.platform.db_allocated_storage
+  max_allocated_storage       = local.platform.db_max_allocated_storage
   storage_type                = "gp3"
   storage_encrypted           = true
   db_name                     = local.platform.db_name
@@ -468,6 +468,7 @@ resource "aws_db_instance" "postgres" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes  = [password]
   }
 }
 
@@ -502,6 +503,10 @@ data "aws_elasticache_replication_group" "redis" {
 data "aws_secretsmanager_secret" "runtime" {
   count = var.manage_shared ? 0 : 1
   name  = local.platform.secret_name
+}
+
+data "aws_secretsmanager_secret" "database" {
+  name = local.platform.db_secret_name
 }
 
 data "aws_iam_role" "execution" {
@@ -567,9 +572,12 @@ resource "aws_iam_role_policy" "execution_secrets" {
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
-      Effect   = "Allow"
-      Action   = ["secretsmanager:GetSecretValue"]
-      Resource = aws_secretsmanager_secret.runtime[0].arn
+      Effect = "Allow"
+      Action = ["secretsmanager:GetSecretValue"]
+      Resource = [
+        aws_secretsmanager_secret.runtime[0].arn,
+        data.aws_secretsmanager_secret.database.arn,
+      ]
     }]
   })
 }
@@ -599,12 +607,25 @@ resource "aws_iam_role_policy" "task" {
         Resource = [for bucket in local.platform.frontend_buckets : "arn:aws:s3:::${bucket}/*"]
       },
       {
-        Effect   = "Allow"
-        Action   = ["secretsmanager:GetSecretValue"]
-        Resource = aws_secretsmanager_secret.runtime[0].arn
+        Effect = "Allow"
+        Action = ["secretsmanager:GetSecretValue"]
+        Resource = [
+          aws_secretsmanager_secret.runtime[0].arn,
+          data.aws_secretsmanager_secret.database.arn,
+        ]
       },
     ]
   })
+}
+
+module "ses" {
+  count             = var.manage_shared ? 1 : 0
+  source            = "./modules/ses"
+  domains           = local.platform.ses_domains
+  configuration_set = local.platform.ses_configuration_set
+  name_prefix       = "edmp-gdxp-admin-${local.platform.environment}"
+  buckets           = local.platform.frontend_buckets
+  standard_tags     = merge(local.common_tags, { "tmna:environment" = local.platform.environment })
 }
 
 resource "aws_lb_target_group" "web" {
@@ -648,10 +669,16 @@ resource "aws_lb_listener_rule" "web" {
 
 locals {
   container_environment = [for key, value in local.runtime : { name = key, value = value }]
-  container_secrets = [for key in keys(local.secret_values) : {
-    name      = key
-    valueFrom = "${local.secret_arn}:${key}::"
-  }]
+  container_secrets = concat(
+    [for key in keys(local.secret_values) : {
+      name      = key
+      valueFrom = "${local.secret_arn}:${key}::"
+    }],
+    [{
+      name      = "DB_PASSWORD"
+      valueFrom = "${data.aws_secretsmanager_secret.database.arn}:password::"
+    }]
+  )
 }
 
 resource "aws_cloudwatch_log_group" "web" {

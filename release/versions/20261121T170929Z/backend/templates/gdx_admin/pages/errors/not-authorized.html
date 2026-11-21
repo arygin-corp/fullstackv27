@@ -1,0 +1,32 @@
+{% extends "gdx_admin/pages/errors/base.html" %}
+
+{% block error_title %}Not authorized{% endblock %}
+{% block error_kicker %}Access{% endblock %}
+{% block error_heading %}Not authorized{% endblock %}
+
+{% block error_message %}
+	{% if pending_verification %}
+		{{ request.user.email|default:request.user.get_username }} is signed in, but this staff account has not been verified.
+	{% elif unverified_user %}
+		{{ request.user.email|default:request.user.get_username }} is not staff and has not been verified.
+	{% elif request.user.is_authenticated %}
+		{{ request.user.email|default:request.user.get_username }} is signed in, but this account cannot continue.
+	{% else %}
+		Sorry, you have not been provisioned to access this GDX Admin application. Your account is not approved yet.
+	{% endif %}
+{% endblock %}
+
+{% block error_note %}
+<div class="gate-note">An administrator has to verify this account before it can be used.</div>
+{% endblock %}
+
+{% block error_actions %}
+	{% if request.user.is_authenticated %}
+	<form method="post" action="{% url 'logout' %}">
+		{% csrf_token %}
+		<button class="btn btn-primary waves-effect waves-light" type="submit">Sign out</button>
+	</form>
+	{% else %}
+	<a class="btn btn-primary waves-effect waves-light" href="{% url 'login' %}">Login</a>
+	{% endif %}
+{% endblock %}

@@ -155,6 +155,7 @@ def sidebar_sections(request):
                     _link("microsoft_teams", "Meetings"),
                 ]),
                 _group("Deployment", "isax-send-2", [
+                    _path("AWS Session", "/sa/code/aws-session/deployment/"),
                     _link("deployment_dashboard", "Dashboard"),
                     _link("deployment_analytics", "Analytics"),
                     _link("deployment_activity", "Activity"),

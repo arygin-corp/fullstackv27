@@ -15,17 +15,17 @@ class Module(ThirdPartyApiModule):
     upstream_provider = "Denodo"
     upstream_method = "GET"
     upstream_authentication = "OAuth 2.0 client credentials"
-    upstream_endpoint_setting = "VIEWS_END_POINT"
+    upstream_endpoint_setting = "DENODO_VIEWS_END_POINT"
 
     required_setting_names = (
-        "VIEWS_END_POINT",
-        "METADATA_VIEWS_AUTH_ENDPOINT",
-        "METADATA_VIEWS_CLIENT_ID",
-        "METADATA_VIEWS_X_CLIENT_ID",
-        "METADATA_VIEWS_RESOURCE",
-        "METADATA_VIEWS_GRANT_TYPE",
+        "DENODO_VIEWS_END_POINT",
+        "DENODO_VIEWS_AUTH_ENDPOINT",
+        "DENODO_VIEWS_CLIENT_ID",
+        "DENODO_VIEWS_X_CLIENT_ID",
+        "DENODO_VIEWS_RESOURCE",
+        "DENODO_VIEWS_GRANT_TYPE",
     )
-    required_secret_names = ("METADATA_VIEWS_CLIENT_SECRET",)
+    required_secret_names = ("DENODO_VIEWS_CLIENT_SECRET",)
 
     cache_entries = (
         ("Denodo token", "denodo_metadata_views_token"),

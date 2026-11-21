@@ -1,0 +1,51 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment Analytics{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
+<div class="deploy-grid">
+    <article class="deploy-metric"><span>Succeeded</span><strong>{{ analytics.counts.succeeded }}</strong></article>
+    <article class="deploy-metric"><span>Failed</span><strong>{{ analytics.counts.failed }}</strong></article>
+    <article class="deploy-metric"><span>Running</span><strong>{{ analytics.counts.running }}</strong></article>
+    <article class="deploy-metric"><span>Recorded</span><strong>{{ analytics.counts.total }}</strong></article>
+</div>
+<div class="deploy-split">
+    <section class="deploy-panel">
+        <h2>By target</h2>
+        <div class="deploy-scroll">
+            <table class="deploy-table">
+                <thead><tr><th>Target</th><th>Builds</th><th>Share</th></tr></thead>
+                <tbody>
+                {% for item in analytics.targets %}
+                <tr>
+                    <td>{{ item.label }}</td>
+                    <td>{{ item.count }}</td>
+                    <td><div class="deploy-bar"><span style="width:{{ item.share }}%"></span></div></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="deploy-panel">
+        <h2>By environment</h2>
+        <div class="deploy-scroll">
+            <table class="deploy-table">
+                <thead><tr><th>Environment</th><th>Builds</th><th>Share</th></tr></thead>
+                <tbody>
+                {% for item in analytics.environments %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.count }}</td>
+                    <td><div class="deploy-bar"><span style="width:{{ item.share }}%"></span></div></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</main>
+{% endblock %}

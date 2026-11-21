@@ -1,0 +1,13 @@
+{% extends "changelog/base.html" %}{% load changelog_extras %}
+{% block title %}Audit Event {{ audit_log.pk }}{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"><div><h1 class="h2 mb-1">Audit Event {{ audit_log.pk }}</h1><p class="text-muted mb-0">{{ audit_log.created_at|date:"M d, Y H:i:s T" }}</p></div><a class="btn btn-outline-secondary" href="{% url 'changelog:audit-list' %}">Back to history</a></div>
+  <div class="card mb-4"><div class="card-body"><dl class="row mb-0"><dt class="col-sm-3">User</dt><dd class="col-sm-9">{{ audit_log.actor_username|default:"system" }}{% if audit_log.actor_email %} · {{ audit_log.actor_email }}{% endif %}</dd><dt class="col-sm-3">Action</dt><dd class="col-sm-9">{{ audit_log.get_action_display }}</dd><dt class="col-sm-3">Record</dt><dd class="col-sm-9">{{ audit_log.object_repr }} · {{ audit_log.model_name }} #{{ audit_log.object_id }}</dd>{% if release %}<dt class="col-sm-3">Release</dt><dd class="col-sm-9"><a href="{% url 'changelog:post-detail' release.pk %}">{{ release.version }}</a></dd>{% endif %}<dt class="col-sm-3">Request</dt><dd class="col-sm-9">{{ audit_log.request_method }} {{ audit_log.request_path|default:"Background/system operation" }}</dd><dt class="col-sm-3">IP address</dt><dd class="col-sm-9">{{ audit_log.ip_address|default:"Not recorded" }}</dd></dl></div></div>
+  <h2 class="h4">Field-level changes</h2>
+  {% for change in field_changes %}
+  <section class="card mb-3"><div class="card-header"><strong>{{ change.field }}</strong></div><div class="card-body"><div class="row g-3"><div class="col-md-6"><div class="small text-muted mb-1">Before</div><pre class="p-3 rounded bg-danger-subtle text-wrap mb-0">{{ change.before|pretty_value }}</pre></div><div class="col-md-6"><div class="small text-muted mb-1">After</div><pre class="p-3 rounded bg-success-subtle text-wrap mb-0">{{ change.after|pretty_value }}</pre></div></div></div></section>
+  {% empty %}<div class="alert alert-secondary">This event did not contain field-level changes.</div>{% endfor %}
+  <details class="card"><summary class="card-header">Stored snapshot</summary><pre class="card-body text-wrap mb-0">{{ audit_log.snapshot|pretty_value }}</pre></details>
+</div>
+{% endblock %}

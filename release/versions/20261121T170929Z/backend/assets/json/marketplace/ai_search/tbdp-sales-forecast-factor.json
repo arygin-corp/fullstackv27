@@ -1,0 +1,40 @@
+{
+  "adgroup": "tbdp-sales-forecast-factor",
+  "slugs": [
+    "sales-forecast-factor"
+  ],
+  "databases": [
+    "ircm_ing"
+  ],
+  "tables": [
+    "gas_price_change",
+    "vw_eia_national_gas_price",
+    "vw_vehicle_gas_prc"
+  ],
+  "columns": [
+    "avg_eia_national_gas_price",
+    "avg_gas_price",
+    "business_month",
+    "calendarmonth_0",
+    "create_ts",
+    "createtimestamp_0",
+    "effective_dt",
+    "effectivedate_0",
+    "eianationalgasprice_0",
+    "eianationalpricedate_0",
+    "entity",
+    "fleet_indicator",
+    "fuel_type",
+    "gas_price_change_percent",
+    "industry_number_selling_days",
+    "make_nm",
+    "model_year",
+    "region_area_cd",
+    "scenario_nm",
+    "segment_nm",
+    "series_fuel_nm",
+    "source_table",
+    "sourcefilenm_0",
+    "version_nm"
+  ]
+}

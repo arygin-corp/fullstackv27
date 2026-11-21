@@ -1,0 +1,37 @@
+<div class="card mb-4">
+	<div class="card-header">
+		<div>
+			<h3 class="h5 mb-1">
+				<i class="ti ti-arrows-diff me-2 text-primary"></i>Select releases
+			</h3>
+			<p class="text-muted mb-0">Choose an earlier and later release to compare metadata and sections A through J.</p>
+		</div>
+	</div>
+	<div class="card-body">
+		<form method="get">
+			<div class="row g-3 align-items-end">
+				<div class="col-md-5">
+					<label class="form-label" for="before">Earlier release</label>
+					<select class="form-select" id="before" name="before" required>
+						<option value="">Select a release</option>
+                        {% for release in available_posts %} 
+                        <option value="{{ release.pk }}" {% if request.GET.before == release.pk|stringformat:'s' %}selected{% endif %}>{{ release.version }} · {{ release.release_date|date:"M d, Y" }}</option>
+                        {% endfor %}
+					</select>
+				</div>
+				<div class="col-md-5">
+					<label class="form-label" for="after">Later release</label>
+					<select class="form-select" id="after" name="after" required>
+						<option value="">Select a release</option>
+                        {% for release in available_posts %} 
+                        <option value="{{ release.pk }}" {% if request.GET.after == release.pk|stringformat:'s' %}selected{% endif %}>{{ release.version }} · {{ release.release_date|date:"M d, Y" }}</option>
+                        {% endfor %}
+					</select>
+				</div>
+				<div class="col-md-2">
+					<button class="btn btn-primary w-100" type="submit">Compare</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

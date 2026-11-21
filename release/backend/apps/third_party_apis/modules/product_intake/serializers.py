@@ -16,7 +16,7 @@ class ProductIntakeWriteSerializer(serializers.ModelSerializer):
             "sample_field1","sample_value1","sample_field2","sample_value2","sample_field3","sample_value3",
             "sample_field4","sample_value4","sample_field5","sample_value5","sample_field6","sample_value6",
             "sample_field7","sample_value7","sample_field8","sample_value8","sample_field9","sample_value9",
-            "sample_field10","sample_value10","fulfillment_group",
+            "sample_field10","sample_value10","sample_fields","sample_values","fulfillment_group",
             "requester_first_name","requester_last_name","requester_email",
             "submitted_by_first_name","submitted_by_last_name","submitted_by_email",
             "marketplace_domain","marketplace_datatype","marketplace_classification","idempotency_key",
@@ -48,6 +48,33 @@ class ProductIntakeWriteSerializer(serializers.ModelSerializer):
         instance.updated_by=self.context["request"].user; instance.requester_name=instance.requester_full_name; instance.save()
         if tags is not None: instance.product_tags.set(tags)
         return instance
+
+
+WORK_STATUS = {
+    "draft": "Not started",
+    "submitted": "Open",
+    "resubmitted": "Open",
+    "assigned": "In progress",
+    "under_review": "In review",
+    "needs_information": "Waiting on requester",
+    "approved": "Accepted",
+    "product_draft": "Draft product",
+    "curated": "Ready to publish",
+    "rejected": "Closed",
+    "implemented": "Completed",
+    "archived": "Completed",
+}
+
+
+class ProductIntakeListSerializer(serializers.ModelSerializer):
+    work_status = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ProductIntake
+        fields = ("id", "product_name", "product_domain", "product_type", "status", "work_status", "submitted_at", "created_at")
+
+    def get_work_status(self, obj):
+        return WORK_STATUS.get(obj.status, "Open")
 
 
 class ProductIntakeReadSerializer(serializers.ModelSerializer):

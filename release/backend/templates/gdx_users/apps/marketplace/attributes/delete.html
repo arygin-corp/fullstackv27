@@ -1,0 +1,24 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-danger">Delete Attribute: {{ object.name }}</h4>
+                <p>Are you sure you want to delete the attribute "<strong>{{ object.name }}</strong>"?</p>
+                <p class="text-muted">You can only delete an attribute after unlinking it from its products. Deletion cannot be undone.</p>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">{{ form.non_field_errors }}</div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                    <a href="{% url 'marketplace:attribute-detail' object.pk %}" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

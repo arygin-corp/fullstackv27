@@ -1,0 +1,129 @@
+<form method="post" id="notification-preferences">
+    {% csrf_token %}
+    <div class="row g-3 mb-4 preference-layout">
+        <div class="col-lg-9">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3 class="h5 mb-1">Delivery channels</h3>
+                    <p class="text-muted mb-0">Turn on the ways a notification can reach you.</p>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        {% for field in preference_form %}
+                        {% if field.name == "in_app_enabled" or field.name == "email_enabled" or field.name == "teams_enabled" or field.name == "mobile_push_enabled" %}
+                        <div class="col-md-6">
+                            <div class="form-check form-switch border rounded p-3 ps-5 h-100">
+                                {{ field }}
+                                <label class="form-check-label fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                <small class="d-block text-muted">
+                                    {% if field.name == "in_app_enabled" %}Shows in the bell and on your notification page.{% endif %}
+                                    {% if field.name == "email_enabled" %}Sends mail, including a scheduled digest.{% endif %}
+                                    {% if field.name == "teams_enabled" %}Sends a Teams message when a destination is configured.{% endif %}
+                                    {% if field.name == "mobile_push_enabled" %}Sends a push to your registered devices.{% endif %}
+                                </small>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card h-100" id="digest-schedule">
+                <div class="card-header">
+                    <h3 class="h5 mb-1">Digest schedule</h3>
+                    <p class="text-muted mb-0" id="digest-summary">Available when Email is enabled.</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="digest-frequency">{{ preference_form.digest_frequency.label }}</label>
+                        {{ preference_form.digest_frequency }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="digest-hour">{{ preference_form.digest_hour.label }}</label>
+                        {{ preference_form.digest_hour }}
+                        <small class="d-block text-muted">Hour of the day, from 0 through 23.</small>
+                    </div>
+                    <p class="small text-muted mb-0" id="digest-channels"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="h5 mb-1">Notification categories</h3>
+            <p class="text-muted mb-0">Security notices stay on even when this category is unchecked.</p>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                {% for field in preference_form %}
+                {% if field.name == "approval_enabled" or field.name == "assignment_enabled" or field.name == "comment_enabled" or field.name == "governance_enabled" or field.name == "system_enabled" or field.name == "security_enabled" %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-check form-switch border rounded p-3 ps-5 h-100">
+                        {{ field }}
+                        <label class="form-check-label fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+        <a class="integration-button" href="{% url 'notifications:list' %}">Cancel</a>
+        <button class="integration-button integration-button--primary" type="submit">Save preferences</button>
+    </div>
+</form>
+<script>
+(function () {
+    const email = document.getElementById("id_email_enabled");
+    const inApp = document.getElementById("id_in_app_enabled");
+    const teams = document.getElementById("id_teams_enabled");
+    const push = document.getElementById("id_mobile_push_enabled");
+    const frequency = document.getElementById("digest-frequency");
+    const hour = document.getElementById("digest-hour");
+    const summary = document.getElementById("digest-summary");
+    const channels = document.getElementById("digest-channels");
+    if (!email || !frequency || !hour) return;
+
+    function nameList() {
+        const enabled = [];
+        if (inApp && inApp.checked) enabled.push("In-app");
+        if (email.checked) enabled.push("Email");
+        if (teams && teams.checked) enabled.push("Teams");
+        if (push && push.checked) enabled.push("Mobile push");
+        return enabled;
+    }
+
+    function syncDigest() {
+        const enabled = nameList();
+        if (!email.checked) {
+            frequency.value = "off";
+            frequency.setAttribute("aria-disabled", "true");
+            hour.setAttribute("aria-disabled", "true");
+            frequency.style.pointerEvents = "none";
+            hour.style.pointerEvents = "none";
+            summary.textContent = "Email is off, so the digest stays off.";
+        } else {
+            frequency.removeAttribute("aria-disabled");
+            hour.removeAttribute("aria-disabled");
+            frequency.style.pointerEvents = "";
+            hour.style.pointerEvents = "";
+            summary.textContent = frequency.value === "off"
+                ? "Email is on. Choose daily or weekly to send a digest."
+                : "The digest is emailed on this schedule.";
+        }
+        channels.textContent = enabled.length
+            ? "Enabled channels: " + enabled.join(", ") + "."
+            : "No delivery channels are enabled.";
+    }
+
+    [email, inApp, teams, push, frequency].forEach(function (node) {
+        if (node) node.addEventListener("change", syncDigest);
+    });
+    syncDigest();
+})();
+</script>

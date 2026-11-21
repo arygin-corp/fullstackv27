@@ -1,0 +1,18 @@
+name: Publish Tech Docs
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'docs/**.md'
+      - '**.yaml'
+      - '**.yml'
+      - '!.github/workflows/*'
+
+  workflow_dispatch:
+
+jobs:
+  publish-tech-docs:
+    uses: Toyota-Motor-North-America/chofer-actions/.github/workflows/publish-tech-docs.yml@v1
+    secrets: inherit

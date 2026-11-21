@@ -10,7 +10,7 @@ def search_entities(user, query="", entity_type=""):
     return qs
 
 def search_documents(user, query="", entity_type=""):
-    qs = Document.objects.filter(owner=user).prefetch_related("entity_links__entity")
+    qs = Document.objects.filter(Q(owner=user) | Q(shared=True)).prefetch_related("entity_links__entity")
     if query:
         qs = qs.filter(Q(title__icontains=query) | Q(executive_summary__icontains=query) | Q(entity_links__entity__canonical_name__icontains=query) | Q(entity_links__entity__description__icontains=query)).distinct()
     if entity_type:

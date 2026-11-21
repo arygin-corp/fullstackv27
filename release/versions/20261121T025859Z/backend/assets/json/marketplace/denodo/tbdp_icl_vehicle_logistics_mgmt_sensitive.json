@@ -1,0 +1,419 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "assignment_origin"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "cubic_meter"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "curb_wt"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "currency_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_city"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_group"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_state"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_street"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_street2"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "dealer_zip"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "distance_qualifier"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "end_date"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "itinerary_gid"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "key_event_date"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_lat"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_location_id"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_long"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_tms_loc_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_type"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_dest_zip"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_lat"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_location_id"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_long"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_tms_loc_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_type"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_origin_zip"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "leg_seq"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "master_transit_id"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "model_code"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_aphis"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_art_bilevel"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_automax"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_bilevel"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_carbon_tax"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_corridor"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_customs"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "rail_trilevel"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "region"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "route_rate_id"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "route_type"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "scac"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "special_rate_groups"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "start_date"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "transit_days"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "transit_distance"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "transit_leg_id"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "transport_type"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_ferry"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_freight_fixed"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_freight_variable"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_sla_days"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_1"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_2"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_3"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_4"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_5"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_tier_6"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_toll"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "truck_type"
+    },
+    {
+      "userrolename": "tbdp-icl-vehicle-logistics-mgmt-sensitive",
+      "dbname": "vehicle_logistics_trn",
+      "elementname": "icl_route_rate",
+      "column_name": "vessel_freight"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-icl-vehicle-logistics-mgmt-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

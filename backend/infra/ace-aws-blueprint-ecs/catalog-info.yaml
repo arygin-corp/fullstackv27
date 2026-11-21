@@ -1,0 +1,13 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ace-aws-blueprint-ecs
+  description: ECS Blueprint for Containerized Apps technical documentation
+  annotations:
+    github.com/project-slug: Toyota-Motor-North-America/ace-aws-blueprint-ecs
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: Architecture Blueprint
+  lifecycle: production
+  owner: Toyota-Motor-North-America/ACE

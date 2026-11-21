@@ -1,0 +1,9 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment{% endblock %}
+{% load static %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
+{% include "gdx_admin/pages/deployment/partials/_site_build.html" %}
+</main>
+{% endblock %}

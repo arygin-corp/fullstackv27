@@ -1,0 +1,30 @@
+{
+  "adgroup": "tbdp-dealer-metrics",
+  "slugs": [
+    "dealer-metrics"
+  ],
+  "databases": [
+    "dealership_trn"
+  ],
+  "tables": [
+    "applctn_config",
+    "dlrshp_fincl_acct"
+  ],
+  "columns": [
+    "acct_cd",
+    "acct_mth",
+    "acct_typ_cd",
+    "acct_yr",
+    "appl_nm",
+    "audit_create_date",
+    "config_nm",
+    "cretd_by",
+    "cretd_tmstmp",
+    "fincl_amt_mtd",
+    "fincl_amt_ytd",
+    "lst_updt_by",
+    "lst_updt_tmstmp",
+    "prty_role_id",
+    "tms_div_cd"
+  ]
+}

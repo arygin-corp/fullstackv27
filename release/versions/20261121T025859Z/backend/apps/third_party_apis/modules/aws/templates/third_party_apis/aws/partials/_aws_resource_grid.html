@@ -1,0 +1,12 @@
+{% for category, resources in groups.items %}
+<section class="mb-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="h5 mb-0">{{ category }}</h3><span class="badge bg-light text-dark border">{{ resources|length }} resources</span>
+  </div>
+  <div class="row g-3">
+    {% for resource in resources %}<div class="col-12 col-md-6 col-xl-4">{% include "third_party_apis/aws/partials/_aws_resource_card.html" with resource=resource only %}</div>{% endfor %}
+  </div>
+</section>
+{% empty %}
+{% include "third_party_apis/aws/partials/_aws_empty_state.html" with selected_environment=selected_environment only %}
+{% endfor %}

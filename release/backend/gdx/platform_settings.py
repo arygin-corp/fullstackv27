@@ -1,6 +1,7 @@
 """Staff platform settings shown from the sidebar gear icon."""
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from django.conf import settings
@@ -103,6 +104,7 @@ SECTIONS = (
         "description": "When enabled, visitors see the downtime page. Super admins can still use the site.",
         "fields": (
             {"name": "maintenance_mode", "label": "Enable maintenance mode", "type": "checkbox", "default": False, "help": "The site is live when this is off."},
+            {"name": "maintenance_work", "label": "Work", "type": "select", "default": "Deployment build (1 hour)", "choices": ("Deployment build (1 hour)", "Bug fix · Quick fix (1 hour)", "Bug fix · Low complexity (2 hours)", "Bug fix · Medium complexity (3 hours)", "Bug fix · High complexity (5 hours)"), "help": "Sets the countdown. Deployments are 1 hour. Bug fixes follow the complexity estimate."},
             {"name": "maintenance_headline", "label": "Headline", "type": "text", "default": "We'll be back."},
             {"name": "maintenance_message", "label": "Message", "type": "textarea", "default": "The website is down for maintenance. Check back later."},
         ),
@@ -136,6 +138,9 @@ def load_settings():
 
     values["page_access"] = page_access_map(stored.get("page_access"))
     values["pending_removals"] = _pending_removals(stored.get("pending_removals"))
+    values["maintenance_started_at"] = str(stored.get("maintenance_started_at") or "")
+    values["maintenance_hold"] = str(stored.get("maintenance_hold") or "")
+    values["maintenance_surface"] = str(stored.get("maintenance_surface") or "")
     return values
 
 
@@ -157,6 +162,50 @@ def _pending_removals(stored):
                 "deleted_at": str(item.get("deleted_at") or ""),
             })
     return cleaned
+
+
+def ensure_maintenance_started():
+    values = load_settings()
+    if values.get("maintenance_started_at"):
+        return values["maintenance_started_at"]
+    values["maintenance_started_at"] = datetime.now(timezone.utc).isoformat()
+    _write(values)
+    return values["maintenance_started_at"]
+
+
+DEPLOYMENT_WORK = "Deployment build (1 hour)"
+
+
+def begin_deployment_maintenance(work=DEPLOYMENT_WORK, surface="both"):
+    """Show the countdown for a version build or the JIRA story's complexity."""
+    from gdx.maintenance import WINDOWS
+
+    values = load_settings()
+    if values.get("maintenance_mode") and values.get("maintenance_hold") != "deployment":
+        return False
+    if surface not in ("backend", "frontend", "both"):
+        surface = "both"
+    values["maintenance_mode"] = True
+    values["maintenance_surface"] = surface
+    values["maintenance_work"] = work if work in WINDOWS else DEPLOYMENT_WORK
+    values["maintenance_started_at"] = datetime.now(timezone.utc).isoformat()
+    values["maintenance_hold"] = "deployment"
+    _write(values)
+    return True
+
+
+def end_deployment_maintenance(surface=""):
+    """Clear the countdown after the deploy that opened it succeeds."""
+    values = load_settings()
+    if values.get("maintenance_hold") != "deployment":
+        return
+    if surface and values.get("maintenance_surface") != surface:
+        return
+    values["maintenance_mode"] = False
+    values["maintenance_started_at"] = ""
+    values["maintenance_hold"] = ""
+    values["maintenance_surface"] = ""
+    _write(values)
 
 
 def replace_pending_removals(items):
@@ -188,12 +237,23 @@ def save_settings(posted, section_id):
     section = next((item for item in SECTIONS if item["id"] == section_id), None)
     if section is None:
         return values
+    previous_mode = bool(values.get("maintenance_mode"))
+    previous_work = values.get("maintenance_work")
     for field in section["fields"]:
         name = field["name"]
         if field["type"] == "checkbox":
             values[name] = name in posted
         elif name in posted:
             values[name] = posted.get(name)
+    if section_id == "maintenance":
+        mode = bool(values.get("maintenance_mode"))
+        work = values.get("maintenance_work")
+        values["maintenance_hold"] = ""
+        values["maintenance_surface"] = ""
+        if mode and (not previous_mode or work != previous_work or not values.get("maintenance_started_at")):
+            values["maintenance_started_at"] = datetime.now(timezone.utc).isoformat()
+        if not mode:
+            values["maintenance_started_at"] = ""
     _write(values)
     return values
 

@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { RootComponent } from './@components/root/root.component'; 
 import { LandingPageComponent } from './@pages/landing-page/landing-page.component';
 import { PageNotFoundComponent } from './@pages/error-pages/page-not-found/page-not-found.component';
+import { MaintenanceComponent } from './@pages/maintenance/maintenance.component';
 import { MsalGuard } from "@azure/msal-angular";
 import { DomainsComponent } from './@pages/domains/domains.component';
 
 const routes: Routes = [
+    { path: 'maintenance', component: MaintenanceComponent },
     // 1. Pprotected
     // { 
     //     path: '', 

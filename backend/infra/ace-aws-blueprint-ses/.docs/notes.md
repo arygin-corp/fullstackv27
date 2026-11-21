@@ -1,0 +1,13 @@
+* It may take as much as up to 72 hours for domain verification to complete, due to time taken for changes in DNS settings. Please refer to [this aws documentation](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#just-verify-domain-proc) for more information.
+* SMTP user name must be "${var.business_unit}_${var.application_name}-ses_${var.environment}_svc". For example, if your application name is coc and your business unit is dpe, then the user name would need to be "dpe_coc-ses_nonprod_svc".
+* In order to rotate SMTP credentials created by this Blueprint, increment the smtp_key_number variable and re-deploy.
+* If you don't know what BU to choose, you can use the Cloud Account Master App or L2 column to see what BU the account is under. Please refer to (https://chofer.cloud.toyota.com/cloud-account).
+* For, ***toyota.com, lexus.com, and toyotasupplier.com*** domains, DKIM and Domain Identification Records/Tokens will not be created by this Blueprint. User needs to raise 1TS [1TS DNS Request Form](https://tmna.service-now.com/1ts/?id=1ts_cat_item&sys_id=b8a874e1db39b050278ae26b8a9619c1) to verify the domain. Please refer to [Amazon SES - DKIM Signing](https://toyota.atlassian.net/wiki/spaces/DSOP/pages/297306451/Amazon+SES+-+DKIM+Signing) for more information.
+* If ***KMS Master Key ID*** is not provided by user then the Blueprint will create a [CMK KMS Key](https://github.com/Toyota-Motor-North-America/ace-aws-infra-modules/blob/master/security/encryption/kms/kms-master-key/README.md) along with default key policy with IAM delegation to SNS service and CMK Administrators.
+
+* The Blueprint allows the user to specify/override the admins, users, and service principals by using `customer_master_keys` field. The `customer_master_keys` is Map of CMK names to spec for managing each key. Each entry in the map corresponds to a key that will be created by this template. This field can be used to create multiple keys. To learn more about the map and what each field means [see](https://github.com/Toyota-Motor-North-America/ace-aws-infra-modules/blob/master/messaging/sns/variables.tf).
+
+* The Blueprint allows to override IAM delegation configuration by setting `allow_override_iam_delegation` to true. Default value of `allow_override_iam_delegation` is false. If user does not set value of `allow_override_iam_delegation` then the Blueprint will override the value provided for `allow_manage_key_permissions_with_iam` attribute which has been set by user as part of `customer_master_keys` variable.
+
+
+* Overall TMNA guidelines for Key Management Service can be referred [here](https://toyota.atlassian.net/wiki/spaces/CSTG/pages/297739017/AWS+Requirements#Key-Management-Service).

@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db.models import Q
+from .access import actor_can_edit_employee_type
 from .forms import ProfileForm
 from .models import Profile
 from django.http import JsonResponse
@@ -64,13 +65,18 @@ def edit_profile(request):
         profile = Profile.objects.create(user=request.user)
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        form = ProfileForm(
+            request.POST,
+            request.FILES,
+            instance=profile,
+            include_employee_type=actor_can_edit_employee_type(request.user),
+        )
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile has been updated successfully!')
             return redirect('profiles:edit_profile')
     else:
-        form = ProfileForm(instance=profile)
+        form = ProfileForm(instance=profile, include_employee_type=actor_can_edit_employee_type(request.user))
 
     return render(request, 'profiles/edit_profile.html', {'form': form})
 

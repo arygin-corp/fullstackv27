@@ -17,7 +17,7 @@ class StaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class OrdersDashboardView(TemplateView):
-    template_name = "gdx_admin/apps/orders/dashboard/dashboard.html"
+    template_name = "gdx_admin/pages/orders/dashboard/dashboard.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -47,7 +47,7 @@ class OrdersDashboardView(TemplateView):
 
 class OrderListView(StaffRequiredMixin, ListView):
     model = Request
-    template_name = "gdx_admin/apps/orders/orders/order_list.html"
+    template_name = "gdx_admin/pages/orders/orders/order_list.html"
     context_object_name = "orders"
     paginate_by = 25
 
@@ -91,7 +91,7 @@ class OrderListView(StaffRequiredMixin, ListView):
 
 class OrderDetailView(StaffRequiredMixin, DetailView):
     model = Request
-    template_name = "gdx_admin/apps/orders/orders/order_detail.html"
+    template_name = "gdx_admin/pages/orders/orders/order_detail.html"
     context_object_name = "request"
     pk_url_kwarg = "request_id"
     slug_field = "request_id"
@@ -108,7 +108,7 @@ class OrderDetailView(StaffRequiredMixin, DetailView):
 
 
 class OrdersAnalyticsView(StaffRequiredMixin, TemplateView):
-    template_name = "gdx_admin/apps/orders/analytics/analytics.html"
+    template_name = "gdx_admin/pages/orders/analytics/analytics.html"
 
     VALID_RANGES = {
         "7d": 7,
@@ -586,7 +586,7 @@ class OrdersAnalyticsView(StaffRequiredMixin, TemplateView):
 
 
 class TrackOrderPageView(StaffRequiredMixin, TemplateView):
-    template_name='gdx_admin/apps/orders/tracking/track_order.html'
+    template_name='gdx_admin/pages/orders/tracking/track_order.html'
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); identifier=self.request.GET.get('identifier','').strip(); c.update(identifier=identifier,searched=bool(identifier),order=None)
         if identifier:
@@ -598,7 +598,7 @@ class TrackOrderPageView(StaffRequiredMixin, TemplateView):
         return c
 
 class AuditListView(StaffRequiredMixin, ListView):
-    model=ServiceNowSyncAudit; template_name='gdx_admin/apps/orders/audit/audit_list.html'; paginate_by=50
+    model=ServiceNowSyncAudit; template_name='gdx_admin/pages/orders/audit/audit_list.html'; paginate_by=50
     def get_queryset(self):
         qs=super().get_queryset().select_related('marketplace_order'); q=self.request.GET.get('q',''); status=self.request.GET.get('status',''); entity=self.request.GET.get('entity','')
         if q: qs=qs.filter(Q(correlation_id__icontains=q)|Q(sync_run_id__icontains=q)|Q(servicenow_ritm_id__icontains=q)|Q(request_number__icontains=q)|Q(ritm_number__icontains=q)|Q(task_number__icontains=q)|Q(marketplace_order__marketplace_order_id__icontains=q))
@@ -609,7 +609,7 @@ class AuditListView(StaffRequiredMixin, ListView):
         c=super().get_context_data(**kwargs); c['audit_statuses']=ServiceNowSyncAudit.objects.values_list('status',flat=True).distinct(); c['audit_entities']=ServiceNowSyncAudit.objects.values_list('entity_type',flat=True).distinct(); return c
 
 class SyncHealthView(StaffRequiredMixin, TemplateView):
-    template_name='gdx_admin/apps/orders/sync_health/sync_health.html'
+    template_name='gdx_admin/pages/orders/sync_health/sync_health.html'
     def get_context_data(self, **kwargs):
         c=super().get_context_data(**kwargs); c['sync_cursor']=SyncCursor.objects.filter(name='servicenow-orders').first(); c['recent_failures']=ServiceNowSyncAudit.objects.filter(status__in=['FAILED','QUARANTINED'])[:25]; c['reconciliation']={'orders_without_requests':MarketplaceOrder.objects.annotate(n=Count('requests')).filter(n=0).count(),'requests_without_ritm_id':Request.objects.filter(Q(ritm_id='')|Q(ritm_id__isnull=True)).count(),'orphan_tasks':Task.objects.filter(request__isnull=True).count(),'duplicates':0}; c['stats']=[{'label':'Last Sync Status','value':c['sync_cursor'].last_status if c['sync_cursor'] else 'Unknown'},{'label':'Failed Events','value':ServiceNowSyncAudit.objects.filter(status='FAILED').count()},{'label':'Quarantined','value':ServiceNowSyncAudit.objects.filter(status='QUARANTINED').count()},{'label':'Orders Without Requests','value':c['reconciliation']['orders_without_requests']}]; return c
 
@@ -620,7 +620,7 @@ class SyncHealthView(StaffRequiredMixin, TemplateView):
 
 
 class SyncHealthView(SyncHealthContextMixin, TemplateView):
-    template_name = "gdx_admin/apps/orders/sync_health/sync_health.html"
+    template_name = "gdx_admin/pages/orders/sync_health/sync_health.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

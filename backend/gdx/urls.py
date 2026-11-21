@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from apps.notifications.monitoring.views import alerts_view, health_view, live_view, ready_view, startup_view, metrics_view
 from . import views
+from . import deployment_views
 from . import theme_pages as theme_pages_views
 from .theme_preview import command_center as theme_preview_command
 from .theme_preview import commerce_dashboard as theme_preview_commerce
@@ -28,6 +29,7 @@ from .forms import GDXPasswordResetForm, GDXSetPasswordForm
 urlpatterns = [
     path('marketplace/', include("apps.marketplace.urls")),
     path("view/endpoint/requests/", include("apps.third_party_apis.modules.onets_order_history.urls")),
+    path("view/endpoint/axon/", include("apps.third_party_apis.modules.axon.urls")),
     # AUTH - GDX USERS
     path('account/signup/', TemplateView.as_view(template_name="gdx_users/apps/account/signup.html"), name='signup'),
     path('account/', include('allauth.urls')),
@@ -36,9 +38,14 @@ urlpatterns = [
     path('account/session/timeout', TemplateView.as_view(template_name="account/lock-screen.html"), name='lockscreen'),
     path('accounts/password/change/', login_required(MyPasswordChangeView.as_view()), name="account_change_password"),
     path('accounts/password/set/', login_required(MyPasswordSetView.as_view()), name="account_set_password"),
+    path("microsoft_authentication/callback", views.microsoft_callback, name="microsoft_authentication_callback"),
     path('microsoft_authentication/', include('microsoft_authentication.urls')),
     path("login/", views.GDXLoginView.as_view(), name="login"),
     path("not-authorized/", views.not_authorized, name="not_authorized"),
+    path("error/400/", views.bad_request, name="error_400"),
+    path("error/403/", views.permission_denied, name="error_403"),
+    path("error/404/", views.page_not_found, name="error_404"),
+    path("error/500/", views.server_error, name="error_500"),
     path("header/environment/", views.set_header_environment, name="set_header_environment"),
     path("logout/", auth_views.LogoutView.as_view(template_name="gdx_users/apps/account/logout.html"), name="logout"),
     path("register/", views.register, name="register"),
@@ -77,6 +84,7 @@ urlpatterns = [
     path("api/orders/", include("apps.orders.urls")),
     path("api/profiles/", include("apps.profiles.api_urls")),
     path("api/v1/", include("apps.notifications.api_v1.urls")),
+    path("api/maintenance/", views.maintenance_status, name="maintenance_status"),
     path("api/healthz/", health_view, name="healthz"),
     path("api/health/live/", live_view, name="health_live"),
     path("api/health/ready/", ready_view, name="health_ready"),
@@ -157,6 +165,8 @@ urlpatterns = [
     path("sa/templates/default_cards.html", views.default_template, name="default_cards"),
     path("sa/templates/default_charts.html", views.default_template, name="default_charts"),
     path("sa/deployment/", include(("gdx.deployment_urls", "deployment"), namespace="deployment")),
+    path("sa/code/deployment/", deployment_views.code_deployment, name="code_deployment"),
+    path("sa/code/aws-session/deployment/", deployment_views.code_aws_session, name="code_aws_session"),
     path("sa/command-center/", include(("apps.third_party_apis.modules.command_center.urls", "command_center"), namespace="command_center")),
     # Theme-shaped aliases (static theme used /pages/...; SuperAdmin canonical URLs are under sa/)
     path("pages/", include(("gdx.theme_pages_urls", "theme_pages_alias"), namespace="theme_pages_alias")),
@@ -189,6 +199,11 @@ urlpatterns = [
 urlpatterns += [
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
 ]
+
+handler400 = "gdx.views.bad_request"
+handler403 = "gdx.views.permission_denied"
+handler404 = "gdx.views.page_not_found"
+handler500 = "gdx.views.server_error"
 
 # Admin Branding
 admin.site.site_header = "GDX"

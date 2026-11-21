@@ -1,0 +1,66 @@
+{% extends "gdx_admin/auth/base_auth.html" %}
+
+{% block title %}Sign In | GDX Admin{% endblock %}
+{% block cover_title %}Your governance workspace, ready when you are.{% endblock %}
+{% block cover_text %}Sign in to manage trusted data, standards, and administrative workflows from one secure place.{% endblock %}
+
+{% block auth_content %}
+<div class="card gdx-auth-card">
+    <div class="card-body">
+        <div class="mb-4">
+            <h2 class="h4 fw-bold mb-2">Sign in</h2>
+            <p class="text-muted mb-0">Enter your account details to continue.</p>
+        </div>
+
+        {% if form.non_field_errors %}
+            <div class="alert gdx-alert-error" role="alert">{{ form.non_field_errors }}</div>
+        {% endif %}
+
+        <form method="post" action="{% url 'login' %}" novalidate>
+            {% csrf_token %}
+            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+
+            <div class="mb-3">
+                <label for="{{ form.username.id_for_label }}" class="form-label">{{ form.username.label|default:'Email address' }}</label>
+                <div class="input-group">
+                    <span class="input-group-text border-end-0"><i class="isax isax-sms-notification" aria-hidden="true"></i></span>
+                    <input type="text" name="{{ form.username.html_name }}" value="{{ form.username.value|default_if_none:'' }}"
+                           id="{{ form.username.id_for_label }}" class="form-control border-start-0 ps-0"
+                           placeholder="Enter your email address" autocomplete="username" required autofocus>
+                </div>
+                <div class="gdx-field-errors">{{ form.username.errors }}</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="{{ form.password.id_for_label }}" class="form-label">{{ form.password.label|default:'Password' }}</label>
+                <div class="input-group gdx-password-wrap">
+                    <span class="input-group-text border-end-0"><i class="isax isax-lock" aria-hidden="true"></i></span>
+                    <input type="password" name="{{ form.password.html_name }}" id="{{ form.password.id_for_label }}"
+                           class="form-control border-start-0 ps-0" placeholder="Enter your password"
+                           autocomplete="current-password" required>
+                    <button type="button" class="gdx-password-toggle" data-password-toggle="{{ form.password.id_for_label }}" aria-label="Show password">
+                        <i class="isax isax-eye-slash" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="gdx-field-errors">{{ form.password.errors }}</div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                <div class="form-check mb-0">
+                    <input class="form-check-input" id="remember_me" name="remember_me" type="checkbox">
+                    <label for="remember_me" class="form-check-label">Remember me</label>
+                </div>
+                <a href="{% url 'password_reset' %}">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn gdx-submit text-white w-100 fw-semibold">Sign in</button>
+        </form>
+
+        {% if registration_enabled|default:True %}
+        <p class="text-center text-muted mt-4 mb-0">Need an account?
+            <a href="{% url 'register' %}" class="fw-semibold">Create one</a>
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

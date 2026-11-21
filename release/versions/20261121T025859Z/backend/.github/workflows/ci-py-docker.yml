@@ -1,0 +1,140 @@
+name: ci-py-docker
+
+on:
+  workflow_dispatch: {}
+
+  push:
+    branches:
+      - "**"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+
+  # ============================================================
+  # TMNA CHOFER CI
+  #
+  # Keep this exactly as the existing approved implementation.
+  # Chofer owns:
+  # - Python CI
+  # - Docker build
+  # - scanning
+  # - artifact/image publishing
+  # ============================================================
+
+  ci:
+    uses: Toyota-Motor-North-America/chofer-actions/.github/workflows/ci-py-docker.yml@v1
+    secrets: inherit
+
+
+  # ============================================================
+  # GDXP ADMIN RELEASE METADATA
+  #
+  # Runs only after Chofer CI succeeds.
+  # Does NOT rebuild the Docker image.
+  # ============================================================
+
+  release-metadata:
+    name: Generate GDXP Admin release metadata
+
+    needs:
+      - ci
+
+    if: ${{ needs.ci.result == 'success' }}
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+
+      # ----------------------------------------------------------
+      # Version formats
+      #
+      # Django footer:
+      # APP_DISPLAY_VERSION=26.27.10
+      #
+      # Internal release identity:
+      # APP_VERSION=26.27.10.<github-run-number>
+      # ----------------------------------------------------------
+
+      - name: Generate release metadata
+        id: metadata
+        shell: bash
+
+        run: |
+          set -euo pipefail
+
+          APP_DISPLAY_VERSION="$(date -u +'%y.%d.%m')"
+
+          APP_VERSION="${APP_DISPLAY_VERSION}.${GITHUB_RUN_NUMBER}"
+
+          GIT_SHA="${GITHUB_SHA}"
+
+          BUILD_TIMESTAMP="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+
+          echo "APP_DISPLAY_VERSION=${APP_DISPLAY_VERSION}" \
+            >> "${GITHUB_ENV}"
+
+          echo "APP_VERSION=${APP_VERSION}" \
+            >> "${GITHUB_ENV}"
+
+          echo "GIT_SHA=${GIT_SHA}" \
+            >> "${GITHUB_ENV}"
+
+          echo "BUILD_TIMESTAMP=${BUILD_TIMESTAMP}" \
+            >> "${GITHUB_ENV}"
+
+
+          echo "app_display_version=${APP_DISPLAY_VERSION}" \
+            >> "${GITHUB_OUTPUT}"
+
+          echo "app_version=${APP_VERSION}" \
+            >> "${GITHUB_OUTPUT}"
+
+          echo "git_sha=${GIT_SHA}" \
+            >> "${GITHUB_OUTPUT}"
+
+          echo "build_timestamp=${BUILD_TIMESTAMP}" \
+            >> "${GITHUB_OUTPUT}"
+
+
+      # ----------------------------------------------------------
+      # Create build metadata.
+      #
+      # image_digest/image_reference are deliberately NOT
+      # invented here. They should come from the actual artifact
+      # produced by Chofer once its output contract is known.
+      # ----------------------------------------------------------
+
+      - name: Create release manifest
+        shell: bash
+
+        run: |
+          set -euo pipefail
+
+          cat > release-manifest.json <<EOF
+          {
+            "app_display_version": "${APP_DISPLAY_VERSION}",
+            "app_version": "${APP_VERSION}",
+            "git_sha": "${GIT_SHA}",
+            "build_timestamp": "${BUILD_TIMESTAMP}"
+          }
+          EOF
+
+          cat release-manifest.json
+
+
+      - name: Upload release manifest
+        uses: actions/upload-artifact@v4
+
+        with:
+          name: release-${{ steps.metadata.outputs.

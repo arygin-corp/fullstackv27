@@ -1,4 +1,19 @@
+variable "domains" {
+  type = list(string)
+}
 
-variable "env" { type = string }
-variable "env_group" { type = string }
-variable "standard_tags" { type = map(string) }
+variable "configuration_set" {
+  type = string
+}
+
+variable "name_prefix" {
+  type = string
+}
+
+variable "buckets" {
+  type = list(string)
+}
+
+variable "standard_tags" {
+  type = map(string)
+}

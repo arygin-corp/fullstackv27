@@ -1,0 +1,5 @@
+from django.db import models
+from ..models import TimeStampedModel
+class PerformanceScenario(TimeStampedModel):name=models.CharField(max_length=180);key=models.SlugField(unique=True);workload=models.JSONField(default=dict);thresholds=models.JSONField(default=dict);environment=models.CharField(max_length=80,default='test')
+class PerformanceRun(TimeStampedModel):scenario=models.ForeignKey(PerformanceScenario,related_name='runs',on_delete=models.PROTECT);status=models.CharField(max_length=30,default='queued');git_revision=models.CharField(max_length=80,blank=True);environment=models.JSONField(default=dict);results=models.JSONField(default=dict);passed=models.BooleanField(null=True);error=models.TextField(blank=True)
+class CapacityBaseline(TimeStampedModel):component=models.CharField(max_length=120);metric=models.CharField(max_length=120);value=models.DecimalField(max_digits=20,decimal_places=6);unit=models.CharField(max_length=40);environment=models.CharField(max_length=80);evidence=models.JSONField(default=dict)

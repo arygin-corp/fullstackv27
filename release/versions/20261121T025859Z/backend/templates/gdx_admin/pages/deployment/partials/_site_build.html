@@ -1,0 +1,385 @@
+{% include "gdx_admin/pages/deployment/partials/_styles.html" %}
+<div>
+    <h3 class="mb-3 text-base font-semibold leading-6 tracking-tight text-foreground">Build</h3>
+    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="build" data-state="running"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Running</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ analytics.running }}</p><p class="mt-1 text-sm text-muted-foreground">Builds in progress</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="build" data-state="succeeded"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Succeeded</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ analytics.succeeded }}</p><p class="mt-1 text-sm text-muted-foreground">Finished builds</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="build" data-state="failed"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Failed</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ analytics.failed }}</p><p class="mt-1 text-sm text-muted-foreground">Builds that stopped</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="build" data-state="recorded"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Recorded</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ analytics.total }}</p><p class="mt-1 text-sm text-muted-foreground">Saved build records</p></div></button>
+    </section>
+</div>
+<div>
+    <h3 class="mb-3 text-base font-semibold leading-6 tracking-tight text-foreground">AI Engine</h3>
+    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="ai" data-state="running"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Running</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ ai_analytics.running }}</p><p class="mt-1 text-sm text-muted-foreground">Engines in progress</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="ai" data-state="succeeded"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Succeeded</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ ai_analytics.succeeded }}</p><p class="mt-1 text-sm text-muted-foreground">Finished runs</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="ai" data-state="failed"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Failed</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ ai_analytics.failed }}</p><p class="mt-1 text-sm text-muted-foreground">Runs that stopped</p></div></button>
+        <button type="button" class="deploy-log-card rounded-lg border border-border bg-card text-card-foreground shadow-xs" data-source="ai" data-state="recorded"><div class="p-5 sm:px-6 sm:pb-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Recorded</p><p class="mt-2 text-2xl font-bold tracking-tight">{{ ai_analytics.total }}</p><p class="mt-1 text-sm text-muted-foreground">Saved engine records</p></div></button>
+    </section>
+</div>
+<section class="deploy-build-layout">
+<section class="deploy-panel">
+    <h2>Start A Code Build Deployment</h2>
+    <p>Choose the environment and type, then click Backend only, Frontend only, or Both.</p>
+    {% if can_build %}
+    <form method="post" action="{% url 'deployment:dashboard' %}">
+        {% csrf_token %}
+        <div class="deploy-field-row">
+            <div class="deploy-field">
+                <label for="release-kind">Type</label>
+                <select class="form-select" id="release-kind" name="release_kind">
+                    <option value="regular">Regular</option>
+                    <option value="bugfix">Bug fix</option>
+                </select>
+            </div>
+            <div class="deploy-field">
+                <label for="build-environment">Environment</label>
+                <select class="form-select" id="build-environment" name="environment">
+                    {% for value, label in environments %}
+                    <option value="{{ value }}"{% if value == config.default_environment %} selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <p id="build-bucket"></p>
+            </div>
+        </div>
+        <div class="deploy-field" id="jira-field" hidden>
+            <label for="jira-key">JIRA story</label>
+            <input id="jira-key" name="jira_key" placeholder="GDX-123" autocomplete="off">
+        </div>
+        <div class="deploy-choices">
+            {% if config.python_enabled %}<button class="deploy-choice" type="button" data-target="backend"><strong>Backend only</strong><span>Check Django and collect static files.</span></button>{% endif %}
+            {% if config.frontend_enabled %}<button class="deploy-choice" type="button" data-target="frontend"><strong>Frontend only</strong><span>Build the Angular application.</span></button>{% endif %}
+            {% if config.combined_enabled %}<button class="deploy-choice" type="button" data-target="all"><strong>Both</strong><span>Build Python, then the frontend.</span></button>{% endif %}
+        </div>
+    </form>
+    {% else %}
+    <p>Only a SuperAdmin can start a build.</p>
+    {% endif %}
+    {% if can_build %}
+    <div style="margin-top:16px">
+        <button class="deploy-ai-button" type="button" id="run-ai-engine">Run AI Suggestion Engine</button>
+    </div>
+    {% endif %}
+</section>
+</section>
+{{ config.frontend_buckets|json_script:"frontend-buckets" }}
+<script>
+(function () {
+    var select = document.getElementById("build-environment");
+    var note = document.getElementById("build-bucket");
+    var data = document.getElementById("frontend-buckets");
+    if (!select || !note || !data) return;
+    var buckets = JSON.parse(data.textContent);
+    function show() {
+        if (select.value === "local") {
+            note.textContent = "Local builds stay on this machine.";
+            note.classList.add("is-local");
+            return;
+        }
+        note.classList.remove("is-local");
+        var bucket = buckets[select.value]
+            ? "Angular files upload to " + buckets[select.value] + "."
+            : "Add the S3 bucket for this environment in Deployment settings.";
+        note.textContent = select.value === "prod"
+            ? bucket + " Prod runs the AI Suggestion Engine first, then the build, in one terminal."
+            : bucket;
+    }
+    select.addEventListener("change", show);
+    show();
+    var kind = document.getElementById("release-kind");
+    var jira = document.getElementById("jira-field");
+    if (kind && jira) {
+        kind.addEventListener("change", function () {
+            jira.hidden = kind.value !== "bugfix";
+        });
+    }
+})();
+</script>
+<div class="ai-terminal-backdrop" id="ai-terminal-backdrop" hidden></div>
+<div class="process-notice" id="process-notice" hidden role="status">
+    <strong id="process-notice-label">Running</strong>
+    <span id="process-notice-time">00:00</span>
+</div>
+<aside class="ai-terminal" id="ai-terminal" hidden aria-label="Deployment terminal">
+    <header>
+        <strong id="ai-terminal-title">Terminal</strong>
+        <span id="ai-terminal-time">00:00</span>
+        <button type="button" id="ai-terminal-close">Close</button>
+    </header>
+    <pre id="ai-terminal-log"></pre>
+</aside>
+{% if can_build %}<form id="ai-engine-form" hidden>{% csrf_token %}</form>{% endif %}
+<script>
+(function () {
+    var button = document.getElementById("run-ai-engine");
+    var panel = document.getElementById("ai-terminal");
+    var backdrop = document.getElementById("ai-terminal-backdrop");
+    var log = document.getElementById("ai-terminal-log");
+    var title = document.getElementById("ai-terminal-title");
+    var clock = document.getElementById("ai-terminal-time");
+    var notice = document.getElementById("process-notice");
+    var noticeLabel = document.getElementById("process-notice-label");
+    var noticeTime = document.getElementById("process-notice-time");
+    var closeButton = document.getElementById("ai-terminal-close");
+    var tokenInput = document.querySelector("input[name=csrfmiddlewaretoken]");
+    var buildButtons = Array.prototype.slice.call(document.querySelectorAll(".deploy-choice"));
+    if (!panel || !log) return;
+    var busy = false;
+    var replay = null;
+    var startedAt = 0;
+    var timer = 0;
+    var noticeTimer = 0;
+
+    function elapsed() {
+        var seconds = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+        var hours = Math.floor(seconds / 3600);
+        var minutes = Math.floor((seconds % 3600) / 60);
+        var remain = seconds % 60;
+        function pad(value) { return String(value).padStart(2, "0"); }
+        return hours > 0 ? hours + ":" + pad(minutes) + ":" + pad(remain) : pad(minutes) + ":" + pad(remain);
+    }
+    function tick() {
+        var text = elapsed();
+        if (clock) clock.textContent = text;
+        if (noticeTime) noticeTime.textContent = text;
+    }
+    function parseElapsed(text) {
+        var parts = String(text || "0").split(":").map(function (part) { return parseInt(part, 10) || 0; });
+        if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+        if (parts.length === 2) return parts[0] * 60 + parts[1];
+        return 0;
+    }
+    function startClock(label, elapsedText) {
+        startedAt = Date.now() - parseElapsed(elapsedText) * 1000;
+        window.clearInterval(timer);
+        window.clearTimeout(noticeTimer);
+        tick();
+        timer = window.setInterval(tick, 1000);
+        if (notice && noticeLabel) {
+            noticeLabel.textContent = label + " is running";
+            notice.hidden = false;
+        }
+    }
+    function stopClock(label) {
+        window.clearInterval(timer);
+        timer = 0;
+        var text = elapsed();
+        if (clock) clock.textContent = text;
+        if (notice && noticeLabel && noticeTime) {
+            noticeLabel.textContent = label + " finished in";
+            noticeTime.textContent = text;
+            notice.hidden = false;
+            noticeTimer = window.setTimeout(function () { notice.hidden = true; }, 8000);
+        }
+    }
+    function openPanel(label, elapsedText) {
+        if (title) title.textContent = label;
+        backdrop.hidden = false;
+        panel.hidden = false;
+        startClock(label, elapsedText);
+    }
+    function stopReplay() {
+        if (replay) {
+            replay.abort();
+            replay = null;
+        }
+    }
+    function closePanel() {
+        stopReplay();
+        backdrop.hidden = true;
+        panel.hidden = true;
+    }
+    function showSaved(label, elapsedText) {
+        if (title) title.textContent = label;
+        backdrop.hidden = false;
+        panel.hidden = false;
+        window.clearInterval(timer);
+        timer = 0;
+        if (clock) clock.textContent = elapsedText || "00:00";
+        if (notice) notice.hidden = true;
+    }
+    function write(text) {
+        log.textContent += text;
+        log.scrollTop = log.scrollHeight;
+    }
+    function lastExitOk() {
+        var matches = log.textContent.match(/\[process exited (\d+)\]/g);
+        if (!matches) return false;
+        return matches[matches.length - 1] === "[process exited 0]";
+    }
+    function setBusy(value) {
+        busy = value;
+        if (button) button.disabled = value;
+        buildButtons.forEach(function (item) { item.disabled = value; });
+    }
+    async function readStream(response) {
+        if (!response.ok || !response.body) {
+            write(await response.text());
+            return;
+        }
+        var reader = response.body.getReader();
+        var decoder = new TextDecoder();
+        while (true) {
+            var chunk = await reader.read();
+            if (chunk.done) break;
+            write(decoder.decode(chunk.value, {stream: true}));
+        }
+    }
+    closeButton.addEventListener("click", closePanel);
+    backdrop.addEventListener("click", closePanel);
+
+    Array.prototype.slice.call(document.querySelectorAll(".deploy-log-card")).forEach(function (card) {
+        card.addEventListener("click", async function () {
+            if (busy) return;
+            stopReplay();
+            log.textContent = "";
+            var source = card.getAttribute("data-source") || "";
+            var state = card.getAttribute("data-state") || "";
+            var url = "{% url 'deployment:terminal_card' %}?source=" + encodeURIComponent(source) + "&state=" + encodeURIComponent(state);
+            replay = new AbortController();
+            var signal = replay.signal;
+            try {
+                var response = await fetch(url, {credentials: "same-origin", signal: signal});
+                var live = response.headers.get("X-Terminal-Live") === "1";
+                var label = response.headers.get("X-Terminal-Title") || "Terminal";
+                if (live) openPanel(label, response.headers.get("X-Terminal-Elapsed") || "00:00");
+                else showSaved(label, response.headers.get("X-Terminal-Elapsed") || "00:00");
+                await readStream(response);
+                if (live) stopClock(label);
+            } catch (error) {
+                if (error && error.name === "AbortError") return;
+                write("\n" + error + "\n");
+            }
+        });
+    });
+
+    var watching = false;
+    async function attachBackground() {
+        if (watching || busy || !panel.hidden) return;
+        watching = true;
+        var sources = ["ai", "build"];
+        try {
+            for (var i = 0; i < sources.length; i++) {
+                if (busy || !panel.hidden) return;
+                stopReplay();
+                replay = new AbortController();
+                var signal = replay.signal;
+                var url = "{% url 'deployment:terminal_card' %}?source=" + sources[i] + "&state=running";
+                var response = await fetch(url, {credentials: "same-origin", signal: signal});
+                var live = response.headers.get("X-Terminal-Live") === "1";
+                var label = response.headers.get("X-Terminal-Title") || "Terminal";
+                if (!live) {
+                    try { await response.text(); } catch (ignore) {}
+                    continue;
+                }
+                if (busy || !panel.hidden) {
+                    if (response.body) response.body.cancel();
+                    return;
+                }
+                log.textContent = "";
+                openPanel(label, response.headers.get("X-Terminal-Elapsed") || "00:00");
+                await readStream(response);
+                stopClock(label);
+                return;
+            }
+        } catch (error) {
+            if (error && error.name === "AbortError") return;
+        } finally {
+            watching = false;
+        }
+    }
+    attachBackground();
+    window.setInterval(attachBackground, 4000);
+
+    if (!tokenInput) return;
+
+    if (button) {
+        button.addEventListener("click", async function () {
+            if (busy) return;
+            stopReplay();
+            log.textContent = "";
+            openPanel("AI Suggestion Engine");
+            setBusy(true);
+            try {
+                var response = await fetch("{% url 'deployment:ai_suggestion_engine' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value},
+                    credentials: "same-origin"
+                });
+                await readStream(response);
+                stopClock("AI Suggestion Engine");
+            } catch (error) {
+                write("\n" + error + "\n");
+                stopClock("AI Suggestion Engine");
+            } finally {
+                setBusy(false);
+            }
+        });
+    }
+
+    buildButtons.forEach(function (item) {
+        item.addEventListener("click", async function () {
+            if (busy) return;
+            var environment = document.getElementById("build-environment");
+            var environmentValue = environment ? environment.value : "local";
+            var prod = environmentValue === "prod";
+            var label = prod ? "Prod deployment" : "Build";
+            var kind = document.getElementById("release-kind");
+            var jiraKey = document.getElementById("jira-key");
+            var releaseKind = kind ? kind.value : "regular";
+            if (releaseKind === "bugfix" && (!jiraKey || !jiraKey.value.trim())) {
+                log.textContent = "Enter the JIRA story key for this bug fix.\n";
+                openPanel(label);
+                stopClock(label);
+                return;
+            }
+            var body = new URLSearchParams();
+            body.set("target", item.getAttribute("data-target") || "");
+            body.set("environment", environmentValue);
+            body.set("release_kind", releaseKind);
+            body.set("jira_key", jiraKey ? jiraKey.value.trim() : "");
+            stopReplay();
+            log.textContent = "";
+            openPanel(label);
+            setBusy(true);
+            try {
+                if (prod) {
+                    var engine = await fetch("{% url 'deployment:ai_suggestion_engine' %}", {
+                        method: "POST",
+                        headers: {"X-CSRFToken": tokenInput.value},
+                        credentials: "same-origin"
+                    });
+                    await readStream(engine);
+                    if (!engine.ok || !lastExitOk()) {
+                        write("\nBuild was not started because the AI Suggestion Engine did not finish successfully.\n");
+                        stopClock(label);
+                        return;
+                    }
+                    write("\n");
+                }
+                var started = await fetch("{% url 'deployment:build_terminal' %}", {
+                    method: "POST",
+                    headers: {"X-CSRFToken": tokenInput.value, "Content-Type": "application/x-www-form-urlencoded"},
+                    credentials: "same-origin",
+                    body: body.toString()
+                });
+                var payload = {};
+                try { payload = await started.json(); } catch (parseError) { payload = {}; }
+                if (!payload.started) {
+                    write((payload.message || "The build did not start.") + "\n");
+                    stopClock(label);
+                    return;
+                }
+                var response = await fetch("{% url 'deployment:build_terminal_log' %}", {credentials: "same-origin"});
+                await readStream(response);
+                stopClock(label);
+            } catch (error) {
+                write("\n" + error + "\n");
+                stopClock(label);
+            } finally {
+                setBusy(false);
+            }
+        });
+    });
+})();
+</script>

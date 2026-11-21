@@ -40,7 +40,7 @@ class ServiceNowError(Exception):
 
 
 def snow_configured():
-    return all(os.getenv(name) for name in ("ONETS_USERNAME", "ONETS_PASSWORD", "SNOW_API_URL", "SNOW_REQUEST_ENDPOINT", "SNOW_DAR_ENDPOINT"))
+    return all(os.getenv(name) for name in ("ONETS_USERNAME", "ONETS_PASSWORD", "ONETS_API_URL", "ONETS_REQUEST_ENDPOINT", "ONETS_DAR_ENDPOINT"))
 
 
 def to_camel_case(value, prefix=""):
@@ -82,7 +82,7 @@ def call_api(url, headers=None):
 
 
 def find_requests(query):
-    endpoint = os.getenv("SNOW_API_URL", "").rstrip("/") + "/" + os.getenv("SNOW_REQUEST_ENDPOINT", "").lstrip("/")
+    endpoint = os.getenv("ONETS_API_URL", "").rstrip("/") + "/" + os.getenv("ONETS_REQUEST_ENDPOINT", "").lstrip("/")
     parameters = "?sysparm_fields=request"
     parameters += "&sysparm_limit=" + str(query.get("limit") or "5")
     parameters += "&sysparm_display_value=true"
@@ -92,7 +92,7 @@ def find_requests(query):
 
 
 def get_request_details(query):
-    endpoint = os.getenv("SNOW_API_URL", "").rstrip("/") + "/" + os.getenv("SNOW_DAR_ENDPOINT", "").lstrip("/")
+    endpoint = os.getenv("ONETS_API_URL", "").rstrip("/") + "/" + os.getenv("ONETS_DAR_ENDPOINT", "").lstrip("/")
     headers = {}
     request_id = query.get("requestId")
     if request_id:

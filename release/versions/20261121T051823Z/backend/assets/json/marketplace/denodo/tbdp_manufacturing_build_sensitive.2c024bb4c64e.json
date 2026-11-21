@@ -1,0 +1,2135 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "actl_buyer_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "actl_sup_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "bom_part_struc_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "bom_proc_stat_typ_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "child_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "cost_eff_dt_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "cur_bom_proc_stat_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "dest_ctry_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "dsgn_grp_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "fam_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "inactv_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "katashiki_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "lv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mdl_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_prod_bom_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_vol_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "mv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "namc_lgl_entity_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "parent_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "part_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "part_lvl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "part_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "plnt_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "prod_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "row_eff_date_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "rtg_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "sap_mtrl_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "serl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_ac_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "sms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "src_key_prod_bom_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "src_rtg_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "unit_actl_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "unit_trnfr_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "view_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "mfrd_bom_struc_cost_fct",
+      "column_name": "wtrfl_prcng_prty_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "actl_buyer_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "actl_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "actl_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "actl_sup_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "bom_eff_dt_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "bom_ind"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "bom_part_struc_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "bom_proc_stat_typ_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "child_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "cost_eff_dt_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "crncy_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "cur_bom_proc_stat_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "dest_ctry_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "dsgn_grp_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "fam_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "flat_bom_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "func_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "grpi_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "grpi_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "inactv_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "katashiki_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "lv_std_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mfg_spec_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "mv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "namc_lgl_entity_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "par_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "part_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "part_lvl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "part_src_grp_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "part_src_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "part_src_typ_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "pc_spec_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "plnt_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "psms_per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "psms_per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "rep_bom_ver_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "rep_prod_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "row_eff_date_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "rtg_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "secnd_rep_prod_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "seq_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "serl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "slctv_ac_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "slctv_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "sms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "spec_2_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "src_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "src_key_prod_bom_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "src_key_prod_part_struc_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "src_rtg_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "std_buyer_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "std_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "std_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "std_sup_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "unit_actl_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "unit_std_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "unit_trnfr_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "view_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mdw_ing",
+      "elementname": "rep_bom_struc_cost_fct",
+      "column_name": "wtrfl_prcng_prty_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_buyer_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_sup_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "bom_part_struc_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "bom_proc_stat_typ_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "child_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "cost_eff_dt_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "cur_bom_proc_stat_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "dest_ctry_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "dsgn_grp_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "fam_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "inactv_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "katashiki_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mdl_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_prod_bom_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_vol_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "namc_lgl_entity_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "parent_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "part_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "part_lvl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "part_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "plnt_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "prod_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "row_eff_date_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "rtg_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "sap_mtrl_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "serl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_ac_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "sms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "src_key_prod_bom_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "src_rtg_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "unit_actl_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "unit_trnfr_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "view_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "wtrfl_prcng_prty_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_arch_mfrd_bom_struc_cost_fct",
+      "column_name": "yr_mnth_first_ins_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_buyer_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "actl_sup_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "bom_part_struc_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "bom_proc_stat_typ_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "child_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "cost_eff_dt_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "cur_bom_proc_stat_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "dest_ctry_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "dsgn_grp_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "ext_per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "fam_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "first_insert_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "grpi_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "inactv_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "katashiki_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "last_update_ts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "lv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mdl_no"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_prod_bom_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mfrd_vol_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_par_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_na_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_unit_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_actl_os_cost_p_veh_r_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "mv_namc_plnt_nm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "namc_lgl_entity_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "parent_part_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "part_hikiate_stat_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "part_lvl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "part_src_typ_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "part_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "per_par_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "per_veh_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "plnt_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "prod_typ_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "psms_per_part_ur_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "row_eff_date_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "rtg_sid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "sap_mtrl_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "serl_nbr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_ac_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "slctv_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "sms_per_part_qty"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "src_key_prod_bom_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "src_rtg_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_crncy_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "trnfr_cost_uom"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "unit_actl_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "unit_trnfr_cost_amt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "view_flg"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "wtrfl_prcng_prty_cd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "ebom_bidw_mfrd_bom_struc_cost_fct",
+      "column_name": "yr_mnth_first_ins_dt_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "acpt_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "acpt_rec_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "before_change"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "business_entity"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "change_to"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "customer_supp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "data_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "demand"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "destination"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "guide_max"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "guide_min"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "month_period"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "namc_ref_number"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "pca_reject_reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "process_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "rec_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "rej_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "rej_rec_cnt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "reject_reason"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "ssn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "stype_of_change"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "sub_series"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "sys_ins_dttm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "sys_upd_dttm"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-build-sensitive",
+      "dbname": "mfg_build_sensitive_trn_ext",
+      "elementname": "pass_data_load",
+      "column_name": "week_period"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-manufacturing-build-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { forkJoin, fromEvent, Observable, of, Subject, timer } from 'rxjs';
+import { fromEvent, Observable, of, Subject, timer } from 'rxjs';
 import { catchError, debounce, debounceTime, distinctUntilChanged, filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { Product } from '../../interfaces/product';
@@ -68,6 +68,7 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
   aiLoading = false;
   hasUserResults = false;
   hasAiResults = false;
+  searched = false;
   private userResult: any = null;
   private aiResult: any = null;
   private aiQuery = '';
@@ -104,10 +105,20 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
     });
     this.aiSearch$.pipe(
       debounce(({ immediate }) => timer(immediate ? 0 : 300)),
-      switchMap(({ query, page, immediate }) => {
-        if (!immediate) {
-          this.aiLoading = true;
+      switchMap(({ query, page }) => {
+        if (query.length < 2) {
+          this.aiLoading = false;
+          return of({
+            suggestions: [],
+            count: 0,
+            page,
+            page_size: 8,
+            total_pages: 0,
+            did_you_mean: null,
+            query
+          });
         }
+        this.aiLoading = true;
         return this.shop.getAiSuggestions(query, 8, { page }).pipe(
           catchError(error => {
             console.error('AI SEARCH ERROR:', error);
@@ -125,12 +136,27 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
       }),
       takeUntil(this.destroy$)
     ).subscribe(response => {
+      const current = (this.form?.value?.query || '').trim();
+      if ((response?.query || '') !== current) {
+        return;
+      }
       this.aiLoading = false;
       this.aiResult = this.location === 'header'
         ? this.recommendationsOnly(response, this.userResult)
         : response;
       this.aiQuery = response?.query || '';
-      this.syncResultMode();
+      const aiCount = Array.isArray(this.aiResult?.suggestions) ? this.aiResult.suggestions.length : 0;
+      this.hasAiResults = aiCount > 0;
+      if (!this.hasAiResults && this.resultMode === 'ai') {
+        this.resultMode = 'user';
+        if (this.userResult) {
+          this.showResult(this.userResult);
+        }
+        return;
+      }
+      if (this.resultMode === 'ai') {
+        this.showResult(this.aiResult);
+      }
     });
   }
 
@@ -154,7 +180,13 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
           this.hasUserResults = false;
           this.aiResult = null;
           this.hasAiResults = false;
-          this.aiLoading = query.length >= 2;
+          this.searched = query.length >= 2;
+          this.loadAi(query, true);
+          if (query.length >= 2) {
+            this.suggestedProducts = [];
+            this.hasSuggestions = true;
+            this.openSuggestion();
+          }
         }
         this.isLoading = query.length >= 2;
       }),
@@ -174,46 +206,37 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
           });
         }
 
-        const request = this.location === 'header'
-          ? forkJoin({
-              user: this.shop.getSuggestions(query, 8, { page: this.currentPage }),
-              ai: this.shop.getAiSuggestions(query, 8, { page: this.currentPage }),
-            })
-          : this.shop.getSuggestions(query, 8, { page: this.currentPage });
-
-        return request.pipe(
-          catchError(error => {
-            console.error(
-              'SEARCH API ERROR:',
-              error
-            );
-
-            return of({
-              suggestions: [],
-              count: 0,
-              page: 1,
-              page_size: 8,
-              total_pages: 0,
-              did_you_mean: null
-            });
-          })
+        const empty = {
+          suggestions: [],
+          count: 0,
+          page: 1,
+          page_size: 8,
+          total_pages: 0,
+          did_you_mean: null,
+          query
+        };
+        return this.shop.getSuggestions(query, 8, { page: this.currentPage }).pipe(
+          catchError(() => of({ ...empty }))
         );
       }),
 
       takeUntil(this.destroy$)
     ).subscribe({
       next: response => {
-        if (this.location === 'header' && response?.user && response?.ai) {
-          this.isLoading = false;
-          this.aiLoading = false;
-          this.userResult = response.user;
-          this.aiResult = this.recommendationsOnly(response.ai, response.user);
-          this.aiQuery = response.ai?.query || (this.form.value.query || '').trim();
-          this.syncResultMode();
-          return;
-        }
         this.isLoading = false;
         this.userResult = response;
+        if (this.location === 'header') {
+          this.hasUserResults = Number(response?.count || response?.suggestions?.length || 0) > 0;
+          if (this.aiResult) {
+            this.aiResult = this.recommendationsOnly(this.aiResult, response);
+            this.hasAiResults = !this.aiLoading && (this.aiResult?.suggestions?.length || 0) > 0;
+          }
+          if (this.resultMode !== 'ai' || !this.hasAiResults) {
+            this.resultMode = 'user';
+            this.showResult(response);
+          }
+          return;
+        }
         this.handleResults(response);
       },
 
@@ -291,11 +314,9 @@ export class SearchComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private loadAi(query: string, immediate = false): void {
-    if (query.length < 2) {
-      this.aiLoading = false;
-      return;
+    if (query.length >= 2) {
+      this.aiLoading = true;
     }
-    this.aiLoading = true;
     this.aiSearch$.next({ query, page: this.currentPage, immediate });
   }
 

@@ -17,7 +17,7 @@ class TrackOrderAPITests(APITestCase):
         )
         self.user_oid = "11111111-1111-1111-1111-111111111111"
         self.other_user_oid = "22222222-2222-2222-2222-222222222222"
-        self.url = reverse("orders:track-order")
+        self.url = reverse("orders-admin:track-order-api")
 
         self.order = MarketplaceOrder.objects.create(
             marketplace_order_id="GDX-ORD-10001"
@@ -129,6 +129,29 @@ class TrackOrderAPITests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(response.data["detail"], "Order not found.")
+
+    def test_track_request_without_marketplace_order(self):
+        self.authenticate()
+        Request.objects.create(
+            number="REQ000777",
+            ritm_id="unlinked-ritm-id",
+            ritm_number="RITM000777",
+            object_id=self.user_oid,
+            product_id="5555",
+            approval_stage="Requested",
+            ritm_state="Open",
+            stage="Waiting for Approval",
+            opened_at=timezone.now(),
+        )
+
+        response = self.client.get(
+            self.url,
+            {"request_number": "REQ000777"},
+        )
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data["marketplace_order_id"], "REQ000777")
+        self.assertEqual(response.data["requests"][0]["ritm_number"], "RITM000777")
 
     def test_unauthenticated_request_is_rejected(self):
         response = self.client.get(

@@ -20,7 +20,7 @@ def rule_groups(request):
     )
     return render(
         request,
-        'gdx_admin/apps/dar/rules/rule_groups.html',
+        'gdx_admin/pages/dar/rules/rule_groups.html',
         {
             'rule_groups': queryset,
             'breadcrumbs': _breadcrumbs(('DAR', None), ('Rules', None)),
@@ -39,7 +39,7 @@ def rule_detail(request, pk):
 
     return render(
         request,
-        "gdx_admin/apps/dar/rules/rule_detail.html",
+        "gdx_admin/pages/dar/rules/rule_detail.html",
         {
             "rule": rule,
             "breadcrumbs": _breadcrumbs(

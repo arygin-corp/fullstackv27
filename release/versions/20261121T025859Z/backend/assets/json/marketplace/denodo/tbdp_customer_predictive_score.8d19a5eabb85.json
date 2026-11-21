@@ -1,0 +1,593 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "age_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "avg_association"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "cnt_cust"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "deceased_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "gender"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "has_nsh"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "income"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "last_purchase"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "last_ro"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "length_of_residence"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "marital_status"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_cpro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_cpro_visits_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_owned_vehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_ro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_ro_visits_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_wpro_visits"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "no_wpro_visits_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "region"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_cust_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_cust_pay_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_labor_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_labor_amt_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_part_amt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_part_amt_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_warranty_pay"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "customer_estimated_spend_dashboard_pipeline",
+      "column_name": "total_warranty_pay_cat"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "cnt_cust"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "model_score_group"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "pred_model"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "pred_month"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "pred_segment"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "pred_year"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "prediction_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchase_event_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchase_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchase_post_pred_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_12_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_3_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_6_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_9_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_model"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_12_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_3_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_6_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_9_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "purchased_segment"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "lexus_imk_models_dashboard_pipeline",
+      "column_name": "regionname"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "alert_priority"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "alert_received_date"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "alert_status"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "alert_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "brri_maintenance_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "brri_maintenance_warning_id"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "brri_warning_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "dealer_code"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "districtcode"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "division"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "regionarea_abbrevation"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "regioncode"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "regionname"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "ro_amount"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "ro_order_no"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_code"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_condition"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_dcm_time"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_desc"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_filter_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wng_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "service_connect_ro_conversion",
+      "column_name": "wrng_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "cnt_cust"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "model_score_group"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "pred_model"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "pred_month"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "pred_year"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "prediction_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchase_event_type"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchase_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchase_post_pred_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_12_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_3_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_6_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_9_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_model"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_12_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_3_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_6_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_post_pred_9_months_cust_cnt"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "purchased_segment"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "regionname"
+    },
+    {
+      "userrolename": "tbdp-customer-predictive-score",
+      "dbname": "cuds_ing",
+      "elementname": "toyota_imk_models_dashboard_pipeline",
+      "column_name": "trim"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-predictive-score%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

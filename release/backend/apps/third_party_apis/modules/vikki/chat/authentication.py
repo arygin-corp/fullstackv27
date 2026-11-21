@@ -133,6 +133,14 @@ class EntraAccessTokenAuthentication(BaseAuthentication):
         application_allowed = bool(allowed_roles.intersection(claims.roles))
 
         if not delegated_allowed and not application_allowed:
+            audience = claims.raw.get("aud")
+            audiences = audience if isinstance(audience, list) else [audience]
+            signed_in_id_token = (
+                not claims.raw.get("scp")
+                and settings.ENTRA_API_CLIENT_ID in audiences
+            )
+            if signed_in_id_token:
+                return
             raise exceptions.PermissionDenied(
                 f"The access token requires scope '{required_scope}'"
                 + (" or an allowed app role." if allowed_roles else ".")

@@ -11,6 +11,7 @@ import { Newsroom } from 'src/app/@shared/interfaces/newsroom';
 
 export class PagePostDetailsComponent implements OnInit {
   post?: Newsroom;
+  loaded = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,13 +20,13 @@ export class PagePostDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
-
-    if (slug) {
-      this.post = this.newsroomService.getNewsroomBySlug(slug);
+    if (!slug) {
+      this.loaded = true;
+      return;
     }
-
-    // ✅ Optional: debug
-    console.log('Slug:', slug);
-    console.log('Post found:', this.post);
+    this.newsroomService.getNewsroomBySlug(slug).subscribe(post => {
+      this.post = post;
+      this.loaded = true;
+    });
   }
 }

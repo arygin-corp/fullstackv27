@@ -1,0 +1,12 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Public Changelog API{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <h1 class="h2">Public Changelog API</h1>
+  <p class="text-muted">Read-only access to published changelog releases.</p>
+  <div class="card mb-3"><div class="card-body"><h2 class="h5">Release collection</h2><code>{% url 'changelog:public-api-releases' %}</code><p class="mb-0 mt-2">Filters: q, version, category, year, page, page_size, include_html.</p></div></div>
+  <div class="card mb-3"><div class="card-body"><h2 class="h5">Latest release</h2><code>{% url 'changelog:public-api-latest' %}</code></div></div>
+  <div class="card mb-3"><div class="card-body"><h2 class="h5">Release by version</h2><code>/public/api/releases/&lt;version&gt;/</code></div></div>
+  <div class="card mb-3"><div class="card-body"><h2 class="h5">HTML timeline</h2><a href="{% url 'changelog:public-timeline' %}">Open the public timeline</a></div></div>
+</div>
+{% endblock %}

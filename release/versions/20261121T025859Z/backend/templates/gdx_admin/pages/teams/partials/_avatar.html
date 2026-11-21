@@ -1,0 +1,5 @@
+{% if image %}
+<img class="team-owner-avatar" src="{{ image }}" alt="">
+{% else %}
+<span class="team-owner-avatar team-owner-avatar--initials" aria-hidden="true">{{ initials }}</span>
+{% endif %}

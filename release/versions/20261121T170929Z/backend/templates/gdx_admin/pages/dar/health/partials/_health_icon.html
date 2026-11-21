@@ -1,0 +1,3 @@
+<span class="avatar rounded-circle flex-shrink-0 {% if check.level == 'success' %}bg-success-subtle text-success{% elif check.level == 'warning' %}bg-warning-subtle text-warning{% elif check.level == 'danger' %}bg-danger-subtle text-danger{% elif check.level == 'info' %}bg-info-subtle text-info{% else %}bg-secondary-subtle text-secondary{% endif %}">
+  <i class="{% if check.level == 'success' %}ti ti-shield-check{% elif check.level == 'warning' %}ti ti-alert-triangle{% elif check.level == 'danger' %}ti ti-shield-x{% elif check.level == 'info' %}ti ti-info-circle{% else %}ti ti-activity{% endif %}"></i>
+</span>

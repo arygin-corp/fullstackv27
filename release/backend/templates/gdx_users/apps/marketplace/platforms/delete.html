@@ -1,0 +1,5 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% block contents %}
+{% url 'marketplace:platform-detail' object.pk as cancel_url %}
+{% include "gdx_users/apps/marketplace/partials/delete_confirm.html" with kicker="Platform" cancel_url=cancel_url %}
+{% endblock %}

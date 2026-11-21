@@ -1,1 +1,0 @@
-{% extends "gdx_admin/base.html" %}{% block title %}Create Page{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/page/includes/hero.html" %}<form method="post">{% csrf_token %}{{ page_form.as_p }}{{ version_form.as_p }}<button class="btn btn-primary">Create page</button></form>{% endblock %}

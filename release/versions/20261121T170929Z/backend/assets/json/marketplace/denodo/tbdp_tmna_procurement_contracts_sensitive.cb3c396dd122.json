@@ -1,0 +1,845 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "acl_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "affected_parties_vendor_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "agreement_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "amendment_reason"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "amendment_version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "approved_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "atf"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "attorney_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "auto_renewal_count"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "auto_renewal_interval"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "base_process_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "begin_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "buyer_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "commodity_code"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "complex_spend_available_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "complexity"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "container_project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_active"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_admin"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_completed_by"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_contract_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_currency"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_descr"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_eff_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_end_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_exp_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_exp_term_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_origin"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_specialist"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "contract_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "cost_avoidance"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "cost_ctr_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "cost_ctr_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "cost_savings"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "date_published_closed"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "deal_category"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "department_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "depends_on_project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "doc_version"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "document_category"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "document_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "due_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "duration"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "end_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "escalation_proc_use_only"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "evalue_proc_use_only"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "final_contract"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "final_contract_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "hierarchy_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_combined_spend"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_evergreen"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_aca"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_bcm"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_bio"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_edm"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_info_sec"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_legal_transaction"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_privacy"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_reviewed_tech_dio"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "is_test_project"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "last_published_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "load_create_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "load_update_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "max_autorenewals_allowed"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "notice_period"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "on_time_or_late"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "org_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "origin_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "original_proposed_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "owner_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "owner_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "parent_agreement_project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "payment_terms"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "process_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "project_info_project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "project_notes"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "proposed_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "proposed_incremental_amount"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "purchasing_group"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "purchasing_org"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "regional_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "related_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "req_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "requester_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "savings"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "savings_justification"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "source_commodity_domain"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "termination_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "updated_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "vendor_contact_phone_email"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_contract_wksp",
+      "column_name": "vendor_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "acl_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "active_approvers_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "active_approvers_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "all_owners_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "all_owners_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "alt_status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "api_res_file_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "ariba_load_mon_year"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "begin_date_time_day"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "committed_due_date_day"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "description"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "document_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "due_date_day"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "duration"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "end_date_time_day"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "is_test_project"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "load_create_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "load_update_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "observers_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "observers_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "on_time_or_late"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_begin_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_end_date"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_owner_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_owner_user_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_project_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "project_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "required_or_optional"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "source_system_source_system_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "task_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "task_name"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "task_name_source_system"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "task_name_task_id"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "task_type"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "time_created_datetime"
+    },
+    {
+      "userrolename": "tbdp-tmna-procurement-contracts-sensitive",
+      "dbname": "procurement_contracts_sen_trn_ext",
+      "elementname": "ariba_ana_project_task",
+      "column_name": "time_updated_datetime"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-tmna-procurement-contracts-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

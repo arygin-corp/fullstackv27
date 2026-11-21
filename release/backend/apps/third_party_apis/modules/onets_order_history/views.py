@@ -3,6 +3,10 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
+from rest_framework.exceptions import AuthenticationFailed
+
+from apps.orders.authentication import MarketplaceSignInAuthentication
+from apps.orders.models import UserActivity
 
 from .models import OrderHistoryRequest
 from .services import (
@@ -98,10 +102,14 @@ def _order_forms(body):
     if not isinstance(variables, dict):
         variables = body if isinstance(body, dict) else {}
     forms = []
-    for key in ("cart_items", "dar_requests"):
+    for key, order_type in (("cart_items", "product"), ("dar_requests", "dar")):
         for item in variables.get(key) or []:
             data = item.get("formData") if isinstance(item, dict) else None
             if isinstance(data, dict) and data:
+                data = dict(data)
+                data["order_type"] = item.get("order_type") or data.get("order_type") or order_type
+                _mark_checkout_source(data)
+                _apply_alt_approver(data)
                 forms.append(data)
     if forms:
         return forms
@@ -135,6 +143,99 @@ def _create_order(form):
     )
 
 
+def _signed_in_actor(request):
+    try:
+        authenticated = MarketplaceSignInAuthentication().authenticate(request)
+    except AuthenticationFailed:
+        return "", ""
+    if not authenticated:
+        return "", ""
+    _user, claims = authenticated
+    object_id = str(claims.get("oid") or "").strip()
+    email = ""
+    for key in ("preferred_username", "email", "upn"):
+        value = claims.get(key)
+        if isinstance(value, str) and "@" in value:
+            email = value.strip()
+            break
+    return object_id, email
+
+
+def _apply_alt_approver(data):
+    """Replace the data-domain control group with the product alternate approver sys_id."""
+    if data.get("order_type") == "dar":
+        return data
+    product_id = data.get("productId") or data.get("product_id")
+    if not product_id:
+        return data
+    from apps.marketplace.models import Product
+
+    try:
+        product = (
+            Product.objects.select_related("alt_approver")
+            .filter(pk=product_id)
+            .first()
+        )
+    except Exception:
+        return data
+    if product is None or getattr(product, "alt_approver_id", None) is None:
+        return data
+    data["v_custom_control_group"] = product.alt_approver.sys_id or ""
+    return data
+
+
+def _mark_checkout_source(data):
+    """A product checkout is either an AI suggestion or a standard product."""
+    if data.get("order_type") == "dar":
+        return data
+    suggested = bool(data.get("ai_suggested"))
+    data["ai_suggested"] = suggested
+    data["source"] = "ai_suggested" if suggested else "standard"
+    return data
+
+
+def _audit_line(form):
+    return {
+        "order_type": form.get("order_type") or "",
+        "name": form.get("product_name") or form.get("v_dar_platform") or "",
+        "product_id": form.get("productId") or form.get("product_id") or "",
+        "domain": form.get("domain") or form.get("v_dar_dataDomainSelect") or "",
+        "datatype": form.get("datatype") or "",
+        "classification": form.get("classification") or "",
+        "platform": form.get("v_dar_platform") or "",
+        "environment": form.get("v_dar_environment") or "",
+        "access_type": form.get("v_dat_data_access_type") or "",
+        "ai_suggested": bool(form.get("ai_suggested")),
+        "source": "ai_suggested" if form.get("ai_suggested") else "standard",
+    }
+
+
+def _audit_submitted_order(request, variables, forms, request_number, ritm_number, order_type):
+    object_id, email = _signed_in_actor(request)
+    if not object_id:
+        object_id = str(variables.get("v_dar_objectid_createdby") or forms[0].get("v_dar_objectid_createdby") or "").strip()
+    names = [line["name"] for line in (_audit_line(form) for form in forms) if line["name"]]
+    detail = ", ".join(names) or ("Data access request" if order_type == "dar" else "Catalog product")
+    try:
+        UserActivity.objects.create(
+            object_id=object_id[:255],
+            email=email[:254],
+            action="order_submitted",
+            title="Order submitted",
+            detail=detail[:255],
+            reference=str(request_number)[:255],
+            payload={
+                "order_type": order_type,
+                "request_number": request_number,
+                "ritm_number": ritm_number,
+                "ai_suggested": any(bool(form.get("ai_suggested")) for form in forms),
+                "items": [_audit_line(form) for form in forms],
+            },
+        )
+    except Exception:
+        return
+
+
 @csrf_exempt
 @require_http_methods(["POST"])
 def submit_order(request):
@@ -146,6 +247,11 @@ def submit_order(request):
     created = [_create_order(form) for form in forms]
     primary = created[0]
     ritm = "RITM" + primary.number[3:]
+    variables = body.get("variables") if isinstance(body.get("variables"), dict) else {}
+    order_type = str(forms[0].get("order_type") or body.get("order_type") or variables.get("order_type") or "").strip().lower()
+    if order_type not in ("product", "dar"):
+        order_type = "dar" if variables.get("dar_requests") else "product"
+    _audit_submitted_order(request, variables, forms, primary.number, ritm, order_type)
     return JsonResponse({
         "result": {
             "number": primary.number,
@@ -154,6 +260,7 @@ def submit_order(request):
             "ritm_id": primary.id,
             "sys_id": primary.id,
             "ritm_number": ritm,
+            "order_type": order_type,
         },
         "orders": [request_payload(row) for row in created],
     })

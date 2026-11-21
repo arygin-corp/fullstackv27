@@ -1,0 +1,57 @@
+---
+# see: https://terraform-docs.io/user-guide/configuration/formatter
+formatter: markdown table
+
+# see: https://terraform-docs.io/user-guide/configuration/content
+content: |-
+  ## Prerequisites
+  {{ include "./.docs/prereqs.md" }}
+
+  ## Blueprint Testing using Terratest
+  {{ include "./.docs/testing.md" }}
+
+  ## Deploy the Fargate service using ECS Blueprint
+  {{ include "./.docs/deployment-process.md" }}
+
+  ## Notes
+  {{ include "./.docs/notes.md" }}
+
+  ## Example Usage
+  ```
+  {{ include "../terraform/template/terragrunt.hcl" }}
+  ```
+  ## Observability
+  {{ include "./.docs/observability.md" }}
+
+  {{ .Requirements }}
+
+  {{ .Modules }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+# # see: https://terraform-docs.io/user-guide/configuration/output
+output:
+  file: "../README.md"
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+# see: https://terraform-docs.io/user-guide/configuration/sort
+# sort:
+#   enabled: true
+#   by: required
+
+# # https://terraform-docs.io/user-guide/configuration/output-values/
+# output-values:
+#   enabled: false
+#   from: ""
+
+# see: https://terraform-docs.io/user-guide/configuration/settings
+settings:
+  lockfile: false

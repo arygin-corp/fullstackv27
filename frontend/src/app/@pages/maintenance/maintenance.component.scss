@@ -1,0 +1,137 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: block;
+  overflow: auto;
+  background: #363636;
+  color: #f4f4f4;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 56px 8vw;
+  background: #363636;
+}
+
+.copy {
+  width: min(920px, 100%);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+img {
+  width: 36px;
+  height: 36px;
+}
+
+header span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.status {
+  --dot: #04fdff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  margin: 0 0 22px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.status.is-quick { --dot: #3ddc84; }
+.status.is-low { --dot: #5b8def; }
+.status.is-medium { --dot: #f5c451; }
+.status.is-high { --dot: #ff5d5d; }
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, .06);
+}
+
+h1 {
+  max-width: 720px;
+  margin: 0;
+  color: #04fdff;
+  font-size: clamp(52px, 6vw, 84px);
+  font-weight: 600;
+  line-height: .92;
+  letter-spacing: -2px;
+}
+
+.message {
+  max-width: 520px;
+  margin: 22px 0 0;
+  color: #c8c8c8;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.clock {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.clock-kicker {
+  margin: 0 0 16px;
+  color: #a3a3a3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+ol {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  display: block;
+  color: #04fdff;
+  font-size: clamp(56px, 7vw, 88px);
+  font-weight: 600;
+  line-height: .85;
+  letter-spacing: -3px;
+}
+
+li span {
+  display: block;
+  margin-top: 8px;
+  color: #a3a3a3;
+  font-size: 13px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+footer {
+  margin-top: 48px;
+  color: #8d8d8d;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .stage { padding: 32px 24px; }
+  ol { gap: 24px; }
+  strong { font-size: 48px; }
+}

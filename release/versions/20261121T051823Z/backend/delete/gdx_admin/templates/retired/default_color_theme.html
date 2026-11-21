@@ -1,0 +1,126 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}default_color_theme.html | {{ app_name }}{% endblock %}
+{% block extra_css %}
+<style>
+  .gdx-theme {
+    display: grid;
+    gap: 22px;
+  }
+
+  .gdx-theme h2 {
+    margin: 0 0 12px;
+    color: var(--gdx-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .gdx-theme ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gdx-theme li {
+    overflow: hidden;
+    border: 1px solid var(--gdx-line);
+    border-radius: 8px;
+    background: var(--gdx-surface);
+  }
+
+  .gdx-swatch {
+    display: block;
+    height: 72px;
+    border-bottom: 1px solid var(--gdx-line);
+  }
+
+  .gdx-theme .gdx-scale {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--gdx-line);
+  }
+
+  .gdx-theme .gdx-scale span {
+    display: grid;
+    gap: 4px;
+    padding: 8px 4px 6px;
+    justify-items: center;
+  }
+
+  .gdx-theme .gdx-scale i {
+    display: block;
+    width: 100%;
+    height: 28px;
+    border: 1px solid var(--gdx-line);
+    border-radius: 4px;
+  }
+
+  .gdx-theme .gdx-scale em {
+    color: var(--gdx-text-soft);
+    font-size: 0.62rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .gdx-theme li > div:not(.gdx-scale) {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px 12px;
+  }
+
+  .gdx-theme strong {
+    color: var(--gdx-ink);
+    font-size: 0.92rem;
+  }
+
+  .gdx-theme code,
+  .gdx-theme em {
+    color: var(--gdx-text-soft);
+    font-size: 0.75rem;
+    font-style: normal;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<div class="gdx-theme">
+  {% for group, colors in theme_groups %}
+  <section>
+    <h2>{{ group }}</h2>
+    <ul>
+      {% for color in colors %}
+      <li>
+        <i class="gdx-swatch" data-token="{{ color.token }}"></i>
+        <div class="gdx-scale">
+          <span><i style="background: color-mix(in srgb, var({{ color.token }}) 85%, #ffffff)"></i><em>85%</em></span>
+          <span><i style="background: color-mix(in srgb, var({{ color.token }}) 75%, #ffffff)"></i><em>75%</em></span>
+          <span><i style="background: color-mix(in srgb, var({{ color.token }}) 65%, #ffffff)"></i><em>65%</em></span>
+          <span><i style="background: color-mix(in srgb, var({{ color.token }}) 50%, #ffffff)"></i><em>50%</em></span>
+          <span><i style="background: color-mix(in srgb, var({{ color.token }}) 35%, #ffffff)"></i><em>35%</em></span>
+        </div>
+        <div>
+          <strong>{{ color.name }}</strong>
+          <code>{{ color.token }}</code>
+          <em data-hex></em>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+<script>
+  document.querySelectorAll("[data-token]").forEach(function (chip) {
+    var value = getComputedStyle(document.documentElement).getPropertyValue(chip.dataset.token).trim();
+    chip.style.background = value;
+    var hex = chip.parentElement.querySelector("[data-hex]");
+    if (hex) hex.textContent = value;
+  });
+</script>
+{% endblock %}

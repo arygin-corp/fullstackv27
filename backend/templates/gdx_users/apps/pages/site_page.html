@@ -3,19 +3,59 @@
 {% block extra_css %}
     {% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
     <style>
-        .site-page .member-photo,
-        .site-page .brand-mark {
-            width: 80px;
-            height: 48px;
-            object-fit: cover;
-            border-radius: 6px;
-            background: #f3f5f8;
+        .page-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+        .page-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+            background: #fff;
+            border: 1px solid #d9dee8;
+            border-radius: 16px;
+            overflow: hidden;
+            color: #121826;
+            text-decoration: none;
         }
-        .site-page .member-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+        a.page-card:hover { border-color: #583fc9; color: #121826; }
+        .page-card .media {
+            height: 148px;
+            background: #f3f5f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-card .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .page-card .media.is-logo img { object-fit: contain; padding: 18px; }
+        .page-card .media.is-on-dark { background: #363636; }
+        .page-card .body { padding: 16px; }
+        .page-card h5 { margin: 8px 0; font-weight: 650; }
+        .page-card p { margin: 0; color: #3d4d63; }
+        .page-chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0 10px;
+            border-radius: 999px;
+            background: #efeaff;
+            color: #583fc9;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .page-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .person-card { align-items: center; text-align: center; padding: 20px 16px 18px; }
+        .person-card img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; background: #f3f5f8; }
+        .person-card h5 { margin-bottom: 2px; }
+        .quarter-band { margin: 18px 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #583fc9; }
+        .year-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: start; margin-bottom: 28px; }
+        .year-quarter { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+        .year-quarter .quarter-band { margin: 0; }
+        .year-quarter .page-card { min-height: 160px; }
+        @media (max-width: 900px) {
+            .year-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        .stat-card { min-height: 0; padding: 16px; }
+        .stat-card strong { display: block; font-size: 28px; color: #583fc9; }
+        .faq-card h5 { font-size: 16px; }
         .site-page .copy p:last-child { margin-bottom: 0; }
-        a.library-doc { flex-direction: column; align-items: flex-start; min-height: 280px; padding: 16px; border-radius: 16px; text-decoration: none; }
-        a.library-doc img.sheet { width: 140px; height: 180px; flex: 0 0 180px; object-fit: contain; object-position: center top; background: #fff; }
-        a.library-doc strong { color: #583fc9; }
     </style>
 {% endblock %}
 
@@ -43,117 +83,152 @@
     </div>
 
     {% if slug == "leadership" %}
-        <div class="record-tiles">
+        <div class="page-grid">
             {% for member in data.members %}
-                <div class="record-tile">
-                    {% if member.image %}<img class="member-photo" src="{{ member.image }}" alt="">{% endif %}
-                    <span><strong>{{ member.name }}</strong><br><span class="text-muted">{{ member.role }}</span></span>
-                </div>
+                <article class="page-card person-card">
+                    {% if member.image %}<img src="{{ member.image }}" alt="">{% endif %}
+                    <h5>{{ member.name }}</h5>
+                    <p>{{ member.role }}</p>
+                </article>
             {% endfor %}
         </div>
     {% elif slug == "roadmap" %}
         {% for year in data.years %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="record-kicker">FY{{ year.fiscalStartYear }}</div>
-                    {% for quarter in year.quarters %}
-                        <h5 class="mt-3">Quarter {{ quarter.quarter }}</h5>
+            <div class="record-kicker mb-2">FY{{ year.fiscalStartYear }}</div>
+            <div class="year-row">
+                {% for quarter in year.quarters %}
+                    <section class="year-quarter">
+                        <div class="quarter-band">Quarter {{ quarter.quarter }}</div>
                         {% for item in quarter.milestones %}
-                            <p class="mb-2"><strong>{{ item.monthName }} · {{ item.title }}</strong>{% if item.description %}<br>{{ item.description }}{% endif %}</p>
+                            <article class="page-card">
+                                <div class="body">
+                                    <span class="page-chip">{{ item.monthName }}</span>
+                                    <h5>{{ item.title }}</h5>
+                                    {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+                                </div>
+                            </article>
                         {% endfor %}
-                    {% endfor %}
-                </div>
+                    </section>
+                {% endfor %}
             </div>
         {% endfor %}
     {% elif slug == "hackathon" %}
-        {% for section in data.sections %}
-            <div class="card mb-3">
-                <div class="card-body copy">
-                    {% if section.kicker %}<div class="record-kicker">{{ section.kicker }}</div>{% endif %}
-                    <h5>{{ section.title }}</h5>
-                    {% if section.lead %}<p>{{ section.lead }}</p>{% endif %}
-                    {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-                    {% if section.quote %}<p><em>{{ section.quote }}</em></p>{% endif %}
-                    {% if section.bullets %}<ul>{% for bullet in section.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>{% endif %}
-                    {% for link in section.links %}<p class="mb-1"><a href="{{ link.url }}">{{ link.label }}</a></p>{% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-        <div class="card mb-3"><div class="card-body">
-            <div class="record-kicker">Scores</div>
-            {% for score in data.scores %}<p class="mb-1">{{ score.label }} · {{ score.value }}%</p>{% endfor %}
-            <div class="record-kicker mt-3">Groups</div>
-            <p>{{ data.groups|join:", " }}</p>
-            <div class="record-kicker">Partners</div>
-            <p class="mb-0">{{ data.partners|join:", " }}</p>
-        </div></div>
-    {% elif slug == "campaign" %}
-        {% for slide in data.slides %}
-            <div class="card mb-3"><div class="card-body"><div class="record-kicker">Slide</div><h5>{{ slide.title }}</h5><p class="mb-0">{{ slide.text }}</p></div></div>
-        {% endfor %}
-        <div class="record-tiles mb-3">
-            {% for brand in data.brands %}
-                <div class="record-tile">{% if brand.image %}<img class="brand-mark" src="{{ brand.image }}" alt="">{% endif %}<strong>{{ brand.title }}</strong></div>
+        <div class="page-grid mb-3">
+            {% for score in data.scores %}
+                <article class="page-card stat-card"><span class="page-chip">Score</span><strong>{{ score.value }}%</strong><p>{{ score.label }}</p></article>
             {% endfor %}
         </div>
-        {% for item in data.highlights %}
-            <div class="card mb-3"><div class="card-body"><div class="record-kicker">Highlight</div><h5>{{ item.title }}</h5><p class="mb-0">{{ item.text }}</p></div></div>
-        {% endfor %}
+        <div class="page-grid mb-3">
+            {% for section in data.sections %}
+                <article class="page-card">
+                    {% if section.image %}<div class="media"><img src="{{ section.image }}" alt=""></div>{% endif %}
+                    <div class="body">
+                        {% if section.kicker %}<span class="page-chip">{{ section.kicker }}</span>{% endif %}
+                        <h5>{{ section.title }}</h5>
+                        {% if section.lead %}<p>{{ section.lead }}</p>{% endif %}
+                        {% if section.links %}
+                            <div class="page-chips">{% for link in section.links %}<a class="page-chip" href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</div>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+            {% for clip in data.videos %}
+                <a class="page-card" href="{{ clip.url }}">
+                    <div class="body">
+                        <span class="page-chip">Video</span>
+                        <h5>{{ clip.title }}</h5>
+                        <p>{{ clip.text }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="page-chips mb-2">{% for label in data.groups %}<span class="page-chip">{{ label }}</span>{% endfor %}</div>
+        <div class="page-chips">{% for label in data.partners %}<span class="page-chip">{{ label }}</span>{% endfor %}</div>
+    {% elif slug == "campaign" %}
+        <div class="page-grid mb-3">
+            {% for slide in data.slides %}
+                <article class="page-card">
+                    {% if slide.image %}<div class="media"><img src="{{ slide.image }}" alt=""></div>{% endif %}
+                    <div class="body"><span class="page-chip">Slide</span><h5>{{ slide.title }}</h5><p>{{ slide.text }}</p></div>
+                </article>
+            {% endfor %}
+            {% for brand in data.brands %}
+                <article class="page-card">
+                    {% if brand.image %}<div class="media is-logo"><img src="{{ brand.image }}" alt=""></div>{% endif %}
+                    <div class="body"><span class="page-chip">Brand</span><h5>{{ brand.title }}</h5></div>
+                </article>
+            {% endfor %}
+            {% for item in data.highlights %}
+                <article class="page-card">
+                    {% if item.image %}<div class="media"><img src="{{ item.image }}" alt=""></div>{% endif %}
+                    <div class="body"><span class="page-chip">Highlight</span><h5>{{ item.title }}</h5><p>{{ item.text }}</p></div>
+                </article>
+            {% endfor %}
+        </div>
     {% elif slug == "newsroom" %}
-        {% for post in data.results %}
-            <div class="card mb-3">
-                <div class="card-body copy">
-                    <div class="record-kicker">{{ post.category }} · {{ post.date }}</div>
-                    <h5>{{ post.title }}</h5>
-                    <p>{{ post.summary }}</p>
-                    {{ post.content|safe }}
-                </div>
-            </div>
-        {% endfor %}
+        <div class="page-grid">
+            {% for post in data.results %}
+                <article class="page-card">
+                    {% if post.image %}<div class="media"><img src="{{ post.image }}" alt=""></div>{% endif %}
+                    <div class="body">
+                        <span class="page-chip">{{ post.category }}</span>
+                        <h5>{{ post.title }}</h5>
+                        <p>{{ post.summary }}</p>
+                        <div class="page-chips"><span class="page-chip">{{ post.date }}</span><span class="page-chip">{{ post.author }}</span></div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
     {% elif slug == "resources" %}
         <h5 class="mb-2">Documents</h5>
-        <div class="record-tiles mb-3">{% for item in data.documents %}<a class="record-tile library-doc" href="{% url 'pages_staff:support-document' item.id %}">{% if item.imageUrl %}<img class="sheet" src="{{ item.imageUrl }}" alt="">{% endif %}<span><strong>{{ item.heading }}</strong><br><span class="text-muted">{{ item.format }} · {{ item.size }}</span></span></a>{% endfor %}</div>
+        <div class="page-grid mb-4">{% for item in data.documents %}<a class="page-card" href="{% url 'pages_staff:support-document' item.id %}">{% if item.imageUrl %}<div class="media is-logo"><img src="{{ item.imageUrl }}" alt=""></div>{% endif %}<div class="body"><span class="page-chip">{{ item.format }}</span><h5>{{ item.heading }}</h5><p>{{ item.size }}</p></div></a>{% endfor %}</div>
         <h5 class="mb-2">Policies</h5>
-        <div class="record-tiles mb-3">{% for item in data.policies %}<div class="record-tile"><span><strong>{{ item.heading }}</strong><br><span class="text-muted">{{ item.format }}</span></span></div>{% endfor %}</div>
+        <div class="page-grid mb-4">{% for item in data.policies %}<a class="page-card" href="{% url 'pages_staff:support-policy' item.id %}">{% if item.imageUrl %}<div class="media is-logo"><img src="{{ item.imageUrl }}" alt=""></div>{% endif %}<div class="body"><span class="page-chip">Policy</span><h5>{{ item.heading }}</h5><p>{{ item.format }}</p></div></a>{% endfor %}</div>
         <h5 class="mb-2">Processes</h5>
-        <div class="record-tiles mb-3">{% for item in data.processes %}<div class="record-tile"><span><strong>{{ item.heading }}</strong><br><span class="text-muted">{{ item.format }} · {{ item.size }}</span></span></div>{% endfor %}</div>
+        <div class="page-grid mb-4">{% for item in data.processes %}<a class="page-card" href="{% url 'pages_staff:support-process' item.id %}">{% if item.imageUrl %}<div class="media is-logo"><img src="{{ item.imageUrl }}" alt=""></div>{% endif %}<div class="body"><span class="page-chip">{{ item.format }}</span><h5>{{ item.heading }}</h5><p>{{ item.size }}</p></div></a>{% endfor %}</div>
         <h5 class="mb-2">Brands</h5>
-        <div class="record-tiles mb-3">{% for brand in data.brands %}<a class="record-tile" href="{% url 'pages_staff:support-image' brand.id %}"><span><strong>{{ brand.name }}</strong><br><span class="text-muted">{{ brand.description }}</span></span></a>{% endfor %}</div>
+        <div class="page-grid mb-4">{% for brand in data.brands %}<a class="page-card" href="{% url 'pages_staff:support-image' brand.id %}">{% if brand.image %}<div class="media is-logo{% if 'light' in brand.name|lower %} is-on-dark{% endif %}"><img src="{{ brand.image }}" alt=""></div>{% endif %}<div class="body"><span class="page-chip">Brand</span><h5>{{ brand.name }}</h5><p>{{ brand.description }}</p></div></a>{% endfor %}</div>
         <h5 class="mb-2">Media</h5>
-        <div class="record-tiles">{% for item in data.media %}<a class="record-tile" href="{% url 'pages_staff:support-media' item.id %}"><span><strong>{{ item.name }}</strong><br><span class="text-muted">{{ item.format }} · {{ item.size }}</span></span></a>{% endfor %}</div>
+        <div class="page-grid">{% for item in data.media %}<a class="page-card" href="{% url 'pages_staff:support-media' item.id %}">{% if item.icon %}<div class="media is-logo"><img src="{{ item.icon }}" alt=""></div>{% endif %}<div class="body"><span class="page-chip">{{ item.format }}</span><h5>{{ item.name }}</h5><p>{{ item.size }}</p></div></a>{% endfor %}</div>
     {% elif slug == "faqs" %}
         {% for section in data.sections %}
-            <div class="card mb-3"><div class="card-body copy">
-                <div class="record-kicker">{{ section.title }}</div>
+            <div class="record-kicker mb-2">{{ section.title }}</div>
+            <div class="page-grid mb-4">
                 {% for item in section.items %}
-                    <h5 class="mt-3">{{ item.question }}</h5>
-                    {% for paragraph in item.answer %}<p>{{ paragraph }}</p>{% endfor %}
+                    <article class="page-card faq-card"><div class="body"><span class="page-chip">FAQ</span><h5>{{ item.question }}</h5>{% for paragraph in item.answer %}<p class="mt-2">{{ paragraph }}</p>{% endfor %}</div></article>
                 {% endfor %}
-            </div></div>
+            </div>
         {% endfor %}
     {% elif slug == "support" %}
-        {% for article in data.articles %}
-            <div class="card mb-3"><div class="card-body copy">
-                <div class="record-kicker">{{ article.category }}</div>
-                <h5><a href="{% url 'pages_staff:support-article' article.id %}">{{ article.title }}</a></h5>
-                <p>{{ article.summary }}</p>
-                {% for block in article.blocks %}
-                    {% if block.heading %}<h6>{{ block.heading }}</h6>{% endif %}
-                    {% for paragraph in block.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-                    {% if block.steps %}<ol>{% for step in block.steps %}<li>{{ step }}</li>{% endfor %}</ol>{% endif %}
-                {% endfor %}
-            </div></div>
-        {% endfor %}
+        <div class="page-grid">
+            {% for article in data.articles %}
+                <a class="page-card" href="{% url 'pages_staff:support-article' article.id %}">
+                    {% if article.image %}<div class="media"><img src="{{ article.image }}" alt=""></div>{% endif %}
+                    <div class="body">
+                        <span class="page-chip">{{ article.category }}</span>
+                        <h5>{{ article.title }}</h5>
+                        <p>{{ article.summary }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     {% elif slug == "whats-new" %}
-        {% for step in data.steps %}
-            <div class="card mb-3"><div class="card-body">
-                <div class="record-kicker">Step {{ forloop.counter }}</div>
-                <h5>{{ step.title }}</h5>
-                <p>{{ step.summary }}</p>
-                <p class="mb-2"><a href="{{ step.link }}">{{ step.linkLabel }}</a></p>
-                {% for spot in step.hotspots %}<p class="mb-1"><strong>{{ spot.label }}</strong> — {{ spot.text }}</p>{% endfor %}
-            </div></div>
-        {% endfor %}
+        <div class="page-grid">
+            {% for step in data.steps %}
+                <article class="page-card">
+                    {% if step.image %}<div class="media"><img src="{{ step.image }}" alt=""></div>{% endif %}
+                    <div class="body">
+                        <span class="page-chip">Step {{ forloop.counter }}</span>
+                        <h5>{{ step.title }}</h5>
+                        <p>{{ step.summary }}</p>
+                        <div class="page-chips">
+                            <a class="page-chip" href="{{ step.link }}">{{ step.linkLabel }}</a>
+                            {% for spot in step.hotspots %}<span class="page-chip">{{ spot.label }}</span>{% endfor %}
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
     {% endif %}
 </div>
 {% endblock %}

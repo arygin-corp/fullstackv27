@@ -13,7 +13,7 @@ from .sync import sync_installed_modules
 
 @require_GET
 @login_required
-def integration_catalog_page(request): return render(request,"gdx_admin/apps/third_party_apis/integration_catalog.html")
+def integration_catalog_page(request): return render(request,"gdx_admin/pages/third_party_apis/integration_catalog.html")
 @require_GET
 @login_required
 def integration_catalog_api(request):
@@ -23,7 +23,7 @@ def integration_catalog_api(request):
 def integration_documentation_page(request,module_key):
     registry.autodiscover();row=InstalledThirdPartyApi.objects.filter(module_key=module_key).first()
     if row is None: raise Http404("Integration not found")
-    return render(request,"gdx_admin/apps/third_party_apis/integration_documentation.html",{"integration":serialize_integration(row)})
+    return render(request,"gdx_admin/pages/third_party_apis/integration_documentation.html",{"integration":serialize_integration(row)})
 
 
 @staff_member_required

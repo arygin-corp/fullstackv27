@@ -1,0 +1,25 @@
+{
+  "adgroup": "tbdp-namc-tmmi",
+  "slugs": [
+    "namc-toyota-motor-manufacturing-indiana"
+  ],
+  "databases": [
+    "mfg_job_process_trn_ext"
+  ],
+  "tables": [
+    "tmra_tmmi_tm_job_versatility"
+  ],
+  "columns": [
+    "c.job_name",
+    "first_name,last_name",
+    "home_shift_name",
+    "is_variable_workforce",
+    "job_name",
+    "line_name",
+    "psh.shift_name",
+    "shift_name",
+    "shop_name",
+    "tm_name",
+    "workday_id"
+  ]
+}

@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_POST
 
@@ -112,14 +114,17 @@ def _directory_rows(module_path, model_name, detail_field):
         return []
 
 
-def _steward_rows():
+def _steward_rows(limit=5):
     try:
         from django.db.models import Count
 
         from apps.marketplace.models import DataSteward
 
         rows = []
-        query = DataSteward.objects.annotate(products=Count("data_steward")).order_by("-id")[:5]
+        query = DataSteward.objects.filter(is_active=True).annotate(products=Count("data_steward"))
+        query = query.order_by("name") if limit is None else query.order_by("-id")
+        if limit is not None:
+            query = query[:limit]
         for item in query:
             name = item.name or "Unnamed steward"
             rows.append({
@@ -253,12 +258,12 @@ def _order_activity():
         return empty
 
 
-def _activity():
+def _activity(limit=8):
     try:
         from gdx.deployment import deployment_history
 
         rows = []
-        for item in deployment_history()[:8]:
+        for item in deployment_history()[:limit]:
             rows.append({
                 "label": item.get("version_label") or item.get("target_label") or "Build",
                 "detail": item.get("state") or "",
@@ -315,7 +320,7 @@ def dashboard(request):
     return _shell(
         request,
         "dashboard",
-        "gdx_admin/apps/command_center/dashboard.html",
+        "gdx_admin/pages/command_center/dashboard.html",
         dataset=dataset,
         greeting=greeting,
         metrics=metrics,
@@ -325,12 +330,128 @@ def dashboard(request):
         request_total=sum(day_values),
         request_change=change,
         range_label=f"{days[0]} – {days[-1]}" if days else greeting["date"],
+        staff_page_kicker="COMMAND CENTER",
+        staff_page_title="Dashboard",
+        staff_page_description="Platform activity, orders, and the people using the marketplace.",
+        staff_page_metric_label="Requests",
+        staff_page_metric_value=sum(day_values),
+        staff_page_metric_caption=f"{days[0]} – {days[-1]}" if days else greeting["date"],
         breakdown=list(zip(dataset.get("breakdown", {}).get("labels") or [], dataset.get("breakdown", {}).get("values") or [])),
         customers=_directory_rows("apps.marketplace.models", "Contact", "email"),
         stewards=_steward_rows(),
         organizations=_directory_rows("apps.marketplace.models", "Organization", "abbrev"),
         companies=_directory_rows("apps.marketplace.models", "Company", "abbrev"),
         recent_requests=_recent_requests(),
+    )
+
+
+def _share(part, whole):
+    part = int(part or 0)
+    whole = int(whole or 0)
+    if whole <= 0:
+        return 0
+    return max(0, min(100, round(part / whole * 100)))
+
+
+@staff_member_required
+def executive(request):
+    from apps.third_party_apis.modules.command_center.platform import _deployment_counts
+
+    dataset = _dataset()
+    orders = _order_activity()
+    dataset["days"] = orders["days"]
+    dataset["dayValues"] = orders["values"]
+    dataset["breakdown"] = orders["breakdown"]
+    realtime = _realtime()
+    metrics = {row["label"]: row["value"] for row in dataset.get("metrics") or []}
+    days = list(dataset.get("days") or [])
+    day_values = [int(value or 0) for value in dataset.get("dayValues") or []]
+    earlier = sum(day_values[:7])
+    later = sum(day_values[7:])
+    request_total = sum(day_values)
+    change = round((later - earlier) / earlier * 100, 1) if earlier else 0
+    builds = _deployment_counts()
+    greeting = _greeting_header(request, dataset, realtime)
+    modules = int(metrics.get("Modules") or 0)
+    enabled = int(metrics.get("Enabled") or 0)
+    people = int(metrics.get("People") or 0)
+    content_pages = int(metrics.get("Content pages") or 0)
+    staff_pages = int(metrics.get("Staff pages") or 0)
+    stage_labels = list(dataset.get("breakdown", {}).get("labels") or [])
+    stage_values = [int(value or 0) for value in dataset.get("breakdown", {}).get("values") or []]
+    stage_total = sum(stage_values)
+    stages = [
+        {"label": label, "value": value, "share": _share(value, stage_total)}
+        for label, value in zip(stage_labels, stage_values)
+    ]
+    peak = max(day_values) if day_values else 1
+    spark = [
+        {"label": label, "height": max(8, round(value / peak * 100)) if peak else 8}
+        for label, value in zip(days, day_values)
+    ]
+    plans = [
+        {"label": "Modules enabled", "value": _share(enabled, modules)},
+        {"label": "Builds succeeded", "value": _share(builds.get("succeeded"), builds.get("total"))},
+        {"label": "Requests this week", "value": _share(later, request_total)},
+        {"label": "Staff pages", "value": _share(staff_pages, content_pages or staff_pages)},
+    ]
+    active_now = int(realtime.get("active_users") or 0)
+    build_total = int(builds.get("total") or 0)
+    build_rows = [
+        {"label": "Succeeded", "value": int(builds.get("succeeded") or 0)},
+        {"label": "Failed", "value": int(builds.get("failed") or 0)},
+        {"label": "Running", "value": int(builds.get("running") or 0)},
+    ]
+    for row in build_rows:
+        row["share"] = _share(row["value"], build_total)
+    if change >= 0:
+        headline = "Requests are ahead of the prior week."
+    else:
+        headline = "Requests are behind the prior week."
+    return _shell(
+        request,
+        "executive",
+        "gdx_admin/pages/dashboard/executive/index.html",
+        dashboard_slug="executive",
+        dashboard_title="Executive",
+        greeting=greeting,
+        headline=headline,
+        summary=(
+            f"{enabled} of {modules} modules are enabled, with {people} people on the platform "
+            f"and {active_now} signed in during the last 30 minutes."
+        ),
+        request_total=request_total,
+        request_change=change,
+        ahead=change >= 0,
+        range_label=f"{days[0]} – {days[-1]}" if days else greeting["date"],
+        spark=spark,
+        plans=plans,
+        stages=stages,
+        modules=modules,
+        enabled=enabled,
+        people=people,
+        active_now=active_now,
+        staff_page_kicker="COMMAND CENTER",
+        staff_page_title="Executive",
+        staff_page_welcome="Welcome to the GDX DCommand Center",
+        staff_page_description="Marketplace requests, modules, people, and builds for this environment.",
+        staff_page_metric_label="Requests",
+        staff_page_metric_value=request_total,
+        staff_page_metric_caption=f"{days[0]} – {days[-1]}" if days else greeting["date"],
+        builds=builds,
+        build_rows=build_rows,
+        content_pages=content_pages,
+        staff_pages=staff_pages,
+        recent_requests=_recent_requests()[:7],
+        recent_builds=_activity(10),
+        stewards=_steward_rows(limit=None),
+        chart={
+            "days": days,
+            "values": day_values,
+            "stages": stage_labels,
+            "stageValues": stage_values,
+            "confidence": plans[0]["value"],
+        },
     )
 
 
@@ -343,7 +464,7 @@ def analytics(request):
     return _shell(
         request,
         "analytics",
-        "gdx_admin/apps/command_center/analytics.html",
+        "gdx_admin/pages/command_center/analytics.html",
         dataset=dataset,
         realtime=realtime,
         greeting=_greeting_header(request, dataset, realtime),
@@ -384,7 +505,7 @@ def my_dashboards(request):
     return _shell(
         request,
         "my_dashboards",
-        "gdx_admin/apps/command_center/mine.html",
+        "gdx_admin/pages/command_center/mine.html",
         page_title="My Dashboards",
         page_description="Dashboards you created.",
         views=saved_views("dashboard", owner=request.user),
@@ -397,7 +518,7 @@ def my_reports(request):
     return _shell(
         request,
         "my_reports",
-        "gdx_admin/apps/command_center/mine.html",
+        "gdx_admin/pages/command_center/mine.html",
         page_title="My Reports",
         page_description="Reports you created.",
         views=saved_views("report", owner=request.user),
@@ -410,7 +531,7 @@ def reports(request):
     return _shell(
         request,
         "reports",
-        "gdx_admin/apps/command_center/reports.html",
+        "gdx_admin/pages/command_center/reports.html",
         views=saved_views("report"),
     )
 
@@ -420,7 +541,7 @@ def health(request):
     return _shell(
         request,
         "health",
-        "gdx_admin/apps/command_center/health.html",
+        "gdx_admin/pages/command_center/health.html",
         checks=health_checks(),
     )
 
@@ -440,12 +561,41 @@ def builder(request):
             return _shell(
                 request,
                 "create",
-                "gdx_admin/apps/command_center/create.html",
+                "gdx_admin/pages/command_center/create.html",
                 error=message,
                 selected=request.POST.getlist("elements"),
             )
         return redirect("command_center:view", view_id=item["id"])
-    return _shell(request, "create", "gdx_admin/apps/command_center/create.html", selected=[])
+    return _shell(request, "create", "gdx_admin/pages/command_center/create.html", selected=[])
+
+
+@staff_member_required
+def workflow(request):
+    from apps.third_party_apis.modules.command_center.workflow import decide_approval, pending_approvals
+
+    if request.method == "POST":
+        try:
+            decide_approval(
+                request.user,
+                request.POST.get("kind"),
+                request.POST.get("object_id"),
+                request.POST.get("decision"),
+                request.POST.get("comment"),
+            )
+        except (ValidationError, PermissionDenied) as exc:
+            messages.error(request, " ".join(getattr(exc, "messages", []) or [str(exc)]))
+        else:
+            messages.success(request, "The approval was recorded.")
+        return redirect("command_center:workflow")
+    items = pending_approvals(request.user)
+    waiting = [item for item in items if (item.get("status") or "").lower() != "published"]
+    return _shell(
+        request,
+        "workflow",
+        "gdx_admin/pages/command_center/workflow.html",
+        approvals=items,
+        approval_count=len(waiting),
+    )
 
 
 @staff_member_required
@@ -457,7 +607,7 @@ def view_detail(request, view_id):
     return _shell(
         request,
         item.get("kind") or "dashboard",
-        "gdx_admin/apps/command_center/detail.html",
+        "gdx_admin/pages/command_center/detail.html",
         item=item,
         snapshot=snapshot,
         dataset=widget_dataset(snapshot, _activity(), health_checks()),

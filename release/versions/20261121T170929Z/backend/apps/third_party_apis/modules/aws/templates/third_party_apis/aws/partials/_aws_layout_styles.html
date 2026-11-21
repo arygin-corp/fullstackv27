@@ -1,0 +1,58 @@
+<style>
+.aws-page-header { display: flex; flex-direction: column; gap: 16px; }
+.aws-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.aws-header-environments {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+@media (max-width: 1100px) {
+    .aws-header-actions,
+    .aws-header-environments { flex-wrap: wrap; }
+}
+.aws-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+    gap: 20px;
+    align-items: start;
+}
+.aws-field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+}
+.aws-field-grid .aws-field--wide { grid-column: 1 / -1; }
+.aws-field-grid .form-control,
+.aws-field-grid .form-select,
+.aws-field-grid textarea { width: 100%; }
+.aws-service-section { margin-bottom: 28px; }
+.aws-service-section h2 { margin: 0 0 12px; font-size: 1rem; }
+.aws-service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+.aws-service-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    height: 100%;
+}
+.aws-service-card .card-body { display: flex; flex-direction: column; gap: 8px; }
+.aws-service-card p { margin: 0; }
+.aws-service-card .aws-service-card__actions { margin-top: auto; padding-top: 8px; }
+@media (max-width: 900px) {
+    .aws-split,
+    .aws-field-grid { grid-template-columns: 1fr; }
+}
+</style>

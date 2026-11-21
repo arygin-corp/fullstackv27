@@ -1,117 +1,59 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-sidebar="light" data-color="primary" data-topbar="white" data-layout="default" data-size="default" data-width="fluid">
-	<head>
-		<!-- Meta Tags -->
-		<meta charset="utf-8" />
-		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
-		<title>{% block title %}{{ app_name }}{% endblock %}</title>
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		<meta name="description" content="GDX Admin Portal is a secure, enterprise-grade administration platform for managing GDX applications, users, configurations, and business data through streamlined CRUD operations, governance controls, and scalable workflows.">
-		<meta name="keywords" content="GDX Admin Portal, Enterprise Administration, CRUD Operations, Data Management, Application Management, User Administration, Configuration Management, Business Operations, Data Governance, Enterprise Platform">
-		<meta property="og:title" content="GDX Admin Portal" />
-		<meta property="og:description" content="A centralized enterprise administration platform for managing GDX applications, data, users, and configurations with secure and scalable CRUD operations." />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="GDX Admin Portal" />
-		<meta property="og:title" content="GDX Admin Portal" />
-		<meta property="og:description" content="A centralized enterprise administration platform for managing GDX applications, data, users, and configurations with secure and scalable CRUD operations." />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="GDX Admin Portal" />
-		<meta name="author" content="{{ team_owner_name }}" />
-		<meta name="publisher" content="{{ organization_name }}" />
-		<meta name="organization" content="{{ organization_name }}" />
-		<meta name="copyright" content="{{ organization_name }}" />
-		<!-- Favicon -->
-		<link href="{% static 'gdx_admin/assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
-		<!-- Apple Touch Icon -->
-		<link href="{% static 'gdx_admin/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" sizes="180x180" />
-		<!-- Theme Script js -->
-		<script src="{% static 'gdx_admin/theme/js/theme-script.js' %}?v=light-only"></script>
-		<!-- Bootstrap CSS -->
-		<link href="{% static 'gdx_admin/theme/css/bootstrap.min.css' %}" rel="stylesheet" />
-		<!-- Tabler Icon CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/tabler-icons/tabler-icons.min.css' %}" rel="stylesheet" />
-		<!-- Daterangepikcer CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/daterangepicker/daterangepicker.css' %}" rel="stylesheet" />
-		<!-- Datetimepicker CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/flatpickr/flatpickr.min.css' %}" rel="stylesheet" />
-		<!-- Fontawesome CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/fontawesome/css/fontawesome.min.css' %}" rel="stylesheet" />
-		<link href="{% static 'gdx_admin/theme/plugins/fontawesome/css/all.min.css' %}" rel="stylesheet" />
-		<!-- Tabler Icon CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/tabler-icons/tabler-icons.min.css' %}" rel="stylesheet" />
-		<!-- Simplebar CSS -->
-		<link href="{% static 'gdx_admin/theme/plugins/simplebar/simplebar.min.css' %}" rel="stylesheet" />
-		<!-- Iconsax CSS -->
-		<link href="{% static 'gdx_admin/theme/css/iconsax.css' %}" rel="stylesheet" />
-		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="{% static 'gdx_admin/theme/plugins/fontawesome/css/all.min.css' %}">
-		<!-- Main CSS -->
-		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/style.css' %}?v=kanakku" rel="stylesheet" /> 
-		<link href="{% static 'gdx_admin/theme/css/notifications.css' %}" rel="stylesheet" /> 
-		<link href="{% static 'gdx_admin/theme/css/operations.css' %}" rel="stylesheet" /> 
-		<link href="{% static 'gdx_admin/theme/css/custom.css' %}?v=tablet-desktop" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/builder.css' %}?v=kanakku" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/workflow.css' %}" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/workflow2.css' %}" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/template_designer_layout.css' %}" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=tablet-desktop" rel="stylesheet">
-		<link href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}" rel="stylesheet">
-		{% block extra_css %}
-		{% endblock %}
-		<link href="{% static 'gdx_admin/theme/css/responsive.css' %}?v=settings-tabs" rel="stylesheet">
-	</head>
-	<body>
-		{% include "gdx_admin/partials/device_gate.html" %}
-		<!-- Begin Wrapper -->
-		<div class="main-wrapper" data-device-app>
-			<!-- Topbar Start --> {% include 'gdx_admin/partials/header.html' %}
-			<!-- Topbar End -->
-			<!-- Sidenav Menu Start --> {% include 'gdx_admin/partials/sidebar.html' %}
-			<!-- Sidenav Menu End -->
-			<!-- Horizontal Menu --> {% include 'gdx_admin/partials/horizontal_menu.html' %}
-			<!-- /Horizontal Menu -->
-			<!-- ========================
-			Start Page Content
-			========================= -->
-			<div class="page-wrapper">
-				{% include 'gdx_admin/partials/messages.html' %}
-				<!-- Start Content -->
-				<div class="content">
-					{% block page_header %}{% include "gdx_admin/partials/page_hero.html" %}{% endblock %}
-					{% block content %}{% endblock %}
-				</div>
-				<!-- End Content -->
-				<!-- Start Footer --> {% include 'gdx_admin/partials/footer.html' %}
-				<!-- End Footer -->
-			</div>
-			<!-- ========================
-			End Page Content
-			========================= -->
-		</div>
-		<!-- End Wrapper -->
-		<!-- Bootstrap Core JS -->
-		<script src="{% static 'gdx_admin/theme/js/bootstrap.bundle.min.js' %}"></script>
-		<!-- Daterangepikcer JS -->
-		<script src="{% static 'gdx_admin/theme/plugins/flatpickr/flatpickr.min.js' %}"></script>
-		<!-- Simplebar JS -->
-		<script src="{% static 'gdx_admin/theme/plugins/simplebar/simplebar.min.js' %}"></script>
-		<!-- Chart JS -->
-		<script src="{% static 'gdx_admin/theme/plugins/apexchart/apexcharts.min.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/plugins/apexchart/chart-data.js' %}"></script>
-		<!-- Chart JS -->
-		<script src="{% static 'gdx_admin/theme/plugins/chartjs/chart.min.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/plugins/chartjs/chart-data.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/notifications.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/operations.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/builder.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/workflow.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/workflow2.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/template_designer.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/template_designer_layout.js' %}"></script>
-		<script src="{% static 'gdx_admin/theme/js/integration_test.js' %}"></script>
-		<!-- Custom JS -->
-		<script src="{% static 'gdx_admin/theme/js/script.js' %}"></script> {% block extra_js %}{% endblock %}
-	</body>
+<!doctype html>
+<html lang="en" dir="ltr" data-bs-theme="{% block color_scheme %}light{% endblock %}" data-base-path="/sa" data-current-route="{{ request.path }}" data-navigation="vertical" data-sidebar="standard" data-content-width="full" data-header="sticky" data-density="comfortable" data-font="inter" data-radius="balanced" data-accent="{% if request.path|slice:":4" == "/sa/" %}rose{% else %}indigo{% endif %}">
+<head>
+  <style id="gdx-boot">html:not([data-app-ready="true"]) body{visibility:hidden}</style>
+  <script>setTimeout(function(){document.documentElement.dataset.appReady="true"},8000)</script>
+  <noscript><style>body{visibility:visible!important}</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if request.path|slice:":4" == "/sa/" %}GDX Platform{% else %}GDX Admin{% endif %}">
+  <title>{% block title %}{% if request.path|slice:":4" == "/sa/" %}GDX Platform{% else %}{{ app_name|default:"GDX Admin" }}{% endif %}{% endblock %}</title>
+  <link rel="stylesheet" href="/sa/assets/css/app.css">
+  <link href="{% static 'gdx_admin/theme/css/bootstrap.min.css' %}" rel="stylesheet">
+  {% block shell_css %}{% endblock %}
+  {% block extra_css %}{% endblock %}
+  <script type="module" src="/sa/assets/js/app.js?v=51"></script>
+  <link rel="icon" type="image/svg+xml" href="/sa/brand/vexlora-mark.svg" data-admin-favicon="true">
+</head>
+<body data-current-route="{{ request.path }}" data-primary-dashboard="false" class="min-h-screen bg-background font-sans text-foreground antialiased {% block body_class %}{% endblock %}">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-card focus:px-3 focus:py-2 focus:text-foreground focus:shadow">Skip to content</a>
+  <div class="app-canvas min-h-screen text-foreground">
+    <aside id="desktop-sidebar" class="fixed inset-y-0 start-0 z-40 hidden border-e border-sidebar-border bg-sidebar transition-[width] duration-200 lg:flex lg:flex-col">
+      <div id="desktop-brand" class="sidebar-brand flex shrink-0 items-center border-b border-sidebar-border px-5"><div class="flex min-w-0 items-center gap-3"><span class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-xs font-bold text-primary-foreground shadow-xs" data-brand-mark>VX</span><div class="brand-copy min-w-0"><p class="truncate text-base font-bold tracking-tight text-sidebar-foreground" data-brand-name>GDX Platform</p><p class="truncate text-xs font-medium text-muted-foreground">{% if request.path|slice:":4" == "/sa/" %}Multipurpose Tailwind HTML Admin{% else %}Data Marketplace{% endif %}</p></div></div></div>
+      <div id="sidebar-nav" class="min-h-0 flex-1 overflow-y-auto"></div>
+    </aside>
+    <div id="mobile-sidebar-backdrop" hidden class="fixed inset-0 z-50 bg-black/40 lg:hidden"></div>
+    <aside id="mobile-sidebar" hidden class="fixed inset-y-0 start-0 z-[60] w-72 max-w-[88vw] border-e border-sidebar-border bg-sidebar lg:hidden">
+      <div class="flex h-16 items-center justify-between border-b border-sidebar-border px-4"><div class="flex items-center gap-3"><span class="flex size-9 items-center justify-center rounded-lg bg-primary text-xs font-bold text-primary-foreground" data-brand-mark>VX</span><strong data-brand-name>GDX Platform</strong></div><button type="button" data-mobile-menu-close class="inline-flex size-9 items-center justify-center rounded-md hover:bg-accent" aria-label="Close navigation">×</button></div>
+      <div id="mobile-sidebar-nav" class="h-[calc(100vh-4rem)] overflow-y-auto"></div>
+    </aside>
+    <div id="app-main" class="min-w-0 transition-[padding] duration-200 motion-reduce:transition-none">
+      <header id="app-topbar" class="z-30 border-b border-border bg-card/90 backdrop-blur">
+        <div id="topbar-main" class="flex items-center gap-2 px-4 sm:px-5 lg:px-6">
+          <button type="button" data-mobile-menu-open class="inline-flex size-10 items-center justify-center rounded-lg hover:bg-accent lg:hidden" aria-label="Open navigation"><svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <button type="button" data-sidebar-toggle class="hidden size-10 items-center justify-center rounded-lg hover:bg-accent lg:inline-flex" aria-label="Use mini sidebar"><svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18M16 15l-3-3 3-3"/></svg></button>
+          <div class="hidden min-w-0 flex-1 md:block lg:max-w-sm xl:max-w-md"><button type="button" data-command-open aria-label="Search pages, resources and actions" class="flex h-10 w-full max-w-md items-center gap-3 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground shadow-xs hover:bg-accent hover:text-accent-foreground"><svg aria-hidden="true" class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="truncate">Search pages, resources and actions...</span><kbd class="ms-auto hidden rounded-md border border-border bg-muted px-2 py-0.5 text-xs font-medium sm:inline-flex">Ctrl K</kbd></button></div>
+          <div class="md:hidden"><button type="button" data-command-open aria-label="Search pages, resources and actions" class="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-card"><svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button></div>
+          <div id="topbar-actions" class="ms-auto flex min-w-0 items-center gap-0.5 sm:gap-1"></div>
+        </div>
+        <div id="horizontal-nav-row" class="border-t border-border"><nav id="horizontal-navigation" hidden aria-label="Horizontal navigation" class="hidden min-w-0 items-center gap-1 overflow-x-auto px-4 sm:px-5 lg:flex lg:px-6"></nav></div>
+        <div id="shell-breadcrumb-row" class="flex min-w-0 items-center overflow-hidden border-t border-border px-4 sm:px-5 lg:px-6"><div id="shell-breadcrumbs"></div></div>
+      </header>
+      <div id="fixed-header-spacer" aria-hidden="true"></div>
+      <main id="main-content" tabindex="-1"><div id="content-inner" class="p-4 sm:p-6 mx-auto w-full">
+        {% include "gdx_admin/partials/messages.html" %}
+        {% block page_header %}{% endblock %}
+        {% block content %}{% endblock %}
+        {% block modals %}{% endblock %}
+      </div></main>
+    </div>
+  </div>
+  <div id="command-center" hidden class="fixed inset-0 z-[100]"><div id="command-center-backdrop" class="absolute inset-0 bg-black/45"></div><div class="relative mx-auto mt-[10vh] w-[min(42rem,calc(100%-2rem))] overflow-hidden rounded-2xl border border-border bg-popover shadow-2xl"><div class="flex items-center gap-3 border-b border-border px-4"><svg aria-hidden="true" class="size-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input data-command-input aria-label="Search pages, resources and actions" class="h-14 min-w-0 flex-1 bg-transparent text-sm outline-none" placeholder="Search pages, resources and actions..."><button type="button" data-command-close class="rounded-md border border-border px-2 py-1 text-xs text-muted-foreground">Esc</button></div><div data-command-results class="max-h-96 overflow-y-auto py-2"></div><div class="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border px-3 py-2 text-xs text-muted-foreground"><span>↑ ↓ Navigate</span><span>Enter Open</span><span>☆ Favorite</span><span>Recent saved locally</span><span class="ms-auto hidden sm:inline">Alt C / P / I</span></div></div></div>
+  <div id="ai-drawer" hidden class="shell-drawer fixed inset-0 z-[95]"><div id="ai-drawer-backdrop" class="absolute inset-0 bg-black/35"></div><aside id="ai-drawer-content" class="absolute inset-y-0 end-0 w-[min(28rem,92vw)] overflow-y-auto border-s border-border bg-background shadow-2xl"></aside></div>
+  <div id="customizer-drawer" hidden class="shell-drawer fixed inset-0 z-[95]"><div id="customizer-backdrop" class="absolute inset-0 bg-black/35"></div><aside id="customizer-content" class="absolute inset-y-0 end-0 w-[min(30rem,94vw)] overflow-y-auto border-s border-border bg-background shadow-2xl"></aside></div>
+  <script src="{% static 'gdx_admin/theme/js/bootstrap.bundle.min.js' %}"></script>
+  {% block shell_js %}{% endblock %}
+  {% block extra_js %}{% endblock %}
+</body>
 </html>

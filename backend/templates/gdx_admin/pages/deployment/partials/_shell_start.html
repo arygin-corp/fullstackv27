@@ -1,8 +1,10 @@
 <nav class="deploy-nav" aria-label="Deployment">
-    <a href="{% url 'deployment:dashboard' %}" class="{% if section == 'dashboard' %}is-current{% endif %}">Dashboard</a>
+    <a href="{% url 'code_deployment' %}" class="{% if section == 'code' %}is-current{% endif %}">Code Deploy</a>
+    <a href="/sa/ai/deployment/">AI Deploy</a>
     <a href="{% url 'deployment:analytics' %}" class="{% if section == 'analytics' %}is-current{% endif %}">Analytics</a>
     <a href="{% url 'deployment:activity' %}" class="{% if section == 'activity' %}is-current{% endif %}">Activity</a>
     <a href="{% url 'deployment:releases' %}" class="{% if section == 'releases' %}is-current{% endif %}">Releases</a>
     <a href="{% url 'deployment:rollback' %}" class="{% if section == 'rollback' %}is-current{% endif %}">Rollback</a>
     <a href="{% url 'deployment:health' %}" class="{% if section == 'health' %}is-current{% endif %}">Health</a>
+    <a href="{% url 'code_aws_session' %}" class="{% if section == 'aws_session' %}is-current{% endif %}">AWS Session</a>
 </nav>

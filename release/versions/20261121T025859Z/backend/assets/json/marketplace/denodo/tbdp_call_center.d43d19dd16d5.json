@@ -1,0 +1,3533 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_case_mdtd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_clsd_bfr_arb"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_cmplnce_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_comply_days"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_cust_acpt_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_cust_acpt_rcvd_tms"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_cust_acpt_rev"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_cust_sgnd_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_decision"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_decision_acpt_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_decsn_revised"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_hrng_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_hrng_loc"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_hrng_ncds"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_hrng_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_hrng_rep"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_inspctn_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_legal_invlvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_mrf_cmplnce_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_ncds"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_new_cmply_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_notify_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_othr1_cmplnce_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_othr_comply"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_othr_rationale"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_prtcpte_by"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_pst_dcsn_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_pst_stlmnt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_rationale"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_rtc_submitted"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_stlmnt_rcvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_strt_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "arb_tech_correction"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "business_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "case_brand"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "case_number"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "case_source"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "case_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "category_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_app_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_cmply_decision"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_eff_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_final_outcome"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_mtng_prsn"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_ncds_clsd_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_othr_outcome"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_othr_veh_prchse"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_plan_code"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_rmv_mrktng"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_rplmnt_vin_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_rplmnt_yr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_sale_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_stlmnt_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_trnctn_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_vsa_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cc_vsa_req"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "controllable"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_alt_con_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_alt_contact"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_alt_fax_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_addr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_addr2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_city"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_loc"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_contact_zip"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_email"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "cust_fax"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "customer_company_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "customer_contribution"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "customer_first_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "customer_last_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "date_recieved"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_arbitration_filed"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_addr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_addr2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_city"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_cntct_notes"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_email"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_fax_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_fname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_lname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_title"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_att_zip"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_attrny_invlvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_bb_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_buyback"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_case_creation_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_case_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_case_status"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_cntct_mtd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_addr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_addr2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_alt_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_city"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_email"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_fname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_lname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_title"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_con_zip"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_cond_rpr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_cust_acp"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_decision"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_decision_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_decision_maker"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_filing_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_ineligible_cd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_not_rpr_reason"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_other"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_outcome"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_outcome_othr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_reimb"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_repair"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_report_funding_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_report_funding_yyyy"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_rgn"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_rid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_rpd_invlvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_rplcmnt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_rspnsble_party"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_sl_dlr_code"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_sl_dlr_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_srvc_dlr_code"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_srvc_dlr_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_state_arb_filed"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_unknown"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "dr_veh_cond"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "duration"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "forward_r_pd_area"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "fp_filing_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "fp_outcome"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "fpe_invlvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_alt_dlr_cntct"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_alt_email"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_att_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_bb_notify"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_checks_eta"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_cmpnce_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_cmptn_instr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_cntct_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_cust_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_cust_chk"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlr_addr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlr_city"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlr_code"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlr_fax_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlr_zip"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlrshp_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlt_cntct"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dlt_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_dofu"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_exg_cmpltd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_exg_nt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_lien"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_meeting_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_meeting_nt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_miles_drop_off"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_rgn"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_tms_admin"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_trnctn_nt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_trnsctn_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_trnsfr_to_lexus"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_veh_color"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_veh_lsd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_veh_mileage"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_vehicle"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_vin_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "isg_vsa_cancel"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "legal_owner"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "letter_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_address"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_alt_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_city"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_contact"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_email_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_fax_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_primary_ph_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_state"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lh_zipcode"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lien_account_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lien_flag"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "lien_holder"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "load_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "postmark_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "record_update_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "record_update_source"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "replc_attorney_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "replc_dealer_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "replc_due_frm_cust_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "replc_ttl_bb_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_attorney_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_due_cust_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_due_frm_cust_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_lien_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_ttl_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "repur_ttl_bb_amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "total_replacement_cost"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "total_repurchase_cost"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_attorney_invlvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_bb_justification"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_case_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_decision"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_decision_maker"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_exs_days_dwn"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_filed_demand"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_fst_apprvd_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_fst_apprvr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_fst_apprvr_flg"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_knwn_concern"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_meets_federal"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_meets_state_ll"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_no_of_rpr_atmpts"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_outcome"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_parts_delay"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_rsn_for_bb"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_scnd_apprvd_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_scnd_apprvr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_scnd_apprvr_flg"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_thrd_apprvd_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_thrd_apprvd_flg"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_thrd_apprvr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_total_rpr_atmpts"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_tsb"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "vb_ttl_days_dwn"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_leased"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_mileage_deduction"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_mileage_rate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_miles"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_new"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_purchase_price"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "call_center_trn",
+      "elementname": "dr_case_core_view",
+      "column_name": "veh_useful_life"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "acc_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "activity_due_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "assigned_to__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "case__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "case_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "casenumber"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "cat_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "category__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "child_activity_case"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "child_closeddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "child_status"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "closeddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "closeddate1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "closedeclined"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "closeextension"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "codingtypename__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "createddate1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "current_date_0"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "days_to_close"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "dealer_1__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "dealer_code__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "description__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "district__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "due_date_indicator__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "lookback_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "noresponse"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "overdue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "parent_case"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "parent_due_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "parent_due_date_indicator__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "parent_request_due_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "region__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "requested_due_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "type_status__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_detail",
+      "column_name": "what_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "avgdaysclose"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "closeddeclined_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "closeddeclined_percent"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "closedextension_percent"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "closeextension_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "complaint_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "dealer_code__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "dealer_region_area__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "district__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "noncomplaint_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "noresponse_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "noresponse_percentage"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "overdue_count"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "callcenter_tfad_summary",
+      "column_name": "overdue_percent"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "reg_abbreviation"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "reg_code"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "reg_desc_long"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "reg_description"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_region",
+      "column_name": "reg_division"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "dealer_no"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "division"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "sales_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "sales_qty"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "can2_toy_nf_sales",
+      "column_name": "sales_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "activity_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_curr_week"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_of_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_of_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_of_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_rolling_12_months"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "begin_rolling_week"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_day_of_week"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_day_of_week_abbr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_day_of_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_dd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_mm"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_month_abbr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_month_end_ind"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_month_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_week"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_weekday_ind"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "calendar_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "date_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "end_curr_week"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "end_of_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "end_of_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "julian_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "date_dim",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_decision_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_decision_dim",
+      "column_name": "case_decision_description"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_decision_dim",
+      "column_name": "case_decision_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_decision_dim",
+      "column_name": "last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_status_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_status_dim",
+      "column_name": "case_status_description"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_status_dim",
+      "column_name": "case_status_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_status_dim",
+      "column_name": "last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_type_dim",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_type_dim",
+      "column_name": "case_type_description"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_type_dim",
+      "column_name": "case_type_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_case_type_dim",
+      "column_name": "last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "case_number"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "case_status"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "current_week_flag"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "date_received"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "division_nm"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "load_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "dr_open_ll_wkly_dtl_sf",
+      "column_name": "region_nm"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "approved_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "approver_id__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "approver_name__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "brand__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "case__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "case_number__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "case_type__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "ccm_goodwill_budget_code__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "ccm_op_code__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "contact__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "contactactiveoffer__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "createdbyid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "distributor_code__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "dr_approver_name__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "dr_submitter__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "expiration_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "final_approved_amount__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "gift_item__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "isdeleted"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "lastmodifiedbyid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "lastmodifieddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "lastreferenceddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "lastvieweddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "message__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "offer_submitter_name__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "offered_amount__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "original_approved_amount__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "pay_all__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "program__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "program_name__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "proof_of_ownership__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "proof_of_payment__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "reason__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "recordtypeid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "reference_cost_worksheet__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "request_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "ro__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "ro_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "ro_mileage__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "sales_agreement_ro_invoice__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "siebel_id__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "status__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "systemmodstamp"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "total_payment__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "total_redeemed__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "total_redeemed_remaining__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "total_remaining__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "total_repair_auth__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "type__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "void__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "offers__c",
+      "column_name": "void_date__c"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "agent_name"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "case_comments"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "case_number"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "created_by"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "created_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "isdeleted"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "ispublished"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "last_modified_by"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_case_comments",
+      "column_name": "lastmodified_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_acs_completed_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_agent_full_nm"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_agent_login_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_chat_or_incident_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_incident_created_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_incident_ref_nbr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_question_txt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_response_txt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_legacy",
+      "column_name": "rnt_survey_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_acs_completed_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_agent_full_nm"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_agent_login_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_chat_or_incident_id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_incident_created_dt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_incident_ref_nbr"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_question_txt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_response_txt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "rnt_raw_email_chat_lexus_legacy",
+      "column_name": "rnt_survey_type"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "choicevalue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "createdbyid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "datatype"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "datetimevalue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "datevalue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "invitationid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "isdeleted"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "istrueorfalse"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "lastmodifiedbyid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "lastmodifieddate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "numbervalue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "questionchoiceid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "questionid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "rank"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "responseid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "responseshorttext"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "responsevalue"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "surveyversionid"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "survey_question_response",
+      "column_name": "systemmodstamp"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "all_conditions_merged"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "amtask"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealable"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealable_other"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealdate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealdate_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealdate_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "appealdate_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "auctcost"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "auctionname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "auctionstate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "buybacknumber"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "buybacknumber2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "buybacknumber3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check1amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check2amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check3amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check4"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "check4amt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "checkbox7"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "checkrcvd"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "computed"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "computed2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "computed3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition4"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition5"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "condition6"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat4"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat5"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditioncat6"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "conditionsall"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "crcasenum"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "created"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "datereim"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "dealercode"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "decision"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "division"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "dservdealer"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "dst"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "dtreceived"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fname2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fundingdate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fundingdate2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fundingdate_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fundingdate_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "fundingdate_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "group_of_computed2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "id2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "id3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "isauction"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "isgcost"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "lawyer"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "lname"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "lname2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "manufacturer"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "mfrreim"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "mfrreqdate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "model"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "modelcode"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "modelyear"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "namedisp"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "netloss"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "nonappealexplanation"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "notdate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other4"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other5"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other6"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "other7"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "othercost1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "othercost2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "othercost3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "otherreim1"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "otherreim2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "otherreim3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "otherreim4"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "percentreimb"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "process"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "regionabrev"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "reldt"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "repairnotice"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "replacement_or_repurchase"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "resalereim"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "responsibility"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct3"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct_month"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct_quarter"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "soldauct_year"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "startdate"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "stateabbrev"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "status"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "status2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "submittername"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "submittername2"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "tacoma_frame"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "taxreim"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "tbrandrec"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "tmsresp"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "totalchecks"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "tracknum"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "transaction"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "transtype"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "ttlcosts"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "tundra_and_other"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "vehicleinfo"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "void"
+    },
+    {
+      "userrolename": "tbdp-call-center",
+      "dbname": "cust_callcenter_trn_ext",
+      "elementname": "temp_ln_buyback_data",
+      "column_name": "void2"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-call-center%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

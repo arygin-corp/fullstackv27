@@ -916,6 +916,17 @@ def cached_spelling_vocabulary():
     return words
 
 
+def _title_word_match(query):
+    """Product title contains the whole phrase, or the same words in another order."""
+    words = [word for word in re.split(r"[^a-z0-9]+", normalize_query(query)) if word]
+    if len(words) < 2:
+        return Q(pk__in=[])
+    match = Q()
+    for word in words:
+        match &= Q(name__icontains=word)
+    return match
+
+
 def suggestion_matches(query):
     """Rank a typed query by the field it matches. A person name lists Data Steward products before Contact products."""
     keyword_hit = Exists(
@@ -950,6 +961,7 @@ def suggestion_matches(query):
         .annotate(keyword_hit=keyword_hit, badge_hit=badge_hit)
         .filter(
             Q(name__icontains=query)
+            | _title_word_match(query)
             | Q(sku__icontains=query)
             | Q(short_desc__icontains=query)
             | Q(brief_desc__icontains=query)
@@ -967,6 +979,7 @@ def suggestion_matches(query):
                 When(name__iexact=query, then=Value(0)),
                 When(name__istartswith=query, then=Value(1)),
                 When(name__icontains=query, then=Value(2)),
+                When(_title_word_match(query), then=Value(2)),
                 When(sku__iexact=query, then=Value(3)),
                 When(sku__istartswith=query, then=Value(4)),
                 When(sku__icontains=query, then=Value(5)),

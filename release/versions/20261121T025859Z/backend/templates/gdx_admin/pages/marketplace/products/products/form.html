@@ -1,0 +1,55 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}{{ page_title }} | Products{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:product_list' as list_url %}
+    
+    <form class="team-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
+        <section class="team-panel">
+            <h2>Product</h2>
+            <p>Fields saved on this product.</p>
+            {% for field in form %}
+            <div class="team-field{% if field.field.widget.input_type == 'checkbox' %} team-check{% endif %}">
+                {% if field.field.widget.input_type == "checkbox" %}
+                {{ field }}<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {% else %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+                {% endif %}
+                {{ field.errors }}
+            </div>
+            {% endfor %}
+        </section>
+        {% if image_formset %}
+        <section class="team-panel">
+            <h2>Images</h2>
+            <p>Optional product images.</p>
+            {{ image_formset.management_form }}
+            <div class="team-images">
+                {% for image_form in image_formset %}
+                <div class="team-image-card">
+                    {% for hidden in image_form.hidden_fields %}{{ hidden }}{% endfor %}
+                    {% if image_form.instance.image %}<img src="{{ image_form.instance.image.url }}" alt="">{% else %}<div class="empty-image">No image</div>{% endif %}
+                    {% for field in image_form.visible_fields %}
+                    <span class="team-label">{{ field.label }}</span>
+                    {{ field }}
+                    {{ field.errors }}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        <div class="team-actions">
+            <a class="integration-button" href="{{ list_url }}">Cancel</a>
+            <button class="integration-button integration-button--primary" type="submit">Save product</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

@@ -12339,6 +12339,60 @@
     },
     {
       "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "cc_expiration_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "cc_rdr_date"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "organization_name"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "serialized_product_id"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
+      "dbname": "mba_ing",
+      "elementname": "fleet_scorecard",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-vehicle-master-data-sensitive",
       "dbname": "vlc_ing",
       "elementname": "pipeline_customer_fact_vw",
       "column_name": "activity_date_id"

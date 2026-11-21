@@ -94,7 +94,7 @@ COLLECTIONS = {
         Collection("hackathon-gallery", "Gallery", HackathonGalleryItem, _columns("label", "position", "is_active")),
         Collection("hackathon-clips", "Videos", HackathonClip, _columns("title", "position", "is_active")),
         Collection("campaign-ads", "Campaign ads", CampaignAd, _columns("kind", "title", "position", "is_active")),
-        Collection("newsroom-posts", "Posts", NewsPost, _columns("title", "category", "published_on", "is_active")),
+        Collection("newsroom-posts", "Posts", NewsPost, _columns("title", "category", "status", "is_active")),
         Collection("resources-library", "Library intro", Homepage, _columns("title", "is_active")),
         Collection("resources-documents", "Documents", Document, _columns("name", "file_format", "is_active")),
         Collection("resources-policies", "Policies", Policie, _columns("name", "file_format", "is_active")),
@@ -412,10 +412,52 @@ def _page(context, heading, parent):
 
 
 def _cell(obj, name):
+    display = getattr(obj, f"get_{name}_display", None)
+    if callable(display):
+        return display()
     value = getattr(obj, name)
     if hasattr(value, "isoformat"):
         return value.isoformat()
     return value
+
+
+NEWSROOM_APPROVERS = (
+    "Content Manager Group",
+    "Administrator Group",
+    "Super Administrator Group",
+)
+
+
+def can_approve_newsroom(user):
+    return user.is_superuser or user.groups.filter(name__in=NEWSROOM_APPROVERS).exists()
+
+
+@login_required
+def newsroom_detail(request, pk):
+    post = get_object_or_404(NewsPost, pk=pk)
+    return render(request, "gdx_users/apps/pages/newsroom_approval.html", _page({
+        "post": post,
+        "can_decide": False,
+    }, post.title, "Newsroom"))
+
+
+@login_required
+def newsroom_approval(request, pk):
+    post = get_object_or_404(NewsPost, pk=pk)
+    if request.method == "POST":
+        if not can_approve_newsroom(request.user):
+            messages.error(request, "Content Manager Group, Administrator Group, or Super Administrator Group can approve newsroom updates.")
+            return redirect("pages_staff:newsroom-approval", pk=post.pk)
+        if post.status == NewsPost.ApprovalStatus.PENDING:
+            post.status = NewsPost.ApprovalStatus.APPROVED
+            post.is_active = True
+            post.save(update_fields=["status", "is_active"])
+            messages.success(request, "Newsroom update approved.")
+        return redirect("pages_staff:newsroom-approval", pk=post.pk)
+    return render(request, "gdx_users/apps/pages/newsroom_approval.html", _page({
+        "post": post,
+        "can_decide": can_approve_newsroom(request.user) and post.status == NewsPost.ApprovalStatus.PENDING,
+    }, post.title, "Newsroom"))
 
 
 @login_required
@@ -444,6 +486,7 @@ def site_manage(request, key):
     return render(request, "gdx_users/apps/pages/manage_list.html", _page({
         "collection": collection,
         "rows": rows,
+        "can_approve_newsroom": can_approve_newsroom(request.user),
     }, collection.title, "Pages"))
 
 
@@ -474,6 +517,8 @@ def site_record_form(request, key, pk=None):
             if suffix in _FORMATS:
                 obj.file_format = _FORMATS[suffix]
         _stamp_publication(obj)
+        if isinstance(obj, NewsPost) and obj.status != NewsPost.ApprovalStatus.APPROVED:
+            obj.is_active = False
         if getattr(obj, "updated_by_id", None) is not None or hasattr(obj, "updated_by"):
             if "updated_by" in {field.name for field in obj._meta.fields}:
                 obj.updated_by = request.user

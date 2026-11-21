@@ -1,0 +1,775 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}default_charts.html | {{ app_name }}{% endblock %}
+{% block extra_css %}
+<link href="{% static 'gdx_admin/theme/css/default_charts.css' %}?v=usmap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="ui-theme chart-theme">
+    <section class="ui-section">
+        <h2>Area</h2>
+        <article class="chart-card">
+            <header>
+                <div>
+                    <p>Last 14 days</p>
+                    <h3>Requests</h3>
+                </div>
+                <span class="chart-note">Marketplace activity</span>
+            </header>
+            <div id="chart-area" class="chart-plot"></div>
+        </article>
+    </section>
+
+    <section class="ui-section">
+        <h2>Line and column</h2>
+        <div class="chart-grid-2">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Opened</p>
+                        <h3>Orders</h3>
+                    </div>
+                    <span class="chart-note">Daily line</span>
+                </header>
+                <div id="chart-line" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Environment</p>
+                        <h3>Builds</h3>
+                    </div>
+                    <span class="chart-note">Column</span>
+                </header>
+                <div id="chart-column" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Bar and donut</h2>
+        <div class="chart-grid">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Share</p>
+                        <h3>Request stages</h3>
+                    </div>
+                    <span class="chart-note">Horizontal bar</span>
+                </header>
+                <div id="chart-bar" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Breakdown</p>
+                        <h3>Catalog status</h3>
+                    </div>
+                    <span class="chart-note">Donut</span>
+                </header>
+                <div id="chart-donut" class="chart-plot chart-plot-short"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Stacked and radial</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Weekly</p>
+                        <h3>Intake outcome</h3>
+                    </div>
+                    <span class="chart-note">Stacked column</span>
+                </header>
+                <div id="chart-stacked" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Share</p>
+                        <h3>Review mix</h3>
+                    </div>
+                    <span class="chart-note">100% stacked</span>
+                </header>
+                <div id="chart-full" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Catalog</p>
+                        <h3>Published</h3>
+                    </div>
+                    <span class="chart-note">Radial</span>
+                </header>
+                <div id="chart-radial" class="chart-plot chart-plot-short"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Grouped, range, and combo</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Side by side</p>
+                        <h3>Requests and orders</h3>
+                    </div>
+                    <span class="chart-note">Grouped bar</span>
+                </header>
+                <div id="chart-grouped" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Low to high</p>
+                        <h3>Stage range</h3>
+                    </div>
+                    <span class="chart-note">Range bar</span>
+                </header>
+                <div id="chart-range" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Count and rate</p>
+                        <h3>Requests with orders</h3>
+                    </div>
+                    <span class="chart-note">Combo</span>
+                </header>
+                <div id="chart-combo" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Area stack and funnel</h2>
+        <div class="chart-grid-2">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Over time</p>
+                        <h3>Intake outcome</h3>
+                    </div>
+                    <span class="chart-note">Stacked area</span>
+                </header>
+                <div id="chart-area-stack" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Stages</p>
+                        <h3>Request funnel</h3>
+                    </div>
+                    <span class="chart-note">Funnel</span>
+                </header>
+                <div id="chart-funnel" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Scatter, heatmap, treemap, and polar</h2>
+        <div class="chart-grid-2">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Day and count</p>
+                        <h3>Request points</h3>
+                    </div>
+                    <span class="chart-note">Scatter</span>
+                </header>
+                <div id="chart-scatter" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Weekday</p>
+                        <h3>Requests by stage</h3>
+                    </div>
+                    <span class="chart-note">Heatmap</span>
+                </header>
+                <div id="chart-heat" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Size by count</p>
+                        <h3>Catalog status</h3>
+                    </div>
+                    <span class="chart-note">Treemap</span>
+                </header>
+                <div id="chart-tree" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>From the center</p>
+                        <h3>Status wedges</h3>
+                    </div>
+                    <span class="chart-note">Polar area</span>
+                </header>
+                <div id="chart-polar" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Pie, floating, and share</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Solid slices</p>
+                        <h3>Catalog status</h3>
+                    </div>
+                    <span class="chart-note">Pie</span>
+                </header>
+                <div id="chart-pie" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Above zero</p>
+                        <h3>Stage band</h3>
+                    </div>
+                    <span class="chart-note">Floating bar</span>
+                </header>
+                <div id="chart-float" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Share of the week</p>
+                        <h3>Intake outcome</h3>
+                    </div>
+                    <span class="chart-note">100% stacked area</span>
+                </header>
+                <div id="chart-area-full" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Bubble, candle, and waterfall</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Size is the third value</p>
+                        <h3>Requests</h3>
+                    </div>
+                    <span class="chart-note">Bubble</span>
+                </header>
+                <div id="chart-bubble" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Open and close</p>
+                        <h3>Daily requests</h3>
+                    </div>
+                    <span class="chart-note">Candlestick</span>
+                </header>
+                <div id="chart-candle" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Running change</p>
+                        <h3>Catalog total</h3>
+                    </div>
+                    <span class="chart-note">Waterfall</span>
+                </header>
+                <div id="chart-water" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Histogram, box, and radar</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Counts in bins</p>
+                        <h3>Request sizes</h3>
+                    </div>
+                    <span class="chart-note">Histogram</span>
+                </header>
+                <div id="chart-hist" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Spread</p>
+                        <h3>Daily requests</h3>
+                    </div>
+                    <span class="chart-note">Box plot</span>
+                </header>
+                <div id="chart-box" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Several measures</p>
+                        <h3>Catalog health</h3>
+                    </div>
+                    <span class="chart-note">Radar</span>
+                </header>
+                <div id="chart-radar" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Sunburst, sankey, and bullet</h2>
+        <div class="chart-grid-3">
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Nested rings</p>
+                        <h3>Catalog status</h3>
+                    </div>
+                    <span class="chart-note">Sunburst</span>
+                </header>
+                <div id="chart-sun" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Stage to stage</p>
+                        <h3>Request flow</h3>
+                    </div>
+                    <span class="chart-note">Sankey</span>
+                </header>
+                <div id="chart-sankey" class="chart-plot"></div>
+            </article>
+            <article class="chart-card">
+                <header>
+                    <div>
+                        <p>Against a target</p>
+                        <h3>Published</h3>
+                    </div>
+                    <span class="chart-note">Bullet</span>
+                </header>
+                <div id="chart-bullet" class="chart-plot"></div>
+            </article>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+(function () {
+    if (!window.ApexCharts) return;
+    var style = getComputedStyle(document.documentElement);
+    function token(name, fallback) {
+        var value = style.getPropertyValue(name).trim();
+        return value || fallback;
+    }
+    var primary = token("--gdx-primary", "#583fc9");
+    var success = token("--gdx-success", "#27ae60");
+    var warning = token("--gdx-warning", "#e2b93b");
+    var danger = token("--gdx-danger", "#ef1e1e");
+    var info = token("--gdx-info", "#06aed4");
+    var muted = token("--gdx-text-soft", "#64758b");
+    var line = token("--gdx-line", "#d9dee8");
+    var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    var base = {
+        chart: { fontFamily: "inherit", toolbar: { show: false }, parentHeightOffset: 0 },
+        colors: [primary, success, warning, info, danger],
+        dataLabels: { enabled: false },
+        grid: { borderColor: line, strokeDashArray: 4 },
+        legend: { position: "bottom", fontSize: "12px", labels: { colors: muted } },
+        xaxis: { labels: { style: { colors: muted, fontSize: "11px" } }, axisBorder: { show: false }, axisTicks: { show: false } },
+        yaxis: { labels: { style: { colors: muted, fontSize: "11px" } } },
+        tooltip: { theme: "light" }
+    };
+
+    function draw(id, options) {
+        var node = document.getElementById(id);
+        if (!node) return;
+        new ApexCharts(node, options).render();
+    }
+
+    draw("chart-area", Object.assign({}, base, {
+        chart: Object.assign({ type: "area", height: 260 }, base.chart),
+        series: [{ name: "Requests", data: [12, 18, 14, 22, 19, 11, 9, 16, 21, 24, 18, 27, 23, 31] }],
+        colors: [primary],
+        stroke: { curve: "smooth", width: 2 },
+        fill: { type: "gradient", gradient: { shadeIntensity: 0.4, opacityFrom: 0.35, opacityTo: 0.02, stops: [0, 100] } },
+        xaxis: Object.assign({ categories: days }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-line", Object.assign({}, base, {
+        chart: Object.assign({ type: "line", height: 260 }, base.chart),
+        series: [{ name: "Orders", data: [4, 6, 5, 8, 7, 3, 2, 6, 9, 8, 7, 11, 10, 12] }],
+        colors: [info],
+        stroke: { curve: "smooth", width: 3 },
+        markers: { size: 0 },
+        xaxis: Object.assign({ categories: days }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-column", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        plotOptions: { bar: { borderRadius: 6, columnWidth: "48%" } },
+        series: [{ name: "Builds", data: [18, 7, 4] }],
+        colors: [primary],
+        xaxis: Object.assign({ categories: ["Dev", "Stage", "Prod"] }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-bar", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        series: [{ name: "Requests", data: [24, 11, 16, 6] }],
+        colors: [primary, success, warning, danger],
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: "58%", distributed: true } },
+        xaxis: Object.assign({ categories: ["Submitted", "In review", "Approved", "Rejected"] }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-donut", {
+        chart: Object.assign({ type: "donut", height: 280 }, base.chart),
+        series: [16, 8, 3, 5],
+        labels: ["Approved", "Pending", "In review", "Rejected"],
+        colors: [success, warning, info, danger],
+        stroke: { width: 0 },
+        dataLabels: { enabled: false },
+        legend: base.legend,
+        plotOptions: { pie: { donut: { size: "68%", labels: { show: true, total: { show: true, label: "Records", color: muted } } } } }
+    });
+
+    draw("chart-stacked", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260, stacked: true }, base.chart),
+        plotOptions: { bar: { borderRadius: 4, columnWidth: "46%" } },
+        series: [
+            { name: "Approved", data: [4, 6, 5, 8] },
+            { name: "Pending", data: [3, 2, 4, 2] },
+            { name: "Rejected", data: [1, 1, 2, 1] }
+        ],
+        colors: [success, warning, danger],
+        xaxis: Object.assign({ categories: ["Week 1", "Week 2", "Week 3", "Week 4"] }, base.xaxis)
+    }));
+
+    draw("chart-full", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260, stacked: true, stackType: "100%" }, base.chart),
+        plotOptions: { bar: { borderRadius: 4, columnWidth: "46%" } },
+        series: [
+            { name: "Approved", data: [6, 8, 7, 9] },
+            { name: "Waiting", data: [3, 2, 4, 2] },
+            { name: "Not approved", data: [1, 1, 1, 2] }
+        ],
+        colors: [success, info, danger],
+        xaxis: Object.assign({ categories: ["Week 1", "Week 2", "Week 3", "Week 4"] }, base.xaxis)
+    }));
+
+    draw("chart-radial", {
+        chart: Object.assign({ type: "radialBar", height: 280 }, base.chart),
+        series: [72],
+        labels: ["Published"],
+        colors: [primary],
+        plotOptions: {
+            radialBar: {
+                hollow: { size: "62%" },
+                track: { background: token("--gdx-chip", "#f3f5f8") },
+                dataLabels: {
+                    name: { color: muted, fontSize: "13px" },
+                    value: { color: token("--gdx-ink", "#121826"), fontSize: "28px", fontWeight: 650 }
+                }
+            }
+        }
+    });
+
+    var weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
+    draw("chart-grouped", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        plotOptions: { bar: { borderRadius: 4, columnWidth: "52%" } },
+        series: [
+            { name: "Requests", data: [12, 18, 15, 22] },
+            { name: "Orders", data: [4, 6, 5, 9] }
+        ],
+        colors: [primary, info],
+        xaxis: Object.assign({ categories: weeks }, base.xaxis)
+    }));
+
+    draw("chart-range", Object.assign({}, base, {
+        chart: Object.assign({ type: "rangeBar", height: 260 }, base.chart),
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: "50%" } },
+        series: [{
+            name: "Range",
+            data: [
+                { x: "Submitted", y: [8, 24] },
+                { x: "In review", y: [4, 16] },
+                { x: "Approved", y: [6, 20] },
+                { x: "Rejected", y: [1, 6] }
+            ]
+        }],
+        colors: [primary],
+        legend: { show: false }
+    }));
+
+    draw("chart-combo", Object.assign({}, base, {
+        chart: Object.assign({ type: "line", height: 260 }, base.chart),
+        stroke: { width: [0, 3], curve: "smooth" },
+        series: [
+            { name: "Requests", type: "column", data: [12, 18, 14, 22, 19, 16, 21] },
+            { name: "Orders", type: "line", data: [4, 6, 5, 8, 7, 6, 9] }
+        ],
+        colors: [primary, info],
+        xaxis: Object.assign({ categories: days.slice(0, 7) }, base.xaxis)
+    }));
+
+    draw("chart-area-stack", Object.assign({}, base, {
+        chart: Object.assign({ type: "area", height: 260, stacked: true }, base.chart),
+        stroke: { curve: "smooth", width: 2 },
+        fill: { type: "gradient", gradient: { opacityFrom: 0.45, opacityTo: 0.05 } },
+        series: [
+            { name: "Approved", data: [4, 6, 5, 8, 7, 6, 9] },
+            { name: "Pending", data: [3, 2, 4, 3, 2, 4, 3] },
+            { name: "Rejected", data: [1, 1, 2, 1, 1, 2, 1] }
+        ],
+        colors: [success, warning, danger],
+        xaxis: Object.assign({ categories: days.slice(0, 7) }, base.xaxis)
+    }));
+
+    draw("chart-funnel", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        plotOptions: { bar: { horizontal: true, distributed: true, borderRadius: 6, barHeight: "70%", isFunnel: true } },
+        series: [{ name: "Requests", data: [24, 16, 11, 6] }],
+        colors: [primary, info, warning, danger],
+        xaxis: Object.assign({ categories: ["Submitted", "In review", "Approved", "Closed"] }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-scatter", Object.assign({}, base, {
+        chart: Object.assign({ type: "scatter", height: 260 }, base.chart),
+        series: [{
+            name: "Requests",
+            data: [[1, 12], [2, 18], [3, 14], [4, 22], [5, 19], [6, 11], [7, 16], [8, 24], [9, 21], [10, 27]]
+        }],
+        colors: [primary],
+        markers: { size: 6 },
+        xaxis: Object.assign({ tickAmount: 5, title: { text: "Day", style: { color: muted } } }, base.xaxis),
+        yaxis: Object.assign({ title: { text: "Count", style: { color: muted } } }, base.yaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-heat", Object.assign({}, base, {
+        chart: Object.assign({ type: "heatmap", height: 260 }, base.chart),
+        series: ["Mon", "Tue", "Wed", "Thu", "Fri"].map(function (day, index) {
+            return {
+                name: day,
+                data: [
+                    { x: "Submitted", y: 4 + index },
+                    { x: "Review", y: 2 + (index % 3) },
+                    { x: "Approved", y: 3 + (index % 4) },
+                    { x: "Rejected", y: 1 + (index % 2) }
+                ]
+            };
+        }),
+        colors: [primary],
+        dataLabels: { enabled: false },
+        legend: { show: false }
+    }));
+
+    draw("chart-tree", {
+        chart: Object.assign({ type: "treemap", height: 260 }, base.chart),
+        series: [{
+            data: [
+                { x: "Approved", y: 16 },
+                { x: "Pending", y: 8 },
+                { x: "In review", y: 3 },
+                { x: "Rejected", y: 5 }
+            ]
+        }],
+        colors: [success, warning, info, danger],
+        legend: { show: false },
+        dataLabels: { enabled: true, style: { fontSize: "12px" } },
+        plotOptions: { treemap: { distributed: true, enableShades: false } }
+    });
+
+    draw("chart-polar", {
+        chart: Object.assign({ type: "polarArea", height: 280 }, base.chart),
+        series: [16, 8, 3, 5],
+        labels: ["Approved", "Pending", "In review", "Rejected"],
+        colors: [success, warning, info, danger],
+        stroke: { colors: ["#ffffff"] },
+        fill: { opacity: 0.85 },
+        yaxis: { show: false },
+        legend: base.legend,
+        dataLabels: { enabled: false }
+    });
+
+    draw("chart-pie", {
+        chart: Object.assign({ type: "pie", height: 280 }, base.chart),
+        series: [16, 8, 3, 5],
+        labels: ["Approved", "Pending", "In review", "Rejected"],
+        colors: [success, warning, info, danger],
+        stroke: { width: 2, colors: ["#ffffff"] },
+        legend: base.legend,
+        dataLabels: { enabled: false }
+    });
+
+    draw("chart-float", Object.assign({}, base, {
+        chart: Object.assign({ type: "rangeBar", height: 260 }, base.chart),
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: "50%" } },
+        series: [{
+            name: "Band",
+            data: [
+                { x: "Submitted", y: [10, 24] },
+                { x: "In review", y: [6, 16] },
+                { x: "Approved", y: [8, 20] },
+                { x: "Rejected", y: [2, 6] }
+            ]
+        }],
+        colors: [info],
+        legend: { show: false }
+    }));
+
+    draw("chart-area-full", Object.assign({}, base, {
+        chart: Object.assign({ type: "area", height: 260, stacked: true, stackType: "100%" }, base.chart),
+        stroke: { curve: "smooth", width: 2 },
+        series: [
+            { name: "Approved", data: [4, 6, 5, 8, 7, 6, 9] },
+            { name: "Pending", data: [3, 2, 4, 3, 2, 4, 3] },
+            { name: "Rejected", data: [1, 1, 2, 1, 1, 2, 1] }
+        ],
+        colors: [success, warning, danger],
+        xaxis: Object.assign({ categories: days.slice(0, 7) }, base.xaxis)
+    }));
+
+    draw("chart-bubble", Object.assign({}, base, {
+        chart: Object.assign({ type: "bubble", height: 260 }, base.chart),
+        series: [{
+            name: "Requests",
+            data: [[1, 12, 8], [2, 18, 14], [3, 14, 10], [4, 22, 16], [5, 19, 12], [6, 11, 7], [7, 16, 11]]
+        }],
+        colors: [primary],
+        legend: { show: false }
+    }));
+
+    var closes = [12, 18, 14, 22, 19, 11, 16];
+    draw("chart-candle", Object.assign({}, base, {
+        chart: Object.assign({ type: "candlestick", height: 260 }, base.chart),
+        series: [{
+            data: closes.map(function (close, index) {
+                var open = index ? closes[index - 1] : close;
+                return { x: days[index], y: [open, Math.max(open, close) + 2, Math.min(open, close) - 2, close] };
+            })
+        }],
+        plotOptions: { candlestick: { colors: { upward: success, downward: danger } } },
+        xaxis: Object.assign({ type: "category" }, base.xaxis)
+    }));
+
+    draw("chart-water", Object.assign({}, base, {
+        chart: Object.assign({ type: "rangeBar", height: 260 }, base.chart),
+        plotOptions: { bar: { horizontal: false, borderRadius: 4, columnWidth: "48%" } },
+        series: [{
+            data: [
+                { x: "Start", y: [0, 12], fillColor: primary },
+                { x: "Approved", y: [12, 20], fillColor: success },
+                { x: "Rejected", y: [16, 20], fillColor: danger },
+                { x: "Pending", y: [16, 22], fillColor: warning },
+                { x: "Total", y: [0, 22], fillColor: primary }
+            ]
+        }],
+        legend: { show: false }
+    }));
+
+    draw("chart-hist", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        plotOptions: { bar: { columnWidth: "86%", borderRadius: 0 } },
+        series: [{ name: "Days", data: [1, 2, 4, 3, 2, 1] }],
+        colors: [primary],
+        xaxis: Object.assign({ categories: ["0–5", "6–10", "11–15", "16–20", "21–25", "26–30"] }, base.xaxis),
+        legend: { show: false }
+    }));
+
+    draw("chart-box", Object.assign({}, base, {
+        chart: Object.assign({ type: "boxPlot", height: 260 }, base.chart),
+        series: [{
+            name: "Requests",
+            data: [
+                { x: "Requests", y: [9, 12, 16, 22, 31] },
+                { x: "Orders", y: [2, 4, 7, 10, 12] }
+            ]
+        }],
+        colors: [primary],
+        plotOptions: { boxPlot: { colors: { upper: primary, lower: info } } }
+    }));
+
+    draw("chart-radar", Object.assign({}, base, {
+        chart: Object.assign({ type: "radar", height: 280 }, base.chart),
+        series: [{ name: "Catalog", data: [16, 8, 4, 3, 5] }],
+        labels: ["Products", "Intakes", "Teams", "Reviews", "Declined"],
+        colors: [primary],
+        stroke: { width: 2 },
+        fill: { opacity: 0.2 },
+        markers: { size: 3 },
+        yaxis: { show: false },
+        legend: { show: false }
+    }));
+
+    function ring(svg, cx, cy, inner, outer, start, end, color) {
+        var large = end - start > Math.PI ? 1 : 0;
+        function point(radius, angle) {
+            return (cx + radius * Math.cos(angle)) + " " + (cy + radius * Math.sin(angle));
+        }
+        var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", "M " + point(outer, start) + " A " + outer + " " + outer + " 0 " + large + " 1 " + point(outer, end) + " L " + point(inner, end) + " A " + inner + " " + inner + " 0 " + large + " 0 " + point(inner, start) + " Z");
+        path.setAttribute("fill", color);
+        svg.appendChild(path);
+    }
+
+    var sun = document.getElementById("chart-sun");
+    if (sun) {
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 280 260");
+        svg.setAttribute("class", "chart-svg");
+        var parts = [16, 8, 3, 5];
+        var tones = [success, warning, info, danger];
+        var total = 32;
+        var angle = -Math.PI / 2;
+        parts.forEach(function (value, index) {
+            var slice = value / total * Math.PI * 2;
+            ring(svg, 140, 130, 78, 118, angle, angle + slice, tones[index]);
+            ring(svg, 140, 130, 42, 70, angle, angle + slice, tones[index]);
+            angle += slice;
+        });
+        sun.appendChild(svg);
+    }
+
+    var sankey = document.getElementById("chart-sankey");
+    if (sankey) {
+        var flow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        flow.setAttribute("viewBox", "0 0 520 260");
+        flow.setAttribute("class", "chart-svg");
+        [["Submitted", 24, primary, 28], ["In review", 16, info, 78], ["Approved", 11, success, 128], ["Rejected", 6, danger, 178]].forEach(function (row) {
+            var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", "M 30 " + row[3] + " C 200 " + row[3] + ", 320 120, 470 120");
+            path.setAttribute("fill", "none");
+            path.setAttribute("stroke", row[2]);
+            path.setAttribute("stroke-width", Math.max(4, row[1] / 2));
+            path.setAttribute("stroke-linecap", "round");
+            flow.appendChild(path);
+        });
+        sankey.appendChild(flow);
+    }
+
+    draw("chart-bullet", Object.assign({}, base, {
+        chart: Object.assign({ type: "bar", height: 260 }, base.chart),
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: "46%" } },
+        series: [{ name: "Published", data: [16, 8, 3] }],
+        colors: [primary],
+        xaxis: Object.assign({ categories: ["Products", "Intakes", "Reviews"] }, base.xaxis),
+        annotations: { xaxis: [{ x: 12, borderColor: warning, label: { text: "Target", style: { color: token("--gdx-ink", "#121826"), background: "#ffffff" } } }] },
+        legend: { show: false }
+    }));
+})();
+</script>
+{% endblock %}

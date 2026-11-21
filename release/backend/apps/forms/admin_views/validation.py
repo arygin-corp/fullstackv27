@@ -16,7 +16,7 @@ def validation_rules(request):
     )
     return render(
         request,
-        'gdx_admin/apps/dar/validation/validation_rules.html',
+        'gdx_admin/pages/dar/validation/validation_rules.html',
         {
             'validation_rules': queryset,
             'breadcrumbs': _breadcrumbs(('DAR', None), ('Validation', None)),
@@ -46,7 +46,7 @@ def validation_simulator(request):
 
     return render(
         request,
-        'gdx_admin/apps/dar/validation/validation_simulator.html',
+        'gdx_admin/pages/dar/validation/validation_simulator.html',
         {
             'form': payload_form,
             'errors': errors,

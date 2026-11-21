@@ -3,6 +3,48 @@
   "elements": [
     {
       "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "dealercode"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "geographyflag"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "geographymonth"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "geographyyear"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "month"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
+      "dbname": "dealership_trn",
+      "elementname": "impmrs_rsgeography",
+      "column_name": "year"
+    },
+    {
+      "userrolename": "tbdp-party-region-master-sensitive",
       "dbname": "ircm_trn",
       "elementname": "map_no_of_door",
       "column_name": "audit_create_date"

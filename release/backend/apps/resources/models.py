@@ -32,7 +32,7 @@ class Homepage(LifecycleMixin, models.Model):
     title = models.CharField(max_length=150, default=None)
     sub_title = models.CharField(max_length=150, default=None)
     hero_image = models.ImageField(upload_to='marketplace/resources/homepage/cover/', max_length=150, default='default.jpg', validators=[validate_image_upload])
-    desc = models.CharField(max_length=150, default=None)
+    desc = models.TextField(default="")
     is_active = models.BooleanField('Active', default=False)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True, related_name='homepage_author_create')
     created_at = models.DateField(auto_now_add=True)

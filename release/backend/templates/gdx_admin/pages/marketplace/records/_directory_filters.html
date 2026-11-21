@@ -1,0 +1,78 @@
+<style>
+.directory-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:16px 18px 4px}
+.directory-filters label{display:grid;flex:1 1 170px;gap:4px;min-width:0;margin:0;color:#64758b;font-size:.72rem;font-weight:700}
+.directory-filters label:first-child{flex:2 1 260px}
+.directory-filters input,.directory-filters select{width:100%;height:40px;padding:0 12px;border:1px solid #e6ebf2;border-radius:10px;background:#fff;color:#1c2740}
+</style>
+<form class="directory-filters" method="get" id="directory-filters">
+    <label>Search
+        <input name="q" value="{{ request.GET.q }}" placeholder="Search {{ search_label }}">
+    </label>
+    {% if show_active %}
+    <label>Active
+        <select name="active" onchange="this.form.requestSubmit()">
+            <option value="">Any</option>
+            <option value="active" {% if request.GET.active == "active" %}selected{% endif %}>Active</option>
+            <option value="inactive" {% if request.GET.active == "inactive" %}selected{% endif %}>Inactive</option>
+        </select>
+    </label>
+    {% endif %}
+    {% if status_choices %}
+    <label>Status
+        <select name="status" onchange="this.form.requestSubmit()">
+            <option value="">Any status</option>
+            {% for value, label in status_choices %}
+            <option value="{{ value }}" {% if request.GET.status == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    {% endif %}
+    {% if filter_domains %}
+    <label>Domain
+        <select name="domain" onchange="this.form.requestSubmit()">
+            <option value="">Any domain</option>
+            {% for item in filter_domains %}
+            <option value="{{ item.pk }}" {% if request.GET.domain == item.pk|stringformat:"s" %}selected{% endif %}>{{ item.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    {% endif %}
+    {% if rating_choices %}
+    <label>Rating
+        <select name="rating" onchange="this.form.requestSubmit()">
+            <option value="">Any rating</option>
+            {% for value, label in rating_choices %}
+            <option value="{{ value }}" {% if request.GET.rating == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    {% endif %}
+</form>
+<script>
+(function () {
+    var form = document.getElementById("directory-filters");
+    if (!form) return;
+    var search = form.querySelector('input[name="q"]');
+    var timer;
+    function applyFilters() {
+        var params = new URLSearchParams();
+        Array.prototype.forEach.call(form.elements, function (field) {
+            if (!field.name) return;
+            var value = (field.value || "").trim();
+            if (value) params.set(field.name, value);
+        });
+        var query = params.toString();
+        window.location = window.location.pathname + (query ? "?" + query : "");
+    }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        applyFilters();
+    });
+    if (search) {
+        search.addEventListener("input", function () {
+            window.clearTimeout(timer);
+            timer = window.setTimeout(applyFilters, 300);
+        });
+    }
+})();
+</script>

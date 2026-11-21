@@ -40,8 +40,8 @@ def required_env(name):
 
 
 def graph_base():
-    endpoint = required_env("GRAPH_ENDPOINT").rstrip("/")
-    version = required_env("GRAPH_VERSION").strip("/")
+    endpoint = required_env("PEOPLEFINDER_GRAPH_ENDPOINT").rstrip("/")
+    version = required_env("PEOPLEFINDER_GRAPH_VERSION").strip("/")
     return f"{endpoint}/{version}"
 
 
@@ -62,15 +62,15 @@ def graph_token(request=None, force_refresh=False):
     try:
         response = requests.post(
             (
-                f"{required_env('AAD_ENDPOINT').rstrip('/')}"
-                f"/{required_env('PEOPLE_FINDER_TENANT_ID')}"
+                f"{required_env('PEOPLEFINDER_AAD_ENDPOINT').rstrip('/')}"
+                f"/{required_env('PEOPLEFINDER_TENANT_ID')}"
                 "/oauth2/v2.0/token"
             ),
             data={
-                "client_id": required_env("PEOPLE_FINDER_CLIENT_ID"),
-                "client_secret": required_env("PEOPLE_FINDER_CLIENT_SECRET"),
+                "client_id": required_env("PEOPLEFINDER_CLIENT_ID"),
+                "client_secret": required_env("PEOPLEFINDER_CLIENT_SECRET"),
                 "grant_type": "client_credentials",
-                "scope": f"{required_env('GRAPH_ENDPOINT').rstrip('/')}/.default",
+                "scope": f"{required_env('PEOPLEFINDER_GRAPH_ENDPOINT').rstrip('/')}/.default",
             },
             headers={"Content-Type": "application/x-www-form-urlencoded"},
             timeout=15,
@@ -169,8 +169,8 @@ def build_user_params(query):
 
 def _validate_users_url(url):
     parsed = urlparse(url)
-    graph = urlparse(required_env("GRAPH_ENDPOINT"))
-    expected_path = f"/{required_env('GRAPH_VERSION').strip('/')}/users"
+    graph = urlparse(required_env("PEOPLEFINDER_GRAPH_ENDPOINT"))
+    expected_path = f"/{required_env('PEOPLEFINDER_GRAPH_VERSION').strip('/')}/users"
 
     if (
         parsed.scheme != "https"

@@ -22,4 +22,6 @@ urlpatterns = [
     path("manage/<slug:key>/<int:pk>/edit/", site_crud.site_record_form, name="site-record-edit"),
     path("manage/<slug:key>/<int:pk>/delete/", site_crud.site_record_delete, name="site-record-delete"),
     path("manage/<slug:key>/", site_crud.site_manage, name="site-manage"),
+    path("newsroom/<int:pk>/", site_crud.newsroom_detail, name="newsroom-detail"),
+    path("newsroom/<int:pk>/approval/", site_crud.newsroom_approval, name="newsroom-approval"),
 ]

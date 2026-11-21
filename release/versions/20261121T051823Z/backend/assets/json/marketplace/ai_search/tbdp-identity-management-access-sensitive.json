@@ -1,0 +1,55 @@
+{
+  "adgroup": "tbdp-identity-management-access-sensitive",
+  "slugs": [
+    "identity-management-access-sensitive"
+  ],
+  "databases": [
+    "hsd_identity_mgmt_access_sen_ing_ext",
+    "identity_mgmt_access_sensitive_trn_ext"
+  ],
+  "tables": [
+    "ad_group",
+    "ad_groupmember",
+    "cm_merged",
+    "member",
+    "nmfg_cm_merged"
+  ],
+  "columns": [
+    "action_no",
+    "action_required",
+    "already_implemented",
+    "audit_create_date",
+    "cm_duration",
+    "companyname",
+    "complete_by",
+    "complete_notes",
+    "created_date",
+    "createddatetime",
+    "date_complete",
+    "date_due",
+    "department",
+    "displayname",
+    "event_no",
+    "groupcreateddatetime",
+    "groupdisplayname",
+    "groupid",
+    "hier_of_controls",
+    "id",
+    "inc_no",
+    "jobtitle",
+    "loc_code",
+    "loc_name",
+    "mail",
+    "rec_no",
+    "responsible_person",
+    "source",
+    "source_id",
+    "system",
+    "type",
+    "url_id",
+    "wf_current_stage",
+    "wf_date_due",
+    "wf_responsible_person",
+    "wf_status"
+  ]
+}

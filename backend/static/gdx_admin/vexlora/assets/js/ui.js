@@ -23,6 +23,7 @@ export function routeToHref(route) {
   const prefix = base ? `${base}/` : "/";
   if (!route || route === "/") return `${prefix}index.html`;
   if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(route)) return route;
+  if (route.startsWith("/sa/")) return route;
   const hashIndex=route.indexOf('#');
   const hash=hashIndex<0?'':route.slice(hashIndex);
   const routeWithoutHash=hashIndex<0?route:route.slice(0,hashIndex);

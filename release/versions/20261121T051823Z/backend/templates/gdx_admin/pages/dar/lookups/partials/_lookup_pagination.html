@@ -1,0 +1,12 @@
+{% if page_obj %}
+<nav aria-label="Lookup pages" class="mt-4">
+  <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+    <p class="text-muted small mb-0">Page <strong>{{ page_obj.number }}</strong> of <strong>{{ page_obj.paginator.num_pages }}</strong> · {{ page_obj.paginator.count }} records</p>
+    <ul class="pagination mb-0">
+      {% if page_obj.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="ti ti-chevron-left me-1"></i>Previous</a></li>{% else %}<li class="page-item disabled"><span class="page-link">Previous</span></li>{% endif %}
+      <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
+      {% if page_obj.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next<i class="ti ti-chevron-right ms-1"></i></a></li>{% else %}<li class="page-item disabled"><span class="page-link">Next</span></li>{% endif %}
+    </ul>
+  </div>
+</nav>
+{% endif %}

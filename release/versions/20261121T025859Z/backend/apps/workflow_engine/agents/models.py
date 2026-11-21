@@ -1,0 +1,7 @@
+from django.conf import settings
+from django.db import models
+from ..models import TimeStampedModel,WorkflowInstance
+from ..platform_models import Tenant
+class AgentDefinition(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=160);key=models.SlugField();version=models.PositiveIntegerField(default=1);purpose=models.TextField();input_schema=models.JSONField(default=dict);output_schema=models.JSONField(default=dict);allowed_tools=models.JSONField(default=list);risk_level=models.CharField(max_length=30,default='medium');requires_human_review=models.BooleanField(default=True);enabled=models.BooleanField(default=False)
+class AgentRun(TimeStampedModel):agent=models.ForeignKey(AgentDefinition,on_delete=models.PROTECT);instance=models.ForeignKey(WorkflowInstance,null=True,blank=True,on_delete=models.CASCADE);requested_by=models.ForeignKey(settings.AUTH_USER_MODEL,null=True,on_delete=models.SET_NULL);status=models.CharField(max_length=30,default='queued');input=models.JSONField(default=dict);output=models.JSONField(default=dict);tool_log=models.JSONField(default=list);review_status=models.CharField(max_length=30,default='pending');error=models.TextField(blank=True)
+class AgentReview(TimeStampedModel):run=models.OneToOneField(AgentRun,related_name='review',on_delete=models.CASCADE);reviewer=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.PROTECT);decision=models.CharField(max_length=30);comments=models.TextField(blank=True)

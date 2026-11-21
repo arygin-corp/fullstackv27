@@ -1,0 +1,1462 @@
+{
+  "title": "Security Domains",
+  "left": [
+    {
+      "label": "Cross Domain Business Functions",
+      "kind": "pillar",
+      "children": [
+        {
+          "label": "Manufacturing",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Productivity",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-productivity",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-manufacturing-productivity-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Job Process",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-job-process",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Equipment",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-equipment",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Inspection",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-inspection",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-manufacturing-inspection-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Build",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-build",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-manufacturing-build-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Internal logistics Parts",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-manufacturing-internal-logistics-parts",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Warranty",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-warranty",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-warranty-sensitive",
+              "kind": "group"
+            },
+            {
+              "label": "Parts Claims",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-warranty-partsclaims",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Warranty Insurance",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-warranty-insurance",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Service History",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-service-history",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-aggregate",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-aggregate",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-redacted",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-redacted",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-puertorico",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-puertorico",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-puertorico-redacted",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-puertorico-redacted",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-mex",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-mex",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-toy-service-hist-mex-redacted",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-lex-service-hist-mex-redacted",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Accounting",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Master",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-accounting-master",
+                  "kind": "group"
+                },
+                {
+                  "label": "Affiliates",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-accounting-master-affiliates",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Transactions",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-tmna-accounting-transactions",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-tmna-accounting-transactions-sensitive",
+                  "kind": "group"
+                },
+                {
+                  "label": "Expense",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-accounting-transactions-expense-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Affiliates",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-accounting-transaction-affiliates",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-accounting-transaction-affiliates-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Accounts Payable",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-accounting-transactions-accounts-payable",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Financial Reporting",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-accounting-transactions-financial-reporting",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Calendar",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-accounting-calendar",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-accounting-calendar-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Journal Entry",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-accounting-journal-entry",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Purchasing",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Inventory",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "General Stores",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-purchasing-inventory-general-stores",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Indirect",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "Indirect Direct Purchasing",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-purchasing-indirect-direct-purchasing",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Finance Management",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Finance Master",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-finance-master",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-finance-master-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Finance Naplanning Volume",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-finance-naplanning-volume",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Procurement",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Master",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-tmna-procurement-master",
+                  "kind": "group"
+                },
+                {
+                  "label": "Affiliates",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-procurement-master-affiliates",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Transactions",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-tmna-procurement-transactions",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-tmna-procurement-transactions-sensitive",
+                  "kind": "group"
+                },
+                {
+                  "label": "Affiliates",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-procurement-transactions-affiliates",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-procurement-transactions-affiliates-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Contracts",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-tmna-procurement-contracts-sensitive",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Internal Audit",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Accounting",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "Transactions",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-tmna-internal-audit-accounting-transactions-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Affiliates",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-internal-audit-accounting-affiliates-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Enterprise Corporate Functions",
+      "kind": "pillar",
+      "children": [
+        {
+          "label": "IRM Business Confidential Domains",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "CMBS / CMBK",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-irm-profit-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-irm-pl-fo-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-irm-pl-ppo-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-irm-pl-veh-ant-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-irm-pl-veh-sal-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-irm-enterprise-profit-dx",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Pricing Cals",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "CAL TEMA",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-irm-pricing-tema-cal",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "CAL TMC",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-irm-pricing-tmc-cal",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "CAL TMS",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-irm-pricing-tms-cal",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "HON TEMA",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-irm-pricing-tema-hon",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Pricing 4Levels",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-irm-pricing-4levels",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Pricing",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-irm-pricing-sen",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Legal",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-legal-busers",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-reference",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-reference-sensitive",
+              "kind": "group"
+            },
+            {
+              "label": "Calendar",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-reference-calendar",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Facilities (Ex: Electricity, etc.)",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-facility",
+              "kind": "group"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "right": [
+    {
+      "label": "Party",
+      "kind": "pillar",
+      "children": [
+        {
+          "label": "Customer",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Master",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-master",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-master-redacted",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-master-mexico",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Vehicle Purchase WriteUp",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-vehicle-purchase-writeup",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Call Center",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-call-center",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Demographics",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-demographics",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-demographics-redacted",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Communication Management",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-communication-management-marketing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-communication-management-non-marketing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-communication-analytics-marketing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-communication-analytics-non-marketing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-communication-analytics-marketing-redacted",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-communication-management-privacy",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Dealer Relationship",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-dealer-relationship",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Parts E-Commerce",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-parts-ecommerce",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Predictive scores",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-predictive-score",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-predictive-score-toyota",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-predictive-score-lexus",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Alias",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-alias",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Social Media",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-social-media",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Marketing",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-marketing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-customer-marketing-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Fueling Operations",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-fueling-operations",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Experience Management",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-cust-exp-mgmt",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Customer Global Access",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-customer-global-access-view",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Vendors/Partners",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-party-vendor-partner",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Non-Customer",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-non-customer-sensitive",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Distributor/Region/Dealer",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Dealership / Non-Dealer Entity / Region Master",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-dealer-master",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-party-region-master-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Dealership Metrics",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-party-dealer-management",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-party-dealer-management-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Dealer Personnel",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-dealer-personnel",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Dealer Call Center",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-dealer-call-center",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Identity Management",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-identity-management",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-identity-management-sensitive",
+              "kind": "group"
+            },
+            {
+              "label": "Access",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-identity-management-access-sensitive",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Affiliate",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-affiliate-master",
+              "kind": "group"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Product",
+      "kind": "pillar",
+      "children": [
+        {
+          "label": "Vehicle",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Master",
+              "kind": "topic",
+              "note": "ex: VIN Master, Model Master, Pricing",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-master-data",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-master-data-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Sales",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "New Car Sales",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "Aggregated",
+                      "kind": "topic",
+                      "children": [
+                        {
+                          "label": "Actuals",
+                          "kind": "topic",
+                          "children": [
+                            {
+                              "label": "tbdp-vehicle-sales-new-car-aggregated-actuals",
+                              "kind": "group"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "VIN Based",
+                      "kind": "topic",
+                      "children": [
+                        {
+                          "label": "Actuals",
+                          "kind": "topic",
+                          "children": [
+                            {
+                              "label": "tbdp-vehicle-sales-new-car-vin-based-actuals",
+                              "kind": "group"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Used Car Sales",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "VIN Based",
+                      "kind": "topic",
+                      "children": [
+                        {
+                          "label": "Actuals",
+                          "kind": "topic",
+                          "children": [
+                            {
+                              "label": "tbdp-vehicle-sales-used-car-vin-based-actuals",
+                              "kind": "group"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Aggregated",
+                      "kind": "topic",
+                      "children": [
+                        {
+                          "label": "Actuals",
+                          "kind": "topic",
+                          "children": [
+                            {
+                              "label": "tbdp-vehicle-sales-used-car-aggregated-actuals",
+                              "kind": "group"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "tbdp-sales-forecast",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-sales-forecast-sen",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-sales-forecast-factor",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Incentives",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "Forecast",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-vehicle-incentive-forecast",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Actuals",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-vehicle-incentive-actuals",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-vehicle-incentive-actuals-sensitive",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Pricing",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-pricing",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-pricing-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Configuration",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-configuration",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-configuration-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Inventory Volume",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-inventory-volume",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-inventory-volume-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Factors",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-factors-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Planning",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-planning",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-planning-sensitive",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Orders",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "Forecast",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-vehicle-orders-forecast",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Actuals",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-vehicle-orders-actuals",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Logistics Management",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-vehicle-logistics-management",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-vehicle-logistics-mgmt-sensitive",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Telematics",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-telematics",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-telematics-sensitive",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Survey",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "tbdp-survey-lexus-anylt-us",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-survey-toyota-anylt-us",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-survey-lexus-anylt-puertorico",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-survey-toyota-anylt-puertorico",
+              "kind": "group"
+            },
+            {
+              "label": "Quality",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-survey-quality",
+                  "kind": "group"
+                },
+                {
+                  "label": "tbdp-survey-quality-redacted",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "tbdp-survey-consumer-insights",
+              "kind": "group"
+            },
+            {
+              "label": "tbdp-survey-consumer-insights-redacted",
+              "kind": "group"
+            }
+          ]
+        },
+        {
+          "label": "Parts",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Direct Parts",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-parts-directparts-manufacturing",
+                  "kind": "group"
+                },
+                {
+                  "label": "Supplier Survey",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-directparts-manufacturing-supplier-survey",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Manufacturing Material",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-directparts-manufacturing-material",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Inline accessory Parts",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-directparts-manufacturing-inline-accessory",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "USMCA",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-manufacturing-usmca",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Trade Compliance",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-manufacturing-tradecompliance",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Indirect Parts",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-parts-indirectparts-serviceparts",
+                  "kind": "group"
+                },
+                {
+                  "label": "Logistics",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-serviceparts-logistics",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Procurement",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "Parts Distribution Center (PDC)",
+                      "kind": "topic",
+                      "children": [
+                        {
+                          "label": "tbdp-parts-indirectparts-serviceparts-procurement-pdc",
+                          "kind": "group"
+                        },
+                        {
+                          "label": "tbdp-parts-indirectparts-serviceparts-procurement-pdc-labor",
+                          "kind": "group"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "tbdp-parts-indirectparts-serviceparts-procurement",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Sales",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-serviceparts-sales",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Transactions",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-serviceparts-transactions",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Incentives",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-serviceparts-incentives",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Inventory Management",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-inventory-management",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Accessory Parts",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-service-parts-center-supply",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-parts-indirectparts-accessory",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-parts-accessories-dealerinstalled",
+                      "kind": "group"
+                    },
+                    {
+                      "label": "tbdp-parts-indirectparts-tiaparts",
+                      "kind": "group"
+                    }
+                  ]
+                },
+                {
+                  "label": "Indirect Procurement",
+                  "kind": "topic",
+                  "children": [
+                    {
+                      "label": "tbdp-parts-indirectparts-procurement",
+                      "kind": "group"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Quality",
+          "kind": "domain",
+          "children": [
+            {
+              "label": "Supplier Quality Change Management",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-parts-supplier-quality-change-management",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "PDC Warehouse Management",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-parts-pdc-warehouse-management",
+                  "kind": "group"
+                }
+              ]
+            },
+            {
+              "label": "Campaigns",
+              "kind": "topic",
+              "children": []
+            },
+            {
+              "label": "Reports",
+              "kind": "topic",
+              "children": []
+            },
+            {
+              "label": "Diagnostics",
+              "kind": "topic",
+              "children": [
+                {
+                  "label": "tbdp-quality-diagnostics",
+                  "kind": "group"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

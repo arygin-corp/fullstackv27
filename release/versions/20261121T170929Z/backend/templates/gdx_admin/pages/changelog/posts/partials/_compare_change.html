@@ -1,0 +1,20 @@
+<section class="card mb-3 overflow-hidden">
+	<div class="card-header">
+		<div>
+			<h3 class="h6 mb-0 text-break">{{ change.field }}</h3>
+			<small class="text-muted">{{ context_label }}</small>
+		</div>
+	</div>
+	<div class="card-body">
+		<div class="row g-3">
+			<div class="col-12 col-xl-6 min-w-0">
+				<div class="small fw-semibold text-danger mb-2">Before</div>
+				<div class="p-3 bg-danger-subtle rounded text-break overflow-auto">{{ change.before|default:"Empty" }}</div>
+			</div>
+			<div class="col-12 col-xl-6 min-w-0">
+				<div class="small fw-semibold text-success mb-2">After</div>
+				<div class="p-3 bg-success-subtle rounded text-break overflow-auto">{{ change.after|default:"Empty" }}</div>
+			</div>
+		</div>
+	</div>
+</section>

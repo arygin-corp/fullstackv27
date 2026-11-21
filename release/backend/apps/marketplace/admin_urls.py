@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import admin_views as views
+from . import record_pages
 
 app_name = "marketplace_admin"
 
@@ -38,5 +39,11 @@ urlpatterns = [
     path("admin/subdomains/<int:pk>/", views.SubDomainDetailView.as_view(), name="subdomain_detail"),
     path("admin/subdomains/<int:pk>/edit/", views.SubDomainUpdateView.as_view(), name="subdomain_update"),
     path("admin/subdomains/<int:pk>/delete/", views.SubDomainDeleteView.as_view(), name="subdomain_delete"),
+
+    path("admin/records/<slug:slug>/", record_pages.RecordListView.as_view(), name="record_list"),
+    path("admin/records/<slug:slug>/new/", record_pages.RecordCreateView.as_view(), name="record_create"),
+    path("admin/records/<slug:slug>/<int:pk>/", record_pages.RecordDetailView.as_view(), name="record_detail"),
+    path("admin/records/<slug:slug>/<int:pk>/edit/", record_pages.RecordUpdateView.as_view(), name="record_update"),
+    path("admin/records/<slug:slug>/<int:pk>/delete/", record_pages.RecordDeleteView.as_view(), name="record_delete"),
 ]
 

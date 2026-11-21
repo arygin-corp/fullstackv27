@@ -50,12 +50,104 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 def home_for(user):
-    """SuperAdmin opens the staff site. Every other account opens the marketplace."""
-    from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
-
-    if access_type_for(user) == ACCESS_SUPERADMIN:
-        return "/sa/command-center/"
+    """Every signed-in account opens the user theme."""
     return "/marketplace/"
+
+
+_DASHBOARD_RANGES = (
+    ("all", "All", None),
+    ("7d", "7 days", 7),
+    ("30d", "30 days", 30),
+    ("90d", "90 days", 90),
+    ("12m", "12 months", 365),
+)
+
+
+def _dashboard_range(request):
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    selected = (request.GET.get("range") or "all").strip()
+    ranges = {key: (label, days) for key, label, days in _DASHBOARD_RANGES}
+    if selected not in ranges:
+        selected = "all"
+    label, days = ranges[selected]
+    start = None if days is None else timezone.now() - timedelta(days=days)
+    return selected, label, start
+
+
+def _since(queryset, field, start):
+    if start is None:
+        return queryset
+    kind = queryset.model._meta.get_field(field).get_internal_type()
+    cutoff = start.date() if kind == "DateField" else start
+    return queryset.filter(**{f"{field}__gte": cutoff})
+
+
+def _staff_dashboard(request):
+    from django.db.models import Count
+    from django.urls import reverse
+
+    from apps.changelog.models import Categorie, Post
+    from apps.marketplace.models import Domain, Product, Review, SubDomain_1, SubDomain_2
+    from apps.orders.models import Request
+    from apps.teams.models import Team
+
+    selected, range_label, start = _dashboard_range(request)
+    products = _since(Product.objects.all(), "created_at", start)
+    domains = _since(Domain.objects.all(), "created_at", start)
+    subdomains = _since(SubDomain_1.objects.all(), "created_at", start)
+    subdomains_2 = _since(SubDomain_2.objects.all(), "created_at", start)
+    reviews = _since(Review.objects.all(), "created_at", start)
+    requests = _since(Request.objects.all(), "opened_at", start)
+    teams = _since(Team.objects.all(), "created_at", start)
+    releases = _since(Post.objects.all(), "release_date", start)
+    categories = _since(Categorie.objects.all(), "published_date", start)
+
+    product_counts = {
+        row["status"]: row["total"]
+        for row in products.values("status").annotate(total=Count("id"))
+    }
+    review_counts = {
+        row["status"]: row["total"]
+        for row in reviews.values("status").annotate(total=Count("id"))
+    }
+    release_counts = {
+        row["status"]: row["total"]
+        for row in releases.values("status").annotate(total=Count("id"))
+    }
+    approval_counts = {
+        (row["approval_stage"] or "").strip().lower(): row["total"]
+        for row in requests.values("approval_stage").annotate(total=Count("id"))
+    }
+    request_href = reverse("marketplace:request-index")
+    cards = [
+        {"label": "Products", "value": sum(product_counts.values()), "caption": f"{product_counts.get('approved', 0)} approved", "href": reverse("marketplace:product-index")},
+        {"label": "Domains", "value": domains.count(), "caption": "Level 1", "href": reverse("marketplace:domain-index")},
+        {"label": "Subdomains", "value": subdomains.count(), "caption": "Level 1", "href": reverse("marketplace:subdomain1-index")},
+        {"label": "Subdomains", "value": subdomains_2.count(), "caption": "Level 2", "href": reverse("marketplace:subdomain2-index")},
+        {"label": "Reviews", "value": sum(review_counts.values()), "caption": f"{review_counts.get('pending', 0)} pending", "href": reverse("marketplace:review-index")},
+        {"label": "Requests", "value": requests.count(), "caption": "ServiceNow requests", "href": request_href},
+        {"label": "Pending", "value": approval_counts.get("requested", 0) + approval_counts.get("not yet requested", 0), "caption": "Requests", "href": request_href},
+        {"label": "Approved", "value": approval_counts.get("approved", 0), "caption": "Requests", "href": request_href},
+        {"label": "Rejected", "value": approval_counts.get("rejected", 0), "caption": "Requests", "href": request_href},
+        {"label": "Teams", "value": teams.count(), "caption": "Ownership", "href": reverse("teams:list")},
+        {"label": "Releases", "value": sum(release_counts.values()), "caption": f"{release_counts.get('PUBLISHED', 0)} published", "href": reverse("changelog_staff:post-list")},
+        {"label": "Categories", "value": categories.count(), "caption": "Changelog", "href": reverse("changelog_staff:category-list")},
+    ]
+    return {
+        "heading": "Dashboard",
+        "heading2": "Dashboard",
+        "pageview": "Dashboards",
+        "ranges": [{"key": key, "label": label} for key, label, _days in _DASHBOARD_RANGES],
+        "active_range": selected,
+        "range_label": range_label,
+        "cards": cards,
+        "recent_products": products.order_by("-created_at", "-id")[:8],
+        "recent_releases": releases.order_by("-release_date", "-id")[:8],
+        "recent_requests": requests.order_by("-opened_at", "-id")[:8],
+    }
 
 
 def _safe_next_url(request, candidate):
@@ -80,16 +172,20 @@ def _safe_next_url(request, candidate):
 
 class HomeView(LoginRequiredMixin, View):
     def get(self, request):
-        return redirect(home_for(request.user))
+        destination = home_for(request.user)
+        if destination != "/":
+            return redirect(destination)
+        return render(request, "gdx_users/apps/pages/pages/home.html", _staff_dashboard(request))
 
 
 @login_required
 def staff_home(request):
     from apps.profiles.models import ACCESS_SUPERADMIN, access_type_for
 
-    if access_type_for(request.user) != ACCESS_SUPERADMIN:
+    in_group = request.user.groups.filter(name="Super Administrator Group").exists()
+    if access_type_for(request.user) != ACCESS_SUPERADMIN and not in_group:
         return redirect("/marketplace/")
-    return redirect("command_center:dashboard")
+    return redirect("theme_sa:dashboard", slug="executive")
 
 
 class ChangelogView(LoginRequiredMixin, View):
@@ -184,19 +280,67 @@ class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
 # Local Django authentication
 # ---------------------------------------------------------------------------
 
+def _profile_is_verified(user):
+    try:
+        return bool(user.profile.is_verified)
+    except ObjectDoesNotExist:
+        return False
+
+
+def bad_request(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/400.html", status=400)
+
+
+def permission_denied(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/403.html", status=403)
+
+
+def page_not_found(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/404.html", status=404)
+
+
+def server_error(request):
+    return render(request, "gdx_admin/pages/errors/500.html", status=500)
+
+
 def not_authorized(request):
     user = request.user
     pending_verification = False
-    if getattr(user, "is_authenticated", False) and getattr(user, "is_staff", False) and not getattr(user, "is_superuser", False):
-        try:
-            pending_verification = not user.profile.is_verified
-        except ObjectDoesNotExist:
+    unverified_user = False
+    if getattr(user, "is_authenticated", False) and not getattr(user, "is_superuser", False):
+        verified = _profile_is_verified(user)
+        if getattr(user, "is_staff", False) and not verified:
             pending_verification = True
+        elif not getattr(user, "is_staff", False) and not verified:
+            unverified_user = True
     return render(
         request,
-        "gdx_admin/auth/not_authorized.html",
-        {"pending_verification": pending_verification},
+        "gdx_admin/pages/errors/not-authorized.html",
+        {
+            "pending_verification": pending_verification,
+            "unverified_user": unverified_user,
+        },
     )
+
+
+def microsoft_callback(request):
+    from microsoft_authentication.auth.auth_utils import get_django_user, get_token_from_code, get_user
+
+    result = get_token_from_code(request)
+    next_url = request.session.pop("next_url", None)
+    ms_user = get_user(result["access_token"])
+    user = get_django_user(email=ms_user.get("mail") or ms_user.get("userPrincipalName"))
+    if user is None:
+        return redirect("not_authorized")
+    login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+    from gdx.britive import ensure_shared_checkout
+
+    ensure_shared_checkout(user)
+    if not user.is_staff and not user.is_superuser and not _profile_is_verified(user):
+        return redirect("not_authorized")
+    if next_url and url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}):
+        return redirect(next_url)
+    return redirect(settings.LOGIN_REDIRECT_URL or "/")
 
 
 class GDXLoginView(LoginView):
@@ -209,6 +353,9 @@ class GDXLoginView(LoginView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
+        from gdx.britive import ensure_shared_checkout
+
+        ensure_shared_checkout(self.request.user)
 
         if not self.request.POST.get("remember_me"):
             self.request.session.set_expiry(0)
@@ -341,7 +488,17 @@ def custom_ckeditor5_upload(request):
 
 
 def maintenance(request):
-    return render(request, "gdx_admin/auth/maintenance.html")
+    from gdx.maintenance import maintenance_context
+
+    return render(request, "gdx_admin/pages/errors/maintenance.html", maintenance_context(request))
+
+
+def maintenance_status(request):
+    from django.http import JsonResponse
+
+    from gdx.maintenance import frontend_status
+
+    return JsonResponse(frontend_status())
 
 
 def _settings_redirect(tab, request=None):
@@ -354,6 +511,83 @@ def _settings_redirect(tab, request=None):
             if value:
                 query[key] = value
     return redirect(f"{reverse('platform_settings')}?{urlencode(query)}")
+
+
+_PLATFORM_TEMPLATES = {
+    "default_template": "gdx_admin/default.html",
+    "default_page_header": "gdx_admin/default.html",
+    "default_color_theme": "gdx_admin/default_color_theme.html",
+    "default_ui_theme": "gdx_admin/default_ui_theme.html",
+    "default_cards": "gdx_admin/default_cards.html",
+    "default_charts": "gdx_admin/default_charts.html",
+}
+
+_THEME_GROUPS = (
+    ("Surfaces", (
+        {"name": "Canvas", "token": "--gdx-canvas"},
+        {"name": "Surface", "token": "--gdx-surface"},
+        {"name": "Chip", "token": "--gdx-chip"},
+    )),
+    ("Ink", (
+        {"name": "Ink", "token": "--gdx-ink"},
+        {"name": "Text", "token": "--gdx-text"},
+        {"name": "Soft text", "token": "--gdx-text-soft"},
+        {"name": "Muted", "token": "--gdx-muted"},
+        {"name": "Chip text", "token": "--gdx-chip-text"},
+    )),
+    ("Accent", (
+        {"name": "Accent", "token": "--gdx-accent"},
+    )),
+    ("Lines", (
+        {"name": "Line", "token": "--gdx-line"},
+        {"name": "Line strong", "token": "--gdx-line-strong"},
+    )),
+    ("On ink", (
+        {"name": "On ink", "token": "--gdx-on-ink"},
+        {"name": "On ink soft", "token": "--gdx-on-ink-soft"},
+        {"name": "Clock", "token": "--gdx-clock-soft"},
+        {"name": "Metric", "token": "--gdx-metric"},
+    )),
+    ("Status", (
+        {"name": "Success", "token": "--gdx-success"},
+        {"name": "Warning", "token": "--gdx-warning"},
+        {"name": "Danger", "token": "--gdx-danger"},
+        {"name": "Info", "token": "--gdx-info"},
+    )),
+)
+
+
+@staff_member_required
+def default_template(request):
+    url_name = getattr(getattr(request, "resolver_match", None), "url_name", "") or "default_template"
+    template = _PLATFORM_TEMPLATES.get(url_name, "gdx_admin/default.html")
+    context = {}
+    if url_name == "default_color_theme":
+        context = {
+            "theme_groups": _THEME_GROUPS,
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Color theme",
+            "staff_page_description": "Platform colors for surfaces, ink, accent, and status.",
+        }
+    elif url_name == "default_ui_theme":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "UI theme",
+            "staff_page_description": "Platform interface for type, actions, fields, data, and notifications.",
+        }
+    elif url_name == "default_cards":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Cards",
+            "staff_page_description": "Surface, metric, link, ink, list, form, table, chart, and person cards.",
+        }
+    elif url_name == "default_charts":
+        context = {
+            "staff_page_kicker": "GDX",
+            "staff_page_title": "Charts",
+            "staff_page_description": "Area, line, column, bar, donut, pie, stacked, radial, grouped, range, floating, combo, scatter, bubble, candle, waterfall, histogram, box, radar, heatmap, treemap, polar, sunburst, sankey, funnel, and bullet charts.",
+        }
+    return render(request, template, context)
 
 
 @staff_member_required
@@ -370,6 +604,8 @@ def platform_settings(request):
             _create_user(request)
         elif action == "set_verified":
             _set_verified(request)
+        elif action == "set_employee_type":
+            _set_employee_type(request)
         elif action == "create_group":
             _create_group(request)
         elif action == "assign_group":
@@ -416,7 +652,8 @@ def platform_settings(request):
             messages.success(request, "Attribute permission removed.")
         return _settings_redirect(tab, request)
 
-    from apps.profiles.models import ACCESS_CHOICES
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import ACCESS_CHOICES, EmployeeType
     from gdx.page_access import ACTIONS as page_actions
     from gdx.page_access import ROLES as page_roles
     from gdx.page_access import page_rows
@@ -436,7 +673,7 @@ def platform_settings(request):
 
     return render(
         request,
-        "gdx_admin/settings/index.html",
+        "gdx_admin/pages/settings/index.html",
         {
             "sections": sections,
             "active_tab": request.GET.get("tab") or "global",
@@ -446,6 +683,8 @@ def platform_settings(request):
             "page_actions": page_actions,
             "page_rows": page_matrix,
             "access_choices": ACCESS_CHOICES,
+            "employee_type_choices": EmployeeType.choices,
+            "can_edit_employee_type": actor_can_edit_employee_type(request.user),
             "deployment_config": _deployment_config(),
             "deployment_buckets": _deployment_buckets(),
             "deployment_engineer": (request.user.get_full_name() or "").strip() or request.user.get_username(),
@@ -514,7 +753,16 @@ def _create_user(request):
     profile.access_type = _stored_access_type(user, request.POST.get("access_type"), request.user)
     if "is_verified" in request.POST:
         profile.is_verified = True
-    profile.save(update_fields=["access_type", "is_verified"])
+    update_fields = ["access_type", "is_verified"]
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import EmployeeType
+
+    if actor_can_edit_employee_type(request.user):
+        employee_type = (request.POST.get("employee_type") or "").strip()
+        if employee_type in {choice for choice, _label in EmployeeType.choices}:
+            profile.employee_type = employee_type
+            update_fields.append("employee_type")
+    profile.save(update_fields=update_fields)
     messages.success(request, f"User {username} created.")
 
 
@@ -546,6 +794,27 @@ def _set_verified(request):
     user.profile.is_verified = request.POST.get("verified") == "1"
     user.profile.save(update_fields=["is_verified"])
     messages.success(request, f"{user.username} is {'verified' if user.profile.is_verified else 'no longer verified'}.")
+
+
+def _set_employee_type(request):
+    from django.contrib.auth import get_user_model
+
+    from apps.profiles.access import actor_can_edit_employee_type
+    from apps.profiles.models import EmployeeType, Profile
+
+    if not actor_can_edit_employee_type(request.user):
+        messages.error(request, "Only a Data Marketplace Team employee can change employee type.")
+        return
+    user = get_user_model().objects.filter(pk=request.POST.get("user_id")).first()
+    employee_type = (request.POST.get("employee_type") or "").strip()
+    allowed = {choice for choice, _label in EmployeeType.choices}
+    if user is None or employee_type not in allowed:
+        messages.error(request, "Choose a user and an employee type.")
+        return
+    profile, _created = Profile.objects.get_or_create(user=user)
+    profile.employee_type = employee_type
+    profile.save(update_fields=["employee_type"])
+    messages.success(request, f"{user.username} is now {profile.get_employee_type_display()}.")
 
 
 def _user_directory(request):
@@ -640,6 +909,12 @@ def _users_for_settings():
             user.access_verified = False
         user.primary_group = next(iter(user.groups.all()), None)
         user.access_type = access_type_for(user)
+        try:
+            user.employee_type = user.profile.employee_type or ""
+            user.employee_type_label = user.profile.get_employee_type_display() or "—"
+        except ObjectDoesNotExist:
+            user.employee_type = ""
+            user.employee_type_label = "—"
         users.append(user)
     return users
 

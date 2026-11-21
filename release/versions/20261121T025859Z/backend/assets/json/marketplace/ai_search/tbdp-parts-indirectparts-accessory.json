@@ -1,0 +1,41 @@
+{
+  "adgroup": "tbdp-parts-indirectparts-accessory",
+  "slugs": [
+    "indirect-parts-and-accessories"
+  ],
+  "databases": [
+    "parts_indirectparts_accessories_trn_ext"
+  ],
+  "tables": [
+    "bus_case_inst_rt_accy_vw",
+    "bus_case_vol_accy_vw"
+  ],
+  "columns": [
+    "accessory_nbr",
+    "accessory_nm",
+    "application_status",
+    "audit_create_date",
+    "cad_series_nm",
+    "dio_annl_accy_vol_qty",
+    "dio_launch_install_rt_pct",
+    "dio_sustain_install_rt_pct",
+    "dio_volume",
+    "ila_annl_accy_vol_qty",
+    "ila_launch_install_rt_pct",
+    "ila_sustain_install_rt_pct",
+    "install_point",
+    "model_year_nbr",
+    "models",
+    "ppo_annl_accy_vol_qty",
+    "ppo_code_txt",
+    "ppo_launch_install_rt_pct",
+    "ppo_sustain_install_rt_pct",
+    "ppo_volume",
+    "prog_life_vol_dio_qty",
+    "prog_life_vol_ila_qty",
+    "prog_life_vol_ppo_qty",
+    "total_accy_vol_prog_life_qty",
+    "total_annl_accy_vol_qty",
+    "vol_ila_qty"
+  ]
+}

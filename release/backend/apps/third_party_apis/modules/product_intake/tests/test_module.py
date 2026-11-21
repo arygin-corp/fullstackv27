@@ -20,6 +20,8 @@ class ProductIntakeModuleTests(SimpleTestCase):
                 "Create request",
                 "Submit request",
                 "Approve request",
+                "Add draft product",
+                "Curate product",
                 "Reject request",
                 "Activate marketplace product",
             ],

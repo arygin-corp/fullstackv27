@@ -1,0 +1,104 @@
+{% extends 'gdx_users/partials/base.html' %}
+{% load static %}
+
+{% block extra_javascript %}
+    <script src="{% static 'gdx_theme/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'gdx_theme/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            var table = $('#requests-list').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "{% url 'marketplace:request-index' %}",
+                    "type": "GET",
+                    "data": function (d) {
+                        d.q = $('#searchTableList').val();
+                        d.status = $('#idStatus').val();
+                    }
+                },
+                "columns": [
+                    { "data": "id", "className": "text-center" },
+                    { "data": "number" },
+                    { "data": "ritm" },
+                    { "data": "product" },
+                    { "data": "stage", "className": "text-center" },
+                    { "data": "approval" },
+                    { "data": "state", "className": "text-center" },
+                    { "data": "opened" }
+                ],
+                "pageLength": {{ current_per_page }},
+                "lengthChange": false,
+                "searching": false,
+                "info": true,
+                "paging": true,
+                "responsive": true
+            });
+            $('#searchTableList').on('input', function() { table.ajax.reload(); });
+            $('#idStatus').on('change', function() { table.ajax.reload(); });
+            $('#idPerPage').on('change', function() { table.page.len($(this).val()).draw(); });
+        });
+    </script>
+{% endblock %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body border-bottom">
+                <div class="d-flex align-items-center">
+                    <h5 class="mb-0 card-title flex-grow-1">{{ total_requests_count }} Requests</h5>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="btn btn-light" onclick="$('#requests-list').DataTable().ajax.reload();"><i class="mdi mdi-refresh"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-bottom">
+                <div class="row g-3">
+                    <div class="col-xxl-6 col-lg-6">
+                        <input type="search" class="form-control" id="searchTableList" placeholder="Search for ..." value="">
+                    </div>
+                    <div class="col-xxl-3 col-lg-3">
+                        <select class="form-select" id="idStatus" aria-label="Request stage">
+                            <option value="all" selected>Select Stage</option>
+                            {% for stage in status_choices %}
+                                <option value="{{ stage }}">{{ stage }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-xxl-1 col-lg-1">
+                        <select class="form-select" id="idPerPage" aria-label="Requests per page">
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle dt-responsive nowrap w-100 table-check" id="requests-list">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">ID</th>
+                                <th scope="col">Number</th>
+                                <th scope="col">RITM</th>
+                                <th scope="col">Product</th>
+                                <th scope="col" class="text-center">Stage</th>
+                                <th scope="col">Approval</th>
+                                <th scope="col" class="text-center">State</th>
+                                <th scope="col">Opened</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

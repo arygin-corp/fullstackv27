@@ -1,0 +1,26 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+exclude = "migrations"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "DJ"]
+ignore = ["DJ001"]
+
+[tool.coverage.run]
+branch = true
+source = ["apps.marketplace"]
+omit = ["*/migrations/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+addopts = "--strict-markers --disable-warnings"

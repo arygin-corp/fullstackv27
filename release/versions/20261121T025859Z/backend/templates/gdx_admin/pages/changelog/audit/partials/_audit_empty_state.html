@@ -1,0 +1,10 @@
+<div class="text-center py-5">
+  <span class="avatar avatar-xxl bg-primary-subtle text-primary rounded-circle">
+    <i class="ti ti-history-off fs-1"></i>
+  </span>
+  <h3 class="h5 mt-3">No audit events found</h3>
+  <p class="text-muted mb-3">No audit events match the current filters.</p>
+  <a class="btn btn-light border" href="{% url 'changelog:audit-list' %}">
+    <i class="ti ti-refresh me-1"></i>Clear filters
+  </a>
+</div>

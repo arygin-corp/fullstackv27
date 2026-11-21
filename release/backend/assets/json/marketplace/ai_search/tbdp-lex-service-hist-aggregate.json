@@ -1,0 +1,20 @@
+{
+  "adgroup": "tbdp-lex-service-hist-aggregate",
+  "slugs": [
+    "lexus-service-history-usa-aggregated"
+  ],
+  "databases": [
+    "svc_history_lexus_agg_trn_ext"
+  ],
+  "tables": [
+    "nsh_lex_agg_trn"
+  ],
+  "columns": [
+    "audit_create_date",
+    "pay_type",
+    "rdlrno",
+    "rmthyr",
+    "rtcond_agg",
+    "rthours_agg"
+  ]
+}

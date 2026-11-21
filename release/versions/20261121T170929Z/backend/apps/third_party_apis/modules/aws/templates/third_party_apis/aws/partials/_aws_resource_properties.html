@@ -1,0 +1,11 @@
+<div class="card h-100">
+  <div class="card-header"><h3 class="h5 mb-0"><i class="ti ti-list-details me-2 text-primary"></i>Resource properties</h3></div>
+  <div class="card-body">
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Service</div><div class="col-sm-8 fw-semibold">{{ resource.resource_type.service.name }}</div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Resource Type</div><div class="col-sm-8">{{ resource.resource_type.name }}</div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Lifecycle</div><div class="col-sm-8">{{ resource.get_lifecycle_status_display }}</div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Provisioning</div><div class="col-sm-8">{{ resource.get_managed_by_display }} {{ resource.infrastructure_reference }}</div></div>
+    <div class="row g-2 py-3 border-bottom"><div class="col-sm-4 text-muted">Capabilities</div><div class="col-sm-8">{{ resource.capabilities|join:", " }}</div></div>
+    <div class="row g-2 pt-3"><div class="col-sm-4 text-muted">Tags</div><div class="col-sm-8"><pre class="mb-0 text-break">{{ resource.tags }}</pre></div></div>
+  </div>
+</div>

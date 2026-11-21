@@ -1,0 +1,345 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}default_cards.html | {{ app_name }}{% endblock %}
+{% block extra_css %}
+<link href="{% static 'gdx_admin/theme/css/default_cards.css' %}?v=trend" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="ui-theme card-theme">
+    <section class="ui-section">
+        <h2>Surface</h2>
+        <div class="card-grid card-grid-3">
+            <article class="card">
+                <header class="card-head">
+                    <span class="card-mark"><i class="isax isax-box" aria-hidden="true"></i></span>
+                    <span class="ui-badge ui-badge-success">Approved</span>
+                </header>
+                <p class="card-kicker">{{ app_name }}</p>
+                <h3>Catalog record</h3>
+                <p>A published marketplace product with ownership, status, and the next action on the record.</p>
+                <footer class="card-foot">
+                    <span>Marketplace</span>
+                    <time>Nov 8</time>
+                </footer>
+            </article>
+            <article class="card">
+                <header class="card-head">
+                    <span class="card-mark"><i class="isax isax-document-text" aria-hidden="true"></i></span>
+                    <span class="ui-badge ui-badge-warning">Pending</span>
+                </header>
+                <p class="card-kicker">Intake</p>
+                <h3>Product intake</h3>
+                <p>The intake stays unpublished until it is curated and activated on the marketplace.</p>
+                <div class="card-actions">
+                    <button class="ui-btn ui-btn-sm" type="button">Open</button>
+                    <button class="ui-btn ui-btn-sm ui-btn-surface" type="button">Cancel</button>
+                </div>
+            </article>
+            <article class="card card-empty">
+                <span class="card-mark"><i class="isax isax-search-normal" aria-hidden="true"></i></span>
+                <h3>No records in this view</h3>
+                <p>Clear the filters or start a new product intake to fill this list.</p>
+                <button class="ui-btn ui-btn-sm ui-btn-surface" type="button">Clear filters</button>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Metric</h2>
+        <div class="card-grid">
+            <article class="card card-metric card-metric-up">
+                <div class="card-metric-top">
+                    <p>Products</p>
+                    <span class="card-delta card-delta-up">Trending up +4</span>
+                </div>
+                <strong>16</strong>
+                <small>Published in the catalog</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:28%"></i><i style="height:40%"></i><i style="height:46%"></i><i style="height:68%"></i><i style="height:92%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-down">
+                <div class="card-metric-top">
+                    <p>Requests</p>
+                    <span class="card-delta card-delta-down">Trending down −12%</span>
+                </div>
+                <strong>48</strong>
+                <small>Compared with the prior 14 days</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:90%"></i><i style="height:74%"></i><i style="height:62%"></i><i style="height:40%"></i><i style="height:26%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-flat">
+                <div class="card-metric-top">
+                    <p>Reviews</p>
+                    <span class="card-delta">Unchanged 0</span>
+                </div>
+                <strong>3</strong>
+                <small>Held for the Content Manager Group</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:46%"></i><i style="height:48%"></i><i style="height:44%"></i><i style="height:47%"></i><i style="height:46%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-new">
+                <div class="card-metric-top">
+                    <p>Intakes</p>
+                    <span class="card-delta card-delta-new">New</span>
+                </div>
+                <strong>8</strong>
+                <small>No prior period to compare</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:18%"></i><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:34%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-up">
+                <div class="card-metric-top">
+                    <p>Teams</p>
+                    <span class="card-delta card-delta-up">Trending up +1</span>
+                </div>
+                <strong>4</strong>
+                <small>Owning teams on the marketplace</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:32%"></i><i style="height:38%"></i><i style="height:44%"></i><i style="height:60%"></i><i style="height:78%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-down">
+                <div class="card-metric-top">
+                    <p>Access declined</p>
+                    <span class="card-delta card-delta-down">Trending down −2</span>
+                </div>
+                <strong>5</strong>
+                <small>Fewer declines than the prior view</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:82%"></i><i style="height:70%"></i><i style="height:58%"></i><i style="height:36%"></i><i style="height:24%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-flat">
+                <div class="card-metric-top">
+                    <p>Open requests</p>
+                    <span class="card-delta">Flat</span>
+                </div>
+                <strong>8</strong>
+                <small>Same count as the prior view</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:52%"></i><i style="height:50%"></i><i style="height:54%"></i><i style="height:51%"></i><i style="height:53%"></i></span>
+            </article>
+            <article class="card card-metric card-metric-up">
+                <div class="card-metric-top">
+                    <p>Published</p>
+                    <span class="card-delta card-delta-up">Trending up +6%</span>
+                </div>
+                <strong>16</strong>
+                <small>Active in the marketplace</small>
+                <span class="card-spark" aria-hidden="true"><i style="height:30%"></i><i style="height:42%"></i><i style="height:50%"></i><i style="height:66%"></i><i style="height:84%"></i></span>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Link</h2>
+        <div class="card-grid card-grid-3">
+            <a class="card card-link" href="/sa/marketplace/admin/dashboard/">
+                <p class="card-kicker">Marketplace</p>
+                <h3>Catalog</h3>
+                <p>Products, domains, and the current catalog view.</p>
+                <span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+            </a>
+            <a class="card card-link" href="/sa/command-center/">
+                <p class="card-kicker">Command Center</p>
+                <h3>Dashboard</h3>
+                <p>Platform activity for the signed-in staff view.</p>
+                <span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+            </a>
+            <a class="card card-link" href="/sa/templates/default_ui_theme.html">
+                <p class="card-kicker">Templates</p>
+                <h3>UI theme</h3>
+                <p>Buttons, status, fields, and notifications.</p>
+                <span class="card-go">Open <i class="isax isax-arrow-right-3" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Ink</h2>
+        <article class="card card-ink">
+            <div>
+                <p class="card-kicker">{{ app_name }}</p>
+                <h3>Current view</h3>
+                <p>A dark summary that uses the ink color from the color theme.</p>
+            </div>
+            <ul>
+                <li><strong>8</strong><span>Open requests</span></li>
+                <li><strong>3</strong><span>Reviews waiting</span></li>
+                <li><strong>16</strong><span>Published products</span></li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="ui-section">
+        <h2>List</h2>
+        <div class="card card-list">
+            <article>
+                <span class="card-mark card-mark-success"><i class="isax isax-box" aria-hidden="true"></i></span>
+                <div>
+                    <h3>Catalog product</h3>
+                    <p>Published in the marketplace</p>
+                </div>
+                <span class="ui-badge ui-badge-success">Approved</span>
+                <time>Nov 8</time>
+            </article>
+            <article>
+                <span class="card-mark card-mark-warning"><i class="isax isax-document-text" aria-hidden="true"></i></span>
+                <div>
+                    <h3>Product intake</h3>
+                    <p>Submitted and waiting for review</p>
+                </div>
+                <span class="ui-badge ui-badge-warning">Pending</span>
+                <time>Nov 8</time>
+            </article>
+            <article>
+                <span class="card-mark card-mark-info"><i class="isax isax-message-text" aria-hidden="true"></i></span>
+                <div>
+                    <h3>Product review</h3>
+                    <p>Waiting for the Content Manager Group</p>
+                </div>
+                <span class="ui-badge ui-badge-info">Open</span>
+                <time>Nov 3</time>
+            </article>
+            <article>
+                <span class="card-mark card-mark-danger"><i class="isax isax-close-circle" aria-hidden="true"></i></span>
+                <div>
+                    <h3>Access request</h3>
+                    <p>The owning team declined this request</p>
+                </div>
+                <span class="ui-badge ui-badge-danger">Rejected</span>
+                <time>Nov 3</time>
+            </article>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Form</h2>
+        <form class="card card-form" action="#" method="get" onsubmit="return false;">
+            <header class="card-head">
+                <div>
+                    <p class="card-kicker">Record</p>
+                    <h3>Edit intake</h3>
+                </div>
+                <span class="ui-badge ui-badge-warning">Pending</span>
+            </header>
+            <div class="card-form-grid">
+                <label class="ui-field">
+                    <span>Name</span>
+                    <input class="ui-input" type="text" name="name" value="Product intake">
+                </label>
+                <label class="ui-field">
+                    <span>Status</span>
+                    <select class="ui-select" name="status">
+                        <option>Pending</option>
+                        <option>Approved</option>
+                        <option>Rejected</option>
+                    </select>
+                </label>
+                <label class="ui-field card-form-wide">
+                    <span>Note</span>
+                    <textarea class="ui-textarea" name="note">Review the intake and take the next action.</textarea>
+                </label>
+            </div>
+            <div class="card-actions">
+                <button class="ui-btn ui-btn-sm" type="submit">Save</button>
+                <button class="ui-btn ui-btn-sm ui-btn-surface" type="button">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="ui-section">
+        <h2>Table</h2>
+        <div class="card card-table">
+            <header class="card-head">
+                <div>
+                    <p class="card-kicker">Current view</p>
+                    <h3>Marketplace records</h3>
+                </div>
+                <span class="ui-badge">4 rows</span>
+            </header>
+            <table class="ui-table">
+                <thead>
+                    <tr>
+                        <th>Record</th>
+                        <th>Status</th>
+                        <th>Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Catalog product</td>
+                        <td><span class="ui-badge ui-badge-success">Approved</span></td>
+                        <td>Nov 8</td>
+                    </tr>
+                    <tr>
+                        <td>Product intake</td>
+                        <td><span class="ui-badge ui-badge-warning">Pending</span></td>
+                        <td>Nov 8</td>
+                    </tr>
+                    <tr>
+                        <td>Product review</td>
+                        <td><span class="ui-badge ui-badge-info">Open</span></td>
+                        <td>Nov 3</td>
+                    </tr>
+                    <tr>
+                        <td>Access request</td>
+                        <td><span class="ui-badge ui-badge-danger">Rejected</span></td>
+                        <td>Nov 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="ui-section">
+        <h2>Chart</h2>
+        <article class="card card-chart">
+            <header class="card-head">
+                <div>
+                    <p class="card-kicker">Last 14 days</p>
+                    <h3>Requests</h3>
+                </div>
+                <span class="card-delta card-delta-up">+12%</span>
+            </header>
+            <div class="card-chart-plot" aria-hidden="true">
+                <span style="--h:42%"><i></i><small>1</small></span>
+                <span style="--h:55%"><i></i><small>2</small></span>
+                <span style="--h:38%"><i></i><small>3</small></span>
+                <span style="--h:62%"><i></i><small>4</small></span>
+                <span style="--h:48%"><i></i><small>5</small></span>
+                <span style="--h:70%"><i></i><small>6</small></span>
+                <span style="--h:64%"><i></i><small>7</small></span>
+                <span style="--h:80%"><i></i><small>8</small></span>
+                <span style="--h:58%"><i></i><small>9</small></span>
+                <span style="--h:74%"><i></i><small>10</small></span>
+                <span style="--h:66%"><i></i><small>11</small></span>
+                <span style="--h:86%"><i></i><small>12</small></span>
+                <span style="--h:72%"><i></i><small>13</small></span>
+                <span style="--h:92%"><i></i><small>14</small></span>
+            </div>
+        </article>
+    </section>
+
+    <section class="ui-section">
+        <h2>Person</h2>
+        <div class="card-grid card-grid-3">
+            <article class="card card-person">
+                <span class="card-avatar" aria-hidden="true">CO</span>
+                <div>
+                    <h3>Catalog owner</h3>
+                    <p>Marketplace</p>
+                </div>
+                <span class="ui-badge ui-badge-success">Active</span>
+            </article>
+            <article class="card card-person">
+                <span class="card-avatar" aria-hidden="true">CM</span>
+                <div>
+                    <h3>Content manager</h3>
+                    <p>Reviews</p>
+                </div>
+                <span class="ui-badge ui-badge-info">Open</span>
+            </article>
+            <article class="card card-person">
+                <span class="card-avatar" aria-hidden="true">TM</span>
+                <div>
+                    <h3>Team member</h3>
+                    <p>Access</p>
+                </div>
+                <span class="ui-badge">Member</span>
+            </article>
+        </div>
+    </section>
+</div>
+{% endblock %}

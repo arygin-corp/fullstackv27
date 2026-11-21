@@ -1,0 +1,6 @@
+---
+tests:
+  timeout: 20m
+  downstream_tests: []
+  downstream_architecture_tests:
+    - ace-aws-blueprint-ses

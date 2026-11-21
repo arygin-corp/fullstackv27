@@ -31,7 +31,8 @@ def render_form(request, slug):
             context={"source": "django-renderer"},
         )
         return redirect(reverse("dar-admin:form-success", kwargs={"slug": slug, "submission_id": submission.pk}))
-    return render(request, "forms/render_form.html", {
+    template = "gdx_admin/pages/dar/forms/render_form.html" if request.path.startswith("/sa/") else "forms/render_form.html"
+    return render(request, template, {
         "definition": definition,
         "dynamic_form": dynamic_form,
         "schema": export_schema(definition),
@@ -42,4 +43,5 @@ def render_form(request, slug):
 def form_success(request, slug, submission_id):
     definition = get_object_or_404(FormDefinition, slug=slug, is_active=True)
     submission = get_object_or_404(definition.submissions, pk=submission_id, submitted_by=request.user)
-    return render(request, "forms/submission_success.html", {"definition": definition, "submission": submission})
+    template = "gdx_admin/pages/dar/forms/submission_success.html" if request.path.startswith("/sa/") else "forms/submission_success.html"
+    return render(request, template, {"definition": definition, "submission": submission})

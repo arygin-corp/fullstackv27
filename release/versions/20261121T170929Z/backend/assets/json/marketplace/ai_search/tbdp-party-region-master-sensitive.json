@@ -1,0 +1,49 @@
+{
+  "adgroup": "tbdp-party-region-master-sensitive",
+  "slugs": [
+    "corporate-and-dealership-region-master"
+  ],
+  "databases": [
+    "ircm_trn"
+  ],
+  "tables": [
+    "map_no_of_door",
+    "map_region",
+    "map_vehicle_model_change_category",
+    "region"
+  ],
+  "columns": [
+    "audit_create_date",
+    "create_src",
+    "data_set_id",
+    "effective_dt",
+    "end_dt",
+    "irm_no_of_door",
+    "irm_region_abbr",
+    "irm_region_long_nm",
+    "irm_region_nm",
+    "irm_veh_model_change_ctgry_cd",
+    "pasa_region_code",
+    "raw_data_set_row_id",
+    "region_abbr_cd",
+    "region_area_cd",
+    "region_area_nm",
+    "region_char_cd",
+    "region_coast_cd",
+    "region_id",
+    "region_location_abbr_cd",
+    "region_location_nm",
+    "region_long_nm",
+    "region_sales_division_cd",
+    "region_type_cd",
+    "region_vdc_logical_cd",
+    "sales_geog_type_cd",
+    "source_no_of_door",
+    "source_region_nm",
+    "source_veh_model_change_ctgry_cd",
+    "tom_distributor_cd",
+    "toms_division_cd",
+    "toms_division_nm",
+    "toms_region_type_cd"
+  ]
+}

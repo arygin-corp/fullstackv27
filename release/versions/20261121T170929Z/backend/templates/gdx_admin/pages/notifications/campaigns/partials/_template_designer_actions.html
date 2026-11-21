@@ -1,0 +1,8 @@
+<div class="designer-toolbar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+	
+	<div class="d-flex gap-2">
+		<a class="btn btn-light border" href="{% url 'notifications:template_manager' %}">Cancel</a>
+		<button class="btn btn-outline-primary" form="templateBuilderForm" name="save_mode" value="draft">Save draft</button>
+		<button class="btn btn-primary" form="templateBuilderForm" name="save_mode" value="activate">Save and activate</button>
+	</div>
+</div>

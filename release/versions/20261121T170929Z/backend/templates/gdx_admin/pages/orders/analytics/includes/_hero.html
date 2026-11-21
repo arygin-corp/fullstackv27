@@ -1,0 +1,44 @@
+<div class="card bg-primary-gradient-200 border-0 overflow-hidden mb-4">
+	<div class="card-body p-4 p-lg-5">
+		<div class="d-flex flex-wrap align-items-center justify-content-between gap-4">
+			<div class="d-flex align-items-center gap-3">
+				<span class="avatar avatar-xl rounded-circle bg-white bg-opacity-10 text-white">
+					<i class="ti ti-chart-line fs-2"></i>
+				</span>
+				<div>
+					<span class="badge bg-white bg-opacity-10 text-white mb-2"> ORDER ANALYTICS </span>
+					<h1 class="text-white mb-2"> Analytics & Reporting </h1>
+					<p class="text-white opacity-75 mb-0"> 
+                        Analyze order volume, RITM lifecycle trends, assignment groups, fulfillment times, products, and synchronization health. 
+                    </p>
+				</div>
+			</div>
+			<div class="row g-3 text-center">
+				<div class="col-auto">
+					<div class="px-3 py-2 rounded bg-white bg-opacity-10" style="width: 86px;">
+						<div class="text-white fw-semibold">
+							{{ stats.0.value|default:"0" }}
+						</div>
+						<small class="text-white opacity-75"> Requests </small>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="px-3 py-2 rounded bg-white bg-opacity-10">
+						<div class="text-white fw-semibold">
+							{{ stats.1.value|default:"0" }}
+						</div>
+						<small class="text-white opacity-75"> Orders </small>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="px-3 py-2 rounded bg-white bg-opacity-10">
+						<div class="text-white fw-semibold">
+							{{ stats.2.value|default:"0" }}
+						</div>
+						<small class="text-white opacity-75"> Tasks </small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

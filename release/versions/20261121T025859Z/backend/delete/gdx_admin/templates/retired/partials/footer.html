@@ -1,0 +1,19 @@
+{% load static %}
+<div class="footer d-sm-flex align-items-center justify-content-between bg-white py-2 px-4">
+    <!-- <p class="text-dark mb-0">
+        <strong>© 2026 All Rights Reserved.</strong> Toyota Motors North America.
+    </p>
+    <p class="text-dark">
+        <a class="link-primary" href="javascript:void(0);">Data Marketplace Team</a> | Version: {{ app_version }}
+    </p> -->
+    <div class="col-sm-6">
+        <small>©
+            <script>document.write(new Date().getFullYear())</script> {{ footer_text }}
+        </small>
+    </div>
+    <div class="col-sm-6">
+        <div class="text-sm-end d-none d-sm-block">
+            <small>Version: {{ app_version }}</p></small>
+        </div>
+     </div>
+</div>

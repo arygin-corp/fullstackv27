@@ -75,7 +75,7 @@ def dashboard(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "dashboard.html"
         ),
@@ -109,7 +109,7 @@ def analytics(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "analytics.html"
         ),
@@ -126,7 +126,7 @@ def reports(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "reports.html"
         ),
@@ -149,7 +149,7 @@ def configuration(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "configuration.html"
         ),
@@ -175,7 +175,7 @@ def activity(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "activity.html"
         ),
@@ -201,7 +201,7 @@ def audit_list(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "audit/"
             "list.html"
@@ -260,7 +260,7 @@ def health(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "health.html"
         ),
@@ -279,7 +279,7 @@ def dependencies(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "dependencies.html"
         ),
@@ -298,7 +298,7 @@ def documentation_index(request):
     return render(
         request,
         (
-            "gdx_admin/apps/"
+            "gdx_admin/pages/"
             "third_party_apis/"
             "documentation_index.html"
         ),
@@ -468,7 +468,7 @@ def _render_module_page(request, module_key, page_key):
     logs = _module_logs(row)
     return render(
         request,
-        "gdx_admin/apps/third_party_apis/module_page.html",
+        "gdx_admin/pages/third_party_apis/module_page.html",
         {
             "module": record,
             "page_key": page_key,

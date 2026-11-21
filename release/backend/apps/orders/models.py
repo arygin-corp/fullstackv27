@@ -88,6 +88,28 @@ class Task(models.Model):
         return self.number
 
 
+class UserActivity(models.Model):
+    """A frontend action captured for the signed-in marketplace account."""
+
+    object_id = models.CharField(max_length=255, blank=True, db_index=True)
+    email = models.EmailField(blank=True)
+    action = models.CharField(max_length=40, db_index=True)
+    title = models.CharField(max_length=255)
+    detail = models.CharField(max_length=255, blank=True)
+    reference = models.CharField(max_length=255, blank=True)
+    payload = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ("-created_at", "-id")
+        indexes = [
+            models.Index(fields=("object_id", "-created_at"), name="ord_activity_person_idx"),
+        ]
+
+    def __str__(self):
+        return f"{self.action} {self.detail}"
+
+
 class SyncCursor(models.Model):
     name = models.CharField(max_length=100, unique=True)
     watermark = models.DateTimeField(null=True, blank=True)

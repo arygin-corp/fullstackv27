@@ -5,8 +5,15 @@ from dotenv import load_dotenv
 
 from .base import *
 
-# Load backend/.env for localhost development
+# .env.local overrides the hosted .env so localhost uses the local database.
 load_dotenv(BASE_DIR / ".env")
+load_dotenv(BASE_DIR / ".env.local", override=True)
+
+# The SPA signs in with this tenant and client. Local chat validates that id
+# token. The .env copies of these values are not a usable JWT audience.
+ENTRA_API_TENANT_ID = "b7be26fb-0007-4e34-9f39-088aa7bc74b0"
+ENTRA_API_CLIENT_ID = "e469e37c-6300-4d6b-866a-501dc2b2edfe"
+ENTRA_API_AUDIENCE = ENTRA_API_CLIENT_ID
 
 APP_ENV = "local"
 DEBUG = True
@@ -40,7 +47,7 @@ DATABASES = {
         "DISABLE_SERVER_SIDE_CURSORS": True,
         "CONN_MAX_AGE": 0,
         "OPTIONS": {
-            "sslmode": "require",
+            "sslmode": os.getenv("DB_SSLMODE", "disable"),
         },
     }
 }

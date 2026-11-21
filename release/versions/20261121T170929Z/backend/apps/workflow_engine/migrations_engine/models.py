@@ -1,0 +1,8 @@
+from django.conf import settings
+from django.db import models
+from ..models import TimeStampedModel,WorkflowDefinition,WorkflowInstance
+class WorkflowMigrationPlan(TimeStampedModel):
+ source=models.ForeignKey(WorkflowDefinition,related_name='outbound_migration_plans',on_delete=models.PROTECT);target=models.ForeignKey(WorkflowDefinition,related_name='inbound_migration_plans',on_delete=models.PROTECT);name=models.CharField(max_length=180);state_mapping=models.JSONField(default=dict);context_transforms=models.JSONField(default=list);status=models.CharField(max_length=30,default='draft');created_by=models.ForeignKey(settings.AUTH_USER_MODEL,null=True,on_delete=models.SET_NULL);validated_at=models.DateTimeField(null=True,blank=True)
+class InstanceMigration(TimeStampedModel):
+ plan=models.ForeignKey(WorkflowMigrationPlan,related_name='instance_migrations',on_delete=models.PROTECT);instance=models.ForeignKey(WorkflowInstance,related_name='migrations',on_delete=models.PROTECT);source_state_key=models.CharField(max_length=100);target_state_key=models.CharField(max_length=100,blank=True);status=models.CharField(max_length=30,default='pending');snapshot=models.JSONField(default=dict);error=models.TextField(blank=True);migrated_at=models.DateTimeField(null=True,blank=True)
+class MigrationBatch(TimeStampedModel):plan=models.ForeignKey(WorkflowMigrationPlan,related_name='batches',on_delete=models.CASCADE);status=models.CharField(max_length=30,default='pending');selection=models.JSONField(default=dict);total=models.PositiveIntegerField(default=0);succeeded=models.PositiveIntegerField(default=0);failed=models.PositiveIntegerField(default=0)

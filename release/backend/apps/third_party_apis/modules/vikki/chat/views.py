@@ -123,6 +123,13 @@ def _chat_turn(request):
 class StreamingChatView(APIView):
     authentication_classes = [EntraAccessTokenAuthentication]
     permission_classes = [IsAuthenticated]
+
+    def perform_content_negotiation(self, request, force=False):
+        accept = request.META.get("HTTP_ACCEPT", "")
+        if "text/event-stream" in accept:
+            return (None, "text/event-stream")
+        return super().perform_content_negotiation(request, force=force)
+
     def post(self, request):
         from apps.knowledge.vikki import close_vikki_turn, open_vikki_turn
         turn_input = _chat_turn(request)
@@ -134,16 +141,23 @@ class StreamingChatView(APIView):
             try:
                 yield _sse({"type": "status", "status": "searching"})
                 yield _sse({"type": "conversation", "conversation_id": conversation.id})
-                turn = open_vikki_turn(request.user, question, session, conversation, history)
-                if turn["done"]:
-                    payload = turn["payload"]
+                try:
+                    turn = open_vikki_turn(request.user, question, session, conversation, history)
+                    if turn["done"]:
+                        payload = turn["payload"]
+                        yield _sse({"type": "token", "token": payload.get("answer") or ""})
+                    else:
+                        yield _sse({"type": "status", "status": "answering"})
+                        for token in turn["provider"].stream(turn["messages"]):
+                            pieces.append(token)
+                            yield _sse({"type": "token", "token": token})
+                        payload = close_vikki_turn(turn, "".join(pieces))
+                except Exception:
+                    from apps.knowledge.vikki import catalog_reply
+                    payload = catalog_reply(question, request.data.get("page_context") or {}, request.user)
                     yield _sse({"type": "token", "token": payload.get("answer") or ""})
-                else:
-                    yield _sse({"type": "status", "status": "answering"})
-                    for token in turn["provider"].stream(turn["messages"]):
-                        pieces.append(token)
-                        yield _sse({"type": "token", "token": token})
-                    payload = close_vikki_turn(turn, "".join(pieces))
+                from apps.knowledge.vikki import without_current_product
+                payload = without_current_product(payload, request.data.get("page_context") or {})
                 Message.objects.create(conversation=conversation, role=Message.Role.ASSISTANT, content=payload.get("answer") or "".join(pieces), citations=payload.get("citations") or [])
                 conversation.save(update_fields=["updated_at"])
                 yield _sse({"type": "citations", "citations": payload.get("citations") or []})
@@ -428,7 +442,13 @@ class VikkiChatView(APIView):
         if turn is None:
             return Response({"detail":"question is required"},status=400)
         question, conversation, history, session = turn
-        payload=answer_vikki(request.user,question,session,conversation=conversation,history=history)
+        try:
+            payload=answer_vikki(request.user,question,session,conversation=conversation,history=history)
+        except Exception:
+            from apps.knowledge.vikki import catalog_reply
+            payload=catalog_reply(question, request.data.get("page_context") or {}, request.user)
+        from apps.knowledge.vikki import without_current_product
+        payload = without_current_product(payload, request.data.get("page_context") or {})
         Message.objects.create(conversation=conversation, role=Message.Role.ASSISTANT, content=payload["answer"], citations=payload["citations"])
         conversation.save(update_fields=["updated_at"])
         payload["conversation_id"]=conversation.id
@@ -551,7 +571,8 @@ class VikkiFeedbackView(APIView):
         if rating not in {VikkiFeedback.Rating.POSITIVE,VikkiFeedback.Rating.NEGATIVE}:
             return Response({"detail":"type must be positive or negative"},status=400)
         product=None; product_id=request.data.get("productId")
-        if product_id: product=get_object_or_404(MarketplaceProduct,owner=request.user,pk=product_id)
+        if product_id:
+            product=MarketplaceProduct.objects.filter(owner=request.user,pk=product_id).first()
         query=str(request.data.get("lastQuery","") or "")[:10000]
         answer=str(request.data.get("lastAnswer","") or "")[:20000]
         correction=str(request.data.get("userCorrection","") or "")[:10000]

@@ -18196,6 +18196,1074 @@
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "block_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "block_code_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmbloc",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "color_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "color_ruibetu"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "commit_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcolr",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "assy_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "component_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "component_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "group_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcomp",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "approval_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "approval_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "component_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "create_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "ctrl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "design_staff_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "equipment_form"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "group_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "option_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmcont",
+      "column_name": "variation_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "approved_drawing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "draw_create"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "drawing_size"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "kind_of_drawing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "maintenance_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "mark"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "minor"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "parent_drawing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmdraw",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "data_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "family_source"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "family_status"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "family_type"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmfam",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "group_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "group_no_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmgrou",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "body"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "ctrl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "destination_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "engine"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "grade"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "transmission"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmkata",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "drawing_source"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "drawing_source2d"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "drawing_source3d"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "drawing_status"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "drawing_type"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "material"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "minor"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "thickness"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmminr",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "comment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "comment_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmparc",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "create_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "design_staff_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "part_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmpart",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "manufacturer"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "prod_comment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "prod_comment_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmproc",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
       "elementname": "gsmrlog",
       "column_name": "audit_create_date"
     },
@@ -18263,6 +19331,936 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "gsmrlog",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "ctrl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "detail_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "or_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "order_by_set"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "set_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "set_option"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "vsi_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmset",
+      "column_name": "vsi_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "detail_code_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "detail_code_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "item_code_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "item_code_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "order_mark"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "spec_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspcd",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "ctrl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "detail_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "equipment_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "equipment_form"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "vsi_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmspec",
+      "column_name": "vsi_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "child_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "comment"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "comment_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "group_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "location_of_use"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "manufacturer"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "parent_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstcc",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "child_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "create_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "group_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "location_of_use"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "manufacturer"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "parent_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "parent_routing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "prod_comment_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "purchasing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "routing"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "routing_check"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "routing_class"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "routing_quantity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "rtn_eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "rtn_eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "rtn_term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "rtn_term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "selection"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "str_eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "str_eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "str_term_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "str_term_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "time_control_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "time_control_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmstrc",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "data_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "design_staff_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "eci_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "engineer_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "fax_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "phone_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "plural_vsi_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "registration_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmteci",
+      "column_name": "vsi_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "data_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "eci_no_from"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "eci_no_to"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "location_of_use"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmtmds",
+      "column_name": "main_design_staff"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "component_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "group_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "userid"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "variation_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmvari",
+      "column_name": "variation_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "checksum"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "condition"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "data_load_ts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "data_src_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "date_time"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "minor"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "net_weight"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
+      "column_name": "standard_weight"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "gsmweit",
       "column_name": "userid"
     },
     {
@@ -27796,6 +29794,342 @@
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "ac"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "app_pc_spec"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "app_spec_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "app_spec_code5"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "business_entity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "ck_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "cntl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "combi_pc_specs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "combi_specs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "combi_specs5"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "comp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "eff_content_lo_end"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "eff_content_lo_start"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "family"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "group_a"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "hs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "index_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "loaded_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "new_combi_pc_specs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "new_combi_specs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "new_combi_specs5"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "psms_company_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "serial_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "sp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_content_specs",
+      "column_name": "variation"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "business_entity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "combi_spec5"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "comp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "eff_content_lo_end"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "eff_content_lo_start"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "family"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "group_a"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "hs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "loaded_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "new_combi_specs5"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "orderable"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "plant_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "psms_company_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "sales_dist_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "sales_distributor_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "sales_model_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "sales_spec"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "serial_no"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "sk_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "nqc360_sales_spec",
+      "column_name": "variation"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
       "elementname": "nqc_view",
       "column_name": "audit_create_date"
     },
@@ -32051,7 +34385,19 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "parts_packaging_dimensions",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "parts_packaging_dimensions",
       "column_name": "l"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "parts_packaging_dimensions",
+      "column_name": "milestone"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -32088,6 +34434,12 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "parts_packaging_dimensions",
       "column_name": "pkg_weight_kg"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "parts_packaging_dimensions",
+      "column_name": "project_code"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -33360,6 +35712,84 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "plnt_hldy",
       "column_name": "wrk_patn_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "business_entity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "created_at"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "family"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "file_name"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "hs"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "hs_end"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "hs_start"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "incr_ingest_timestamp"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "psms_config",
+      "column_name": "updated_at"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -63563,6 +65993,12 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_view",
+      "column_name": "aet_event_description"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
       "column_name": "analyst"
     },
     {
@@ -63623,6 +66059,12 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_view",
+      "column_name": "create_month_prtn"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
       "column_name": "created_datetime"
     },
     {
@@ -63642,6 +66084,24 @@
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_view",
       "column_name": "eta"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
+      "column_name": "exception_code"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
+      "column_name": "exception_comments"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
+      "column_name": "exception_description"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -64475,6 +66935,12 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "parts_mfgparts_trn_ext",
       "elementname": "xtab_phd_view",
+      "column_name": "order_release_dt"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "parts_mfgparts_trn_ext",
+      "elementname": "xtab_phd_view",
       "column_name": "orderid"
     },
     {
@@ -64835,6 +67301,18 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "core_id"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "core_key"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "cost_per_vehicle"
     },
     {
@@ -64854,6 +67332,18 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "destination"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "drivetrain"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "engine"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -64901,6 +67391,12 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "ic_icn_parts"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "in_house_lvc_qualified"
     },
     {
@@ -64919,13 +67415,37 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "key_vnm_case"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "key_vnm_per_part"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "lvc_extended_purchase_cost"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "lvc_qualified"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "na_battery_flag"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -64956,6 +67476,12 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "part_qualification"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -65015,6 +67541,24 @@
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "total_key_vnm_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "total_vnm_per_unit"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "transmission"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
       "column_name": "vehicle_name"
     },
     {
@@ -65046,6 +67590,12 @@
       "dbname": "usmca_ing",
       "elementname": "manufacturing_actual_volume_fact",
       "column_name": "vnm_per_vehicle_key_part"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "usmca_ing",
+      "elementname": "manufacturing_actual_volume_fact",
+      "column_name": "vnm_percent"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
@@ -65380,6 +67930,78 @@
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",
       "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "approvalcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "dunweight"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "hazmat"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "lidcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "palletcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "part10"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "partdescription"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "partweight"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "pkgcode"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "pkglotquantity"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "allnamcparts10",
+      "column_name": "psd"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
       "elementname": "auth",
       "column_name": "audit_create_date"
     },
@@ -65412,6 +68034,12 @@
       "dbname": "vpacs_parts_mfgparts_ing",
       "elementname": "auth",
       "column_name": "qty"
+    },
+    {
+      "userrolename": "tbdp-parts-directparts-manufacturing",
+      "dbname": "vpacs_parts_mfgparts_ing",
+      "elementname": "auth",
+      "column_name": "reason"
     },
     {
       "userrolename": "tbdp-parts-directparts-manufacturing",

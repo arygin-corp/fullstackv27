@@ -1,0 +1,1 @@
+<!doctype html><html><head><link rel="stylesheet" href="/static/notifications/app.css"></head><body><h1>Notifications</h1>{% for n in notifications %}<article><h2>{{ n.title }}</h2><p>{{ n.body }}</p></article>{% empty %}<p>No notifications.</p>{% endfor %}</body></html>

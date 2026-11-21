@@ -1,0 +1,6 @@
+{% if record.status == "archived" %}
+<form method="post" action="{% url 'marketplace:product-unarchive' record.pk %}" class="d-inline">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-light">Unarchive</button>
+</form>
+{% endif %}

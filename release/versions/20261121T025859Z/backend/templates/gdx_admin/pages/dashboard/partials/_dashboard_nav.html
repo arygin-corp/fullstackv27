@@ -1,0 +1,23 @@
+<nav class="dash-nav" aria-label="Theme dashboards">
+    <div class="dash-nav__row">
+        <a class="dash-nav__link{% if dashboard_slug == 'executive' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'executive' %}">Executive</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'saas' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'saas' %}">SaaS</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'ecommerce' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'ecommerce' %}">eCommerce</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'crm' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'crm' %}">CRM</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'analytics' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'analytics' %}">Analytics</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'finance' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'finance' %}">Finance</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'projects' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'projects' %}">Projects</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'marketing' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'marketing' %}">Marketing</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'hr' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'hr' %}">HR</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'support' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'support' %}">Support</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'logistics' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'logistics' %}">Logistics</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'inventory' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'inventory' %}">Inventory</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'erp' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'erp' %}">ERP</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'energy' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'energy' %}">Energy</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'construction' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'construction' %}">Construction</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'hospital' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'hospital' %}">Hospital</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'education' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'education' %}">Education</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'real-estate' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'real-estate' %}">Real Estate</a>
+        <a class="dash-nav__link{% if dashboard_slug == 'ai' %} is-current{% endif %}" href="{% url 'theme_pages:dashboard' 'ai' %}">AI</a>
+    </div>
+</nav>

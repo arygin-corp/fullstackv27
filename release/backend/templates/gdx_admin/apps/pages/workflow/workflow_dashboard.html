@@ -1,1 +1,0 @@
-{% extends "gdx_admin/base.html" %}{% block title %}Workflow{% endblock %}{% block content %}{% include "gdx_admin/apps/pages/workflow/includes/hero.html" %}{% for task in tasks %}<a class="list-group-item" href="{% url 'pages_admin:task-detail' task.pk %}">{{ task.page.title }} · {{ task.assigned_group_name }}</a>{% empty %}<p>No tasks.</p>{% endfor %}{% endblock %}

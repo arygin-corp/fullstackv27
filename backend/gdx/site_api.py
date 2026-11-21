@@ -77,7 +77,7 @@ def roadmap(request):
 
     page = RoadmapPage.objects.filter(is_active=True).order_by("id").first()
     rows = RoadmapMilestone.objects.filter(is_active=True).order_by(
-        "fiscal_start_year", "quarter", "month_index", "position", "id"
+        "-fiscal_start_year", "quarter", "month_index", "position", "id"
     )
     years = []
     current = None

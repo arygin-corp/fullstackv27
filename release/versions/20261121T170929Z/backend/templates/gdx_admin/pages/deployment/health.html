@@ -1,0 +1,23 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Deployment Health{% endblock %}
+{% load static %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}{% endblock %}
+{% block content %}
+<main class="module-page">
+{% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
+<section class="deploy-panel">
+    <table class="deploy-table">
+        <thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+        <tbody>
+        {% for item in report.checks %}
+        <tr>
+            <td>{{ item.label }}</td>
+            <td>{% if item.ok %}<span class="deploy-ok">Ready</span>{% else %}<span class="deploy-bad">Missing</span>{% endif %}</td>
+            <td>{{ item.detail }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+{% endblock %}

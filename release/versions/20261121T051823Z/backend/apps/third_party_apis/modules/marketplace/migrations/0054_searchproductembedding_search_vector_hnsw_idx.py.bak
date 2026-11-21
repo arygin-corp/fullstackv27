@@ -1,0 +1,35 @@
+from django.db import migrations
+from pgvector.django import HnswIndex, VectorField
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ("marketplace", "0053_searchproductembedding_search_vector_hnsw_idx"),
+    ]
+
+    operations = [
+        migrations.RemoveField(
+            model_name="searchproductembedding",
+            name="search_vector",
+        ),
+        migrations.AddField(
+            model_name="searchproductembedding",
+            name="search_vector",
+            field=VectorField(
+                dimensions=384,
+                null=True,
+                blank=True,
+            ),
+        ),
+        migrations.AddIndex(
+            model_name="searchproductembedding",
+            index=HnswIndex(
+                fields=["search_vector"],
+                name="search_vector_hnsw_idx",
+                opclasses=["vector_cosine_ops"],
+                m=16,
+                ef_construction=64,
+            ),
+        ),
+    ]

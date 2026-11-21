@@ -1,0 +1,5 @@
+from django.db import models
+from ..models import TimeStampedModel
+class AnomalyDetectionRule(TimeStampedModel):metric=models.CharField(max_length=180);method=models.CharField(max_length=60,default='zscore');configuration=models.JSONField(default=dict);enabled=models.BooleanField(default=True)
+class DetectedAnomaly(TimeStampedModel):rule=models.ForeignKey(AnomalyDetectionRule,related_name='anomalies',on_delete=models.PROTECT);observed=models.DecimalField(max_digits=20,decimal_places=6);expected=models.JSONField(default=dict);severity=models.CharField(max_length=30);evidence=models.JSONField(default=dict);status=models.CharField(max_length=30,default='open')
+class IncidentCorrelation(TimeStampedModel):correlation_key=models.CharField(max_length=180,db_index=True);anomalies=models.ManyToManyField(DetectedAnomaly,related_name='correlations');summary=models.CharField(max_length=255);probable_cause=models.JSONField(default=dict);confidence=models.DecimalField(max_digits=5,decimal_places=4,null=True)

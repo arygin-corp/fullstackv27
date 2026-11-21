@@ -1,6 +1,0 @@
-<div class="row g-3 mb-4">
-  {% include "gdx_admin/apps/changelog/partials/_metric_card.html" with label="Total releases" value=metrics.total_releases icon="ti ti-versions" help_text="All changelog records" %}
-  {% include "gdx_admin/apps/changelog/partials/_metric_card.html" with label="Published" value=metrics.published_releases icon="ti ti-circle-check" icon_class="bg-success-subtle text-success" help_text="Publicly available" help_class="text-success" %}
-  {% include "gdx_admin/apps/changelog/partials/_metric_card.html" with label="Scheduled" value=metrics.scheduled_releases icon="ti ti-calendar-time" icon_class="bg-warning-subtle text-warning" help_text="Awaiting publication" help_class="text-warning" %}
-  {% include "gdx_admin/apps/changelog/partials/_metric_card.html" with label="Content sections" value=metrics.section_count icon="ti ti-layout-list" icon_class="bg-info-subtle text-info" help_text="Structured release content" help_class="text-info" %}
-</div>

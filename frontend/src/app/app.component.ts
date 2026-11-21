@@ -18,6 +18,7 @@ import { CartService } from './@shared/services/cart.service';
 import { CompareService } from './@shared/services/compare.service';
 import { FavoritesService } from './@shared/services/favorites.service';
 import { HttpClient } from '@angular/common/http';
+import { MaintenanceService } from './@pages/maintenance/maintenance.service';
 
 const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me?$select=id,displayName,givenName,surname,jobTitle,userPrincipalName,mail,businessPhones,officeLocation,employeeId,department,companyName,streetAddress,city,state,postalCode,country,extension_f9db8ce126544afb895293c1adb4b749_extensionAttribute3';
 
@@ -51,7 +52,8 @@ export class AppComponent implements OnInit {
     private changeDetect: ChangeDetectorRef,
     translateService: TranslateService,
     public versionCheckService: VersionCheckService,
-    private deviceService: DeviceDetectorService
+    private deviceService: DeviceDetectorService,
+    public maintenance: MaintenanceService
   ) {
     this.epicFunction();
     this.versionCheckService.startVersionChecking('./version.json');
@@ -147,8 +149,18 @@ export class AppComponent implements OnInit {
       }
     });
     this.changeDetect.detectChanges();
-    this.processAccountLogin();
-    this.getProfile();
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        await this.maintenance.check().toPromise();
+      } catch (err) {
+        // A status outage leaves the marketplace available.
+      }
+      this.maintenance.watch();
+    }
+    if (!this.maintenance.active && window.location.pathname !== '/maintenance') {
+      this.processAccountLogin();
+      this.getProfile();
+    }
   } 
   
   getProfile() {

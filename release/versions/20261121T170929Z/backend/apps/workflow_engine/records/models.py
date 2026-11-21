@@ -1,0 +1,8 @@
+from django.conf import settings
+from django.db import models
+from ..models import TimeStampedModel,WorkflowInstance
+from ..platform_models import Tenant
+class RetentionPolicy(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=160);record_type=models.CharField(max_length=80);retain_days=models.PositiveIntegerField();archive_after_days=models.PositiveIntegerField(null=True,blank=True);delete_after_days=models.PositiveIntegerField(null=True,blank=True);active=models.BooleanField(default=True)
+class ArchivedInstance(models.Model):tenant=models.ForeignKey(Tenant,on_delete=models.PROTECT);original_id=models.CharField(max_length=100);workflow_key=models.CharField(max_length=100);snapshot=models.JSONField(default=dict);archive_hash=models.CharField(max_length=64);archived_at=models.DateTimeField(auto_now_add=True);restored_at=models.DateTimeField(null=True,blank=True)
+class LegalHold(TimeStampedModel):tenant=models.ForeignKey(Tenant,on_delete=models.CASCADE);name=models.CharField(max_length=180);reason=models.TextField();active=models.BooleanField(default=True);instances=models.ManyToManyField(WorkflowInstance,related_name='legal_holds');created_by=models.ForeignKey(settings.AUTH_USER_MODEL,null=True,on_delete=models.SET_NULL)
+class DestructionCertificate(models.Model):tenant=models.ForeignKey(Tenant,on_delete=models.PROTECT);record_type=models.CharField(max_length=80);record_identifier=models.CharField(max_length=160);reason=models.TextField();destroyed_at=models.DateTimeField(auto_now_add=True);destroyed_by=models.ForeignKey(settings.AUTH_USER_MODEL,null=True,on_delete=models.SET_NULL);evidence_hash=models.CharField(max_length=64)

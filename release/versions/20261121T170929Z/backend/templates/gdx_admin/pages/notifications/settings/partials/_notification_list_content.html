@@ -1,0 +1,96 @@
+{% load web_tags %}
+<style>
+.note-board{display:grid;gap:12px}
+.note-filters{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(150px,.55fr) minmax(150px,.55fr);gap:10px;align-items:end}
+.note-filters label{display:grid;gap:4px;margin:0;color:#64758b;font-size:.72rem;font-weight:700}
+.note-filters input,.note-filters select{width:100%;height:40px;padding:0 12px;border:1px solid #e6ebf2;border-radius:10px;background:#fff;color:#1c2740}
+.note-list{margin:0;padding:0;list-style:none;overflow:hidden;border:1px solid #e6ebf2;border-radius:12px;background:#fff}
+.note-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px 14px;border-top:1px solid #eef2f6}
+.note-row:first-child{border-top:0}
+.note-row.is-unread{background:#f7f5ff}
+.note-head{display:flex;align-items:center;gap:8px;min-width:0}
+.note-head h3{margin:0;overflow:hidden;color:#1c2740;font-size:.92rem;font-weight:700;text-overflow:ellipsis;white-space:nowrap}
+.note-head time{margin-left:auto;color:#64758b;font-size:.72rem;white-space:nowrap}
+.note-row p{margin:3px 0 0;color:#3d4d63;font-size:.8rem;line-height:1.35}
+.note-meta{color:#64758b !important;font-size:.72rem !important}
+.note-actions{display:flex;gap:6px;align-items:center}
+.note-empty{padding:28px 14px;color:#64758b;text-align:center}
+@media(max-width:991.98px){.note-filters,.note-row{grid-template-columns:1fr}.note-head{flex-wrap:wrap}.note-head time{margin-left:0}}
+</style>
+<div class="note-board">
+    <form class="note-filters" method="get" id="notification-filters">
+        <label for="notification-search">Search
+            <input id="notification-search" name="q" placeholder="Search title or body" value="{{ request.GET.q }}">
+        </label>
+        <label for="notification-type">Type
+            <select id="notification-type" name="type" onchange="this.form.requestSubmit()">
+                <option value="">All types</option>
+                {% for value, label in notification_types %}
+                <option value="{{ value }}" {% if request.GET.type == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label for="notification-status">Status
+            <select id="notification-status" name="status" onchange="this.form.requestSubmit()">
+                <option value="">Any status</option>
+                <option value="unread" {% if request.GET.status == "unread" %}selected{% endif %}>Unread</option>
+                <option value="read" {% if request.GET.status == "read" %}selected{% endif %}>Read</option>
+            </select>
+        </label>
+    </form>
+
+    <ul class="note-list">
+        {% for n in notifications %}
+        <li class="note-row{% if not n.read %} is-unread{% endif %}">
+            <div>
+                <div class="note-head">
+                    <h3>{{ n.title }}</h3>
+                    {% if n.read %}
+                    <span class="status-badge status-neutral">Read</span>
+                    {% else %}
+                    <span class="status-badge status-pending">Unread</span>
+                    {% endif %}
+                    <time datetime="{{ n.created_at|date:'c' }}">{{ n.created_at|date:"M j, Y g:i A" }}</time>
+                </div>
+                {% if n.body %}<p>{{ n.body|truncatechars:160 }}</p>{% endif %}
+                <p class="note-meta">{{ n.get_notification_type_display }} · {{ n.source }} · In-app {% if n.in_app_delivery %}{{ n.in_app_delivery.get_status_display }}{% else %}not sent{% endif %} · Email {% if n.email_delivery %}{{ n.email_delivery.get_status_display }}{% else %}not sent{% endif %}</p>
+            </div>
+            <div class="note-actions">
+                <a class="btn btn-sm btn-primary" href="{% url 'notifications:detail' n.pk %}">Open</a>
+                <form method="post" action="{% url 'notifications:toggle_read' n.pk %}">
+                    {% csrf_token %}
+                    <button class="btn btn-sm btn-light" type="submit">{% if n.read %}Unread{% else %}Read{% endif %}</button>
+                </form>
+            </div>
+        </li>
+        {% empty %}
+        <li class="note-empty">No notifications match these filters.</li>
+        {% endfor %}
+    </ul>
+    {% include "gdx_admin/partials/pagination.html" %}
+</div>
+<script>
+(function () {
+    var form = document.getElementById("notification-filters");
+    var search = document.getElementById("notification-search");
+    if (!form || !search) return;
+    var timer;
+    function applyFilters() {
+        var params = new URLSearchParams();
+        ["q", "type", "status"].forEach(function (name) {
+            var value = (form.elements[name].value || "").trim();
+            if (value) params.set(name, value);
+        });
+        var query = params.toString();
+        window.location = window.location.pathname + (query ? "?" + query : "");
+    }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        applyFilters();
+    });
+    search.addEventListener("input", function () {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(applyFilters, 300);
+    });
+})();
+</script>

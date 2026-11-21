@@ -24,12 +24,12 @@ def system_health(request):
 	checks.extend([{'name': 'Active draft forms', 'status': str(unpublished_active), 'level': 'warning' if unpublished_active else 'success', 'message': 'Active forms that are not published.'}, {'name': 'Forms without fields', 'status': str(forms_without_fields), 'level': 'warning' if forms_without_fields else 'success', 'message': 'Form definitions with no configured fields.'}, {'name': 'Unsectioned active fields', 'status': str(orphan_fields), 'level': 'info' if orphan_fields else 'success', 'message': 'Active fields that are not assigned to a section.'}])
 
 	return render(
-		request, 'gdx_admin/apps/dar/health/system_health.html', {'checks': checks, 'breadcrumbs': _breadcrumbs(('DAR', None), ('System Health', None))})
+		request, 'gdx_admin/pages/dar/health/system_health.html', {'checks': checks, 'breadcrumbs': _breadcrumbs(('DAR', None), ('System Health', None))})
 
 
 @method_decorator(staff_member_required, name="dispatch")
 class SystemHealthDashboardView(TemplateView):
-    template_name = "gdx_admin/apps/dar/health/system_health.html"
+    template_name = "gdx_admin/pages/dar/health/system_health.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

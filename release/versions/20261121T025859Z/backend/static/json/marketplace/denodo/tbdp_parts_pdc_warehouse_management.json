@@ -1,0 +1,257 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "dealer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "denial_date"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "denial_datetime"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "denial_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "denial_time"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "location_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "reason_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "ship_reference_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_denial_hist",
+      "column_name": "user_id"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "allocated_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "bill_to_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "carrier_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "dealer_grp_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "facing_depot_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "freight_chrg_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "handling_chrg_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "line_type_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "order_date"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "order_part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "order_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "order_reference_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "order_status_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "pick_from_mu_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "pick_location_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "pick_to_mu_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "processing_date"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "service_chrg_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "ship_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "ship_reference_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "ship_to_dealer_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "shipper_price_amt"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "tracking_no"
+    },
+    {
+      "userrolename": "tbdp-parts-pdc-warehouse-management",
+      "dbname": "pdc_parts_wms_trn_ext",
+      "elementname": "pdc_wms_shipment_hist",
+      "column_name": "work_assignment_no"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-parts-pdc-warehouse-management%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

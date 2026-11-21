@@ -1,0 +1,989 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "census_tract"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "census_tract_cbsa"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "customer_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "model_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_ing_ext",
+      "elementname": "customer_no_name",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "age_range"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "brand_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "brand_of_interest_1"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "brand_of_interest_2"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "brand_of_interest_3"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "call_center_rep_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "cert_request_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "comment_opinion"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "crt_full_campaign_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "current_vehicle_brand"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "current_vehicle_year"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "customer_alias_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "dealer_num"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "elms_lead_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "elms_vendor_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "gender"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "handraiser_indicator"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "incomplete_lead_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "language"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "lead_handraiser_participator"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "lead_handraiser_sequence_num"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "model_of_interest_1"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "model_of_interest_2"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "model_of_interest_3"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "perm_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "pi_certificate_code"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "placeholder1"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "placeholder2"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "placeholder3"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "placeholder4"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "placeholder5"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "purchase_horizon"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "registrant_indicator"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "state"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "survey_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "sweepstakes_1_permission_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "sweepstakes_2_permission_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "sweepstakes_3_permission_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "transaction_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "zip_cd_4"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "acx_lead_hr_redacted",
+      "column_name": "zip_cd_5"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "contract_timestamp"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "customer_alias_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "customer_master_vehicle_product_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "customer_product_assoc_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "customer_product_role"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "customer_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "dmv_ident_lease_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "dmv_match_code_max_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "dmv_match_code_min_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "dmv_verification_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "dmv_verified_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "effective_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "effective_dt_derived_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "event_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "event_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "expiration_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "expiration_dt_derived_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "gender"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "make"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "match_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "match_cd_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "match_cd_prepin"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "postal_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "state_province_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "vio_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "cust_master_redacted_trn_ext_customer_product_assoc",
+      "column_name": "vio_flag_updated_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "advertizedprice"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "available"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "basemsrp"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "brand"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "carimgurl"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "carjellyimgurl"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "certificationnumber"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "certificationstatus"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "certificationtype"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "createddate"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "createddate_key"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "daysinstock"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "dealercash"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "dealercategory"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "dealersellingprice"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "dealtermid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "editedsellingprice"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "extcolorcode"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "extcolorhexcode"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "family"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "grade"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "grossvehicleweightrating"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "intcolorcode"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "intcolorswatchurl"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "invoice"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "invoicedate"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "marketingmodelname"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "miles"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "modelcode"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "modelyear"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "mpgavg"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "mpgcity"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "mpghwy"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "msrp"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "pooledvehicle"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "stocknumber"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "totaldioprice"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "unitid"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "updateddate"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "vehicletradeddate"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_redacted_trn_ext",
+      "elementname": "mst_vehicles",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "address_line_1"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "address_line_2"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "census_cbsa"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "census_tract"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "country_nm"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "dealership_postal_address_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "latitude"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "longitude"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "mailability_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "postal_address_category"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "postal_address_id"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "postal_address_type"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "postal_carrier_route"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "postal_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "prison_jail_ind"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_create_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_create_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_last_update_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_last_update_source"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "record_last_update_user"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "state_province_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tbdp_delete_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_apartment_no"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_box_no"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_city_nm"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_house_no"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_postal_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-master-redacted",
+      "dbname": "cust_master_trn_ext",
+      "elementname": "postal_address",
+      "column_name": "tril_match_street_nm"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-master-redacted%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

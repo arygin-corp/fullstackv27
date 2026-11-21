@@ -1,0 +1,42 @@
+{
+  "adgroup": "tbdp-irm-pl-veh-entr-sen",
+  "slugs": [
+    "enterprise-vehicle-profit-and-loss-sensitive"
+  ],
+  "databases": [
+    "finance_profit_trn"
+  ],
+  "tables": [
+    "profit_loss_vehicle_enterprise",
+    "profit_loss_vehicle_enterprise_fleet"
+  ],
+  "columns": [
+    "audit_create_date",
+    "brand",
+    "cbu_nap",
+    "drive",
+    "engine",
+    "ent_cm_after_incentives_usd",
+    "ent_cm_before_incentives_usd",
+    "enterprise_base_gp_usd",
+    "enterprise_fio_gp_usd",
+    "enterprise_ppo_gp_usd",
+    "exchange_rate_jpytousd",
+    "generated_file_name",
+    "grade",
+    "katashiki",
+    "model_number",
+    "model_plant_code",
+    "model_year",
+    "plant",
+    "plant_code",
+    "region_code",
+    "region_name",
+    "sales_period",
+    "series",
+    "src_model_year",
+    "transmission",
+    "veh_type",
+    "vehicle_sales"
+  ]
+}

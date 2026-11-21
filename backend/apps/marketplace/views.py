@@ -344,6 +344,74 @@ def _can_decide_reviews(user):
     return user.is_superuser or user.groups.filter(name="Content Manager Group").exists()
 
 
+def _waiting_approvals(user, reviews):
+    from apps.changelog.models import Post, ReleaseStatus
+    from apps.pages.site_crud import can_approve_newsroom
+    from apps.third_party_apis.modules.blog_news.models import NewsPost
+
+    items = []
+    for review in reviews:
+        if review.status != "pending":
+            continue
+        items.append({
+            "title": review.title or "Review",
+            "area": "Product review",
+            "detail": review.product.name if review.product_id else "",
+            "step": "Waiting for the Content Manager Group",
+            "url": reverse("marketplace:review-workflow", args=[review.pk]),
+        })
+    if can_approve_newsroom(user):
+        posts = NewsPost.objects.filter(status=NewsPost.ApprovalStatus.PENDING).order_by("-id")
+        for post in posts:
+            items.append({
+                "title": post.title,
+                "area": "Newsroom",
+                "detail": post.get_category_display() if hasattr(post, "get_category_display") else post.category,
+                "step": "Waiting for Content Manager, Administrator, or Super Administrator",
+                "url": reverse("pages_staff:newsroom-approval", args=[post.pk]),
+            })
+    releases = Post.objects.filter(status__in=[ReleaseStatus.DRAFT, ReleaseStatus.REVIEW]).order_by("-id")
+    for release in releases:
+        waiting = release.status == ReleaseStatus.REVIEW
+        items.append({
+            "title": f"Version {release.version}",
+            "area": "Changelog",
+            "detail": release.title,
+            "step": "Waiting for approval" if waiting else "Draft, ready to submit for approval",
+            "url": reverse("changelog_staff:post-workflow", args=[release.pk]),
+        })
+    items.extend(_intake_approvals(user))
+    return items
+
+
+def _intake_approvals(user):
+    from apps.third_party_apis.modules.product_intake.access import can_manage_workflow
+    from apps.third_party_apis.modules.product_intake.models import ProductIntake
+
+    if not (user.is_superuser or can_manage_workflow(user)):
+        return []
+    steps = {
+        ProductIntake.Status.SUBMITTED: "Submitted. Waiting for a reviewer to start the review",
+        ProductIntake.Status.ASSIGNED: "Assigned. Waiting for the reviewer to start the review",
+        ProductIntake.Status.RESUBMITTED: "Resubmitted. Waiting for a reviewer to start the review",
+        ProductIntake.Status.UNDER_REVIEW: "Under review. Waiting for approval or rejection",
+        ProductIntake.Status.APPROVED: "Approved. Waiting to be added as a draft product",
+        ProductIntake.Status.PRODUCT_DRAFT: "Draft product created. Waiting to be curated",
+        ProductIntake.Status.CURATED: "Curated. Waiting to be published on Data Marketplace",
+    }
+    rows = ProductIntake.objects.filter(status__in=steps).order_by("-submitted_at", "-id")
+    return [
+        {
+            "title": row.product_name or f"Intake {row.pk}",
+            "area": "Product intake",
+            "detail": f"Intake #{row.pk}",
+            "step": steps[row.status],
+            "url": f"/sa/command-center/workflow/#intake-{row.pk}",
+        }
+        for row in rows
+    ]
+
+
 class NotificationMenuView(LoginRequiredMixin, ListView):
     model = Review
     template_name = "gdx_users/apps/marketplace/notifications/index.html"
@@ -357,6 +425,7 @@ class NotificationMenuView(LoginRequiredMixin, ListView):
         context["heading"] = "Notifications"
         context["heading2"] = "Notifications"
         context["pageview"] = "Notifications"
+        context["approvals"] = _waiting_approvals(self.request.user, context["reviews"])
         return context
 
 

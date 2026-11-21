@@ -1,0 +1,689 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "cleaned_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "comb_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "confidence_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "exact_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "final_matched_part"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "first_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "first_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_first_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_first_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_full_name"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_last_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_last_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "found_second_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "fuzz_match_no_alpha_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "fuzz_match_with_alpha_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "last_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "last_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "matches_part"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "nlprtno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "no_alpha_direct_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "part_applicable_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "part_name_tfm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "part_num_srch_in_opdesc_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "pn_found_in_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "reg_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "reg_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "second_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "series_name"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "strip_tole_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "technique"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "txt_pt_nam_srch_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "unmat_nlprtno_no_alphas"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "veh_vin_model_number"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_model_data",
+      "column_name": "vvin"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "acc_month"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "accessory_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "ams_category_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "ams_subcategory_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "cleaned_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "comb_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "confidence_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "confidence_score_bucket"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "date_rdte"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "exact_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "final_matched_part"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "first_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "first_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_first_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_first_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_full_name"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_last_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_last_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "found_second_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "fuzz_match_no_alpha_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "fuzz_match_with_alpha_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "last_two_words"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "last_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "matches_part"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "nlprtno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "no_alpha_direct_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_applicable_ind"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_description_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_name_tfm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_num_srch_in_opdesc_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_status"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "part_type"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "pn_found_in_opdesc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "product_code_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "product_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "reg_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "reg_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "sales_part_flag"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "second_word"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "series_name"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "strip_tole_match_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "supplier_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "supplier_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "technique"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "txt_pt_nam_srch_score"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "unmat_nlprtno_no_alphas"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "veh_vin_model_number"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_ds_sls_data",
+      "column_name": "vvin"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "acc_month"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "accessory_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "ams_category_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "ams_subcategory_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "date_acc_month"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "part_description_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "part_no"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "part_qty"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "part_status"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "part_type"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "prod_detail_category_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "product_code_desc_txt"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "product_desc"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "reg_nm"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "region_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "supplier_cd"
+    },
+    {
+      "userrolename": "tbdp-parts-accessories-dealerinstalled",
+      "dbname": "tbdp_parts_accessories_dealerinstalled_ing_ext",
+      "elementname": "dio_trace_parts_sales",
+      "column_name": "supplier_nm"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-parts-accessories-dealerinstalled%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

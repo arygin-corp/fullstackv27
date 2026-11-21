@@ -1,0 +1,9 @@
+{% extends "gdx_admin/base.html" %}
+{% block title %}Code Deployments{% endblock %}
+{% block content %}
+<div class="min-w-0">
+    <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">Code Deployments</p>
+    <h2 class="mb-6 text-2xl font-bold leading-8 tracking-tight text-foreground">Deployments</h2>
+</div>
+{% include "gdx_admin/pages/deployment/partials/_site_build.html" %}
+{% endblock %}

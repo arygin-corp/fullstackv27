@@ -1,0 +1,1 @@
+{% extends 'gdx_admin/base.html' %}{% block title %}Domains Settings{% endblock %}{% block content %}<form class="gdx-admin-form" method="post">{% csrf_token %}<div class="card"><div class="card-body">{{ form.as_p }}</div><div class="card-footer"><button class="btn btn-primary">Save</button></div></div></form>{% endblock %}

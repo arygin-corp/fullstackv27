@@ -1,0 +1,26 @@
+<div class="row g-3">
+	<div class="col-6">
+		<span class="text-muted d-block">Cursor</span>
+		<strong>
+			{% if sync_health.cursor %}
+				{{ sync_health.cursor }}
+			{% elif polling_cursor %}
+				{{ polling_cursor.cursor }}
+			{% else %}
+				Not available
+			{% endif %}
+		</strong>
+	</div>
+	<div class="col-6">
+		<span class="text-muted d-block">Last poll</span>
+		<strong>{{ sync_health.last_poll_at|date:'M d, Y H:i'|default:'Never' }}</strong>
+	</div>
+	<div class="col-6">
+		<span class="text-muted d-block">Processed</span>
+		<strong>{{ sync_health.records_processed|default:0 }}</strong>
+	</div>
+	<div class="col-6">
+		<span class="text-muted d-block">Failures</span>
+		<strong>{{ sync_health.failure_count|default:0 }}</strong>
+	</div>
+</div>

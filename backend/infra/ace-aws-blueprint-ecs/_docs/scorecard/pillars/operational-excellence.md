@@ -1,0 +1,37 @@
+# Well-Architected Scorecard: Operational Excellence: ECS for Containerized Apps
+
+Overall Score[<sup><u>?</u></sup>](../references/score-explanation.md "How is this score calculated?"): <sup>3</sup>&frasl;<sub>4</sub>
+
+> "The Operational Excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value."
+
+## Scorecard
+
+??? note "Icon Legend"
+    - Applicable
+      - :x:
+      - :heavy_check_mark:
+    - Satisfied
+      - ![ACE](../references/ace_avatar.png){width="30"} = By Blueprint
+      - ![App Team](../references/app_avatar.png){width="30"} = By App Team
+      - ![ACE](../references/ace_avatar.png){width="30"} ![App Team](../references/app_avatar.png){width="30"} = Requires Both Blueprint and App Team
+       - :x: = Not Satisfied
+
+| Number | Consideration | Applicable[<sup><u>?</u></sup>](../references/score-explanation.md#applicable) | Satisfied[<sup><u>?</u></sup>](../references/score-explanation.md#satisfied) | Comments[<sup><u>?</u></sup>](../references/score-explanation.md#comments) |
+| :--: | :-- | :--: | :--: | :-- |
+| [OPS 1](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-organization.html) | How do you determine what your priorities are? | :x: | ![App Team](../references/app_avatar.png){width="30"} | <li>Not Applicable: The blueprint does not presuppose business priorities<br/>**App Team to Fulfill:**<li>Align Priorities: The app team should consider business priorities and how they influence operational capabilities |
+| [OPS 2](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-organization.html) | How do you structure your organization to support your business outcomes? | :x: | ![App Team](../references/app_avatar.png){width="30"} | <li>Not Applicable: The blueprint does not presuppose team organizational structure<br/>**App Team to Fulfill:**<li>Organizational Structure: The app team should consider how their team & infrastructure organization enables or hinders their business outcomes |
+| [OPS 3](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-organization.html) | How does your organizational culture support your business outcomes? | :x: | ![App Team](../references/app_avatar.png){width="30"} | <li>Not Appblicable: The blueprint does not presuppose team culture<br/>**App Team to Fulfill:**<li>Organizational Culture: The app team should consider how organizational culture enables or hinders their business outcomes |
+| [OPS 4](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-prepare.html) | How do you design your workload so that you can understand its state? | :heavy_check_mark: | ![ACE](../references/ace_avatar.png){width="30"} | **Blueprint Provides:**<li>Execution Info: Application Load Balancer logs to S3<li>Log Level & Retention Period: Configurable for ALB, ECS and RDS database to allow for appropriate information & retention per environment<li>Access Logging: Enabled for ALB log to S3 bucket<li>Metrics: Captured in CloudWatch for ALB , ECS and RDS<br/>**Future Enhancements:**<li>CloudWatch dashboard / Datadog dashboard for monitoring/observability<li>CloudTrail trail configured to send logs to S3. |
+| [OPS 5](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-prepare.html) | How do you reduce defects, ease remediation, and improve flow into production? | :heavy_check_mark: | ![ACE](../references/ace_avatar.png){width="30"} | **Blueprint Provides:**<li>Testing: Unit tests written for each infrastructure blueprint & integration tests written for this architecture blueprint to validate changes & reduce errors<li>Version Control & IaC: Blueprint utilizes GitHub & release tagging for version control & Terraform for infrastructure as code to facilitate repeatable testing & ease remediation of defects<li>CI/CD: TDP is used to perform CI/CD and improve flow into sub-prod and production environments<li>Architectural Integrity: CHOFER builds in best practices to blueprint designs and reviews all IaC to ensure quality<br/>**Future Enhancements:**<li>Testing: Automated tests (including unit and integration tests) should be written for this architecture blueprint to validate changes & reduce errors. |
+| [OPS 6](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-prepare.html) | How do you mitigate deployment risks? | :heavy_check_mark: | ![ACE](../references/ace_avatar.png){width="30"} | **Blueprint Provides:**<li>Testing: The architecture blueprint and all utilized infrastructure blueprints are tested end-to-end to validate<li>Beta Versions: Prior to full release, beta versions are tested with an application team for integration assessment<li>Rolling Deployments: Refinements and updates to the blueprint are deployed on a rolling basis with the app team retaining control over updating their environments to the latest version. This provides consistency for app teams while providing an upgrade path.<br/>**Future Enhancements:**<li>Automated Testing: Automated testing will further improve this mitigation |
+| [OPS 7](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-prepare.html) | How do you know that you are ready to support a workload? | :x: | ![App Team](../references/app_avatar.png){width="30"} | <li>Not Applicable: The blueprint does not presuppose the app team's workload context<br/>**App Team to Fulfill:**<li>Testing: The app team is responsible for evaluating the workload context and testing to verify that the full application is ready to support a production workload |
+| [OPS 8](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-operate.html) | How do you understand the health of your workload? | :heavy_check_mark: | ![App Team](../references/app_avatar.png){width="30"} | **App Team to Fulfill:**<li>KPIs & Metrics: The app team must define meaningful KPIs and Metrics within the context of the app team's usage. The blueprint provides and collects relevant metrics, but the app team must analyze them and establish baselines<br/>**Future Enhancements:**<li>Recommended Alerts: Recommended alerts for services (e.g. 4XX/5XX responses on ALB Gatway or errors thrown ECS) can be included as defaults<li>Datadog integration is on the roadmap to provide users with enhanced observability and monitoring<li>Metrics should be captured to better understand the state of the workload |
+| [OPS 9](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-operate.html) | How do you understand the health of your operations? | :x: | | <li>Not Applicable: The blueprint does not presuppose the app team's specific operations |
+| [OPS 10](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-operate.html) | How do you manage workload and operations events? | :x: | | <li>Not Applicable: The blueprint does not prescribe operational event handling processes |
+| [OPS 11](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-evolve.html) | How do you evolve operations? | :x: | | <li>Not Applicable: The blueprint does not presuppose app team's specific operations |
+
+## References
+
+* [Documentation Home](https://docs.aws.amazon.com/wellarchitected/latest/framework/operational-excellence.html)
+* [Design Principles](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-design-principles.html)
+* [Definition](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-definition.html)

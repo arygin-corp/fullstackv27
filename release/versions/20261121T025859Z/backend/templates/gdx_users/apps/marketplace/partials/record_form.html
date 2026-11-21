@@ -1,0 +1,132 @@
+{% extends "gdx_users/partials/base.html" %}
+{% block extra_css %}
+{% include "gdx_users/apps/marketplace/partials/record_view_style.html" %}
+{% endblock %}
+{% block contents %}
+<form method="post" enctype="multipart/form-data" class="record-view record-form">
+    {% csrf_token %}
+    {{ form.media }}
+    <div class="card record-hero">
+        <div class="card-body">
+            <div class="record-kicker">{% if object.pk %}Edit{% else %}New{% endif %} {{ kicker }}</div>
+            <h3 class="mb-4">{% if object.pk %}{{ object }}{% else %}Create {{ kicker }}{% endif %}</h3>
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+            {% endif %}
+            {% if has_file_field %}
+                {% if kicker == "Domain" or "Subdomain" in kicker %}
+                    <div class="record-name-row">
+                        {% for field in form %}
+                            {% if field.name == "name" %}
+                                {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="row align-items-stretch">
+                    <div class="col-lg-6 image-column d-flex flex-column">
+                        <div class="record-media edit-media flex-fill{% if round_image %} is-round{% endif %}{% if kicker == 'Domain' %} is-domain{% endif %}">
+                            {% if record_image_url %}
+                                <img src="{{ record_image_url }}" alt="{{ object.name }}">
+                            {% endif %}
+                            <div class="record-media-bar">
+                                {% if object.sku %}
+                                    <div class="record-kicker">SKU {{ object.sku }}</div>
+                                {% endif %}
+                                {% for field in form %}
+                                    {% if field.field.widget.input_type == "file" %}
+                                        {{ field }}
+                                        {% for error in field.errors %}
+                                            <div class="text-danger">{{ error }}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if kicker == "Domain" or "Subdomain" in kicker %}
+                            <button type="button" class="btn btn-primary mt-2 record-add-image">
+                                <i class="bx bx-plus"></i> Add Image
+                            </button>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-6">
+                        {% if kicker == "Domain" or "Subdomain" in kicker %}
+                            {% for field in form %}
+                                {% if field.name == "slug" %}
+                                    {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                {% endif %}
+                            {% endfor %}
+                            {% for field in form %}
+                                {% if field.name == "domain" %}
+                                    {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                {% endif %}
+                            {% endfor %}
+                            {% for field in form %}
+                                {% if field.name != "name" and field.name != "slug" and field.name != "domain" and field.name != "level" and field.name != "is_active" and field.field.widget.input_type != "file" %}
+                                    {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                {% endif %}
+                            {% endfor %}
+                            <div class="record-status-row">
+                                {% for field in form %}
+                                    {% if field.name == "is_active" %}
+                                        {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for field in form %}
+                                    {% if field.name == "level" %}
+                                        {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {% for field in form %}
+                                {% if field.field.widget.input_type != "file" %}
+                                    {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                {% for field in form %}
+                    {% include "gdx_users/apps/marketplace/partials/record_field.html" %}
+                {% endfor %}
+            {% endif %}
+            <div class="d-flex flex-wrap gap-2 mt-4">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{{ cancel_url }}" class="btn btn-light">Cancel</a>
+                {% if delete_url %}
+                    <a href="{{ delete_url }}" class="btn btn-danger ms-auto">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% block extra_javascript %}
+{{ block.super }}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".record-add-image").forEach(function (button) {
+            button.addEventListener("click", function () {
+                var column = button.closest(".image-column");
+                var input = column ? column.querySelector('input[type="file"]') : null;
+                if (input) input.click();
+            });
+        });
+        function sizeEditor() {
+            document.querySelectorAll(".record-form .ck-editor__editable").forEach(function (editable) {
+                editable.style.setProperty("height", "98px", "important");
+                editable.style.setProperty("min-height", "98px", "important");
+            });
+        }
+        var tries = 0;
+        var timer = setInterval(function () {
+            sizeEditor();
+            tries += 1;
+            if (document.querySelector(".record-form .ck-editor__editable") && tries > 2) clearInterval(timer);
+            if (tries > 30) clearInterval(timer);
+        }, 100);
+    });
+</script>
+{% endblock %}

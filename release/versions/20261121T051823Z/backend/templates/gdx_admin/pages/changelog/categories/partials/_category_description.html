@@ -1,0 +1,20 @@
+{% load changelog_extras %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="h5 mb-0">
+      <i class="ti ti-align-left me-2 text-info"></i>Description
+    </h3>
+  </div>
+  <div class="card-body">
+    {% if category.desc %}
+    <div class="text-break">{{ category.description|sanitized_html }}</div>
+    {% else %}
+    <div class="text-center py-4">
+      <span class="avatar bg-info-subtle text-info rounded-circle">
+        <i class="ti ti-file-description"></i>
+      </span>'
+      <p class="text-muted mb-0 mt-2">No category description has been provided.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>

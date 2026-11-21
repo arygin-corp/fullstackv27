@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MarketplaceOrder, Request, ServiceNowSyncAudit, SyncCursor, Task
+from .models import MarketplaceOrder, Request, ServiceNowSyncAudit, SyncCursor, Task, UserActivity
 
 
 class RequestInline(admin.TabularInline):
@@ -42,3 +42,11 @@ class TaskAdmin(admin.ModelAdmin):
 
 admin.site.register(SyncCursor)
 admin.site.register(ServiceNowSyncAudit)
+
+
+@admin.register(UserActivity)
+class UserActivityAdmin(admin.ModelAdmin):
+    list_display = ("created_at", "action", "title", "detail", "reference", "email")
+    search_fields = ("action", "detail", "reference", "email", "object_id")
+    list_filter = ("action",)
+    readonly_fields = ("object_id", "email", "action", "title", "detail", "reference", "payload", "created_at")

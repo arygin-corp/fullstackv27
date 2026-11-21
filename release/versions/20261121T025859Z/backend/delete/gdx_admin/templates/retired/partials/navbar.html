@@ -1,0 +1,176 @@
+{% load static %}
+<style>
+	.header-user .avatar-initials {
+		width: 38px;
+		height: 38px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: #e8eefc;
+		color: #1f3b8a;
+		font-size: 13px;
+		font-weight: 700;
+	}
+	.header-user .avatar-lg.avatar-initials {
+		width: 48px;
+		height: 48px;
+		font-size: 16px;
+	}
+	.header .header-environment-select {
+		width: 132px;
+		min-height: 38px;
+		padding-right: 2rem;
+		background-color: var(--topbar-search-bg);
+		color: var(--topbar-search-color);
+		border-color: var(--topbar-search-border);
+		font-size: 13px;
+		font-weight: 650;
+	}
+</style>
+<div class="header-user">
+	<div class="nav user-menu nav-list">
+		<div class="me-auto d-flex align-items-center" id="header-search">
+			<form class="header-environment" method="post" action="{% url 'set_header_environment' %}">
+				{% csrf_token %}
+				<input type="hidden" name="next" value="{{ request.get_full_path }}">
+				<label class="visually-hidden" for="header-environment">Environment</label>
+				<select class="form-select header-environment-select" id="header-environment" name="environment" onchange="this.form.submit()">
+					{% for value, label in header_environments %}
+					<option value="{{ value }}" {% if value == header_environment %}selected{% endif %}>{{ label }}</option>
+					{% endfor %}
+				</select>
+			</form>
+		</div>
+		<div class="d-flex align-items-center">
+			<!-- Search -->
+			<div class="input-icon-end position-relative me-2">
+				<input class="form-control" placeholder="Search" type="text" />
+				<span class="input-icon-addon">
+					<i class="isax isax-search-normal"></i>
+				</span>
+			</div>
+			<!-- /Search -->
+			<!-- Language Dropdown -->
+			<div class="nav-item dropdown has-arrow flag-nav me-2">
+				<a class="btn btn-menubar" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
+					<img alt="Language" class="img-fluid" src="{% static 'assets/img/flags/us.svg' %}" />
+				</a>
+				<ul class="dropdown-menu p-2">
+					<!-- item-->
+					<li>
+						<a class="dropdown-item" href="javascript:void(0);">
+							<img alt="flag" class="me-2" src="{% static 'assets/img/flags/us.svg' %}" />English </a>
+					</li>
+					<!-- item-->
+					<li>
+						<a class="dropdown-item" href="javascript:void(0);">
+							<img alt="flag" class="me-2" src="{% static 'assets/img/flags/de.svg' %}" />German </a>
+					</li>
+					<!-- item-->
+					<li>
+						<a class="dropdown-item" href="javascript:void(0);">
+							<img alt="flag" class="me-2" src="{% static 'assets/img/flags/fr.svg' %}" />French </a>
+					</li>
+					<!-- item-->
+					<li>
+						<a class="dropdown-item" href="javascript:void(0);">
+							<img alt="flag" class="me-2" src="{% static 'assets/img/flags/ae.svg' %}" />Arabic </a>
+					</li>
+				</ul>
+			</div>
+			<!-- Notification -->
+			<div class="notification_item me-2">
+				<a class="btn btn-menubar position-relative" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="notification_popup">
+					<i class="isax isax-notification-bing5"></i>
+					{% if header_notification_unread %}
+					<span class="position-absolute badge bg-success border border-white">{{ header_notification_unread }}</span>
+					{% endif %}
+				</a>
+				<div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg" style="min-height: 300px;">
+					<div class="p-2 border-bottom">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="m-0 fs-16 fw-semibold">Notifications</h6>
+							</div>
+							<div class="col-auto">
+								<form method="post" action="{% url 'notifications:mark_all_read' %}">
+									{% csrf_token %}
+									<input type="hidden" name="next" value="{{ request.get_full_path }}">
+									<button class="btn btn-link link-dark p-0" type="submit" title="Mark as read">
+										<i class="ti ti-bell-check"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="notification-body position-relative z-2 rounded-0" data-simplebar="">
+						{% for n in header_notifications %}
+						<a class="dropdown-item notification-item py-2 text-wrap border-bottom" href="{% if n.url %}{{ n.url }}{% else %}{% url 'notifications:list' %}{% endif %}">
+							<div class="d-flex">
+								<div class="flex-shrink-0">
+									<div class="avatar-sm me-2">
+										<span class="avatar-title {% if n.read %}bg-light text-muted{% else %}bg-soft-info text-info{% endif %} fs-18 rounded-circle">{{ n.title|slice:":1"|upper }}</span>
+									</div>
+								</div>
+								<div class="flex-grow-1">
+									<p class="mb-0 fw-semibold text-dark">{{ n.title }}</p>
+									{% if n.body %}<p class="mb-0 text-wrap fs-14">{{ n.body|truncatechars:90 }}</p>{% endif %}
+									<span class="fs-12"><i class="isax isax-clock me-1"></i>{{ n.created_at|timesince }} ago</span>
+								</div>
+							</div>
+						</a>
+						{% empty %}
+						<div class="dropdown-item py-4 text-center text-muted">No notifications.</div>
+						{% endfor %}
+					</div>
+					<div class="p-2 rounded-bottom border-top text-center">
+						<a class="text-center fw-medium fs-14 mb-0" href="{% url 'notifications:list' %}">View All</a>
+					</div>
+				</div>
+			</div>
+			<!-- User Dropdown -->
+			<div class="dropdown profile-dropdown">
+				<a class="dropdown-toggle d-flex align-items-center" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="javascript:void(0);">
+					<span class="avatar online">
+						{% if header_user_image %}
+						<img alt="{{ header_user_name }}" class="img-fluid rounded-circle" src="{{ header_user_image }}" />
+						{% else %}
+						<span class="avatar-initials rounded-circle">{{ header_user_initials }}</span>
+						{% endif %}
+					</span>
+				</a>
+				<div class="dropdown-menu p-2">
+					<div class="d-flex align-items-center bg-light rounded-1 p-2 mb-2">
+						<span class="avatar avatar-lg me-2">
+							{% if header_user_image %}
+							<img alt="{{ header_user_name }}" class="rounded-circle" src="{{ header_user_image }}" />
+							{% else %}
+							<span class="avatar-initials avatar-lg rounded-circle">{{ header_user_initials }}</span>
+							{% endif %}
+						</span>
+						<div>
+							<h6 class="fs-14 fw-medium mb-1">{{ header_user_name }}</h6>
+							{% if header_user_role %}<p class="fs-13 mb-0">{{ header_user_role }}</p>{% endif %}
+						</div>
+					</div>
+					<!-- Item-->
+					<a class="dropdown-item d-flex align-items-center" href="account-settings.html">
+						<i class="isax isax-profile-circle me-2"></i>Profile Settings </a>
+					<!-- Item-->
+					<a class="dropdown-item d-flex align-items-center" href="inventory-report.html">
+						<i class="isax isax-document-text me-2"></i>Reports </a>
+					<!-- Item-->
+					<div class="form-check form-switch form-check-reverse d-flex align-items-center justify-content-between dropdown-item mb-0">
+						<label class="form-check-label" for="notify">
+							<i class="isax isax-notification me-2"></i>Notifications </label>
+						<input class="form-check-input" id="notify" role="switch" type="checkbox" />
+					</div>
+					<hr class="dropdown-divider my-2" />
+					<!-- Item-->
+					<a class="dropdown-item logout d-flex align-items-center" href="login.html">
+						<i class="isax isax-logout me-2"></i>Sign Out </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

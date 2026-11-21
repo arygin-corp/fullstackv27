@@ -1,0 +1,540 @@
+[
+  {
+    "question": "What steps are required to submit a Data Marketplace access request after finding the product?",
+    "expected_document_titles": [
+      "FAQ.docx"
+    ],
+    "expected_chunk_contains": [
+      "Add to cart",
+      "Proceed to checkout",
+      "Submit Order"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Database Access Request Step 2"
+    }
+  },
+  {
+    "question": "What happens after a Data Access Request is submitted in the standard process flow?",
+    "expected_document_titles": [
+      "Data_Access_Request_Process_Flow.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Data Steward Approve or Reject Ticket in 1TS",
+      "Tasks Completed, Access Granted, Requestor is Notified by 1TS"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Process flow"
+    }
+  },
+  {
+    "question": "When is antitrust training required before requesting Data Marketplace access?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Security_Policy.pdf"
+    ],
+    "expected_chunk_contains": [
+      "joint venture specific antitrust training",
+      "prior to submitting a Data Access Request via Data Marketplace",
+      "valid business justification"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Antitrust"
+    }
+  },
+  {
+    "question": "How must access to TBDP data be granted?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Security_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "granted only through Active Directory (AD) groups",
+      "No user should be granted access to TBDP outside an AD group"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Processes"
+    }
+  },
+  {
+    "question": "What identifier must be associated with every TBDP data access request?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Security_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "One Toyota service (1TS) request number",
+      "No access should be granted to any user by e-mail, messenger or phone call request"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Processes"
+    }
+  },
+  {
+    "question": "What are the six data quality dimensions used for in-scope applications?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Quality_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Accuracy, Completeness, Conformity, Uniqueness, Consistency and Timeliness"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Applications part of Data Enablement and Global Compliance Program"
+    }
+  },
+  {
+    "question": "What data quality score is considered green?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Quality_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "95-100% Green",
+      "The data is Good"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Data Quality Thresholds"
+    }
+  },
+  {
+    "question": "What data quality score is considered yellow?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Quality_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "85-94% Yellow",
+      "This data is Acceptable"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Data Quality Thresholds"
+    }
+  },
+  {
+    "question": "What data quality score is considered red?",
+    "expected_document_titles": [
+      "TMNA_DE_Data_Quality_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "0-84% Red",
+      "This data is unacceptable"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Data Quality Thresholds"
+    }
+  },
+  {
+    "question": "What is the difference between lineage and impact in Enterprise Data Catalog?",
+    "expected_document_titles": [
+      "Enterprise_Data_Catalog-UserGuide.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Lineage describes the flow of data from the origins to an asset",
+      "Impact describes the flow of data from an asset to the destinations"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Viewing Data Lineage Diagrams"
+    }
+  },
+  {
+    "question": "What kinds of assets are represented in Enterprise Data Catalog?",
+    "expected_document_titles": [
+      "Enterprise_Data_Catalog-UserGuide.pdf"
+    ],
+    "expected_chunk_contains": [
+      "tables, columns, reports, views, and schemas"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Enterprise Data Catalog Overview"
+    }
+  },
+  {
+    "question": "What search capabilities are available in Enterprise Data Catalog?",
+    "expected_document_titles": [
+      "Enterprise_Data_Catalog-UserGuide.pdf"
+    ],
+    "expected_chunk_contains": [
+      "suggestions, wildcards, and asset type inference",
+      "Search using business terms",
+      "Search using synonyms"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Discovering Assets"
+    }
+  },
+  {
+    "question": "What are the stages of the metadata lifecycle?",
+    "expected_document_titles": [
+      "TMNA_DE_Metadata_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Define",
+      "Review",
+      "Data Catalog",
+      "Data Lineage",
+      "Business Glossary",
+      "Impact Analysis"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Metadata Lifecycle"
+    }
+  },
+  {
+    "question": "Which data domains are listed in the metadata process?",
+    "expected_document_titles": [
+      "TMNA_DE_Metadata_Process.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Corporate Identity",
+      "Customer",
+      "Dealer Identity",
+      "Dealership",
+      "Digital Assets",
+      "Enterprise Corporate Applications",
+      "Finance",
+      "Identity Access Management",
+      "Manufacturing",
+      "Manufacturing Parts",
+      "Product Quality",
+      "Service History",
+      "Service Parts",
+      "Telematics",
+      "Vehicle",
+      "Warranty"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Data Domains"
+    }
+  },
+  {
+    "question": "What does the Customer data domain include?",
+    "expected_document_titles": [
+      "TMNA_Data_Domains.pdf"
+    ],
+    "expected_chunk_contains": [
+      "customer-specific details",
+      "satisfaction and quality surveys",
+      "marketing",
+      "retention",
+      "consumer insights",
+      "call center interactions",
+      "social media",
+      "eCommerce parts orders"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Customer"
+    }
+  },
+  {
+    "question": "What does the Telematics data domain cover?",
+    "expected_document_titles": [
+      "TMNA_Data_Domains.pdf"
+    ],
+    "expected_chunk_contains": [
+      "vehicle hardware capabilities",
+      "connected service features",
+      "subscriptions",
+      "vehicle generated telemetry"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Telematics"
+    }
+  },
+  {
+    "question": "What does the Vehicle data domain include?",
+    "expected_document_titles": [
+      "TMNA_Data_Domains.pdf"
+    ],
+    "expected_chunk_contains": [
+      "VIN-specific vehicle build data",
+      "vehicles in inventory and sold",
+      "inventory volumes",
+      "sales volumes",
+      "sales objectives",
+      "incentive information"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Vehicle"
+    }
+  },
+  {
+    "question": "Which product types are shown in the Data Products to Data Marketplace flow?",
+    "expected_document_titles": [
+      "Data_Products_to_DM_Flow_As_Is.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Datasets",
+      "Reports/Dashboard",
+      "Web Service",
+      "Data Science Model"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Types of Data Products"
+    }
+  },
+  {
+    "question": "What information is added to EDC for datasets in the Data Marketplace flow?",
+    "expected_document_titles": [
+      "Data_Products_to_DM_Flow_As_Is.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Data Descriptions",
+      "Business Definitions",
+      "Classification",
+      "Security Group",
+      "Data Lineage"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Data Products to Data Marketplace Flow"
+    }
+  },
+  {
+    "question": "Which tools are covered by the TBDP Dataset Access Guide?",
+    "expected_document_titles": [
+      "Data_Access_Guide.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Connecting Power BI to Denodo",
+      "Connecting Tableau to Denodo",
+      "Connecting Alteryx to Denodo",
+      "DbVisualizer",
+      "DBeaver"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Contents"
+    }
+  },
+  {
+    "question": "What database, table, and column metadata is recorded for the vehicle master data role?",
+    "expected_document_titles": [
+      "tbdp_vehicle_master_data.json"
+    ],
+    "expected_chunk_contains": [
+      "tbdp-vehicle-master-data",
+      "q360_vehicle_master_ing_ext",
+      "vehicle",
+      "assembly_date"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "metadata elements"
+    }
+  },
+  {
+    "question": "What should a good enterprise glossary definition be like?",
+    "expected_document_titles": [
+      "One_Toyota_Business_Glossary_Tips_and_Notes.pdf"
+    ],
+    "expected_chunk_contains": [
+      "Brief and to the point",
+      "Unambiguous",
+      "Clear about the use and the purpose",
+      "absolute minimum of jargon"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Characteristics of good Glossary definitions"
+    }
+  },
+  {
+    "question": "What fields are commonly available on a Toyota Metadata Catalog asset detail page?",
+    "expected_document_titles": [
+      "Toyota_Metadata_Catalog_Navigation_Guide.docx"
+    ],
+    "expected_chunk_contains": [
+      "Business Definition",
+      "Technical Description",
+      "Ownership",
+      "Attribute Details",
+      "Lineage"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Understanding Asset Details"
+    }
+  },
+  {
+    "question": "What does RACI stand for?",
+    "expected_document_titles": [
+      "TMNA_DE_RACI_Matrix.xlsx"
+    ],
+    "expected_chunk_contains": [
+      "R = Responsible",
+      "A = Accountable",
+      "C = Consulted",
+      "I = Informed"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "Definition"
+    }
+  },
+  {
+    "question": "What are the TMNA information classification levels?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Highly Confidential",
+      "Legal/Privileged Information",
+      "Confidential",
+      "Protected",
+      "Public"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels"
+    }
+  },
+  {
+    "question": "How is Sensitive Personal Information classified?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Sensitive Personal Information (PI)",
+      "handled_as Highly Confidential"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "pre_assigned_classification_levels / Sensitive Personal Information"
+    }
+  },
+  {
+    "question": "How is Personal Information classified?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Personal Information (PI)",
+      "handled_as Confidential"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "pre_assigned_classification_levels / Personal Information"
+    }
+  },
+  {
+    "question": "What are examples of Highly Confidential information?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Streaming video data from vehicles",
+      "Trade secrets or intellectual property related to styling data",
+      "Parametric CAD data",
+      "Pre-production marketing notes"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels / Highly Confidential"
+    }
+  },
+  {
+    "question": "What are examples of Confidential information?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Personal Information (PI) of any individual",
+      "Corporate financial information",
+      "Warranty information",
+      "Production forecast volume"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels / Confidential"
+    }
+  },
+  {
+    "question": "What are examples of Protected information?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Approved organizational charts",
+      "Company phone book",
+      "Dealer vehicle cost",
+      "Public patents"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels / Protected"
+    }
+  },
+  {
+    "question": "What are examples of Public information?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Toyota.com and other external websites",
+      "Vehicle brochures",
+      "Officially released marketing material",
+      "Press releases"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels / Public"
+    }
+  },
+  {
+    "question": "What restriction applies to mass downloads of sensitive information?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Mass data download capabilities of sensitive information",
+      "is NOT permitted",
+      "non-administrative users cannot copy, export, or otherwise mass download customer or vehicle records"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "mass_download_restrictions"
+    }
+  },
+  {
+    "question": "Where must PI and Sensitive PI not be stored as unstructured data?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Never allowed to store PI/SPI as unstructured data on shared storage devices",
+      "SharePoint",
+      "Team site",
+      "OneDrive"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "storage_restrictions"
+    }
+  },
+  {
+    "question": "Can Legal or Privileged Information be applied as a secondary classification?",
+    "expected_document_titles": [
+      "tmna_classification_levels.json"
+    ],
+    "expected_chunk_contains": [
+      "Legal/Privileged may be applied as a secondary data classification",
+      "specific communications with legal counsel that involve legal advice"
+    ],
+    "_review": {
+      "status": "pending_domain_expert_review",
+      "source_section": "classification_levels / Legal/Privileged Information"
+    }
+  }
+]

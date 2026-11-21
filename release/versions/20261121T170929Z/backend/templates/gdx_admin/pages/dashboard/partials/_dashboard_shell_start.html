@@ -1,0 +1,19 @@
+{% load static %}
+{% include "gdx_admin/pages/dashboard/partials/_dashboard_nav.html" %}
+<section class="module-hero module-master-hero">
+    <div class="module-hero__content">
+        <span class="module-hero__kicker">{{ staff_page_kicker|default:"THEME DASHBOARD" }}</span>
+        <div class="module-hero__title-row">
+            <span class="module-hero__icon" aria-hidden="true">{{ staff_page_icon|default:"▦" }}</span>
+            <div>
+                <h1>{{ staff_page_title|default:dashboard_title }}</h1>
+                <p>{{ staff_page_description|default:dashboard_blurb }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="module-hero__metric">
+        <span>{{ staff_page_metric_label|default:"Live" }}</span>
+        <strong>{% if staff_page_metric_value or staff_page_metric_value == 0 %}{{ staff_page_metric_value }}{% else %}—{% endif %}</strong>
+        <small>{{ staff_page_metric_caption|default:"theme preview" }}</small>
+    </div>
+</section>

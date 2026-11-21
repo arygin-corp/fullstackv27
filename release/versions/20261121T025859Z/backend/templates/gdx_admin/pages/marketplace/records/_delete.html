@@ -1,0 +1,12 @@
+{% url 'marketplace_admin:record_detail' record_slug record.pk as detail_url %}
+<main class="module-page">
+    
+    <section class="team-panel team-confirm">
+        <p>Delete <strong>{{ record }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="integration-button integration-button--primary" type="submit">Delete</button>
+            <a class="integration-button" href="{{ detail_url }}">Cancel</a>
+        </form>
+    </section>
+</main>

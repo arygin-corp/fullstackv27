@@ -9,4 +9,5 @@ export interface Newsroom {
   date?: string;
   category?: string;
   slug?: string;
+  draft?: boolean;
 }

@@ -134,6 +134,7 @@ def site_page(request, slug):
     if builder is None:
         raise Http404
     payload = json.loads(builder(request).content)
+    _decorate_page_media(payload)
     titles = dict(SITE_MENU)
     title = titles[slug]
     return render(request, "gdx_users/apps/pages/site_page.html", {
@@ -145,6 +146,19 @@ def site_page(request, slug):
     })
 
 
+def _decorate_page_media(value):
+    image_keys = {"image", "imageUrl", "authorImage", "hostsImage", "banner", "icon", "file"}
+    if isinstance(value, dict):
+        for key, item in list(value.items()):
+            if key in image_keys and isinstance(item, str) and item:
+                value[key] = _library_asset(item)
+            else:
+                _decorate_page_media(item)
+    elif isinstance(value, list):
+        for item in value:
+            _decorate_page_media(item)
+
+
 def _library_asset(url):
     from django.templatetags.static import static
 
@@ -152,7 +166,7 @@ def _library_asset(url):
     if path.startswith("/media/"):
         path = path[len("/media/"):]
     if path.startswith("assets/"):
-        return static(f"gdx_users/frontend/{path}")
+        return static(path[len("assets/"):])
     return url or ""
 
 

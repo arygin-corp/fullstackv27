@@ -1,0 +1,55 @@
+{% extends 'gdx_users/partials/base.html' %}
+
+{% block contents %}
+<div class="container mt-4">
+    <h1>{{ teams.name }}</h1>
+
+    {% if teams.cover_image %}
+        <img src="{{ teams.cover_image.url }}" class="img-fluid mb-4 rounded" alt="{{ teams.name }} cover" style="max-height: 300px; width: 100%; object-fit: cover;">
+    {% endif %}
+
+    <p>{{ teams.description }}</p>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">teams Owner</h5>
+            <div class="d-flex align-items-center">
+                {% if teams.owner.profile.profile_picture %}
+                    <img src="{{ teams.owner.profile.profile_picture.url }}" alt="{{ teams.owner.username }}'s Profile Picture" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                {% else %}
+                    <img src="https://via.placeholder.com/50?text=No+Img" alt="Default Profile Picture" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                {% endif %}
+                <div>
+                    <a href="{% url 'profiles:profile_detail' teams.owner.username %}">{{ teams.owner.username }}</a>
+                    <span class="text-muted ms-2">(Owner)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">teams Members</h5>
+            {% if teams.members.all %}
+                <ul class="list-group list-group-flush">
+                    {% for m in teams.members.all %}
+                        <li class="list-group-item d-flex align-items-center">
+                            {% if m.profile.profile_picture %}
+                                <img src="{{ m.profile.profile_picture.url }}" alt="{{ m.username }}'s Profile Picture" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                            {% else %}
+                                <img src="https://via.placeholder.com/40?text=No+Img" alt="Default Profile Picture" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                            {% endif %}
+                            <a href="{% url 'profiles:profile_detail' m.username %}">{{ m.username }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">No members in this teams yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    {# Add other teams details or actions here #}
+
+</div>
+{% endblock %}

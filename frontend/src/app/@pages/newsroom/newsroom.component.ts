@@ -24,11 +24,12 @@ export class NewsroomComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.newsroom = this.newsroomService.getNewsroom();
-    
-    // ✅ Read category from route params instead of @Input
     this.routeSub = this.route.paramMap.subscribe((params: ParamMap) => {
       this.category = params.get('category') || '';
+      this.applyFilter();
+    });
+    this.newsroomService.getNewsroom().subscribe(posts => {
+      this.newsroom = posts;
       this.applyFilter();
     });
   }

@@ -1,0 +1,1 @@
+* Send email programmatically via AWS SES

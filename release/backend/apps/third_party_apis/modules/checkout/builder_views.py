@@ -13,7 +13,7 @@ def checkout_form_builder(request):
     saved = load_definition()
     document = saved or export_definition()
     field_count = sum(len(section.get("fields") or []) for section in document.get("sections") or [])
-    return render(request, "gdx_admin/apps/checkout/checkout_form_builder.html", {
+    return render(request, "gdx_admin/pages/checkout/checkout_form_builder.html", {
         "page_title": "Checkout Form Builder",
         "document_saved": saved is not None,
         "field_count": field_count,

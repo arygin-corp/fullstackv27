@@ -1,0 +1,128 @@
+/* Last stylesheet on every staff page. Tablets and desktops reflow; phones stay on the device gate. */
+
+@media (min-width: 768px) {
+    .page-wrapper,
+    .page-wrapper .content,
+    .module-page,
+    .mp-page,
+    .integration-catalog {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .page-wrapper .content img,
+    .page-wrapper .content video,
+    .page-wrapper .content canvas,
+    .page-wrapper .content iframe,
+    .page-wrapper .content pre {
+        max-width: 100%;
+    }
+    .page-wrapper .content h1,
+    .page-wrapper .content h2,
+    .page-wrapper .content h3,
+    .page-wrapper .content p,
+    .page-wrapper .content td,
+    .page-wrapper .content th {
+        overflow-wrap: break-word;
+    }
+    .page-wrapper .content .table-responsive,
+    .page-wrapper .content .module-table-wrap,
+    .page-wrapper .content .access-matrix-wrap {
+        overflow-x: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .page-wrapper .module-hero,
+    .page-wrapper .mp-hero,
+    .page-wrapper .health-hero .card-body,
+    .page-wrapper .designer-hero,
+    .page-wrapper .module-context-header,
+    .page-wrapper .mp-header,
+    .page-wrapper .module-dashboard-heading-row,
+    .page-wrapper .module-section-heading,
+    .page-wrapper .integration-toolbar {
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        min-height: 0 !important;
+    }
+    .page-wrapper .module-hero,
+    .page-wrapper .mp-hero {
+        padding: 28px 22px !important;
+    }
+    .page-wrapper .module-hero__content,
+    .page-wrapper .mp-hero > div:first-child {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .page-wrapper .module-hero__metric,
+    .page-wrapper .mp-hero-stat {
+        width: 100% !important;
+        min-width: 0 !important;
+        text-align: left !important;
+    }
+    .page-wrapper .module-hero h1,
+    .page-wrapper .mp-hero h1 {
+        font-size: 1.7rem !important;
+    }
+    .page-wrapper .module-metric-grid,
+    .page-wrapper .module-portfolio-grid,
+    .page-wrapper .dashboard-module-grid,
+    .page-wrapper .dashboard-kpi-grid,
+    .page-wrapper .dashboard-submetric-grid,
+    .page-wrapper .dashboard-readiness-cards,
+    .page-wrapper .module-master-metrics,
+    .page-wrapper .test-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .page-wrapper .dashboard-bottom-grid,
+    .page-wrapper .dashboard-panel-grid,
+    .page-wrapper .module-panel-grid,
+    .page-wrapper .module-fact-grid,
+    .page-wrapper .docs-grid,
+    .page-wrapper .wf-builder {
+        grid-template-columns: 1fr !important;
+    }
+    .page-wrapper .mp-page {
+        padding: 20px 14px 28px !important;
+    }
+    .page-wrapper .content {
+        padding: 16px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .page-wrapper .content {
+        padding: 18px;
+    }
+    .page-wrapper .module-hero,
+    .page-wrapper .mp-hero {
+        gap: 16px;
+        min-height: 0;
+        padding: 28px;
+    }
+    .page-wrapper .module-hero__metric {
+        min-width: 140px;
+    }
+    .page-wrapper .module-metric-grid,
+    .page-wrapper .dashboard-module-grid,
+    .page-wrapper .dashboard-kpi-grid,
+    .page-wrapper .module-master-metrics,
+    .page-wrapper .dashboard-submetric-grid,
+    .page-wrapper .dashboard-readiness-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .page-wrapper .dashboard-bottom-grid,
+    .page-wrapper .wf-builder {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+    .page-wrapper .mp-page {
+        padding: 28px 18px 32px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page-wrapper .content .row > [class*="col-"] {
+        min-width: 0;
+    }
+}

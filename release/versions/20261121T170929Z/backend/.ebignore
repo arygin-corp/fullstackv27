@@ -1,0 +1,43 @@
+# Elastic Beanstalk source bundle. This file replaces .gitignore.
+# Keep the Django project, static sources, and .ebextensions.
+# The container runs collectstatic on boot, so assets/ is rebuilt there.
+
+.git
+.github
+.idea
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.mypy_cache
+.coverage
+htmlcov
+.DS_Store
+node_modules
+
+.env
+.env.*
+db.sqlite3
+*.sqlite3
+.build-state.json
+
+# Local runtime data, deploy logs, and the saved AWS checkout.
+data
+model_cache
+
+# collectstatic output. Sources live in static/ and the app packages.
+assets
+
+# Uploaded media stays on the environment. Ship only the compiled theme.
+media/*
+!media/theme/
+media/theme/*
+!media/theme/dist/
+
+# Terraform, state, and secret tfvars. Not used by the running app.
+infra
+delete
+
+*.zip
+*.log

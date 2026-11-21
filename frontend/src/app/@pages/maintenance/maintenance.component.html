@@ -1,0 +1,23 @@
+<section class="stage">
+  <div class="copy">
+    <header>
+      <img src="assets/images/brand/logo-light.svg" alt="">
+      <span>Data Marketplace</span>
+    </header>
+    <p class="status" [ngClass]="'is-' + (maintenance.status?.tone || 'deploy')">
+      <span class="dot" aria-hidden="true"></span>
+      {{ maintenance.status?.label || 'Deploying' }}
+    </p>
+    <h1>{{ maintenance.status?.headline || "We'll be back." }}</h1>
+    <p class="message">{{ maintenance.status?.message || 'The website is down for maintenance. Check back later.' }}</p>
+    <div class="clock" aria-live="polite">
+      <p class="clock-kicker">Estimated return</p>
+      <ol>
+        <li><strong>{{ hours }}</strong><span>Hours</span></li>
+        <li><strong>{{ minutes }}</strong><span>Minutes</span></li>
+        <li><strong>{{ seconds }}</strong><span>Seconds</span></li>
+      </ol>
+    </div>
+    <footer>© {{ year }} GDX Data Marketplace · Toyota Motor North America</footer>
+  </div>
+</section>

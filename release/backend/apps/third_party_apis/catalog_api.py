@@ -36,7 +36,7 @@ def integration_catalog_page(request):
     """Render the integration catalog page shell."""
     return render(
         request,
-        "gdx_admin/apps/third_party_apis/integration_catalog.html",
+        "gdx_admin/pages/third_party_apis/integration_catalog.html",
     )
 
 
@@ -78,7 +78,7 @@ def integration_documentation_page(request, module_key):
 
     return render(
         request,
-        "gdx_admin/apps/third_party_apis/integration_documentation.html",
+        "gdx_admin/pages/third_party_apis/integration_documentation.html",
         {
             "integration": integration,
         },

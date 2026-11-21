@@ -1,0 +1,7 @@
+<section class="card mb-3 overflow-hidden">
+  <div class="card-header"><div class="d-flex align-items-center gap-2 min-w-0"><span class="avatar avatar-sm bg-warning-subtle text-warning rounded-circle flex-shrink-0"><i class="ti ti-arrows-diff"></i></span><div class="min-w-0"><h3 class="h6 mb-0 text-break">{{ change.field }}</h3><small class="text-muted">Field-level comparison</small></div></div></div>
+  <div class="card-body"><div class="row g-3">
+    <div class="col-12 col-xl-6 min-w-0"><div class="d-flex justify-content-between gap-2 mb-2"><span class="small fw-semibold text-danger">Before</span><span class="badge bg-danger-subtle text-danger">Previous value</span></div><pre class="p-3 rounded bg-danger-subtle border border-danger-subtle text-wrap mb-0 overflow-auto mw-100">{{ change.before|pretty_value }}</pre></div>
+    <div class="col-12 col-xl-6 min-w-0"><div class="d-flex justify-content-between gap-2 mb-2"><span class="small fw-semibold text-success">After</span><span class="badge bg-success-subtle text-success">New value</span></div><pre class="p-3 rounded bg-success-subtle border border-success-subtle text-wrap mb-0 overflow-auto mw-100">{{ change.after|pretty_value }}</pre></div>
+  </div></div>
+</section>

@@ -8,14 +8,16 @@ export class HighlightPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
   transform(value: string, query: string): SafeHtml {
-    if (!query) return value;
-    
-    // Create a regular expression to find the query (case-insensitive)
-    const re = new RegExp(`(${query})`, 'gi');
-    
-    // Wrap matches in <b> tags with a specific color if desired
-    const highlightedValue = value.replace(re, '<span style="color: #28a745;">$1</span>');
-    
+    const text = value == null ? '' : String(value);
+    const needle = (query || '').trim();
+    if (!needle) {
+      return text;
+    }
+    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const highlightedValue = text.replace(
+      new RegExp(`(${escaped})`, 'gi'),
+      '<span style="color: #28a745;">$1</span>'
+    );
     return this.sanitizer.bypassSecurityTrustHtml(highlightedValue);
   }
 }

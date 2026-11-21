@@ -1,11 +1,11 @@
 from __future__ import annotations
 import json
 from dataclasses import dataclass
-from io import BytesIO
-from typing import Any, Iterable
-import boto3
+from typing import Any
 from botocore.exceptions import ClientError
 from django.conf import settings
+
+from gdx.britive import boto3_client
 
 @dataclass(frozen=True)
 class S3DataStore:
@@ -18,7 +18,7 @@ class S3DataStore:
 
     @property
     def client(self):
-        return boto3.client("s3", region_name=settings.AWS_S3_REGION_NAME)
+        return boto3_client("s3", settings.AWS_S3_REGION_NAME)
 
     def read_bytes(self, path: str) -> bytes:
         return self.client.get_object(Bucket=self.bucket, Key=self._key(path))["Body"].read()

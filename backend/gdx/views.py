@@ -280,19 +280,67 @@ class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
 # Local Django authentication
 # ---------------------------------------------------------------------------
 
+def _profile_is_verified(user):
+    try:
+        return bool(user.profile.is_verified)
+    except ObjectDoesNotExist:
+        return False
+
+
+def bad_request(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/400.html", status=400)
+
+
+def permission_denied(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/403.html", status=403)
+
+
+def page_not_found(request, exception=None):
+    return render(request, "gdx_admin/pages/errors/404.html", status=404)
+
+
+def server_error(request):
+    return render(request, "gdx_admin/pages/errors/500.html", status=500)
+
+
 def not_authorized(request):
     user = request.user
     pending_verification = False
-    if getattr(user, "is_authenticated", False) and getattr(user, "is_staff", False) and not getattr(user, "is_superuser", False):
-        try:
-            pending_verification = not user.profile.is_verified
-        except ObjectDoesNotExist:
+    unverified_user = False
+    if getattr(user, "is_authenticated", False) and not getattr(user, "is_superuser", False):
+        verified = _profile_is_verified(user)
+        if getattr(user, "is_staff", False) and not verified:
             pending_verification = True
+        elif not getattr(user, "is_staff", False) and not verified:
+            unverified_user = True
     return render(
         request,
-        "gdx_admin/auth/not_authorized.html",
-        {"pending_verification": pending_verification},
+        "gdx_admin/pages/errors/not-authorized.html",
+        {
+            "pending_verification": pending_verification,
+            "unverified_user": unverified_user,
+        },
     )
+
+
+def microsoft_callback(request):
+    from microsoft_authentication.auth.auth_utils import get_django_user, get_token_from_code, get_user
+
+    result = get_token_from_code(request)
+    next_url = request.session.pop("next_url", None)
+    ms_user = get_user(result["access_token"])
+    user = get_django_user(email=ms_user.get("mail") or ms_user.get("userPrincipalName"))
+    if user is None:
+        return redirect("not_authorized")
+    login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+    from gdx.britive import ensure_shared_checkout
+
+    ensure_shared_checkout(user)
+    if not user.is_staff and not user.is_superuser and not _profile_is_verified(user):
+        return redirect("not_authorized")
+    if next_url and url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}):
+        return redirect(next_url)
+    return redirect(settings.LOGIN_REDIRECT_URL or "/")
 
 
 class GDXLoginView(LoginView):
@@ -305,6 +353,9 @@ class GDXLoginView(LoginView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
+        from gdx.britive import ensure_shared_checkout
+
+        ensure_shared_checkout(self.request.user)
 
         if not self.request.POST.get("remember_me"):
             self.request.session.set_expiry(0)
@@ -437,7 +488,17 @@ def custom_ckeditor5_upload(request):
 
 
 def maintenance(request):
-    return render(request, "gdx_admin/auth/maintenance.html")
+    from gdx.maintenance import maintenance_context
+
+    return render(request, "gdx_admin/pages/errors/maintenance.html", maintenance_context(request))
+
+
+def maintenance_status(request):
+    from django.http import JsonResponse
+
+    from gdx.maintenance import frontend_status
+
+    return JsonResponse(frontend_status())
 
 
 def _settings_redirect(tab, request=None):
@@ -612,7 +673,7 @@ def platform_settings(request):
 
     return render(
         request,
-        "gdx_admin/settings/index.html",
+        "gdx_admin/pages/settings/index.html",
         {
             "sections": sections,
             "active_tab": request.GET.get("tab") or "global",

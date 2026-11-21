@@ -1,0 +1,2291 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "periodid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "production"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "zallocationplanovrd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "zline"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "zplant"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "zseries"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_allocplan",
+      "column_name": "zseriesgroup"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "periodid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "production"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zddworkingmin"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zline"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zmaxvol"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zminvol"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "znonworkdaymth"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zoprate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zovertime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zplant"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatmin"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatsfrec"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatsftbldah"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatsftor"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatvol"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatvolorder"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zsatworkmins"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zshifts"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "ztakttime"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "ztotalwd"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdmaxmin"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdminmin"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdnoot"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdsft1"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdsft2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "ibp_ff_operconds",
+      "column_name": "zwdsft3"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "buildaheadtarget"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "companyid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "costcenterid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "createdby"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "createdon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "isactive"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "lineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "modifiedby"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "modifiedon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "partid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "plannedvolume"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "plantid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "productiondate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "shiftid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "shopid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "productionplans",
+      "column_name": "sublineid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "companyid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "createdby"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "createdon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "email"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "firstname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "isactive"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "isesluser"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "lastname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "managerworkdayid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "modifiedby"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "modifiedon"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "phonenumber"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "preferredname"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "workdaycompany"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "workdaycostcenter"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "workdayid"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "mfg_productivity_sensitive_trn_ext",
+      "elementname": "teammembers",
+      "column_name": "workdaystatus"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "cms_labor_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "created_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "date_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "date_worked_prtn"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "deleted_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "hierarchy_active"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "hierarchy_descr"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "hierarchy_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "hierarchy_levels"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "hierarchy_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level1_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level2_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level3_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level4_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level5_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_apeff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_apeff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_apeff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_cumm_teff_ly_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_over_time_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_over_time_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_teff_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_teff_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_teff_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_atnd_pct_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_atnd_pct_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_head_cnt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_head_cnt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_non_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_non_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_ot_eed_twt_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_ot_eed_twt_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_prodcng_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_prodcng_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_twt_hours_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_twt_hours_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_twt_hours_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_wk_avg_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_tm_wk_avg_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_total_eh_hrs_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_total_eh_hrs_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_total_eh_hrs_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_yip_mtd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "level6_yip_ytd_tgt"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "nxp_plan_type"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "peff_working_day"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix",
+      "column_name": "updated_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "april_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "april_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "april_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "august_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "august_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "august_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "bu"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "category"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "december_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "december_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "december_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "february_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "february_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "february_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "fiscalyear"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "january_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "january_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "january_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "july_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "july_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "july_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "june_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "june_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "june_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "line"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "line_total"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "march_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "march_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "march_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "may_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "may_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "may_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "november_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "november_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "november_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "nxpversion"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "october_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "october_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "october_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "plant_total"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "september_line_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "september_plant_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "september_shop_month"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "shop"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "shop_total"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "actuals_forecast_mix_detailed",
+      "column_name": "subcategory"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "adj_recieved_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "adjustable_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "adjustable_hrs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "calculate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "company_code_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "company_code_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "cost_center_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "cost_center_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "date_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "employee_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "employee_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "hire_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "hours_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "job_level"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "job_level_description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "labor_class"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "prior_month_flag"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "shift"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "shift_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "time_reporting_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor",
+      "column_name": "wta"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "adj_recieved_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "adjustable_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "adjustable_hrs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "calculate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "company_code_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "company_code_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "cost_center_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "cost_center_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "date_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "employee_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "employee_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "hire_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "hours_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "job_level"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "job_level_description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "labor_class"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "prior_month_flag"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "shift"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "time_reporting_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "kronos_pay_time_and_labor_rej",
+      "column_name": "wta"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "adjustable_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "adjustable_hrs"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "calculate"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "company_code_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "company_code_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "cost_center_home"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "cost_center_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "date_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "employee_id"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "employee_name"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "hire_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "hours_worked"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "job_level"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "job_level_description"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "labor_class"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "last_update_date"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "prior_month_flag"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "shift"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "time_reporting_code"
+    },
+    {
+      "userrolename": "tbdp-manufacturing-productivity-sensitive",
+      "dbname": "peff_ing",
+      "elementname": "tbmnc_twt",
+      "column_name": "wta"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-manufacturing-productivity-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

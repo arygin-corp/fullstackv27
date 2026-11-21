@@ -1,0 +1,1049 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}DAR Form Builder{% endblock %}
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18.3">
+{% endblock %}
+{% block content %}
+<main class="module-page" id="dar-form-builder" data-document-url="/api/forms/dar-form-builder/document/" data-choices-url="/api/forms/dar-form-builder/marketplace-choices/">
+<section class="module-dashboard-heading-row">
+    <div class="module-dashboard-actions builder-toolbar">
+        <button class="integration-button" type="button" id="open-validators">Validators</button>
+        <button class="integration-button" type="button" id="open-preview">Preview</button>
+        <button class="integration-button" type="button" id="open-form-modal">View Form</button>
+        <button class="integration-button" type="button" id="reset-form">Reset to code</button>
+        <button class="integration-button integration-button--primary" type="button" id="save-form">Save</button>
+    </div>
+</section>
+    <div id="builder-status" class="alert d-none" role="status"></div>
+    <div class="form-builder">
+        <section class="builder-panel">
+            <header class="builder-panel-head">
+                <h3>Sections</h3>
+                <button class="btn btn-sm btn-light border" type="button" id="add-section">Add</button>
+            </header>
+            <div class="builder-list" id="section-list"></div>
+        </section>
+        <section class="builder-panel">
+            <header class="builder-panel-head">
+                <h3 id="field-list-title">Fields</h3>
+                <button class="btn btn-sm btn-light border" type="button" id="add-field">Add field</button>
+            </header>
+            <div class="builder-search">
+                <input class="form-control" id="field-search" type="search" placeholder="Find a field">
+            </div>
+            <div class="builder-list" id="field-list"></div>
+        </section>
+        <section class="builder-main">
+            <article class="builder-panel">
+                <header class="builder-panel-head"><h3>Field</h3></header>
+                <div class="builder-panel-body" id="field-editor"></div>
+            </article>
+        </section>
+    </div>
+    <div class="builder-drawer-backdrop" id="builder-drawer-backdrop"></div>
+    <aside class="builder-drawer" id="validators-drawer" aria-hidden="true" aria-label="Validators">
+        <header class="builder-drawer-head">
+            <h3>Validators</h3>
+            <button class="btn btn-sm btn-light border" type="button" data-close-drawer="validators">Close</button>
+        </header>
+        <div class="builder-drawer-body">
+            <div id="rule-editor"></div>
+        </div>
+    </aside>
+    <aside class="builder-drawer" id="preview-drawer" aria-hidden="true" aria-label="Preview">
+        <header class="builder-drawer-head">
+            <h3>Preview</h3>
+            <button class="btn btn-sm btn-light border" type="button" data-close-drawer="preview">Close</button>
+        </header>
+        <div class="builder-drawer-body">
+            <label class="form-label" for="preview-platform">Platform</label>
+            <input class="form-control mb-2" id="preview-platform" value="TBDP (IRM, PASA, C360, Q360, IRM-Pricing, etc.)">
+            <label class="form-label" for="preview-pi">Personal information</label>
+            <select class="form-select mb-2" id="preview-pi">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+            <label class="form-label" for="preview-spi">Sensitive personal information</label>
+            <select class="form-select mb-3" id="preview-spi">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+            <div id="preview"></div>
+        </div>
+    </aside>
+<div class="form-modal" id="form-modal" hidden>
+    <div class="form-modal-backdrop" id="form-modal-backdrop"></div>
+    <div class="form-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="form-modal-title">
+        <header class="form-modal-head">
+            <div>
+                <h3 id="form-modal-title">Data Access Request</h3>
+                <p>Change the answers to see which fields show, hide, and become required. Check form keeps the hidden fields on screen for this review only.</p>
+            </div>
+            <button class="btn btn-sm btn-light border" type="button" id="close-form-modal">Close</button>
+        </header>
+        <div class="form-modal-body">
+            <form id="live-form"></form>
+            <p class="live-summary" id="live-form-summary"></p>
+        </div>
+        <footer class="form-modal-foot">
+            <button class="integration-button" type="button" id="check-live-form">Check form</button>
+            <button class="integration-button integration-button--primary" type="button" id="close-form-modal-foot">Close</button>
+        </footer>
+    </div>
+</div>
+</main>
+<style>
+    .form-builder { display: grid; grid-template-columns: minmax(200px, 260px) minmax(240px, 340px) minmax(0, 1fr); gap: 16px; align-items: start; width: 100%; }
+    .builder-main { display: grid; gap: 16px; min-width: 0; }
+    .builder-drawer-backdrop { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.35); z-index: 1060; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+    .builder-drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .builder-drawer { position: fixed; top: 0; right: 0; z-index: 1061; width: min(440px, 100vw); height: 100vh; background: #fff; box-shadow: -12px 0 32px rgba(15, 23, 42, 0.16); transform: translateX(100%); transition: transform 0.22s ease; display: flex; flex-direction: column; }
+    .builder-drawer.open { transform: translateX(0); }
+    .builder-drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #eef0f4; }
+    .builder-drawer-head h3 { margin: 0; font-size: 16px; }
+    .builder-drawer-body { overflow: auto; padding: 8px 20px 32px; }
+    .builder-drawer-body section + section { margin-top: 28px; padding-top: 20px; border-top: 1px solid #eef0f4; }
+    .builder-drawer-body h4 { margin: 12px 0 14px; font-size: 14px; }
+    .builder-panel { background: #fff; border: 1px solid #e4e7ee; border-radius: 12px; min-width: 0; }
+    .builder-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 14px 16px; border-bottom: 1px solid #eef0f4; }
+    .builder-panel-head h3 { margin: 0; font-size: 15px; font-weight: 650; }
+    .builder-panel-body { padding: 16px; }
+    .builder-search { padding: 12px; border-bottom: 1px solid #eef0f4; }
+    .builder-list { max-height: calc(100vh - 250px); overflow: auto; }
+    .builder-list button { display: block !important; width: 100%; height: auto !important; min-height: 58px; margin: 0; padding: 10px 14px !important; border: 0; border-bottom: 1px solid #eef0f4; border-radius: 0; background: #fff; text-align: left !important; white-space: normal !important; line-height: 1.35 !important; overflow: visible !important; box-shadow: none; }
+    .section-row { display: flex; align-items: stretch; border-bottom: 1px solid #eef0f4; }
+    .section-row button.section-pick { flex: 1; min-width: 0; border-bottom: 0; }
+    .section-row button.section-add { width: 42px; min-height: 58px; padding: 0 !important; border: 0; border-left: 1px solid #eef0f4; border-radius: 0; background: #fff; color: #4338ca; font-size: 18px; font-weight: 650; }
+    .section-row.active button.section-pick { background: #eef2ff; box-shadow: inset 3px 0 0 #4338ca; }
+    .section-row button.section-add:hover { background: #eef2ff; }
+    .builder-list button .section { display: block; color: #6b7280; font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+    .builder-list button .name { display: block; margin-top: 2px; color: #111827; font-size: 14px; font-weight: 600; }
+    .builder-list button.active { background: #eef2ff; box-shadow: inset 3px 0 0 #4338ca; }
+    .builder-empty { margin: 0; color: #6b7280; }
+    #field-editor { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    #field-editor .builder-empty, #field-editor .form-check, #field-editor > button { grid-column: 1 / -1; }
+    #preview { border-top: 1px solid #eef0f4; margin-top: 4px; max-height: 420px; overflow: auto; }
+    .preview-row { padding: 10px 0; border-bottom: 1px solid #f1f3f7; }
+    .preview-row strong, .preview-row span { display: block; white-space: normal; line-height: 1.4; }
+    .preview-row span { color: #6b7280; font-size: 12px; word-break: break-word; }
+    .form-modal[hidden] { display: none !important; }
+    .form-modal { position: fixed; inset: 0; z-index: 1080; display: grid; place-items: center; padding: 24px; }
+    .form-modal-backdrop { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.48); }
+    .form-modal-dialog { position: relative; display: flex; flex-direction: column; width: min(760px, 100%); max-height: calc(100vh - 48px); background: #fff; border-radius: 14px; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28); }
+    .form-modal-head, .form-modal-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; }
+    .form-modal-head { border-bottom: 1px solid #eef0f4; }
+    .form-modal-head h3 { margin: 0; font-size: 18px; }
+    .form-modal-head p, .live-summary { margin: 4px 0 0; color: #6b7280; font-size: 13px; }
+    .form-modal-body { overflow: auto; padding: 18px 20px 8px; }
+    .form-modal-foot { border-top: 1px solid #eef0f4; justify-content: flex-end; }
+    .live-help { color: #6b7280; font-size: 12px; }
+    .live-section { margin: 18px 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #6b7280; }
+    .live-field { margin-bottom: 14px; }
+    .live-field.is-concealed { margin-bottom: 14px; padding: 8px 10px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; }
+    .live-field.is-concealed .conceal-note { display: block; margin-top: 6px; color: #92400e; }
+    .live-field label { display: block; margin-bottom: 4px; font-weight: 650; }
+    .live-field .req { color: #b91c1c; }
+    .live-error { margin-top: 4px; color: #b91c1c; font-size: 12px; }
+    .live-content { margin: 0 0 8px 18px; color: #374151; }
+    .terms-copy { margin: 0 0 10px; color: #1f2937; font-size: 14px; line-height: 1.45; }
+    .terms-copy p { margin: 0 0 6px; }
+    .supplied-values { margin: 6px 0 0; padding: 0; list-style: none; color: #374151; font-size: 12px; }
+    .supplied-values li { padding: 2px 0; }
+    .live-summary.is-ok { color: #047857; }
+    .live-summary.is-bad { color: #b91c1c; }
+    .people-results { margin-top: 6px; border: 1px solid #e4e7ee; border-radius: 8px; max-height: 220px; overflow: auto; background: #fff; }
+    .people-results button { display: block; width: 100%; padding: 8px 10px; border: 0; border-bottom: 1px solid #f1f3f7; background: #fff; text-align: left; }
+    .people-results button:hover { background: #f8fafc; }
+    .people-results p { margin: 0; padding: 8px 10px; color: #6b7280; font-size: 12px; }
+    @media (max-width: 991px) { .form-builder { grid-template-columns: 1fr; } }
+</style>
+{{ initial_document|json_script:"dar-form-document" }}
+{{ marketplace_sources|json_script:"dar-marketplace-sources" }}
+{% endblock %}
+{% block extra_js %}
+<script>
+(function () {
+    const root = document.getElementById("dar-form-builder");
+    const documentUrl = root.dataset.documentUrl;
+    const choicesUrl = root.dataset.choicesUrl;
+    const marketplaceSources = JSON.parse(document.getElementById("dar-marketplace-sources").textContent);
+    const csrf = "{{ csrf_token }}";
+    let documentState = JSON.parse(document.getElementById("dar-form-document").textContent);
+    let selected = null;
+    let selectedSectionKey = null;
+    const fieldTypes = ["text", "textarea", "select", "checkbox", "number", "date", "email"];
+
+    function status(message, ok) {
+        const node = document.getElementById("builder-status");
+        node.className = "alert " + (ok ? "alert-success" : "alert-danger");
+        node.textContent = message;
+    }
+
+    function fields() {
+        return (documentState.sections || []).flatMap(function (section) {
+            return (section.fields || []).map(function (field) {
+                return {section: section, field: field};
+            });
+        });
+    }
+
+    function matches(rule, values) {
+        if (!rule) return true;
+        if (rule.not) return !matches(rule.not, values);
+        if (rule.all) return rule.all.every(function (item) { return matches(item, values); });
+        if (rule.any) return rule.any.some(function (item) { return matches(item, values); });
+        const current = values[rule.field];
+        if (Object.prototype.hasOwnProperty.call(rule, "equals")) return current === rule.equals;
+        if (Object.prototype.hasOwnProperty.call(rule, "not_equals")) return current !== rule.not_equals;
+        if (Object.prototype.hasOwnProperty.call(rule, "in")) return (rule.in || []).indexOf(current) !== -1;
+        return false;
+    }
+
+    function previewValues() {
+        return {
+            v_dar_platform: document.getElementById("preview-platform").value,
+            v_dar_pi: document.getElementById("preview-pi").value,
+            v_dar_spi: document.getElementById("preview-spi").value
+        };
+    }
+
+    function activeLabel(field, values) {
+        const rules = field.label_when || [];
+        for (let i = 0; i < rules.length; i += 1) {
+            if (matches(rules[i].when, values)) return rules[i].label;
+        }
+        return field.label || field.name;
+    }
+
+    function sectionByKey(key) {
+        return (documentState.sections || []).find(function (section) { return section.key === key; }) || null;
+    }
+
+    function sectionOf(field) {
+        return (documentState.sections || []).find(function (section) {
+            return (section.fields || []).indexOf(field) !== -1;
+        }) || null;
+    }
+
+    function activeSection() {
+        return sectionByKey(selectedSectionKey) || documentState.sections[0] || null;
+    }
+
+    function blankField() {
+        return {
+            name: uniqueName("new_field"),
+            label: "New field",
+            type: "text",
+            required: false,
+            disabled: false,
+            options: [],
+            options_source: "",
+            help: "",
+            min_length: null,
+            max_length: null,
+            validators: [],
+            visible_when: null,
+            disabled_when: null,
+            value_when: [],
+            label_when: []
+        };
+    }
+
+    function addFieldTo(section) {
+        if (!section) return;
+        section.fields = section.fields || [];
+        const field = blankField();
+        section.fields.push(field);
+        selectedSectionKey = section.key;
+        selected = field;
+        render();
+    }
+
+    function renderSections() {
+        const list = document.getElementById("section-list");
+        list.innerHTML = "";
+        (documentState.sections || []).forEach(function (section) {
+            const row = document.createElement("div");
+            row.className = "section-row" + (section.key === selectedSectionKey ? " active" : "");
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "section-pick";
+            const name = document.createElement("span");
+            name.className = "name";
+            name.textContent = section.label;
+            const meta = document.createElement("span");
+            meta.className = "section";
+            const count = (section.fields || []).length;
+            meta.textContent = count + (count === 1 ? " field" : " fields");
+            button.appendChild(name);
+            button.appendChild(meta);
+            button.addEventListener("click", function () {
+                selectedSectionKey = section.key;
+                if ((section.fields || []).indexOf(selected) === -1) {
+                    selected = (section.fields || [])[0] || null;
+                }
+                render();
+            });
+            const add = document.createElement("button");
+            add.type = "button";
+            add.className = "section-add";
+            add.title = "Add a field to " + section.label;
+            add.setAttribute("aria-label", "Add a field to " + section.label);
+            add.textContent = "+";
+            add.addEventListener("click", function () { addFieldTo(section); });
+            row.appendChild(button);
+            row.appendChild(add);
+            list.appendChild(row);
+        });
+    }
+
+    function renderList() {
+        const list = document.getElementById("field-list");
+        const section = activeSection();
+        const title = document.getElementById("field-list-title");
+        title.textContent = section ? section.label : "Fields";
+        const query = (document.getElementById("field-search").value || "").trim().toLowerCase();
+        list.innerHTML = "";
+        if (!section) return;
+        const visible = (section.fields || []).filter(function (field) {
+            const label = field.label || field.name;
+            const haystack = (section.label + " " + label + " " + field.name).toLowerCase();
+            return !query || haystack.indexOf(query) !== -1;
+        });
+        if (!visible.length) {
+            const empty = document.createElement("p");
+            empty.className = "builder-empty";
+            empty.style.padding = "12px 14px";
+            empty.textContent = query ? "No fields match this search." : "This section has no fields yet.";
+            list.appendChild(empty);
+            return;
+        }
+        visible.forEach(function (field) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = selected === field ? "active" : "";
+            const name = document.createElement("span");
+            name.className = "name";
+            name.textContent = field.label || field.name;
+            button.appendChild(name);
+            button.addEventListener("click", function () {
+                selected = field;
+                selectedSectionKey = section.key;
+                render();
+            });
+            list.appendChild(button);
+        });
+    }
+
+    function input(label, value, onChange) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2";
+        const title = document.createElement("label");
+        title.className = "form-label";
+        title.textContent = label;
+        const box = document.createElement("input");
+        box.className = "form-control";
+        box.value = value == null ? "" : value;
+        box.addEventListener("input", function () { onChange(box.value); renderList(); renderPreview(); });
+        wrap.appendChild(title);
+        wrap.appendChild(box);
+        return wrap;
+    }
+
+    function selectBox(label, value, choices, onChange) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2";
+        const title = document.createElement("label");
+        title.className = "form-label";
+        title.textContent = label;
+        const box = document.createElement("select");
+        box.className = "form-select";
+        choices.forEach(function (choice) {
+            const option = document.createElement("option");
+            option.value = choice;
+            option.textContent = choice;
+            if (choice === value) option.selected = true;
+            box.appendChild(option);
+        });
+        box.addEventListener("change", function () { onChange(box.value); renderList(); renderPreview(); });
+        wrap.appendChild(title);
+        wrap.appendChild(box);
+        return wrap;
+    }
+
+    function check(label, value, onChange) {
+        const wrap = document.createElement("div");
+        wrap.className = "form-check form-switch mb-2";
+        const box = document.createElement("input");
+        box.className = "form-check-input";
+        box.type = "checkbox";
+        box.checked = !!value;
+        box.addEventListener("change", function () { onChange(box.checked); renderPreview(); });
+        const title = document.createElement("label");
+        title.className = "form-check-label";
+        title.textContent = label;
+        wrap.appendChild(box);
+        wrap.appendChild(title);
+        return wrap;
+    }
+
+    function selectPairs(label, value, pairs, onChange) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2";
+        const title = document.createElement("label");
+        title.className = "form-label";
+        title.textContent = label;
+        const box = document.createElement("select");
+        box.className = "form-select";
+        pairs.forEach(function (pair) {
+            const option = document.createElement("option");
+            option.value = pair.value;
+            option.textContent = pair.label;
+            if (pair.value === value) option.selected = true;
+            box.appendChild(option);
+        });
+        box.addEventListener("change", function () { onChange(box.value); });
+        wrap.appendChild(title);
+        wrap.appendChild(box);
+        return wrap;
+    }
+
+    function choiceList(options) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2";
+        const title = document.createElement("label");
+        title.className = "form-label";
+        title.textContent = "Dropdown values";
+        wrap.appendChild(title);
+        if (!options.length) {
+            const empty = document.createElement("p");
+            empty.className = "builder-empty";
+            empty.textContent = "No active marketplace records yet. Activate records in the marketplace catalog and choose this source again.";
+            wrap.appendChild(empty);
+            return wrap;
+        }
+        const list = document.createElement("ul");
+        list.className = "live-content";
+        options.forEach(function (option) {
+            const item = document.createElement("li");
+            item.textContent = option.label || option.value;
+            list.appendChild(item);
+        });
+        wrap.appendChild(list);
+        return wrap;
+    }
+
+    function jsonBox(label, value, onChange) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2";
+        const title = document.createElement("label");
+        title.className = "form-label";
+        title.textContent = label;
+        const box = document.createElement("textarea");
+        box.className = "form-control";
+        box.rows = 4;
+        box.value = value ? JSON.stringify(value, null, 2) : "";
+        box.addEventListener("change", function () {
+            if (!box.value.trim()) { onChange(null); renderPreview(); return; }
+            try { onChange(JSON.parse(box.value)); box.classList.remove("is-invalid"); }
+            catch (error) { box.classList.add("is-invalid"); }
+            renderPreview();
+        });
+        wrap.appendChild(title);
+        wrap.appendChild(box);
+        return wrap;
+    }
+
+    function moveField(sectionLabel) {
+        documentState.sections.forEach(function (section) {
+            section.fields = (section.fields || []).filter(function (field) { return field !== selected; });
+        });
+        const section = documentState.sections.find(function (item) { return item.label === sectionLabel; });
+        section.fields.push(selected);
+        selectedSectionKey = section.key;
+        renderSections();
+    }
+
+    function renderEditor() {
+        const host = document.getElementById("field-editor");
+        const rules = document.getElementById("rule-editor");
+        host.innerHTML = "";
+        rules.innerHTML = "";
+        if (!selected) {
+            host.innerHTML = "<p class='builder-empty'>Select a field from the list to edit its label, type, and limits.</p>";
+            rules.innerHTML = "<p class='builder-empty'>Show, hide, and validation rules for the selected field appear here.</p>";
+            return;
+        }
+        const currentSection = documentState.sections.find(function (section) {
+            return (section.fields || []).indexOf(selected) !== -1;
+        });
+        host.appendChild(selectBox("Section", currentSection ? currentSection.label : "", documentState.sections.map(function (section) { return section.label; }), moveField));
+        host.appendChild(input("Name", selected.name, function (value) { selected.name = value.trim(); }));
+        host.appendChild(input("Label", selected.label, function (value) { selected.label = value; }));
+        host.appendChild(selectBox("Type", selected.type || "text", fieldTypes, function (value) { selected.type = value; render(); }));
+        if ((selected.content || []).length || selected.name === "chk_dar_terms_message") {
+            const wrap = document.createElement("div");
+            wrap.className = "mb-2";
+            const title = document.createElement("label");
+            title.className = "form-label";
+            title.textContent = "Text shown with this field";
+            const box = document.createElement("textarea");
+            box.className = "form-control";
+            box.rows = 8;
+            box.value = (selected.content || []).join("\n");
+            box.addEventListener("change", function () {
+                selected.content = box.value.split("\n").map(function (line) { return line.trim(); }).filter(Boolean);
+                renderPreview();
+            });
+            wrap.appendChild(title);
+            wrap.appendChild(box);
+            host.appendChild(wrap);
+        }
+        if ((selected.type || "text") === "select" || (selected.options_source || "").indexOf("marketplace:") === 0 || (selected.options_source || "").indexOf("people-finder") !== -1) {
+            const currentSource = selected.options_source || "";
+            const pairs = [{value: "", label: "Typed choices"}].concat(marketplaceSources.map(function (source) {
+                return {value: "marketplace:" + source.key, label: "Marketplace · " + source.label};
+            })).concat([{value: "/api/integrations/people-finder/search/gac/user/", label: "People Finder"}]);
+            host.appendChild(selectPairs("Choices from", pairs.some(function (pair) { return pair.value === currentSource; }) ? currentSource : "", pairs, function (value) {
+                selected.options_source = value;
+                if (value.indexOf("marketplace:") === 0) {
+                    selected.type = "select";
+                    fetch(choicesUrl + value.slice("marketplace:".length) + "/", {headers: {"Accept": "application/json"}})
+                        .then(function (response) { return response.ok ? response.json() : Promise.reject(response); })
+                        .then(function (payload) {
+                            selected.options = payload.options || [];
+                            render();
+                        })
+                        .catch(function () { render(); });
+                    return;
+                }
+                if (value.indexOf("people-finder") !== -1) {
+                    selected.options = [];
+                }
+                render();
+            }));
+            if (currentSource.indexOf("marketplace:") === 0) {
+                host.appendChild(choiceList(selected.options || []));
+            } else if (currentSource.indexOf("people-finder") === -1) {
+                host.appendChild(jsonBox("Options", selected.options && selected.options.length ? selected.options : null, function (value) { selected.options = value || []; }));
+            }
+        }
+        host.appendChild(input("Help", selected.help || "", function (value) { selected.help = value; }));
+        host.appendChild(input("Min length", selected.min_length == null ? "" : selected.min_length, function (value) {
+            selected.min_length = value === "" ? null : Number(value);
+        }));
+        host.appendChild(input("Max length", selected.max_length == null ? "" : selected.max_length, function (value) {
+            selected.max_length = value === "" ? null : Number(value);
+        }));
+        host.appendChild(check("Required", selected.required, function (value) { selected.required = value; }));
+        host.appendChild(check("Disabled", selected.disabled, function (value) { selected.disabled = value; }));
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "btn btn-sm btn-outline-danger";
+        remove.textContent = "Remove field";
+        remove.addEventListener("click", function () {
+            documentState.sections.forEach(function (section) {
+                section.fields = (section.fields || []).filter(function (field) { return field !== selected; });
+            });
+            selected = null;
+            render();
+        });
+        host.appendChild(remove);
+
+        rules.appendChild(jsonBox("Show when", selected.visible_when, function (value) { selected.visible_when = value; }));
+        rules.appendChild(jsonBox("Disable when", selected.disabled_when, function (value) { selected.disabled_when = value; }));
+        rules.appendChild(jsonBox("Value when", selected.value_when, function (value) { selected.value_when = value || []; }));
+        rules.appendChild(jsonBox("Label when", selected.label_when, function (value) { selected.label_when = value || []; }));
+        const title = document.createElement("h4");
+        title.className = "h6 mt-3";
+        title.textContent = "Validators";
+        rules.appendChild(title);
+        (selected.validators || []).forEach(function (rule, index) {
+            const card = document.createElement("div");
+            card.className = "border rounded p-2 mb-2";
+            card.appendChild(input("Type", rule.type, function (value) { rule.type = value.trim(); }));
+            card.appendChild(input("Message", rule.message || "", function (value) { rule.message = value; }));
+            card.appendChild(input("Value", rule.value == null ? "" : rule.value, function (value) {
+                if (value === "") { rule.value = null; return; }
+                const number = Number(value);
+                rule.value = Number.isNaN(number) ? value : number;
+            }));
+            card.appendChild(jsonBox("When", rule.when, function (value) { rule.when = value; }));
+            card.appendChild(check("Enforced on the request form", rule.enforced, function (value) { rule.enforced = value; rule.source = value ? "builder" : rule.source; }));
+            const drop = document.createElement("button");
+            drop.type = "button";
+            drop.className = "btn btn-sm btn-light";
+            drop.textContent = "Remove validator";
+            drop.addEventListener("click", function () {
+                selected.validators.splice(index, 1);
+                render();
+            });
+            card.appendChild(drop);
+            rules.appendChild(card);
+        });
+        const add = document.createElement("button");
+        add.type = "button";
+        add.className = "btn btn-sm btn-light";
+        add.textContent = "Add validator";
+        add.addEventListener("click", function () {
+            selected.validators = selected.validators || [];
+            selected.validators.push({type: "required", message: "This field is required.", enforced: true, source: "builder", when: null});
+            render();
+        });
+        rules.appendChild(add);
+    }
+
+    function renderPreview() {
+        const host = document.getElementById("preview");
+        const values = previewValues();
+        host.innerHTML = "";
+        fields().forEach(function (item) {
+            if (!matches(item.field.visible_when, values)) return;
+            const row = document.createElement("div");
+            row.className = "preview-row";
+            const label = document.createElement("strong");
+            label.textContent = activeLabel(item.field, values);
+            const meta = document.createElement("span");
+            meta.textContent = item.field.name + " · " + (item.field.type || "text") + (item.field.required ? " · required" : "");
+            row.appendChild(label);
+            row.appendChild(meta);
+            host.appendChild(row);
+        });
+    }
+
+    function render() {
+        if (selected) {
+            const owner = sectionOf(selected);
+            if (owner) selectedSectionKey = owner.key;
+        }
+        if (!sectionByKey(selectedSectionKey)) {
+            const first = (documentState.sections || [])[0];
+            selectedSectionKey = first ? first.key : null;
+        }
+        renderSections();
+        renderList();
+        renderEditor();
+        renderPreview();
+    }
+
+    function uniqueName(base) {
+        const taken = new Set(fields().map(function (item) { return item.field.name; }));
+        let name = base;
+        let index = 2;
+        while (taken.has(name)) {
+            name = base + "_" + index;
+            index += 1;
+        }
+        return name;
+    }
+
+    async function send(method, body) {
+        const response = await fetch(documentUrl, {
+            method: method,
+            headers: {"Content-Type": "application/json", "X-CSRFToken": csrf},
+            body: body ? JSON.stringify(body) : null
+        });
+        const payload = await response.json();
+        if (!response.ok) {
+            status((payload.errors || ["Save failed."]).join(" "), false);
+            return;
+        }
+        documentState = payload.document;
+        selected = null;
+        render();
+        status(payload.saved ? "Saved. The Data Access Request form now includes these fields and rules." : "Reset to the code form.", true);
+    }
+
+    document.getElementById("save-form").addEventListener("click", function () {
+        send("PUT", {document: documentState});
+    });
+    document.getElementById("reset-form").addEventListener("click", function () {
+        if (window.confirm("Replace the saved form with the code form?")) send("DELETE");
+    });
+    document.getElementById("add-section").addEventListener("click", function () {
+        const label = window.prompt("Section label", "New section");
+        if (!label || !label.trim()) return;
+        const section = {key: "section_" + (documentState.sections.length + 1), label: label.trim(), fields: []};
+        const additional = documentState.sections.findIndex(function (item) { return item.key === "additional"; });
+        if (additional === -1) documentState.sections.push(section);
+        else documentState.sections.splice(additional, 0, section);
+        selectedSectionKey = section.key;
+        selected = null;
+        render();
+    });
+    document.getElementById("add-field").addEventListener("click", function () {
+        addFieldTo(activeSection());
+    });
+    document.getElementById("field-search").addEventListener("input", renderList);
+    const drawers = {
+        validators: document.getElementById("validators-drawer"),
+        preview: document.getElementById("preview-drawer")
+    };
+    const backdrop = document.getElementById("builder-drawer-backdrop");
+    function setDrawer(name) {
+        Object.keys(drawers).forEach(function (key) {
+            const open = key === name;
+            drawers[key].classList.toggle("open", open);
+            drawers[key].setAttribute("aria-hidden", open ? "false" : "true");
+        });
+        backdrop.classList.toggle("open", !!name);
+        document.getElementById("open-validators").setAttribute("aria-pressed", name === "validators" ? "true" : "false");
+        document.getElementById("open-preview").setAttribute("aria-pressed", name === "preview" ? "true" : "false");
+    }
+    function closeDrawer() { setDrawer(null); }
+    document.getElementById("open-validators").addEventListener("click", function () { setDrawer("validators"); });
+    document.getElementById("open-preview").addEventListener("click", function () { setDrawer("preview"); });
+    document.querySelectorAll("[data-close-drawer]").forEach(function (button) {
+        button.addEventListener("click", closeDrawer);
+    });
+    backdrop.addEventListener("click", closeDrawer);
+    document.addEventListener("keydown", function (event) {
+        if (event.key !== "Escape") return;
+        const modal = document.getElementById("form-modal");
+        if (!modal.hidden) closeLiveForm();
+        else closeDrawer();
+    });
+    const liveForm = document.getElementById("live-form");
+    const liveSummary = document.getElementById("live-form-summary");
+    let liveCheck = false;
+    function describeRule(rule) {
+        if (!rule) return "Always";
+        if (rule.not) return "not (" + describeRule(rule.not) + ")";
+        if (rule.all) return rule.all.map(describeRule).join(" and ");
+        if (rule.any) return rule.any.map(describeRule).join(" or ");
+        if (Object.prototype.hasOwnProperty.call(rule, "equals")) return rule.field + " is " + rule.equals;
+        if (Object.prototype.hasOwnProperty.call(rule, "not_equals")) return rule.field + " is not " + rule.not_equals;
+        return "";
+    }
+
+    function optionVisible(option, values) {
+        if (!option || typeof option !== "object") return true;
+        if (option.visible_when) return matches(option.visible_when, values);
+        return option.visible !== false;
+    }
+    function liveValues() {
+        const values = {};
+        liveForm.querySelectorAll("[data-field]").forEach(function (input) {
+            values[input.getAttribute("data-field")] = input.type === "checkbox" ? input.checked : input.value;
+        });
+        return values;
+    }
+    function fieldProblems(field, values) {
+        if (!matches(field.visible_when, values)) return [];
+        const raw = values[field.name];
+        const empty = raw === "" || raw == null || raw === false;
+        const text = raw == null ? "" : String(raw);
+        const problems = [];
+        (field.validators || []).forEach(function (rule) {
+            if (rule.enforced === false) return;
+            if (rule.when && !matches(rule.when, values)) return;
+            const kind = rule.type;
+            let failed = false;
+            if (kind === "required") failed = empty;
+            else if ((kind === "min_length" || kind === "minlength") && text) failed = text.length < Number(rule.value);
+            else if ((kind === "max_length" || kind === "maxlength") && text) failed = text.length > Number(rule.value);
+            if (failed) problems.push(rule.message || "This answer needs attention.");
+        });
+        if (!problems.length && field.required && empty) problems.push("This field is required.");
+        if (field.min_length && text && text.length < Number(field.min_length)) problems.push("Enter at least " + field.min_length + " characters.");
+        if (field.max_length && text && text.length > Number(field.max_length)) problems.push("Use no more than " + field.max_length + " characters.");
+        return problems;
+    }
+    function buildLiveForm() {
+        const previous = liveForm.querySelector("[data-field]") ? liveValues() : {};
+        liveForm.innerHTML = "";
+        let sectionLabel = null;
+        fields().forEach(function (item) {
+            if (item.section.label !== sectionLabel) {
+                const heading = document.createElement("h4");
+                heading.className = "live-section";
+                heading.textContent = item.section.label;
+                liveForm.appendChild(heading);
+                sectionLabel = item.section.label;
+            }
+            const field = item.field;
+            const row = document.createElement("div");
+            row.className = "live-field";
+            row.dataset.row = field.name;
+            if (field.type === "content" || (field.content && !field.type)) {
+                const title = document.createElement("div");
+                title.textContent = field.label || "";
+                row.appendChild(title);
+                const list = document.createElement("ul");
+                list.className = "live-content";
+                (field.content || []).forEach(function (line) {
+                    const li = document.createElement("li");
+                    li.textContent = line;
+                    list.appendChild(li);
+                });
+                row.appendChild(list);
+                liveForm.appendChild(row);
+                return;
+            }
+            const label = document.createElement("label");
+            label.htmlFor = "live-" + field.name;
+            if ((field.content || []).length) {
+                const notes = document.createElement("div");
+                notes.className = "terms-copy";
+                field.content.forEach(function (line) {
+                    const paragraph = document.createElement("p");
+                    paragraph.textContent = line;
+                    notes.appendChild(paragraph);
+                });
+                row.appendChild(notes);
+            }
+            row.appendChild(label);
+            let control;
+            const saved = Object.prototype.hasOwnProperty.call(previous, field.name) ? previous[field.name] : field.value;
+            if (field.type === "checkbox") {
+                control = document.createElement("input");
+                control.type = "checkbox";
+                control.className = "form-check-input";
+                control.checked = saved === true || saved === "true";
+            } else if (field.type === "textarea") {
+                control = document.createElement("textarea");
+                control.className = "form-control";
+                control.rows = field.rows || 3;
+                control.value = saved == null ? "" : saved;
+            } else if ((field.options_source || "").indexOf("people-finder") !== -1) {
+                control = document.createElement("input");
+                control.className = "form-control";
+                control.type = "text";
+                control.placeholder = "Workday ID";
+                control.value = saved == null ? "" : saved;
+                const finder = document.createElement("div");
+                finder.className = "people-finder";
+                finder.dataset.peopleFinder = field.name;
+                const query = document.createElement("input");
+                query.className = "form-control";
+                query.type = "search";
+                query.placeholder = "Search People Finder";
+                query.setAttribute("aria-label", "Search People Finder");
+                const results = document.createElement("div");
+                results.className = "people-results";
+                results.hidden = true;
+                let timer = null;
+                query.addEventListener("input", function () {
+                    window.clearTimeout(timer);
+                    const term = query.value.trim();
+                    if (term.length < 2) {
+                        results.hidden = true;
+                        results.innerHTML = "";
+                        return;
+                    }
+                    timer = window.setTimeout(function () {
+                        fetch(field.options_source + "?q=" + encodeURIComponent(term), {headers: {"Accept": "application/json"}})
+                            .then(function (response) { return response.ok ? response.json() : Promise.reject(response); })
+                            .then(function (payload) {
+                                const people = payload.results || payload.value || [];
+                                results.innerHTML = "";
+                                results.hidden = false;
+                                if (!people.length) {
+                                    const empty = document.createElement("p");
+                                    empty.textContent = "No people found.";
+                                    results.appendChild(empty);
+                                    return;
+                                }
+                                people.forEach(function (person) {
+                                    const choice = document.createElement("button");
+                                    choice.type = "button";
+                                    const personName = person.displayName || [person.givenName, person.surname].filter(Boolean).join(" ");
+                                    const mail = person.mail || person.userPrincipalName || "";
+                                    choice.textContent = mail ? personName + " · " + mail : personName;
+                                    choice.addEventListener("click", function () {
+                                        control.value = person.id || "";
+                                        query.value = choice.textContent;
+                                        results.hidden = true;
+                                        control.dispatchEvent(new Event("change", {bubbles: true}));
+                                    });
+                                    results.appendChild(choice);
+                                });
+                            })
+                            .catch(function () {
+                                results.hidden = false;
+                                results.innerHTML = "";
+                                const failed = document.createElement("p");
+                                failed.textContent = "People Finder could not be reached.";
+                                results.appendChild(failed);
+                            });
+                    }, 300);
+                });
+                finder.appendChild(query);
+                finder.appendChild(results);
+                row.appendChild(label);
+                row.appendChild(control);
+                row.appendChild(finder);
+                control.id = "live-" + field.name;
+                control.setAttribute("data-field", field.name);
+                control.addEventListener("input", function () { paintLiveForm(); });
+                control.addEventListener("change", function () { paintLiveForm(); });
+                const help = document.createElement("small");
+                help.className = "live-help";
+                help.textContent = "People Finder is used when the request is for someone else.";
+                row.appendChild(help);
+                const error = document.createElement("div");
+                error.className = "live-error";
+                row.appendChild(error);
+                liveForm.appendChild(row);
+                return;
+            } else if (field.type === "select" || (field.options || []).length) {
+                control = document.createElement("select");
+                control.className = "form-select";
+                control.dataset.saved = saved == null ? "" : saved;
+            } else {
+                control = document.createElement("input");
+                control.className = "form-control";
+                control.type = field.type === "number" || field.type === "date" || field.type === "email" ? field.type : "text";
+                control.value = saved == null ? "" : saved;
+            }
+            control.id = "live-" + field.name;
+            control.setAttribute("data-field", field.name);
+            control.addEventListener("input", function () { paintLiveForm(); });
+            control.addEventListener("change", function () { paintLiveForm(); });
+            row.appendChild(control);
+            const help = document.createElement("small");
+            help.className = "live-help";
+            if (field.help) help.textContent = field.help;
+            else if (field.options_source) help.textContent = "Choices on the live form come from " + field.options_source;
+            else if ((field.value_when || []).length) help.textContent = "Filled by the request form. The requester does not see this value.";
+            row.appendChild(help);
+            if ((field.value_when || []).length) {
+                const list = document.createElement("ul");
+                list.className = "supplied-values";
+                field.value_when.forEach(function (rule) {
+                    const item = document.createElement("li");
+                    item.textContent = describeRule(rule.when) + " → " + rule.value;
+                    list.appendChild(item);
+                });
+                row.appendChild(list);
+            }
+            const error = document.createElement("div");
+            error.className = "live-error";
+            row.appendChild(error);
+            liveForm.appendChild(row);
+        });
+    }
+    function paintLiveForm() {
+        fields().forEach(function (item) {
+            const control = document.getElementById("live-" + item.field.name);
+            if (!control) return;
+            const values = liveValues();
+            (item.field.value_when || []).forEach(function (rule) {
+                if (!matches(rule.when, values) || rule.value == null) return;
+                if (control.type === "checkbox") control.checked = !!rule.value;
+                else if (control.value !== String(rule.value)) control.value = rule.value;
+            });
+        });
+        const values = liveValues();
+        let problems = 0;
+        fields().forEach(function (item) {
+            const field = item.field;
+            const row = liveForm.querySelector('[data-row="' + field.name + '"]');
+            if (!row) return;
+            const supplied = (field.value_when || []).length > 0;
+            const shown = matches(field.visible_when, values);
+            row.hidden = !shown && !liveCheck && !supplied;
+            row.classList.toggle("is-concealed", !!(liveCheck && !shown));
+            let conceal = row.querySelector(".conceal-note");
+            if (liveCheck && !shown) {
+                if (!conceal) {
+                    conceal = document.createElement("small");
+                    conceal.className = "live-help conceal-note";
+                    row.appendChild(conceal);
+                }
+                conceal.textContent = "Hidden on the request form with these answers. Shown here only while checking this form.";
+            } else if (conceal) {
+                conceal.remove();
+            }
+            const control = document.getElementById("live-" + field.name);
+            if (!control) return;
+            const label = row.querySelector("label");
+            label.textContent = "";
+            if (field.required) {
+                const star = document.createElement("span");
+                star.className = "req";
+                star.textContent = "* ";
+                label.appendChild(star);
+            }
+            label.appendChild(document.createTextNode(activeLabel(field, values)));
+            control.disabled = !!(field.disabled || (field.disabled_when && matches(field.disabled_when, values)));
+            const finder = row.querySelector(".people-finder");
+            if (finder) {
+                const forSomeoneElse = values.requesting_id === "User";
+                finder.hidden = !forSomeoneElse;
+                control.hidden = forSomeoneElse;
+                if (!forSomeoneElse) finder.querySelector(".people-results").hidden = true;
+            }
+            if (control.tagName === "SELECT") {
+                const current = control.value || control.dataset.saved || "";
+                control.innerHTML = "";
+                const blank = document.createElement("option");
+                blank.value = "";
+                blank.textContent = "Choose one";
+                control.appendChild(blank);
+                (field.options || []).forEach(function (option) {
+                    if (!optionVisible(option, values)) return;
+                    const node = document.createElement("option");
+                    node.value = option && typeof option === "object" ? (option.value == null ? "" : option.value) : option;
+                    node.textContent = option && typeof option === "object" ? (option.label || option.value) : option;
+                    control.appendChild(node);
+                });
+                if ([].some.call(control.options, function (option) { return option.value === String(current); })) control.value = current;
+                delete control.dataset.saved;
+            }
+            const messages = liveCheck ? fieldProblems(field, values) : [];
+            row.querySelector(".live-error").textContent = messages[0] || "";
+            if (messages.length) problems += 1;
+        });
+        const concealed = liveForm.querySelectorAll(".live-field.is-concealed").length;
+        liveForm.querySelectorAll(".live-section").forEach(function (heading) {
+            let sibling = heading.nextElementSibling;
+            let any = false;
+            while (sibling && !sibling.classList.contains("live-section")) {
+                if (!sibling.hidden) any = true;
+                sibling = sibling.nextElementSibling;
+            }
+            heading.hidden = !any;
+        });
+        if (!liveCheck) {
+            liveSummary.textContent = "";
+            liveSummary.className = "live-summary";
+            return;
+        }
+        const hiddenNote = concealed ? " " + concealed + (concealed === 1 ? " hidden field is shown here for this check." : " hidden fields are shown here for this check.") + " The request form still hides them." : "";
+        liveSummary.className = "live-summary " + (problems ? "is-bad" : "is-ok");
+        liveSummary.textContent = (problems ? problems + (problems === 1 ? " visible field needs attention." : " visible fields need attention.") : "The fields the request form would show pass.") + hiddenNote;
+    }
+    function openLiveForm() {
+        closeDrawer();
+        liveCheck = false;
+        const check = document.getElementById("check-live-form");
+        check.textContent = "Check form";
+        check.setAttribute("aria-pressed", "false");
+        buildLiveForm();
+        document.getElementById("form-modal").hidden = false;
+        paintLiveForm();
+    }
+    function closeLiveForm() {
+        document.getElementById("form-modal").hidden = true;
+    }
+    document.getElementById("open-form-modal").addEventListener("click", openLiveForm);
+    document.getElementById("close-form-modal").addEventListener("click", closeLiveForm);
+    document.getElementById("close-form-modal-foot").addEventListener("click", closeLiveForm);
+    document.getElementById("form-modal-backdrop").addEventListener("click", closeLiveForm);
+    document.getElementById("check-live-form").addEventListener("click", function () {
+        liveCheck = !liveCheck;
+        this.textContent = liveCheck ? "Use request-form visibility" : "Check form";
+        this.setAttribute("aria-pressed", liveCheck ? "true" : "false");
+        paintLiveForm();
+    });
+    ["preview-platform", "preview-pi", "preview-spi"].forEach(function (id) {
+        document.getElementById(id).addEventListener("input", renderPreview);
+        document.getElementById(id).addEventListener("change", renderPreview);
+    });
+    render();
+})();
+</script>
+{% endblock %}

@@ -57,7 +57,8 @@
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                     <h4 class="mb-sm-0 font-size-18">{{heading}}</h4>
 
-                                    <div class="page-title-right">
+                                    <div class="page-title-right d-flex align-items-center gap-3">
+                                        {% block page_actions %}{% endblock %}
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">{{pageview}}</a></li>
                                             <li class="breadcrumb-item active">{{heading}}</li>
@@ -68,6 +69,7 @@
                             </div>
                         </div>
                         <!-- end page title -->
+                        {% include "gdx_users/partials/alert.html" %}
                         {% block contents %}
 
                         {% endblock %}
@@ -105,7 +107,73 @@
         {% block extra_javascript %}
         {% endblock %}
 
-        <script src="{% static 'js/gdx.js' %}"></script>    
+        <script src="{% static 'js/gdx.js' %}"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('input[type="file"]').forEach(function (input) {
+                    if (input.closest(".record-form")) {
+                        var column = input.closest(".col-lg-6");
+                        var frame = column ? column.querySelector(".edit-media") : null;
+                        input.addEventListener("change", function () {
+                            var clear = input.parentElement.querySelector("input[type=checkbox]");
+                            if (clear) clear.checked = false;
+                            if (!frame) return;
+                            var file = input.files && input.files[0];
+                            if (!file || file.type.indexOf("image/") !== 0) return;
+                            var reader = new FileReader();
+                            reader.onload = function (event) {
+                                var image = frame.querySelector("img");
+                                if (!image) {
+                                    image = document.createElement("img");
+                                    image.alt = "Image preview";
+                                    frame.appendChild(image);
+                                }
+                                image.src = event.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        });
+                        return;
+                    }
+                    var holder = input.parentElement;
+                    var preview = holder ? holder.querySelector("img.image-preview") : null;
+                    if (!preview) {
+                        preview = document.createElement("img");
+                        preview.className = "image-preview";
+                        preview.alt = "Image preview";
+                        preview.style.cssText = "display:none;width:160px;height:96px;object-fit:cover;border-radius:8px;border:1px solid #d9dee8;margin-top:8px;";
+                        input.insertAdjacentElement("afterend", preview);
+                        var current = holder ? holder.querySelector("a[href]") : null;
+                        var href = current ? current.getAttribute("href") || "" : "";
+                        if (/\.(png|jpe?g|gif|webp|svg)(\?|$)/i.test(href) && !/default\.jpg(\?|$)/i.test(href)) {
+                            preview.src = current.href;
+                            preview.style.display = "block";
+                        }
+                    }
+                    input.addEventListener("change", function () {
+                        var file = input.files && input.files[0];
+                        if (!file || file.type.indexOf("image/") !== 0) return;
+                        var reader = new FileReader();
+                        reader.onload = function (event) {
+                            preview.src = event.target.result;
+                            preview.style.display = "block";
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                });
+                document.querySelectorAll(".record-clear-btn").forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        var upload = button.parentElement;
+                        var clear = upload.querySelector("input[type=checkbox]");
+                        var file = upload.querySelector("input[type=file]");
+                        if (clear) clear.checked = true;
+                        if (file) file.value = "";
+                        var column = button.closest(".col-lg-6");
+                        var image = column ? column.querySelector(".edit-media img") : null;
+                        if (image) image.remove();
+                    });
+                });
+            });
+        </script>
         {% endblock javascript %}
     </body>
 

@@ -1,0 +1,21 @@
+{% for item in nodes %}
+	{% if item.children %}
+		<li class="submenu{% if item.open %} active{% endif %}">
+			<a href="#" class="submenu-toggle{% if item.open %} subdrop{% endif %}" role="button" aria-expanded="{% if item.open %}true{% else %}false{% endif %}">
+				{% if item.icon %}<i class="sidebar-icon isax {{ item.icon }}" aria-hidden="true"></i>{% endif %}
+				<span>{{ item.label }}</span>
+				<span class="menu-arrow"></span>
+			</a>
+			<ul{% if item.open %} style="display:block"{% endif %}>
+				{% include "gdx_admin/partials/sidebar_nodes.html" with nodes=item.children %}
+			</ul>
+		</li>
+	{% else %}
+		<li>
+			<a href="{{ item.href }}"{% if item.current %} class="active"{% endif %}>
+				{% if item.icon %}<i class="sidebar-icon isax {{ item.icon }}" aria-hidden="true"></i>{% endif %}
+				<span>{{ item.label }}</span>
+			</a>
+		</li>
+	{% endif %}
+{% endfor %}

@@ -40,6 +40,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ZoomScaleComponent } from './@components/zoom-scale/zoom-scale.component';
 import { AppComponent } from './app.component';
 import { RootComponent } from './@components/root/root.component';
+import { MaintenanceComponent } from './@pages/maintenance/maintenance.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -113,6 +114,7 @@ export const msalGuardConfig: {
     ZoomScaleComponent,
     AppComponent,
     RootComponent,
+    MaintenanceComponent,
     // pages
   ],
  imports: [

@@ -1,14 +1,16 @@
 import json
 import os
-import boto3
+
 from botocore.exceptions import ClientError
+
+from gdx.britive import boto3_session
 
 def load_aws_secrets(secret_name="nonprod/gdx/secrets", region_name="us-west-2"):
     """
     Fetches secrets from AWS Secrets Manager and injects them into os.environ.
     """
     # Create a Secrets Manager client
-    session = boto3.session.Session()
+    session = boto3_session()
     client = session.client(
         service_name='secretsmanager',
         region_name=region_name

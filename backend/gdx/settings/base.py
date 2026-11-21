@@ -15,6 +15,11 @@ from django.contrib.messages import constants as messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+if os.getenv("DJANGO_ENV", "local").strip().lower() == "local":
+    from dotenv import load_dotenv
+
+    load_dotenv(BASE_DIR / ".env.local")
+
 
 def env_bool(name: str, default: bool = False) -> bool:
     return os.getenv(name, str(default)).strip().lower() in {
@@ -39,6 +44,14 @@ def env_csv(name: str, default: str = "") -> list[str]:
         for value in os.getenv(name, default).split(",")
         if value.strip()
     ]
+
+
+def merge_env_csv(current: list[str], name: str) -> list[str]:
+    merged = list(current)
+    for value in env_csv(name):
+        if value not in merged:
+            merged.append(value)
+    return merged
 
 
 APP_ENV = os.getenv("APP_ENV", "local").strip().lower()
@@ -98,8 +111,9 @@ DEPLOYMENT_TIMESTAMP = os.getenv(
     "local",
 )
 
-SECRET_KEY = os.getenv("GDX_SECRET_KEY", "dev-only-change-me")
+SECRET_KEY = os.getenv("GDXP_SECRET_KEY", "dev-only-change-me")
 DEBUG = env_bool("DJANGO_DEBUG", False)
+HEALTH_REDIS_REQUIRED = env_bool("HEALTH_REDIS_REQUIRED", True)
 
 # ---------------------------------------------------------------------------
 # Core Django
@@ -232,6 +246,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "gdx.britive.BritiveUserMiddleware",
     "gdx.maintenance.MaintenanceModeMiddleware",
     "apps.profiles.middleware.VerifiedStaffAccessMiddleware",
     "gdx.page_access.PageAccessMiddleware",
@@ -314,6 +329,9 @@ AUTH_PASSWORD_VALIDATORS = [
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "assets"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+_frontend_assets = BASE_DIR.parent / "frontend" / "src" / "assets"
+if _frontend_assets.exists():
+    STATICFILES_DIRS.append(_frontend_assets)
 
 AWS_REGION = os.getenv("AWS_REGION", "us-west-2")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "")
@@ -324,7 +342,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "gdx.staticfiles_storage.CompressedManifestStaticFilesStorage",
     },
 }
 MEDIA_ROOT = BASE_DIR / "media"
@@ -763,7 +781,7 @@ if APP_ENV == "prod":
     if DEBUG:
         raise ImproperlyConfigured("DJANGO_DEBUG must be false in production")
     if not SECRET_KEY or SECRET_KEY == "dev-only-change-me":
-        raise ImproperlyConfigured("GDX_SECRET_KEY must be configured in production")
+        raise ImproperlyConfigured("GDXP_SECRET_KEY must be configured in production")
     if not MONITORING_TOKEN:
         raise ImproperlyConfigured("MONITORING_TOKEN must be configured in production")
     if not ALLOWED_HOSTS or "*" in ALLOWED_HOSTS:

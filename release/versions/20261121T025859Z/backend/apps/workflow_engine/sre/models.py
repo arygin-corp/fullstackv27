@@ -1,0 +1,6 @@
+from django.db import models
+from ..models import TimeStampedModel
+from ..platform_models import Tenant
+class ServiceCatalogEntry(TimeStampedModel):name=models.CharField(max_length=180);key=models.SlugField(unique=True);owner=models.CharField(max_length=180);tier=models.PositiveSmallIntegerField(default=2);dependencies=models.JSONField(default=list);runbook_keys=models.JSONField(default=list)
+class ErrorBudgetSnapshot(models.Model):service=models.ForeignKey(ServiceCatalogEntry,related_name='error_budgets',on_delete=models.CASCADE);window_start=models.DateTimeField();window_end=models.DateTimeField();target=models.DecimalField(max_digits=8,decimal_places=5);actual=models.DecimalField(max_digits=8,decimal_places=5);remaining=models.DecimalField(max_digits=8,decimal_places=5);burn_rate=models.DecimalField(max_digits=12,decimal_places=4);recorded_at=models.DateTimeField(auto_now_add=True)
+class OnCallRoute(TimeStampedModel):tenant=models.ForeignKey(Tenant,null=True,blank=True,on_delete=models.CASCADE);service=models.ForeignKey(ServiceCatalogEntry,on_delete=models.CASCADE);severity=models.CharField(max_length=30);provider=models.CharField(max_length=60);route=models.JSONField(default=dict);enabled=models.BooleanField(default=True)

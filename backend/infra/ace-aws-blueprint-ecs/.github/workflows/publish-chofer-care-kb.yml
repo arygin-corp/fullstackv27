@@ -1,0 +1,29 @@
+name: Publish Chofer Care KB
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'master'
+    paths:
+      - '**/**.md'
+      - '!**.yaml'
+      - '!**.yml'
+      - '!.github/workflows/*'
+ 
+  workflow_dispatch:
+ 
+jobs:
+  chofer-care-kb-sync-subprod:
+    uses: Toyota-Motor-North-America/chofer-actions/.github/workflows/publish-chofer-care-kb.yml@v1
+    secrets: inherit
+    with:
+      environment: 'subprod'
+      source-directory: '.'
+ 
+  chofer-care-kb-sync-prod:
+    uses: Toyota-Motor-North-America/chofer-actions/.github/workflows/publish-chofer-care-kb.yml@v1
+    secrets: inherit
+    with:
+      environment: 'prod'
+      source-directory: '.'

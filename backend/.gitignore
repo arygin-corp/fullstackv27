@@ -13,6 +13,7 @@ __pycache__/
 !.env.qa.example
 !.env.stage.example
 !.env.prod.example
+!.env.local.example
 
 .env
 .env.*
@@ -22,6 +23,7 @@ __pycache__/
 !.env.qa.example
 !.env.stage.example
 !.env.prod.example
+!.env.local.example
 .venv/
 venv/
 __pycache__/
@@ -36,4 +38,14 @@ model_cache/
 infra/terraform/secrets.nonprod.tfvars
 infra/terraform/secrets.prod.tfvars
 infra/terraform/.terraform/
+infra/terraform/ecs/.terraform/
+infra/terraform/ecs/*.tfstate
+infra/terraform/ecs/*.tfstate.*
+infra/terraform/ecs/secrets.auto.tfvars
+infra/terraform/ecs/lambda/*.zip
+infra/terraform/prod/.terraform/
+infra/terraform/prod/*.tfstate
+infra/terraform/prod/*.tfstate.*
+infra/terraform/prod/secrets.auto.tfvars
+infra/terraform/prod/lambda/*.zip
 assets/Archive.zip

@@ -1,0 +1,1841 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "company_code",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "company_code",
+      "column_name": "city"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "company_code",
+      "column_name": "company_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "company_code",
+      "column_name": "company_name"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "company_code",
+      "column_name": "currency"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "exchange_rate"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "exchange_rate_type"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "from_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "ratio_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "ratio_to"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "to_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "exchange_rate",
+      "column_name": "valid_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "company_to"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "company_to_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "ctl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "factory_installed_option_fio"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "final_destination_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "lo_plant_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "model_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "post_production_option_ppo"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "spec_sheet_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_name_for_accounting_analysis"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_1st_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_2nd_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_3rd_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_4th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_5th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_6th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "vehicle_sales_volume_total_amount"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3672_jnap_sales",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "cost_per_unit"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "part_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3674_jsp_cost_data",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "company_to"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "company_to_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "cost_per_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "ctl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "final_destination_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "sales_volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "spec_sheet_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3675_jcbu_cons",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "cost_per_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "ctl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "factory_installed_option_fio"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "final_destination_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "lo_plant_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "model_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "post_production_option_ppo"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "spec_sheet_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "vehicle_name_for_accounting_analysis"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3676_jnap_tmna_sap",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "company_to"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "company_to_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "cost_per_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "ctl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "factory_installed_option_fio"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "final_destination_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "lo_plant_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "model_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "post_production_option_ppo"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "spec_sheet_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_name_for_accounting_analysis"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_1st_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_2nd_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_3rd_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_4th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_5th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_6th_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "vehicle_sales_volume_total_amount"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3679_tmna_tmc_vehicle",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "bedlength"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "body_eng"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "car_fam_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "company_to"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "company_to_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "cost_per_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "ctl_kata"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "drive"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "eng_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "final_dest_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "fio"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "item_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "kata"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "kata_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "manuf_comp"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "manuf_comp_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "manufac_volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "model_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "model_num"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "nvs_prod_src_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "ppo"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "prod_volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "production_line"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "retail_dealer"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "sales_grade"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "sales_mod_cust"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "seq_num"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "spec_sheet"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "subseries"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "tmc_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "transaction_currency"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "unit_part_desc"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "unit_part_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "veh_name"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "veh_type"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "vin_cust_sh"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "vin_cust_sp_region"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "vin_dist_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "vin_ed_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "wholesale_volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3680_legal_entity_data",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "car_family_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "cost_per_model"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "ctl_katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "final_destination_country"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "lo_plant_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "manufacturing_company"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "manufacturing_company_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "model_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "sales_sfx"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "spec_sheet_no"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "vehicle_name_for_accounting_analysis"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "wta_category"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3681_wta_process_cost",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "company_from"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "company_from_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "cost_per_unit"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "item_code_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "lo_plant_code_unit_plant"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "manufacturing_company_unit_plant"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "manufacturing_company_unit_plant_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "part_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "part_number_assembly_parts"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "sequence_number"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "shipment_quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "target_month"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "target_year"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "transaction_currency_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "unit_category"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3682_unit_part_cost",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "baseoptcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "bomheadermatnr"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "calcppv"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "companycode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "companycode_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "component"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "componentcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "cosusagequantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "cpu"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "destcountry"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "familycode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "fiscalperiod"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "fiscalyear"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "groupcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "honextcost"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "katashiki"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "modelname"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "modelyear"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "muvperveh"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "muvquantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "optpckgcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "parentmatnr"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "pirprice"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "ppvamount"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "ppvperveh"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "salesmodel"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "sequence"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "series"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "stdcost"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "subseries"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "sumoftotals"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "totalmuv"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "variationcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "vincompcode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3774_pbm_vehicle_bom",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "basematrlgroup"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "basematrltype"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "companycode"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "companycode_description"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "compdesc"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "component"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "cosusagequantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "cpu"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "fiscalperiod"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "fiscalyear"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "honextcost"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "matrlgrp"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "muvperveh"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "muvquantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "parentmatnr"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "pir"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "plant"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "ppv"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "ppvamount"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "ppvperveh"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "product"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "quantity"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "source"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "stdcost"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "stdprice"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "sumoftotals"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "totalmuv"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "volume"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "i3778_pbm_unit_bom",
+      "column_name": "year_month_version"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code",
+      "column_name": "item_name_en"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code",
+      "column_name": "remark"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code",
+      "column_name": "vc_or_fc"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code_gl_account",
+      "column_name": "audit_create_date"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code_gl_account",
+      "column_name": "gl_account"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code_gl_account",
+      "column_name": "item_code"
+    },
+    {
+      "userrolename": "tbdp-finance-master-sensitive",
+      "dbname": "pbm_finance_ing",
+      "elementname": "item_code_gl_account",
+      "column_name": "ktop"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-finance-master-sensitive%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

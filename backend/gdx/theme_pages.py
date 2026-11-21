@@ -151,10 +151,90 @@ def _prepare_html(html: str) -> str:
     html = html.replace("/ecommerce/", "/marketplace/")
     html = _TITLE_RE.sub(_rewrite_title, html, count=1)
     html = _BRAND_NAME_RE.sub(rf"\1{_PLATFORM_NAME}", html)
-    html = _APP_JS_RE.sub(r"\1\2?v=46\3", html)
+    html = _APP_JS_RE.sub(r"\1\2?v=56\3", html)
     if "<head>" in html:
         html = html.replace("<head>", "<head>" + _BOOT_STYLE, 1)
     return html
+
+
+def _site_build_html(request) -> str:
+    from django.template.loader import render_to_string
+
+    from gdx.deployment import (
+        ENVIRONMENT_CHOICES,
+        ai_engine_analytics,
+        deployment_analytics,
+        deployment_config,
+        deployment_status,
+    )
+
+    config = deployment_config()
+    return render_to_string(
+        "gdx_admin/pages/deployment/partials/_site_build.html",
+        {
+            "deployment": deployment_status(),
+            "config": config,
+            "environments": ENVIRONMENT_CHOICES,
+            "can_build": request.user.is_superuser,
+            "analytics": deployment_analytics()["counts"],
+            "ai_analytics": ai_engine_analytics(),
+        },
+        request=request,
+    )
+
+
+def _replace_content_inner(html: str, inner: str) -> str:
+    marker = '<div id="content-inner"'
+    start = html.find(marker)
+    if start < 0:
+        return html
+    open_end = html.find(">", start)
+    if open_end < 0:
+        return html
+    depth = 1
+    index = open_end + 1
+    while index < len(html):
+        if html.startswith("<div", index):
+            depth += 1
+            index += 4
+            continue
+        if html.startswith("</div>", index):
+            depth -= 1
+            if depth == 0:
+                return html[: open_end + 1] + inner + html[index:]
+            index += 6
+            continue
+        index += 1
+    return html
+
+
+def _theme_shell(route: str, title: str, description: str, inner: str) -> str:
+    """The AI deployments document, with this page's content in place of the sample fleet."""
+    path = _safe_join(theme_root(), "pages", "ai", "deployments", "index.html")
+    html = _prepare_html(path.read_text(encoding="utf-8"))
+    html = html.replace('data-current-route="/ai/deployments"', f'data-current-route="{route}"')
+    html = html.replace('content="Vexlora Production Deployments"', f'content="{description}"')
+    html = _TITLE_RE.sub(f"<title>{title} | {_PLATFORM_NAME}</title>", html, count=1)
+    return _replace_content_inner(html, f'<div class="grid gap-6">{inner}</div>')
+
+
+def _page_heading(kicker: str, title: str) -> str:
+    return (
+        '<div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">'
+        '<div class="min-w-0">'
+        f'<p class="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">{kicker}</p>'
+        f'<h1 class="text-2xl font-bold leading-8 tracking-tight text-foreground">{title}</h1>'
+        "</div></div>"
+    )
+
+
+def _code_deployment_html(request) -> str:
+    inner = _page_heading("Code Deployments", "Deployments") + _site_build_html(request)
+    return _theme_shell("/sa/code/deployment", "Code Deployments", "GDX code deployments", inner)
+
+
+def deployment_page_html(request, route: str, title: str, kicker: str, body: str) -> str:
+    return _theme_shell(route, title, f"GDX {title}", _page_heading(kicker, title) + body)
 
 
 def _render_theme_file(relative: str) -> HttpResponse:
@@ -281,8 +361,15 @@ def theme_page(request, page_path: str):
         slash = _slash_redirect(request)
         if slash is not None:
             return slash
+    if page_path.strip("/") in {"ai/deployment", "ai/deployment/index.html"}:
+        page_path = "ai/deployments"
     direct = f"pages/{_normalize_page_path(page_path)}"
     if _theme_file(direct):
+        if page_path.strip("/") in {"ai/deployments", "ai/deployments/index.html"}:
+            path = _safe_join(theme_root(), *direct.split("/"))
+            html = _prepare_html(path.read_text(encoding="utf-8"))
+            html = html.replace('data-current-route="/ai/deployments"', 'data-current-route="/sa/ai/deployment"')
+            return HttpResponse(html, content_type="text/html; charset=utf-8")
         return _render_theme_file(direct)
     fallback = _ecommerce_file(page_path)
     if fallback:

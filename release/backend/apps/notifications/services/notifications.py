@@ -1,3 +1,4 @@
+import logging
 import uuid
 from django.db import IntegrityError, transaction
 from django.utils import timezone
@@ -11,6 +12,8 @@ from .eventsourcing import append_event
 from .tenancy import default_tenant, get_current_application, get_current_tenant
 from .prioritization import assess_priority
 from .fatigue import assess_fatigue
+
+logger = logging.getLogger(__name__)
 
 class NotificationService:
     @staticmethod
@@ -38,7 +41,13 @@ class NotificationService:
                 append_event(aggregate_type="Notification",aggregate_id=n.pk,event_type="notification.created",tenant=tenant,application=application,correlation_id=correlation_id,actor=actor,payload={"recipient_id":recipient.pk,"title":n.title,"notification_type":notification_type,"source":source,"channels":sorted(channels)})
                 NotificationDelivery.objects.bulk_create([NotificationDelivery(notification=n, channel=c, status=DeliveryStatus.PENDING) for c in channels])
                 outbox = NotificationOutbox.objects.create(tenant=tenant,application=application,notification=n, event_type="notification.dispatch", payload={"schema_version": 1, "notification_id": n.pk, "correlation_id": str(n.correlation_id), "channels": sorted(channels)}, available_at=timezone.now())
-                transaction.on_commit(lambda: NotificationService.dispatch_outbox(outbox.pk))
+                outbox_id = outbox.pk
+                def _dispatch():
+                    try:
+                        NotificationService.dispatch_outbox(outbox_id)
+                    except Exception:
+                        logger.exception("Notification %s was saved, but delivery dispatch failed", outbox_id)
+                transaction.on_commit(_dispatch)
                 inc("notification_created_total", labels={"type": notification_type})
                 return n, True
         except IntegrityError:
@@ -48,7 +57,7 @@ class NotificationService:
     @staticmethod
     def dispatch_outbox(outbox_id):
         from django.conf import settings
-        from notifications.tasks import process_outbox_event
+        from apps.notifications.tasks import process_outbox_event
         if settings.NOTIFICATIONS_CELERY_ENABLED and hasattr(process_outbox_event, "delay"):
             process_outbox_event.delay(outbox_id)
         else:

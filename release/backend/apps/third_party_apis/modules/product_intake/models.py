@@ -52,15 +52,18 @@ class ProductIntake(models.Model):
         UNDER_REVIEW = "under_review", "Under Review"
         NEEDS_INFORMATION = "needs_information", "Needs Information"
         APPROVED = "approved", "Approved"
+        PRODUCT_DRAFT = "product_draft", "Product Draft"
+        CURATED = "curated", "Curated"
         REJECTED = "rejected", "Rejected"
         RESUBMITTED = "resubmitted", "Resubmitted"
         IMPLEMENTED = "implemented", "Implemented"
+        ARCHIVED = "archived", "Archived"
 
     # Legacy fields retained to avoid destructive migration and keep old templates working.
-    product_name = models.CharField("Product Name", max_length=50, blank=True, null=True)
+    product_name = models.CharField("Product Name", max_length=120, blank=True, null=True)
     product_desc = CKEditor5Field("Product Description", config_name="extends", max_length=4000, blank=True, null=True)
-    product_type = models.CharField("Product Type", max_length=15, blank=True, null=True)
-    product_url = models.CharField("Product URL", max_length=800, blank=True, null=True)
+    product_type = models.CharField("Product Type", max_length=32, blank=True, null=True)
+    product_url = models.CharField("Product URL", max_length=2500, blank=True, null=True)
     product_tags = models.ManyToManyField(IntakeProductTags, blank=True)
     product_domain = models.CharField("Product Domain", max_length=50, blank=True, null=True)
     stakeholder_name = models.CharField("Stakeholder Name", max_length=4000, blank=True, null=True)
@@ -88,9 +91,11 @@ class ProductIntake(models.Model):
     sample_value9 = models.CharField(max_length=50, blank=True, null=True)
     sample_field10 = models.CharField(max_length=50, blank=True, null=True)
     sample_value10 = models.CharField(max_length=50, blank=True, null=True)
+    sample_fields = models.TextField("Sample Fields", blank=True)
+    sample_values = models.TextField("Sample Values", blank=True)
 
     # Kept on Intake only; deliberately never copied to marketplace.Product.
-    fulfillment_group = models.CharField("Fulfillment Group Name", max_length=50, blank=True, null=True)
+    fulfillment_group = models.CharField("Fulfillment Group Name", max_length=255, blank=True, null=True)
 
     # Legacy identity fields retained for compatibility.
     requester_name = models.CharField("Requester Name", max_length=50, blank=True, null=True)
@@ -192,9 +197,12 @@ class IntakeApprovalEvent(models.Model):
         REVIEW_STARTED = "review_started", "Review Started"
         INFORMATION_REQUESTED = "information_requested", "Information Requested"
         APPROVED = "approved", "Approved"
+        PRODUCT_DRAFTED = "product_drafted", "Product Drafted"
+        CURATED = "curated", "Curated"
         REJECTED = "rejected", "Rejected"
         RESUBMITTED = "resubmitted", "Resubmitted"
         IMPLEMENTED = "implemented", "Implemented"
+        ARCHIVED = "archived", "Archived"
 
     intake = models.ForeignKey(ProductIntake, on_delete=models.PROTECT, related_name="approval_events")
     action = models.CharField(max_length=40, choices=Action.choices)

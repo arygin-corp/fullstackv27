@@ -1,0 +1,6 @@
+<div class="row g-3 mb-4">
+{% include "gdx_admin/pages/dar/analytics/partials/_metric_card.html" with label="Total records" value=metrics.total_releases help_text="All analytics records" icon="ti ti-files" icon_class="bg-primary-subtle text-primary" %}
+{% include "gdx_admin/pages/dar/analytics/partials/_metric_card.html" with label="Published" value=metrics.published_releases help_text="Completed publication" help_class="text-success" icon="ti ti-circle-check" icon_class="bg-success-subtle text-success" %}
+{% include "gdx_admin/pages/dar/analytics/partials/_metric_card.html" with label="Scheduled" value=metrics.scheduled_releases help_text="Awaiting publication" help_class="text-warning" icon="ti ti-calendar-time" icon_class="bg-warning-subtle text-warning" %}
+{% include "gdx_admin/pages/dar/analytics/partials/_metric_card.html" with label="Content sections" value=metrics.section_count help_text="Structured content" help_class="text-info" icon="ti ti-layout-list" icon_class="bg-info-subtle text-info" %}
+</div>

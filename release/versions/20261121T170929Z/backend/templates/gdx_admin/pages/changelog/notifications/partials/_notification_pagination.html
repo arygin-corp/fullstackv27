@@ -1,0 +1,27 @@
+{% if page_obj %}
+<nav aria-label="Notification pages" class="mt-4">
+  <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+    <p class="text-muted small mb-0">
+      Page <strong>{{ page_obj.number }}</strong> of <strong>{{ page_obj.paginator.num_pages }}</strong>
+      <span class="mx-1">·</span>{{ page_obj.paginator.count }} notification{{ page_obj.paginator.count|pluralize }}
+    </p>
+    <ul class="pagination mb-0">
+      {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1" aria-label="First page"><i class="ti ti-chevrons-left"></i></a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="ti ti-chevron-left me-1"></i>Previous</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link"><i class="ti ti-chevrons-left"></i></span></li>
+        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+      {% endif %}
+      <li class="page-item active" aria-current="page"><span class="page-link">{{ page_obj.number }}</span></li>
+      {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next<i class="ti ti-chevron-right ms-1"></i></a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last page"><i class="ti ti-chevrons-right"></i></a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">Next</span></li>
+        <li class="page-item disabled"><span class="page-link"><i class="ti ti-chevrons-right"></i></span></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+{% endif %}

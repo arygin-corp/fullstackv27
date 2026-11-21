@@ -56,6 +56,20 @@ class Module(ThirdPartyApiModule):
             "parameters": ("pk", "reason"),
         },
         {
+            "name": "Add draft product",
+            "route_name": "intake:intake-create-draft-product",
+            "method": "POST",
+            "authentication": "Django authentication",
+            "parameters": ("pk", "reason"),
+        },
+        {
+            "name": "Curate product",
+            "route_name": "intake:intake-curate-product",
+            "method": "POST",
+            "authentication": "Django authentication",
+            "parameters": ("pk", "reason"),
+        },
+        {
             "name": "Reject request",
             "route_name": "intake:intake-reject",
             "method": "POST",

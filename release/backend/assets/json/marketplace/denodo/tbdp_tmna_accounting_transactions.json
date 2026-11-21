@@ -32987,31 +32987,91 @@
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_cost_total"
+      "column_name": "axstsu_cost_total"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_rvc"
+      "column_name": "axstsu_rvc"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_unit_cost"
+      "column_name": "axstsu_unit_cost"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_unit_vnm"
+      "column_name": "axstsu_unit_vnm"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "complementary_vnm_total"
+      "column_name": "axstsu_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_cost_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_rvc"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "battery_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_cost_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_rvc"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "bodychassis_vnm_total"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
@@ -33077,13 +33137,31 @@
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "cy"
+      "column_name": "engine_cost_total"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "cy_month"
+      "column_name": "engine_rvc"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "engine_vnm_total"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
@@ -33143,49 +33221,43 @@
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_cost_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_rvc"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "noncore_vnm_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "originating_unit_cost"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_cost_total"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_rvc"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_unit_cost"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_unit_vnm"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "principal_vnm_total"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "prtn_date"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "qualifying_period"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
@@ -33198,18 +33270,6 @@
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "region"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "scenario"
-    },
-    {
-      "userrolename": "tbdp-tmna-accounting-transactions",
-      "dbname": "usmca_ing",
-      "elementname": "usmca_compliance_aggregate_fact",
-      "column_name": "snapshot_period"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",
@@ -33234,6 +33294,36 @@
       "dbname": "usmca_ing",
       "elementname": "usmca_compliance_aggregate_fact",
       "column_name": "total_volume"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_cost_total"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_rvc"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_unit_cost"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_unit_vnm"
+    },
+    {
+      "userrolename": "tbdp-tmna-accounting-transactions",
+      "dbname": "usmca_ing",
+      "elementname": "usmca_compliance_aggregate_fact",
+      "column_name": "transmission_vnm_total"
     },
     {
       "userrolename": "tbdp-tmna-accounting-transactions",

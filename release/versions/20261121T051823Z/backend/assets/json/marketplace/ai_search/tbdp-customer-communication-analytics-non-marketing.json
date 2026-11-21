@@ -1,0 +1,61 @@
+{
+  "adgroup": "tbdp-customer-communication-analytics-non-marketing",
+  "slugs": [
+    "customer-communication-analytics-non-marketing"
+  ],
+  "databases": [
+    "cuds_cust_comm_anlyts_nonmktg_ing_ext"
+  ],
+  "tables": [
+    "pqss_non_takata_response",
+    "pqss_takata_response"
+  ],
+  "columns": [
+    "acceptedamount",
+    "camp_cd",
+    "claim_file_repair_date",
+    "comm_channel",
+    "comm_conversion_status",
+    "communication_count",
+    "communication_count_prior_to_repair",
+    "create_dt",
+    "creative",
+    "days_to_repair",
+    "dealer",
+    "dealer_city",
+    "dealer_name",
+    "dealer_phone",
+    "dealer_state",
+    "dealer_zip",
+    "direct_mail_communication_count",
+    "distinct_emails_bounced",
+    "distinct_emails_clicked",
+    "distinct_emails_opened",
+    "distinct_emails_unsubbed",
+    "district",
+    "earliest_rapp_communication_date",
+    "email_bounce_count",
+    "email_click_count",
+    "email_communication_count",
+    "email_open_count",
+    "email_unsub_count",
+    "latest_comm_prior_to_repair",
+    "latest_communication_flag",
+    "model_name",
+    "model_year",
+    "rapp_communication_date",
+    "rapp_priority_group",
+    "rdlrno",
+    "rdte",
+    "region_name",
+    "rorderno",
+    "same_day_cp_revenue",
+    "template",
+    "ten_plus_district",
+    "totalclaimamount",
+    "totallaboramount",
+    "totalpartsamount",
+    "vehicle_make",
+    "vin"
+  ]
+}

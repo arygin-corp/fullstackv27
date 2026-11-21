@@ -1,0 +1,183 @@
+/* Admin sidebar. Keeps the existing menu and the 276px shell. */
+#two-col-sidebar {
+  background: #fff;
+  border-right: 1px solid #e6ebf2;
+  box-shadow: none;
+}
+#two-col-sidebar .twocol-mini {
+  background: #f6f7fb;
+  border-right: 1px solid #e6ebf2;
+  padding: 14px 8px;
+}
+#two-col-sidebar .twocol-mini .dropdown {
+  margin-bottom: 14px;
+}
+#two-col-sidebar .twocol-mini .menu-list li {
+  margin-bottom: 6px;
+}
+#two-col-sidebar .twocol-mini .menu-list li a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #5c6b80;
+}
+#two-col-sidebar .twocol-mini .menu-list li a:hover,
+#two-col-sidebar .twocol-mini .menu-list li.active a {
+  background: #fff;
+  color: #4b3fe0;
+  box-shadow: 0 1px 2px rgba(24, 46, 70, .08);
+}
+#two-col-sidebar .sidebar {
+  background: #fff;
+  border-right: 0;
+}
+#two-col-sidebar .sidebar-logo {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 14px;
+  background: #fff;
+  border-bottom: 1px solid #eef2f6;
+}
+#two-col-sidebar .sidebar-logo .logo {
+  display: flex;
+  align-items: center;
+}
+#two-col-sidebar .sidebar-logo img {
+  width: 128px !important;
+  max-width: 128px !important;
+  position: static !important;
+  bottom: auto !important;
+}
+@media (min-width: 992px) {
+  #two-col-sidebar .sidebar-search {
+    display: block;
+    position: fixed;
+    top: 56px;
+    left: 60px;
+    z-index: 12;
+    width: 216px;
+    padding: 10px 12px;
+    background: #fff;
+    border-bottom: 1px solid #eef2f6;
+  }
+  #two-col-sidebar .sidebar [data-simplebar],
+  #two-col-sidebar .sidebar .slimScrollDiv {
+    top: 108px;
+    height: calc(100% - 108px);
+  }
+}
+#two-col-sidebar .sidebar-search .form-control {
+  height: 36px;
+  padding-right: 32px;
+  border: 1px solid #e6ebf2;
+  border-radius: 10px;
+  background: #f7f8fb;
+  color: #1c2740;
+  font-size: 13px;
+}
+#two-col-sidebar .sidebar-search .form-control:focus {
+  background: #fff;
+  border-color: #c9c2ff;
+  box-shadow: 0 0 0 3px rgba(85, 71, 255, .12);
+}
+#two-col-sidebar .sidebar-menu {
+  padding: 8px 10px 24px;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li,
+#two-col-sidebar .sidebar .sidebar-menu > ul li {
+  margin-bottom: 2px;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li.menu-title {
+  margin: 14px 8px 6px;
+  padding: 0;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li.menu-title span {
+  color: #8b97a8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li > a {
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border-left: 0;
+  color: #24344d;
+  font-size: 13.5px;
+  font-weight: 650;
+  gap: 8px;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li > a:hover {
+  background: #f6f7fb;
+  color: #1c2740;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li > a i,
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul a i {
+  width: 18px;
+  font-size: 16px;
+  color: #7b8798;
+  text-align: center;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li.submenu.active > a,
+#two-col-sidebar .sidebar .sidebar-menu > ul > li > a.active,
+#two-col-sidebar .sidebar .sidebar-menu a.active {
+  background: #efeaff;
+  border-left: 0;
+  border-radius: 10px;
+  color: #4b3fe0;
+}
+#two-col-sidebar .sidebar .sidebar-menu > ul > li.submenu.active > a i,
+#two-col-sidebar .sidebar .sidebar-menu a.active i {
+  color: #4b3fe0;
+}
+#two-col-sidebar .sidebar .sidebar-menu .submenu.active > ul a:not(.active) {
+  background: transparent;
+  color: #3d4d63;
+}
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul {
+  margin: 2px 0 8px 16px;
+  padding: 0 0 0 8px;
+  border-left: 1px solid #e6ebf2;
+}
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul li a {
+  min-height: 32px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  color: #3d4d63;
+  font-size: 13px;
+  font-weight: 550;
+}
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul li a::before,
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul li a::after {
+  display: none;
+}
+#two-col-sidebar .sidebar .sidebar-menu .submenu > ul li a:hover {
+  background: #f6f7fb;
+  color: #1c2740;
+}
+#two-col-sidebar .sidebar .sidebar-menu li.is-filter-hidden {
+  display: none !important;
+}
+.mini-sidebar #two-col-sidebar .sidebar-search {
+  display: none;
+}
+@media (min-width: 992px) {
+  .mini-sidebar #two-col-sidebar .sidebar [data-simplebar],
+  .mini-sidebar #two-col-sidebar .sidebar .slimScrollDiv {
+    top: 56px;
+    height: calc(100% - 56px);
+  }
+}
+@media (max-width: 991.98px) {
+  #two-col-sidebar .sidebar-search {
+    display: block;
+    position: static;
+    width: auto;
+    padding: 10px 12px;
+    background: #fff;
+  }
+}

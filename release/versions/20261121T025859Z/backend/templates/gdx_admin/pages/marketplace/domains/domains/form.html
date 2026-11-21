@@ -1,0 +1,27 @@
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Domain editor | Marketplace{% endblock %}
+{% block extra_css %}{{ block.super }}
+<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/record_pages.css' %}?v=table82">
+{% endblock %}
+{% block content %}
+<main class="module-page">
+    {% url 'marketplace_admin:domain_list' as list_url %}
+    
+    <form class="team-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        <section class="team-panel">
+            <h2>Domain</h2>
+            <p>Name used across the marketplace.</p>
+            {% for field in form %}
+            <div class="team-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>
+            {% endfor %}
+        </section>
+        <div class="team-actions">
+            <a class="integration-button" href="{{ list_url }}">Cancel</a>
+            <button class="integration-button integration-button--primary" type="submit">Save domain</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

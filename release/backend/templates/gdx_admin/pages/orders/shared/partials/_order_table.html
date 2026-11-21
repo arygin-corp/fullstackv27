@@ -1,0 +1,29 @@
+<div class="table-responsive">
+	<table class="table table-hover align-middle mb-0">
+		<thead>
+			<tr>
+				<th>Order</th>
+				<th>Product</th>
+				<th>Status</th>
+				<th>Created</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>{% for order in orders %} 
+            <tr>
+				<td>{{ order.marketplace_order_id|default:order.pk }}</td>
+				<td>{{ order.product_id|default:'Unspecified' }}</td>
+				<td>{% include 'gdx_admin/pages/orders/shared/partials/_status_badge.html' with status=order.ritm_state|default:order.ritm_state %}</td>
+				<td>{{ order.created_at|date:'M d, Y H:i'|default:'-' }}</td>
+				<td class="text-end">
+					<a class="btn btn-sm btn-outline-primary" href="{% url 'orders-admin:order-detail' order.pk %}">View</a>
+				</td>	
+			</tr>
+            {% empty %} 
+            <tr>
+				<td colspan="5" class="text-center text-muted py-5">No orders found.</td>
+			</tr>
+            {% endfor %} 
+        </tbody>
+	</table>
+</div>

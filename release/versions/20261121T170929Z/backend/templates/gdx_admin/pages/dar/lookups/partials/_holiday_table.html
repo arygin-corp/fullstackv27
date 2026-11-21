@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <div><h3 class="h5 mb-1"><i class="ti ti-calendar-event me-2 text-primary"></i>Holiday directory</h3><p class="text-muted mb-0">Calendar lookup values used by workflows.</p></div>
+    <span class="badge bg-light text-dark border">{% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ holidays|length }}{% endif %} holidays</span>
+  </div>
+  <div class="card-body p-0">
+    {% if holidays %}
+      <div class="table-responsive"><table class="table table-hover align-middle mb-0">
+        <thead><tr><th>Holiday</th><th>Calendar date</th><th>Status</th></tr></thead>
+        <tbody>{% for item in holidays %}<tr>
+          <td><div class="d-flex align-items-center gap-2"><span class="avatar avatar-sm bg-primary-subtle text-primary rounded-circle flex-shrink-0"><i class="ti ti-calendar-star"></i></span><strong class="text-break">{{ item.name }}</strong></div></td>
+          <td><span class="badge bg-info-subtle text-info"><i class="ti ti-calendar me-1"></i>{{ item.month }}/{{ item.day }}</span></td>
+          <td>{% include "gdx_admin/pages/dar/lookups/partials/_active_badge.html" with item=item %}</td>
+        </tr>{% endfor %}</tbody>
+      </table></div>
+    {% else %}
+      {% include "gdx_admin/pages/dar/lookups/partials/_lookup_empty_state.html" with empty_title="No holidays" empty_text="The holiday lookup did not return any records." empty_icon="ti ti-calendar-off" %}
+    {% endif %}
+  </div>
+</div>

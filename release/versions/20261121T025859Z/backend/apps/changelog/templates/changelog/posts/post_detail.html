@@ -1,0 +1,35 @@
+{% extends "changelog/base.html" %}{% load changelog_extras %}
+{% block title %}Release {{ post.version }}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <div><h1 class="h3 mb-1">{{ post.version }}</h1><span class="badge text-bg-secondary">{{ post.get_status_display }}</span></div>
+    <div>{% if perms.changelog.change_post %}<a class="btn btn-secondary" href="{% url 'changelog:post-update' post.pk %}">Edit</a>{% endif %}</div>
+  </div>
+  <div class="card-body">
+    <h2 class="h4">{{ post.title }}</h2><p>{{ post.desc }}</p>
+    <dl class="row"><dt class="col-sm-3">Release date</dt><dd class="col-sm-9">{{ post.release_date }}</dd><dt class="col-sm-3">Scheduled publish</dt><dd class="col-sm-9">{{ post.publish_at|default:"Not scheduled" }}</dd></dl>
+    <div class="d-flex gap-2 flex-wrap mb-4">
+      {% if post.status == 'DRAFT' and perms.changelog.change_post %}<form method="post" action="{% url 'changelog:post-submit' post.pk %}">{% csrf_token %}<button class="btn btn-warning">Submit for review</button></form>{% endif %}
+      {% if post.status == 'REVIEW' and perms.changelog.approve_post %}<form method="post" action="{% url 'changelog:post-approve' post.pk %}">{% csrf_token %}<button class="btn btn-primary">Approve</button></form>{% endif %}
+      {% if post.status == 'APPROVED' and perms.changelog.publish_post %}<form method="post" action="{% url 'changelog:post-publish' post.pk %}">{% csrf_token %}<button class="btn btn-success">Publish now</button></form>{% endif %}
+      {% if post.status == 'PUBLISHED' and perms.changelog.publish_post %}<form method="post" action="{% url 'changelog:post-archive' post.pk %}">{% csrf_token %}<button class="btn btn-dark">Archive</button></form>{% endif %}
+    </div>
+    {% for letter in "ABCDEFGHIJ" %}{% endfor %}
+    <hr>
+    {% if post.postA|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeA.name }}</div><h3 class="h5 mt-2">{{ post.subTitleA }}</h3>{{ post.postA|sanitized_html }}</section>{% endif %}
+    {% if post.postB|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeB.name }}</div><h3 class="h5 mt-2">{{ post.subTitleB }}</h3>{{ post.postB|sanitized_html }}</section>{% endif %}
+    {% if post.postC|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeC.name }}</div><h3 class="h5 mt-2">{{ post.subTitleC }}</h3>{{ post.postC|sanitized_html }}</section>{% endif %}
+    {% if post.postD|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeD.name }}</div><h3 class="h5 mt-2">{{ post.subTitleD }}</h3>{{ post.postD|sanitized_html }}</section>{% endif %}
+    {% if post.postE|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeE.name }}</div><h3 class="h5 mt-2">{{ post.subTitleE }}</h3>{{ post.postE|sanitized_html }}</section>{% endif %}
+    {% if post.postF|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeF.name }}</div><h3 class="h5 mt-2">{{ post.subTitleF }}</h3>{{ post.postF|sanitized_html }}</section>{% endif %}
+    {% if post.postG|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeG.name }}</div><h3 class="h5 mt-2">{{ post.subTitleG }}</h3>{{ post.postG|sanitized_html }}</section>{% endif %}
+    {% if post.postH|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeH.name }}</div><h3 class="h5 mt-2">{{ post.subTitleH }}</h3>{{ post.postH|sanitized_html }}</section>{% endif %}
+    {% if post.postI|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeI.name }}</div><h3 class="h5 mt-2">{{ post.subTitleI }}</h3>{{ post.postI|sanitized_html }}</section>{% endif %}
+    {% if post.postJ|has_meaningful_content %}<section class="mb-4"><div class="badge bg-primary">{{ post.typeJ.name }}</div><h3 class="h5 mt-2">{{ post.subTitleJ }}</h3>{{ post.postJ|sanitized_html }}</section>{% endif %}
+    {% if perms.changelog.view_all_audit_logs %}<a class="btn btn-outline-info me-2" href="{% url 'changelog:audit-list' %}?version={{ post.version|urlencode }}">View audit history</a>{% endif %}<a href="{% url 'changelog:post-list' %}">Back to releases</a>
+  </div>
+</div>
+</div>
+{% endblock %}

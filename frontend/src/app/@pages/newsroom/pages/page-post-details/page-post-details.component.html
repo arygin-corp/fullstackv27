@@ -51,7 +51,7 @@
   </div>
 
   <!-- Not Found State -->
-  <div class="not-found container-fluid" *ngIf="!post">
+  <div class="not-found container-fluid" *ngIf="loaded && !post">
     <div class="not-found-content">
       <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M9.172 16.172a4 4 0 015.656 0M9 12h.01M15 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>

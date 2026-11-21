@@ -985,7 +985,9 @@ export class ShopService {
 
         if (
             cached &&
-            (now - cached.ts) < this.cacheTTL
+            (now - cached.ts) < this.cacheTTL &&
+            Array.isArray(cached.value?.suggestions) &&
+            cached.value.suggestions.length > 0
         ) {
             return of(cached.value);
         }
@@ -1018,11 +1020,12 @@ export class ShopService {
                 * }
                 */
 
-                const suggestions = Array.isArray(res?.suggestions)
-                    ? res.suggestions.map(
-                        (p: any) => this.normalizeSuggestion(p)
-                    )
-                    : [];
+            const rows = Array.isArray(res?.suggestions)
+                ? res.suggestions
+                : (Array.isArray(res?.results) ? res.results : []);
+            const suggestions = rows.map(
+                (p: any) => this.normalizeSuggestion(p)
+            );
 
                 const result = {
                     query:
@@ -1054,7 +1057,7 @@ export class ShopService {
                         false,
 
                     count:
-                        Number(res?.count ?? 0),
+                        Number(res?.count ?? suggestions.length),
 
                     page:
                         Number(res?.page ?? page),
@@ -1074,13 +1077,15 @@ export class ShopService {
                     suggestions
                 };
 
-                this.suggestionsCache.set(
-                    key,
-                    {
-                        ts: now,
-                        value: result
-                    }
-                );
+                if (suggestions.length) {
+                    this.suggestionsCache.set(
+                        key,
+                        {
+                            ts: now,
+                            value: result
+                        }
+                    );
+                }
 
                 /*
                 * Prevent unlimited cache growth.

@@ -1,0 +1,563 @@
+{
+  "name": "metadata",
+  "elements": [
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "acceptedamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "camp_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "claim_file_repair_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "comm_channel"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "comm_conversion_status"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "communication_count_prior_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "creative"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "days_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer_city"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer_phone"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer_state"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "dealer_zip"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "direct_mail_communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "distinct_emails_bounced"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "distinct_emails_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "distinct_emails_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "distinct_emails_unsubbed"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "district"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "earliest_rapp_communication_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "email_bounce_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "email_click_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "email_communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "email_open_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "email_unsub_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "latest_comm_prior_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "latest_communication_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "rapp_communication_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "rapp_priority_group"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "region_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "same_day_cp_revenue"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "template"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "ten_plus_district"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "totalclaimamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "totallaboramount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "totalpartsamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "vehicle_make"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_non_takata_response",
+      "column_name": "vin"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "acceptedamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "camp_cd"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "claim_file_repair_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "comm_channel"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "comm_conversion_status"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "communication_count_prior_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "create_dt"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "creative"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "days_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer_city"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer_phone"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer_state"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "dealer_zip"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "direct_mail_communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "distinct_emails_bounced"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "distinct_emails_clicked"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "distinct_emails_opened"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "distinct_emails_unsubbed"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "district"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "earliest_rapp_communication_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "email_bounce_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "email_click_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "email_communication_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "email_open_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "email_unsub_count"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "latest_comm_prior_to_repair"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "latest_communication_flag"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "model_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "model_year"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "rapp_communication_date"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "rapp_priority_group"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "rdlrno"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "rdte"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "region_name"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "rorderno"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "same_day_cp_revenue"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "template"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "ten_plus_district"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "totalclaimamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "totallaboramount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "totalpartsamount"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "vehicle_make"
+    },
+    {
+      "userrolename": "tbdp-customer-communication-management-non-marketing",
+      "dbname": "cuds_cust_comm_anlyts_nonmktg_ing_ext",
+      "elementname": "pqss_takata_response",
+      "column_name": "vin"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://data.prod.tbdp.toyota.com/server/security_audit/metadata/views/metadata?%24filter=userrolename%3D%27tbdp-customer-communication-management-non-marketing%27&%24select=userrolename%2Cdbname%2Celementname%2Ccolumn_name"
+    }
+  ]
+}

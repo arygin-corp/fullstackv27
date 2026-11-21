@@ -1,13 +1,32 @@
+import json
 import os
+
+
+def _setting(*names: str) -> str:
+    for name in names:
+        value = os.getenv(name, "").strip()
+        if value:
+            return value
+    raise KeyError(names[0])
+
+
+def _database_password() -> str:
+    raw = _setting("DB_PASSWORD", "DATABASE_PASSWORD")
+    if raw.startswith("{"):
+        password = json.loads(raw).get("password")
+        if isinstance(password, str) and password:
+            return password
+    return raw
+
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ["DB_NAME"],
-        "USER": os.environ["DB_USER"],
-        "PASSWORD": os.environ["DB_PASSWORD"],
-        "HOST": os.environ["DB_HOST"],
-        "PORT": os.getenv("DB_PORT", "5432"),
+        "NAME": _setting("DB_NAME", "DATABASE_NAME"),
+        "USER": _setting("DB_USER", "DATABASE_USER"),
+        "PASSWORD": _database_password(),
+        "HOST": _setting("DB_HOST", "DATABASE_HOST"),
+        "PORT": os.getenv("DB_PORT") or os.getenv("DATABASE_PORT") or "5432",
         "CONN_MAX_AGE": int(os.getenv("DB_CONN_MAX_AGE", "60")),
         "OPTIONS": {"sslmode": os.getenv("DB_SSLMODE", "require")},
     }

@@ -1,0 +1,7 @@
+stages:
+  - validate
+  - test
+  - simulate
+  - security_review
+  - deploy
+  - verify
