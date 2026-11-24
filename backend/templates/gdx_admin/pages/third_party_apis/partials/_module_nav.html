@@ -1,4 +1,11 @@
 <nav class="module-context-header" aria-label="Module pages">
+  {% if page_heading %}
+  <div class="module-context-header__copy">
+    <p class="module-context-breadcrumb"><span aria-current="page">{{ module.name }}</span></p>
+    <h1>{{ page_heading }}</h1>
+    {% if page_subheading %}<p>{{ page_subheading }}</p>{% endif %}
+  </div>
+  {% endif %}
   <div class="module-context-header__actions module-context-header__menu">
     {% for page in pages %}
       <a href="{{ page.url }}"{% if page.key == page_key %} aria-current="page"{% endif %}>{{ page.label }}</a>

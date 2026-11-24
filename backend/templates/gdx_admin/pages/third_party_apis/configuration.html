@@ -1,1 +1,113 @@
-{% extends "gdx_admin/base.html" %}{% load static %}{% block title %}Configuration Center{% endblock %}{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18.4">{% endblock %}{% block content %}<main class="module-page">{% include "gdx_admin/pages/third_party_apis/partials/_ops_nav.html" with page_label="Configuration" page_heading="Module configuration center" page_subheading="Review required, optional, defaulted, and secret configuration status without exposing protected values." %}<section class="module-portfolio-grid">{% for item in rows %}<article class="module-portfolio-card"><div><span class="module-portfolio-card__source">{{ item.module.source_name }}</span><h3>{{ item.module.name }}</h3><p>{{ item.configured_count }} of {{ item.setting_count }} declared settings configured.</p><p>Missing required: {{ item.missing_required|length }} · Optional unset: {{ item.optional_unset|length }}</p></div><div class="module-portfolio-card__footer"><span class="module-status {% if item.missing_required %}module-status--failure{% else %}module-status--success{% endif %}">{% if item.missing_required %}Needs Attention{% else %}Ready{% endif %}</span><a href="{% url 'third_party_api_ops:configuration' %}">Open</a></div></article>{% endfor %}</section></main>{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% load static %}
+{% block title %}Configuration Center{% endblock %}
+{% block content %}
+<main class="module-page">
+  {% include "gdx_admin/pages/third_party_apis/partials/_ops_nav.html" with page_label="Configuration" page_heading="Module configuration center" page_subheading="Review required, optional, defaulted, and secret configuration status without exposing protected values." %}
+  <section class="module-metric-grid" data-config-filters>
+    <button type="button" class="module-metric-card is-selected" data-config-filter="all" aria-pressed="true"><div><span>Modules</span><strong>{{ module_count }}</strong><small>Registered integrations</small></div><span class="module-metric-card__icon tone-primary" aria-hidden="true">▦</span></button>
+    <button type="button" class="module-metric-card" data-config-filter="ready" aria-pressed="false"><div><span>Ready</span><strong>{{ ready_count }}</strong><small>Required settings present</small></div><span class="module-metric-card__icon tone-success" aria-hidden="true">✓</span></button>
+    <button type="button" class="module-metric-card" data-config-filter="attention" aria-pressed="false"><div><span>Needs attention</span><strong>{{ attention_count }}</strong><small>Missing a required setting</small></div><span class="module-metric-card__icon tone-danger" aria-hidden="true">!</span></button>
+    <button type="button" class="module-metric-card" data-config-filter="missing" aria-pressed="false"><div><span>Missing</span><strong>{{ missing_count }}</strong><small>Required settings still unset</small></div><span class="module-metric-card__icon tone-warning" aria-hidden="true">△</span></button>
+  </section>
+  <p class="module-config-filter-note" data-config-note>Showing all modules</p>
+  <section class="module-config-list">
+    {% for item in rows %}
+    <article class="module-panel module-config-card" data-config-card data-ready="{% if item.ready %}true{% else %}false{% endif %}">
+      <header class="module-config-card__header">
+        <div>
+          <span class="module-portfolio-card__source">{{ item.source }}</span>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <span class="status-pill {% if item.ready %}status-pill--passed{% else %}status-pill--failed{% endif %}">
+          {% if item.ready %}Ready{% else %}Needs attention{% endif %}
+        </span>
+      </header>
+      {% if item.description %}<p class="module-config-card__description">{{ item.description }}</p>{% endif %}
+      <dl class="module-config-facts">
+        <div><dt>Status</dt><dd>{% if item.enabled %}Enabled{% elif item.installed %}Installed, disabled{% else %}Not installed{% endif %}</dd></div>
+        {% if item.provider %}<div><dt>Provider</dt><dd>{{ item.provider }}</dd></div>{% endif %}
+        {% if item.method %}<div><dt>Upstream</dt><dd>{{ item.method }}</dd></div>{% endif %}
+        {% if item.authentication %}<div><dt>Auth</dt><dd>{{ item.authentication }}</dd></div>{% endif %}
+        {% if item.endpoint %}<div><dt>Endpoint</dt><dd><code>{{ item.endpoint }}</code></dd></div>{% endif %}
+        {% if item.frontend_authentication %}<div><dt>App auth</dt><dd>{{ item.frontend_authentication }}</dd></div>{% endif %}
+        {% if item.owner %}<div><dt>Owner</dt><dd>{{ item.owner }}</dd></div>{% endif %}
+        <div><dt>Settings</dt><dd>{{ item.configured_count }} of {{ item.setting_count }} configured</dd></div>
+      </dl>
+      {% if item.settings %}
+      <button type="button" class="module-config-toggle" data-config-toggle aria-expanded="false">
+        <span>Settings</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="settings-list">
+        {% for setting in item.settings %}
+        <div class="setting-row" data-setting data-configured="{% if setting.configured %}true{% else %}false{% endif %}">
+          <div>
+            <strong>{{ setting.name }}</strong>
+            <small>{{ setting.category }}{% if setting.secret %} · Secret{% endif %}{% if setting.detail %} · {{ setting.detail }}{% endif %}</small>
+          </div>
+          <span class="status-pill {% if setting.configured %}status-pill--passed{% else %}status-pill--failed{% endif %}">
+            {% if setting.configured %}Configured{% else %}Missing{% endif %}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% empty %}
+    <article class="module-panel"><p class="module-config-empty">No integration modules are registered.</p></article>
+    {% endfor %}
+  </section>
+</main>
+{% endblock %}
+{% block extra_js %}
+<script>
+(function () {
+  var root = document.querySelector("[data-config-filters]");
+  if (!root) return;
+    var cards = Array.prototype.slice.call(document.querySelectorAll("[data-config-card]"));
+    var note = document.querySelector("[data-config-note]");
+  function apply(filter) {
+    root.querySelectorAll("[data-config-filter]").forEach(function (button) {
+      var on = button.getAttribute("data-config-filter") === filter;
+      button.classList.toggle("is-selected", on);
+      button.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var shown = 0;
+    cards.forEach(function (card) {
+      var ready = card.getAttribute("data-ready") === "true";
+      var settings = Array.prototype.slice.call(card.querySelectorAll("[data-setting]"));
+      settings.forEach(function (row) { row.hidden = false; });
+      var show = true;
+      if (filter === "ready") show = ready;
+      else if (filter === "attention") show = !ready;
+      else if (filter === "missing") {
+        settings.forEach(function (row) {
+          row.hidden = row.getAttribute("data-configured") !== "false";
+        });
+        show = settings.some(function (row) { return row.getAttribute("data-configured") === "false"; });
+      }
+      card.hidden = !show;
+      if (show) shown += 1;
+    });
+    if (!note) return;
+    if (filter === "ready") note.textContent = "Showing " + shown + " ready modules";
+    else if (filter === "attention") note.textContent = "Showing " + shown + " modules that need attention";
+    else if (filter === "missing") note.textContent = "Showing missing settings in " + shown + " modules";
+    else note.textContent = "Showing all modules";
+  }
+  root.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-config-filter]");
+    if (button) apply(button.getAttribute("data-config-filter"));
+  });
+  document.querySelectorAll("[data-config-toggle]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var card = button.closest("[data-config-card]");
+      var open = !card.classList.contains("is-open");
+      card.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+})();
+</script>
+{% endblock %}

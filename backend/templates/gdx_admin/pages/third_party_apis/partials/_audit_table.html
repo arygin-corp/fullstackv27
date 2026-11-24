@@ -1,1 +1,109 @@
-<div class="module-panel"><div class="module-panel__header"></div><div class="module-table-wrap"><table class="module-table"><thead><tr><th>Time</th><th>Module</th><th>Action</th><th>Result</th><th>Message</th><th>Duration</th></tr></thead><tbody>{% for log in audit_rows %}<tr><td>{{ log.created_at|date:"M d, Y H:i" }}</td><td>{{ log.module.name }}</td><td>{{ log.get_action_display|default:log.action }}</td><td><span class="module-status module-status--{{ log.result|lower }}">{{ log.get_result_display|default:log.result }}</span></td><td>{{ log.message|default:"-" }}</td><td>{% if log.duration_ms != None %}{{ log.duration_ms }} ms{% else %}-{% endif %}</td></tr>{% empty %}<tr><td colspan="6" class="module-table__empty">No audit activity has been recorded yet.</td></tr>{% endfor %}</tbody></table></div></div>
+<section class="module-panel activity-table" data-activity-table>
+  <header class="activity-table__toolbar">
+    <div class="activity-table__controls">
+      <label class="activity-search">
+        <span>Search</span>
+        <input type="search" data-activity-search placeholder="Search module, action, or message" aria-label="Search activity">
+      </label>
+      {% if filter_modules %}
+      <form method="get" class="activity-table__filters">
+        <label>
+          <span>Module</span>
+          <select name="module" aria-label="Filter by module">
+            <option value="">All modules</option>
+            {% for module in filter_modules %}
+            <option value="{{ module.module_key }}" {% if request.GET.module == module.module_key %}selected{% endif %}>{{ module.name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Result</span>
+          <select name="result" aria-label="Filter by result">
+            <option value="">All results</option>
+            <option value="SUCCESS" {% if request.GET.result == "SUCCESS" %}selected{% endif %}>Success</option>
+            <option value="FAILURE" {% if request.GET.result == "FAILURE" %}selected{% endif %}>Failure</option>
+            <option value="WARNING" {% if request.GET.result == "WARNING" %}selected{% endif %}>Warning</option>
+            <option value="SKIPPED" {% if request.GET.result == "SKIPPED" %}selected{% endif %}>Skipped</option>
+          </select>
+        </label>
+        <button type="submit" class="integration-button integration-button--primary">Apply</button>
+      </form>
+      {% else %}
+      <label class="activity-filter">
+        <span>Result</span>
+        <select data-activity-result aria-label="Filter by result">
+          <option value="">All results</option>
+          <option value="success">Success</option>
+          <option value="failure">Failure</option>
+          <option value="warning">Warning</option>
+        </select>
+      </label>
+      {% endif %}
+    </div>
+    <p data-activity-count></p>
+  </header>
+  <div class="module-table-wrap">
+    <table class="module-table activity-table__grid">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Module</th>
+          <th>Action</th>
+          <th>Result</th>
+          <th>Message</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in audit_rows %}
+        <tr data-activity-row data-result="{{ log.result|lower }}" data-search="{{ log.module.name|default:'' }} {{ log.action }} {{ log.message }}">
+          <td>
+            <span class="activity-time">{{ log.created_at|date:"M d, Y" }}</span>
+            <small>{{ log.created_at|date:"H:i" }}</small>
+          </td>
+          <td><strong>{{ log.module.name }}</strong></td>
+          <td><span class="activity-action">{{ log.action }}</span></td>
+          <td>
+            <span class="status-pill {% if log.result == 'SUCCESS' %}status-pill--passed{% elif log.result == 'FAILURE' %}status-pill--failed{% elif log.result == 'WARNING' %}status-pill--warning{% else %}status-pill--muted{% endif %}">{{ log.result|default:"-" }}</span>
+          </td>
+          <td class="activity-message">{{ log.message|default:"—" }}</td>
+          <td class="activity-duration">{% if log.duration_ms != None %}{{ log.duration_ms }} ms{% else %}—{% endif %}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="module-table__empty">No activity has been recorded yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="activity-table__empty" data-activity-empty hidden>No activity matches this search.</p>
+</section>
+<script>
+(function () {
+  document.querySelectorAll("[data-activity-table]").forEach(function (root) {
+    if (root.dataset.bound === "true") return;
+    root.dataset.bound = "true";
+    var search = root.querySelector("[data-activity-search]");
+    var result = root.querySelector("[data-activity-result]");
+    var count = root.querySelector("[data-activity-count]");
+    var empty = root.querySelector("[data-activity-empty]");
+    var rows = Array.prototype.slice.call(root.querySelectorAll("[data-activity-row]"));
+    function apply() {
+      var query = (search.value || "").trim().toLowerCase();
+      var wanted = result ? result.value : "";
+      var shown = 0;
+      rows.forEach(function (row) {
+        var matchesQuery = !query || (row.getAttribute("data-search") || "").toLowerCase().indexOf(query) !== -1;
+        var matchesResult = !wanted || row.getAttribute("data-result") === wanted;
+        var visible = matchesQuery && matchesResult;
+        row.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      if (count) count.textContent = shown + " of " + rows.length;
+      if (empty) empty.hidden = shown !== 0 || rows.length === 0;
+    }
+    search.addEventListener("input", apply);
+    if (result) result.addEventListener("change", apply);
+    apply();
+  });
+})();
+</script>

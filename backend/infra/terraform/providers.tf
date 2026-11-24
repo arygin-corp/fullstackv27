@@ -28,3 +28,14 @@ data "external" "git" {
 data "external" "deployment" {
   program = ["bash", "-c", "printf '{\"timestamp\":\"%s\"}\\n' \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\""]
 }
+
+check "state_matches_env" {
+  assert {
+    condition = (
+      terraform.workspace == "default" && var.target_env == "dev" && var.manage_shared
+      ) || (
+      contains(["demo", "qa", "stage"], terraform.workspace) && terraform.workspace == var.target_env && !var.manage_shared
+    )
+    error_message = "Dev stays in the default workspace with manage_shared. Demo, qa, and stage each use a workspace of the same name with manage_shared = false."
+  }
+}

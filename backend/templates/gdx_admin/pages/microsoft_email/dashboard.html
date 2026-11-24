@@ -1,13 +1,65 @@
 {% extends "gdx_admin/base.html" %}
 {% block title %}Microsoft Email{% endblock %}
-{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}{% endblock %}
 {% block content %}
 <main class="module-page">
+  <header class="module-context-header">
+    <div class="module-context-header__copy">
+      <p class="module-context-breadcrumb"><span aria-current="page">Microsoft Email</span></p>
+      <h1>Campaigns</h1>
+      <p>Email campaigns sent through notification settings, with the mail connection used to deliver them.</p>
+    </div>
+    <div class="module-context-header__actions">
+      <a class="integration-button integration-button--primary" href="{% url 'notifications:campaign_manager' %}">Open email campaigns</a>
+    </div>
+  </header>
 
-<section class="deploy-panel">
-    <h2>Campaigns</h2>
-    <p>Email campaigns are managed with notification settings.</p>
-    <p><a href="{% url 'notifications:campaign_manager' %}">Open email campaigns</a></p>
-</section>
+  <section class="module-metric-grid">
+    {% include "gdx_admin/pages/third_party_apis/partials/_metric_card.html" with metric_label="Campaigns" metric_value=counts.total metric_caption="All campaigns" metric_icon="▣" %}
+    {% include "gdx_admin/pages/third_party_apis/partials/_metric_card.html" with metric_label="Drafts" metric_value=counts.draft metric_caption="Not sent yet" metric_icon="◇" %}
+    {% include "gdx_admin/pages/third_party_apis/partials/_metric_card.html" with metric_label="In progress" metric_value=counts.active metric_caption="Approved, scheduled, or sending" metric_icon="▷" metric_tone="tone-warning" %}
+    {% include "gdx_admin/pages/third_party_apis/partials/_metric_card.html" with metric_label="Sent" metric_value=counts.sent metric_caption="Finished deliveries" metric_icon="✓" metric_tone="tone-success" %}
+  </section>
+
+  <section class="module-panel module-doc-card">
+    <div class="module-panel__header"><h2>Mail connection</h2></div>
+    <dl class="module-config-facts">
+      <div><dt>Transport</dt><dd>{{ transport }}</dd></div>
+      <div><dt>Sender</dt><dd>{% if sender_ready %}Configured{% else %}Missing{% endif %}</dd></div>
+      <div><dt>Microsoft app</dt><dd>{% if microsoft_ready %}Configured{% else %}Missing{% endif %}</dd></div>
+      <div><dt>Failed campaigns</dt><dd>{{ counts.failed }}</dd></div>
+    </dl>
+  </section>
+
+  <section class="module-panel">
+    <div class="module-panel__header"><h2>Recent campaigns</h2></div>
+    {% if campaigns %}
+    <div class="module-table-wrap">
+      <table class="module-table">
+        <thead>
+          <tr><th>Name</th><th>Status</th><th>Audience</th><th>Recipients</th><th>Scheduled</th><th>Created</th></tr>
+        </thead>
+        <tbody>
+          {% for campaign in campaigns %}
+          <tr>
+            <td>
+              <strong>{{ campaign.name }}</strong>
+              {% if campaign.template_version.template.key %}<small>{{ campaign.template_version.template.key }}</small>{% endif %}
+            </td>
+            <td>
+              <span class="status-pill {% if campaign.status == 'sent' %}status-pill--passed{% elif campaign.status == 'failed' %}status-pill--failed{% elif campaign.status == 'draft' or campaign.status == 'cancelled' %}status-pill--muted{% else %}status-pill--warning{% endif %}">{{ campaign.get_status_display }}</span>
+            </td>
+            <td>{{ campaign.get_audience_type_display }}</td>
+            <td>{{ campaign.recipient_count }}</td>
+            <td>{% if campaign.scheduled_at %}{{ campaign.scheduled_at|date:"M d, Y H:i" }}{% else %}—{% endif %}</td>
+            <td>{{ campaign.created_at|date:"M d, Y" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="module-config-empty">No campaigns have been created yet.</p>
+    {% endif %}
+  </section>
 </main>
 {% endblock %}

@@ -14,28 +14,32 @@ locals {
   }
   environments = {
     demo = {
-      hostname        = "admin.demo.data.toyota.com"
-      cert_arn        = "arn:aws:acm:us-west-2:963334842848:certificate/708f155e-2918-45d3-8351-1d9dcb7ee62c"
-      bucket          = "edmp-gdxp-nonprod-demo-admin"
-      frontend_bucket = "edmp-nonprod-demo-gdx"
+      hostname         = "admin.demo.data.toyota.com"
+      cert_arn         = "arn:aws:acm:us-west-2:963334842848:certificate/708f155e-2918-45d3-8351-1d9dcb7ee62c"
+      bucket           = "edmp-gdxp-nonprod-demo-admin"
+      frontend_bucket  = "edmp-nonprod-demo-gdx"
+      microsoft_app_id = "07711a23-0301-457d-b055-4affed1103b8"
     }
     dev = {
-      hostname        = "admin.dev.data.toyota.com"
-      cert_arn        = "arn:aws:acm:us-west-2:963334842848:certificate/82a5f077-9a3f-4356-a5b7-a949b151e5ff"
-      bucket          = "edmp-gdxp-nonprod-dev-admin"
-      frontend_bucket = "edmp-nonprod-dev-gdx"
+      hostname         = "admin.dev.data.toyota.com"
+      cert_arn         = "arn:aws:acm:us-west-2:963334842848:certificate/82a5f077-9a3f-4356-a5b7-a949b151e5ff"
+      bucket           = "edmp-gdxp-nonprod-dev-admin"
+      frontend_bucket  = "edmp-nonprod-dev-gdx"
+      microsoft_app_id = "5476d799-ebce-46c3-82fa-ae19b49d7a41"
     }
     qa = {
-      hostname        = "admin.qa.data.toyota.com"
-      cert_arn        = "arn:aws:acm:us-west-2:963334842848:certificate/a5c31abf-0771-4cf2-976c-72fa90a6618f"
-      bucket          = "edmp-gdxp-nonprod-qa-admin"
-      frontend_bucket = "edmp-nonprod-qa-gdx"
+      hostname         = "admin.qa.data.toyota.com"
+      cert_arn         = "arn:aws:acm:us-west-2:963334842848:certificate/a5c31abf-0771-4cf2-976c-72fa90a6618f"
+      bucket           = "edmp-gdxp-nonprod-qa-admin"
+      frontend_bucket  = "edmp-nonprod-qa-gdx"
+      microsoft_app_id = "496a6de0-52a2-44d9-aaab-42a964716e65"
     }
     stage = {
-      hostname        = "admin.stage.data.toyota.com"
-      cert_arn        = "arn:aws:acm:us-west-2:963334842848:certificate/cee1dbbd-3963-448a-8fc5-4ee24f4ab1c6"
-      bucket          = "edmp-gdxp-nonprod-stage-admin"
-      frontend_bucket = "edmp-nonprod-stage-gdx"
+      hostname         = "admin.stage.data.toyota.com"
+      cert_arn         = "arn:aws:acm:us-west-2:963334842848:certificate/cee1dbbd-3963-448a-8fc5-4ee24f4ab1c6"
+      bucket           = "edmp-gdxp-nonprod-stage-admin"
+      frontend_bucket  = "edmp-nonprod-stage-gdx"
+      microsoft_app_id = ""
     }
   }
 }
@@ -74,9 +78,15 @@ module "admin" {
   outbound_to_port     = 65535
   ecr_repository_names = [aws_ecr_repository.admin.name]
 
-  additional_ecs_secret_arns = merge(local.database_secret_arns, {
-    GDXP_SECRET_KEY = module.app_secrets[each.key].secret_arns["django_secret_key"]
-  })
+  additional_ecs_secret_arns = merge(
+    local.database_secret_arns,
+    {
+      GDXP_SECRET_KEY = module.app_secrets[each.key].secret_arns["django_secret_key"]
+    },
+    contains(keys(var.microsoft_app_secrets), each.key) ? {
+      MICROSOFT_APP_SECRET = aws_secretsmanager_secret.microsoft[each.key].arn
+    } : {},
+  )
 
   containers = [{
     name      = "admin"
@@ -84,7 +94,7 @@ module "admin" {
     http_port = 8000
     cpu       = 1024
     memory    = 2048
-    env_vars = {
+    env_vars = merge({
       DJANGO_SETTINGS_MODULE    = "gdx.settings.${each.key}"
       DJANGO_ENV                = each.key
       APP_ENV                   = each.key
@@ -102,6 +112,9 @@ module "admin" {
       SERVER_EMAIL              = "no-reply@${each.key}.data.toyota.com"
       REDIS_URL                 = "rediss://${module.redis.redis_primary_endpoint}:${module.redis.redis_port}/${local.redis_database[each.key]}"
       CELERY_BROKER_URL         = "rediss://${module.redis.redis_primary_endpoint}:${module.redis.redis_port}/${local.redis_database[each.key]}"
-    }
+      MICROSOFT_AUTHORITY       = "https://login.microsoftonline.com/b7be26fb-0007-4e34-9f39-088aa7bc74b0"
+      MICROSOFT_REDIRECT_URL    = "https://${each.value.hostname}/microsoft_authentication/callback"
+      MICROSOFT_LOGOUT_URI      = "https://${each.value.hostname}/logout"
+    }, each.value.microsoft_app_id != "" ? { MICROSOFT_APP_ID = each.value.microsoft_app_id } : {})
   }]
 }

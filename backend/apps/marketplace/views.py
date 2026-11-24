@@ -337,6 +337,7 @@ class ProductDetailView(DetailView):
                 continue
         context["gallery"] = gallery
         context["record_image_url"] = gallery[0]["url"] if gallery else ""
+        context["product_associations"] = self.object.product_associations.select_related("associated_product").order_by("position")
         return context
 
 

@@ -13,7 +13,7 @@ class DocumentUploadForm(forms.ModelForm):
         model = Document
         fields = ("title", "source_file")
         widgets = {
-            "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "Title (optional)"}),
+            "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "Name this file"}),
             "source_file": forms.ClearableFileInput(attrs={"class": "form-control", "accept": _ACCEPT}),
         }
 
@@ -34,7 +34,7 @@ class DocumentUploadForm(forms.ModelForm):
 class KnowledgeTextForm(forms.Form):
     title = forms.CharField(
         max_length=255,
-        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Title"}),
+        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Name this note"}),
     )
     body = forms.CharField(
         widget=forms.Textarea(attrs={"class": "form-control", "rows": 8, "placeholder": "Write what Vikki should learn"}),

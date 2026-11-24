@@ -17,6 +17,10 @@ from .theme_preview import product_approvals as theme_preview_approvals
 from .theme_preview import product_reviews as theme_preview_reviews
 from .theme_preview import catalog_domains as theme_preview_domains
 from .theme_preview import directory_records as theme_preview_directory
+from .theme_preview import marketplace_order_detail as theme_preview_order_detail
+from .theme_preview import marketplace_order_lookup as theme_preview_order_lookup
+from .theme_preview import marketplace_orders as theme_preview_orders
+from .theme_preview import jira_kanban as theme_preview_jira_kanban
 from .theme_preview import marketplace_surfaces as theme_preview_surfaces
 from .theme_preview import product_record as theme_preview_product
 from .theme_preview import product_catalog as theme_preview_products
@@ -69,6 +73,10 @@ urlpatterns = [
     path("api/theme-preview/approvals/", theme_preview_approvals, name="theme_preview_approvals"),
     path("api/theme-preview/reviews/", theme_preview_reviews, name="theme_preview_reviews"),
     path("api/theme-preview/domains/", theme_preview_domains, name="theme_preview_domains"),
+    path("api/theme-preview/orders/lookup/", theme_preview_order_lookup, name="theme_preview_order_lookup"),
+    path("api/theme-preview/orders/<int:request_id>/", theme_preview_order_detail, name="theme_preview_order_detail"),
+    path("api/theme-preview/orders/", theme_preview_orders, name="theme_preview_orders"),
+    path("api/theme-preview/jira/kanban/", theme_preview_jira_kanban, name="theme_preview_jira_kanban"),
     path("api/theme-preview/surfaces/", theme_preview_surfaces, name="theme_preview_surfaces"),
     path("api/theme-preview/directory/", theme_preview_directory, name="theme_preview_directory"),
     path("api/theme-preview/product/", theme_preview_product, name="theme_preview_product"),

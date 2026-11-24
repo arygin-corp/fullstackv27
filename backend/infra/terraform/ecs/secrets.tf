@@ -56,9 +56,12 @@ resource "aws_iam_role_policy" "app_secrets_read" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect   = "Allow"
-        Action   = ["secretsmanager:GetSecretValue"]
-        Resource = [module.app_secrets[each.key].secret_arns["django_secret_key"]]
+        Effect = "Allow"
+        Action = ["secretsmanager:GetSecretValue"]
+        Resource = concat(
+          [module.app_secrets[each.key].secret_arns["django_secret_key"]],
+          contains(keys(var.microsoft_app_secrets), each.key) ? [aws_secretsmanager_secret.microsoft[each.key].arn] : [],
+        )
       },
       {
         Effect   = "Allow"

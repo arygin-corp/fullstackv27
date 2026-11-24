@@ -100,7 +100,7 @@ locals {
       execution_role           = "edmp-gdxp-admin-nonprod-execution-role"
       task_role                = "edmp-gdxp-admin-nonprod-task-role"
       frontend_policy          = "edmp-gdx-frontend-deployment-nonprod"
-      frontend_attach          = true
+      frontend_attach          = false
       frontend_buckets         = ["edmp-nonprod-demo-gdx", "edmp-nonprod-dev-gdx", "edmp-nonprod-qa-gdx", "edmp-nonprod-stage-gdx"]
       ses_domains              = ["demo.data.toyota.com", "dev.data.toyota.com", "qa.data.toyota.com", "stage.data.toyota.com"]
       ses_configuration_set    = "edmp-gdxp-admin-nonprod-mail"
@@ -151,6 +151,7 @@ locals {
   alb_zone_id             = var.manage_shared ? aws_lb.shared[0].zone_id : data.aws_lb.shared[0].zone_id
   db_subnet_group_name    = var.manage_shared ? aws_db_subnet_group.shared[0].name : data.aws_db_subnet_group.shared[0].name
   redis_subnet_group_name = var.manage_shared ? aws_elasticache_subnet_group.shared[0].name : data.aws_elasticache_subnet_group.shared[0].name
+  redis_client_sg_id      = coalesce(try(data.aws_security_group.redis_live[0].id, null), try(aws_security_group.redis[0].id, null))
   db_sg_id                = var.manage_shared ? aws_security_group.db[0].id : data.aws_security_group.db[0].id
   db_host                 = var.manage_shared ? aws_db_instance.postgres[0].address : data.aws_db_instance.postgres[0].address
   app_sg_id               = var.manage_shared ? aws_security_group.app[0].id : data.aws_security_group.app[0].id
@@ -165,6 +166,7 @@ locals {
   secret_values = {
     GDXP_SECRET_KEY                           = var.gdx_secret_key
     DB_USER                                   = var.db_user
+    DB_PASSWORD                               = var.db_password
     MICROSOFT_APP_SECRET                      = var.microsoft_app_secret
     PEOPLEFINDER_MICROSOFT_AUTH_CLIENT_SECRET = var.peoplefinder_microsoft_auth_client_secret
     TDSP_PODS_USERNAME                        = var.tdsp_pods_username

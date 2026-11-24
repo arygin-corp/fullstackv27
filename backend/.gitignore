@@ -38,6 +38,9 @@ model_cache/
 infra/terraform/secrets.nonprod.tfvars
 infra/terraform/secrets.prod.tfvars
 infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.*
+infra/terraform/terraform.tfstate.d/
 infra/terraform/ecs/.terraform/
 infra/terraform/ecs/*.tfstate
 infra/terraform/ecs/*.tfstate.*

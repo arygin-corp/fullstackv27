@@ -14,11 +14,11 @@
 {% include "gdx_admin/pages/deployment/partials/_shell_start.html" %}
 <section class="deploy-panel" style="max-width:760px">
     <h2>Britive checkout</h2>
-    <p class="aws-status{% if not summary.active %} is-expired{% endif %}"><i aria-hidden="true"></i>{% if summary.active %}Active until {{ summary.expires_at }}{% else %}No active session{% endif %}</p>
+    <p class="aws-status{% if not summary.active %} is-expired{% endif %}"><i aria-hidden="true"></i>{% if summary.active %}{{ summary.profile }} active until {{ summary.expires_at }}{% else %}No active session{% endif %}</p>
     {% if summary.account or summary.role or summary.key_hint %}
-    <p class="deploy-note">{{ summary.account }} {{ summary.role }}{% if summary.key_hint %} · {{ summary.key_hint }}{% endif %}{% if summary.actor %} · saved by {{ summary.actor }}{% endif %}</p>
+    <p class="deploy-note">{{ summary.profile }} {{ summary.account }} {{ summary.role }}{% if summary.key_hint %} · {{ summary.key_hint }}{% endif %}{% if summary.actor %} · saved by {{ summary.actor }}{% endif %}</p>
     {% endif %}
-    <p>Check out radar-admin-nonprod to create nonprod AWS resources, or radar-admin-prod to create prod AWS resources. Copy the credential export and paste it here. A checkout lasts 8 hours.</p>
+    <p>{{ summary.guidance }}</p>
     {% if can_save %}
     <form method="post">
         {% csrf_token %}

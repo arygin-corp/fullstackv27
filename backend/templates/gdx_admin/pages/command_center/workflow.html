@@ -1,7 +1,7 @@
 {% extends "gdx_admin/base.html" %}
 {% load static web_tags %}
 {% block title %}Workflow approvals{% endblock %}
-{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/marketplace_admin.css' %}?v=1">{% include "gdx_admin/pages/deployment/partials/_styles.html" %}
+{% block extra_css %}{{ block.super }}{% include "gdx_admin/pages/deployment/partials/_styles.html" %}
 <style>
 .wf-list{list-style:none;margin:0;padding:0;border:1px solid #e6ebf2;border-radius:12px;background:#fff;overflow:hidden}
 .wf-row{display:flex;align-items:center;gap:16px;padding:10px 14px;border-top:1px solid #eef2f6}

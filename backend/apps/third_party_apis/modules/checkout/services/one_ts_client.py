@@ -1,13 +1,26 @@
+import os
+
 import requests
 from django.conf import settings
 from .exceptions import OneTSAddError, OneTSSubmitError
 
+
+def _setting(name, default=""):
+    if name in os.environ:
+        return os.environ.get(name, default)
+    return getattr(settings, name, default)
+
+
 class OneTSClient:
     def __init__(self, session=None):
         self.session = session or requests.Session(); self._owns_session = session is None
-        self.add_url = settings.ONETS_ADD_TO_CART_URL; self.submit_url = settings.ONETS_SUBMIT_CART_URL
-        self.timeout = getattr(settings, "ONETS_TIMEOUT_SECONDS", 30)
-        self.session.auth = (settings.ONETS_USERNAME, settings.ONETS_PASSWORD)
+        self.add_url = _setting("ONETS_ADD_TO_CART_URL")
+        self.submit_url = _setting("ONETS_SUBMIT_CART_URL")
+        try:
+            self.timeout = float(_setting("ONETS_TIMEOUT_SECONDS", 30) or 30)
+        except (TypeError, ValueError):
+            self.timeout = 30
+        self.session.auth = (_setting("ONETS_USERNAME"), _setting("ONETS_PASSWORD"))
         self.session.headers.update({"Accept":"application/json","Content-Type":"application/json"})
     def __enter__(self): return self
     def __exit__(self, *_):

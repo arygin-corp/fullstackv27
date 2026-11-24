@@ -369,7 +369,7 @@ def _order_contribution():
         elif text in {"", "0"}:
             label = "No product"
         else:
-            label = "Unlisted product"
+            label = "DARs"
         placed[label] += row["placed"]
         approved[label] += row["approved"]
     ranked = placed.most_common()
@@ -675,7 +675,7 @@ def _approval_queue(limit=3):
         if text in {"", "0"}:
             product = "No product"
         else:
-            product = names.get(text) or "Unlisted product"
+            product = names.get(text) or "DARs"
         number = (row.number or row.ritm_number or f"Request {row.id}").strip()
         person = (row.requested_for or row.opened_by or "Unassigned").strip()
         stage = (row.approval_stage or "Requested").strip()
@@ -1409,7 +1409,7 @@ def commerce_dashboard(request):
         recent.append({
             "number": number,
             "person": person,
-            "product": (item.name or "").strip() if item is not None and item.name else "Unlisted product",
+            "product": (item.name or "").strip() if item is not None and item.name else "DARs",
             "domain": item.domain.name if item is not None and item.domain_id and item.domain else "No catalog product",
             "stage": (row["approval_stage"] or "").strip() or "Open",
             "when": _when(row["opened_at"]),
@@ -1613,29 +1613,400 @@ def catalog_domains(request):
 
 def _request_row(item, names):
     product_id = (item.product_id or "").strip()
-    product = "Unlisted product"
+    product = "DARs"
+    kind = "dar"
     if product_id.isdigit() and product_id not in {"0", "999999999"}:
         product = names.get(int(product_id)) or f"Product {product_id}"
+        kind = "product"
+    order = getattr(item, "marketplace_order", None)
+    order_id = ((order.marketplace_order_id if order else "") or "").strip()
+    sync = ((order.sync_status if order else "") or "").replace("_", " ").title()
     return {
+        "id": item.id,
         "number": (item.number or item.ritm_number or "").strip() or f"Request {item.id}",
         "person": (item.requested_for or item.opened_by or "").strip() or "Unlisted person",
         "product": product,
+        "kind": kind,
         "stage": (item.approval_stage or "").strip() or "Unspecified",
         "when": _when(item.opened_at),
         "ritm": (item.ritm_number or "").strip(),
+        "orderId": order_id,
+        "sync": sync or "No sync",
+    }
+
+
+def _checkout_order(item, kind):
+    products = []
+    for line in item.items.all():
+        snapshot = line.product_snapshot if isinstance(line.product_snapshot, dict) else {}
+        name = (snapshot.get("name") or "").strip()
+        if not name and line.product_id:
+            name = (getattr(line.product, "name", "") or "").strip()
+        if name:
+            products.append(name)
+    title = ", ".join(products[:2]) or ("Data access request" if kind == "dar" else "Product order")
+    if len(products) > 2:
+        title = f"{title} +{len(products) - 2}"
+    number = (item.request_number or item.primary_ritm_number or "").strip() or f"Checkout {str(item.id)[:8]}"
+    return {
+        "number": number,
+        "status": (item.status or "").replace("_", " ").strip() or "Submitted",
+        "when": _when(item.submitted_at or item.created_at),
+        "product": title,
+        "items": len(products) or item.items.count(),
+        "ritm": (item.primary_ritm_number or "").strip() or "No RITM",
+        "kind": "DAR" if kind == "dar" else "Product",
+    }
+
+
+def _dar_submission(item):
+    form_name = ""
+    if item.form_id:
+        form_name = (getattr(item.form, "name", "") or "").strip()
+    return {
+        "number": (item.request_number or "").strip() or f"DAR {item.pk}",
+        "status": (item.status or "").replace("_", " ").strip() or "Draft",
+        "when": _when(item.submitted_at or item.created_at),
+        "product": form_name or "Data access request",
+        "items": 1,
+        "ritm": "No RITM",
+        "kind": "DAR",
+    }
+
+
+_DAR_IMAGE = "/static/images/data-access-request.jpg"
+_HIDDEN_DETAIL_KEYS = {"objectid", "object_id", "password", "secret", "token", "client_secret"}
+
+
+def _detail_rows(value, prefix=""):
+    rows = []
+    if isinstance(value, dict):
+        for key, item in value.items():
+            if str(key).strip().lower() in _HIDDEN_DETAIL_KEYS:
+                continue
+            label = f"{prefix}{key}"
+            rows.extend(_detail_rows(item, f"{label} · "))
+        return rows[:80]
+    if isinstance(value, list):
+        if value and all(isinstance(item, (str, int, float, bool)) for item in value):
+            text = ", ".join(str(item) for item in value if str(item).strip())
+            if text:
+                rows.append({"label": prefix.rstrip(" ·") or "Items", "value": text})
+            return rows
+        for index, item in enumerate(value, start=1):
+            rows.extend(_detail_rows(item, f"{prefix}{index} · "))
+        return rows[:80]
+    if value is None or value == "":
+        return rows
+    text = str(value).strip()
+    if text:
+        rows.append({"label": prefix.rstrip(" ·") or "Value", "value": text[:500]})
+    return rows
+
+
+def _request_status(item, row):
+    approval = (item.approval_stage or "").strip() or "Unspecified"
+    workflow = (item.stage or "").strip()
+    closed = bool(item.closed_at)
+    approval_done = approval.lower() in {"approved", "rejected"}
+    if closed:
+        where = "Closed"
+        status = "Closed"
+    elif not approval_done:
+        where = "Approval"
+        status = f"{approval} · {workflow}" if workflow else approval
+    else:
+        where = "Workflow"
+        status = workflow or approval
+    sync = row.get("sync") or "No sync"
+    steps = [
+        {"name": "Opened", "detail": row.get("when") or "No date", "state": "done"},
+        {
+            "name": "Approval",
+            "detail": approval,
+            "state": "done" if approval_done or closed else "current" if where == "Approval" else "upcoming",
+        },
+        {
+            "name": "Workflow",
+            "detail": workflow or "No workflow stage",
+            "state": "done" if closed else "current" if where == "Workflow" else "upcoming",
+        },
+        {
+            "name": "RITM",
+            "detail": f"{(item.ritm_number or '').strip() or 'No RITM'} · {(item.ritm_state or '').strip() or 'No state'}",
+            "state": "done" if closed else "upcoming",
+        },
+        {"name": "Sync", "detail": sync, "state": "done" if sync.lower() == "synchronized" else "upcoming"},
+        {
+            "name": "Closed",
+            "detail": _when(item.closed_at) if closed else "Still open",
+            "state": "done" if closed else "upcoming",
+        },
+    ]
+    if closed:
+        steps[-1]["state"] = "done"
+    return {"status": status, "where": where, "steps": steps}
+
+
+def _request_detail_payload(item):
+    from apps.marketplace.models import Product
+
+    names = {}
+    image = _DAR_IMAGE
+    product_id = (item.product_id or "").strip()
+    if product_id.isdigit() and product_id not in {"0", "999999999"}:
+        product = Product.objects.filter(id=int(product_id)).prefetch_related("images").first()
+        if product is not None:
+            names[product.id] = product.name
+            image = _product_image(product) or _DAR_IMAGE
+    row = _request_row(item, names)
+    row.update({
+        "image": image,
+        "productId": product_id or "None",
+        "ritmId": (item.ritm_id or "").strip() or "No RITM id",
+        "workflowStage": (item.stage or "").strip() or "No workflow stage",
+        "assignedTo": (item.ritm_assigned_to or "").strip() or "Unassigned",
+        "openedBy": (item.opened_by or "").strip() or "Unlisted",
+        "ritmState": (item.ritm_state or "").strip() or "No state",
+        "closed": _when(item.closed_at) if item.closed_at else "Still open",
+        "created": _when(item.created_at),
+        "updated": _when(item.updated_at),
+        "sourceUpdated": _when(item.source_updated_at) or "No source update",
+        "approvers": _detail_rows(item.ritm_approvers),
+        "comments": _detail_rows(item.ritm_comments),
+        "variables": _detail_rows(item.variables),
+        "formData": _detail_rows(item.form_data),
+        "tasks": [
+            {
+                "number": (task.number or "").strip() or f"Task {task.id}",
+                "ritm": (task.ritm or "").strip() or "No RITM",
+                "state": (task.state or "").strip() or "Unspecified",
+                "due": _when(task.due) or "No due date",
+                "created": _when(task.created) or "No created date",
+                "group": (task.assignment_group or "").strip() or "Unassigned",
+                "manager": (task.assignment_group_manager or "").strip() or "Unassigned",
+                "assignee": (task.assigned_to or "").strip() or "Unassigned",
+                "updated": _when(task.source_updated_at) or "No source update",
+            }
+            for task in item.tasks.all()
+        ],
+    })
+    row.update(_request_status(item, row))
+    return row
+
+
+def marketplace_order_detail(request, request_id):
+    """One marketplace request for the order details page."""
+    if not _signed_in(request):
+        return JsonResponse({"detail": "Authentication required."}, status=401)
+    from apps.orders.models import Request
+
+    item = (
+        Request.objects.select_related("marketplace_order")
+        .prefetch_related("tasks")
+        .filter(pk=request_id)
+        .first()
+    )
+    if item is None:
+        return JsonResponse({"detail": "Request not found."}, status=404)
+    return JsonResponse(_request_detail_payload(item))
+
+
+def marketplace_order_lookup(request):
+    """Resolve a tracking id to the stored request and its status."""
+    if not _signed_in(request):
+        return JsonResponse({"detail": "Authentication required."}, status=401)
+    from apps.orders.models import Request
+
+    key = (request.GET.get("request") or request.GET.get("id") or "").strip().lstrip("#")
+    key = "".join(key.split())
+    if key.lower().startswith("ord_"):
+        key = ""
+    rows = Request.objects.select_related("marketplace_order").prefetch_related("tasks")
+    item = rows.filter(pk=int(key)).first() if key.isdigit() else None
+    if item is None and key:
+        item = rows.filter(number__iexact=key).first() or rows.filter(ritm_number__iexact=key).first()
+    if item is None and not key:
+        item = rows.exclude(opened_at=None).order_by("-opened_at").first()
+    if item is None:
+        return JsonResponse({"detail": "Request not found."}, status=404)
+    return JsonResponse(_request_detail_payload(item))
+
+
+def marketplace_orders(request):
+    """Product checkouts and DAR submissions for the marketplace orders page."""
+    if not _signed_in(request):
+        return JsonResponse({"detail": "Authentication required."}, status=401)
+    cached = _recall("order-board")
+    if cached is not None:
+        return JsonResponse(cached)
+    from apps.marketplace.models import Product
+    from apps.orders.models import Request
+    from apps.third_party_apis.modules.checkout.models import Checkout
+
+    def checkouts(kind):
+        query = (
+            Checkout.objects.filter(source_cart__kind=kind)
+            .prefetch_related("items__product")
+            .order_by("-created_at")
+        )
+        return _safe_count(query), [_checkout_order(item, kind) for item in query[:40]]
+
+    product_total, product_rows = checkouts("product")
+    dar_total, dar_rows = checkouts("dar")
+    seen = {row["number"] for row in product_rows}
+    requests = Request.objects.exclude(opened_at=None).order_by("-opened_at", "-id").only(*_REQUEST_FIELDS)
+    request_total = _safe_count(requests)
+    product_ids = []
+    request_rows = list(requests[:40])
+    for item in request_rows:
+        if (item.product_id or "").isdigit() and item.product_id not in {"0", "999999999"}:
+            product_ids.append(int(item.product_id))
+    names = dict(Product.objects.filter(id__in=set(product_ids)).values_list("id", "name"))
+    for item in request_rows:
+        row = _request_row(item, names)
+        if row["number"] in seen:
+            continue
+        product_rows.append({
+            "number": row["number"],
+            "status": row["stage"],
+            "when": row["when"],
+            "product": row["product"],
+            "items": 1,
+            "ritm": row["ritm"] or "No RITM",
+            "kind": "Product",
+        })
+        seen.add(row["number"])
+    try:
+        from apps.third_party_apis.modules.data_access_request.models import FormSubmission
+
+        submissions = FormSubmission.objects.select_related("form").order_by("-created_at")
+        dar_forms = _safe_count(submissions)
+        known = {row["number"] for row in dar_rows}
+        for item in submissions[:40]:
+            row = _dar_submission(item)
+            if row["number"] in known:
+                continue
+            dar_rows.append(row)
+            known.add(row["number"])
+    except Exception:
+        dar_forms = 0
+    payload = {
+        "productTotal": product_total + request_total,
+        "darTotal": dar_total + dar_forms,
+        "productOpen": sum(1 for row in product_rows if row["status"].lower() in {"requested", "not yet requested", "validating", "ready", "submitting", "pending"}),
+        "darOpen": sum(1 for row in dar_rows if row["status"].lower() in {"draft", "submitted", "processing", "validating", "ready"}),
+        "productOrders": product_rows[:40],
+        "darOrders": dar_rows[:40],
+    }
+    return JsonResponse(_remember("order-board", payload))
+
+
+def _letter_grade(percent):
+    if percent >= 90:
+        return "A"
+    if percent >= 80:
+        return "B"
+    if percent >= 70:
+        return "C"
+    if percent >= 60:
+        return "D"
+    return "F"
+
+
+def _delivery_metrics():
+    """Delivery timing for public, protected, and every other product.
+
+    Public and protected products are due in 3 days. Every other product is due
+    in 7 days. Every request is also expected to be completed within 21 days.
+    """
+    from django.utils import timezone
+
+    from apps.marketplace.models import Product
+    from apps.orders.models import Request
+
+    classes = {
+        str(product_id): (value or "").strip().lower()
+        for product_id, value in Product.objects.exclude(classification=None).values_list("id", "classification__value")
+    }
+    now = timezone.now()
+    groups = {"fast": [0, 0], "other": [0, 0], "goal": [0, 0]}
+    past_window = 0
+    on_time_fast = 0
+    on_time_other = 0
+    rows = Request.objects.exclude(opened_at=None).values_list(
+        "opened_at", "closed_at", "approval_stage", "updated_at", "product_id"
+    )
+    for opened_at, closed_at, approval, updated_at, product_id in rows.iterator(chunk_size=2000):
+        kind = classes.get((product_id or "").strip(), "")
+        fast = kind in {"public", "protected"}
+        target = 3 if fast else 7
+        bucket = "fast" if fast else "other"
+        delivered = closed_at or updated_at if (approval or "").strip().lower() == "approved" else closed_at
+        if delivered is not None:
+            elapsed = (delivered - opened_at).total_seconds() / 86400
+            groups[bucket][1] += 1
+            groups["goal"][1] += 1
+            if elapsed <= target:
+                groups[bucket][0] += 1
+                if fast:
+                    on_time_fast += 1
+                else:
+                    on_time_other += 1
+            if elapsed <= 21:
+                groups["goal"][0] += 1
+            else:
+                past_window += 1
+            continue
+        age = (now - opened_at).total_seconds() / 86400
+        if age > target:
+            groups[bucket][1] += 1
+        if age > 21:
+            groups["goal"][1] += 1
+            past_window += 1
+    rates = [hits / total for hits, total in groups.values() if total]
+    accuracy = round(sum(rates) / len(rates) * 100) if rates else 0
+    return {
+        "etaAccuracy": accuracy,
+        "deliveryGrade": _letter_grade(accuracy),
+        "pastWindow": past_window,
+        "onTimeFast": on_time_fast,
+        "onTimeOther": on_time_other,
+    }
+
+
+def _shipment_counts():
+    from django.db.models import Q
+
+    from apps.orders.models import Request
+
+    pending_task = (
+        Q(tasks__state__iexact="open")
+        | Q(tasks__state__iexact="pending")
+        | Q(tasks__state__iexact="work in progress")
+    )
+    rejected_task = Q(tasks__state__iexact="closed incomplete") | Q(tasks__state__icontains="reject")
+    waiting = Request.objects.exclude(approval_stage__iexact="approved").exclude(approval_stage__iexact="rejected")
+    return {
+        "activeShipments": waiting.count(),
+        "inMotion": Request.objects.filter(pending_task).distinct().count(),
+        "atRisk": Request.objects.filter(rejected_task).distinct().count(),
+        **_delivery_metrics(),
     }
 
 
 def marketplace_surfaces(request):
     if not _signed_in(request):
         return JsonResponse({"detail": "Authentication required."}, status=401)
-    from django.db.models import Count
+    from django.db.models import Count, Exists, OuterRef
     from apps.marketplace.models import Domain, Product
     from apps.orders.models import MarketplaceOrder, Request, Task
     from apps.third_party_apis.modules.checkout.models import Cart, Checkout, CheckoutItem
     from django.db.models import Q
 
-    cached = _recall("surfaces")
+    full_shipments = request.GET.get("shipments") == "all"
+    cache_key = "surfaces-shipments" if full_shipments else "surfaces"
+    cached = _recall(cache_key)
     if cached is not None:
         return JsonResponse(cached)
     stages = _request_stage_counts()
@@ -1644,11 +2015,45 @@ def marketplace_surfaces(request):
     requested = stages["requested"] or 0
     not_yet = stages["not_yet"] or 0
     total = stages["total"] or 0
-    open_requests = Request.objects.filter(approval_stage__in=["Requested", "Not Yet Requested"]).exclude(opened_at=None).order_by("-opened_at", "-id").only(*_REQUEST_FIELDS)
-    rejected_requests = Request.objects.filter(approval_stage="Rejected").exclude(opened_at=None).order_by("-opened_at", "-id").only(*_REQUEST_FIELDS)
-    recent = Request.objects.exclude(opened_at=None).order_by("-opened_at", "-id").only(*_REQUEST_FIELDS)
+    request_rows = Request.objects.select_related("marketplace_order").exclude(opened_at=None).only(
+        *_REQUEST_FIELDS,
+        "marketplace_order__marketplace_order_id",
+        "marketplace_order__sync_status",
+    )
+    open_requests = request_rows.filter(approval_stage__in=["Requested", "Not Yet Requested"]).order_by("-opened_at", "-id")
+    rejected_requests = request_rows.filter(approval_stage__iexact="rejected").order_by("-opened_at", "-id")
+    approved_requests = request_rows.filter(approval_stage__iexact="approved").order_by("-opened_at", "-id")
+    recent = request_rows.order_by("-opened_at", "-id")
     tasks = Task.objects.order_by("-created", "-id")
-    lists = list(recent[:10]) + list(open_requests[:10]) + list(rejected_requests[:10])
+    recent_page = list(recent[:1000])
+    open_page = list(open_requests[:10])
+    rejected_page = list(rejected_requests[:10])
+    pending_task = (
+        Q(tasks__state__iexact="open")
+        | Q(tasks__state__iexact="pending")
+        | Q(tasks__state__iexact="work in progress")
+    )
+    motion_ids = set(request_rows.filter(pending_task).values_list("id", flat=True).distinct())
+    task_for_request = Task.objects.filter(request_id=OuterRef("pk"))
+    unfinished_task = task_for_request.exclude(state__iexact="closed complete").exclude(state__iexact="completed")
+    granted_shipments = (
+        request_rows.filter(approval_stage__iexact="approved", ritm_state__iexact="closed complete")
+        .annotate(_has_task=Exists(task_for_request), _unfinished=Exists(unfinished_task))
+        .filter(_has_task=True, _unfinished=False)
+        .order_by("-opened_at", "-id")
+    )
+    granted_ids = set(granted_shipments.values_list("id", flat=True))
+    waiting_shipments = request_rows.exclude(approval_stage__iexact="approved").exclude(approval_stage__iexact="rejected").order_by("-opened_at", "-id")
+    motion_shipments = request_rows.filter(id__in=motion_ids).order_by("-opened_at", "-id")
+    if not full_shipments:
+        waiting_shipments = waiting_shipments[:250]
+        motion_shipments = motion_shipments[:250]
+        granted_shipments = granted_shipments[:250]
+    shipment_rows = {}
+    for item in list(waiting_shipments) + list(motion_shipments) + list(granted_shipments):
+        shipment_rows.setdefault(item.id, item)
+    shipment_page = sorted(shipment_rows.values(), key=lambda item: (item.opened_at, item.id), reverse=True)
+    lists = recent_page + open_page + rejected_page + shipment_page
     product_ids = []
     for item in lists:
         if (item.product_id or "").isdigit() and item.product_id not in {"0", "999999999"}:
@@ -1698,9 +2103,19 @@ def marketplace_surfaces(request):
         "marketplaceOrders": _safe_count(MarketplaceOrder.objects.all()),
         "tasks": _safe_count(tasks),
         "topDomains": [{"name": domain.name, "products": domain.products} for domain in domains],
-        "recent": [_request_row(item, names) for item in recent[:10]],
-        "openRequests": [_request_row(item, names) for item in open_requests[:10]],
-        "rejectedRequests": [_request_row(item, names) for item in rejected_requests[:10]],
+        "recent": [_request_row(item, names) for item in recent_page],
+        "openRequests": [_request_row(item, names) for item in open_page],
+        "rejectedRequests": [_request_row(item, names) for item in rejected_page],
+        "shipments": [
+            {
+                **_request_row(item, names),
+                "pending": (item.approval_stage or "").strip().lower() not in {"approved", "rejected"},
+                "motion": item.id in motion_ids,
+                "approved": item.id in granted_ids,
+            }
+            for item in shipment_page
+        ],
+        **_shipment_counts(),
         "taskRows": [
             {
                 "number": (task.number or "").strip() or f"Task {task.id}",
@@ -1713,7 +2128,7 @@ def marketplace_surfaces(request):
             for task in tasks.only("id", "number", "state", "assignment_group", "assigned_to", "due", "ritm")[:10]
         ],
     }
-    return JsonResponse(_remember("surfaces", payload))
+    return JsonResponse(_remember(cache_key, payload))
 
 
 def _plain(value, limit=180):
@@ -1867,3 +2282,14 @@ def product_record(request):
         "reviews": _safe_count(Review.objects.filter(product=item)),
         "requests": _safe_count(Request.objects.filter(product_id=str(item.id))),
     })
+
+
+def jira_kanban(request):
+    """Jira Software board for the theme Kanban page."""
+    if not _signed_in(request):
+        return JsonResponse({"detail": "Authentication required."}, status=401)
+    from gdx.jira_stories import kanban_board
+
+    user = request.user
+    name = (user.get_full_name() or "").strip() or (getattr(user, "username", "") or "")
+    return JsonResponse(kanban_board({"email": getattr(user, "email", "") or "", "name": name}))

@@ -1,8 +1,34 @@
 {% extends "gdx_admin/base.html" %}
 {% block title %}AWS Integrations{% endblock %}
 {% block content %}
-{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS Integrations" hero_description="Logical AWS resources and environment-specific configurations." hero_metric_label="Selected Environment" hero_metric=selected_environment %}
-{% include "third_party_apis/aws/partials/_aws_page_header.html" with page_heading="AWS resource catalog" page_description="Review and configure AWS resources by environment." selected_environment=selected_environment show_parity=True %}
-{% include "third_party_apis/aws/partials/_aws_environment_nav.html" with environments=environments selected_environment=selected_environment %}
-{% include "third_party_apis/aws/partials/_aws_resource_grid.html" with groups=groups selected_environment=selected_environment %}
+<main class="module-page">
+  <header class="module-context-header">
+    <div class="module-context-header__copy">
+      <p class="module-context-breadcrumb">
+        <a href="{% url 'third_party_api_pages:integration_catalog' %}">Modules</a>
+        <span aria-current="page">AWS</span>
+      </p>
+      <h1>AWS resource catalog</h1>
+      <p>Logical AWS resources and environment-specific configurations.</p>
+    </div>
+    <div class="module-context-header__actions">
+      {% if selected_environment %}
+      <a class="integration-button integration-button--primary" href="{% url 'third_party_api_aws:resource_create' selected_environment %}">Add AWS resource</a>
+      <a class="integration-button" href="{% url 'third_party_api_aws:environment_settings' selected_environment %}">Environment settings</a>
+      <a class="integration-button" href="{% url 'third_party_api_aws:resource_list' selected_environment %}">Services</a>
+      {% endif %}
+      <a class="integration-button" href="{% url 'third_party_api_aws:parity' %}">Environment parity</a>
+    </div>
+  </header>
+
+  {% if environments %}
+  <nav class="aws-env-nav" aria-label="AWS environment">
+    {% for environment in environments %}
+    <a class="integration-button {% if environment.environment == selected_environment %}integration-button--primary{% endif %}" href="?environment={{ environment.environment }}" {% if environment.environment == selected_environment %}aria-current="page"{% endif %}>{{ environment.get_environment_display }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {% include "third_party_apis/aws/partials/_aws_resource_grid.html" with groups=groups selected_environment=selected_environment %}
+</main>
 {% endblock %}

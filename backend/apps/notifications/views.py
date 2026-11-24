@@ -8,14 +8,14 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_GET, require_http_methods, require_POST
 from django import forms
 from .models import (AuditLedgerEntry, AuditLedgerVerification, DeadLetterStatus, DeliveryChannel, DeliveryStatus, DynamicAudience, NotificationDeadLetter,
     NotificationDelivery, NotificationOutbox, NotificationRule, OutboxStatus, Notification, NotificationType, NotificationSummary, PushDevice, NotificationBundle,
-    NotificationCampaign, TeamsDestination, NotificationTemplate, NotificationPreference,
+    NotificationCampaign, CampaignStatus, TeamsDestination, NotificationTemplate, NotificationPreference,
 )
 from .monitoring.alerts import evaluate_alerts
 from .services.outbox import requeue_dead_letter
@@ -666,10 +666,21 @@ def campaign_manager(request):
             "notifications:campaign_manager"
         )
 
-    campaigns = (
-        NotificationCampaign.objects
-        .order_by("-created_at")
-    )
+    campaigns = NotificationCampaign.objects.order_by("-created_at")
+    query = (request.GET.get("q") or "").strip()
+    status = (request.GET.get("status") or "").strip()
+    kind = (request.GET.get("type") or "").strip()
+    if query:
+        campaigns = campaigns.filter(name__icontains=query)
+    if status:
+        campaigns = campaigns.filter(status=status)
+    if kind:
+        campaigns = campaigns.filter(notification_type=kind)
+    grouped = {
+        row["status"]: row["total"]
+        for row in NotificationCampaign.objects.values("status").annotate(total=Count("id"))
+    }
+    campaigns = campaigns.annotate(recipient_count=Count("recipients"))[:100]
 
     return render(
         request,
@@ -677,6 +688,14 @@ def campaign_manager(request):
         {
             "campaign_form": form,
             "campaigns": campaigns,
+            "campaign_metrics": {
+                "draft": grouped.get(CampaignStatus.DRAFT, 0),
+                "pending": grouped.get(CampaignStatus.PENDING_APPROVAL, 0),
+                "scheduled": grouped.get(CampaignStatus.SCHEDULED, 0),
+                "sent": grouped.get(CampaignStatus.SENT, 0),
+            },
+            "campaign_statuses": CampaignStatus.choices,
+            "notification_types": NotificationType.choices,
             "active_nav": "campaigns",
         },
     )

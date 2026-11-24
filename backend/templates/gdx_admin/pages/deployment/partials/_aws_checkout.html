@@ -7,12 +7,12 @@
 <section class="rounded-lg border border-border bg-card p-5 text-card-foreground shadow-xs sm:p-6">
     <h2 class="text-lg font-semibold tracking-tight">Britive checkout</h2>
     <p class="mt-3 text-sm font-semibold" style="color:{% if summary.active %}#15803d{% else %}#b91c1c{% endif %}">
-        {% if summary.active %}Active until {{ summary.expires_at }}{% else %}No active session{% endif %}
+        {% if summary.active %}{{ summary.profile }} active until {{ summary.expires_at }}{% else %}No active session{% endif %}
     </p>
     {% if summary.profile or summary.account or summary.role or summary.key_hint %}
     <p class="mt-2 text-sm text-muted-foreground">{{ summary.profile }} {{ summary.account }} {{ summary.role }}{% if summary.key_hint %} · {{ summary.key_hint }}{% endif %}{% if summary.actor %} · saved by {{ summary.actor }}{% endif %}</p>
     {% endif %}
-    <p class="mt-3 text-sm text-muted-foreground">Check out <strong>radar-admin-nonprod</strong> to create nonprod AWS resources, or <strong>radar-admin-prod</strong> to create prod AWS resources. Copy the credential export and paste it here. A checkout lasts 8 hours.</p>
+    <p class="mt-3 text-sm text-muted-foreground">{{ summary.guidance }}</p>
     {% if can_save %}
     <form method="post" class="mt-4" action="{% url 'code_aws_session' %}">
         {% csrf_token %}

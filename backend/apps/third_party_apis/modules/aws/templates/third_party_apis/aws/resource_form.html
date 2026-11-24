@@ -1,53 +1,71 @@
 {% extends "gdx_admin/base.html" %}
 {% block title %}AWS Resource Configuration{% endblock %}
 {% block content %}
-{% include "third_party_apis/aws/partials/_aws_layout_styles.html" %}
-{% include "third_party_apis/aws/partials/_aws_hero.html" with hero_title="AWS Resource Configuration" hero_description="Select an AWS resource type and configure its environment-specific properties." hero_metric_label="Environment" hero_metric=environment.get_environment_display %}
-{% include "third_party_apis/aws/partials/_aws_page_header.html" with breadcrumb_current="Resource Configuration" page_heading="AWS resource" page_description="Choose the AWS resource type and configure runtime properties." selected_environment=environment.environment %}
-
-<div class="aws-split">
-  <form class="card" method="post">
-    <div class="card-header">
-      <h3 class="h5 mb-0"><i class="ti ti-cloud-cog me-2 text-primary"></i>Resource configuration</h3>
+<main class="module-page">
+  <header class="module-context-header">
+    <div class="module-context-header__copy">
+      <p class="module-context-breadcrumb">
+        <a href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">AWS</a>
+        <span aria-current="page">{{ environment.get_environment_display }}</span>
+      </p>
+      <h1>AWS resource</h1>
+      <p>Choose the resource type and set the name, region, and service settings for this environment.</p>
     </div>
-    <div class="card-body">
-      {% csrf_token %}
-      {{ form.non_field_errors }}
-      <div class="aws-field-grid">
-        <div class="aws-field--wide">
-          <label class="form-label fw-semibold" for="{{ form.resource_type.id_for_label }}">{{ form.resource_type.label }}<span class="text-danger">*</span></label>
-          {{ form.resource_type }}
-          {% for error in form.resource_type.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
-        </div>
-        <div>
-          <label class="form-label fw-semibold" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-          {{ form.name }}
-          {% for error in form.name.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
-        </div>
-        <div>
-          <label class="form-label fw-semibold" for="{{ form.region.id_for_label }}">{{ form.region.label }}</label>
-          {{ form.region }}
-          {% for error in form.region.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
-        </div>
-        <div class="aws-field--wide">
-          <div class="form-check form-switch">
+    <div class="module-context-header__actions">
+      <a class="integration-button" href="{% url 'third_party_api_aws:environment_settings' environment.environment %}">Environment settings</a>
+      <a class="integration-button" href="{% url 'third_party_api_aws:resource_list' environment.environment %}">Services</a>
+    </div>
+  </header>
+
+  <div class="aws-form-layout">
+    <form class="module-panel module-doc-card" method="post">
+      <div class="module-panel__header"><h2>Resource configuration</h2></div>
+      <div class="campaign-create">
+        {% csrf_token %}
+        {% if form.non_field_errors %}<p class="vikki-error">{{ form.non_field_errors }}</p>{% endif %}
+        <div class="campaign-form-grid">
+          <label class="campaign-form-grid__wide">
+            {{ form.resource_type.label }}
+            {{ form.resource_type }}
+            {{ form.resource_type.errors }}
+          </label>
+          <label>
+            {{ form.name.label }}
+            {{ form.name }}
+            {{ form.name.errors }}
+          </label>
+          <label>
+            {{ form.region.label }}
+            {{ form.region }}
+            {{ form.region.errors }}
+          </label>
+          <label class="aws-check campaign-form-grid__wide">
             {{ form.enabled }}
-            <label class="form-check-label" for="{{ form.enabled.id_for_label }}">Enabled</label>
-          </div>
+            <span>Enabled</span>
+          </label>
+          <label class="campaign-form-grid__wide">
+            {{ form.settings_json.label }}
+            {{ form.settings_json }}
+            {% if form.settings_json.help_text %}<small>{{ form.settings_json.help_text }}</small>{% endif %}
+            {{ form.settings_json.errors }}
+          </label>
         </div>
-        <div class="aws-field--wide">
-          <label class="form-label fw-semibold" for="{{ form.settings_json.id_for_label }}">{{ form.settings_json.label }}</label>
-          {{ form.settings_json }}
-          {% if form.settings_json.help_text %}<div class="form-text">{{ form.settings_json.help_text }}</div>{% endif %}
-          {% for error in form.settings_json.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+        <div class="aws-form-actions">
+          <a class="integration-button" href="{% url 'third_party_api_aws:index' %}?environment={{ environment.environment }}">Cancel</a>
+          <button class="integration-button integration-button--primary" type="submit">Save resource</button>
         </div>
       </div>
-    </div>
-    {% include "third_party_apis/aws/partials/_aws_form_actions.html" with environment=environment submit_label="Save Resource" %}
-  </form>
-  <aside>
-    {% include "third_party_apis/aws/partials/_aws_form_help.html" %}
-    <p class="mt-3 mb-0"><a href="{% url 'third_party_api_aws:resource_list' environment.environment %}">Browse services that can connect</a></p>
-  </aside>
-</div>
+    </form>
+
+    <aside class="module-panel module-doc-card">
+      <div class="module-panel__header"><h2>Configuration guidance</h2></div>
+      <ol class="aws-guide">
+        <li><strong>Choose the environment</strong><span>Configure the resource for the intended deployment environment.</span></li>
+        <li><strong>Select the AWS resource type</strong><span>Choose the AWS service this resource represents.</span></li>
+        <li><strong>Configure runtime details</strong><span>Provide the resource name, region, and service settings.</span></li>
+      </ol>
+      <p class="aws-guide-link"><a href="{% url 'third_party_api_aws:resource_list' environment.environment %}">Browse services that can connect</a></p>
+    </aside>
+  </div>
+</main>
 {% endblock %}

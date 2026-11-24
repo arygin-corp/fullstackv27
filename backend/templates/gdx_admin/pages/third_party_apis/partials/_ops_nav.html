@@ -1,15 +1,33 @@
+{% url 'third_party_api_ops:dashboard' as nav_dashboard %}
+{% url 'third_party_api_pages:integration_catalog' as nav_catalog %}
+{% url 'third_party_api_ops:analytics' as nav_analytics %}
+{% url 'third_party_api_ops:reports' as nav_reports %}
+{% url 'third_party_api_pages:integration_test_dashboard' as nav_readiness %}
+{% url 'third_party_api_ops:configuration' as nav_configuration %}
+{% url 'third_party_api_ops:activity' as nav_activity %}
+{% url 'third_party_api_ops:audit_list' as nav_audit %}
+{% url 'third_party_api_ops:health' as nav_health %}
+{% url 'third_party_api_ops:dependencies' as nav_dependencies %}
+{% url 'third_party_api_ops:documentation_index' as nav_documentation %}
 <nav class="module-context-header" aria-label="Module administration">
+  {% if page_heading %}
+  <div class="module-context-header__copy">
+    {% if page_label %}<p class="module-context-breadcrumb"><span aria-current="page">{{ page_label }}</span></p>{% endif %}
+    <h1>{{ page_heading }}</h1>
+    {% if page_subheading %}<p>{{ page_subheading }}</p>{% endif %}
+  </div>
+  {% endif %}
   <div class="module-context-header__actions module-context-header__menu">
-    <a href="{% url 'third_party_api_ops:dashboard' %}">Dashboard</a>
-    <a href="{% url 'third_party_api_pages:integration_catalog' %}">Module Catalog</a>
-    <a href="{% url 'third_party_api_ops:analytics' %}">Analytics</a>
-    <a href="{% url 'third_party_api_ops:reports' %}">Reports</a>
-    <a href="{% url 'third_party_api_pages:integration_test_dashboard' %}">Readiness</a>
-    <a href="{% url 'third_party_api_ops:configuration' %}">Configuration</a>
-    <a href="{% url 'third_party_api_ops:activity' %}">Activity</a>
-    <a href="{% url 'third_party_api_ops:audit_list' %}">Audit</a>
-    <a href="{% url 'third_party_api_ops:health' %}">Health</a>
-    <a href="{% url 'third_party_api_ops:dependencies' %}">Dependencies</a>
-    <a href="{% url 'third_party_api_ops:documentation_index' %}">Documentation</a>
+    <a href="{{ nav_dashboard }}"{% if request.path == nav_dashboard %} aria-current="page"{% endif %}>Dashboard</a>
+    <a href="{{ nav_catalog }}"{% if request.path == nav_catalog %} aria-current="page"{% endif %}>Module Catalog</a>
+    <a href="{{ nav_analytics }}"{% if request.path == nav_analytics %} aria-current="page"{% endif %}>Analytics</a>
+    <a href="{{ nav_reports }}"{% if request.path == nav_reports %} aria-current="page"{% endif %}>Reports</a>
+    <a href="{{ nav_readiness }}"{% if request.path == nav_readiness %} aria-current="page"{% endif %}>Readiness</a>
+    <a href="{{ nav_configuration }}"{% if request.path == nav_configuration %} aria-current="page"{% endif %}>Configuration</a>
+    <a href="{{ nav_activity }}"{% if request.path == nav_activity %} aria-current="page"{% endif %}>Activity</a>
+    <a href="{{ nav_audit }}"{% if request.path == nav_audit %} aria-current="page"{% endif %}>Audit</a>
+    <a href="{{ nav_health }}"{% if request.path == nav_health %} aria-current="page"{% endif %}>Health</a>
+    <a href="{{ nav_dependencies }}"{% if request.path == nav_dependencies %} aria-current="page"{% endif %}>Dependencies</a>
+    <a href="{{ nav_documentation }}"{% if request.path == nav_documentation %} aria-current="page"{% endif %}>Documentation</a>
   </div>
 </nav>

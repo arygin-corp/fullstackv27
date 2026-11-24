@@ -1,7 +1,7 @@
 {% extends "gdx_admin/base.html" %}
 {% load static %}
 {% block title %}Integrations{% endblock %}
-{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=tablet-desktop">{% endblock %}
+{% block extra_css %}{{ block.super }}{% endblock %}
 {% block content %}
 <section class="integration-catalog" data-integration-catalog data-api-url="{% url 'third_party_api:integration_catalog_api' %}">
 

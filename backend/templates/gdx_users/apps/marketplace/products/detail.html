@@ -88,5 +88,25 @@
             </div>
         </div>
     </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Product associations</h5>
+            {% if product_associations %}
+                <div class="record-tiles">
+                    {% for link in product_associations %}
+                        <a class="record-tile" href="{% url 'marketplace:product-detail' link.associated_product.pk %}">
+                            <span class="record-tile-copy">
+                                <strong>{{ link.associated_product.name }}</strong>
+                                <small>{{ link.badge_label }}{% if link.reason %} · {{ link.reason }}{% endif %}</small>
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-muted mb-0">No associated products yet.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

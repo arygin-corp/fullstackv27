@@ -1,3 +1,6 @@
+import os
+
+from django.conf import settings as django_settings
 from django.contrib.admin.views.decorators import staff_member_required
 from django.db.models import Sum
 from django.shortcuts import render
@@ -31,31 +34,33 @@ def dashboard(request):
         IntegrationDailyMetric.objects.all()
     )
 
+    module_count = modules.count()
+    enabled_count = modules.filter(enabled=True).count()
+    request_count = metrics["requests"] or 0
+    success_count = metrics["successes"] or 0
+    failure_count = metrics["failures"] or 0
+    warning_count = metrics["warnings"] or 0
+
+    def share(part, whole):
+        if not whole:
+            return 0
+        return max(0, min(100, int(round(100 * part / whole))))
+
     context = {
         "modules": modules,
-        "module_count": modules.count(),
-        "enabled_count": modules.filter(
-            enabled=True
-        ).count(),
+        "module_count": module_count,
+        "enabled_count": enabled_count,
         "disabled_count": modules.filter(
             enabled=False
         ).count(),
-        "request_count": (
-            metrics["requests"]
-            or 0
-        ),
-        "success_count": (
-            metrics["successes"]
-            or 0
-        ),
-        "failure_count": (
-            metrics["failures"]
-            or 0
-        ),
-        "warning_count": (
-            metrics["warnings"]
-            or 0
-        ),
+        "enabled_share": share(enabled_count, module_count),
+        "request_count": request_count,
+        "success_count": success_count,
+        "failure_count": failure_count,
+        "warning_count": warning_count,
+        "success_share": share(success_count, request_count),
+        "failure_share": share(failure_count, request_count),
+        "warning_share": share(warning_count, request_count),
         "total_duration_ms": (
             metrics["duration"]
             or 0
@@ -140,12 +145,113 @@ def reports(request):
     )
 
 
+def _setting_value(name):
+    """Read the same place the integration services read: the process environment, then Django settings."""
+    if name in os.environ:
+        return os.environ.get(name)
+    return getattr(django_settings, name, "")
+
+
+def _is_present(name):
+    value = _setting_value(name)
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    return bool(value)
+
+
+def _configuration_settings(module):
+    secrets = set(getattr(module, "required_secret_names", ()) or ())
+    required = list(getattr(module, "required_setting_names", ()) or ())
+    optional = list(getattr(module, "optional_setting_names", ()) or ())
+    defaulted = dict(getattr(module, "defaulted_settings", {}) or {})
+    endpoint_setting = getattr(module, "upstream_endpoint_setting", "") or ""
+    names = []
+    for name in required + list(secrets) + optional + list(defaulted) + ([endpoint_setting] if endpoint_setting else []):
+        if name and name not in names:
+            names.append(name)
+    rows = []
+    for name in names:
+        is_secret = name in secrets
+        is_required = name in required or name in secrets or name == endpoint_setting
+        is_defaulted = name in defaulted
+        configured = _is_present(name) or is_defaulted
+        if is_required:
+            category = "Required"
+        elif is_defaulted:
+            category = "Defaulted"
+        else:
+            category = "Optional"
+        detail = ""
+        if is_defaulted and not is_secret:
+            detail = f"Default {defaulted[name]}"
+        rows.append({
+            "name": name,
+            "category": category,
+            "secret": is_secret,
+            "configured": configured,
+            "detail": detail,
+        })
+    return rows
+
+
+def _configuration_rows():
+    from gdx.removal import hidden_module_keys
+    from .registry import registry
+
+    registry.autodiscover()
+    installed = {
+        row.module_key: row
+        for row in InstalledThirdPartyApi.objects.all()
+    }
+    hidden = hidden_module_keys()
+    rows = []
+    for module in registry.all():
+        if module.key in hidden:
+            continue
+        record = installed.get(module.key)
+        settings_rows = _configuration_settings(module)
+        missing_required = [
+            item["name"]
+            for item in settings_rows
+            if item["category"] == "Required" and not item["configured"]
+        ]
+        optional_unset = [
+            item["name"]
+            for item in settings_rows
+            if item["category"] == "Optional" and not item["configured"]
+        ]
+        rows.append({
+            "key": module.key,
+            "name": getattr(module, "display_name", "") or module.key,
+            "source": getattr(module, "default_source_name", "") or "Internal",
+            "description": getattr(module, "description", "") or "",
+            "enabled": bool(record.enabled) if record is not None else False,
+            "installed": record is not None,
+            "owner": getattr(module, "owner", "") or "",
+            "support_group": getattr(module, "support_group", "") or "",
+            "provider": getattr(module, "upstream_provider", "") or "",
+            "method": getattr(module, "upstream_method", "") or "",
+            "authentication": getattr(module, "upstream_authentication", "") or "",
+            "frontend_method": getattr(module, "frontend_method", "") or "",
+            "frontend_authentication": getattr(module, "frontend_authentication", "") or "",
+            "endpoint": _public_endpoint(module),
+            "settings": settings_rows,
+            "configured_count": sum(1 for item in settings_rows if item["configured"]),
+            "setting_count": len(settings_rows),
+            "missing_required": missing_required,
+            "optional_unset": optional_unset,
+            "ready": not missing_required,
+        })
+    rows.sort(key=lambda item: (item["ready"], not item["settings"], item["name"].lower()))
+    return rows
+
+
 @staff_member_required
 def configuration(request):
-    modules = InstalledThirdPartyApi.objects.order_by(
-        "name"
-    )
-
+    rows = _configuration_rows()
+    missing_count = sum(len(item["missing_required"]) for item in rows)
     return render(
         request,
         (
@@ -154,7 +260,11 @@ def configuration(request):
             "configuration.html"
         ),
         {
-            "modules": modules,
+            "rows": rows,
+            "module_count": len(rows),
+            "ready_count": sum(1 for item in rows if item["ready"]),
+            "attention_count": sum(1 for item in rows if not item["ready"]),
+            "missing_count": missing_count,
         },
     )
 
@@ -195,8 +305,14 @@ def audit_list(request):
         )
         .order_by(
             "-created_at"
-        )[:100]
+        )
     )
+    module_key = (request.GET.get("module") or "").strip()
+    result = (request.GET.get("result") or "").strip()
+    if module_key:
+        audit_rows = audit_rows.filter(module__module_key=module_key)
+    if result:
+        audit_rows = audit_rows.filter(result=result)
 
     return render(
         request,
@@ -207,7 +323,8 @@ def audit_list(request):
             "list.html"
         ),
         {
-            "audit_rows": audit_rows,
+            "audit_rows": audit_rows[:100],
+            "modules": InstalledThirdPartyApi.objects.order_by("name"),
         },
     )
 
@@ -270,12 +387,53 @@ def health(request):
     )
 
 
+def _dependency_rows():
+    from gdx.removal import hidden_module_keys
+    from .registry import registry
+
+    registry.autodiscover()
+    hidden = hidden_module_keys()
+    rows = []
+    for module in registry.all():
+        if module.key in hidden:
+            continue
+        endpoint_setting = getattr(module, "upstream_endpoint_setting", "") or ""
+        required = list(getattr(module, "required_setting_names", ()) or ())
+        secrets = list(getattr(module, "required_secret_names", ()) or ())
+        configured = bool(endpoint_setting) and _is_present(endpoint_setting)
+        rows.append({
+            "key": module.key,
+            "name": getattr(module, "display_name", "") or module.key,
+            "provider": getattr(module, "upstream_provider", "") or "Internal",
+            "method": getattr(module, "upstream_method", "") or "",
+            "authentication": getattr(module, "upstream_authentication", "") or getattr(module, "frontend_authentication", "") or "",
+            "endpoint": _public_endpoint(module),
+            "endpoint_setting": endpoint_setting,
+            "endpoint_configured": configured,
+            "required_count": len(set(required)),
+            "secret_count": len(set(secrets)),
+            "needs_endpoint": bool(endpoint_setting) and not configured,
+        })
+    rows.sort(key=lambda item: (not item["needs_endpoint"], item["name"].lower()))
+    return rows
+
+
 @staff_member_required
 def dependencies(request):
-    modules = InstalledThirdPartyApi.objects.order_by(
-        "name"
-    )
-
+    rows = _dependency_rows()
+    grouped = {}
+    for item in rows:
+        grouped.setdefault(item["provider"], []).append(item)
+    provider_rows = [
+        {
+            "name": name,
+            "count": len(items),
+            "missing": sum(1 for entry in items if entry["needs_endpoint"]),
+            "configured": sum(1 for entry in items if entry["endpoint_configured"]),
+        }
+        for name, items in grouped.items()
+    ]
+    provider_rows.sort(key=lambda item: item["name"].lower())
     return render(
         request,
         (
@@ -284,7 +442,12 @@ def dependencies(request):
             "dependencies.html"
         ),
         {
-            "modules": modules,
+            "rows": rows,
+            "module_count": len(rows),
+            "provider_rows": provider_rows,
+            "provider_count": len(provider_rows),
+            "configured_count": sum(1 for item in rows if item["endpoint_configured"]),
+            "missing_count": sum(1 for item in rows if item["needs_endpoint"]),
         },
     )
 

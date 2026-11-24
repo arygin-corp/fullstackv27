@@ -548,7 +548,7 @@ def aws_session(request):
         can_save=request.user.is_superuser,
         staff_page_kicker="DEPLOYMENT",
         staff_page_title="AWS session",
-        staff_page_description="Paste a Britive checkout. CRUD and S3 deploys use it for 8 hours.",
+        staff_page_description="Paste a Britive checkout for the account you are deploying.",
         staff_page_metric_label="Session",
         staff_page_metric_value="Active" if summary["active"] else "Expired",
         staff_page_metric_caption=summary["expires_at"] or "No checkout saved",

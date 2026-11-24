@@ -1,1 +1,98 @@
-{% extends "gdx_admin/base.html" %}{% load static %}{% block title %}{{ integration.name }} Documentation{% endblock %}{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18">{% endblock %}{% block content %}<main class="module-page"><div class="module-page-nav"><a href="{% url 'third_party_api_pages:integration_catalog' %}">Back to Module Catalog</a></div><section class="module-panel-grid"><article class="module-panel"><div class="module-panel__header"><h2>Frontend API</h2></div><dl class="drawer-facts"><dt>Endpoint</dt><dd><code>{{ integration.frontend.endpoint }}</code></dd><dt>Method</dt><dd>{{ integration.frontend.method }}</dd><dt>Authentication</dt><dd>{{ integration.frontend.authentication }}</dd></dl></article><article class="module-panel"><div class="module-panel__header"><h2>Upstream integration</h2></div><dl class="drawer-facts"><dt>Provider</dt><dd>{{ integration.upstream.provider }}</dd><dt>Method</dt><dd>{{ integration.upstream.method }}</dd><dt>Authentication</dt><dd>{{ integration.upstream.authentication }}</dd><dt>Endpoint</dt><dd>{{ integration.upstream.endpoint_configured|yesno:"Configured,Missing" }}</dd></dl></article></section><section class="module-panel module-page-section"><div class="module-panel__header"></div><div class="settings-list">{% for setting in integration.settings %}<div class="setting-row"><div><strong>{{ setting.name }}</strong><small>{{ setting.category|title }}{% if setting.secret %} · Secret{% endif %}</small></div><span class="status-pill {% if setting.configured %}status-pill--passed{% else %}status-pill--failed{% endif %}">{% if setting.configured %}Configured{% else %}Missing{% endif %}</span></div>{% empty %}<p>No settings declared.</p>{% endfor %}</div></section></main>{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% block title %}{{ integration.name }} Documentation{% endblock %}
+{% block content %}
+<main class="module-page">
+  <nav class="module-context-header" aria-label="Module documentation">
+    <div class="module-context-header__copy">
+      <p class="module-context-breadcrumb">
+        <a href="{% url 'third_party_api_pages:integration_catalog' %}">Module catalog</a>
+        <span aria-current="page">{{ integration.name }}</span>
+      </p>
+      <h1>Documentation</h1>
+      {% if integration.description %}<p>{{ integration.description }}</p>{% endif %}
+    </div>
+    <div class="module-context-header__actions module-context-header__menu">
+      {% for page in integration.pages %}
+      <a href="{{ page.url }}">{{ page.label }}</a>
+      {% endfor %}
+      <a href="{{ request.path }}" aria-current="page">Documentation</a>
+    </div>
+  </nav>
+
+  <section class="module-doc-grid">
+    <article class="module-panel module-doc-card">
+      <div class="module-panel__header"><h2>Frontend API</h2></div>
+      <dl class="module-doc-facts">
+        <div><dt>Endpoint</dt><dd><code>{{ integration.frontend.endpoint|default:"—" }}</code></dd></div>
+        <div><dt>Method</dt><dd>{{ integration.frontend.method|default:"—" }}</dd></div>
+        <div><dt>Authentication</dt><dd>{{ integration.frontend.authentication|default:"—" }}</dd></div>
+      </dl>
+    </article>
+    <article class="module-panel module-doc-card">
+      <div class="module-panel__header"><h2>Upstream integration</h2></div>
+      <dl class="module-doc-facts">
+        <div><dt>Provider</dt><dd>{{ integration.upstream.provider|default:"Internal" }}</dd></div>
+        <div><dt>Method</dt><dd>{{ integration.upstream.method|default:"—" }}</dd></div>
+        <div><dt>Authentication</dt><dd>{{ integration.upstream.authentication|default:"—" }}</dd></div>
+        <div><dt>Endpoint</dt><dd>{% if integration.upstream.endpoint_setting %}{{ integration.upstream.endpoint_setting }}{% else %}Not required{% endif %}</dd></div>
+        <div><dt>Status</dt><dd>{% if integration.upstream.endpoint_configured %}Configured{% elif integration.upstream.endpoint_setting %}Missing{% else %}Internal{% endif %}</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  {% if integration.capabilities or integration.owner or integration.version %}
+  <section class="module-panel module-doc-card">
+    <div class="module-panel__header"><h2>Reference</h2></div>
+    <dl class="module-doc-facts">
+      {% if integration.owner %}<div><dt>Owner</dt><dd>{{ integration.owner }}</dd></div>{% endif %}
+      {% if integration.support_group %}<div><dt>Support</dt><dd>{{ integration.support_group }}</dd></div>{% endif %}
+      {% if integration.version %}<div><dt>Version</dt><dd>{{ integration.version }}</dd></div>{% endif %}
+      {% if integration.source_name %}<div><dt>Source</dt><dd>{{ integration.source_name }}</dd></div>{% endif %}
+      {% if integration.capabilities %}<div><dt>Capabilities</dt><dd>{{ integration.capabilities|join:", " }}</dd></div>{% endif %}
+    </dl>
+  </section>
+  {% endif %}
+
+  {% if integration.endpoints %}
+  <section class="module-panel">
+    <div class="module-panel__header"><h2>Endpoints</h2></div>
+    <div class="module-table-wrap">
+      <table class="module-table">
+        <thead><tr><th>Name</th><th>Method</th><th>Authentication</th><th>Parameters</th></tr></thead>
+        <tbody>
+          {% for endpoint in integration.endpoints %}
+          <tr>
+            <td>{{ endpoint.name }}</td>
+            <td>{{ endpoint.method }}</td>
+            <td>{{ endpoint.authentication|default:"—" }}</td>
+            <td>{{ endpoint.parameters|join:", "|default:"—" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="module-panel module-doc-card">
+    <div class="module-panel__header"><h2>Settings</h2></div>
+    {% if integration.settings %}
+    <div class="module-setting-list">
+      {% for setting in integration.settings %}
+      <div class="setting-row">
+        <div>
+          <strong>{{ setting.name }}</strong>
+          <small>{{ setting.category|title }}{% if setting.secret %} · Secret{% endif %}</small>
+        </div>
+        <span class="status-pill {% if setting.configured %}status-pill--passed{% else %}status-pill--failed{% endif %}">
+          {% if setting.configured %}Configured{% else %}Missing{% endif %}
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="module-config-empty">This module does not declare Django settings.</p>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}

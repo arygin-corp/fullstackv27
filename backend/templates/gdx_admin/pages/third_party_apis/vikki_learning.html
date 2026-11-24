@@ -1,75 +1,82 @@
 {% extends "gdx_admin/base.html" %}
 {% block title %}Vikki Training{% endblock %}
 {% block content %}
-{% include "gdx_admin/pages/command_center/partials/_nav.html" with section="vikki_training" %}
-<div class="row g-3">
-    <div class="col-12 col-xl-6">
-        <div class="card border-0">
-            <div class="card-body">
-                <h2 class="h5">Upload a file</h2>
-                <p class="text-muted">PDF, Word, text, Markdown, Excel, CSV, PowerPoint, OpenDocument, JSON, XML, YAML, and SQL.</p>
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% if upload_form.non_field_errors %}
-                    <div class="alert alert-danger">{{ upload_form.non_field_errors }}</div>
-                    {% endif %}
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ upload_form.title.id_for_label }}">Title</label>
-                        {{ upload_form.title }}
-                        {{ upload_form.title.errors }}
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ upload_form.source_file.id_for_label }}">File</label>
-                        {{ upload_form.source_file }}
-                        {{ upload_form.source_file.errors }}
-                    </div>
-                    <button class="btn btn-primary" type="submit">Upload for Vikki</button>
-                </form>
-            </div>
-        </div>
+<main class="module-page vikki-training">
+  <header class="module-context-header">
+    <div class="module-context-header__copy">
+      <p class="module-context-breadcrumb"><span aria-current="page">Vikki</span></p>
+      <h1>Vikki Training</h1>
+      <p>Add a file or a note. Vikki indexes either one as knowledge it can use.</p>
     </div>
-    <div class="col-12 col-xl-6">
-        <div class="card border-0">
-            <div class="card-body">
-                <h2 class="h5">Write knowledge</h2>
-                <p class="text-muted">Type a note. Vikki indexes the text the same way it indexes an uploaded file.</p>
-                <form method="post">
-                    {% csrf_token %}
-                    {% if text_form.non_field_errors %}
-                    <div class="alert alert-danger">{{ text_form.non_field_errors }}</div>
-                    {% endif %}
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ text_form.title.id_for_label }}">Title</label>
-                        {{ text_form.title }}
-                        {{ text_form.title.errors }}
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ text_form.body.id_for_label }}">Text</label>
-                        {{ text_form.body }}
-                        {{ text_form.body.errors }}
-                    </div>
-                    <button class="btn btn-primary" type="submit">Save text for Vikki</button>
-                </form>
-            </div>
-        </div>
+  </header>
+
+  <section class="vikki-training__forms">
+    <article class="module-panel module-doc-card">
+      <div class="module-panel__header"><h2>Upload a file</h2></div>
+      <form class="vikki-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>PDF, Word, text, Markdown, Excel, CSV, PowerPoint, OpenDocument, JSON, XML, YAML, and SQL.</p>
+        {% if upload_form.non_field_errors %}<p class="vikki-error">{{ upload_form.non_field_errors }}</p>{% endif %}
+        <label class="vikki-field" for="{{ upload_form.title.id_for_label }}">
+          <span>Title <small>optional</small></span>
+          {{ upload_form.title }}
+          {{ upload_form.title.errors }}
+        </label>
+        <label class="vikki-field" for="{{ upload_form.source_file.id_for_label }}">
+          <span>File</span>
+          {{ upload_form.source_file }}
+          {{ upload_form.source_file.errors }}
+        </label>
+        <button class="integration-button integration-button--primary" type="submit">Upload for Vikki</button>
+      </form>
+    </article>
+
+    <article class="module-panel module-doc-card">
+      <div class="module-panel__header"><h2>Write knowledge</h2></div>
+      <form class="vikki-form" method="post">
+        {% csrf_token %}
+        <p>Type a note. Vikki indexes the text the same way it indexes an uploaded file.</p>
+        {% if text_form.non_field_errors %}<p class="vikki-error">{{ text_form.non_field_errors }}</p>{% endif %}
+        <label class="vikki-field" for="{{ text_form.title.id_for_label }}">
+          <span>Title</span>
+          {{ text_form.title }}
+          {{ text_form.title.errors }}
+        </label>
+        <label class="vikki-field" for="{{ text_form.body.id_for_label }}">
+          <span>Text</span>
+          {{ text_form.body }}
+          {{ text_form.body.errors }}
+        </label>
+        <button class="integration-button integration-button--primary" type="submit">Save text for Vikki</button>
+      </form>
+    </article>
+  </section>
+
+  <section class="module-panel">
+    <div class="module-panel__header"><h2>Saved for Vikki</h2></div>
+    {% if documents %}
+    <div class="module-table-wrap">
+      <table class="module-table">
+        <thead><tr><th>Title</th><th>Added</th><th></th></tr></thead>
+        <tbody>
+          {% for document in documents %}
+          <tr>
+            <td><strong>{{ document.title }}</strong></td>
+            <td>{{ document.created_at|date:"M d, Y H:i" }}</td>
+            <td class="vikki-remove">
+              <form method="post" action="{% url 'command_center:delete_vikki_training' document.pk %}">
+                {% csrf_token %}
+                <button class="integration-button" type="submit">Remove</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-</div>
-<div class="card border-0 mt-3">
-    <div class="card-body">
-        <h2 class="h5">Saved for Vikki</h2>
-        <ul class="list-group list-group-flush">
-            {% for document in documents %}
-            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                <span>{{ document.title }} <small class="text-muted">{{ document.created_at }}</small></span>
-                <form method="post" action="{% url 'command_center:delete_vikki_training' document.pk %}">
-                    {% csrf_token %}
-                    <button class="btn btn-sm btn-outline-danger" type="submit">Remove</button>
-                </form>
-            </li>
-            {% empty %}
-            <li class="list-group-item px-0 text-muted">Nothing has been added yet.</li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
+    {% else %}
+    <p class="module-config-empty">Nothing has been added yet.</p>
+    {% endif %}
+  </section>
+</main>
 {% endblock %}

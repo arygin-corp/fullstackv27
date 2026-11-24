@@ -1,17 +1,17 @@
 
 :root {
-    --c-card: #ffffff;
-    --c-text: #10233e;
-    --c-muted: #64758b;
-    --c-line: #dbe4ee;
-    --c-soft: #f8fafc;
-    --c-primary: var(--theme-primary, var(--primary, #5547ff));
-    --c-primary-hover: var(--theme-primary-hover, var(--primary-hover, #4134da));
-    --c-success: #147438;
-    --c-success-bg: #daf5df;
-    --c-danger: #a4262c;
-    --c-danger-bg: #fde7e9;
-    --c-warning: #8a5a00;
+    --c-card: var(--card, #ffffff);
+    --c-text: var(--foreground, #10233e);
+    --c-muted: var(--muted-foreground, #64758b);
+    --c-line: var(--border, #dbe4ee);
+    --c-soft: var(--muted, #f8fafc);
+    --c-primary: var(--primary, #583fc9);
+    --c-primary-hover: var(--primary, #583fc9);
+    --c-success: var(--success, #147438);
+    --c-success-bg: color-mix(in srgb, var(--success, #147438) 14%, white);
+    --c-danger: var(--destructive, #a4262c);
+    --c-danger-bg: color-mix(in srgb, var(--destructive, #a4262c) 12%, white);
+    --c-warning: var(--warning-foreground, #8a5a00);
 }
 
 /* Catalog shell */

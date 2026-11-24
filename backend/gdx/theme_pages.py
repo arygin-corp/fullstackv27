@@ -116,14 +116,14 @@ def _mounted_url(value: str) -> str | None:
 _APP_JS_RE = re.compile(r'((?:src)=["\'])([^"\']*assets/js/app\.js)(?:\?[^"\']*)?(["\'])')
 _TITLE_RE = re.compile(r"<title>(.*?)</title>", re.I | re.S)
 _BRAND_NAME_RE = re.compile(r"(data-brand-name(?:=\"\")?>)Vexlora")
-_PLATFORM_NAME = "GDX Platform"
+_PLATFORM_NAME = "GDXP Admin"
 def _rewrite_title(match: re.Match[str]) -> str:
     page = re.sub(
-        r"\s*(?:—|–|-|\|)\s*(?:Vexlora Admin|GDX Platform)\s*$",
+        r"\s*(?:—|–|-|\|)\s*(?:Vexlora Admin|GDX Platform|GDX Admin|GDXP Admin)\s*$",
         "",
         match.group(1),
     ).strip()
-    if not page or page in {"Vexlora Admin", _PLATFORM_NAME}:
+    if not page or page in {"Vexlora Admin", "GDX Platform", "GDX Admin", _PLATFORM_NAME}:
         titled = _PLATFORM_NAME
     else:
         titled = f"{page} | {_PLATFORM_NAME}"
@@ -151,7 +151,8 @@ def _prepare_html(html: str) -> str:
     html = html.replace("/ecommerce/", "/marketplace/")
     html = _TITLE_RE.sub(_rewrite_title, html, count=1)
     html = _BRAND_NAME_RE.sub(rf"\1{_PLATFORM_NAME}", html)
-    html = _APP_JS_RE.sub(r"\1\2?v=56\3", html)
+    html = html.replace("Multipurpose Tailwind HTML Admin", "Data Marketplace CMS")
+    html = _APP_JS_RE.sub(r"\1\2?v=114\3", html)
     if "<head>" in html:
         html = html.replace("<head>", "<head>" + _BOOT_STYLE, 1)
     return html

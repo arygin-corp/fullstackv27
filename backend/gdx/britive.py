@@ -163,7 +163,11 @@ def save_pasted_checkout(text, user):
     )
     expires = _chicago((_read_path(_deploy_path()) or {}).get("expires_at"))
     detail = " ".join(part for part in (account, role) if part)
-    return True, f"Session saved until {expires}. {detail}".strip()
+    try:
+        _replace_aws_profile(profile, credentials)
+    except OSError as error:
+        return True, f"Session saved until {expires}. {detail}. The CLI profile {profile} was not replaced: {error}".strip()
+    return True, f"Session saved until {expires}. {detail}. CLI profile {profile} was replaced.".strip()
 
 
 def session_summary():
@@ -184,8 +188,29 @@ def deployment_session_summary():
     if _role_name(stored.get("arn") or "") == "radar-dev-role":
         summary["profile"] = "radar-dev-prod" if stored.get("account") == "471550468381" else "radar-dev-nonprod"
     else:
-        summary["profile"] = stored.get("profile") or deployment_profile_name()
+        summary["profile"] = stored.get("profile") or ""
+    summary["obtained_at"] = _chicago(stored.get("obtained_at"))
+    summary["guidance"] = _checkout_guidance(summary)
     return summary
+
+
+def _checkout_guidance(summary):
+    profile = summary.get("profile") or ""
+    expires = summary.get("expires_at") or ""
+    account = summary.get("account") or ""
+    if summary.get("active") and profile and expires:
+        where = f" for account {account}" if account else ""
+        return f"{profile} is checked out{where} until {expires}. Paste a new credential export here to replace it."
+    if profile and expires:
+        return (
+            f"The {profile} checkout ended {expires}. "
+            "Check out radar-admin-nonprod to create nonprod AWS resources, or radar-admin-prod to create prod AWS resources. "
+            "Copy the credential export and paste it here."
+        )
+    return (
+        "Check out radar-admin-nonprod to create nonprod AWS resources, or radar-admin-prod to create prod AWS resources. "
+        "Copy the credential export and paste it here."
+    )
 
 
 def _summary(stored, active):
@@ -201,6 +226,29 @@ def _summary(stored, active):
         "key_hint": hint,
         "profile": stored.get("profile") or "",
     }
+
+
+def _replace_aws_profile(profile, credentials):
+    """Replace one profile in the AWS CLI credentials file. Other profiles stay as they are."""
+    path = Path.home() / ".aws" / "credentials"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    current = path.read_text(encoding="utf-8") if path.exists() else ""
+    block = "\n".join((
+        f"[{profile}]",
+        f"aws_access_key_id = {credentials['aws_access_key_id']}",
+        f"aws_secret_access_key = {credentials['aws_secret_access_key']}",
+        f"aws_session_token = {credentials['aws_session_token']}",
+        "",
+    ))
+    pattern = re.compile(rf"(?ms)^\[{re.escape(profile)}\]\n.*?(?=^\[|\Z)")
+    updated = pattern.sub(block, current) if pattern.search(current) else current.rstrip() + "\n\n" + block
+    temporary = path.with_suffix(".credentials.tmp")
+    temporary.write_text(updated if updated.endswith("\n") else updated + "\n", encoding="utf-8")
+    try:
+        os.chmod(temporary, 0o600)
+    except OSError:
+        pass
+    temporary.replace(path)
 
 
 def _credentials_from_store(stored):

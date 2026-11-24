@@ -69,6 +69,10 @@ resource "aws_security_group" "alb" {
     Name               = local.platform.alb_sg
     "tmna:environment" = local.platform.environment
   })
+
+  lifecycle {
+    ignore_changes = [description, ingress, egress]
+  }
 }
 
 resource "aws_vpc_security_group_ingress_rule" "alb_https" {
@@ -357,6 +361,16 @@ resource "aws_security_group" "db" {
   description = "GDXP Admin PostgreSQL"
   vpc_id      = local.selected.vpc_id
   tags        = merge(local.common_tags, { "tmna:environment" = local.platform.environment })
+
+  lifecycle {
+    ignore_changes = [description, ingress, egress]
+  }
+}
+
+data "aws_security_group" "redis_live" {
+  count  = var.manage_shared && local.platform.environment == "nonprod" ? 1 : 0
+  name   = "edmp-redis-sg"
+  vpc_id = local.selected.vpc_id
 }
 
 resource "aws_security_group" "redis" {
@@ -418,7 +432,16 @@ resource "aws_vpc_security_group_egress_rule" "app_redis" {
   from_port                    = 6379
   to_port                      = 6379
   ip_protocol                  = "tcp"
-  referenced_security_group_id = aws_security_group.redis[0].id
+  referenced_security_group_id = local.redis_client_sg_id
+}
+
+resource "aws_vpc_security_group_ingress_rule" "redis_live" {
+  count                        = var.manage_shared && local.platform.environment == "nonprod" ? 1 : 0
+  security_group_id            = data.aws_security_group.redis_live[0].id
+  from_port                    = 6379
+  to_port                      = 6379
+  ip_protocol                  = "tcp"
+  referenced_security_group_id = aws_security_group.app[0].id
 }
 
 resource "aws_secretsmanager_secret" "runtime" {
@@ -505,10 +528,6 @@ data "aws_secretsmanager_secret" "runtime" {
   name  = local.platform.secret_name
 }
 
-data "aws_secretsmanager_secret" "database" {
-  name = local.platform.db_secret_name
-}
-
 data "aws_iam_role" "execution" {
   count = var.manage_shared ? 0 : 1
   name  = local.platform.execution_role
@@ -539,6 +558,7 @@ resource "aws_elasticache_replication_group" "redis" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes  = [subnet_group_name, security_group_ids]
   }
 }
 
@@ -576,7 +596,6 @@ resource "aws_iam_role_policy" "execution_secrets" {
       Action = ["secretsmanager:GetSecretValue"]
       Resource = [
         aws_secretsmanager_secret.runtime[0].arn,
-        data.aws_secretsmanager_secret.database.arn,
       ]
     }]
   })
@@ -611,7 +630,6 @@ resource "aws_iam_role_policy" "task" {
         Action = ["secretsmanager:GetSecretValue"]
         Resource = [
           aws_secretsmanager_secret.runtime[0].arn,
-          data.aws_secretsmanager_secret.database.arn,
         ]
       },
     ]
@@ -669,16 +687,10 @@ resource "aws_lb_listener_rule" "web" {
 
 locals {
   container_environment = [for key, value in local.runtime : { name = key, value = value }]
-  container_secrets = concat(
-    [for key in keys(local.secret_values) : {
-      name      = key
-      valueFrom = "${local.secret_arn}:${key}::"
-    }],
-    [{
-      name      = "DB_PASSWORD"
-      valueFrom = "${data.aws_secretsmanager_secret.database.arn}:password::"
-    }]
-  )
+  container_secrets = [for key in keys(local.secret_values) : {
+    name      = key
+    valueFrom = "${local.secret_arn}:${key}::"
+  }]
 }
 
 resource "aws_cloudwatch_log_group" "web" {
@@ -905,10 +917,11 @@ resource "aws_ecs_task_definition" "migration" {
 }
 
 resource "aws_route53_record" "admin" {
-  count   = local.selected.zone_id != "" ? 1 : 0
-  zone_id = local.selected.zone_id
-  name    = local.selected.domain
-  type    = "A"
+  count           = local.selected.zone_id != "" ? 1 : 0
+  zone_id         = local.selected.zone_id
+  name            = local.selected.domain
+  type            = "A"
+  allow_overwrite = true
 
   alias {
     name                   = local.alb_dns_name

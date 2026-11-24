@@ -1,1 +1,93 @@
-{% extends "gdx_admin/base.html" %}{% load static %}{% block title %}Integration Dependencies{% endblock %}{% block extra_css %}{{ block.super }}<link rel="stylesheet" href="{% static 'gdx_admin/theme/css/catalog.css' %}?v=18.4">{% endblock %}{% block content %}<main class="module-page">{% include "gdx_admin/pages/third_party_apis/partials/_ops_nav.html" with page_label="Dependencies" page_heading="Integration dependencies" page_subheading="Review external providers, endpoint configuration, authentication type, and backend setting requirements." %}<section class="module-portfolio-grid">{% for item in rows %}<article class="module-portfolio-card"><div><span class="module-portfolio-card__source">{{ item.provider|default:"Internal" }}</span><h3>{{ item.module.name }}</h3><p>Endpoint setting: {{ item.endpoint_setting|default:"Not required" }}</p><p>Required settings: {{ item.required_settings|length }} · Secrets: {{ item.required_secrets|length }}</p></div><div class="module-portfolio-card__footer"><span class="module-status {% if item.endpoint_configured %}module-status--success{% else %}module-status--failure{% endif %}">{% if item.endpoint_configured %}Configured{% else %}Missing Endpoint{% endif %}</span><a href="{% url 'third_party_api_ops:dependencies' %}">Open</a></div></article>{% endfor %}</section></main>{% endblock %}
+{% extends "gdx_admin/base.html" %}
+{% block title %}Integration Dependencies{% endblock %}
+{% block content %}
+<main class="module-page">
+  {% include "gdx_admin/pages/third_party_apis/partials/_ops_nav.html" with page_label="Dependencies" page_heading="Integration dependencies" page_subheading="Review external providers, endpoint configuration, authentication type, and backend setting requirements." %}
+  <section class="module-metric-grid" data-dependency-filters>
+    <button type="button" class="module-metric-card is-selected" data-dependency-filter="all" aria-pressed="true"><div><span>Modules</span><strong>{{ module_count }}</strong><small>Registered integrations</small></div><span class="module-metric-card__icon tone-primary" aria-hidden="true">▦</span></button>
+    <button type="button" class="module-metric-card" data-dependency-filter="providers" aria-pressed="false"><div><span>Providers</span><strong>{{ provider_count }}</strong><small>Upstream systems</small></div><span class="module-metric-card__icon tone-primary" aria-hidden="true">◇</span></button>
+    <button type="button" class="module-metric-card" data-dependency-filter="configured" aria-pressed="false"><div><span>Configured</span><strong>{{ configured_count }}</strong><small>Endpoints present</small></div><span class="module-metric-card__icon tone-success" aria-hidden="true">✓</span></button>
+    <button type="button" class="module-metric-card" data-dependency-filter="missing" aria-pressed="false"><div><span>Missing</span><strong>{{ missing_count }}</strong><small>Endpoints still unset</small></div><span class="module-metric-card__icon tone-danger" aria-hidden="true">!</span></button>
+  </section>
+  <p class="module-config-filter-note" data-dependency-note>Showing all modules</p>
+  <section class="module-portfolio-grid">
+    {% for item in provider_rows %}
+    <article class="module-portfolio-card" data-dependency-card="provider" hidden>
+      <header class="module-config-card__header">
+        <span class="module-portfolio-card__source">Provider</span>
+        {% if item.missing %}<span class="status-pill status-pill--failed">{{ item.missing }} missing</span>{% elif item.configured %}<span class="status-pill status-pill--passed">Configured</span>{% else %}<span class="status-pill status-pill--muted">Internal</span>{% endif %}
+      </header>
+      <h3>{{ item.name }}</h3>
+      <dl class="module-portfolio-card__facts">
+        <div><dt>Modules</dt><dd>{{ item.count }}</dd></div>
+        <div><dt>Configured</dt><dd>{{ item.configured }}</dd></div>
+        <div><dt>Missing</dt><dd>{{ item.missing }}</dd></div>
+      </dl>
+    </article>
+    {% endfor %}
+    {% for item in rows %}
+    <article class="module-portfolio-card" data-dependency-card="module" data-configured="{% if item.endpoint_configured %}true{% else %}false{% endif %}" data-missing="{% if item.needs_endpoint %}true{% else %}false{% endif %}">
+      <header class="module-config-card__header">
+        <span class="module-portfolio-card__source">{{ item.provider }}</span>
+        {% if item.needs_endpoint %}
+        <span class="status-pill status-pill--failed">Missing endpoint</span>
+        {% elif item.endpoint_configured %}
+        <span class="status-pill status-pill--passed">Configured</span>
+        {% else %}
+        <span class="status-pill status-pill--muted">Internal</span>
+        {% endif %}
+      </header>
+      <h3>{{ item.name }}</h3>
+      <dl class="module-portfolio-card__facts">
+        {% if item.method %}<div><dt>Method</dt><dd>{{ item.method }}</dd></div>{% endif %}
+        {% if item.authentication %}<div><dt>Auth</dt><dd>{{ item.authentication }}</dd></div>{% endif %}
+        <div><dt>Endpoint</dt><dd>{% if item.endpoint_setting %}{{ item.endpoint_setting }}{% elif item.endpoint %}{{ item.endpoint }}{% else %}Not required{% endif %}</dd></div>
+        <div><dt>Settings</dt><dd>{{ item.required_count }} required · {{ item.secret_count }} secret</dd></div>
+      </dl>
+      <div class="module-portfolio-card__footer">
+        <a href="{% url 'third_party_api_ops:module_dashboard' item.key %}">Open</a>
+      </div>
+    </article>
+    {% empty %}
+    <article class="module-panel"><p class="module-config-empty">No integration modules are registered.</p></article>
+    {% endfor %}
+  </section>
+</main>
+{% endblock %}
+{% block extra_js %}
+<script>
+(function () {
+  var root = document.querySelector("[data-dependency-filters]");
+  if (!root) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll("[data-dependency-card]"));
+  var note = document.querySelector("[data-dependency-note]");
+  function apply(filter) {
+    root.querySelectorAll("[data-dependency-filter]").forEach(function (button) {
+      var on = button.getAttribute("data-dependency-filter") === filter;
+      button.classList.toggle("is-selected", on);
+      button.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var shown = 0;
+    cards.forEach(function (card) {
+      var kind = card.getAttribute("data-dependency-card");
+      var show = false;
+      if (filter === "providers") show = kind === "provider";
+      else if (filter === "configured") show = kind === "module" && card.getAttribute("data-configured") === "true";
+      else if (filter === "missing") show = kind === "module" && card.getAttribute("data-missing") === "true";
+      else show = kind === "module";
+      card.hidden = !show;
+      if (show) shown += 1;
+    });
+    if (!note) return;
+    if (filter === "providers") note.textContent = "Showing " + shown + " providers";
+    else if (filter === "configured") note.textContent = "Showing " + shown + " configured endpoints";
+    else if (filter === "missing") note.textContent = "Showing " + shown + " modules with a missing endpoint";
+    else note.textContent = "Showing all modules";
+  }
+  root.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-dependency-filter]");
+    if (button) apply(button.getAttribute("data-dependency-filter"));
+  });
+})();
+</script>
+{% endblock %}
