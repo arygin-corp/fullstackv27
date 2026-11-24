@@ -1,4 +1,4 @@
-# Production frontend bucket.
+# Production Angular frontend bucket edmp-gdxp-prod.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/frontend-s3"
@@ -9,5 +9,5 @@ include {
 }
 
 inputs = {
-  bucket_name = "edmp-gdxp-admin-prod-client"
+  bucket_name = "edmp-gdxp-prod"
 }

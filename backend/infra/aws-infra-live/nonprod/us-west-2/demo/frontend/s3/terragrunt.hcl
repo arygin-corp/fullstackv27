@@ -1,4 +1,4 @@
-# demo frontend bucket edmp-nonprod-demo-gdx.
+# demo Angular frontend bucket edmp-nonprod-demo-gdx.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/frontend-s3"

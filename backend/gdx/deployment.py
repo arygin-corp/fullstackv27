@@ -53,7 +53,7 @@ DEFAULT_FRONTEND_BUCKETS = {
     "dev": "edmp-nonprod-dev-gdx",
     "qa": "edmp-nonprod-qa-gdx",
     "stage": "edmp-nonprod-stage-gdx",
-    "prod": "edmp-gdxp-admin-prod-client",
+    "prod": "edmp-gdxp-prod",
 }
 DEFAULT_CONFIG = {
     "default_environment": "local",

@@ -14,7 +14,7 @@ locals {
       hostname        = "admin.data.toyota.com"
       cert_arn        = "arn:aws:acm:us-east-1:471550468381:certificate/b2cd2025-cb0f-4a22-9883-96676b35e301"
       bucket          = "edmp-gdxp-admin-prod"
-      frontend_bucket = "edmp-gdxp-admin-prod-client"
+      frontend_bucket = "edmp-gdxp-prod"
       mail_from       = "no-reply@data.toyota.com"
     }
   }

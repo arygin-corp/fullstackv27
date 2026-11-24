@@ -1,4 +1,4 @@
-# qa frontend bucket edmp-nonprod-qa-gdx.
+# qa Angular frontend bucket edmp-nonprod-qa-gdx.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/frontend-s3"

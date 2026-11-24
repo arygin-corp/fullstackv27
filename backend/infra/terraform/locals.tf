@@ -21,6 +21,7 @@ locals {
       domain          = "admin.demo.data.toyota.com"
       angular_origin  = "https://demo.data.toyota.com"
       frontend_bucket = "edmp-nonprod-demo-gdx"
+      admin_bucket    = "edmp-nonprod-admin-demo-gdx"
       certificate_arn = "arn:aws:acm:us-west-2:963334842848:certificate/708f155e-2918-45d3-8351-1d9dcb7ee62c"
       zone_id         = "Z0836512INFRJWXX8WDG"
       redis_db        = 0
@@ -33,6 +34,7 @@ locals {
       domain          = "admin.dev.data.toyota.com"
       angular_origin  = "https://dev.data.toyota.com"
       frontend_bucket = "edmp-nonprod-dev-gdx"
+      admin_bucket    = "edmp-nonprod-admin-dev-gdx"
       certificate_arn = "arn:aws:acm:us-west-2:963334842848:certificate/82a5f077-9a3f-4356-a5b7-a949b151e5ff"
       zone_id         = "Z05286522RI3CIPII1TYY"
       redis_db        = 1
@@ -45,6 +47,7 @@ locals {
       domain          = "admin.qa.data.toyota.com"
       angular_origin  = "https://qa.data.toyota.com"
       frontend_bucket = "edmp-nonprod-qa-gdx"
+      admin_bucket    = "edmp-nonprod-admin-qa-gdx"
       certificate_arn = "arn:aws:acm:us-west-2:963334842848:certificate/a5c31abf-0771-4cf2-976c-72fa90a6618f"
       zone_id         = "Z07056893PYOYHNHDX3X0"
       redis_db        = 2
@@ -57,6 +60,7 @@ locals {
       domain          = "admin.stage.data.toyota.com"
       angular_origin  = "https://stage.data.toyota.com"
       frontend_bucket = "edmp-nonprod-stage-gdx"
+      admin_bucket    = "edmp-nonprod-admin-stage-gdx"
       certificate_arn = "arn:aws:acm:us-west-2:963334842848:certificate/cee1dbbd-3963-448a-8fc5-4ee24f4ab1c6"
       zone_id         = "Z05445923VK2SSXZE0ZDV"
       redis_db        = 3
@@ -68,7 +72,8 @@ locals {
       priority        = 1
       domain          = "admin.data.toyota.com"
       angular_origin  = "https://data.toyota.com"
-      frontend_bucket = "edmp-gdxp-admin-prod-client"
+      frontend_bucket = "edmp-gdxp-prod"
+      admin_bucket    = "edmp-gdxp-admin-prod"
       certificate_arn = "arn:aws:acm:us-east-1:471550468381:certificate/b2cd2025-cb0f-4a22-9883-96676b35e301"
       zone_id         = "Z011351814R04VAHWC1K7"
       redis_db        = 0
@@ -102,6 +107,7 @@ locals {
       frontend_policy          = "edmp-gdx-frontend-deployment-nonprod"
       frontend_attach          = false
       frontend_buckets         = ["edmp-nonprod-demo-gdx", "edmp-nonprod-dev-gdx", "edmp-nonprod-qa-gdx", "edmp-nonprod-stage-gdx"]
+      admin_buckets            = ["edmp-nonprod-admin-demo-gdx", "edmp-nonprod-admin-dev-gdx", "edmp-nonprod-admin-qa-gdx", "edmp-nonprod-admin-stage-gdx"]
       ses_domains              = ["demo.data.toyota.com", "dev.data.toyota.com", "qa.data.toyota.com", "stage.data.toyota.com"]
       ses_configuration_set    = "edmp-gdxp-admin-nonprod-mail"
     }
@@ -128,7 +134,8 @@ locals {
       task_role                = "edmp-gdxp-admin-prod-task-role"
       frontend_policy          = "edmp-gdx-frontend-deployment-prod"
       frontend_attach          = false
-      frontend_buckets         = ["edmp-gdxp-admin-prod-client"]
+      frontend_buckets         = ["edmp-gdxp-prod"]
+      admin_buckets            = ["edmp-gdxp-admin-prod"]
       ses_domains              = ["data.toyota.com"]
       ses_configuration_set    = "edmp-gdxp-admin-prod-mail"
     }

@@ -6,8 +6,8 @@ Create/use one application bucket per environment and inject the bucket name thr
 - DEV: `edmp-gdxp-admin-dev-<globally-unique-suffix>`
 - QA: `edmp-gdxp-admin-qa-<globally-unique-suffix>`
 - STAGE: `edmp-gdxp-admin-stage-<globally-unique-suffix>`
-- PROD backend: `edmp-gdxp-admin-prod`
-- PROD Angular: `edmp-gdxp-admin-prod-client`
+- PROD admin: `admin.data.toyota.com`, bucket `edmp-gdxp-admin-prod`
+- PROD Angular: `data.toyota.com`, bucket `edmp-gdxp-prod`
 
 Within each bucket:
 - `media/` stores Django user-uploaded media through django-storages.

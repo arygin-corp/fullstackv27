@@ -1,4 +1,4 @@
-# stage frontend bucket edmp-nonprod-stage-gdx.
+# stage Angular frontend bucket edmp-nonprod-stage-gdx.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/frontend-s3"

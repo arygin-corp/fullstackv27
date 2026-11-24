@@ -163,13 +163,13 @@ data "aws_iam_policy_document" "frontend_deploy" {
   statement {
     sid       = "ListBuckets"
     actions   = ["s3:ListBucket", "s3:GetBucketLocation"]
-    resources = [for bucket in local.platform.frontend_buckets : "arn:aws:s3:::${bucket}"]
+    resources = [for bucket in concat(local.platform.frontend_buckets, local.platform.admin_buckets) : "arn:aws:s3:::${bucket}"]
   }
 
   statement {
     sid       = "ManageObjects"
     actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-    resources = [for bucket in local.platform.frontend_buckets : "arn:aws:s3:::${bucket}/*"]
+    resources = [for bucket in concat(local.platform.frontend_buckets, local.platform.admin_buckets) : "arn:aws:s3:::${bucket}/*"]
   }
 }
 
@@ -618,12 +618,12 @@ resource "aws_iam_role_policy" "task" {
       {
         Effect   = "Allow"
         Action   = ["s3:ListBucket"]
-        Resource = [for bucket in local.platform.frontend_buckets : "arn:aws:s3:::${bucket}"]
+        Resource = [for bucket in concat(local.platform.frontend_buckets, local.platform.admin_buckets) : "arn:aws:s3:::${bucket}"]
       },
       {
         Effect   = "Allow"
         Action   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-        Resource = [for bucket in local.platform.frontend_buckets : "arn:aws:s3:::${bucket}/*"]
+        Resource = [for bucket in concat(local.platform.frontend_buckets, local.platform.admin_buckets) : "arn:aws:s3:::${bucket}/*"]
       },
       {
         Effect = "Allow"
