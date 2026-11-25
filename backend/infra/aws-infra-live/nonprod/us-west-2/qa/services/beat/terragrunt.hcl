@@ -1,4 +1,4 @@
-# qa beat service edmp-gdxp-admin-qa-beat.
+# qa beat service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-beat"

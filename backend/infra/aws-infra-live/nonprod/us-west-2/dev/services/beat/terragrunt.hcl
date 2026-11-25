@@ -1,4 +1,4 @@
-# dev beat service edmp-gdxp-admin-dev-beat.
+# dev beat service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-beat"
@@ -6,6 +6,21 @@ terraform {
 
 include {
   path = find_in_parent_folders()
+}
+
+generate "imports" {
+  path      = "imports.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<EOF
+import {
+  to = aws_ecs_service.this
+  id = "edmp-gdxp-admin-cluster/edmp-gdxp-admin-dev-beat"
+}
+import {
+  to = aws_cloudwatch_log_group.this
+  id = "/ecs/edmp-gdxp-admin-dev-beat"
+}
+EOF
 }
 
 inputs = {

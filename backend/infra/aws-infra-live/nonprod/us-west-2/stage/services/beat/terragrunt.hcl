@@ -1,4 +1,4 @@
-# stage beat service edmp-gdxp-admin-stage-beat.
+# stage beat service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-beat"

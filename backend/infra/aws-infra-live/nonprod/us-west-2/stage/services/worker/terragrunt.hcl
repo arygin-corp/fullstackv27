@@ -1,4 +1,4 @@
-# stage worker service edmp-gdxp-admin-stage-worker.
+# stage worker service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-worker"

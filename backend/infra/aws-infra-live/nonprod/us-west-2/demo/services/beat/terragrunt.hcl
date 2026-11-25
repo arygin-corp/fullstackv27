@@ -1,4 +1,4 @@
-# demo beat service edmp-gdxp-admin-demo-beat.
+# demo beat service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-beat"

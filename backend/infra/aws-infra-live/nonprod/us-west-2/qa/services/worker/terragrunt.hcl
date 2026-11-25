@@ -1,4 +1,4 @@
-# qa worker service edmp-gdxp-admin-qa-worker.
+# qa worker service.
 
 terraform {
   source = "${dirname(find_in_parent_folders())}/modules/service-worker"
